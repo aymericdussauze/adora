@@ -620,20 +620,24 @@ footer {
       <div class="contact-form">
         <h3 style="font-family:var(--font-title);font-weight:700;font-size:26px;color:var(--navy);margin-bottom:4px">Parlons de votre projet</h3>
         <p style="color:var(--text-muted);font-size:14px;margin-bottom:24px">Premier échange téléphonique gratuit et sans engagement.</p>
+        <form action="https://formspree.io/f/aymericdussauze@gmail.com" method="POST">
         <div class="form-row">
-          <div class="form-group"><label>Nom / Prénom *</label><input type="text" placeholder="Votre nom"></div>
-          <div class="form-group"><label>Email *</label><input type="email" placeholder="votre@email.com"></div>
+          <div class="form-group"><label>Nom / Prénom *</label><input type="text" name="nom" placeholder="Votre nom" required></div>
+          <div class="form-group"><label>Email *</label><input type="email" name="email" placeholder="votre@email.com" required></div>
         </div>
         <div class="form-row">
-          <div class="form-group"><label>Téléphone</label><input type="tel" placeholder="06 00 00 00 00"></div>
-          <div class="form-group"><label>Vous êtes</label><select><option>Professionnel</option><option>Particulier</option></select></div>
+          <div class="form-group"><label>Téléphone</label><input type="tel" name="telephone" placeholder="06 00 00 00 00"></div>
+          <div class="form-group"><label>Vous êtes</label><select name="profil"><option>Professionnel</option><option>Particulier</option></select></div>
         </div>
         <div class="form-group">
           <label>Type de projet</label>
-          <select><option>Construction neuve</option><option>Rénovation</option><option>Audit avant achat</option><option>Autre</option></select>
+          <select name="projet"><option>Construction neuve</option><option>Rénovation</option><option>Audit avant achat</option><option>Autre</option></select>
         </div>
-        <div class="form-group"><label>Votre message *</label><textarea placeholder="Décrivez votre projet en quelques mots..."></textarea></div>
-        <button class="form-submit">Envoyer ma demande →</button>
+        <div class="form-group"><label>Votre message *</label><textarea name="message" placeholder="Décrivez votre projet en quelques mots..." required></textarea></div>
+        <input type="hidden" name="_subject" value="Nouveau contact ADORA — adora-economie.fr">
+        <input type="hidden" name="_next" value="https://adora-economie.fr">
+        <button type="submit" class="form-submit">Envoyer ma demande →</button>
+        </form>
       </div>
       <div class="contact-info">
         <h2>Aymeric Dussauze</h2>
