@@ -1,0 +1,721 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simulateur d'aides rénovation 2026 — ADORA Économiste de la construction</title>
+<meta name="description" content="Calculez gratuitement vos aides MaPrimeRénov', CEE, éco-PTZ et TVA réduite. Barèmes Anah 2026. Simulateur par ADORA, économiste de la construction en Normandie et Île-de-France.">
+<meta property="og:title" content="Simulateur d'aides à la rénovation énergétique 2026 — ADORA">
+<meta property="og:description" content="Estimez vos droits MaPrimeRénov', CEE, éco-PTZ. Barèmes officiels Anah 2026. Gratuit, sans inscription.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://adora-economie.fr/simulateur">
+<link rel="canonical" href="https://adora-economie.fr/simulateur">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M0LENY960B"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","G-M0LENY960B");</script>
+
+<style>
+/* ── Site navigation ── */
+.site-nav{
+  position:sticky;top:0;z-index:100;
+  background:rgba(27,58,92,0.97);backdrop-filter:blur(8px);
+  padding:0 2rem;height:56px;
+  display:flex;align-items:center;justify-content:space-between;
+  border-bottom:1px solid rgba(255,255,255,0.08);
+}
+.site-nav .logo-link{display:flex;align-items:center;gap:10px;text-decoration:none}
+.site-nav .logo-link img{height:32px;width:auto;object-fit:contain}
+.site-nav .nav-links{display:flex;gap:1.5rem;align-items:center}
+.site-nav .nav-links a{font-family:'Source Sans 3',sans-serif;font-size:14px;color:rgba(255,255,255,0.75);text-decoration:none;transition:.2s}
+.site-nav .nav-links a:hover{color:#fff}
+.site-nav .nav-links a.active{color:#D6E4F0;font-weight:600}
+.site-nav .nav-cta{
+  padding:7px 18px;border-radius:6px;background:#D4740B;color:#fff;
+  font-family:'Montserrat',sans-serif;font-size:13px;font-weight:600;text-decoration:none;transition:.2s
+}
+.site-nav .nav-cta:hover{background:#BD6709}
+
+/* ── Breadcrumb ── */
+.breadcrumb{
+  max-width:680px;margin:1rem auto 0;padding:0 1rem;
+  font-size:13px;color:#9CA3AF;
+}
+.breadcrumb a{color:#2E75B6;text-decoration:none}
+.breadcrumb a:hover{text-decoration:underline}
+
+/* ── Site footer ── */
+.site-footer{
+  background:#1B3A5C;color:rgba(255,255,255,0.7);
+  padding:3rem 2rem 1.5rem;margin-top:3rem;
+  font-family:'Source Sans 3',sans-serif;font-size:14px;text-align:center;
+}
+.site-footer a{color:#D6E4F0;text-decoration:none}
+.site-footer a:hover{text-decoration:underline}
+.site-footer .f-brand{font-family:'Montserrat',sans-serif;font-size:16px;font-weight:700;color:#fff;letter-spacing:1px;margin-bottom:0.5rem}
+.site-footer .f-tagline{font-size:13px;color:rgba(255,255,255,0.5);margin-bottom:1.5rem}
+.site-footer .f-links{display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;margin-bottom:1.5rem}
+.site-footer .f-copy{font-size:12px;color:rgba(255,255,255,0.35);border-top:1px solid rgba(255,255,255,0.08);padding-top:1rem}
+
+@media(max-width:640px){
+  .site-nav .nav-links span{display:none}
+  .site-nav .nav-links{gap:1rem}
+  .site-nav{padding:0 1rem}
+}
+
+/* ── Simulateur styles ── */
+
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#1B3A5C;--blue:#2E75B6;--accent:#D4740B;
+  --light-blue:#D6E4F0;--pale-blue:#EBF2F9;--green:#2D8B55;
+  --text:#333333;--text-light:#6B7280;--text-muted:#9CA3AF;
+  --bg:#FFFFFF;--bg-alt:#F8FAFC;--border:#E5E7EB;
+  --navy-10:rgba(27,58,92,0.08);--blue-10:rgba(46,117,182,0.08);
+  --accent-10:rgba(212,116,11,0.08);--green-10:rgba(45,139,85,0.08);
+  --radius:8px;--radius-lg:12px;--radius-xl:16px;
+  --shadow-sm:0 1px 2px rgba(27,58,92,0.06);
+  --shadow-md:0 4px 12px rgba(27,58,92,0.08);
+}
+html{font-size:16px;-webkit-font-smoothing:antialiased}
+body{font-family:'Source Sans 3',system-ui,sans-serif;color:var(--text);background:#F1F5F9;min-height:100vh;margin:0;padding:0}
+.app{width:100%;max-width:680px;margin:0 auto;padding:2rem 1rem}
+
+/* Header */
+.header{text-align:center;margin-bottom:2rem}
+.header-sub{font-family:'Montserrat',sans-serif;font-size:13px;color:var(--blue);font-weight:500;letter-spacing:0.5px;margin-bottom:1rem}
+.header h1{font-family:'Montserrat',sans-serif;font-size:20px;font-weight:600;color:var(--navy);line-height:1.3}
+.header p.desc{font-size:14px;color:var(--text-light);margin-top:6px;line-height:1.5}
+
+/* Progress */
+.progress{display:flex;align-items:center;gap:0;margin-bottom:2rem;padding:0 1rem}
+.prog-step{flex:1;display:flex;flex-direction:column;align-items:center;position:relative}
+.prog-num{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Montserrat',sans-serif;font-size:13px;font-weight:600;border:2px solid var(--border);color:var(--text-muted);background:var(--bg);position:relative;z-index:1;transition:.3s}
+.prog-step.active .prog-num{border-color:var(--blue);color:var(--bg);background:var(--blue)}
+.prog-step.done .prog-num{border-color:var(--green);color:var(--bg);background:var(--green)}
+.prog-label{font-size:11px;color:var(--text-muted);margin-top:6px;font-weight:500;text-align:center;transition:.3s}
+.prog-step.active .prog-label{color:var(--blue);font-weight:600}
+.prog-step.done .prog-label{color:var(--green)}
+.prog-line{flex:1;height:2px;background:var(--border);margin:0 -8px;margin-top:-22px;position:relative;z-index:0;transition:.3s}
+.prog-line.done{background:var(--green)}
+
+/* Card */
+.card{background:var(--bg);border-radius:var(--radius-xl);box-shadow:var(--shadow-md);padding:2rem;border:1px solid rgba(27,58,92,0.06)}
+.card h2{font-family:'Montserrat',sans-serif;font-size:17px;font-weight:600;color:var(--navy);margin-bottom:2px}
+.card .step-desc{font-size:13px;color:var(--text-light);margin-bottom:1.5rem;line-height:1.5}
+
+/* Form */
+.form-row{display:grid;gap:14px;margin-bottom:14px}
+.form-row.cols-2{grid-template-columns:1fr 1fr}
+.form-row.cols-3{grid-template-columns:1fr 1fr 1fr}
+.field{display:flex;flex-direction:column;gap:4px}
+.field label{font-size:12px;font-weight:600;color:var(--text-light);text-transform:uppercase;letter-spacing:0.5px}
+.field select,.field input[type=number],.field input[type=text]{
+  height:42px;padding:0 12px;border:1.5px solid var(--border);border-radius:var(--radius);
+  font-family:'Source Sans 3',system-ui,sans-serif;font-size:14px;color:var(--text);
+  background:var(--bg);transition:.2s;outline:none;width:100%
+}
+.field select:focus,.field input:focus{border-color:var(--blue);box-shadow:0 0 0 3px var(--blue-10)}
+.field input[type=number]{-moz-appearance:textfield}
+.field input::-webkit-inner-spin-button{-webkit-appearance:none}
+.field .hint{font-size:11px;color:var(--text-muted);margin-top:2px}
+
+/* Chips */
+.chip-label{font-size:12px;font-weight:600;color:var(--text-light);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.chip{
+  padding:8px 16px;border-radius:20px;font-size:13px;font-weight:500;cursor:pointer;
+  border:1.5px solid var(--border);background:var(--bg);color:var(--text);transition:.2s;
+  user-select:none
+}
+.chip:hover{border-color:var(--blue);background:var(--pale-blue)}
+.chip.sel{border-color:var(--blue);background:var(--light-blue);color:var(--navy);font-weight:600}
+.chip.parcours{padding:10px 20px;border-radius:var(--radius);font-family:'Montserrat',sans-serif;font-size:13px}
+.chip.parcours.sel{background:var(--navy);color:#fff;border-color:var(--navy)}
+
+/* Badges */
+.badge{display:inline-flex;align-items:center;gap:4px;padding:4px 12px;border-radius:20px;font-size:12px;font-weight:600;font-family:'Montserrat',sans-serif}
+.badge-bleu{background:#DBEAFE;color:#1E40AF}
+.badge-jaune{background:#FEF3C7;color:#92400E}
+.badge-violet{background:#EDE9FE;color:#5B21B6}
+.badge-rose{background:#FCE7F3;color:#9D174D}
+
+/* Alerts */
+.alert{padding:12px 16px;border-radius:var(--radius);font-size:13px;line-height:1.5;margin-bottom:12px;display:flex;gap:8px;align-items:flex-start}
+.alert svg{flex-shrink:0;margin-top:1px}
+.alert-warn{background:#FFFBEB;border:1px solid #FDE68A;color:#92400E}
+.alert-info{background:var(--pale-blue);border:1px solid var(--light-blue);color:var(--navy)}
+
+/* Navigation */
+.nav-row{display:flex;gap:10px;margin-top:1.5rem}
+.btn{
+  flex:1;height:44px;border-radius:var(--radius);font-family:'Montserrat',sans-serif;
+  font-size:14px;font-weight:600;cursor:pointer;border:none;transition:.2s;
+  display:flex;align-items:center;justify-content:center;gap:6px
+}
+.btn-primary{background:var(--navy);color:#fff}
+.btn-primary:hover{background:#244B73}
+.btn-secondary{background:transparent;color:var(--navy);border:1.5px solid var(--border)}
+.btn-secondary:hover{background:var(--pale-blue);border-color:var(--light-blue)}
+.btn-accent{background:var(--accent);color:#fff}
+.btn-accent:hover{background:#BD6709}
+
+/* Results */
+.result-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px}
+.result-card{background:var(--bg-alt);border-radius:var(--radius-lg);padding:16px;border:1px solid var(--border)}
+.result-card .rc-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;color:var(--text-muted)}
+.result-card .rc-value{font-family:'Montserrat',sans-serif;font-size:22px;font-weight:700;margin-top:4px}
+.result-card .rc-sub{font-size:12px;color:var(--text-light);margin-top:2px}
+.rc-mpr{color:var(--blue)}
+.rc-cee{color:var(--green)}
+.rc-ptz{color:var(--navy)}
+.rc-rac{color:var(--accent)}
+
+/* Bar chart */
+.bar-section{margin:16px 0}
+.bar-title{font-size:12px;font-weight:600;color:var(--text-light);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px}
+.bar-wrap{height:32px;background:var(--bg-alt);border-radius:var(--radius);overflow:hidden;display:flex;border:1px solid var(--border)}
+.bar-seg{height:100%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;color:#fff;transition:.4s;min-width:3px}
+.bar-legend{display:flex;flex-wrap:wrap;gap:14px;margin-top:8px;font-size:12px;color:var(--text-light)}
+.bar-legend span{display:flex;align-items:center;gap:5px}
+.bar-legend .dot{width:10px;height:10px;border-radius:3px;flex-shrink:0}
+
+/* Detail table */
+.detail-section{margin-top:16px}
+.detail-table{border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden}
+.detail-row{display:flex;justify-content:space-between;align-items:center;padding:10px 16px;font-size:14px;border-bottom:1px solid var(--border)}
+.detail-row:last-child{border-bottom:none}
+.detail-row:nth-child(even){background:var(--bg-alt)}
+.detail-row .dlbl{color:var(--text-light)}
+.detail-row .dval{font-weight:600;font-family:'Montserrat',sans-serif;font-size:13px}
+.detail-row.total{background:var(--navy);color:#fff}
+.detail-row.total .dlbl,.detail-row.total .dval{color:#fff}
+
+/* CTA */
+.cta-box{margin-top:1.5rem;padding:20px;border-radius:var(--radius-lg);background:linear-gradient(135deg,var(--pale-blue) 0%,#fff 100%);border:1.5px solid var(--light-blue)}
+.cta-box h3{font-family:'Montserrat',sans-serif;font-size:15px;font-weight:600;color:var(--navy);margin-bottom:6px}
+.cta-box p{font-size:13px;color:var(--text-light);line-height:1.5;margin-bottom:12px}
+.cta-btn{
+  display:inline-flex;align-items:center;gap:6px;padding:10px 24px;border-radius:var(--radius);
+  background:var(--accent);color:#fff;font-family:'Montserrat',sans-serif;font-size:13px;
+  font-weight:600;text-decoration:none;border:none;cursor:pointer;transition:.2s
+}
+.cta-btn:hover{background:#BD6709;transform:translateY(-1px)}
+
+/* Disclaimer */
+.disclaimer{font-size:11px;color:var(--text-muted);line-height:1.5;margin-top:16px;padding:12px 16px;background:var(--bg-alt);border-radius:var(--radius);border:1px solid var(--border)}
+
+/* Footer */
+.footer{text-align:center;margin-top:2rem;padding-bottom:1rem}
+.footer .brand{font-family:'Montserrat',sans-serif;font-size:12px;font-weight:600;color:var(--navy);letter-spacing:1px}
+.footer .contact{font-size:12px;color:var(--text-muted);margin-top:4px}
+.footer a{color:var(--blue);text-decoration:none}
+.footer a:hover{text-decoration:underline}
+
+/* Responsive */
+@media(max-width:480px){
+  .form-row.cols-2{grid-template-columns:1fr}
+  .result-grid{grid-template-columns:1fr}
+  .card{padding:1.25rem}
+  .progress{padding:0}
+  .prog-label{font-size:10px}
+}
+
+</style>
+</head>
+<body>
+
+<!-- ═══ NAVIGATION ═══ -->
+<nav class="site-nav">
+  <a href="/" class="logo-link">
+    <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5NDAgMjAwIiB3aWR0aD0iOTQwIiBoZWlnaHQ9IjIwMCI+CiAgPGcgZmlsbD0id2hpdGUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICA8IS0tIFRyaWFuZ2xlIGljb24gLS0+CiAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMCwgOCkgdHJhbnNsYXRlKC03NSwgLTk5KSI+CiAgICAgIDxwYXRoIGQ9Ik0gMTE3LDI4MiBMIDE2OSwyODEgTCAxNzQsMjc0IEwgMTc3LDI2OCBMIDIyOSwxOTMgTCAyMjksMTkxIEwgMjA2LDE1OCBMIDIwNywxNTUgTCAyMjksMTU2IEwgMjM0LDE2NSBMIDIzNywxNjggTCAyMzksMTczIEwgMjgxLDIzNSBMIDI4MiwyNDAgTCAyNDAsMjQwIEwgMjEzLDI4MCBMIDIxMywyODIgTCAzNjQsMjgyIEwgMzYxLDI3NiBMIDMwMCwxODcgTCAyOTksMTg0IEwgMjQyLDk5IEwgMjQwLDEwMCBMIDIwNywxNTAgTCAyMDEsMTU2IEwgMTQwLDI0OCBMIDEzNywyNTEgTCAxMzYsMjU0IEwgMTI0LDI3MCBaIi8+CiAgICA8L2c+CiAgICA8IS0tIFRleHQgIkFkb3JhIiAtLT4KICAgIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDMzMCwgMTIpIHNjYWxlKDEuOCkgdHJhbnNsYXRlKC03MSwgLTMyMCkiPgogICAgICA8cGF0aCBkPSJNIDEwMiwzMjYgTCA5MywzNTIgTCA5MSwzNTUgTCA4NywzNjkgTCA4NSwzNzIgTCA4MiwzODMgTCA4MCwzODYgTCA3OCwzOTUgTCA3MSw0MTMgTCA3MSw0MTYgTCA4OSw0MTUgTCA5NywzOTAgTCAxMjUsMzg5IEwgMTMwLDM5NCBMIDEzMSw0MDAgTCAxMzMsNDAzIEwgMTM3LDQxNiBMIDE1NSw0MTYgTCAxNTUsNDEyIEwgMTUzLDQwOSBMIDEyNCwzMjYgWiBNIDExNCwzNDQgTCAxMjMsMzcyIEwgMTIyLDM3NiBMIDEwMiwzNzUgTCAxMDIsMzcyIEwgMTA2LDM1OSBMIDEwOCwzNTYgTCAxMTAsMzQ3IFoiLz4KICAgICAgPHBhdGggZD0iTSAyMjUsMzIwIEwgMjA4LDMyMCBMIDIwNiwzNTIgTCAyMDIsMzQ4IEwgMTk0LDM0NSBMIDE4MCwzNDUgTCAxNjksMzQ5IEwgMTU5LDM2MCBMIDE1NSwzNzMgTCAxNTYsMzk1IEwgMTYyLDQwNyBMIDE3MCw0MTQgTCAxNzgsNDE3IEwgMTkzLDQxNyBMIDE5OSw0MTUgTCAyMDUsNDA4IEwgMjA4LDQwOCBMIDIwOCw0MTYgTCAyMjUsNDE2IFogTSAxODcsMzU3IEwgMTk0LDM1NyBMIDE5OSwzNTkgTCAyMDQsMzY0IEwgMjA3LDM3MSBMIDIwOCwzODUgTCAyMDYsMzk0IEwgMjA0LDM5OCBMIDE5OSw0MDMgTCAxOTUsNDA1IEwgMTg2LDQwNSBMIDE4Miw0MDMgTCAxNzYsMzk3IEwgMTczLDM4OSBMIDE3MywzNzIgTCAxNzYsMzY1IEwgMTgyLDM1OSBaIi8+CiAgICAgIDxwYXRoIGQ9Ik0gMjU1LDM0NiBMIDI0NCwzNTIgTCAyMzgsMzU5IEwgMjMzLDM3MSBMIDIzMywzODkgTCAyMzUsMzk3IEwgMjQwLDQwNiBMIDI0NSw0MTEgTCAyNTIsNDE1IEwgMjU5LDQxNyBMIDI3Nyw0MTcgTCAyODMsNDE1IEwgMjk1LDQwNiBMIDMwMSwzOTYgTCAzMDMsMzg4IEwgMzAzLDM3NCBMIDMwMSwzNjYgTCAyOTYsMzU3IEwgMjkwLDM1MSBMIDI4MywzNDcgTCAyNzcsMzQ1IFogTSAyNjQsMzU3IEwgMjcyLDM1NyBMIDI3NiwzNTkgTCAyODEsMzY0IEwgMjg1LDM3NSBMIDI4NSwzODcgTCAyODMsMzk1IEwgMjc2LDQwMyBMIDI3Miw0MDUgTCAyNjQsNDA1IEwgMjU5LDQwMyBMIDI1NCwzOTggTCAyNTAsMzg2IEwgMjUwLDM3NCBMIDI1MiwzNjggTCAyNTgsMzYwIFoiLz4KICAgICAgPHBhdGggZD0iTSAzNTAsMzQ1IEwgMzM4LDM0NiBMIDMyOCwzNTUgTCAzMjgsMzQ3IEwgMzExLDM0NyBMIDMxMSw0MTYgTCAzMjgsNDE1IEwgMzI4LDM3NCBMIDMzMCwzNjggTCAzMzYsMzYyIEwgMzQzLDM1OSBMIDM1MCwzNTkgWiIvPgogICAgICA8cGF0aCBkPSJNIDM2NCwzNDkgTCAzNTksMzUzIEwgMzU1LDM2MCBMIDM1NCwzNjQgTCAzNTUsMzY5IEwgMzcwLDM2OSBMIDM3MSwzNjMgTCAzNzUsMzU4IEwgMzc3LDM1NyBMIDM4NiwzNTcgTCAzOTIsMzYyIEwgMzkzLDM2NSBMIDM5MiwzNzQgTCAzNzIsMzc1IEwgMzYwLDM4MCBMIDM1NCwzODYgTCAzNTEsMzk0IEwgMzUxLDQwMiBMIDM1NCw0MDkgTCAzNTgsNDEzIEwgMzY2LDQxNyBMIDM4MSw0MTcgTCAzODYsNDE1IEwgMzkxLDQwOSBMIDM5NCw0MDkgTCAzOTUsNDE2IEwgNDExLDQxNiBMIDQxMCwzNjcgTCA0MDksMzYxIEwgNDA2LDM1NCBMIDQwMCwzNDggTCAzOTEsMzQ1IEwgMzczLDM0NSBaIE0gMzkzLDM4NSBMIDM5MiwzOTcgTCAzODYsNDA0IEwgMzg0LDQwNSBMIDM3NSw0MDUgTCAzNjksNDAwIEwgMzY5LDM5MiBMIDM3NSwzODYgTCAzODMsMzg0IFoiLz4KICAgIDwvZz4KICA8L2c+Cjwvc3ZnPgo=" alt="ADORA">
+  </a>
+  <div class="nav-links">
+    <a href="/#prestations">Prestations</a>
+    <a href="/#apropos"><span>À propos</span></a>
+    <a href="/simulateur" class="active">Simulateur</a>
+    <a href="/#contact" class="nav-cta">Contact</a>
+  </div>
+</nav>
+
+<!-- ═══ BREADCRUMB ═══ -->
+<div class="breadcrumb">
+  <a href="/">Accueil</a> &rsaquo; Simulateur d'aides rénovation 2026
+</div>
+
+<!-- ═══ SIMULATEUR ═══ -->
+
+<div class="app" id="app"></div>
+
+<script>
+const S = {step:0, loc:'hdf', menage:1, rfr:'', logType:'maison', logAge:'', dpe:'inconnu', statut:'occupant', parcours:'geste', travaux:[], budget:''};
+
+const PLAFONDS_IDF = {1:[24031,29253,40851,999999],2:[35270,42933,60051,999999],3:[42357,51594,71846,999999],4:[49455,60208,84562,999999],5:[56580,68877,96817,999999]};
+const PLAFONDS_HDF = {1:[17363,22259,31185,999999],2:[25393,32553,45842,999999],3:[30540,39148,55196,999999],4:[35676,45735,64550,999999],5:[40835,52348,73907,999999]};
+const EXTRA_IDF = [7116,8663,12257,12257];
+const EXTRA_HDF = [5151,6598,9357,9357];
+const COULEURS = ['Bleu','Jaune','Violet','Rose'];
+const BADGE_CLS = ['badge-bleu','badge-jaune','badge-violet','badge-rose'];
+
+const GESTES = {
+  pac_air_eau:{nom:'PAC air/eau (dont hybrides)',cat:'Chauffage',bleu:5000,jaune:4000,violet:3000,rose:0,cee:[2500,4000]},
+  pac_geo:{nom:'PAC g\u00E9othermique / solarothermique',cat:'Chauffage',bleu:11000,jaune:9000,violet:6000,rose:0,cee:[3000,5000]},
+  ssc:{nom:'Chauffage solaire combin\u00E9',cat:'Chauffage',bleu:10000,jaune:8000,violet:4000,rose:0,cee:[200,500]},
+  pvt_eau:{nom:'Partie thermique PVT eau',cat:'Chauffage',bleu:2500,jaune:2000,violet:1000,rose:0,cee:[100,300]},
+  poele_buches:{nom:'Po\u00EAle / cuisini\u00E8re \u00E0 b\u00FBches',cat:'Chauffage',bleu:1250,jaune:1000,violet:500,rose:0,cee:[200,600]},
+  poele_granules:{nom:'Po\u00EAle / cuisini\u00E8re \u00E0 granul\u00E9s',cat:'Chauffage',bleu:1250,jaune:1000,violet:750,rose:0,cee:[200,800]},
+  insert:{nom:'Foyer ferm\u00E9 / insert',cat:'Chauffage',bleu:1250,jaune:750,violet:500,rose:0,cee:[200,600]},
+  reseau_chaleur:{nom:'Raccordement r\u00E9seau de chaleur',cat:'Chauffage',bleu:1200,jaune:800,violet:400,rose:0,cee:[100,300]},
+  chauffe_eau_thermo:{nom:'Chauffe-eau thermodynamique',cat:'ECS',bleu:1200,jaune:800,violet:400,rose:0,cee:[100,250]},
+  chauffe_eau_sol:{nom:'Chauffe-eau solaire individuel',cat:'ECS',bleu:4000,jaune:3000,violet:2000,rose:0,cee:[100,300]},
+  isolation_combles:{nom:'Isolation rampants / combles',cat:'Isolation',bleu:25,jaune:20,violet:15,rose:0,unit:'m\u00B2',defQty:80,cee:[8,18]},
+  isolation_toiture_terrasse:{nom:'Isolation toiture-terrasse',cat:'Isolation',bleu:75,jaune:60,violet:40,rose:0,unit:'m\u00B2',defQty:60,cee:[10,25]},
+  isolation_plancher:{nom:'Isolation plancher bas',cat:'Isolation',bleu:25,jaune:20,violet:15,rose:0,unit:'m\u00B2',defQty:70,cee:[5,12]},
+  fenetres:{nom:'Fen\u00EAtres (remplacement SV)',cat:'Menuiseries',bleu:100,jaune:80,violet:40,rose:0,unit:'u',defQty:6,cee:[30,80]},
+  vmc_df:{nom:'VMC double flux',cat:'Ventilation',bleu:2500,jaune:2000,violet:1500,rose:0,cee:[200,500],cond:'isolation'},
+  depose_fioul:{nom:'D\u00E9pose cuve \u00E0 fioul',cat:'Autres',bleu:1200,jaune:800,violet:400,rose:0,cee:[0,0]},
+  audit:{nom:'Audit \u00E9nerg\u00E9tique',cat:'Autres',bleu:500,jaune:400,violet:300,rose:0,cee:[0,0]}
+};
+
+const AMPLEUR = {
+  bleu:{2:{taux:80,plafond:30000},3:{taux:80,plafond:40000}},
+  jaune:{2:{taux:60,plafond:30000},3:{taux:60,plafond:40000}},
+  violet:{2:{taux:45,plafond:30000},3:{taux:45,plafond:40000}},
+  rose:{2:{taux:10,plafond:30000},3:{taux:10,plafond:40000}}
+};
+const ECRETEMENT_GESTE = {bleu:90, jaune:75, violet:60, rose:40};
+const ECRETEMENT_ACCOMP = {bleu:100, jaune:90, violet:80, rose:50};
+const PLAFOND_GESTE_5ANS = 20000;
+const STEP_TITLES = ['Situation','Logement','Travaux','Résultats'];
+
+function getCouleur() {
+  const p = S.loc === 'idf' ? PLAFONDS_IDF : PLAFONDS_HDF;
+  const extra = S.loc === 'idf' ? EXTRA_IDF : EXTRA_HDF;
+  const n = Math.min(Math.max(S.menage, 1), 5);
+  const seuils = p[n];
+  const rfr = parseInt(S.rfr) || 0;
+  let bonus = 0;
+  if (S.menage > 5) bonus = (S.menage - 5) * extra[0];
+  for (let i = 0; i < 4; i++) {
+    const extraI = S.menage > 5 ? (S.menage - 5) * extra[i] : 0;
+    if (rfr <= seuils[i] + extraI) return i;
+  }
+  return 3;
+}
+
+function fmt(n) { return Math.round(n).toLocaleString('fr-FR') + ' \u20AC' }
+
+function calcGeste() {
+  const ci = getCouleur();
+  const key = ['bleu','jaune','violet','rose'][ci];
+  let mpr = 0, ceeMin = 0, ceeMax = 0;
+  const alerts = [];
+  S.travaux.forEach(t => {
+    const g = GESTES[t];
+    if (!g) return;
+    mpr += g[key] || 0;
+    ceeMin += g.cee[0];
+    ceeMax += g.cee[1];
+  });
+  if (ci === 3 && S.travaux.length > 0) alerts.push('Les m\u00E9nages Rose sont exclus du parcours monogeste. Orientez-vous vers la r\u00E9novation d\u2019ampleur.');
+  if (S.travaux.includes('vmc_df') && !S.travaux.some(t => t.startsWith('isolation')))
+    alerts.push('VMC double flux : conditionn\u00E9e \u00E0 un geste d\u2019isolation simultan\u00E9 depuis 2026.');
+  if (mpr > PLAFOND_GESTE_5ANS)
+    alerts.push('Plafond monogeste : le cumul MPR ne peut d\u00E9passer ' + fmt(PLAFOND_GESTE_5ANS) + ' par logement sur 5 ans. Montant \u00E9cr\u00EAt\u00E9.');
+  mpr = Math.min(mpr, PLAFOND_GESTE_5ANS);
+  const budget = parseInt(S.budget) || 0;
+  const tvaEco = Math.round(budget * 0.145);
+  const nbGestes = S.travaux.length;
+  const ecoPtzMax = nbGestes >= 3 ? 50000 : nbGestes >= 2 ? 25000 : 15000;
+  const ecoPtz = Math.min(budget > 0 ? budget : ecoPtzMax, ecoPtzMax);
+  const ceeMoy = Math.round((ceeMin + ceeMax) / 2);
+  const totalAides = mpr + ceeMoy;
+  const ecretTaux = ECRETEMENT_GESTE[key];
+  const ecret = Math.round(budget * ecretTaux / 100);
+  const aidesFinales = budget > 0 ? Math.min(totalAides, ecret) : totalAides;
+  const rac = budget > 0 ? Math.max(budget - aidesFinales, 0) : 0;
+  return { ci, mpr, ceeMin, ceeMax, ceeMoy, tvaEco, ecoPtz, totalAides, aidesFinales, rac, alerts, budget, ecret, ecretTaux, cumulCee: true };
+}
+
+function calcAmpleur() {
+  const ci = getCouleur();
+  const key = ['bleu','jaune','violet','rose'][ci];
+  const saut = (S.dpe === 'F' || S.dpe === 'G') ? 3 : 2;
+  const a = AMPLEUR[key][saut];
+  const budget = parseInt(S.budget) || 0;
+  const depElg = Math.min(budget, a.plafond);
+  const mpr = Math.round(depElg * a.taux / 100);
+  const ceeMin = 0;
+  const ceeMax = 0;
+  const ceeMoy = 0;
+  const tvaEco = Math.round(budget * 0.145);
+  const ecoPtz = Math.min(budget, 50000);
+  const totalAides = mpr;
+  const ecretTaux = ECRETEMENT_ACCOMP[key];
+  const ecret = Math.round(budget * ecretTaux / 100);
+  const aidesFinales = budget > 0 ? Math.min(totalAides, ecret) : totalAides;
+  const rac = budget > 0 ? Math.max(budget - aidesFinales, 0) : 0;
+  const alerts = [];
+  if (ci === 3) alerts.push('M\u00E9nages Rose : taux r\u00E9duit \u00E0 10% en r\u00E9novation d\u2019ampleur (2026).');
+  if (S.dpe === 'inconnu') alerts.push('DPE non renseign\u00E9 : simulation bas\u00E9e sur un saut de 2 classes. Un DPE F/G donnerait acc\u00E8s au plafond 40 000 \u20AC.');
+  if (S.dpe !== 'inconnu' && !['E','F','G'].includes(S.dpe))
+    alerts.push('Depuis 2026, le parcours accompagn\u00E9 est r\u00E9serv\u00E9 aux logements class\u00E9s E, F ou G au DPE.');
+  alerts.push('Parcours accompagn\u00E9 : MaPrimeR\u00E9nov\u2019 n\u2019est PAS cumulable avec les CEE. Seules les aides locales et l\u2019\u00E9co-PTZ restent cumulables.');
+  return { ci, mpr, ceeMin, ceeMax, ceeMoy, tvaEco, ecoPtz, totalAides, aidesFinales, rac, alerts, budget, ecret, ecretTaux, saut, taux: a.taux, plafond: a.plafond, cumulCee: false };
+}
+
+const WARN_SVG = '<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1L15 14H1L8 1Z" fill="#F59E0B" stroke="#D97706" stroke-width="1"/><text x="8" y="12" text-anchor="middle" fill="#92400E" font-size="9" font-weight="700">!</text></svg>';
+const INFO_SVG = '<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" fill="#DBEAFE" stroke="#93C5FD"/><text x="8" y="12" text-anchor="middle" fill="#1E40AF" font-size="10" font-weight="700">i</text></svg>';
+
+function renderHeader() {
+  return `<div class="header">
+    <div class="header-sub">\u00C9conomiste de la construction</div>
+    <h1>Simulateur d\u2019aides \u00E0 la r\u00E9novation \u00E9nerg\u00E9tique</h1>
+    <p class="desc">Estimez vos droits MaPrimeR\u00E9nov\u2019, CEE, \u00E9co-PTZ et TVA r\u00E9duite \u2014 Bar\u00E8mes 2026</p>
+  </div>`;
+}
+
+function renderProgress() {
+  let h = '<div class="progress">';
+  for (let i = 0; i < 4; i++) {
+    const cls = i < S.step ? 'done' : (i === S.step ? 'active' : '');
+    h += `<div class="prog-step ${cls}"><div class="prog-num">${i < S.step ? '\u2713' : (i+1)}</div><div class="prog-label">${STEP_TITLES[i]}</div></div>`;
+    if (i < 3) h += `<div class="prog-line ${i < S.step ? 'done' : ''}"></div>`;
+  }
+  return h + '</div>';
+}
+
+function renderStep0() {
+  return `<div class="card">
+    <h2>Votre situation fiscale</h2>
+    <p class="step-desc">Ces informations d\u00E9terminent votre profil MaPrimeR\u00E9nov\u2019 (Bleu, Jaune, Violet ou Rose) et le montant de vos aides.</p>
+    <div class="form-row cols-2">
+      <div class="field"><label>Localisation</label>
+        <select id="loc"><option value="hdf" ${S.loc==='hdf'?'selected':''}>Hors \u00CEle-de-France</option><option value="idf" ${S.loc==='idf'?'selected':''}>Île-de-France</option></select>
+      </div>
+      <div class="field"><label>Personnes au foyer</label>
+        <select id="menage">${[1,2,3,4,5,6,7,8].map(n=>`<option value="${n}" ${S.menage==n?'selected':''}>${n} personne${n>1?'s':''}</option>`).join('')}</select>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="field"><label>Revenu fiscal de r\u00E9f\u00E9rence (N-1)</label>
+        <input type="number" id="rfr" placeholder="Ex : 32 000" value="${S.rfr}">
+        <span class="hint">Figurant sur votre avis d\u2019imposition 2025</span>
+      </div>
+    </div>
+    <div class="nav-row"><div style="flex:1"></div><button class="btn btn-primary" onclick="next()">Suivant <span>\u2192</span></button></div>
+  </div>`;
+}
+
+function renderStep1() {
+  const year = parseInt(S.logAge) || 0;
+  const tooNew = year > 0 && (2026 - year) < 15;
+  return `<div class="card">
+    <h2>Votre logement</h2>
+    <p class="step-desc">Caract\u00E9ristiques du bien \u00E0 r\u00E9nover. Le logement doit avoir plus de 15 ans et \u00EAtre votre r\u00E9sidence principale.</p>
+    <div class="form-row cols-2">
+      <div class="field"><label>Type de bien</label>
+        <select id="logType"><option value="maison" ${S.logType==='maison'?'selected':''}>Maison individuelle</option><option value="appart" ${S.logType==='appart'?'selected':''}>Appartement</option></select>
+      </div>
+      <div class="field"><label>Ann\u00E9e de construction</label>
+        <input type="number" id="logAge" placeholder="Ex : 1975" value="${S.logAge}">
+      </div>
+    </div>
+    <div class="form-row cols-2">
+      <div class="field"><label>DPE actuel</label>
+        <select id="dpe"><option value="inconnu" ${S.dpe==='inconnu'?'selected':''}>Non renseign\u00E9</option>${['A','B','C','D','E','F','G'].map(l=>`<option value="${l}" ${S.dpe===l?'selected':''}>${l}</option>`).join('')}</select>
+      </div>
+      <div class="field"><label>Statut</label>
+        <select id="statut"><option value="occupant" ${S.statut==='occupant'?'selected':''}>Propri\u00E9taire occupant</option><option value="bailleur" ${S.statut==='bailleur'?'selected':''}>Propri\u00E9taire bailleur</option></select>
+      </div>
+    </div>
+    ${tooNew ? '<div class="alert alert-warn">'+WARN_SVG+'<span>Le logement doit avoir plus de 15 ans pour \u00EAtre \u00E9ligible \u00E0 MaPrimeR\u00E9nov\u2019.</span></div>' : ''}
+    <div class="nav-row"><button class="btn btn-secondary" onclick="prev()">\u2190 Retour</button><button class="btn btn-primary" onclick="next()">Suivant \u2192</button></div>
+  </div>`;
+}
+
+function renderStep2() {
+  const ci = getCouleur();
+  let h = `<div class="card">
+    <h2>Travaux envisag\u00E9s</h2>
+    <p class="step-desc">Votre profil : <span class="badge ${BADGE_CLS[ci]}">${COULEURS[ci]}</span></p>
+    <div class="chip-label">Parcours</div>
+    <div class="chips" style="margin-bottom:20px">
+      <div class="chip parcours ${S.parcours==='geste'?'sel':''}" onclick="S.parcours='geste';S.travaux=[];render()">Monogeste / bouquet</div>
+      <div class="chip parcours ${S.parcours==='ampleur'?'sel':''}" onclick="S.parcours='ampleur';S.travaux=[];render()">R\u00E9novation d\u2019ampleur</div>
+    </div>`;
+
+  if (S.parcours === 'geste') {
+    if (ci === 3) h += `<div class="alert alert-warn">${WARN_SVG}<span>Les m\u00E9nages Rose ne sont pas \u00E9ligibles au parcours monogeste. S\u00E9lectionnez la r\u00E9novation d\u2019ampleur.</span></div>`;
+    const cats = {};
+    Object.entries(GESTES).forEach(([k, g]) => { if (!cats[g.cat]) cats[g.cat] = []; cats[g.cat].push([k, g]); });
+    Object.entries(cats).forEach(([cat, items]) => {
+      h += `<div class="chip-label" style="margin-top:12px">${cat}</div><div class="chips">`;
+      items.forEach(([k, g]) => {
+        const sel = S.travaux.includes(k);
+        h += `<div class="chip ${sel?'sel':''}" onclick="toggleTrav('${k}')">${g.nom}</div>`;
+      });
+      h += '</div>';
+    });
+  } else {
+    h += `<div class="alert alert-info">${INFO_SVG}<span>La r\u00E9novation d\u2019ampleur requiert un gain \u2265 2 classes DPE, l\u2019intervention d\u2019un Mon Accompagnateur R\u00E9nov\u2019 agr\u00E9\u00E9, et un logement class\u00E9 E, F ou G (2026).</span></div>`;
+  }
+
+  h += `<div class="form-row" style="margin-top:16px">
+    <div class="field"><label>Budget pr\u00E9visionnel TTC</label>
+      <input type="number" id="budget" placeholder="Ex : 35 000" value="${S.budget}">
+      <span class="hint">Montant total des travaux, pose comprise</span>
+    </div>
+  </div>`;
+  h += `<div class="nav-row"><button class="btn btn-secondary" onclick="prev()">\u2190 Retour</button><button class="btn btn-primary" onclick="next()">Calculer mes aides \u2192</button></div></div>`;
+  return h;
+}
+
+function renderStep3() {
+  const r = S.parcours === 'geste' ? calcGeste() : calcAmpleur();
+  const ci = r.ci;
+  const key = ['bleu','jaune','violet','rose'][ci];
+  const b = r.budget || 1;
+
+  let h = `<div class="card">
+    <h2>Votre plan de financement</h2>
+    <p class="step-desc">Profil <span class="badge ${BADGE_CLS[ci]}">${COULEURS[ci]}</span> \u2014 ${S.parcours === 'geste' ? 'Parcours monogeste' : 'R\u00E9novation d\u2019ampleur'}</p>`;
+
+  r.alerts.forEach(a => { h += `<div class="alert alert-warn">${WARN_SVG}<span>${a}</span></div>`; });
+  if (r.budget <= 0) h += `<div class="alert alert-warn">${WARN_SVG}<span>Renseignez un budget pr\u00E9visionnel pour un calcul complet.</span></div>`;
+
+  h += `<div class="result-grid">
+    <div class="result-card"><div class="rc-label">MaPrimeR\u00E9nov\u2019</div><div class="rc-value rc-mpr">${fmt(r.mpr)}</div>${S.parcours==='ampleur'?'<div class="rc-sub">'+r.taux+'% sur plafond '+fmt(r.plafond)+'</div>':''}</div>
+    <div class="result-card"><div class="rc-label">CEE (estimation)</div><div class="rc-value rc-cee">${r.cumulCee ? fmt(r.ceeMin)+' \u2014 '+fmt(r.ceeMax) : 'Non cumulable'}</div>${!r.cumulCee?'<div class="rc-sub">Parcours accompagn\u00E9</div>':''}</div>
+    <div class="result-card"><div class="rc-label">\u00C9co-PTZ disponible</div><div class="rc-value rc-ptz">${fmt(r.ecoPtz)}</div><div class="rc-sub">\u00E0 0% sur ${r.ecoPtz >= 30000 ? '20' : '15'} ans</div></div>
+    <div class="result-card"><div class="rc-label">Reste \u00E0 charge estim\u00E9</div><div class="rc-value rc-rac">${fmt(r.rac)}</div></div>
+  </div>`;
+
+  if (r.budget > 0) {
+    const mprP = Math.min(Math.round(r.mpr / b * 100), 100);
+    const ceeP = Math.min(Math.round(r.ceeMoy / b * 100), 100 - mprP);
+    const racP = Math.max(0, 100 - mprP - ceeP);
+    h += `<div class="bar-section">
+      <div class="bar-title">R\u00E9partition du financement</div>
+      <div class="bar-wrap">
+        ${mprP > 0 ? `<div class="bar-seg" style="width:${mprP}%;background:var(--blue)">${mprP > 8 ? mprP + '%' : ''}</div>` : ''}
+        ${ceeP > 0 ? `<div class="bar-seg" style="width:${ceeP}%;background:var(--green)">${ceeP > 8 ? ceeP + '%' : ''}</div>` : ''}
+        ${racP > 0 ? `<div class="bar-seg" style="width:${racP}%;background:var(--accent)">${racP > 8 ? racP + '%' : ''}</div>` : ''}
+      </div>
+      <div class="bar-legend">
+        <span><span class="dot" style="background:var(--blue)"></span>MaPrimeR\u00E9nov\u2019 ${mprP}%</span>
+        <span><span class="dot" style="background:var(--green)"></span>CEE ${ceeP}%</span>
+        <span><span class="dot" style="background:var(--accent)"></span>Reste \u00E0 charge ${racP}%</span>
+      </div>
+    </div>`;
+  }
+
+  h += `<div class="detail-section"><div class="bar-title">D\u00E9tail du calcul</div><div class="detail-table">
+    <div class="detail-row"><span class="dlbl">Budget travaux TTC</span><span class="dval">${fmt(r.budget)}</span></div>
+    <div class="detail-row"><span class="dlbl">MaPrimeR\u00E9nov\u2019${S.parcours==='ampleur'?' ('+r.taux+'% sur '+fmt(r.plafond)+')':''}</span><span class="dval" style="color:var(--blue)">\u2212 ${fmt(r.mpr)}</span></div>
+    <div class="detail-row"><span class="dlbl">CEE</span><span class="dval" style="color:var(--green)">${r.cumulCee ? '\u2212 '+fmt(r.ceeMin)+' \u00E0 '+fmt(r.ceeMax) : 'Non cumulable (accompagn\u00E9)'}</span></div>
+    <div class="detail-row"><span class="dlbl">\u00C9conomie TVA (5,5% vs 20%)</span><span class="dval">~ ${fmt(r.tvaEco)}</span></div>
+    <div class="detail-row"><span class="dlbl">\u00C9cr\u00EAtement ${S.parcours==='geste'?'par geste':'accompagn\u00E9'} (${r.ecretTaux}% max TTC)</span><span class="dval">Plafond ${fmt(r.ecret)}</span></div>
+    <div class="detail-row"><span class="dlbl">\u00C9co-PTZ</span><span class="dval">${fmt(r.ecoPtz)} \u00E0 0%</span></div>
+    ${S.parcours==='geste'?'<div class="detail-row"><span class="dlbl">Plafond monogeste (5 ans)</span><span class="dval">'+fmt(PLAFOND_GESTE_5ANS)+'</span></div>':''}
+    <div class="detail-row total"><span class="dlbl">Reste \u00E0 charge estim\u00E9</span><span class="dval">${fmt(r.rac)}</span></div>
+  </div></div>`;
+
+  h += `<div class="cta-box">
+    <h3>Besoin d\u2019un accompagnement professionnel ?</h3>
+    <p>Un \u00E9conomiste de la construction peut optimiser votre plan de financement, v\u00E9rifier l\u2019\u00E9ligibilit\u00E9 de vos travaux et vous accompagner dans vos d\u00E9marches (Mon Accompagnateur R\u00E9nov\u2019, montage du dossier Anah, analyse comparative des devis).</p>
+    <a href="https://adora-economie.fr/#contact" class="cta-btn" target="_blank" style="display:inline-flex;align-items:center;gap:6px;margin-bottom:8px">Demander un accompagnement ADORA \u2192</a>
+    <button onclick="generatePDF()" style="margin-left:10px;padding:10px 24px;border-radius:var(--radius);background:var(--navy);color:#fff;font-family:'Montserrat',sans-serif;font-size:13px;font-weight:600;border:none;cursor:pointer;transition:.2s" onmouseover="this.style.background='#244B73'" onmouseout="this.style.background='#1B3A5C'">T\u00E9l\u00E9charger le rapport PDF \u2193</button>
+  </div>`;
+
+  h += `<div class="disclaimer">\u26A0\uFE0F Cette simulation est indicative et ne constitue pas un engagement. Les montants d\u00E9finitifs d\u00E9pendent des devis d\u2019artisans RGE, du DPE r\u00E9alis\u00E9 par un diagnostiqueur certifi\u00E9, et de la validation par l\u2019Anah. Sources : bar\u00E8mes Anah 2026 (arr\u00EAt\u00E9 du 29/12/2025), plafonds revaloris\u00E9s. Les CEE sont estim\u00E9s en fourchette (variable selon op\u00E9rateur). Aides locales (R\u00E9gion, D\u00E9partement) non int\u00E9gr\u00E9es. Mise \u00E0 jour avril 2026.</div>`;
+
+  h += `<div class="nav-row"><button class="btn btn-secondary" onclick="S.step=0;render()">\u2190 Nouvelle simulation</button><button class="btn btn-secondary" onclick="prev()">Modifier</button></div></div>`;
+  return h;
+}
+
+function render() {
+  const a = document.getElementById('app');
+  let h = renderHeader() + renderProgress();
+  if (S.step === 0) h += renderStep0();
+  else if (S.step === 1) h += renderStep1();
+  else if (S.step === 2) h += renderStep2();
+  else if (S.step === 3) h += renderStep3();
+  h += `<div class="footer"><div class="brand">ADORA \u2014 \u00C9conomiste de la construction</div><div class="contact">06 60 21 55 09 \u00B7 <a href="mailto:aymericdussauze@gmail.com">aymericdussauze@gmail.com</a> \u00B7 <a href="https://adora-economie.fr" target="_blank">adora-economie.fr</a></div></div>`;
+  a.innerHTML = h;
+  bindInputs();
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+function bindInputs() {
+  const b = (id, key, parser) => { const el = document.getElementById(id); if (el) el.addEventListener('change', e => { S[key] = parser ? parser(e.target.value) : e.target.value; }); };
+  b('loc','loc'); b('menage','menage',Number); b('rfr','rfr');
+  b('logType','logType'); b('logAge','logAge'); b('dpe','dpe'); b('statut','statut');
+  b('budget','budget');
+}
+
+function toggleTrav(k) {
+  const i = S.travaux.indexOf(k);
+  if (i >= 0) S.travaux.splice(i, 1); else S.travaux.push(k);
+  render();
+}
+
+function next() { if (S.step < 3) S.step++; render(); }
+function prev() { if (S.step > 0) S.step--; render(); }
+
+render();
+</script>
+
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="site-footer">
+  <div class="f-brand">ADORA</div>
+  <div class="f-tagline">Économiste de la construction — Normandie &amp; Île-de-France</div>
+  <div class="f-links">
+    <a href="/#prestations">Prestations</a>
+    <a href="/#reference">Références</a>
+    <a href="/simulateur">Simulateur</a>
+    <a href="/#contact">Contact</a>
+  </div>
+  <div style="margin-bottom:1rem">
+    <a href="tel:0660215509">06 60 21 55 09</a> &middot;
+    <a href="mailto:aymericdussauze@gmail.com">aymericdussauze@gmail.com</a>
+  </div>
+  <div class="f-copy">&copy; 2026 ADORA — Aymeric Dussauze — EI SIRET 532 886 918 00020</div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.2/jspdf.umd.min.js"></script>
+<script>
+function generatePDF() {
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF('p', 'mm', 'a4');
+  const W = 210, M = 20;
+  const navy = [27,58,92], blue = [46,117,182], accent = [212,116,11], green = [45,139,85], gray = [100,100,100];
+  let y = 20;
+
+  const r = S.parcours === 'geste' ? calcGeste() : calcAmpleur();
+  const ci = r.ci;
+  const key = ['bleu','jaune','violet','rose'][ci];
+  const couleur = ['Bleu (très modestes)','Jaune (modestes)','Violet (intermédiaires)','Rose (supérieurs)'][ci];
+  const parcours = S.parcours === 'geste' ? 'Parcours monogeste' : 'Rénovation d\'ampleur';
+  const fmtE = (n) => Math.round(n).toLocaleString('fr-FR') + ' \u20AC';
+
+  // Header band
+  doc.setFillColor(...navy);
+  doc.rect(0, 0, W, 36, 'F');
+  doc.setTextColor(255,255,255);
+  doc.setFont('helvetica','bold');
+  doc.setFontSize(18);
+  doc.text('ADORA', M, 14);
+  doc.setFontSize(9);
+  doc.setFont('helvetica','normal');
+  doc.text('\u00C9conomiste de la construction', M, 21);
+  doc.setFontSize(11);
+  doc.setFont('helvetica','bold');
+  doc.text('Simulation d\'aides \u00E0 la r\u00E9novation \u00E9nerg\u00E9tique 2026', M, 31);
+  y = 44;
+
+  // Profil
+  doc.setTextColor(...navy);
+  doc.setFontSize(12);
+  doc.setFont('helvetica','bold');
+  doc.text('Votre profil', M, y); y += 7;
+  doc.setFontSize(10);
+  doc.setFont('helvetica','normal');
+  doc.setTextColor(...gray);
+  const loc = S.loc === 'idf' ? '\u00CEle-de-France' : 'Hors \u00CEle-de-France';
+  doc.text('Localisation : ' + loc + '  |  Foyer : ' + S.menage + ' personne(s)  |  RFR : ' + (S.rfr || 'non renseign\u00E9') + ' \u20AC', M, y); y += 5;
+  doc.text('Logement : ' + (S.logType === 'maison' ? 'Maison' : 'Appartement') + '  |  Ann\u00E9e : ' + (S.logAge || '?') + '  |  DPE : ' + S.dpe + '  |  ' + (S.statut === 'occupant' ? 'Propri\u00E9taire occupant' : 'Bailleur'), M, y); y += 5;
+  doc.setTextColor(...blue);
+  doc.setFont('helvetica','bold');
+  doc.text('Profil MaPrimeR\u00E9nov\' : ' + couleur + '  |  ' + parcours, M, y); y += 10;
+
+  // Ligne
+  doc.setDrawColor(...blue);
+  doc.setLineWidth(0.5);
+  doc.line(M, y, W - M, y); y += 8;
+
+  // Résultats
+  doc.setTextColor(...navy);
+  doc.setFontSize(13);
+  doc.text('Plan de financement', M, y); y += 9;
+
+  const addRow = (label, val, color) => {
+    doc.setFont('helvetica','normal');
+    doc.setTextColor(...gray);
+    doc.setFontSize(10);
+    doc.text(label, M, y);
+    doc.setFont('helvetica','bold');
+    doc.setTextColor(...(color || navy));
+    doc.text(val, W - M, y, { align: 'right' });
+    y += 6;
+  };
+
+  addRow('Budget travaux TTC', fmtE(r.budget));
+  addRow('MaPrimeR\u00E9nov\'', '- ' + fmtE(r.mpr), blue);
+  if (r.cumulCee) {
+    addRow('CEE (fourchette)', '- ' + fmtE(r.ceeMin) + ' \u00E0 ' + fmtE(r.ceeMax), green);
+  } else {
+    addRow('CEE', 'Non cumulable (accompagn\u00E9)', gray);
+  }
+  addRow('\u00C9conomie TVA (5,5% vs 20%)', '~ ' + fmtE(r.tvaEco));
+  addRow('\u00C9cr\u00EAtement (' + r.ecretTaux + '% max TTC)', 'Plafond ' + fmtE(r.ecret));
+  addRow('\u00C9co-PTZ disponible', fmtE(r.ecoPtz) + ' \u00E0 0%');
+  y += 2;
+
+  // Total band
+  doc.setFillColor(...navy);
+  doc.rect(M, y - 1, W - 2 * M, 10, 'F');
+  doc.setTextColor(255,255,255);
+  doc.setFontSize(11);
+  doc.setFont('helvetica','bold');
+  doc.text('Reste \u00E0 charge estim\u00E9', M + 4, y + 6);
+  doc.text(fmtE(r.rac), W - M - 4, y + 6, { align: 'right' });
+  y += 18;
+
+  // Alertes
+  if (r.alerts.length > 0) {
+    doc.setTextColor(...accent);
+    doc.setFontSize(9);
+    doc.setFont('helvetica','bold');
+    doc.text('Points d\'attention :', M, y); y += 5;
+    doc.setFont('helvetica','normal');
+    r.alerts.forEach(a => {
+      const lines = doc.splitTextToSize('\u2022 ' + a, W - 2 * M);
+      doc.text(lines, M, y);
+      y += lines.length * 4.5;
+    });
+    y += 4;
+  }
+
+  // Disclaimer
+  doc.setDrawColor(200,200,200);
+  doc.setLineWidth(0.3);
+  doc.line(M, y, W - M, y); y += 6;
+  doc.setTextColor(150,150,150);
+  doc.setFontSize(7.5);
+  doc.setFont('helvetica','normal');
+  const disc = doc.splitTextToSize('Cette simulation est indicative et ne constitue pas un engagement. Les montants d\u00E9finitifs d\u00E9pendent des devis d\'artisans RGE, du DPE r\u00E9alis\u00E9 par un diagnostiqueur certifi\u00E9, et de la validation par l\'Anah. Sources : bar\u00E8mes Anah 2026.', W - 2 * M);
+  doc.text(disc, M, y); y += disc.length * 3.5 + 6;
+
+  // Footer
+  doc.setDrawColor(...blue);
+  doc.setLineWidth(0.5);
+  doc.line(M, y, W - M, y); y += 6;
+  doc.setTextColor(...navy);
+  doc.setFontSize(9);
+  doc.setFont('helvetica','bold');
+  doc.text('ADORA \u2014 \u00C9conomiste de la construction', M, y); y += 4.5;
+  doc.setFont('helvetica','normal');
+  doc.setTextColor(...gray);
+  doc.setFontSize(8);
+  doc.text('Aymeric Dussauze  |  06 60 21 55 09  |  aymericdussauze@gmail.com  |  adora-economie.fr', M, y);
+
+  const date = new Date().toISOString().slice(0,10).replace(/-/g,'');
+  doc.save('ADORA_Simulation_Aides_' + date + '.pdf');
+}
+</script>
+</body>
+</html>
