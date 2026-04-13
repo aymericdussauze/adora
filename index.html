@@ -427,6 +427,7 @@ footer {
     <ul class="nav-links" id="navLinks">
       <li><a href="#prestations">Prestations</a></li>
       <li><a href="#apropos">À propos</a></li>
+      <li><a href="/simulateur">Simulateur</a></li>
       <li><a href="#reference">Références</a></li>
       <li><a href="#zones">Zones</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -529,6 +530,143 @@ footer {
   </div>
 </section>
 
+<!-- ═══════════════════ SIMULATEUR ═══════════════════ -->
+<section id="simulateur-cta" style="
+  padding: 5rem 2rem;
+  background: linear-gradient(135deg, #EBF2F9 0%, #D6E4F0 50%, #EBF2F9 100%);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+">
+  <!-- Motif décoratif -->
+  <div style="
+    position: absolute; top: -60px; right: -60px;
+    width: 200px; height: 200px;
+    border: 2px solid rgba(46,117,182,0.12);
+    border-radius: 50%; pointer-events: none;
+  "></div>
+  <div style="
+    position: absolute; bottom: -40px; left: -40px;
+    width: 140px; height: 140px;
+    border: 2px solid rgba(46,117,182,0.08);
+    border-radius: 50%; pointer-events: none;
+  "></div>
+
+  <div style="max-width: 720px; margin: 0 auto; position: relative; z-index: 1;">
+
+    <!-- Badge -->
+    <span style="
+      display: inline-block;
+      padding: 6px 16px;
+      background: rgba(46,117,182,0.12);
+      color: #1B3A5C;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border-radius: 20px;
+      margin-bottom: 1.5rem;
+    ">Nouvel outil gratuit</span>
+
+    <!-- Titre -->
+    <h2 style="
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(24px, 4vw, 32px);
+      font-weight: 700;
+      color: #1B3A5C;
+      line-height: 1.25;
+      margin-bottom: 1rem;
+    ">
+      Estimez vos aides à la rénovation<br>
+      <span style="color: #2E75B6;">en 2 minutes</span>
+    </h2>
+
+    <!-- Sous-titre -->
+    <p style="
+      font-size: 16px;
+      color: #4B5563;
+      line-height: 1.6;
+      max-width: 560px;
+      margin: 0 auto 2rem;
+    ">
+      MaPrimeRénov', CEE, éco-PTZ, TVA réduite — calculez votre plan de financement
+      complet avec les barèmes officiels Anah 2026.
+    </p>
+
+    <!-- Points clés -->
+    <div style="
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+      font-size: 14px;
+      color: #1B3A5C;
+    ">
+      <span style="display: flex; align-items: center; gap: 6px;">
+        <span style="
+          width: 28px; height: 28px; border-radius: 50%;
+          background: rgba(45,139,85,0.12); display: flex;
+          align-items: center; justify-content: center;
+          font-size: 14px; color: #2D8B55;
+        ">✓</span>
+        Barèmes Anah 2026
+      </span>
+      <span style="display: flex; align-items: center; gap: 6px;">
+        <span style="
+          width: 28px; height: 28px; border-radius: 50%;
+          background: rgba(45,139,85,0.12); display: flex;
+          align-items: center; justify-content: center;
+          font-size: 14px; color: #2D8B55;
+        ">✓</span>
+        100% gratuit
+      </span>
+      <span style="display: flex; align-items: center; gap: 6px;">
+        <span style="
+          width: 28px; height: 28px; border-radius: 50%;
+          background: rgba(45,139,85,0.12); display: flex;
+          align-items: center; justify-content: center;
+          font-size: 14px; color: #2D8B55;
+        ">✓</span>
+        Sans inscription
+      </span>
+    </div>
+
+    <!-- Bouton CTA -->
+    <a href="/simulateur" style="
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 16px 36px;
+      background: #D4740B;
+      color: #ffffff;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: all 0.2s;
+      box-shadow: 0 4px 14px rgba(212,116,11,0.3);
+    " onmouseover="this.style.background='#BD6709';this.style.transform='translateY(-2px)';this.style.boxShadow='0 6px 20px rgba(212,116,11,0.4)'"
+       onmouseout="this.style.background='#D4740B';this.style.transform='translateY(0)';this.style.boxShadow='0 4px 14px rgba(212,116,11,0.3)'"
+    >
+      Lancer le simulateur
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+
+    <!-- Disclaimer -->
+    <p style="
+      font-size: 12px;
+      color: #9CA3AF;
+      margin-top: 1.5rem;
+    ">
+      Simulation indicative basée sur les barèmes officiels. Ne se substitue pas à un accompagnement professionnel.
+    </p>
+
+  </div>
+</section>
+  
 <!-- ═══════════════════ À PROPOS ═══════════════════ -->
 <section class="about" id="apropos">
   <div class="container">
