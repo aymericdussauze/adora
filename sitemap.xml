@@ -24,4 +24,9 @@
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
+  <url>
+  <loc>https://adora-economie.fr/simulateur</loc>
+  <lastmod>2026-04-13</lastmod>
+  <priority>0.8</priority>
+</url>
 </urlset>
