@@ -586,9 +586,11 @@ render();
   <div class="f-copy">&copy; 2026 ADORA — Aymeric Dussauze — EI SIRET 532 886 918 00020</div>
 </footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.2/jspdf.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.2/dist/jspdf.umd.min.js"></script>
 <script>
 function generatePDF() {
+  if (!window.jspdf) { alert('Erreur : la librairie PDF n\'a pas pu se charger. Veuillez rafra\u00EEchir la page.'); return; }
+  try {
   const { jsPDF } = window.jspdf;
   const doc = new jsPDF('p', 'mm', 'a4');
   const W = 210, M = 20;
@@ -600,7 +602,7 @@ function generatePDF() {
   const key = ['bleu','jaune','violet','rose'][ci];
   const couleur = ['Bleu (très modestes)','Jaune (modestes)','Violet (intermédiaires)','Rose (supérieurs)'][ci];
   const parcours = S.parcours === 'geste' ? 'Parcours monogeste' : 'Rénovation d\'ampleur';
-  const fmtE = (n) => Math.round(n).toLocaleString('fr-FR') + ' \u20AC';
+  const fmtE = (n) => Math.round(n).toLocaleString('fr-FR') + ' EUR';
 
   // Header band
   doc.setFillColor(...navy);
@@ -626,7 +628,7 @@ function generatePDF() {
   doc.setFont('helvetica','normal');
   doc.setTextColor(...gray);
   const loc = S.loc === 'idf' ? '\u00CEle-de-France' : 'Hors \u00CEle-de-France';
-  doc.text('Localisation : ' + loc + '  |  Foyer : ' + S.menage + ' personne(s)  |  RFR : ' + (S.rfr || 'non renseign\u00E9') + ' \u20AC', M, y); y += 5;
+  doc.text('Localisation : ' + loc + '  |  Foyer : ' + S.menage + ' personne(s)  |  RFR : ' + (S.rfr || 'non renseign\u00E9') + ' EUR', M, y); y += 5;
   doc.text('Logement : ' + (S.logType === 'maison' ? 'Maison' : 'Appartement') + '  |  Ann\u00E9e : ' + (S.logAge || '?') + '  |  DPE : ' + S.dpe + '  |  ' + (S.statut === 'occupant' ? 'Propri\u00E9taire occupant' : 'Bailleur'), M, y); y += 5;
   doc.setTextColor(...blue);
   doc.setFont('helvetica','bold');
@@ -715,6 +717,7 @@ function generatePDF() {
 
   const date = new Date().toISOString().slice(0,10).replace(/-/g,'');
   doc.save('ADORA_Simulation_Aides_' + date + '.pdf');
+  } catch(e) { console.error('Erreur PDF:', e); alert('Erreur lors de la generation du PDF. Consultez la console pour plus de details.'); }
 }
 </script>
 </body>
