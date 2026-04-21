@@ -409,9 +409,10 @@ img{max-width:100%;height:auto}
       <div class="contact-form-wrap">
         <h2>Envoyer un message</h2>
         <p>Décrivez votre projet en quelques mots, je vous recontacte rapidement.</p>
-        <form action="https://formspree.io/f/maqaewbn" method="POST">
+        <form action="https://formspree.io/f/xzdjopya" method="POST">
           <input type="hidden" name="_subject" value="[Contact ADORA] Nouveau message">
           <input type="hidden" name="_formType" value="contact_direct">
+          <input type="hidden" name="_next" value="https://adora-economie.fr/contact.html?sent=1">
           <div class="c-field-row">
             <div class="c-field">
               <label>Prénom et nom</label>
@@ -492,5 +493,12 @@ document.addEventListener("DOMContentLoaded",()=>{
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-M0LENY960B"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","G-M0LENY960B");</script>
     <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"3f8ca9a1113f413a990a17c08ab83442"}'></script>
+<script>
+if(new URLSearchParams(window.location.search).get("sent")==="1"){
+const f=document.querySelector("form");
+f.outerHTML='<div style="text-align:center;padding:48px 24px;background:var(--aqua-mist);border:1px solid rgba(34,211,238,.2);border-radius:var(--radius-lg);margin:24px 0"><div style="font-size:40px;margin-bottom:16px">✓</div><h2 style="font-family:Montserrat,sans-serif;font-size:22px;color:var(--navy);margin-bottom:12px">Message envoyé</h2><p style="font-size:15px;color:var(--txt);line-height:1.6;max-width:420px;margin:0 auto">Merci pour votre message. Je vous recontacte sous 24h.</p></div>';
+history.replaceState(null,"",window.location.pathname);
+}
+</script>
 </body>
 </html>
