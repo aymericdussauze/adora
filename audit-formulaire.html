@@ -794,7 +794,7 @@ document.getElementById("auditForm").addEventListener("submit", async function(e
     const response = await fetch(this.action, {
       method: "POST",
       body: formData,
-      headers: { "Accept": "application/json" }
+
     });
     
     clearInterval(rotator);
