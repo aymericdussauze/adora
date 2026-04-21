@@ -561,9 +561,10 @@ method="POST">
       <p style="font-size:13px;color:var(--muted);margin-top:8px">Référence : <strong id="successRef" style="color:var(--navy);font-family:'JetBrains Mono',monospace,sans-serif;letter-spacing:.5px">—</strong></p>
   
   <div class="success-steps">
-    <div class="success-step"><div class="success-step-n">1</div><div><strong>Sous 24h</strong><br><span style="color:var(--muted);font-size:13px">Confirmation de votre demande par email ou téléphone</span></div></div>
-    <div class="success-step"><div class="success-step-n">2</div><div><strong>Après votre accord</strong><br><span style="color:var(--muted);font-size:13px">Lien de paiement sécurisé Stripe (499 € TTC)</span></div></div>
-    <div class="success-step"><div class="success-step-n">3</div><div><strong>48-72h après paiement</strong><br><span style="color:var(--muted);font-size:13px">Rapport d'audit PDF + appel téléphonique 30 min</span></div></div>
+    <div class="success-step"><div class="success-step-n">1</div><div><strong>Envoyez-moi vos documents</strong><br><span style="color:var(--muted);font-size:13px">DDT, diagnostics, photos du bien — <a id="mailtoDoc" href="#" style="color:var(--accent-deep);font-weight:600;text-decoration:underline">cliquez ici pour envoyer par email</a></span></div></div>
+    <div class="success-step"><div class="success-step-n">2</div><div><strong>Sous 24h</strong><br><span style="color:var(--muted);font-size:13px">Confirmation de votre demande par email ou téléphone</span></div></div>
+    <div class="success-step"><div class="success-step-n">3</div><div><strong>Après votre accord</strong><br><span style="color:var(--muted);font-size:13px">Lien de paiement sécurisé Stripe (499 € TTC)</span></div></div>
+    <div class="success-step"><div class="success-step-n">4</div><div><strong>48-72h après paiement</strong><br><span style="color:var(--muted);font-size:13px">Rapport d'audit PDF + appel téléphonique 30 min</span></div></div>
   </div>
   
   <div style="margin-top:32px">
@@ -813,6 +814,8 @@ document.getElementById("auditForm").addEventListener("submit", async function(e
       var refNum = "AUD-" + new Date().toISOString().slice(0,10).replace(/-/g,"") + "-" + Math.random().toString(36).substring(2,6).toUpperCase();
       var refEl = document.getElementById("successRef");
       if (refEl) refEl.textContent = refNum;
+      var mailtoEl = document.getElementById("mailtoDoc");
+      if (mailtoEl) mailtoEl.href = "mailto:aymericdussauze@gmail.com?subject=" + encodeURIComponent("[AUDIT " + refNum + "] Documents pour mon audit") + "&body=" + encodeURIComponent("Bonjour,\n\nVoici mes documents pour la demande d'audit " + refNum + ".\n\nCordialement");
       window.scrollTo({top: 0, behavior: "smooth"});
     } else {
       throw new Error("Formspree a répondu " + response.status);
