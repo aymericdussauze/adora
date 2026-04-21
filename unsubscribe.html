@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Se désabonner — ADORA</title>
+<meta name="description" content="Gérer vos préférences de communication ADORA ou vous désabonner de nos emails.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://browser.sentry-cdn.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0D1025;--blue:#0E7490;--accent:#22D3EE;--accent-hover:#06B6D4;--iris:#A78BFA;--pale:#FAFAFC;--txt:#1E1B4B;--muted:#64748B;--border:#E5E7F2;--white:#FFFFFF;--green:#10B981;--radius:16px;--radius-sm:10px;--shadow-card:0 1px 3px rgba(13,16,37,.06),0 8px 24px rgba(13,16,37,.04);--transition:.3s cubic-bezier(.4,0,.2,1)}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;color:var(--txt);background:var(--white);line-height:1.7;font-size:16px}
+h1,h2,h3{font-family:'Montserrat',sans-serif;line-height:1.2;color:var(--navy)}
+a{color:var(--blue);text-decoration:none;transition:color var(--transition)}
+a:hover{color:var(--accent-hover)}
+
+/* NAV */
+.nav{background:var(--navy);padding:0 24px;position:sticky;top:0;z-index:100}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}
+.nav-logo img{height:28px}
+.nav-links{display:flex;gap:24px;align-items:center}
+.nav-links a{color:rgba(255,255,255,.75);font-size:14px;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--white)}
+.nav-cta{background:var(--accent);color:var(--white)!important;padding:8px 18px;border-radius:var(--radius-sm);font-weight:700;font-size:13px}
+.nav-cta:hover{background:var(--accent-hover)}
+.nav-mobile{display:none;background:none;border:none;color:var(--white);font-size:24px;cursor:pointer}
+@media(max-width:768px){.nav-links{display:none;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--navy);padding:16px 28px;gap:4px;border-top:1px solid rgba(255,255,255,.08)}.nav-links.open{display:flex}.nav-mobile{display:block}.nav-cta{width:100%;text-align:center;margin-top:8px}}
+
+/* HERO */
+.hero{background:var(--navy);padding:80px 24px 60px;text-align:center;color:var(--white)}
+.hero h1{font-size:clamp(28px,5vw,42px);font-weight:900;letter-spacing:-.03em;margin-bottom:12px}
+.hero p{font-size:17px;color:rgba(237,233,254,.7);max-width:560px;margin:0 auto}
+
+/* CONTENT */
+.content{max-width:720px;margin:0 auto;padding:60px 24px 80px}
+.content h2{font-size:22px;font-weight:800;margin:40px 0 12px;letter-spacing:-.01em}
+.content h2:first-of-type{margin-top:0}
+.content p{margin-bottom:16px;color:var(--txt);line-height:1.8}
+.content a{text-decoration:underline;text-underline-offset:3px}
+
+.info-card{background:var(--pale);border:1px solid var(--border);border-radius:var(--radius);padding:28px 32px;margin:32px 0}
+.info-card p{margin-bottom:8px}
+.info-card p:last-child{margin-bottom:0}
+
+.contact-block{background:var(--navy);color:var(--white);border-radius:var(--radius);padding:32px;margin:40px 0;text-align:center}
+.contact-block p{color:rgba(237,233,254,.7);margin-bottom:16px}
+.contact-block a{color:var(--accent);font-weight:600;text-decoration:none}
+.contact-block a:hover{color:var(--accent-hover)}
+
+/* FOOTER */
+.footer{background:var(--navy);color:rgba(255,255,255,.6);padding:60px 24px 32px;font-size:14px}
+.footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px}
+.footer-brand p{margin-top:8px;line-height:1.6;font-size:13px}
+.footer h4{color:var(--white);font-family:'Montserrat',sans-serif;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:16px}
+.footer a{color:rgba(255,255,255,.6);display:block;margin-bottom:8px;font-size:13px;transition:color .2s}
+.footer a:hover{color:var(--accent)}
+.footer-bottom{max-width:1200px;margin:40px auto 0;padding-top:24px;border-top:1px solid rgba(255,255,255,.1);text-align:center;font-size:12px;color:rgba(255,255,255,.4)}
+.footer-bottom a{color:rgba(255,255,255,.5);margin:0 8px}
+.footer-bottom a:hover{color:var(--accent)}
+@media(max-width:768px){.footer-inner{grid-template-columns:1fr 1fr;gap:32px}}
+@media(max-width:480px){.footer-inner{grid-template-columns:1fr}.footer a{word-break:break-all}}
+</style>
+    <script defer src="https://browser.sentry-cdn.com/8.0.0/bundle.min.js" crossorigin="anonymous"></script>
+    <script>Sentry.init({dsn:"https://14b68c10a24c3da4127332e14fd20359@o4511253060976640.ingest.de.sentry.io/4511253075132496",tracesSampleRate:0,replaysSessionSampleRate:0});</script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+<div class="nav-inner">
+<a href="index.html" class="nav-logo"><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5NDAgMjAwIiB3aWR0aD0iOTQwIiBoZWlnaHQ9IjIwMCI+CiAgPGcgZmlsbD0id2hpdGUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICA8IS0tIFRyaWFuZ2xlIGljb24gLS0+CiAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMCwgOCkgdHJhbnNsYXRlKC03NSwgLTk5KSI+CiAgICAgIDxwYXRoIGQ9Ik0gMTE3LDI4MiBMIDE2OSwyODEgTCAxNzQsMjc0IEwgMTc3LDI2OCBMIDIyOSwxOTMgTCAyMjksMTkxIEwgMjA2LDE1OCBMIDIwNywxNTUgTCAyMjksMTU2IEwgMjM0LDE2NSBMIDIzNywxNjggTCAyMzksMTczIEwgMjgxLDIzNSBMIDI4MiwyNDAgTCAyNDAsMjQwIEwgMjEzLDI4MCBMIDIxMywyODIgTCAzNjQsMjgyIEwgMzYxLDI3NiBMIDMwMCwxODcgTCAyOTksMTg0IEwgMjQyLDk5IEwgMjQwLDEwMCBMIDIwNywxNTAgTCAyMDEsMTU2IEwgMTQwLDI0OCBMIDEzNywyNTEgTCAxMzYsMjU0IEwgMTI0LDI3MCBaIi8+CiAgICA8L2c+CiAgICA8IS0tIFRleHQgIkFkb3JhIiAtLT4KICAgIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDMzMCwgMTIpIHNjYWxlKDEuOCkgdHJhbnNsYXRlKC03MSwgLTMyMCkiPgogICAgICA8cGF0aCBkPSJNIDEwMiwzMjYgTCA5MywzNTIgTCA5MSwzNTUgTCA4NywzNjkgTCA4NSwzNzIgTCA4MiwzODMgTCA4MCwzODYgTCA3OCwzOTUgTCA3MSw0MTMgTCA3MSw0MTYgTCA4OSw0MTUgTCA5NywzOTAgTCAxMjUsMzg5IEwgMTMwLDM5NCBMIDEzMSw0MDAgTCAxMzMsNDAzIEwgMTM3LDQxNiBMIDE1NSw0MTYgTCAxNTUsNDEyIEwgMTUzLDQwOSBMIDEyNCwzMjYgWiBNIDExNCwzNDQgTCAxMjMsMzcyIEwgMTIyLDM3NiBMIDEwMiwzNzUgTCAxMDIsMzcyIEwgMTA2LDM1OSBMIDEwOCwzNTYgTCAxMTAsMzQ3IFoiLz4KICAgICAgPHBhdGggZD0iTSAyMjUsMzIwIEwgMjA4LDMyMCBMIDIwNiwzNTIgTCAyMDIsMzQ4IEwgMTk0LDM0NSBMIDE4MCwzNDUgTCAxNjksMzQ5IEwgMTU5LDM2MCBMIDE1NSwzNzMgTCAxNTYsMzk1IEwgMTYyLDQwNyBMIDE3MCw0MTQgTCAxNzgsNDE3IEwgMTkzLDQxNyBMIDE5OSw0MTUgTCAyMDUsNDA4IEwgMjA4LDQwOCBMIDIwOCw0MTYgTCAyMjUsNDE2IFogTSAxODcsMzU3IEwgMTk0LDM1NyBMIDE5OSwzNTkgTCAyMDQsMzY0IEwgMjA3LDM3MSBMIDIwOCwzODUgTCAyMDYsMzk0IEwgMjA0LDM5OCBMIDE5OSw0MDMgTCAxOTUsNDA1IEwgMTg2LDQwNSBMIDE4Miw0MDMgTCAxNzYsMzk3IEwgMTczLDM4OSBMIDE3MywzNzIgTCAxNzYsMzY1IEwgMTgyLDM1OSBaIi8+CiAgICAgIDxwYXRoIGQ9Ik0gMjU1LDM0NiBMIDI0NCwzNTIgTCAyMzgsMzU5IEwgMjMzLDM3MSBMIDIzMywzODkgTCAyMzUsMzk3IEwgMjQwLDQwNiBMIDI0NSw0MTEgTCAyNTIsNDE1IEwgMjU5LDQxNyBMIDI3Nyw0MTcgTCAyODMsNDE1IEwgMjk1LDQwNiBMIDMwMSwzOTYgTCAzMDMsMzg4IEwgMzAzLDM3NCBMIDMwMSwzNjYgTCAyOTYsMzU3IEwgMjkwLDM1MSBMIDI4MywzNDcgTCAyNzcsMzQ1IFogTSAyNjQsMzU3IEwgMjcyLDM1NyBMIDI3NiwzNTkgTCAyODEsMzY0IEwgMjg1LDM3NSBMIDI4NSwzODcgTCAyODMsMzk1IEwgMjc2LDQwMyBMIDI3Miw0MDUgTCAyNjQsNDA1IEwgMjU5LDQwMyBMIDI1NCwzOTggTCAyNTAsMzg2IEwgMjUwLDM3NCBMIDI1MiwzNjggTCAyNTgsMzYwIFoiLz4KICAgICAgPHBhdGggZD0iTSAzNTAsMzQ1IEwgMzM4LDM0NiBMIDMyOCwzNTUgTCAzMjgsMzQ3IEwgMzExLDM0NyBMIDMxMSw0MTYgTCAzMjgsNDE1IEwgMzI4LDM3NCBMIDMzMCwzNjggTCAzMzYsMzYyIEwgMzQzLDM1OSBMIDM1MCwzNTkgWiIvPgogICAgICA8cGF0aCBkPSJNIDM2NCwzNDkgTCAzNTksMzUzIEwgMzU1LDM2MCBMIDM1NCwzNjQgTCAzNTUsMzY5IEwgMzcwLDM2OSBMIDM3MSwzNjMgTCAzNzUsMzU4IEwgMzc3LDM1NyBMIDM4NiwzNTcgTCAzOTIsMzYyIEwgMzkzLDM2NSBMIDM5MiwzNzQgTCAzNzIsMzc1IEwgMzYwLDM4MCBMIDM1NCwzODYgTCAzNTEsMzk0IEwgMzUxLDQwMiBMIDM1NCw0MDkgTCAzNTgsNDEzIEwgMzY2LDQxNyBMIDM4MSw0MTcgTCAzODYsNDE1IEwgMzkxLDQwOSBMIDM5NCw0MDkgTCAzOTUsNDE2IEwgNDExLDQxNiBMIDQxMCwzNjcgTCA0MDksMzYxIEwgNDA2LDM1NCBMIDQwMCwzNDggTCAzOTEsMzQ1IEwgMzczLDM0NSBaIE0gMzkzLDM4NSBMIDM5MiwzOTcgTCAzODYsNDA0IEwgMzg0LDQwNSBMIDM3NSw0MDUgTCAzNjksNDAwIEwgMzY5LDM5MiBMIDM3NSwzODYgTCAzODMsMzg0IFoiLz4KICAgIDwvZz4KICA8L2c+Cjwvc3ZnPgo=" alt="ADORA" height="28"></a>
+<div class="nav-links" id="navLinks">
+<a href="simulateur.html">Simulateur</a>
+<a href="estimateur.html">Estimateur</a>
+<a href="audit-avant-achat.html">Audit achat</a>
+<a href="sur-mesure.html">Sur mesure</a>
+<a href="estimateur-outil.html" class="nav-cta">Estimer mes travaux</a>
+</div>
+<button class="nav-mobile" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">☰</button>
+</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+<h1>Se désabonner</h1>
+<p>Gérer vos préférences de communication ou vous désabonner des emails ADORA.</p>
+</section>
+
+<!-- CONTENT -->
+<main class="content">
+
+<h2>Désabonnement par email</h2>
+<p>Chaque email envoyé par ADORA contient un lien de désabonnement en pied de message. En cliquant dessus, vous serez immédiatement retiré(e) de la liste de diffusion concernée.</p>
+<p>Le désabonnement est pris en compte instantanément. Vous ne recevrez plus d'emails de la séquence en question.</p>
+
+<div class="info-card">
+<p><strong>Vous n'arrivez pas à vous désabonner via le lien dans l'email ?</strong></p>
+<p>Envoyez simplement un email à <a href="mailto:aymericdussauze@gmail.com">aymericdussauze@gmail.com</a> avec l'objet « Désabonnement » et je traiterai votre demande sous 48 heures.</p>
+</div>
+
+<h2>Types de communications</h2>
+<p>ADORA envoie uniquement des emails liés aux services que vous avez utilisés ou demandés :</p>
+<p>– <strong>Emails transactionnels</strong> : livraison de votre rapport, confirmation de commande, suivi de votre demande. Ces emails ne peuvent pas être désactivés car ils font partie du service.</p>
+<p>– <strong>Emails d'accompagnement</strong> : conseils pratiques, informations sur les aides à la rénovation, suggestions de services complémentaires. Vous pouvez vous en désabonner à tout moment.</p>
+<p>– <strong>Newsletter</strong> : articles du blog, actualités du secteur. Inscription et désinscription libres.</p>
+
+<h2>Vos droits RGPD</h2>
+<p>Conformément au Règlement Général sur la Protection des Données, vous disposez d'un droit d'accès, de rectification, de suppression et de portabilité de vos données personnelles.</p>
+<p>Pour exercer ces droits ou pour toute question, consultez la <a href="politique-confidentialite.html">politique de confidentialité</a> ou contactez-moi directement.</p>
+
+<div class="contact-block">
+<p>Une question sur vos données ou vos préférences ?</p>
+<a href="mailto:aymericdussauze@gmail.com">aymericdussauze@gmail.com</a>
+</div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+<div class="footer-inner">
+<div class="footer-brand">
+<strong style="color:#fff;font-family:'Montserrat',sans-serif">ADORA</strong>
+<p>Économiste de la construction<br>Normandie & Île-de-France</p>
+</div>
+<div>
+<h4>Outils</h4>
+<a href="simulateur.html">Simulateur aides</a>
+<a href="estimateur.html">Estimateur travaux</a>
+<a href="audit-avant-achat.html">Audit avant achat</a>
+<a href="sur-mesure.html">Sur mesure</a>
+</div>
+<div>
+<h4>ADORA</h4>
+<a href="a-propos.html">À propos</a>
+<a href="professionnels.html">Professionnels</a>
+<a href="partenaires.html">Partenaires</a>
+<a href="blog.html">Blog</a>
+<a href="contact.html">Contact</a>
+</div>
+<div>
+<h4>Contact</h4>
+<a href="tel:+33660215509">06 60 21 55 09</a>
+<a href="mailto:aymericdussauze@gmail.com">aymericdussauze@gmail.com</a>
+<a href="https://adora-economie.fr">adora-economie.fr</a>
+</div>
+</div>
+<div class="footer-bottom">
+© 2026 ADORA · EI · SIRET 532 886 918 00020 · TVA non applicable, art. 293B du CGI<br>
+<a href="mentions-legales.html">Mentions légales</a> · <a href="politique-confidentialite.html">Confidentialité</a> · <a href="cgv.html">CGV</a>
+</div>
+</footer>
+
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"3f8ca9a1113f413a990a17c08ab83442"}'></script>
+</body>
+</html>

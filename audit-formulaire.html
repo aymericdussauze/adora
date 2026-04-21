@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demande d'audit avant achat — ADORA</title>
+<meta name="description" content="Demandez un audit avant achat immobilier. Un économiste de la construction analyse votre futur bien en 48-72h. 499 € forfait fixe.">
+<link rel="canonical" href="https://adora-economie.fr/audit-formulaire.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://browser.sentry-cdn.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0D1025;--surface:#1A1F3D;--deep:#080B1C;
+  --accent:#22D3EE;--accent-hover:#06B6D4;--accent-deep:#0E7490;
+  --iris:#A78BFA;--iris-soft:rgba(167,139,250,.14);
+  --aqua-soft:rgba(34,211,238,.12);--aqua-mist:rgba(34,211,238,.06);
+  --txt:#1E1B4B;--muted:#64748B;--light:#EDE9FE;
+  --bg:#FFFFFF;--pale:#FAFAFC;--border:#E5E7F2;--border-dark:rgba(255,255,255,.08);
+  --radius:16px;--radius-sm:10px;--radius-lg:20px;
+  --shadow:0 1px 3px rgba(13,16,37,.06),0 8px 24px rgba(13,16,37,.04);
+  --shadow-hover:0 4px 12px rgba(13,16,37,.08),0 16px 40px rgba(34,211,238,.12);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:var(--txt);background:var(--pale);line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:'Montserrat',sans-serif;color:var(--navy);letter-spacing:-.01em;line-height:1.2}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+input,select,textarea{font-family:inherit}
+
+/* ═══ NAV ═══ */
+.scroll-progress{position:fixed;top:0;left:0;height:3px;background:var(--accent);z-index:200;width:0;transition:width .1s linear}
+.nav{position:sticky;top:0;z-index:100;background:rgba(13,16,37,.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--border-dark)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;max-width:980px;margin:0 auto;padding:14px 28px}
+.nav-logo img{height:26px;width:auto}
+.nav-links{display:flex;gap:8px;align-items:center}
+.nav-links a{color:rgba(237,233,254,.8);font-size:13.5px;font-weight:500;padding:6px 14px;border-radius:8px;transition:.3s;text-decoration:none}
+.nav-links a:hover{color:#fff;background:rgba(255,255,255,.08)}
+.nav-links .nav-cta{background:var(--accent);color:var(--navy);font-weight:700;padding:7px 16px;border-radius:8px}
+.nav-links .nav-cta:hover{background:var(--accent-hover);color:var(--navy)}
+.nav-burger{display:none;color:#fff;font-size:22px;padding:8px}
+@media(max-width:700px){.nav-links{display:none;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:rgba(13,16,37,.97);padding:16px 28px;gap:4px}.nav-links.open{display:flex}.nav-burger{display:block}}
+
+/* ═══ APP ═══ */
+.app{max-width:680px;margin:0 auto;padding:40px 20px 80px;min-height:calc(100vh - 60px)}
+@media(max-width:600px){.app{padding:24px 16px 48px}}
+
+/* Progress */
+.progress-rail{position:sticky;top:56px;z-index:50;background:var(--pale);padding:16px 0 12px}
+.progress-bar{height:4px;background:var(--border);border-radius:99px;overflow:hidden;margin-bottom:10px}
+.progress-fill{height:100%;background:var(--accent);border-radius:99px;width:0;transition:width .5s cubic-bezier(.4,0,.2,1)}
+.progress-info{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--muted);font-weight:500}
+.progress-step{color:var(--accent-deep);font-weight:600}
+
+/* Screens */
+.screen{display:none;animation:slideIn .4s cubic-bezier(.4,0,.2,1)}
+.screen.active{display:block}
+@keyframes slideIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+
+.screen-header{margin-bottom:28px}
+.screen-eyebrow{display:inline-block;font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent-deep);margin-bottom:10px}
+.screen-title{font-size:clamp(24px,3.6vw,32px);font-weight:800;line-height:1.2;margin-bottom:8px}
+.screen-hint{font-size:15px;color:var(--muted);line-height:1.6;max-width:540px}
+.screen-why{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);margin-top:12px;padding:6px 12px;background:var(--pale);border-radius:8px;border:1px solid var(--border)}
+
+/* Cards */
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px}
+.cards.cards-3{grid-template-columns:1fr 1fr 1fr}
+@media(max-width:540px){.cards,.cards.cards-3{grid-template-columns:1fr 1fr}}
+@media(max-width:400px){.cards,.cards.cards-3{grid-template-columns:1fr}}
+
+.card{background:#fff;border:1.5px solid var(--border);border-radius:var(--radius);padding:22px 20px;cursor:pointer;transition:.25s cubic-bezier(.4,0,.2,1);position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:10px;text-align:left;width:100%}
+.card:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:var(--shadow-hover)}
+.card.selected{border-color:var(--accent);background:var(--aqua-mist);box-shadow:0 0 0 3px var(--aqua-soft)}
+.card.selected::after{content:"";position:absolute;top:14px;right:14px;width:22px;height:22px;border-radius:50%;background:var(--accent)}
+.card.selected::before{content:"";position:absolute;top:22px;right:22px;width:6px;height:10px;border:solid var(--navy);border-width:0 2px 2px 0;transform:rotate(45deg);z-index:1}
+.card-icon{font-size:28px;line-height:1}
+.card-title{font-size:16px;font-weight:700;color:var(--navy);font-family:'Montserrat',sans-serif}
+.card-desc{font-size:13px;color:var(--muted);line-height:1.5}
+
+/* Slider */
+.slider-block{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:32px 28px;margin-bottom:24px}
+.slider-value{font-family:'Montserrat',sans-serif;font-size:56px;font-weight:800;color:var(--navy);line-height:1;margin-bottom:4px}
+.slider-unit{font-size:15px;color:var(--muted);margin-bottom:24px}
+.slider-input{width:100%;height:6px;border-radius:99px;background:var(--border);-webkit-appearance:none;appearance:none;outline:none;cursor:pointer}
+.slider-input::-webkit-slider-thumb{-webkit-appearance:none;width:26px;height:26px;border-radius:50%;background:var(--accent);cursor:pointer;border:4px solid #fff;box-shadow:0 2px 8px rgba(34,211,238,.35)}
+.slider-input::-moz-range-thumb{width:26px;height:26px;border-radius:50%;background:var(--accent);cursor:pointer;border:4px solid #fff;box-shadow:0 2px 8px rgba(34,211,238,.35)}
+.slider-ticks{display:flex;justify-content:space-between;margin-top:10px;font-size:12px;color:var(--muted)}
+
+/* Text inputs */
+.input-block{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:28px;margin-bottom:24px}
+.big-input{width:100%;font-family:'Montserrat',sans-serif;font-size:32px;font-weight:700;color:var(--navy);border:none;outline:none;padding:8px 0;border-bottom:2px solid var(--border);transition:.2s;background:transparent}
+.big-input:focus{border-bottom-color:var(--accent)}
+.big-input::placeholder{color:var(--border);font-weight:400}
+.big-input-smaller{font-size:20px;letter-spacing:.3px}
+.big-input-xs{font-size:17px}
+.big-textarea{width:100%;font-family:inherit;font-size:16px;color:var(--txt);border:1.5px solid var(--border);border-radius:10px;padding:14px 16px;outline:none;resize:vertical;min-height:120px;line-height:1.6;background:#fff;transition:.2s}
+.big-textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--aqua-soft)}
+
+.paste-helper{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--accent-deep);font-weight:500;cursor:pointer;margin-top:14px;padding:8px 14px;background:var(--aqua-mist);border:1px solid rgba(34,211,238,.2);border-radius:8px;transition:.2s}
+.paste-helper:hover{background:var(--aqua-soft)}
+
+.field-label{display:block;font-size:12px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.8px;margin-bottom:8px}
+.field{margin-bottom:18px}
+.field:last-child{margin-bottom:0}
+.field-input{width:100%;padding:14px 16px;border:1.5px solid var(--border);border-radius:10px;font-size:15px;transition:.2s;outline:none;background:#fff;color:var(--txt)}
+.field-input:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--aqua-soft)}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:540px){.field-row{grid-template-columns:1fr}}
+.prefix-input{position:relative}
+.prefix-input::before{content:"€";position:absolute;right:16px;top:50%;transform:translateY(-50%);color:var(--muted);font-weight:600;font-size:18px;pointer-events:none}
+
+/* Upload zones */
+.uploads{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px}
+@media(max-width:540px){.uploads{grid-template-columns:1fr}}
+.upload-zone{position:relative;border:2px dashed var(--border);border-radius:var(--radius);padding:22px 18px;background:#fff;transition:.25s;cursor:pointer;text-align:center}
+.upload-zone:hover{border-color:var(--accent);background:var(--aqua-mist)}
+.upload-zone input[type="file"]{position:absolute;inset:0;opacity:0;cursor:pointer}
+
+.upload-zone.dragover{border-color:var(--accent);background:rgba(34,211,238,.12);transform:scale(1.02);box-shadow:0 0 0 4px rgba(34,211,238,.15)}
+.upload-zone.has-files{border-color:var(--accent);background:var(--aqua-mist);border-style:solid}
+.upload-icon{width:36px;height:36px;margin:0 auto 10px;border-radius:50%;background:var(--aqua-mist);border:1px solid rgba(34,211,238,.2);display:flex;align-items:center;justify-content:center;font-size:16px}
+.upload-title{font-size:14px;font-weight:700;color:var(--navy);font-family:'Montserrat',sans-serif;margin-bottom:4px}
+.upload-hint{font-size:12px;color:var(--muted);line-height:1.5}
+.upload-files{margin-top:8px;font-size:12px;color:var(--accent-deep);font-weight:600}
+
+/* Toggles (for "no documents yet" option) */
+.optional-notice{background:var(--iris-soft);border:1px solid rgba(167,139,250,.2);border-radius:var(--radius);padding:14px 18px;margin-bottom:20px;display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--txt);line-height:1.5}
+.optional-notice svg{width:16px;height:16px;stroke:var(--iris);fill:none;stroke-width:2;flex-shrink:0;margin-top:1px}
+.optional-notice strong{color:#6D44D9;font-weight:700}
+
+/* Summary screen (recap before submit) */
+.summary-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:24px;margin-bottom:20px}
+.summary-section{padding:14px 0;border-bottom:1px solid var(--border)}
+.summary-section:last-child{border-bottom:none;padding-bottom:0}
+.summary-section:first-child{padding-top:0}
+.summary-label{font-size:11px;font-weight:600;letter-spacing:.8px;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.summary-val{font-size:15px;color:var(--navy);font-weight:500;line-height:1.5;word-break:break-word}
+.summary-val.muted{color:var(--muted);font-weight:400;font-style:italic}
+.summary-edit{font-size:12px;color:var(--accent-deep);font-weight:600;text-decoration:underline;text-underline-offset:2px;cursor:pointer;margin-left:8px}
+
+/* Price block */
+.price-block{background:linear-gradient(135deg,var(--surface) 0%,var(--navy) 100%);border-radius:var(--radius-lg);padding:28px;color:#fff;margin-bottom:20px;position:relative;overflow:hidden}
+.price-block::before{content:"";position:absolute;bottom:-30%;left:-10%;width:280px;height:280px;background:radial-gradient(circle,var(--iris-soft) 0%,transparent 70%);pointer-events:none}
+.price-label{display:inline-block;font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);margin-bottom:12px;padding:4px 12px;background:var(--aqua-soft);border-radius:99px;position:relative;z-index:1}
+.price-title{font-size:18px;font-weight:700;color:#fff;margin-bottom:6px;font-family:'Montserrat',sans-serif;position:relative;z-index:1}
+.price-amount{display:flex;align-items:baseline;gap:6px;margin-bottom:8px;position:relative;z-index:1}
+.price-val{font-family:'Montserrat',sans-serif;font-size:40px;font-weight:800;color:#fff;line-height:1}
+.price-unit{font-size:14px;color:rgba(237,233,254,.6);font-weight:500}
+.price-note{font-size:13px;color:rgba(237,233,254,.65);line-height:1.5;position:relative;z-index:1}
+
+/* Navigation buttons */
+.nav-row{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:8px;flex-wrap:wrap}
+.btn{font-family:'Montserrat',sans-serif;font-weight:700;font-size:14px;padding:14px 28px;border-radius:10px;cursor:pointer;transition:.25s cubic-bezier(.4,0,.2,1);display:inline-flex;align-items:center;gap:8px;text-decoration:none;border:none}
+.btn-primary{background:var(--accent);color:var(--navy);box-shadow:0 2px 8px rgba(34,211,238,.25)}
+.btn-primary:hover{background:var(--accent-hover);transform:translateY(-1px);box-shadow:0 4px 16px rgba(34,211,238,.35)}
+.btn-primary:disabled{background:var(--border);color:var(--muted);cursor:not-allowed;transform:none;box-shadow:none}
+.btn-submit{background:var(--accent);color:var(--navy);padding:18px 36px;font-size:16px;box-shadow:0 4px 20px rgba(34,211,238,.3)}
+.btn-submit:hover{background:var(--accent-hover);transform:translateY(-2px);box-shadow:0 8px 28px rgba(34,211,238,.4)}
+.btn-ghost{background:none;color:var(--muted);padding:10px 16px}
+.btn-ghost:hover{color:var(--accent-deep)}
+.btn-skip{background:none;color:var(--muted);font-size:13px;font-weight:500;padding:8px 14px;text-decoration:underline;text-underline-offset:3px}
+.btn-skip:hover{color:var(--accent-deep)}
+
+/* Loading */
+.loading{display:none;text-align:center;padding:80px 20px}
+.loading.show{display:block;animation:fadeIn .3s}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.spinner{width:64px;height:64px;border:4px solid var(--border);border-top-color:var(--accent);border-radius:50%;animation:spin 1s linear infinite;margin:0 auto 32px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.loading-title{font-size:22px;font-weight:700;color:var(--navy);margin-bottom:8px;font-family:'Montserrat',sans-serif}
+.loading-msg{font-size:15px;color:var(--muted);min-height:24px;transition:opacity .3s}
+
+/* Success */
+.success{display:none;animation:fadeIn .5s;text-align:center;padding:60px 20px}
+.success.show{display:block}
+.success-check{width:96px;height:96px;margin:0 auto 28px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 12px rgba(34,211,238,.15),0 20px 40px rgba(34,211,238,.3);animation:popIn .6s cubic-bezier(.68,-.55,.27,1.55)}
+.success-check svg{width:48px;height:48px;stroke:var(--navy);fill:none;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:30;stroke-dashoffset:30;animation:drawCheck .5s .3s forwards}
+@keyframes popIn{0%{transform:scale(0) rotate(-45deg);opacity:0}100%{transform:scale(1) rotate(0);opacity:1}}
+@keyframes drawCheck{to{stroke-dashoffset:0}}
+.success h2{font-size:28px;font-weight:800;margin-bottom:12px}
+.success p{color:var(--muted);margin-bottom:20px;max-width:420px;margin-left:auto;margin-right:auto;line-height:1.6}
+.success-steps{display:grid;gap:10px;max-width:440px;margin:28px auto;text-align:left}
+.success-step{background:#fff;border:1px solid var(--border);border-radius:12px;padding:14px 18px;display:flex;align-items:center;gap:14px;font-size:14px}
+.success-step-n{width:28px;height:28px;border-radius:50%;background:var(--aqua-soft);color:var(--accent-deep);font-weight:700;font-family:'Montserrat',sans-serif;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;border:1px solid rgba(34,211,238,.2)}
+
+/* Footer */
+.footer{background:var(--deep);padding:48px 28px 36px;color:#64748B;font-size:13px;margin-top:60px}
+.footer-inner{max-width:980px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:32px}
+.footer-inner strong{color:var(--light);font-weight:700}
+.footer-inner p{margin-top:4px;font-size:12px}
+.footer-links{display:flex;gap:20px;flex-wrap:wrap}
+.footer-links a{color:rgba(237,233,254,.6);font-size:13px;text-decoration:none}
+.footer-legal{max-width:980px;margin:24px auto 0;padding-top:24px;border-top:1px solid rgba(255,255,255,.06);font-size:11px;color:rgba(237,233,254,.3);text-align:center}
+.footer-legal a{color:rgba(237,233,254,.5);text-decoration:none;transition:color .2s}
+.footer-legal a:hover{color:#22D3EE}
+.footer-legal br{margin-bottom:6px}
+
+
+.rgpd-check{margin:16px 0}
+.rgpd-check label{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--muted);line-height:1.5;cursor:pointer}
+.rgpd-check input[type="checkbox"]{margin-top:3px;flex-shrink:0;width:16px;height:16px;accent-color:var(--accent)}
+.rgpd-check a{color:var(--blue);text-decoration:underline}
+
+/* ═══ UNIFIED FOOTER ═══ */
+.footer{background:var(--navy, #0D1025);color:rgba(237,233,254,.7);padding:60px 24px 30px;margin-top:80px}
+.footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:40px}
+.footer-brand strong{font-size:18px;color:#fff;display:block;margin-bottom:8px}
+.footer-brand p{font-size:13px;line-height:1.6;color:rgba(237,233,254,.5)}
+.footer-col{display:flex;flex-direction:column;gap:8px}
+.footer-col-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:rgba(237,233,254,.4);margin-bottom:6px}
+.footer-col a{color:rgba(237,233,254,.7);text-decoration:none;font-size:13px;transition:color .2s}
+.footer-col a:hover{color:#22D3EE}
+.footer-contact a{font-size:13px}
+.footer-legal{max-width:1100px;margin:30px auto 0;padding-top:20px;border-top:1px solid rgba(237,233,254,.1);font-size:11px;color:rgba(237,233,254,.35);text-align:center}
+@media(max-width:768px){
+.footer-inner{grid-template-columns:1fr 1fr;gap:30px 20px}
+}
+@media(max-width:480px){
+.footer-inner{grid-template-columns:1fr;gap:24px}
+}
+
+.container{max-width:1120px;margin:0 auto;padding:0 28px}
+.audit-hero{background:var(--navy);padding:48px 0 40px;color:#fff;text-align:center;position:relative;overflow:hidden}
+.audit-hero::before{content:'';position:absolute;top:-60%;right:-20%;width:800px;height:800px;background:radial-gradient(circle,rgba(14,116,144,.12) 0%,transparent 65%);pointer-events:none}
+.audit-hero h1{font-size:clamp(24px,4vw,38px);font-weight:900;letter-spacing:-.02em;margin-bottom:12px;position:relative}
+.audit-hero h1 em{font-style:normal;color:var(--accent)}
+.audit-hero-sub{font-size:15px;color:rgba(214,228,240,.75);max-width:560px;margin:0 auto;line-height:1.6;position:relative}
+/* ═══ MOBILE FIXES — 21/04/2026 ═══ */
+@media(max-width:700px){
+  .nav-links .nav-cta{width:100%;text-align:center;margin-top:8px}
+  .footer-contact a{word-break:break-all}
+}
+</style>
+    <script defer src="https://browser.sentry-cdn.com/8.0.0/bundle.min.js" crossorigin="anonymous"></script>
+    <script>Sentry.init({dsn:"https://14b68c10a24c3da4127332e14fd20359@o4511253060976640.ingest.de.sentry.io/4511253075132496",tracesSampleRate:0,replaysSessionSampleRate:0});</script>
+</head>
+<body>
+
+<div class="scroll-progress" id="scrollProgress"></div>
+<nav class="nav">
+<div class="nav-inner">
+  <a href="./" class="nav-logo"><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5NDAgMjAwIiB3aWR0aD0iOTQwIiBoZWlnaHQ9IjIwMCI+CiAgPGcgZmlsbD0id2hpdGUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICA8IS0tIFRyaWFuZ2xlIGljb24gLS0+CiAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMCwgOCkgdHJhbnNsYXRlKC03NSwgLTk5KSI+CiAgICAgIDxwYXRoIGQ9Ik0gMTE3LDI4MiBMIDE2OSwyODEgTCAxNzQsMjc0IEwgMTc3LDI2OCBMIDIyOSwxOTMgTCAyMjksMTkxIEwgMjA2LDE1OCBMIDIwNywxNTUgTCAyMjksMTU2IEwgMjM0LDE2NSBMIDIzNywxNjggTCAyMzksMTczIEwgMjgxLDIzNSBMIDI4MiwyNDAgTCAyNDAsMjQwIEwgMjEzLDI4MCBMIDIxMywyODIgTCAzNjQsMjgyIEwgMzYxLDI3NiBMIDMwMCwxODcgTCAyOTksMTg0IEwgMjQyLDk5IEwgMjQwLDEwMCBMIDIwNywxNTAgTCAyMDEsMTU2IEwgMTQwLDI0OCBMIDEzNywyNTEgTCAxMzYsMjU0IEwgMTI0LDI3MCBaIi8+CiAgICA8L2c+CiAgICA8IS0tIFRleHQgIkFkb3JhIiAtLT4KICAgIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDMzMCwgMTIpIHNjYWxlKDEuOCkgdHJhbnNsYXRlKC03MSwgLTMyMCkiPgogICAgICA8cGF0aCBkPSJNIDEwMiwzMjYgTCA5MywzNTIgTCA5MSwzNTUgTCA4NywzNjkgTCA4NSwzNzIgTCA4MiwzODMgTCA4MCwzODYgTCA3OCwzOTUgTCA3MSw0MTMgTCA3MSw0MTYgTCA4OSw0MTUgTCA5NywzOTAgTCAxMjUsMzg5IEwgMTMwLDM5NCBMIDEzMSw0MDAgTCAxMzMsNDAzIEwgMTM3LDQxNiBMIDE1NSw0MTYgTCAxNTUsNDEyIEwgMTUzLDQwOSBMIDEyNCwzMjYgWiBNIDExNCwzNDQgTCAxMjMsMzcyIEwgMTIyLDM3NiBMIDEwMiwzNzUgTCAxMDIsMzcyIEwgMTA2LDM1OSBMIDEwOCwzNTYgTCAxMTAsMzQ3IFoiLz4KICAgICAgPHBhdGggZD0iTSAyMjUsMzIwIEwgMjA4LDMyMCBMIDIwNiwzNTIgTCAyMDIsMzQ4IEwgMTk0LDM0NSBMIDE4MCwzNDUgTCAxNjksMzQ5IEwgMTU5LDM2MCBMIDE1NSwzNzMgTCAxNTYsMzk1IEwgMTYyLDQwNyBMIDE3MCw0MTQgTCAxNzgsNDE3IEwgMTkzLDQxNyBMIDE5OSw0MTUgTCAyMDUsNDA4IEwgMjA4LDQwOCBMIDIwOCw0MTYgTCAyMjUsNDE2IFogTSAxODcsMzU3IEwgMTk0LDM1NyBMIDE5OSwzNTkgTCAyMDQsMzY0IEwgMjA3LDM3MSBMIDIwOCwzODUgTCAyMDYsMzk0IEwgMjA0LDM5OCBMIDE5OSw0MDMgTCAxOTUsNDA1IEwgMTg2LDQwNSBMIDE4Miw0MDMgTCAxNzYsMzk3IEwgMTczLDM4OSBMIDE3MywzNzIgTCAxNzYsMzY1IEwgMTgyLDM1OSBaIi8+CiAgICAgIDxwYXRoIGQ9Ik0gMjU1LDM0NiBMIDI0NCwzNTIgTCAyMzgsMzU5IEwgMjMzLDM3MSBMIDIzMywzODkgTCAyMzUsMzk3IEwgMjQwLDQwNiBMIDI0NSw0MTEgTCAyNTIsNDE1IEwgMjU5LDQxNyBMIDI3Nyw0MTcgTCAyODMsNDE1IEwgMjk1LDQwNiBMIDMwMSwzOTYgTCAzMDMsMzg4IEwgMzAzLDM3NCBMIDMwMSwzNjYgTCAyOTYsMzU3IEwgMjkwLDM1MSBMIDI4MywzNDcgTCAyNzcsMzQ1IFogTSAyNjQsMzU3IEwgMjcyLDM1NyBMIDI3NiwzNTkgTCAyODEsMzY0IEwgMjg1LDM3NSBMIDI4NSwzODcgTCAyODMsMzk1IEwgMjc2LDQwMyBMIDI3Miw0MDUgTCAyNjQsNDA1IEwgMjU5LDQwMyBMIDI1NCwzOTggTCAyNTAsMzg2IEwgMjUwLDM3NCBMIDI1MiwzNjggTCAyNTgsMzYwIFoiLz4KICAgICAgPHBhdGggZD0iTSAzNTAsMzQ1IEwgMzM4LDM0NiBMIDMyOCwzNTUgTCAzMjgsMzQ3IEwgMzExLDM0NyBMIDMxMSw0MTYgTCAzMjgsNDE1IEwgMzI4LDM3NCBMIDMzMCwzNjggTCAzMzYsMzYyIEwgMzQzLDM1OSBMIDM1MCwzNTkgWiIvPgogICAgICA8cGF0aCBkPSJNIDM2NCwzNDkgTCAzNTksMzUzIEwgMzU1LDM2MCBMIDM1NCwzNjQgTCAzNTUsMzY5IEwgMzcwLDM2OSBMIDM3MSwzNjMgTCAzNzUsMzU4IEwgMzc3LDM1NyBMIDM4NiwzNTcgTCAzOTIsMzYyIEwgMzkzLDM2NSBMIDM5MiwzNzQgTCAzNzIsMzc1IEwgMzYwLDM4MCBMIDM1NCwzODYgTCAzNTEsMzk0IEwgMzUxLDQwMiBMIDM1NCw0MDkgTCAzNTgsNDEzIEwgMzY2LDQxNyBMIDM4MSw0MTcgTCAzODYsNDE1IEwgMzkxLDQwOSBMIDM5NCw0MDkgTCAzOTUsNDE2IEwgNDExLDQxNiBMIDQxMCwzNjcgTCA0MDksMzYxIEwgNDA2LDM1NCBMIDQwMCwzNDggTCAzOTEsMzQ1IEwgMzczLDM0NSBaIE0gMzkzLDM4NSBMIDM5MiwzOTcgTCAzODYsNDA0IEwgMzg0LDQwNSBMIDM3NSw0MDUgTCAzNjksNDAwIEwgMzY5LDM5MiBMIDM3NSwzODYgTCAzODMsMzg0IFoiLz4KICAgIDwvZz4KICA8L2c+Cjwvc3ZnPgo=" alt="ADORA" style="height:26px;width:auto"></a>
+  <div class="nav-links" id="navLinks">
+    <a href="simulateur.html">Simulateur</a>
+    <a href="estimateur.html">Estimateur</a>
+    <a href="audit-avant-achat.html" class="active">Audit achat</a>
+    <a href="sur-mesure.html">Sur mesure</a>
+    <a href="estimateur-outil.html" class="nav-cta">Estimer mes travaux</a>
+  </div>
+  <button class="nav-burger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">&#9776;</button>
+</div>
+</nav>
+
+<form id="auditForm" action="https://formspree.io/f/xzdjopya"
+<!-- MIGRATION PROD : remplacer xzdjopya par xzdjopya --> method="POST" enctype="multipart/form-data">
+<input type="hidden" name="_subject" value="[AUDIT 499€] Nouvelle demande">
+<input type="hidden" name="_formType" value="audit_499">
+
+<div class="app" id="appContainer">
+
+
+<!-- PAGE HERO -->
+<section style="background:#0D1025;padding:48px 0 40px;text-align:center;color:#fff">
+  <div style="max-width:900px;margin:0 auto;padding:0 28px">
+    <h1 style="font-family:'Montserrat',sans-serif;font-size:clamp(24px,4vw,36px);font-weight:900;letter-spacing:-.02em;margin:0 0 12px;color:#fff;text-align:center">Audit avant <span style="color:#22D3EE">Achat immobilier</span></h1>
+    <p style="font-size:15px;color:rgba(214,228,240,.75);max-width:560px;margin:0 auto;line-height:1.6;text-align:center">Analyse technique complète du bien · Estimation travaux · Conseil de négociation</p>
+  </div>
+</section>
+
+<div class="progress-rail" id="progressRail">
+  <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+  <div class="progress-info">
+    <span>Étape <span class="progress-step" id="stepNum">1</span> sur <span id="stepTotal">10</span></span>
+    <span id="stepPct">11%</span>
+  </div>
+</div>
+
+<!-- ═══════════ SCREEN 0 — TYPE DE BIEN ═══════════ -->
+<div class="screen active" id="s0" data-step="0">
+  <div class="screen-header">
+    <div class="screen-eyebrow">Votre projet</div>
+    <h2 class="screen-title">Quel type de bien envisagez-vous ?</h2>
+    <p class="screen-hint">L'audit avant achat s'adapte à tous types de biens immobiliers.</p>
+  </div>
+  <div class="cards">
+    <button type="button" class="card" data-val="maison" onclick="selectCard(this,0,'type_bien')">
+      <div class="card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+      <div class="card-title">Maison individuelle</div>
+      <div class="card-desc">Pavillon, maison de ville, corps de ferme</div>
+    </button>
+    <button type="button" class="card" data-val="appartement" onclick="selectCard(this,0,'type_bien')">
+      <div class="card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 6h2M13 6h2M9 10h2M13 10h2M9 14h2M13 14h2M9 18h6"/></svg></div>
+      <div class="card-title">Appartement</div>
+      <div class="card-desc">En copropriété, duplex, triplex</div>
+    </button>
+    <button type="button" class="card" data-val="immeuble" onclick="selectCard(this,0,'type_bien')">
+      <div class="card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 20h20M5 20V8l7-5 7 5v12"/><rect x="9" y="12" width="6" height="8"/></svg></div>
+      <div class="card-title">Immeuble entier</div>
+      <div class="card-desc">Investissement locatif, petit collectif</div>
+    </button>
+    <button type="button" class="card" data-val="autre" onclick="selectCard(this,0,'type_bien')">
+      <div class="card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22V12h6v10M4 6h16"/></svg></div>
+      <div class="card-title">Autre</div>
+      <div class="card-desc">Local commercial, atypique, mixte</div>
+    </button>
+  </div>
+  <input type="hidden" name="type_bien" id="f_type_bien">
+</div>
+
+<!-- ═══════════ SCREEN 1 — LIEN ANNONCE ═══════════ -->
+<div class="screen" id="s1" data-step="1">
+  <div class="screen-header">
+    <div class="screen-eyebrow">L'annonce</div>
+    <h2 class="screen-title">Avez-vous le lien de l'annonce ?</h2>
+    <p class="screen-hint">Collez l'URL de l'annonce (SeLoger, LeBonCoin, Logic-Immo, agence…). Nous analysons les photos, la description et les diagnostics mentionnés.</p>
+    <div class="screen-why">ℹ️ Cela nous fait gagner un temps précieux — mais ce n'est pas obligatoire.</div>
+  </div>
+  <div class="input-block">
+    <input type="url" class="big-input big-input-xs" id="s1_input" name="lien_annonce" placeholder="https://www.seloger.com/annonces/..." autocomplete="off">
+    <button type="button" class="paste-helper" onclick="pasteFromClipboard('s1_input')">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2"/></svg> Coller depuis le presse-papier
+    </button>
+  </div>
+  <div class="nav-row">
+    <button type="button" class="btn btn-ghost" onclick="goPrev()">← Retour</button>
+    <div style="display:flex;gap:12px;align-items:center">
+      <button type="button" class="btn-skip" onclick="goNext()">Pas d'annonce en ligne</button>
+      <button type="button" class="btn btn-primary" onclick="goNext()">Continuer</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ SCREEN 2 — ADRESSE ═══════════ -->
+<div class="screen" id="s2" data-step="2">
+  <div class="screen-header">
+    <div class="screen-eyebrow">Localisation</div>
+    <h2 class="screen-title">Où se trouve le bien ?</h2>
+    <p class="screen-hint">Adresse complète avec code postal et ville.</p>
+  </div>
+  <div class="input-block">
+    <input type="text" class="big-input big-input-smaller" id="s2_input" name="adresse" placeholder="12 rue de la Paix, 27400 Louviers" required>
+  </div>
+  <div class="nav-row">
+    <button type="button" class="btn btn-ghost" onclick="goPrev()">← Retour</button>
+    <button type="button" class="btn btn-primary" id="s2_next" onclick="goNext()" disabled>Continuer</button>
+  </div>
+</div>
+
+<!-- ═══════════ SCREEN 3 — SURFACE ═══════════ -->
+<div class="screen" id="s3" data-step="3">
+  <div class="screen-header">
+    <div class="screen-eyebrow">Surface</div>
+    <h2 class="screen-title">Quelle surface habitable ?</h2>
+    <p class="screen-hint">Environ — pas besoin d'être exact.</p>
+  </div>
+  <div class="slider-block">
+    <div class="slider-value"><span id="surfaceVal">100</span></div>
+    <div class="slider-unit">m² habitables</div>
+    <input type="range" class="slider-input" id="surface_slider" min="20" max="500" value="100" step="5" oninput="updateSurface(this.value)">
+    <input type="hidden" name="surface" id="f_surface" value="100">
+    <div class="slider-ticks"><span>20 m²</span><span>100 m²</span><span>250 m²</span><span>500+ m²</span></div>
+  </div>
+  <div class="nav-row">
+    <button type="button" class="btn btn-ghost" onclick="goPrev()">← Retour</button>
+    <button type="button" class="btn btn-primary" onclick="goNext()">Continuer</button>
+  </div>
+</div>
+
+<!-- ═══════════ SCREEN 4 — PRIX ═══════════ -->
+<div class="screen" id="s4" data-step="4">
+  <div class="screen-header">
+    <div class="screen-eyebrow">Prix demandé</div>
+    <h2 class="screen-title">Quel est le prix demandé (FAI) ?</h2>
+    <p class="screen-hint">Le prix affiché par le vendeur ou l'agence, frais d'agence inclus.</p>
+  </div>
+  <div class="input-block">
+    <div style="display:flex;align-items:baseline;gap:8px">
+      <input type="text" class="big-input" id="s4_input" name="prix" placeholder="250 000" inputmode="numeric" autocomplete="off" style="flex:1">
+      <span style="font-family:'Montserrat',sans-serif;font-size:28px;font-weight:700;color:var(--muted)">€</span>
+    </div>
+  </div>
+  <div class="nav-row">
+    <button type="button" class="btn btn-ghost" onclick="goPrev()">← Retour</button>
+    <button type="button" class="btn btn-primary" id="s4_next" onclick="goNext()" disabled>Continuer</button>
+  </div>
+</div>
+
+<!-- ═══════════ SCREEN 5 — ANNÉE ═══════════ -->
+<div class="screen" id="s5" data-step="5">
+  <div class="screen-header">
+    <div class="screen-eyebrow">Âge du bien</div>
+    <h2 class="screen-title">Année de construction ?</h2>
+    <p class="screen-hint">L'époque du bâti oriente l'analyse (amiante, plomb, techniques constructives…).</p>
+  </div>
+  <div class="cards">
+    <button type="button" class="card" data-val="avant1948" onclick="selectCard(this,5,'annee')">
+      <div class="card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 20h20M12 2L2 7h20L12 2zM4 7v13M8 7v13M12 7v13M16 7v13M20 7v13"/></svg></div>
+      <div class="card-title">Avant 1948</div>
+      <div class="card-desc">Bâti ancien, plomb à surveiller</div>
+    </button>
+    <button type="button" class="card" data-val="1948-1974" onclick="selectCard(this,5,'annee')">
+      <div class="card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 10h20M2 16h20M7 4v6M17 4v6M12 10v6M7 16v4M17 16v4"/></svg></div>
+      <div class="card-title">1948 — 1974</div>
+      <div class="card-desc">Amiante possible avant 1997</div>
+    </button>
+    <button type="button" class="card" data-val="1975-1990" onclick="selectCard(this,5,'annee')">
+      <div class="card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 21h18M9 8h1M9 12h1M9 16h1M5 21V5a2 2 0 012-2h4a2 2 0 012 2v16"/><path d="M15 21V9a2 2 0 012-2h2a2 2 0 012 2v12"/></svg></div>
+      <div class="card-title">1975 — 1990</div>
+      <div class="card-desc">Première isolation</div>
+    </button>
+    <button type="button" class="card" data-val="1991-2005" onclick="selectCard(this,5,'annee')">
+      <div class="card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+      <div class="card-title">1991 — 2005</div>
+      <div class="card-desc">RT 2000, confort moderne</div>
+    </button>
+    <button type="button" class="card" data-val="apres2005" onclick="selectCard(this,5,'annee')">
+      <div class="card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5L12 3zM5 19l1 3 1-3 3-1-3-1-1-3-1 3-3 1 3 1z"/></svg></div>
+      <div class="card-title">Après 2005</div>
+      <div class="card-desc">RT 2005/2012, BBC</div>
+    </button>
+    <button type="button" class="card" data-val="nsp" onclick="selectCard(this,5,'annee')">
+      <div class="card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg></div>
+      <div class="card-title">Je ne sais pas</div>
+      <div class="card-desc">On le détectera dans les docs</div>
+    </button>
+  </div>
+  <input type="hidden" name="annee" id="f_annee">
+</div>
+
+<!-- ═══════════ SCREEN 6 — DOCUMENTS ═══════════ -->
+<div class="screen" id="s6" data-step="6">
+  <div class="screen-header">
+    <div class="screen-eyebrow">Documents</div>
+    <h2 class="screen-title">Joignez les documents disponibles</h2>
+    <p class="screen-hint">PDF, JPG, PNG — max 10 Mo par fichier. Plus vous fournissez, plus l'analyse sera précise.</p>
+  </div>
+  
+  <div class="optional-notice">
+    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+    <div><strong>Pas encore tous les documents ?</strong> Pas de souci — envoyez ce que vous avez, on vous demandera le reste si besoin. Les photos suffisent souvent à démarrer l'analyse.</div>
+  </div>
+
+  <div class="uploads">
+    <label class="upload-zone" id="uz-ddt">
+      <input type="file" name="ddt" accept=".pdf,.jpg,.jpeg,.png" multiple onchange="showFiles(this,'uz-ddt')">
+      <div class="upload-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2"/></svg></div>
+      <div class="upload-title">DDT (diagnostics)</div>
+      <div class="upload-hint">Dossier de diagnostic technique</div>
+      <div class="upload-files" id="files-ddt"></div>
+    </label>
+    <label class="upload-zone" id="uz-dpe">
+      <input type="file" name="dpe" accept=".pdf,.jpg,.jpeg,.png" multiple onchange="showFiles(this,'uz-dpe')">
+      <div class="upload-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+      <div class="upload-title">DPE</div>
+      <div class="upload-hint">Performance énergétique</div>
+      <div class="upload-files" id="files-dpe"></div>
+    </label>
+    <label class="upload-zone" id="uz-ext">
+      <input type="file" name="photos_ext" accept=".jpg,.jpeg,.png" multiple onchange="showFiles(this,'uz-ext')">
+      <div class="upload-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+      <div class="upload-title">Photos extérieures</div>
+      <div class="upload-hint">Façades, toiture, terrain</div>
+      <div class="upload-files" id="files-ext"></div>
+    </label>
+    <label class="upload-zone" id="uz-int">
+      <input type="file" name="photos_int" accept=".jpg,.jpeg,.png" multiple onchange="showFiles(this,'uz-int')">
+      <div class="upload-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 11V7a4 4 0 018 0v4M12 11V7a4 4 0 018 0v4"/><rect x="2" y="11" width="20" height="8" rx="2"/><path d="M4 19v2M20 19v2"/></svg></div>
+      <div class="upload-title">Photos intérieures</div>
+      <div class="upload-hint">Pièces, installations</div>
+      <div class="upload-files" id="files-int"></div>
+    </label>
+  </div>
+  
+  <div class="nav-row">
+    <button type="button" class="btn btn-ghost" onclick="goPrev()">← Retour</button>
+    <div style="display:flex;gap:12px;align-items:center">
+      <button type="button" class="btn-skip" onclick="goNext()">Passer cette étape</button>
+      <button type="button" class="btn btn-primary" onclick="goNext()">Continuer</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ SCREEN 7 — CONTEXTE ═══════════ -->
+<div class="screen" id="s7" data-step="7">
+  <div class="screen-header">
+    <div class="screen-eyebrow">Le contexte</div>
+    <h2 class="screen-title">Quelques mots sur votre projet ?</h2>
+    <p class="screen-hint">Plus vous en dites, plus l'audit sera pertinent. Résidence principale ou investissement ? Compromis déjà signé ? Budget travaux envisagé ? Points qui vous inquiètent ?</p>
+  </div>
+  <div class="input-block">
+    <textarea class="big-textarea" name="contexte" id="s7_input" placeholder="Ex : Primo-accession pour résidence principale. Budget travaux estimé 80k€. Le DPE en F nous inquiète un peu. Compromis prévu mi-mai."></textarea>
+  </div>
+  <div class="nav-row">
+    <button type="button" class="btn btn-ghost" onclick="goPrev()">← Retour</button>
+    <div style="display:flex;gap:12px;align-items:center">
+      <button type="button" class="btn-skip" onclick="goNext()">Passer cette étape</button>
+      <button type="button" class="btn btn-primary" onclick="goNext()">Continuer</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ SCREEN 8 — COORDONNÉES ═══════════ -->
+<div class="screen" id="s8" data-step="8">
+  <div class="screen-header">
+    <div class="screen-eyebrow">Dernière étape</div>
+    <h2 class="screen-title">Comment vous contacter ?</h2>
+    <p class="screen-hint">Nous vous recontactons sous 24h pour confirmer votre demande et convenir du calendrier de l'audit.</p>
+  </div>
+  <div class="input-block">
+    <div class="field-row">
+      <div class="field">
+        <label class="field-label">Prénom</label>
+        <input type="text" class="field-input" name="prenom" id="s8_prenom" placeholder="Jean" required autocomplete="given-name">
+      </div>
+      <div class="field">
+        <label class="field-label">Nom</label>
+        <input type="text" class="field-input" name="nom" id="s8_nom" placeholder="Dupont" required autocomplete="family-name">
+      </div>
+    </div>
+    <div class="field-row">
+      <div class="field">
+        <label class="field-label">Email</label>
+        <input type="email" class="field-input" name="email" id="s8_email" placeholder="jean@exemple.fr" required autocomplete="email">
+      </div>
+      <div class="field">
+        <label class="field-label">Téléphone</label>
+        <input type="tel" class="field-input" name="telephone" id="s8_tel" placeholder="06 12 34 56 78" required autocomplete="tel">
+      </div>
+    </div>
+  </div>
+  <div class="nav-row">
+    <button type="button" class="btn btn-ghost" onclick="goPrev()">← Retour</button>
+    <button type="button" class="btn btn-primary" id="s8_next" onclick="goToRecap()" disabled>Voir le récapitulatif</button>
+  </div>
+</div>
+
+<!-- ═══════════ SCREEN 9 — RÉCAP + SUBMIT ═══════════ -->
+<div class="screen" id="s9" data-step="9">
+  <div class="screen-header">
+    <div class="screen-eyebrow">Récapitulatif</div>
+    <h2 class="screen-title">Tout est prêt. On envoie ?</h2>
+    <p class="screen-hint">Vérifiez le récapitulatif avant d'envoyer votre demande.</p>
+  </div>
+  
+  <div class="summary-card" id="summaryCard"></div>
+  
+  <div class="price-block">
+    <div class="price-label">Prestation ADORA</div>
+    <div class="price-title">Audit avant achat immobilier</div>
+    <div class="price-amount">
+      <span class="price-val">499 €</span>
+      <span class="price-unit">TTC · forfait fixe</span>
+    </div>
+    <div class="price-note">Paiement après validation de la demande. Non assujetti TVA (art. 293B). Rapport PDF + échange téléphonique 30 min livré sous 48-72h.</div>
+  </div>
+  
+  <div class="nav-row">
+    <button type="button" class="btn btn-ghost" onclick="goPrev()">← Retour</button>
+    <div class="rgpd-check">
+  <label><input type="checkbox" name="rgpd_consent" required> J'accepte que mes données soient traitées par ADORA pour répondre à ma demande, conformément à la <a href="politique-confidentialite.html" target="_blank">politique de confidentialité</a>.</label>
+</div>
+<div style="display:flex;align-items:center;justify-content:center;gap:16px;padding:14px 20px;background:rgba(34,211,238,.06);border:1px solid rgba(34,211,238,.15);border-radius:10px;margin-bottom:16px;font-size:12px;color:var(--muted)">
+  <span style="display:flex;align-items:center;gap:5px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg> Paiement sécurisé Stripe</span>
+  <span>·</span>
+  <span>SIRET 532 886 918</span>
+  <span>·</span>
+  <span>Données protégées</span>
+</div>
+<button type="submit" class="btn btn-submit">Envoyer ma demande d'audit →</button>
+  </div>
+  <p style="margin-top:18px;font-size:12px;color:var(--muted);text-align:center">En envoyant, vous acceptez d'être recontacté. Vos données restent confidentielles et ne sont jamais revendues.</p>
+</div>
+
+</div>
+
+<!-- Loading -->
+<div class="loading" id="loading">
+  <div class="spinner"></div>
+  <div class="loading-title">Envoi de votre demande...</div>
+  <div class="loading-msg" id="loadingMsg">Transmission des documents...</div>
+</div>
+
+<!-- Success -->
+<div class="success" id="success">
+  <div class="success-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+  <h2>Demande reçue !</h2>
+  <p>Merci <span id="successName"></span>, votre demande d'audit est bien arrivée. Je vous recontacte personnellement sous 24h.</p>
+      <p style="font-size:13px;color:var(--muted);margin-top:8px">Référence : <strong id="successRef" style="color:var(--navy);font-family:'JetBrains Mono',monospace,sans-serif;letter-spacing:.5px">—</strong></p>
+  
+  <div class="success-steps">
+    <div class="success-step"><div class="success-step-n">1</div><div><strong>Sous 24h</strong><br><span style="color:var(--muted);font-size:13px">Confirmation de votre demande par email ou téléphone</span></div></div>
+    <div class="success-step"><div class="success-step-n">2</div><div><strong>Après votre accord</strong><br><span style="color:var(--muted);font-size:13px">Lien de paiement sécurisé Stripe (499 € TTC)</span></div></div>
+    <div class="success-step"><div class="success-step-n">3</div><div><strong>48-72h après paiement</strong><br><span style="color:var(--muted);font-size:13px">Rapport d'audit PDF + appel téléphonique 30 min</span></div></div>
+  </div>
+  
+  <div style="margin-top:32px">
+    <a href="./" class="btn btn-ghost">Retour à l'accueil</a>
+    <a href="simulateur.html" class="btn btn-primary">Calculer mes aides →</a>
+  </div>
+</div>
+
+</form>
+
+<footer class="footer">
+<div class="footer-inner">
+  <div class="footer-brand">
+    <strong>ADORA</strong>
+    <p>Économiste de la construction<br>Normandie &amp; Île-de-France</p>
+  </div>
+  <div class="footer-col">
+    <div class="footer-col-title">Outils</div>
+    <a href="simulateur.html">Simulateur aides</a>
+    <a href="estimateur.html">Estimateur travaux</a>
+    <a href="audit-avant-achat.html">Audit avant achat</a>
+    <a href="sur-mesure.html">Sur mesure</a>
+  </div>
+  <div class="footer-col">
+    <div class="footer-col-title">ADORA</div>
+    <a href="a-propos.html">À propos</a>
+    <a href="professionnels.html">Professionnels</a>
+    <a href="partenaires.html">Partenaires</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <div class="footer-col footer-contact">
+    <div class="footer-col-title">Contact</div>
+    <a href="tel:+33660215509">06 60 21 55 09</a>
+    <a href="mailto:aymericdussauze@gmail.com">aymericdussauze@gmail.com</a>
+    <a href="https://adora-economie.fr">adora-economie.fr</a>
+  </div>
+</div>
+<div class="footer-legal">© 2026 ADORA · EI · SIRET 532 886 918 00020 · TVA non applicable, art. 293B du CGI<br><a href="mentions-legales.html">Mentions légales</a> · <a href="politique-confidentialite.html">Confidentialité</a> · <a href="cgv.html">CGV</a></div>
+</footer>
+
+<script>
+
+const TOTAL_STEPS = 10;
+let currentStep = 0;
+const STATE = {
+  type_bien: null, type_bien_label: null,
+  lien_annonce: "",
+  adresse: "",
+  surface: 100,
+  prix: "",
+  annee: null, annee_label: null,
+  contexte: "",
+  prenom: "", nom: "", email: "", telephone: "",
+  files: { ddt: 0, dpe: 0, photos_ext: 0, photos_int: 0 }
+};
+
+const CARD_LABELS = {
+  type_bien: {maison:"Maison individuelle",appartement:"Appartement",immeuble:"Immeuble entier",autre:"Autre"},
+  annee: {avant1948:"Avant 1948","1948-1974":"1948 — 1974","1975-1990":"1975 — 1990","1991-2005":"1991 — 2005",apres2005:"Après 2005",nsp:"Inconnue"}
+};
+
+// ═══ PROGRESS ═══
+function updateProgress() {
+  const pct = Math.round(((currentStep + 1) / TOTAL_STEPS) * 100);
+  document.getElementById("progressFill").style.width = pct + "%";
+  document.getElementById("stepNum").textContent = currentStep + 1;
+  document.getElementById("stepTotal").textContent = TOTAL_STEPS;
+  document.getElementById("stepPct").textContent = pct + "%";
+}
+
+// ═══ NAVIGATION ═══
+function goTo(n) {
+  if (n < 0 || n >= TOTAL_STEPS) return;
+  document.getElementById("s" + currentStep).classList.remove("active");
+  currentStep = n;
+  document.getElementById("s" + n).classList.add("active");
+  updateProgress();
+  if (typeof gtag === "function") gtag("event", "audit_step", { step: n });
+  // Save draft
+  try { localStorage.setItem("adora_audit_draft", JSON.stringify(STATE)); localStorage.setItem("adora_audit_step", String(n)); } catch(ex) {}
+  window.scrollTo({top: 0, behavior: "smooth"});
+  // Focus first input on screen
+  setTimeout(() => {
+    const screen = document.getElementById("s" + n);
+    const firstInput = screen.querySelector("input:not([type=hidden]):not([type=file]),textarea");
+    if (firstInput && !firstInput.disabled && window.innerWidth > 768) firstInput.focus();
+  }, 300);
+}
+function goNext() {
+  // Validate before leaving current
+  if (currentStep === 2) STATE.adresse = document.getElementById("s2_input").value.trim();
+  if (currentStep === 4) STATE.prix = document.getElementById("s4_input").value.trim();
+  if (currentStep === 1) STATE.lien_annonce = document.getElementById("s1_input").value.trim();
+  if (currentStep === 7) STATE.contexte = document.getElementById("s7_input").value.trim();
+  goTo(currentStep + 1);
+}
+function goPrev() { goTo(currentStep - 1); }
+
+// ═══ CARDS (auto-advance) ═══
+const FIELD_MAP = {
+  0: { field: "type_bien", autoAdvance: true },
+  5: { field: "annee", autoAdvance: true }
+};
+function selectCard(btn, stepIdx, field) {
+  const siblings = btn.parentElement.querySelectorAll(".card");
+  siblings.forEach(c => c.classList.remove("selected"));
+  btn.classList.add("selected");
+  const val = btn.dataset.val;
+  STATE[field] = val;
+  STATE[field + "_label"] = CARD_LABELS[field][val] || val;
+  document.getElementById("f_" + field).value = val;
+  setTimeout(goNext, 280);
+}
+
+// ═══ SURFACE SLIDER ═══
+function updateSurface(v) {
+  document.getElementById("surfaceVal").textContent = v;
+  document.getElementById("f_surface").value = v;
+  STATE.surface = parseInt(v);
+}
+
+// ═══ INPUT VALIDATION ═══
+document.getElementById("s2_input").addEventListener("input", function() {
+  document.getElementById("s2_next").disabled = this.value.trim().length < 5;
+});
+document.getElementById("s4_input").addEventListener("input", function() {
+  // Format number with spaces
+  let v = this.value.replace(/[^\d]/g, "");
+  if (v) {
+    this.value = v.replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+  }
+  document.getElementById("s4_next").disabled = v.length < 5 || parseInt(v) < 30000;
+});
+
+// Coordonnées validation
+function validateCoordonnees() {
+  const p = document.getElementById("s8_prenom").value.trim();
+  const n = document.getElementById("s8_nom").value.trim();
+  const e = document.getElementById("s8_email").value.trim();
+  const t = document.getElementById("s8_tel").value.trim();
+  const valid = p.length >= 2 && n.length >= 2 && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e) && /^(?:(?:\+|00)33[\s.-]?|0)[1-9](?:[\s.-]?\d{2}){4}$/.test(t.replace(/\s/g, ''));
+  document.getElementById("s8_next").disabled = !valid;
+  if (valid) { STATE.prenom = p; STATE.nom = n; STATE.email = e; STATE.telephone = t; }
+}
+["s8_prenom","s8_nom","s8_email","s8_tel"].forEach(id => {
+  document.getElementById(id).addEventListener("input", validateCoordonnees);
+});
+
+// ═══ PASTE FROM CLIPBOARD ═══
+async function pasteFromClipboard(inputId) {
+  try {
+    const text = await navigator.clipboard.readText();
+    const input = document.getElementById(inputId);
+    input.value = text;
+    input.focus();
+  } catch(e) {
+    alert("Impossible d'accéder au presse-papier. Collez manuellement avec Ctrl+V (Cmd+V sur Mac).");
+  }
+}
+
+// ═══ FILE UPLOADS ═══
+function showFiles(input, zoneId) {
+  const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10 Mo
+  const zone = document.getElementById(zoneId);
+  const filesEl = zone.querySelector(".upload-files");
+  const key = input.name === "ddt" ? "ddt" : input.name === "dpe" ? "dpe" : input.name === "photos_ext" ? "photos_ext" : "photos_int";
+  
+  // Vérification taille fichiers
+  const oversized = Array.from(input.files).filter(f => f.size > MAX_FILE_SIZE);
+  if (oversized.length) {
+    alert("Fichier trop volumineux (max 10 Mo) : " + oversized.map(f => f.name + " (" + Math.round(f.size / 1024 / 1024) + " Mo)").join(", "));
+    input.value = "";
+    filesEl.textContent = "";
+    zone.classList.remove("has-files");
+    STATE.files[key] = 0;
+    return;
+  }
+  
+  const n = input.files.length;
+  STATE.files[key] = n;
+  if (n > 0) {
+    filesEl.textContent = "✓ " + n + " fichier" + (n > 1 ? "s" : "") + " ajouté" + (n > 1 ? "s" : "");
+    zone.classList.add("has-files");
+  } else {
+    filesEl.textContent = "";
+    zone.classList.remove("has-files");
+  }
+}
+
+// ═══ RECAP ═══
+function goToRecap() {
+  validateCoordonnees();
+  buildSummary();
+  goTo(9);
+}
+
+function buildSummary() {
+  const s = STATE;
+  const filesTotal = s.files.ddt + s.files.dpe + s.files.photos_ext + s.files.photos_int;
+  const filesBreakdown = [];
+  if (s.files.ddt) filesBreakdown.push(s.files.ddt + " DDT");
+  if (s.files.dpe) filesBreakdown.push(s.files.dpe + " DPE");
+  if (s.files.photos_ext) filesBreakdown.push(s.files.photos_ext + " photo" + (s.files.photos_ext>1?"s":"") + " ext.");
+  if (s.files.photos_int) filesBreakdown.push(s.files.photos_int + " photo" + (s.files.photos_int>1?"s":"") + " int.");
+  const filesLabel = filesTotal === 0 ? "Aucun fichier" : filesTotal + " fichier" + (filesTotal>1?"s":"") + " (" + filesBreakdown.join(", ") + ")";
+  
+  const html = [
+    {label:"Type de bien", val: s.type_bien_label || "—", step:0},
+    {label:"Lien de l'annonce", val: s.lien_annonce || "—", step:1, muted: !s.lien_annonce},
+    {label:"Adresse", val: s.adresse || "—", step:2},
+    {label:"Surface", val: s.surface + " m²", step:3},
+    {label:"Prix demandé", val: s.prix ? s.prix + " €" : "—", step:4},
+    {label:"Année de construction", val: s.annee_label || "—", step:5},
+    {label:"Documents joints", val: filesLabel, step:6, muted: filesTotal===0},
+    {label:"Contexte", val: s.contexte || "Non précisé", step:7, muted: !s.contexte},
+    {label:"Vos coordonnées", val: s.prenom + " " + s.nom + " · " + s.email + " · " + s.telephone, step:8}
+  ].map(r => `
+    <div class="summary-section">
+      <div class="summary-label">${r.label} <span class="summary-edit" onclick="goTo(${r.step})">Modifier</span></div>
+      <div class="summary-val${r.muted ? ' muted' : ''}">${escapeHtml(r.val)}</div>
+    </div>
+  `).join("");
+  document.getElementById("summaryCard").innerHTML = html;
+}
+
+function escapeHtml(s) {
+  return String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]));
+}
+
+// ═══ SUBMIT ═══
+const LOADING_MSGS = [
+  "Transmission des documents...",
+  "Sécurisation des informations...",
+  "Envoi vers ADORA...",
+  "Finalisation..."
+];
+
+document.getElementById("auditForm").addEventListener("submit", async function(e) {
+  e.preventDefault(); // Empêche la soumission native (qui causerait un redirect Formspree)
+  
+  // Hide wizard, show loading
+  document.getElementById("appContainer").style.display = "none";
+  document.getElementById("loading").classList.add("show");
+  window.scrollTo({top: 0, behavior: "smooth"});
+  
+  // Rotation des messages de chargement
+  const msgEl = document.getElementById("loadingMsg");
+  let i = 0;
+  msgEl.textContent = LOADING_MSGS[0];
+  const rotator = setInterval(() => {
+    i++;
+    if (i >= LOADING_MSGS.length) { clearInterval(rotator); return; }
+    msgEl.style.opacity = "0";
+    setTimeout(() => { msgEl.textContent = LOADING_MSGS[i]; msgEl.style.opacity = "1"; }, 200);
+  }, 700);
+  
+  // Envoi réel à Formspree via fetch AJAX
+  try {
+    const formData = new FormData(this);
+    const response = await fetch(this.action, {
+      method: "POST",
+      body: formData,
+      headers: { "Accept": "application/json" }
+    });
+    
+    clearInterval(rotator);
+    
+    if (response.ok) {
+      // SUCCÈS réel — GA4 + success screen
+      if (typeof gtag === "function") {
+        gtag("event", "audit_request", { surface: STATE.surface, type_bien: STATE.type_bien });
+      }
+      // Clear localStorage draft if exists
+      try { localStorage.removeItem("adora_audit_draft"); } catch(ex) {}
+      document.getElementById("loading").classList.remove("show");
+      document.getElementById("success").classList.add("show");
+      document.getElementById("successName").textContent = STATE.prenom;
+      // Generate reference number
+      var refNum = "AUD-" + new Date().toISOString().slice(0,10).replace(/-/g,"") + "-" + Math.random().toString(36).substring(2,6).toUpperCase();
+      var refEl = document.getElementById("successRef");
+      if (refEl) refEl.textContent = refNum;
+      window.scrollTo({top: 0, behavior: "smooth"});
+    } else {
+      throw new Error("Formspree a répondu " + response.status);
+    }
+  } catch(err) {
+    clearInterval(rotator);
+    document.getElementById("loading").classList.remove("show");
+    document.getElementById("appContainer").style.display = "";
+    // Message d'erreur avec numéro de contact direct
+    const errDiv = document.createElement("div");
+    errDiv.style.cssText = "position:fixed;top:0;left:0;right:0;z-index:999;background:#FEF2F2;border-bottom:2px solid #EF4444;padding:20px 24px;text-align:center;font-size:14px;color:#991B1B;font-family:'Plus Jakarta Sans',sans-serif";
+    errDiv.innerHTML = '<strong>L\'envoi a échoué.</strong> Merci de réessayer, ou contactez-moi directement au <a href="tel:+33660215509" style="color:#991B1B;font-weight:700;text-decoration:underline">06 60 21 55 09</a> — <button onclick="this.parentElement.remove()" style="background:none;border:none;color:#991B1B;cursor:pointer;font-weight:700;margin-left:12px">✕ Fermer</button>';
+    document.body.prepend(errDiv);
+    console.error("Erreur soumission audit:", err);
+  }
+});
+
+// ═══ SCROLL PROGRESS ═══
+window.addEventListener("scroll", () => {
+  const h = document.documentElement;
+  const el = document.getElementById("scrollProgress");
+  if (el) el.style.width = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100 + "%";
+});
+
+
+// ═══ DRAG & DROP UPLOAD ═══
+document.querySelectorAll(".upload-zone").forEach(zone => {
+  const input = zone.querySelector('input[type="file"]');
+  if (!input) return;
+  
+  zone.addEventListener("dragover", e => { e.preventDefault(); e.stopPropagation(); zone.classList.add("dragover"); });
+  zone.addEventListener("dragleave", e => { e.preventDefault(); e.stopPropagation(); zone.classList.remove("dragover"); });
+  zone.addEventListener("drop", e => {
+    e.preventDefault(); e.stopPropagation();
+    zone.classList.remove("dragover");
+    if (e.dataTransfer.files.length) {
+      input.files = e.dataTransfer.files;
+      showFiles(input, zone.id);
+    }
+  });
+});
+
+// ═══ INIT ═══
+// Restore draft if exists
+(function() {
+  try {
+    var step = localStorage.getItem("adora_audit_step");
+    var draft = localStorage.getItem("adora_audit_draft");
+    if (step && draft && parseInt(step) > 0) {
+      var banner = document.createElement("div");
+      banner.id = "resumeBanner";
+      banner.style.cssText = "position:fixed;bottom:0;left:0;right:0;z-index:200;background:var(--navy,#0D1025);color:#fff;padding:16px 24px;display:flex;align-items:center;justify-content:center;gap:16px;box-shadow:0 -4px 20px rgba(0,0,0,.15);font-size:14px;font-family:'Plus Jakarta Sans',sans-serif";
+      banner.innerHTML = '<span>Demande en cours (étape ' + (parseInt(step) + 1) + '/10)</span><button onclick="restoreAuditDraft()" style="background:var(--accent,#22D3EE);color:var(--navy,#0D1025);border:none;padding:8px 20px;border-radius:8px;font-weight:700;font-size:13px;cursor:pointer;font-family:inherit">Reprendre</button><button onclick="clearAuditDraft()" style="background:transparent;color:rgba(237,233,254,.6);border:1px solid rgba(255,255,255,.15);padding:8px 16px;border-radius:8px;font-size:13px;cursor:pointer;font-family:inherit">Recommencer</button>';
+      document.body.appendChild(banner);
+    }
+  } catch(ex) {}
+})();
+updateProgress();
+
+function restoreAuditDraft() {
+  try {
+    var draft = JSON.parse(localStorage.getItem("adora_audit_draft"));
+    var step = parseInt(localStorage.getItem("adora_audit_step"));
+    if (draft) Object.assign(STATE, draft);
+    if (step > 0) goTo(step);
+  } catch(ex) {}
+  var b = document.getElementById("resumeBanner"); if (b) b.remove();
+}
+function clearAuditDraft() {
+  try { localStorage.removeItem("adora_audit_draft"); localStorage.removeItem("adora_audit_step"); } catch(ex) {}
+  var b = document.getElementById("resumeBanner"); if (b) b.remove();
+}
+
+</script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M0LENY960B"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-M0LENY960B')</script>
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"3f8ca9a1113f413a990a17c08ab83442"}'></script>
+</body>
+</html>

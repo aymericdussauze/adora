@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Estimateur de travaux | Combien coûtent vos travaux de rénovation ? | ADORA</title>
+<meta name="description" content="Estimez gratuitement le coût de vos travaux de rénovation par lot. 15 postes TCE, coefficients régionaux, rapport PDF professionnel.">
+<link rel="canonical" href="https://adora-economie.fr/estimateur.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://browser.sentry-cdn.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+/* ═══ ADORA PropTech Design System v2 ═══ */
+:root{--navy:#0D1025;--blue:#0E7490;--accent:#22D3EE;--accent-hover:#06B6D4;--light:#EDE9FE;--pale:#FAFAFC;--green:#A78BFA;--green-hover:#8B6FE3;--txt:#1E1B4B;--muted:#64748B;--border:#E5E7F2;--white:#FFFFFF;--radius:16px;--radius-sm:10px;--shadow-card:0 1px 3px rgba(13,16,37,.06),0 8px 24px rgba(13,16,37,.04);--shadow-hover:0 4px 12px rgba(13,16,37,.08),0 16px 40px rgba(13,16,37,.06);--shadow-btn:0 2px 8px rgba(34,211,238,.25);--transition:.3s cubic-bezier(.4,0,.2,1)}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;color:var(--txt);background:var(--white);line-height:1.7;font-size:16px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,h4{font-family:'Montserrat',sans-serif;line-height:1.2}
+a{color:var(--blue);text-decoration:none;transition:color var(--transition)}
+a:hover{color:var(--navy)}
+img{max-width:100%;height:auto}
+.container{max-width:1120px;margin:0 auto;padding:0 28px}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.4,0,.2,1),transform .7s cubic-bezier(.4,0,.2,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:100;background:rgba(13,16,37,.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.06)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;max-width:1120px;margin:0 auto;padding:14px 28px}
+.nav-logo img{height:26px;width:auto}
+.nav-links{display:flex;gap:8px;align-items:center}
+.nav-links a{color:rgba(237,233,254,.8);font-size:13.5px;font-weight:500;padding:6px 14px;border-radius:8px;transition:all var(--transition)}
+.nav-links a:hover{color:var(--white);background:rgba(255,255,255,.08);text-decoration:none}
+.nav-links a.active{color:var(--accent);background:rgba(34,211,238,.1)}
+.nav-cta{background:var(--accent)!important;color:var(--white)!important;padding:8px 20px!important;border-radius:8px;font-weight:700!important;font-size:13px!important;box-shadow:var(--shadow-btn)}
+.nav-cta:hover{background:var(--accent-hover)!important;transform:translateY(-1px)}
+.nav-burger{display:none;background:none;border:none;color:var(--white);font-size:22px;cursor:pointer;padding:8px}
+
+/* HERO */
+.hero{background:var(--navy);padding:72px 0 80px;color:var(--white);position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-40%;right:-20%;width:900px;height:900px;background:radial-gradient(circle,rgba(14,116,144,.15) 0%,transparent 65%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-30%;left:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(34,211,238,.08) 0%,transparent 65%);pointer-events:none}
+.hero h1{font-size:clamp(30px,5vw,48px);font-weight:900;margin-bottom:16px;letter-spacing:-.02em;position:relative}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero .subtitle{font-size:17px;color:rgba(214,228,240,.85);margin-bottom:32px;max-width:540px;line-height:1.7}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:15px 30px;border-radius:var(--radius-sm);font-size:15px;font-weight:700;font-family:'Plus Jakarta Sans',sans-serif;transition:all var(--transition);border:none;cursor:pointer;text-decoration:none!important}
+.btn-accent{background:var(--accent);color:var(--white);box-shadow:var(--shadow-btn)}
+.btn-accent:hover{background:var(--accent-hover);color:var(--white);transform:translateY(-2px);box-shadow:0 4px 16px rgba(34,211,238,.35)}
+.btn-green{background:var(--green);color:var(--white)}
+.btn-green:hover{background:var(--green-hover);color:var(--white);transform:translateY(-2px)}
+.btn-outline{background:transparent;color:rgba(214,228,240,.9);border:1.5px solid rgba(255,255,255,.2)}
+.btn-outline:hover{background:rgba(255,255,255,.08);color:var(--white);transform:translateY(-2px)}
+.btn-white{background:var(--white);color:var(--navy)}
+.btn-white:hover{background:#F1F5F9;color:var(--navy);transform:translateY(-2px)}
+
+/* SECTIONS */
+.section{padding:100px 0}
+.section-alt{background:var(--pale)}
+.section-label{display:inline-block;font-size:12px;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:2px;margin-bottom:12px}
+.section-title{font-size:clamp(28px,4vw,40px);font-weight:800;color:var(--navy);margin-bottom:12px;letter-spacing:-.01em}
+.section-sub{font-size:17px;color:var(--muted);max-width:560px;line-height:1.7}
+.section-header{margin-bottom:56px}
+.section-header.center{text-align:center}
+.section-header.center .section-sub{margin:0 auto}
+
+/* FAQ */
+.faq-list{max-width:720px;margin:0 auto}
+.faq-item{border-bottom:1px solid var(--border);padding:20px 0}
+.faq-q{font-weight:700;color:var(--navy);font-size:16px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;font-family:'Montserrat',sans-serif}
+.faq-q::after{content:'+';font-size:24px;color:var(--accent);font-weight:300;flex-shrink:0;transition:transform var(--transition)}
+.faq-item.open .faq-q::after{transform:rotate(45deg)}
+.faq-a{display:none;padding:12px 0 4px;font-size:15px;color:var(--muted);line-height:1.7}
+.faq-item.open .faq-a{display:block}
+
+/* CTA BAND */
+.cta-band{background:linear-gradient(135deg,var(--navy) 0%,#1F4E75 60%,#234E77 100%);padding:80px 28px;text-align:center;color:var(--white);position:relative;overflow:hidden}
+.cta-band::before{content:'';position:absolute;top:-50%;right:-20%;width:600px;height:600px;background:radial-gradient(circle,rgba(34,211,238,.1) 0%,transparent 60%);pointer-events:none}
+.cta-band h2{font-size:clamp(26px,4vw,36px);font-weight:800;margin-bottom:12px;position:relative}
+.cta-band .cta-sub{font-size:17px;color:rgba(237,233,254,.8);margin-bottom:36px;max-width:520px;margin-left:auto;margin-right:auto;position:relative}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative}
+.cta-links{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-top:20px;position:relative}
+.cta-links a{color:rgba(237,233,254,.5);font-size:13px;font-weight:500;transition:color var(--transition)}
+.cta-links a:hover{color:var(--white)}
+
+/* FOOTER */
+.footer{background:#080B1C;padding:48px 28px 36px;color:var(--muted);font-size:13px}
+.footer-inner{max-width:1120px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:32px}
+.footer-brand strong{color:var(--light);font-weight:700}
+.footer-brand p{margin-top:4px;font-size:12px}
+.footer-links{display:flex;gap:20px;flex-wrap:wrap}
+.footer-links a{color:rgba(237,233,254,.6);font-size:13px;font-weight:500;transition:color var(--transition)}
+.footer-links a:hover{color:var(--white)}
+.footer-contact{font-size:12px;color:rgba(237,233,254,.4);text-align:right}
+.footer-legal{max-width:1120px;margin:24px auto 0;padding-top:24px;border-top:1px solid rgba(255,255,255,.06);font-size:11px;color:rgba(237,233,254,.3);text-align:center}
+.footer-legal a{color:rgba(237,233,254,.5);text-decoration:none;transition:color .2s}
+.footer-legal a:hover{color:#22D3EE}
+.footer-legal br{margin-bottom:6px}
+
+/* FORMS */
+.form-container{max-width:720px;margin:0 auto;background:var(--white);border-radius:var(--radius);border:1px solid var(--border);padding:40px;box-shadow:var(--shadow-card)}
+.form-section{margin-bottom:32px}
+.form-section h3{font-size:17px;color:var(--navy);margin-bottom:4px}
+.form-section .section-hint{font-size:13px;color:var(--muted);margin-bottom:20px}
+.field{margin-bottom:18px}
+.field label{display:block;font-size:13px;font-weight:600;color:var(--navy);margin-bottom:6px}
+.field label .opt{font-weight:400;color:var(--muted);font-size:11px}
+.field input,.field select,.field textarea{width:100%;padding:12px 16px;border:1.5px solid var(--border);border-radius:var(--radius-sm);font-size:15px;font-family:'Plus Jakarta Sans',sans-serif;background:var(--white);transition:all var(--transition)}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 4px rgba(14,116,144,.1)}
+.field textarea{resize:vertical;min-height:110px}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.btn-submit{width:100%;padding:16px;background:var(--accent);color:var(--white);border:none;border-radius:var(--radius-sm);font-size:16px;font-weight:700;font-family:'Plus Jakarta Sans',sans-serif;cursor:pointer;transition:all var(--transition);box-shadow:var(--shadow-btn)}
+.btn-submit:hover{background:var(--accent-hover);transform:translateY(-1px)}
+
+/* SCROLL PROGRESS */
+.scroll-progress{position:fixed;top:0;left:0;height:3px;background:var(--accent);z-index:200;width:0;transition:width .1s linear}
+
+@media(max-width:700px){
+  .nav-links{display:none;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--navy);padding:16px 28px;gap:4px;border-top:1px solid rgba(255,255,255,.08)}
+  .nav-links.open{display:flex}
+  .nav-burger{display:block}
+  .hero{padding:56px 0 64px}
+  .section{padding:72px 0}
+  .field-row{grid-template-columns:1fr}
+  .footer-inner{flex-direction:column}
+  .footer-contact{text-align:left}
+}
+
+
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center;position:relative;z-index:1}
+.hero-badges{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px}
+.hero-badge{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);padding:6px 16px;border-radius:100px;font-size:13px;color:rgba(237,233,254,.8);font-weight:500}
+.explain-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;max-width:960px;margin:0 auto}
+.explain-text h3{font-size:22px;color:var(--navy);margin-bottom:14px}
+.explain-text p{font-size:15.5px;color:var(--txt);margin-bottom:16px;line-height:1.7}
+.lots-visual{background:var(--pale);border:1px solid var(--border);border-radius:var(--radius);padding:28px}
+.lots-example{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.lot-pill{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-sm);padding:10px 14px;font-size:13px;display:flex;justify-content:space-between;color:var(--navy);transition:all var(--transition)}
+.lot-pill:hover{border-color:var(--blue);transform:translateY(-1px)}
+.lot-pill .price{font-weight:700;color:var(--blue)}
+.lot-pill.highlight{background:var(--accent);border-color:var(--accent);color:var(--white)}
+.lot-pill.highlight .price{color:var(--white)}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;max-width:860px;margin:0 auto}
+.compare-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:32px 28px;position:relative;transition:all var(--transition)}
+.compare-card:hover{box-shadow:var(--shadow-hover)}
+.compare-card.premium{border-color:var(--accent);border-width:2px}
+.compare-card.premium::before{content:'Recommandé';position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--accent);color:var(--white);padding:4px 18px;border-radius:100px;font-size:11px;font-weight:700;font-family:'Montserrat',sans-serif}
+.compare-header{text-align:center;padding-bottom:20px;border-bottom:1px solid var(--border);margin-bottom:24px}
+.compare-header h3{font-size:19px;color:var(--navy);margin-bottom:6px}
+.compare-price{font-family:'Montserrat',sans-serif;font-size:36px;font-weight:900}
+.compare-price.free{color:var(--green)}
+.compare-price.paid{color:var(--accent)}
+.compare-price small{font-size:14px;font-weight:400;color:var(--muted)}
+.compare-list{list-style:none;padding:0}
+.compare-list li{padding:10px 0;font-size:14.5px;display:flex;align-items:flex-start;gap:10px;border-bottom:1px solid #f5f5f5}
+.compare-list li:last-child{border-bottom:none}
+.check{color:var(--green);font-weight:700;font-size:16px;flex-shrink:0}
+.cross{color:#D1D5DB;font-weight:700;font-size:16px;flex-shrink:0}
+.compare-cta{text-align:center;margin-top:24px}
+.steps-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:20px;max-width:1000px;margin:0 auto}
+.step-card{text-align:center;padding:28px 20px}
+.step-num{width:48px;height:48px;background:var(--navy);color:var(--white);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Montserrat',sans-serif;font-weight:800;font-size:18px;margin:0 auto 16px}
+.step-card h4{font-size:15px;color:var(--navy);margin-bottom:8px}
+.step-card p{font-size:13.5px;color:var(--muted);line-height:1.5}
+@media(max-width:900px){.hero-grid,.explain-grid{grid-template-columns:1fr}.compare-grid{grid-template-columns:1fr}}
+@media(max-width:700px){.steps-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:450px){.steps-grid{grid-template-columns:1fr}}
+
+
+/* ═══ UNIFIED FOOTER ═══ */
+.footer{background:var(--navy, #0D1025);color:rgba(237,233,254,.7);padding:60px 24px 30px;margin-top:80px}
+.footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:40px}
+.footer-brand strong{font-size:18px;color:#fff;display:block;margin-bottom:8px}
+.footer-brand p{font-size:13px;line-height:1.6;color:rgba(237,233,254,.5)}
+.footer-col{display:flex;flex-direction:column;gap:8px}
+.footer-col-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:rgba(237,233,254,.4);margin-bottom:6px}
+.footer-col a{color:rgba(237,233,254,.7);text-decoration:none;font-size:13px;transition:color .2s}
+.footer-col a:hover{color:#22D3EE}
+.footer-contact a{font-size:13px}
+.footer-legal{max-width:1100px;margin:30px auto 0;padding-top:20px;border-top:1px solid rgba(237,233,254,.1);font-size:11px;color:rgba(237,233,254,.35);text-align:center}
+@media(max-width:768px){
+.footer-inner{grid-template-columns:1fr 1fr;gap:30px 20px}
+}
+@media(max-width:480px){
+.footer-inner{grid-template-columns:1fr;gap:24px}
+}
+/* ═══ MOBILE FIXES — 21/04/2026 ═══ */
+@media(max-width:540px){
+  .lots-example{grid-template-columns:1fr}
+}
+@media(max-width:700px){
+  .nav-links .nav-cta{width:100%;text-align:center;margin-top:8px}
+  .footer-contact a{word-break:break-all}
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "Comment l'estimation est-elle calculée ?", "acceptedAnswer": {"@type": "Answer", "text": "L'estimation utilise les prix unitaires Batichiffrage actualisés T1 2026, avec des coefficients régionaux par département et un allotissement en 15 lots TCE."}},
+    {"@type": "Question", "name": "Quelle est la précision de l'estimation ?", "acceptedAnswer": {"@type": "Answer", "text": "La fourchette gratuite donne un ordre de grandeur à +/- 20%. Le rapport détaillé à 49€ affine avec un allotissement complet par lot."}},
+    {"@type": "Question", "name": "Quelle différence avec un devis d'artisan ?", "acceptedAnswer": {"@type": "Answer", "text": "Un devis d'artisan chiffre ses propres travaux. L'estimation ADORA couvre l'ensemble du projet, tous corps d'état, avec un regard indépendant."}}
+  ]
+}
+</script>
+    <script defer src="https://browser.sentry-cdn.com/8.0.0/bundle.min.js" crossorigin="anonymous"></script>
+    <script>Sentry.init({dsn:"https://14b68c10a24c3da4127332e14fd20359@o4511253060976640.ingest.de.sentry.io/4511253075132496",tracesSampleRate:0,replaysSessionSampleRate:0});</script>
+</head>
+<body>
+<div class="scroll-progress" id="scrollProgress"></div>
+<nav class="nav">
+<div class="nav-inner">
+  <a href="./" class="nav-logo"><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5NDAgMjAwIiB3aWR0aD0iOTQwIiBoZWlnaHQ9IjIwMCI+CiAgPGcgZmlsbD0id2hpdGUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICA8IS0tIFRyaWFuZ2xlIGljb24gLS0+CiAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMCwgOCkgdHJhbnNsYXRlKC03NSwgLTk5KSI+CiAgICAgIDxwYXRoIGQ9Ik0gMTE3LDI4MiBMIDE2OSwyODEgTCAxNzQsMjc0IEwgMTc3LDI2OCBMIDIyOSwxOTMgTCAyMjksMTkxIEwgMjA2LDE1OCBMIDIwNywxNTUgTCAyMjksMTU2IEwgMjM0LDE2NSBMIDIzNywxNjggTCAyMzksMTczIEwgMjgxLDIzNSBMIDI4MiwyNDAgTCAyNDAsMjQwIEwgMjEzLDI4MCBMIDIxMywyODIgTCAzNjQsMjgyIEwgMzYxLDI3NiBMIDMwMCwxODcgTCAyOTksMTg0IEwgMjQyLDk5IEwgMjQwLDEwMCBMIDIwNywxNTAgTCAyMDEsMTU2IEwgMTQwLDI0OCBMIDEzNywyNTEgTCAxMzYsMjU0IEwgMTI0LDI3MCBaIi8+CiAgICA8L2c+CiAgICA8IS0tIFRleHQgIkFkb3JhIiAtLT4KICAgIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDMzMCwgMTIpIHNjYWxlKDEuOCkgdHJhbnNsYXRlKC03MSwgLTMyMCkiPgogICAgICA8cGF0aCBkPSJNIDEwMiwzMjYgTCA5MywzNTIgTCA5MSwzNTUgTCA4NywzNjkgTCA4NSwzNzIgTCA4MiwzODMgTCA4MCwzODYgTCA3OCwzOTUgTCA3MSw0MTMgTCA3MSw0MTYgTCA4OSw0MTUgTCA5NywzOTAgTCAxMjUsMzg5IEwgMTMwLDM5NCBMIDEzMSw0MDAgTCAxMzMsNDAzIEwgMTM3LDQxNiBMIDE1NSw0MTYgTCAxNTUsNDEyIEwgMTUzLDQwOSBMIDEyNCwzMjYgWiBNIDExNCwzNDQgTCAxMjMsMzcyIEwgMTIyLDM3NiBMIDEwMiwzNzUgTCAxMDIsMzcyIEwgMTA2LDM1OSBMIDEwOCwzNTYgTCAxMTAsMzQ3IFoiLz4KICAgICAgPHBhdGggZD0iTSAyMjUsMzIwIEwgMjA4LDMyMCBMIDIwNiwzNTIgTCAyMDIsMzQ4IEwgMTk0LDM0NSBMIDE4MCwzNDUgTCAxNjksMzQ5IEwgMTU5LDM2MCBMIDE1NSwzNzMgTCAxNTYsMzk1IEwgMTYyLDQwNyBMIDE3MCw0MTQgTCAxNzgsNDE3IEwgMTkzLDQxNyBMIDE5OSw0MTUgTCAyMDUsNDA4IEwgMjA4LDQwOCBMIDIwOCw0MTYgTCAyMjUsNDE2IFogTSAxODcsMzU3IEwgMTk0LDM1NyBMIDE5OSwzNTkgTCAyMDQsMzY0IEwgMjA3LDM3MSBMIDIwOCwzODUgTCAyMDYsMzk0IEwgMjA0LDM5OCBMIDE5OSw0MDMgTCAxOTUsNDA1IEwgMTg2LDQwNSBMIDE4Miw0MDMgTCAxNzYsMzk3IEwgMTczLDM4OSBMIDE3MywzNzIgTCAxNzYsMzY1IEwgMTgyLDM1OSBaIi8+CiAgICAgIDxwYXRoIGQ9Ik0gMjU1LDM0NiBMIDI0NCwzNTIgTCAyMzgsMzU5IEwgMjMzLDM3MSBMIDIzMywzODkgTCAyMzUsMzk3IEwgMjQwLDQwNiBMIDI0NSw0MTEgTCAyNTIsNDE1IEwgMjU5LDQxNyBMIDI3Nyw0MTcgTCAyODMsNDE1IEwgMjk1LDQwNiBMIDMwMSwzOTYgTCAzMDMsMzg4IEwgMzAzLDM3NCBMIDMwMSwzNjYgTCAyOTYsMzU3IEwgMjkwLDM1MSBMIDI4MywzNDcgTCAyNzcsMzQ1IFogTSAyNjQsMzU3IEwgMjcyLDM1NyBMIDI3NiwzNTkgTCAyODEsMzY0IEwgMjg1LDM3NSBMIDI4NSwzODcgTCAyODMsMzk1IEwgMjc2LDQwMyBMIDI3Miw0MDUgTCAyNjQsNDA1IEwgMjU5LDQwMyBMIDI1NCwzOTggTCAyNTAsMzg2IEwgMjUwLDM3NCBMIDI1MiwzNjggTCAyNTgsMzYwIFoiLz4KICAgICAgPHBhdGggZD0iTSAzNTAsMzQ1IEwgMzM4LDM0NiBMIDMyOCwzNTUgTCAzMjgsMzQ3IEwgMzExLDM0NyBMIDMxMSw0MTYgTCAzMjgsNDE1IEwgMzI4LDM3NCBMIDMzMCwzNjggTCAzMzYsMzYyIEwgMzQzLDM1OSBMIDM1MCwzNTkgWiIvPgogICAgICA8cGF0aCBkPSJNIDM2NCwzNDkgTCAzNTksMzUzIEwgMzU1LDM2MCBMIDM1NCwzNjQgTCAzNTUsMzY5IEwgMzcwLDM2OSBMIDM3MSwzNjMgTCAzNzUsMzU4IEwgMzc3LDM1NyBMIDM4NiwzNTcgTCAzOTIsMzYyIEwgMzkzLDM2NSBMIDM5MiwzNzQgTCAzNzIsMzc1IEwgMzYwLDM4MCBMIDM1NCwzODYgTCAzNTEsMzk0IEwgMzUxLDQwMiBMIDM1NCw0MDkgTCAzNTgsNDEzIEwgMzY2LDQxNyBMIDM4MSw0MTcgTCAzODYsNDE1IEwgMzkxLDQwOSBMIDM5NCw0MDkgTCAzOTUsNDE2IEwgNDExLDQxNiBMIDQxMCwzNjcgTCA0MDksMzYxIEwgNDA2LDM1NCBMIDQwMCwzNDggTCAzOTEsMzQ1IEwgMzczLDM0NSBaIE0gMzkzLDM4NSBMIDM5MiwzOTcgTCAzODYsNDA0IEwgMzg0LDQwNSBMIDM3NSw0MDUgTCAzNjksNDAwIEwgMzY5LDM5MiBMIDM3NSwzODYgTCAzODMsMzg0IFoiLz4KICAgIDwvZz4KICA8L2c+Cjwvc3ZnPgo=" alt="ADORA" style="height:26px;width:auto"></a>
+  <div class="nav-links" id="navLinks">
+    <a href="simulateur.html">Simulateur</a>
+    <a href="estimateur.html" class="active">Estimateur</a>
+    <a href="audit-avant-achat.html">Audit achat</a>
+    <a href="sur-mesure.html">Sur mesure</a>
+    <a href="estimateur-outil.html" class="nav-cta">Estimer mes travaux</a>
+  </div>
+  <button class="nav-burger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">&#9776;</button>
+</div>
+</nav>
+
+<section class="hero">
+<div class="container">
+<div class="hero-grid">
+<div>
+<h1>Combien vont coûter<br>vos <em>travaux</em> ?</h1>
+<p class="subtitle">Obtenez une estimation structurée par lot, avec des fourchettes réalistes et des coefficients régionaux. Comme un économiste de la construction, en 3 minutes.</p>
+<div class="hero-badges">
+<span class="hero-badge">✓ 15 postes de travaux</span>
+<span class="hero-badge">✓ 101 départements</span>
+<span class="hero-badge">✓ Barèmes 2026</span>
+</div>
+<div style="display:flex;gap:14px;flex-wrap:wrap">
+<a href="estimateur-outil.html" class="btn btn-accent">Lancer mon estimation</a>
+<a href="estimateur.html#compare" class="btn btn-outline">Voir les formules</a>
+</div>
+</div>
+<div class="lots-visual" style="display:none"></div>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<div class="explain-grid reveal">
+<div class="explain-text">
+<h3>Pas un simple prix au m².<br>Un vrai allotissement.</h3>
+<p>Les "estimateurs" en ligne donnent un prix au m² générique. ADORA décompose votre budget par <strong>15 lots techniques</strong> — exactement comme le ferait un économiste de la construction en phase esquisse.</p>
+<p>Vous voyez où va chaque euro : gros œuvre, menuiseries, plomberie, électricité… Vous pouvez arbitrer, reporter, comparer.</p>
+</div>
+<div class="lots-visual">
+<div class="lots-example">
+<div class="lot-pill"><span>Gros œuvre</span><span class="price">32 400 €</span></div>
+<div class="lot-pill"><span>Charpente</span><span class="price">8 200 €</span></div>
+<div class="lot-pill highlight"><span>Électricité</span><span class="price">18 600 €</span></div>
+<div class="lot-pill"><span>Plomberie</span><span class="price">15 100 €</span></div>
+<div class="lot-pill"><span>Menuiseries</span><span class="price">12 800 €</span></div>
+<div class="lot-pill"><span>Isolation</span><span class="price">9 400 €</span></div>
+<div class="lot-pill"><span>Plâtrerie</span><span class="price">7 200 €</span></div>
+<div class="lot-pill"><span>Peinture</span><span class="price">5 800 €</span></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section section-alt" id="compare">
+<div class="container">
+<div class="section-header center reveal">
+<div class="section-label">Formules</div>
+<h2 class="section-title">Gratuit pour commencer.<br>Complet pour décider.</h2>
+<p class="section-sub">La synthèse gratuite vous donne l'enveloppe. Le rapport complet vous donne le détail pour agir.</p>
+</div>
+<div class="compare-grid reveal">
+<div class="compare-card">
+<div class="compare-header">
+<h3>Synthèse gratuite</h3>
+<div class="compare-price free">0 €</div>
+</div>
+<ul class="compare-list">
+<li><span class="check">&#10003;</span> Enveloppe globale (fourchette basse/haute)</li>
+<li><span class="check">&#10003;</span> 3 grands postes : gros œuvre, second œuvre, équipements</li>
+<li><span class="check">&#10003;</span> Ratio moyen au m² affiché</li>
+<li><span class="check">&#10003;</span> Coefficient régional appliqué</li>
+<li><span class="cross">&#10007;</span> <span style="color:#bbb">Détail par lot (15 lots × 4 gammes)</span></li>
+<li><span class="cross">&#10007;</span> <span style="color:#bbb">Points de vigilance technique</span></li>
+<li><span class="cross">&#10007;</span> <span style="color:#bbb">Planning prévisionnel</span></li>
+<li><span class="cross">&#10007;</span> <span style="color:#bbb">Rapport PDF 6 pages</span></li>
+</ul>
+<div class="compare-cta"><a href="estimateur-outil.html" class="btn btn-green" style="width:100%;font-size:14px;padding:12px">Commencer gratuitement</a></div>
+</div>
+<div class="compare-card premium">
+<div class="compare-header">
+<h3>Rapport complet</h3>
+<div class="compare-price paid">49 € <small>TTC</small></div>
+</div>
+<ul class="compare-list">
+<li><span class="check">&#10003;</span> <strong>15 lots détaillés × 4 gammes (éco → haut de gamme)</strong></li>
+<li><span class="check">&#10003;</span> <strong>6 coefficients correcteurs expliqués</strong></li>
+<li><span class="check">&#10003;</span> <strong>Points de vigilance technique personnalisés</strong></li>
+<li><span class="check">&#10003;</span> <strong>Benchmark départemental vs moyenne nationale</strong></li>
+<li><span class="check">&#10003;</span> <strong>Planning prévisionnel par phases</strong></li>
+<li><span class="check">&#10003;</span> <strong>Rapport PDF 6 pages brandé ADORA</strong></li>
+<li><span class="check">&#10003;</span> Enveloppe globale + fourchettes</li>
+</ul>
+<p style="font-size:12px;color:var(--blue);font-weight:700;text-align:center;margin:10px 0 0;padding:8px 0;border-top:1px solid var(--border)">49 € déductibles si vous signez un accompagnement ADORA sous 30 jours</p>
+<div class="compare-cta"><a href="estimateur-outil.html" class="btn btn-accent" style="width:100%;font-size:14px;padding:12px">Obtenir mon rapport complet</a></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Report preview + social proof -->
+<section class="section section-alt" style="padding:60px 0">
+<div class="container">
+  <p style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--blue);margin-bottom:20px;text-align:center">Aperçu du rapport 49 €</p>
+  <div class="reveal" style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:32px">
+    <!-- P1 Couverture -->
+    <div style="width:120px;aspect-ratio:1/1.41;background:var(--navy);border-radius:6px;padding:10px 9px 8px;box-shadow:0 6px 20px rgba(13,16,37,.15);display:flex;flex-direction:column;position:relative;overflow:hidden">
+      <div style="width:32px;height:7px;background:rgba(255,255,255,.9);border-radius:1px;margin-bottom:auto"></div>
+      <div style="margin-top:auto">
+        <div style="font-size:7px;font-weight:800;color:var(--white);line-height:1.2;font-family:'Montserrat',sans-serif;margin-bottom:6px">Estimation<br>de travaux</div>
+        <div style="display:flex;gap:3px">
+          <div style="flex:1;background:rgba(34,211,238,.15);border-radius:3px;padding:3px;text-align:center"><div style="font-size:5px;color:rgba(255,255,255,.5)">Surface</div><div style="font-size:7px;font-weight:700;color:var(--accent)">95 m²</div></div>
+          <div style="flex:1;background:rgba(34,211,238,.15);border-radius:3px;padding:3px;text-align:center"><div style="font-size:5px;color:rgba(255,255,255,.5)">Budget</div><div style="font-size:7px;font-weight:700;color:var(--accent)">87 k€</div></div>
+          <div style="flex:1;background:rgba(34,211,238,.15);border-radius:3px;padding:3px;text-align:center"><div style="font-size:5px;color:rgba(255,255,255,.5)">Lots</div><div style="font-size:7px;font-weight:700;color:var(--accent)">12</div></div>
+        </div>
+      </div>
+      <div style="font-size:6px;color:var(--muted);text-align:center;margin-top:6px;color:rgba(255,255,255,.3)">Page 1 — Couverture</div>
+    </div>
+    <!-- P2 Projet -->
+    <div style="width:120px;aspect-ratio:1/1.41;background:var(--white);border:1px solid var(--border);border-radius:6px;padding:8px 7px 6px;box-shadow:0 6px 20px rgba(13,16,37,.08);display:flex;flex-direction:column">
+      <div style="font-size:6px;font-weight:800;color:var(--navy);margin-bottom:5px;font-family:'Montserrat',sans-serif">Votre projet</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:3px;margin-bottom:5px">
+        <div style="background:var(--pale);border-radius:2px;padding:3px"><div style="font-size:4.5px;color:var(--muted)">Type</div><div style="font-size:5.5px;font-weight:700;color:var(--navy)">Maison</div></div>
+        <div style="background:var(--pale);border-radius:2px;padding:3px"><div style="font-size:4.5px;color:var(--muted)">Dept</div><div style="font-size:5.5px;font-weight:700;color:var(--navy)">Seine-Mar. (76)</div></div>
+        <div style="background:var(--pale);border-radius:2px;padding:3px"><div style="font-size:4.5px;color:var(--muted)">Année</div><div style="font-size:5.5px;font-weight:700;color:var(--navy)">1960-1980</div></div>
+        <div style="background:var(--pale);border-radius:2px;padding:3px"><div style="font-size:4.5px;color:var(--muted)">État</div><div style="font-size:5.5px;font-weight:700;color:var(--navy)">À rénover</div></div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:2px;margin-bottom:4px">
+        <span style="font-size:4.5px;background:rgba(34,211,238,.1);color:var(--blue);padding:1px 3px;border-radius:2px">GO</span>
+        <span style="font-size:4.5px;background:rgba(34,211,238,.1);color:var(--blue);padding:1px 3px;border-radius:2px">Élec</span>
+        <span style="font-size:4.5px;background:rgba(34,211,238,.1);color:var(--blue);padding:1px 3px;border-radius:2px">Plomb.</span>
+        <span style="font-size:4.5px;background:rgba(34,211,238,.1);color:var(--blue);padding:1px 3px;border-radius:2px">Isol.</span>
+        <span style="font-size:4.5px;background:rgba(34,211,238,.1);color:var(--blue);padding:1px 3px;border-radius:2px">Menu.</span>
+        <span style="font-size:4.5px;background:rgba(34,211,238,.1);color:var(--blue);padding:1px 3px;border-radius:2px">+7</span>
+      </div>
+      <div style="font-size:4.5px;font-weight:700;color:var(--navy);margin-bottom:3px">6 coefficients</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;flex:1">
+        <div style="background:var(--pale);border-radius:2px;padding:2px;text-align:center"><div style="font-size:4px;color:var(--muted)">Dept</div><div style="font-size:5px;font-weight:700;color:var(--blue)">1.02</div></div>
+        <div style="background:var(--pale);border-radius:2px;padding:2px;text-align:center"><div style="font-size:4px;color:var(--muted)">État</div><div style="font-size:5px;font-weight:700;color:#F59E0B">1.20</div></div>
+        <div style="background:var(--pale);border-radius:2px;padding:2px;text-align:center"><div style="font-size:4px;color:var(--muted)">Âge</div><div style="font-size:5px;font-weight:700;color:var(--blue)">1.10</div></div>
+      </div>
+      <div style="font-size:5px;color:var(--muted);text-align:center;margin-top:4px">Page 2 — Contexte</div>
+    </div>
+    <!-- P3 Estimation -->
+    <div style="width:120px;aspect-ratio:1/1.41;background:var(--white);border:1px solid var(--border);border-radius:6px;padding:8px 7px 6px;box-shadow:0 6px 20px rgba(13,16,37,.08);display:flex;flex-direction:column">
+      <div style="font-size:6px;font-weight:800;color:var(--navy);margin-bottom:4px;font-family:'Montserrat',sans-serif">Estimation détaillée</div>
+      <div style="flex:1;display:flex;flex-direction:column;gap:1.5px;font-size:4.5px">
+        <div style="display:flex;justify-content:space-between;padding:2px 0;border-bottom:0.5px solid var(--border)"><span style="color:var(--navy);font-weight:600">Gros œuvre</span><span style="color:var(--blue);font-weight:700">32 400 €</span></div>
+        <div style="display:flex;justify-content:space-between;padding:2px 0;border-bottom:0.5px solid var(--border)"><span style="color:var(--navy);font-weight:600">Charpente</span><span style="color:var(--blue);font-weight:700">8 200 €</span></div>
+        <div style="display:flex;justify-content:space-between;padding:2px 0;border-bottom:0.5px solid var(--border)"><span style="color:var(--navy);font-weight:600">Électricité</span><span style="color:var(--blue);font-weight:700">18 600 €</span></div>
+        <div style="display:flex;justify-content:space-between;padding:2px 0;border-bottom:0.5px solid var(--border)"><span style="color:var(--navy);font-weight:600">Plomberie</span><span style="color:var(--blue);font-weight:700">15 100 €</span></div>
+        <div style="display:flex;justify-content:space-between;padding:2px 0;border-bottom:0.5px solid var(--border)"><span style="color:var(--navy);font-weight:600">Menuiseries</span><span style="color:var(--blue);font-weight:700">12 800 €</span></div>
+        <div style="display:flex;justify-content:space-between;padding:2px 0;border-bottom:0.5px solid var(--border)"><span style="color:var(--navy);font-weight:600">Isolation</span><span style="color:var(--blue);font-weight:700">9 400 €</span></div>
+        <div style="display:flex;justify-content:space-between;padding:2px 0;border-bottom:0.5px solid var(--border)"><span style="color:var(--muted)">+ 6 lots…</span><span style="color:var(--muted)">…</span></div>
+      </div>
+      <div style="background:var(--navy);border-radius:3px;padding:4px;display:flex;justify-content:space-between;margin-top:3px">
+        <span style="font-size:5px;font-weight:700;color:var(--white)">TOTAL</span>
+        <span style="font-size:6px;font-weight:800;color:var(--accent)">74 200 — 106 400 €</span>
+      </div>
+      <div style="font-size:5px;color:var(--muted);text-align:center;margin-top:4px">Page 3 — 15 lots × 4 gammes</div>
+    </div>
+    <!-- P4 Analyse -->
+    <div style="width:120px;aspect-ratio:1/1.41;background:var(--white);border:1px solid var(--border);border-radius:6px;padding:8px 7px 6px;box-shadow:0 6px 20px rgba(13,16,37,.08);display:flex;flex-direction:column">
+      <div style="font-size:6px;font-weight:800;color:var(--navy);margin-bottom:5px;font-family:'Montserrat',sans-serif">Analyse technique</div>
+      <div style="font-size:4.5px;color:var(--muted);margin-bottom:3px">Votre projet vs moyenne nationale</div>
+      <div style="height:5px;width:100%;background:var(--pale);border-radius:99px;margin-bottom:2px;position:relative"><div style="height:100%;width:62%;background:var(--accent);border-radius:99px"></div><div style="position:absolute;top:-1px;left:50%;width:1px;height:7px;background:var(--navy)"></div></div>
+      <div style="display:flex;justify-content:space-between;font-size:4px;color:var(--muted);margin-bottom:8px"><span>750 €/m²</span><span style="font-weight:700;color:var(--navy)">▲ vous</span><span>1 400 €/m²</span></div>
+      <div style="font-size:4.5px;font-weight:700;color:var(--navy);margin-bottom:3px">Points de vigilance</div>
+      <div style="background:#FEF3C7;border-left:2px solid #F59E0B;padding:3px 4px;border-radius:0 2px 2px 0;margin-bottom:3px"><div style="font-size:4.5px;font-weight:700;color:#92400E">Amiante probable</div><div style="font-size:4px;color:#92400E">Construction pré-1997</div></div>
+      <div style="background:#FEF3C7;border-left:2px solid #F59E0B;padding:3px 4px;border-radius:0 2px 2px 0;margin-bottom:3px"><div style="font-size:4.5px;font-weight:700;color:#92400E">Accès chantier</div><div style="font-size:4px;color:#92400E">+15 % si difficile</div></div>
+      <div style="background:#ECFDF5;border-left:2px solid #10B981;padding:3px 4px;border-radius:0 2px 2px 0"><div style="font-size:4.5px;font-weight:700;color:#065F46">Structure saine</div><div style="font-size:4px;color:#065F46">Pas de reprise GO</div></div>
+      <div style="font-size:5px;color:var(--muted);text-align:center;margin-top:auto;padding-top:4px">Page 4 — Alertes métier</div>
+    </div>
+    <!-- P5 Planning -->
+    <div style="width:120px;aspect-ratio:1/1.41;background:var(--white);border:1px solid var(--border);border-radius:6px;padding:8px 7px 6px;box-shadow:0 6px 20px rgba(13,16,37,.08);display:flex;flex-direction:column">
+      <div style="font-size:6px;font-weight:800;color:var(--navy);margin-bottom:6px;font-family:'Montserrat',sans-serif">Planning prévisionnel</div>
+      <div style="flex:1;display:flex;flex-direction:column;gap:5px;padding-left:8px;border-left:1.5px solid var(--border)">
+        <div style="position:relative"><div style="position:absolute;left:-11px;top:0;width:6px;height:6px;background:var(--accent);border-radius:50%"></div><div style="font-size:5px;font-weight:700;color:var(--navy)">Études</div><div style="font-size:4px;color:var(--muted)">Sem. 1-2</div></div>
+        <div style="position:relative"><div style="position:absolute;left:-11px;top:0;width:6px;height:6px;background:var(--accent);border-radius:50%"></div><div style="font-size:5px;font-weight:700;color:var(--navy)">Consultation</div><div style="font-size:4px;color:var(--muted)">Sem. 3-5</div></div>
+        <div style="position:relative"><div style="position:absolute;left:-11px;top:0;width:6px;height:6px;background:var(--accent);border-radius:50%"></div><div style="font-size:5px;font-weight:700;color:var(--navy)">Gros œuvre</div><div style="font-size:4px;color:var(--muted)">Sem. 6-12</div></div>
+        <div style="position:relative"><div style="position:absolute;left:-11px;top:0;width:6px;height:6px;background:var(--blue);border-radius:50%"></div><div style="font-size:5px;font-weight:700;color:var(--navy)">Second œuvre</div><div style="font-size:4px;color:var(--muted)">Sem. 12-20</div></div>
+        <div style="position:relative"><div style="position:absolute;left:-11px;top:0;width:6px;height:6px;background:var(--blue);border-radius:50%"></div><div style="font-size:5px;font-weight:700;color:var(--navy)">Finitions</div><div style="font-size:4px;color:var(--muted)">Sem. 20-24</div></div>
+        <div style="position:relative"><div style="position:absolute;left:-11px;top:0;width:6px;height:6px;background:#10B981;border-radius:50%"></div><div style="font-size:5px;font-weight:700;color:#10B981">Réception</div><div style="font-size:4px;color:var(--muted)">Sem. 24</div></div>
+      </div>
+      <div style="font-size:5px;color:var(--muted);text-align:center;margin-top:4px">Page 5 — Timeline</div>
+    </div>
+    <!-- P6 CTA -->
+    <div style="width:120px;aspect-ratio:1/1.41;background:var(--white);border:1px solid var(--border);border-radius:6px;padding:8px 7px 6px;box-shadow:0 6px 20px rgba(13,16,37,.08);display:flex;flex-direction:column">
+      <div style="font-size:6px;font-weight:800;color:var(--navy);margin-bottom:5px;font-family:'Montserrat',sans-serif">Pour aller plus loin</div>
+      <div style="background:var(--pale);border-radius:3px;padding:5px;margin-bottom:6px">
+        <div style="font-size:5px;font-weight:700;color:var(--navy);margin-bottom:2px">Cas client</div>
+        <div style="font-size:4.5px;color:var(--muted);line-height:1.3">Rénovation 136 m² en Seine-Maritime. Résultat : −12 % vs devis initiaux. Économie nette : 18 000 €.</div>
+      </div>
+      <div style="background:rgba(34,211,238,.08);border:1px solid rgba(34,211,238,.2);border-radius:3px;padding:5px;margin-bottom:5px">
+        <div style="font-size:5px;font-weight:700;color:var(--blue);margin-bottom:2px">49 € déductibles</div>
+        <div style="font-size:4.5px;color:var(--muted);line-height:1.3">Si vous signez un accompagnement AMO dans les 30 jours.</div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:3px;margin-top:auto">
+        <div style="background:var(--accent);border-radius:3px;padding:4px;text-align:center;font-size:5px;font-weight:700;color:var(--navy)">Prendre rendez-vous</div>
+        <div style="border:1px solid var(--navy);border-radius:3px;padding:3px;text-align:center;font-size:5px;font-weight:600;color:var(--navy)">Voir les packs AMO</div>
+      </div>
+      <div style="font-size:5px;color:var(--muted);text-align:center;margin-top:5px">Page 6 — Accompagnement</div>
+    </div>
+  </div>
+  <p style="font-size:12px;color:var(--muted);text-align:center;font-style:italic;margin-bottom:40px">6 pages : couverture, contexte projet, estimation détaillée, analyse technique, planning, accompagnement — données fictives à titre d'illustration</p>
+
+  <!-- Social proof -->
+  <div class="reveal" style="max-width:640px;margin:0 auto;background:var(--white);border:1px solid var(--border);border-radius:12px;padding:24px 28px;display:flex;gap:18px;align-items:start;box-shadow:0 2px 12px rgba(0,0,0,.04)">
+    <div style="width:40px;height:40px;border-radius:50%;background:var(--green-bg,#ECFDF5);border:1px solid rgba(5,150,105,.15);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;color:var(--green,#059669)">✓</div>
+    <div>
+      <div style="font-family:'Montserrat',sans-serif;font-size:14px;font-weight:800;color:var(--navy);margin-bottom:6px">Rénovation 136 m² en Seine-Maritime — résultat : −12 % vs devis initiaux</div>
+      <div style="font-size:13px;color:var(--muted);line-height:1.6">Un couple acquéreur a fait appel à ADORA après avoir utilisé l'estimateur pour auditer ses 3 devis. Réallocation de 2 lots, négociation appuyée par le DPGF. Économie nette de 18 000 € sur l'enveloppe finale.</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<div class="section-header center reveal">
+<div class="section-label">Comment ça marche</div>
+<h2 class="section-title">5 étapes, 3 minutes</h2>
+</div>
+<div class="steps-grid reveal">
+<div class="step-card"><div class="step-num">1</div><h4>Votre projet</h4><p>Type de rénovation, bien, surface, département, année de construction.</p></div>
+<div class="step-card"><div class="step-num">2</div><h4>Votre bien</h4><p>État actuel, gamme souhaitée, contraintes (amiante, accès).</p></div>
+<div class="step-card"><div class="step-num">3</div><h4>Fourchette instantanée</h4><p>Votre enveloppe budgétaire apparaît immédiatement à l'écran.</p></div>
+<div class="step-card"><div class="step-num">4</div><h4>Email = synthèse</h4><p>Entrez votre email pour débloquer la répartition par grands postes.</p></div>
+<div class="step-card"><div class="step-num">5</div><h4>Rapport complet</h4><p>49 € → PDF 6 pages avec 15 lots, analyse, planning et alertes.</p></div>
+</div>
+</div>
+</section>
+
+<section class="section section-alt" id="faq">
+<div class="container">
+<div class="section-header center reveal">
+<div class="section-label">FAQ</div>
+<h2 class="section-title">Questions fréquentes</h2>
+<p class="section-sub">Tout ce que vous devez savoir avant de lancer votre estimation.</p>
+</div>
+<div class="faq-list reveal">
+<div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Est-ce que l'estimation est fiable ?</div><div class="faq-a">Notre estimateur utilise des ratios professionnels calibrés sur la base Batichiffrage 2026 — la référence des économistes de la construction en France. Les prix sont régionalisés par département et ajustés par 6 coefficients correcteurs. C'est une estimation paramétrique qui donne une enveloppe budgétaire réaliste pour préparer votre projet.</div></div>
+<div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Quelle différence avec un devis d'artisan ?</div><div class="faq-a">Un devis d'artisan est un engagement contractuel sur un prix précis. Notre estimation est un outil d'aide à la décision en amont : elle vous permet de savoir combien prévoir avant de solliciter des artisans. C'est le même travail qu'un économiste fait en phase d'esquisse — mais accessible en 3 minutes.</div></div>
+<div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Pourquoi 15 lots et pas un prix au m² ?</div><div class="faq-a">Parce que « 800 à 1 200 €/m² » ne vous dit pas si c'est l'électricité ou la plomberie qui coûte cher. En décomposant par lot, vous voyez exactement où va votre budget et pouvez arbitrer.</div></div>
+<div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Mes données sont-elles protégées ?</div><div class="faq-a">Votre email est collecté uniquement pour vous envoyer vos résultats. Nous ne vendons pas vos données et n'avons pas de partenariat commercial avec des entreprises de travaux. ADORA est un cabinet indépendant.</div></div>
+<div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Comment fonctionne le paiement ?</div><div class="faq-a">La synthèse gratuite ne nécessite aucun paiement — juste votre email. Pour le rapport complet à 49 € TTC, le paiement s'effectue par carte bancaire via Stripe (CB, Apple Pay, Google Pay). Vous accédez à vos résultats détaillés immédiatement après paiement et le rapport PDF 6 pages se génère en parallèle.</div></div>
+<div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Les 49 € sont-ils déductibles ?</div><div class="faq-a">Oui. Si vous signez un accompagnement ADORA (audit devis, cahier des charges, AMO) dans les 30 jours suivant l'achat du rapport, les 49 € sont intégralement crédités sur votre facture. Le rapport n'est pas une dépense — c'est le premier pas d'un accompagnement.</div></div>
+<div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Et si j'ai besoin d'aller plus loin ?</div><div class="faq-a">ADORA propose un accompagnement progressif : audit de vos devis, cahier des charges technique (CCTP/DPGF) pour consulter les entreprises sur des bases identiques, et accompagnement complet du chiffrage à la réception.</div></div>
+</div>
+</div>
+</section>
+
+<section class="cta-band">
+<div class="container">
+<h2>Prêt à estimer vos travaux ?</h2>
+<p class="cta-sub">3 minutes, gratuit, sans engagement. Vous obtenez une enveloppe budgétaire structurée immédiatement.</p>
+<div class="cta-btns"><a href="estimateur-outil.html" class="btn btn-accent">Lancer mon estimation</a></div>
+<div class="cta-links">
+<a href="simulateur.html">Calculer mes aides</a>
+<a href="audit-avant-achat.html">Audit avant achat — 499 €</a>
+<a href="sur-mesure.html">Accompagnement sur mesure</a>
+</div>
+</div>
+</section>
+
+<footer class="footer">
+<div class="footer-inner">
+  <div class="footer-brand">
+    <strong>ADORA</strong>
+    <p>Économiste de la construction<br>Normandie &amp; Île-de-France</p>
+  </div>
+  <div class="footer-col">
+    <div class="footer-col-title">Outils</div>
+    <a href="simulateur.html">Simulateur</a>
+    <a href="estimateur.html">Estimateur travaux</a>
+    <a href="audit-avant-achat.html">Audit avant achat</a>
+    <a href="sur-mesure.html">Sur mesure</a>
+  </div>
+  <div class="footer-col">
+    <div class="footer-col-title">ADORA</div>
+    <a href="a-propos.html">À propos</a>
+    <a href="professionnels.html">Professionnels</a>
+    <a href="partenaires.html">Partenaires</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <div class="footer-col footer-contact">
+    <div class="footer-col-title">Contact</div>
+    <a href="tel:+33660215509">06 60 21 55 09</a>
+    <a href="mailto:aymericdussauze@gmail.com">aymericdussauze@gmail.com</a>
+    <a href="https://adora-economie.fr">adora-economie.fr</a>
+  </div>
+</div>
+<div class="footer-legal">© 2026 ADORA · EI · SIRET 532 886 918 00020 · TVA non applicable, art. 293B du CGI<br><a href="mentions-legales.html">Mentions légales</a> · <a href="politique-confidentialite.html">Confidentialité</a> · <a href="cgv.html">CGV</a></div>
+</footer>
+<script>
+window.addEventListener('scroll',()=>{const h=document.documentElement;document.getElementById('scrollProgress').style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight))*100+'%'});
+const obs=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting){el.target.classList.add('visible');obs.unobserve(el.target)}})},{threshold:.15,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M0LENY960B"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-M0LENY960B');</script>
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"3f8ca9a1113f413a990a17c08ab83442"}'></script>
+</body>
+</html>

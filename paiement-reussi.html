@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paiement confirmé — ADORA</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://browser.sentry-cdn.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0D1025;--surface:#1A1F3D;--deep:#080B1C;
+  --accent:#22D3EE;--accent-hover:#06B6D4;--accent-deep:#0E7490;
+  --iris:#A78BFA;--iris-soft:rgba(167,139,250,.14);
+  --aqua-soft:rgba(34,211,238,.12);--aqua-mist:rgba(34,211,238,.06);
+  --txt:#1E1B4B;--muted:#64748B;--light:#EDE9FE;
+  --bg:#FFFFFF;--pale:#FAFAFC;--border:#E5E7F2;--border-dark:rgba(255,255,255,.08);
+  --radius:16px;--radius-lg:20px;
+  --transition:.3s cubic-bezier(.4,0,.2,1);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:var(--txt);background:var(--pale);line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:'Montserrat',sans-serif;color:var(--navy);letter-spacing:-.01em;line-height:1.2}
+a{color:inherit;text-decoration:none}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:100;background:rgba(13,16,37,.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--border-dark)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;max-width:980px;margin:0 auto;padding:14px 28px}
+.nav-logo img{height:26px;width:auto}
+.nav-links{display:flex;gap:8px;align-items:center}
+.nav-links a{color:rgba(237,233,254,.8);font-size:13.5px;font-weight:500;padding:6px 14px;border-radius:8px;transition:var(--transition);text-decoration:none}
+.nav-links a:hover{color:#fff;background:rgba(255,255,255,.08)}
+.nav-burger{display:none;background:none;border:none;color:#fff;font-size:22px;padding:8px;cursor:pointer}
+@media(max-width:700px){.nav-links{display:none;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:rgba(13,16,37,.97);padding:16px 28px;gap:4px}.nav-links.open{display:flex}.nav-burger{display:block}}
+
+/* HERO — success */
+.hero{background:linear-gradient(135deg,var(--navy) 0%,var(--surface) 100%);padding:80px 28px 100px;position:relative;overflow:hidden;text-align:center}
+.hero::before{content:"";position:absolute;top:-40%;right:-10%;width:500px;height:500px;background:radial-gradient(circle,var(--aqua-soft) 0%,transparent 70%);pointer-events:none}
+.hero::after{content:"";position:absolute;bottom:-30%;left:-10%;width:400px;height:400px;background:radial-gradient(circle,var(--iris-soft) 0%,transparent 70%);pointer-events:none}
+.hero-inner{max-width:640px;margin:0 auto;position:relative;z-index:1}
+.check{width:96px;height:96px;margin:0 auto 28px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 12px rgba(34,211,238,.15),0 20px 40px rgba(34,211,238,.3);animation:popIn .6s cubic-bezier(.68,-.55,.27,1.55)}
+.check svg{width:48px;height:48px;stroke:var(--navy);fill:none;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:30;stroke-dashoffset:30;animation:drawCheck .5s .3s forwards}
+@keyframes popIn{0%{transform:scale(0) rotate(-45deg);opacity:0}100%{transform:scale(1) rotate(0);opacity:1}}
+@keyframes drawCheck{to{stroke-dashoffset:0}}
+.hero-label{display:inline-block;font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);margin-bottom:14px;padding:4px 14px;background:var(--aqua-soft);border-radius:99px;border:1px solid rgba(34,211,238,.2)}
+.hero h1{font-size:clamp(32px,5vw,48px);font-weight:800;color:#fff;margin-bottom:12px;line-height:1.15}
+.hero h1 span{color:var(--accent)}
+.hero p{font-size:17px;color:rgba(237,233,254,.7);max-width:520px;margin:0 auto;line-height:1.6}
+.hero-order{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:99px;padding:8px 18px;font-size:13px;color:rgba(237,233,254,.8);margin-top:28px;font-family:'Montserrat',sans-serif;font-weight:500}
+.hero-order strong{color:#fff;font-weight:700}
+
+/* Main content */
+.container{max-width:680px;margin:0 auto;padding:60px 20px 40px}
+@media(max-width:600px){.container{padding:40px 16px 20px}}
+
+.section-label{display:inline-block;font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent-deep);margin-bottom:8px}
+.section-title{font-size:24px;font-weight:800;margin-bottom:8px;font-family:'Montserrat',sans-serif}
+.section-sub{font-size:15px;color:var(--muted);margin-bottom:32px;max-width:540px}
+
+/* Timeline */
+.timeline{display:grid;gap:14px;margin-bottom:48px}
+.tl-item{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:20px 22px;display:grid;grid-template-columns:48px 1fr auto;gap:16px;align-items:center;transition:var(--transition)}
+.tl-item:hover{border-color:rgba(34,211,238,.3);box-shadow:0 4px 16px rgba(13,16,37,.06)}
+.tl-icon{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.tl-icon.aqua{background:var(--aqua-mist);border:1px solid rgba(34,211,238,.2)}
+.tl-icon.iris{background:var(--iris-soft);border:1px solid rgba(167,139,250,.2)}
+.tl-content{min-width:0}
+.tl-when{font-size:11px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:var(--accent-deep);margin-bottom:3px}
+.tl-title{font-size:15px;font-weight:700;color:var(--navy);font-family:'Montserrat',sans-serif;margin-bottom:2px}
+.tl-sub{font-size:13px;color:var(--muted);line-height:1.5}
+.tl-status{font-size:11px;font-weight:600;padding:4px 10px;border-radius:99px;white-space:nowrap}
+.tl-status.done{background:var(--iris-soft);color:#6D44D9}
+.tl-status.progress{background:var(--aqua-soft);color:var(--accent-deep)}
+.tl-status.upcoming{background:var(--pale);color:var(--muted);border:1px solid var(--border)}
+@media(max-width:540px){.tl-item{grid-template-columns:48px 1fr;gap:12px;padding:16px 18px}.tl-status{grid-column:1/-1;justify-self:start;margin-top:4px}}
+
+/* Info card */
+.info-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:28px 28px;margin-bottom:32px;display:grid;grid-template-columns:48px 1fr;gap:18px;align-items:start}
+.info-icon{width:48px;height:48px;border-radius:12px;background:var(--iris-soft);border:1px solid rgba(167,139,250,.2);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.info-card h3{font-size:17px;font-weight:700;margin-bottom:6px}
+.info-card p{font-size:14px;color:var(--muted);line-height:1.6;margin-bottom:10px}
+.info-card p:last-child{margin-bottom:0}
+.info-card a{color:var(--accent-deep);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+
+/* Action buttons */
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:10px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:14px;text-decoration:none;transition:var(--transition);border:none;cursor:pointer}
+.btn-primary{background:var(--accent);color:var(--navy);box-shadow:0 2px 8px rgba(34,211,238,.25)}
+.btn-primary:hover{background:var(--accent-hover);transform:translateY(-1px);box-shadow:0 4px 16px rgba(34,211,238,.35)}
+.btn-ghost{background:none;color:var(--navy);border:1.5px solid var(--border)}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent-deep)}
+
+/* Upsell section */
+.upsell{background:linear-gradient(135deg,var(--iris-soft) 0%,var(--aqua-mist) 100%);border:1px solid rgba(167,139,250,.2);border-radius:var(--radius-lg);padding:36px 32px;margin-bottom:40px;text-align:center}
+.upsell-label{display:inline-block;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#6D44D9;margin-bottom:10px;padding:3px 10px;background:rgba(167,139,250,.15);border-radius:99px}
+.upsell h3{font-size:22px;font-weight:800;margin-bottom:10px;line-height:1.2;max-width:480px;margin-left:auto;margin-right:auto}
+.upsell p{font-size:14px;color:var(--muted);margin-bottom:22px;max-width:500px;margin-left:auto;margin-right:auto;line-height:1.6}
+.upsell .btn{background:var(--iris);color:var(--navy)}
+.upsell .btn:hover{background:#8B6FE3;transform:translateY(-1px);box-shadow:0 4px 16px rgba(167,139,250,.35)}
+
+/* Footer */
+.footer{background:var(--deep);padding:48px 28px 36px;color:#64748B;font-size:13px}
+.footer-inner{max-width:980px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:32px}
+.footer-inner strong{color:var(--light);font-weight:700}
+.footer-inner p{margin-top:4px;font-size:12px}
+.footer-links{display:flex;gap:20px;flex-wrap:wrap}
+.footer-links a{color:rgba(237,233,254,.6);font-size:13px;text-decoration:none}
+.footer-legal{max-width:980px;margin:24px auto 0;padding-top:24px;border-top:1px solid rgba(255,255,255,.06);font-size:11px;color:rgba(237,233,254,.3);text-align:center}
+.footer-legal a{color:rgba(237,233,254,.5);text-decoration:none;transition:color .2s}
+.footer-legal a:hover{color:#22D3EE}
+.footer-legal br{margin-bottom:6px}
+
+/* ═══ UNIFIED FOOTER ═══ */
+.footer{background:var(--navy, #0D1025);color:rgba(237,233,254,.7);padding:60px 24px 30px;margin-top:80px}
+.footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:40px}
+.footer-brand strong{font-size:18px;color:#fff;display:block;margin-bottom:8px}
+.footer-brand p{font-size:13px;line-height:1.6;color:rgba(237,233,254,.5)}
+.footer-col{display:flex;flex-direction:column;gap:8px}
+.footer-col-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:rgba(237,233,254,.4);margin-bottom:6px}
+.footer-col a{color:rgba(237,233,254,.7);text-decoration:none;font-size:13px;transition:color .2s}
+.footer-col a:hover{color:#22D3EE}
+.footer-contact a{font-size:13px}
+.footer-legal{max-width:1100px;margin:30px auto 0;padding-top:20px;border-top:1px solid rgba(237,233,254,.1);font-size:11px;color:rgba(237,233,254,.35);text-align:center}
+@media(max-width:768px){
+.footer-inner{grid-template-columns:1fr 1fr;gap:30px 20px}
+}
+@media(max-width:480px){
+.footer-inner{grid-template-columns:1fr;gap:24px}
+}
+/* ═══ MOBILE FIXES — 21/04/2026 ═══ */
+@media(max-width:700px){
+  .nav-links .nav-cta{width:100%;text-align:center;margin-top:8px}
+  .footer-contact a{word-break:break-all}
+}
+</style>
+    <script defer src="https://browser.sentry-cdn.com/8.0.0/bundle.min.js" crossorigin="anonymous"></script>
+    <script>Sentry.init({dsn:"https://14b68c10a24c3da4127332e14fd20359@o4511253060976640.ingest.de.sentry.io/4511253075132496",tracesSampleRate:0,replaysSessionSampleRate:0});</script>
+</head>
+<body>
+
+<nav class="nav">
+<div class="nav-inner">
+  <a href="./" class="nav-logo"><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5NDAgMjAwIiB3aWR0aD0iOTQwIiBoZWlnaHQ9IjIwMCI+CiAgPGcgZmlsbD0id2hpdGUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICA8IS0tIFRyaWFuZ2xlIGljb24gLS0+CiAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMCwgOCkgdHJhbnNsYXRlKC03NSwgLTk5KSI+CiAgICAgIDxwYXRoIGQ9Ik0gMTE3LDI4MiBMIDE2OSwyODEgTCAxNzQsMjc0IEwgMTc3LDI2OCBMIDIyOSwxOTMgTCAyMjksMTkxIEwgMjA2LDE1OCBMIDIwNywxNTUgTCAyMjksMTU2IEwgMjM0LDE2NSBMIDIzNywxNjggTCAyMzksMTczIEwgMjgxLDIzNSBMIDI4MiwyNDAgTCAyNDAsMjQwIEwgMjEzLDI4MCBMIDIxMywyODIgTCAzNjQsMjgyIEwgMzYxLDI3NiBMIDMwMCwxODcgTCAyOTksMTg0IEwgMjQyLDk5IEwgMjQwLDEwMCBMIDIwNywxNTAgTCAyMDEsMTU2IEwgMTQwLDI0OCBMIDEzNywyNTEgTCAxMzYsMjU0IEwgMTI0LDI3MCBaIi8+CiAgICA8L2c+CiAgICA8IS0tIFRleHQgIkFkb3JhIiAtLT4KICAgIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDMzMCwgMTIpIHNjYWxlKDEuOCkgdHJhbnNsYXRlKC03MSwgLTMyMCkiPgogICAgICA8cGF0aCBkPSJNIDEwMiwzMjYgTCA5MywzNTIgTCA5MSwzNTUgTCA4NywzNjkgTCA4NSwzNzIgTCA4MiwzODMgTCA4MCwzODYgTCA3OCwzOTUgTCA3MSw0MTMgTCA3MSw0MTYgTCA4OSw0MTUgTCA5NywzOTAgTCAxMjUsMzg5IEwgMTMwLDM5NCBMIDEzMSw0MDAgTCAxMzMsNDAzIEwgMTM3LDQxNiBMIDE1NSw0MTYgTCAxNTUsNDEyIEwgMTUzLDQwOSBMIDEyNCwzMjYgWiBNIDExNCwzNDQgTCAxMjMsMzcyIEwgMTIyLDM3NiBMIDEwMiwzNzUgTCAxMDIsMzcyIEwgMTA2LDM1OSBMIDEwOCwzNTYgTCAxMTAsMzQ3IFoiLz4KICAgICAgPHBhdGggZD0iTSAyMjUsMzIwIEwgMjA4LDMyMCBMIDIwNiwzNTIgTCAyMDIsMzQ4IEwgMTk0LDM0NSBMIDE4MCwzNDUgTCAxNjksMzQ5IEwgMTU5LDM2MCBMIDE1NSwzNzMgTCAxNTYsMzk1IEwgMTYyLDQwNyBMIDE3MCw0MTQgTCAxNzgsNDE3IEwgMTkzLDQxNyBMIDE5OSw0MTUgTCAyMDUsNDA4IEwgMjA4LDQwOCBMIDIwOCw0MTYgTCAyMjUsNDE2IFogTSAxODcsMzU3IEwgMTk0LDM1NyBMIDE5OSwzNTkgTCAyMDQsMzY0IEwgMjA3LDM3MSBMIDIwOCwzODUgTCAyMDYsMzk0IEwgMjA0LDM5OCBMIDE5OSw0MDMgTCAxOTUsNDA1IEwgMTg2LDQwNSBMIDE4Miw0MDMgTCAxNzYsMzk3IEwgMTczLDM4OSBMIDE3MywzNzIgTCAxNzYsMzY1IEwgMTgyLDM1OSBaIi8+CiAgICAgIDxwYXRoIGQ9Ik0gMjU1LDM0NiBMIDI0NCwzNTIgTCAyMzgsMzU5IEwgMjMzLDM3MSBMIDIzMywzODkgTCAyMzUsMzk3IEwgMjQwLDQwNiBMIDI0NSw0MTEgTCAyNTIsNDE1IEwgMjU5LDQxNyBMIDI3Nyw0MTcgTCAyODMsNDE1IEwgMjk1LDQwNiBMIDMwMSwzOTYgTCAzMDMsMzg4IEwgMzAzLDM3NCBMIDMwMSwzNjYgTCAyOTYsMzU3IEwgMjkwLDM1MSBMIDI4MywzNDcgTCAyNzcsMzQ1IFogTSAyNjQsMzU3IEwgMjcyLDM1NyBMIDI3NiwzNTkgTCAyODEsMzY0IEwgMjg1LDM3NSBMIDI4NSwzODcgTCAyODMsMzk1IEwgMjc2LDQwMyBMIDI3Miw0MDUgTCAyNjQsNDA1IEwgMjU5LDQwMyBMIDI1NCwzOTggTCAyNTAsMzg2IEwgMjUwLDM3NCBMIDI1MiwzNjggTCAyNTgsMzYwIFoiLz4KICAgICAgPHBhdGggZD0iTSAzNTAsMzQ1IEwgMzM4LDM0NiBMIDMyOCwzNTUgTCAzMjgsMzQ3IEwgMzExLDM0NyBMIDMxMSw0MTYgTCAzMjgsNDE1IEwgMzI4LDM3NCBMIDMzMCwzNjggTCAzMzYsMzYyIEwgMzQzLDM1OSBMIDM1MCwzNTkgWiIvPgogICAgICA8cGF0aCBkPSJNIDM2NCwzNDkgTCAzNTksMzUzIEwgMzU1LDM2MCBMIDM1NCwzNjQgTCAzNTUsMzY5IEwgMzcwLDM2OSBMIDM3MSwzNjMgTCAzNzUsMzU4IEwgMzc3LDM1NyBMIDM4NiwzNTcgTCAzOTIsMzYyIEwgMzkzLDM2NSBMIDM5MiwzNzQgTCAzNzIsMzc1IEwgMzYwLDM4MCBMIDM1NCwzODYgTCAzNTEsMzk0IEwgMzUxLDQwMiBMIDM1NCw0MDkgTCAzNTgsNDEzIEwgMzY2LDQxNyBMIDM4MSw0MTcgTCAzODYsNDE1IEwgMzkxLDQwOSBMIDM5NCw0MDkgTCAzOTUsNDE2IEwgNDExLDQxNiBMIDQxMCwzNjcgTCA0MDksMzYxIEwgNDA2LDM1NCBMIDQwMCwzNDggTCAzOTEsMzQ1IEwgMzczLDM0NSBaIE0gMzkzLDM4NSBMIDM5MiwzOTcgTCAzODYsNDA0IEwgMzg0LDQwNSBMIDM3NSw0MDUgTCAzNjksNDAwIEwgMzY5LDM5MiBMIDM3NSwzODYgTCAzODMsMzg0IFoiLz4KICAgIDwvZz4KICA8L2c+Cjwvc3ZnPgo=" alt="ADORA" style="height:26px;width:auto"></a>
+  <div class="nav-links" id="navLinks">
+    <a href="simulateur.html">Simulateur</a>
+    <a href="estimateur.html">Estimateur</a>
+    <a href="audit-avant-achat.html">Audit achat</a>
+    <a href="sur-mesure.html">Sur mesure</a>
+    <a href="estimateur-outil.html" class="nav-cta">Estimer mes travaux</a>
+  </div>
+  <button class="nav-burger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">&#9776;</button>
+</div>
+</nav>
+
+<section class="hero">
+<div class="hero-inner">
+  <div class="check">
+    <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+  </div>
+  <div class="hero-label">Paiement confirmé</div>
+  <h1>Merci <span id="prenomGreet">!</span></h1>
+  <p>Votre paiement a été validé. Votre rapport d'estimation détaillé est en cours de préparation.</p>
+  <div class="hero-order">Rapport d'estimation ADORA · <strong>49 € TTC</strong></div>
+</div>
+</section>
+
+<div class="container">
+  
+  <div class="section-label">Ce qui se passe maintenant</div>
+  <h2 class="section-title">Vos 3 prochaines étapes</h2>
+  <p class="section-sub">Tout est automatisé. Vous n'avez rien à faire — nous nous occupons du reste.</p>
+  
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-icon aqua"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 7L2 7"/></svg></div>
+      <div class="tl-content">
+        <div class="tl-when">Dans 5 minutes</div>
+        <div class="tl-title">Votre rapport PDF arrive par email</div>
+        <div class="tl-sub">8 pages · 15 postes détaillés · aides chiffrées · points de vigilance. Adresse : <strong id="emailConfirm">celle utilisée au paiement</strong></div>
+      </div>
+      <div class="tl-status progress">En cours</div>
+    </div>
+    
+    <div class="tl-item">
+      <div class="tl-icon iris"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+      <div class="tl-content">
+        <div class="tl-when">Sous 48h ouvrées</div>
+        <div class="tl-title">Appel téléphonique de 30 minutes</div>
+        <div class="tl-sub">Je vous contacte personnellement pour débriefer votre estimation et répondre à vos questions. Inclus dans votre commande.</div>
+      </div>
+      <div class="tl-status upcoming">Planifié</div>
+    </div>
+    
+    <div class="tl-item">
+      <div class="tl-icon aqua"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
+      <div class="tl-content">
+        <div class="tl-when">Quand vous voulez</div>
+        <div class="tl-title">Aller plus loin si vous le souhaitez</div>
+        <div class="tl-sub">Audit avant achat, accompagnement sur mesure, rédaction du cahier des charges… sans engagement.</div>
+      </div>
+      <div class="tl-status upcoming">En option</div>
+    </div>
+  </div>
+  
+  <div class="section-label" style="margin-top:20px">Besoin d'aide ?</div>
+  <h2 class="section-title">Pas de rapport reçu ? Un souci ?</h2>
+  
+  <div class="info-card">
+    <div class="info-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+    <div>
+      <h3>Je m'occupe personnellement de chaque dossier</h3>
+      <p>Si votre rapport n'arrive pas dans les 15 minutes, vérifiez votre dossier <strong>Spam / Indésirables</strong>. Si rien ne s'y trouve, contactez-moi — je règle ça immédiatement.</p>
+      <p>Aymeric Dussauze · <a href="tel:0660215509">06 60 21 55 09</a> · <a href="mailto:aymericdussauze@gmail.com">aymericdussauze@gmail.com</a></p>
+      <div class="actions">
+        <a href="mailto:aymericdussauze@gmail.com?subject=Rapport%20d%27estimation%20non%20re%C3%A7u" class="btn btn-ghost">Signaler un problème</a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="upsell">
+    <div class="upsell-label">Pour aller plus loin</div>
+    <h3>Prêt à passer du chiffrage à la réalisation ?</h3>
+    <p>Votre estimation est une base solide. Pour transformer ce budget en un chantier maîtrisé, découvrez mes formules d'accompagnement complet — de la rédaction du cahier des charges à la réception du chantier.</p>
+    <a href="sur-mesure.html" class="btn">Découvrir l'accompagnement →</a>
+  </div>
+  
+</div>
+
+<footer class="footer">
+<div class="footer-inner">
+  <div class="footer-brand">
+    <strong>ADORA</strong>
+    <p>Économiste de la construction<br>Normandie &amp; Île-de-France</p>
+  </div>
+  <div class="footer-col">
+    <div class="footer-col-title">Outils</div>
+    <a href="simulateur.html">Simulateur aides</a>
+    <a href="estimateur.html">Estimateur travaux</a>
+    <a href="audit-avant-achat.html">Audit avant achat</a>
+    <a href="sur-mesure.html">Sur mesure</a>
+  </div>
+  <div class="footer-col">
+    <div class="footer-col-title">ADORA</div>
+    <a href="a-propos.html">À propos</a>
+    <a href="professionnels.html">Professionnels</a>
+    <a href="partenaires.html">Partenaires</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <div class="footer-col footer-contact">
+    <div class="footer-col-title">Contact</div>
+    <a href="tel:+33660215509">06 60 21 55 09</a>
+    <a href="mailto:aymericdussauze@gmail.com">aymericdussauze@gmail.com</a>
+    <a href="https://adora-economie.fr">adora-economie.fr</a>
+  </div>
+</div>
+<div class="footer-legal">© 2026 ADORA · EI · SIRET 532 886 918 00020 · TVA non applicable, art. 293B du CGI<br><a href="mentions-legales.html">Mentions légales</a> · <a href="politique-confidentialite.html">Confidentialité</a> · <a href="cgv.html">CGV</a></div>
+</footer>
+
+<script>
+// ═══════════════════════════════════════════════════════════
+// Personnalisation : récupère prénom + email depuis l'URL Stripe
+// ou depuis localStorage (s'ils ont été enregistrés avant redirection)
+// ═══════════════════════════════════════════════════════════
+(function() {
+  const params = new URLSearchParams(window.location.search);
+  // Stripe passe generalement ?session_id=... on ne s'en sert pas côté client
+  
+  // Tentative 1 : URL params personnalisés (si configurés côté Stripe)
+  let prenom = params.get("prenom") || params.get("first_name") || "";
+  let email = params.get("email") || "";
+  
+  // Tentative 2 : client_reference_id contient prenom_timestamp (envoyé depuis l'estimateur)
+  const ref = params.get("client_reference_id");
+  if (ref && !prenom) {
+    prenom = ref.split("_")[0] || "";
+  }
+  
+  // Tentative 3 : localStorage (set par l'estimateur juste avant redirection)
+  try {
+    if (!prenom) prenom = localStorage.getItem("adora_prenom") || "";
+    if (!email) email = localStorage.getItem("adora_email") || "";
+  } catch(e) {}
+  
+  // Affichage
+  const greetEl = document.getElementById("prenomGreet");
+  const emailEl = document.getElementById("emailConfirm");
+  if (prenom && prenom.length > 1 && /^[a-zA-ZÀ-ÿ\-']+$/.test(prenom)) {
+    const clean = prenom.charAt(0).toUpperCase() + prenom.slice(1).toLowerCase();
+    greetEl.textContent = clean + " !";
+  } else {
+    greetEl.textContent = "pour votre confiance !";
+  }
+  if (email && email.includes("@")) {
+    emailEl.textContent = email;
+  }
+  
+  // Nettoyage localStorage (évite persistance inutile)
+  try {
+    localStorage.removeItem("adora_prenom");
+    localStorage.removeItem("adora_email");
+  } catch(e) {}
+  
+  // Tracking GA4 — purchase event
+  if (typeof gtag === "function") {
+    gtag("event", "purchase", {
+      transaction_id: params.get("session_id") || ("adora_" + Date.now()),
+      value: 49,
+      currency: "EUR",
+      items: [{item_name: "Rapport estimation ADORA", price: 49, quantity: 1}]
+    });
+  }
+})();
+</script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M0LENY960B"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-M0LENY960B')</script>
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"3f8ca9a1113f413a990a17c08ab83442"}'></script>
+</body>
+</html>

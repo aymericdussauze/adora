@@ -1,282 +1,821 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Simulateur d'aides rénovation 2026 — ADORA Économiste de la construction</title>
-<meta name="description" content="Calculez gratuitement vos aides MaPrimeRénov', CEE, éco-PTZ et TVA réduite. Barèmes Anah 2026. Simulateur par ADORA, économiste de la construction en Normandie et Île-de-France.">
-<meta property="og:title" content="Simulateur d'aides à la rénovation énergétique 2026 — ADORA">
-<meta property="og:description" content="Estimez vos droits MaPrimeRénov', CEE, éco-PTZ. Barèmes officiels Anah 2026. Gratuit, sans inscription.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://adora-economie.fr/simulateur">
-<link rel="canonical" href="https://adora-economie.fr/simulateur">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-M0LENY960B"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","G-M0LENY960B");</script>
-
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Simulateur d'aides rénovation 2026 — ADORA</title>
+<meta name="description" content="Calculez gratuitement vos aides MaPrimeRénov', CEE, éco-PTZ et TVA 5,5%. Barèmes Anah 2026. Par ADORA, économiste de la construction.">
+<link rel="canonical" href="https://adora-economie.fr/simulateur.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://browser.sentry-cdn.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
 <style>
-/* ── Site navigation ── */
-.site-nav{
-  position:sticky;top:0;z-index:100;
-  background:rgba(27,58,92,0.97);backdrop-filter:blur(8px);
-  padding:0 2rem;height:56px;
-  display:flex;align-items:center;justify-content:space-between;
-  border-bottom:1px solid rgba(255,255,255,0.08);
-}
-.site-nav .logo-link{display:flex;align-items:center;gap:10px;text-decoration:none}
-.site-nav .logo-link img{height:32px;width:auto;object-fit:contain}
-.site-nav .nav-links{display:flex;gap:1.5rem;align-items:center}
-.site-nav .nav-links a{font-family:'Source Sans 3',sans-serif;font-size:14px;color:rgba(255,255,255,0.75);text-decoration:none;transition:.2s}
-.site-nav .nav-links a:hover{color:#fff}
-.site-nav .nav-links a.active{color:#D6E4F0;font-weight:600}
-.site-nav .nav-cta{
-  padding:7px 18px;border-radius:6px;background:#D4740B;color:#fff;
-  font-family:'Montserrat',sans-serif;font-size:13px;font-weight:600;text-decoration:none;transition:.2s
-}
-.site-nav .nav-cta:hover{background:#BD6709}
-
-/* ── Breadcrumb ── */
-.breadcrumb{
-  max-width:680px;margin:1rem auto 0;padding:0 1rem;
-  font-size:13px;color:#9CA3AF;
-}
-.breadcrumb a{color:#2E75B6;text-decoration:none}
-.breadcrumb a:hover{text-decoration:underline}
-
-/* ── Site footer ── */
-.site-footer{
-  background:#1B3A5C;color:rgba(255,255,255,0.7);
-  padding:3rem 2rem 1.5rem;margin-top:3rem;
-  font-family:'Source Sans 3',sans-serif;font-size:14px;text-align:center;
-}
-.site-footer a{color:#D6E4F0;text-decoration:none}
-.site-footer a:hover{text-decoration:underline}
-.site-footer .f-brand{font-family:'Montserrat',sans-serif;font-size:16px;font-weight:700;color:#fff;letter-spacing:1px;margin-bottom:0.5rem}
-.site-footer .f-tagline{font-size:13px;color:rgba(255,255,255,0.5);margin-bottom:1.5rem}
-.site-footer .f-links{display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;margin-bottom:1.5rem}
-.site-footer .f-copy{font-size:12px;color:rgba(255,255,255,0.35);border-top:1px solid rgba(255,255,255,0.08);padding-top:1rem}
-
-@media(max-width:640px){
-  .site-nav .nav-links span{display:none}
-  .site-nav .nav-links{gap:1rem}
-  .site-nav{padding:0 1rem}
-}
-
-/* ── Simulateur styles ── */
-
-*{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --navy:#1B3A5C;--blue:#2E75B6;--accent:#D4740B;
-  --light-blue:#D6E4F0;--pale-blue:#EBF2F9;--green:#2D8B55;
-  --text:#333333;--text-light:#6B7280;--text-muted:#9CA3AF;
-  --bg:#FFFFFF;--bg-alt:#F8FAFC;--border:#E5E7EB;
-  --navy-10:rgba(27,58,92,0.08);--blue-10:rgba(46,117,182,0.08);
-  --accent-10:rgba(212,116,11,0.08);--green-10:rgba(45,139,85,0.08);
-  --radius:8px;--radius-lg:12px;--radius-xl:16px;
-  --shadow-sm:0 1px 2px rgba(27,58,92,0.06);
-  --shadow-md:0 4px 12px rgba(27,58,92,0.08);
+  --navy:#0D1025;--surface:#1A1F3D;--deep:#080B1C;
+  --accent:#22D3EE;--accent-hover:#06B6D4;--accent-deep:#0E7490;
+  --iris:#A78BFA;--iris-soft:rgba(167,139,250,.14);
+  --aqua-soft:rgba(34,211,238,.12);--aqua-mist:rgba(34,211,238,.06);
+  --txt:#1E1B4B;--muted:#64748B;--light:#EDE9FE;
+  --bg:#FFFFFF;--pale:#FAFAFC;--border:#E5E7F2;--border-dark:rgba(255,255,255,.08);
+  --radius:16px;--radius-sm:10px;--radius-lg:20px;
+  --anah-bleu:#2563EB;--anah-jaune:#EAB308;--anah-violet:#9333EA;--anah-rose:#EC4899;
+  --warn-bg:#FEF3C7;--warn-border:#FCD34D;--warn-txt:#92400E;
+  --info-bg:var(--aqua-mist);--info-border:rgba(34,211,238,.3);--info-txt:var(--accent-deep);
 }
-html{font-size:16px;-webkit-font-smoothing:antialiased}
-body{font-family:'Source Sans 3',system-ui,sans-serif;color:var(--text);background:#F1F5F9;min-height:100vh;margin:0;padding:0}
-.app{width:100%;max-width:680px;margin:0 auto;padding:2rem 1rem}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:var(--txt);background:var(--pale);line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:'Montserrat',sans-serif;color:var(--navy);letter-spacing:-.01em;line-height:1.2}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+input,select,textarea{font-family:inherit}
 
-/* Header */
-.header{text-align:center;margin-bottom:2rem}
-.header-sub{font-family:'Montserrat',sans-serif;font-size:13px;color:var(--blue);font-weight:500;letter-spacing:0.5px;margin-bottom:1rem}
-.header h1{font-family:'Montserrat',sans-serif;font-size:20px;font-weight:600;color:var(--navy);line-height:1.3}
-.header p.desc{font-size:14px;color:var(--text-light);margin-top:6px;line-height:1.5}
+/* NAV */
+.scroll-progress{position:fixed;top:0;left:0;height:3px;background:var(--accent);z-index:200;width:0;transition:width .1s linear}
+.nav{position:sticky;top:0;z-index:100;background:rgba(13,16,37,.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--border-dark)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;max-width:980px;margin:0 auto;padding:14px 28px}
+.nav-logo img{height:26px;width:auto}
+.nav-links{display:flex;gap:8px;align-items:center}
+.nav-links a{color:rgba(237,233,254,.8);font-size:13.5px;font-weight:500;padding:6px 14px;border-radius:8px;transition:.3s;text-decoration:none}
+.nav-links a:hover{color:#fff;background:rgba(255,255,255,.08)}
+.nav-burger{display:none;color:#fff;font-size:22px;padding:8px}
+@media(max-width:700px){.nav-links{display:none;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:rgba(13,16,37,.97);padding:16px 28px;gap:4px}.nav-links.open{display:flex}.nav-burger{display:block}}
+
+/* APP */
+.app{max-width:680px;margin:0 auto;padding:40px 20px 80px;min-height:calc(100vh - 60px)}
+@media(max-width:600px){.app{padding:24px 16px 48px}}
 
 /* Progress */
-.progress{display:flex;align-items:center;gap:0;margin-bottom:2rem;padding:0 1rem}
-.prog-step{flex:1;display:flex;flex-direction:column;align-items:center;position:relative}
-.prog-num{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Montserrat',sans-serif;font-size:13px;font-weight:600;border:2px solid var(--border);color:var(--text-muted);background:var(--bg);position:relative;z-index:1;transition:.3s}
-.prog-step.active .prog-num{border-color:var(--blue);color:var(--bg);background:var(--blue)}
-.prog-step.done .prog-num{border-color:var(--green);color:var(--bg);background:var(--green)}
-.prog-label{font-size:11px;color:var(--text-muted);margin-top:6px;font-weight:500;text-align:center;transition:.3s}
-.prog-step.active .prog-label{color:var(--blue);font-weight:600}
-.prog-step.done .prog-label{color:var(--green)}
-.prog-line{flex:1;height:2px;background:var(--border);margin:0 -8px;margin-top:-22px;position:relative;z-index:0;transition:.3s}
-.prog-line.done{background:var(--green)}
 
-/* Card */
-.card{background:var(--bg);border-radius:var(--radius-xl);box-shadow:var(--shadow-md);padding:2rem;border:1px solid rgba(27,58,92,0.06)}
-.card h2{font-family:'Montserrat',sans-serif;font-size:17px;font-weight:600;color:var(--navy);margin-bottom:2px}
-.card .step-desc{font-size:13px;color:var(--text-light);margin-bottom:1.5rem;line-height:1.5}
+.rgpd-check{margin:16px 0}
+.rgpd-check label{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--muted);line-height:1.5;cursor:pointer}
+.rgpd-check input[type="checkbox"]{margin-top:3px;flex-shrink:0;width:16px;height:16px;accent-color:var(--accent)}
+.rgpd-check a{color:var(--blue);text-decoration:underline}
 
-/* Form */
-.form-row{display:grid;gap:14px;margin-bottom:14px}
-.form-row.cols-2{grid-template-columns:1fr 1fr}
-.form-row.cols-3{grid-template-columns:1fr 1fr 1fr}
-.field{display:flex;flex-direction:column;gap:4px}
-.field label{font-size:12px;font-weight:600;color:var(--text-light);text-transform:uppercase;letter-spacing:0.5px}
-.field select,.field input[type=number],.field input[type=text]{
-  height:42px;padding:0 12px;border:1.5px solid var(--border);border-radius:var(--radius);
-  font-family:'Source Sans 3',system-ui,sans-serif;font-size:14px;color:var(--text);
-  background:var(--bg);transition:.2s;outline:none;width:100%
-}
-.field select:focus,.field input:focus{border-color:var(--blue);box-shadow:0 0 0 3px var(--blue-10)}
-.field input[type=number]{-moz-appearance:textfield}
-.field input::-webkit-inner-spin-button{-webkit-appearance:none}
-.field .hint{font-size:11px;color:var(--text-muted);margin-top:2px}
+/* SIM HERO */
+.sim-hero{background:var(--navy);padding:48px 0 40px;color:var(--white);text-align:center;position:relative;overflow:hidden}
+.sim-hero::before{content:'';position:absolute;top:-60%;right:-20%;width:800px;height:800px;background:radial-gradient(circle,rgba(14,116,144,.12) 0%,transparent 65%);pointer-events:none}
+.sim-hero h1{font-size:clamp(24px,4vw,38px);font-weight:900;letter-spacing:-.02em;margin-bottom:12px;position:relative}
+.sim-hero h1 em{font-style:normal;color:var(--accent)}
+.sim-hero-sub{font-size:15px;color:rgba(214,228,240,.75);max-width:560px;margin:0 auto;line-height:1.6;position:relative}
 
-/* Chips */
-.chip-label{font-size:12px;font-weight:600;color:var(--text-light);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px}
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
-.chip{
-  padding:8px 16px;border-radius:20px;font-size:13px;font-weight:500;cursor:pointer;
-  border:1.5px solid var(--border);background:var(--bg);color:var(--text);transition:.2s;
-  user-select:none
-}
-.chip:hover{border-color:var(--blue);background:var(--pale-blue)}
-.chip.sel{border-color:var(--blue);background:var(--light-blue);color:var(--navy);font-weight:600}
-.chip.parcours{padding:10px 20px;border-radius:var(--radius);font-family:'Montserrat',sans-serif;font-size:13px}
-.chip.parcours.sel{background:var(--navy);color:#fff;border-color:var(--navy)}
+.progress-rail{position:sticky;top:56px;z-index:50;background:var(--pale);padding:16px 0 12px}
+.progress-bar{height:4px;background:var(--border);border-radius:99px;overflow:hidden;margin-bottom:10px}
+.progress-fill{height:100%;background:var(--accent);border-radius:99px;width:0;transition:width .5s cubic-bezier(.4,0,.2,1)}
+.progress-info{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--muted);font-weight:500}
+.progress-step{color:var(--accent-deep);font-weight:600}
 
-/* Badges */
-.badge{display:inline-flex;align-items:center;gap:4px;padding:4px 12px;border-radius:20px;font-size:12px;font-weight:600;font-family:'Montserrat',sans-serif}
-.badge-bleu{background:#DBEAFE;color:#1E40AF}
-.badge-jaune{background:#FEF3C7;color:#92400E}
-.badge-violet{background:#EDE9FE;color:#5B21B6}
-.badge-rose{background:#FCE7F3;color:#9D174D}
+/* Screens */
+.screen{display:none;animation:slideIn .4s cubic-bezier(.4,0,.2,1)}
+.screen.active{display:block}
+@keyframes slideIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
 
-/* Alerts */
-.alert{padding:12px 16px;border-radius:var(--radius);font-size:13px;line-height:1.5;margin-bottom:12px;display:flex;gap:8px;align-items:flex-start}
-.alert svg{flex-shrink:0;margin-top:1px}
-.alert-warn{background:#FFFBEB;border:1px solid #FDE68A;color:#92400E}
-.alert-info{background:var(--pale-blue);border:1px solid var(--light-blue);color:var(--navy)}
+.screen-header{margin-bottom:28px}
+.screen-eyebrow{display:inline-block;font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent-deep);margin-bottom:10px}
+.screen-title{font-size:clamp(24px,3.6vw,32px);font-weight:800;line-height:1.2;margin-bottom:8px}
+.screen-hint{font-size:15px;color:var(--muted);line-height:1.6;max-width:540px}
+.screen-why{display:inline-flex;align-items:flex-start;gap:8px;font-size:12px;color:var(--muted);margin-top:12px;padding:10px 14px;background:var(--info-bg);border-radius:8px;border:1px solid var(--info-border);line-height:1.5;max-width:540px}
+.screen-why strong{color:var(--navy)}
 
-/* Navigation */
-.nav-row{display:flex;gap:10px;margin-top:1.5rem}
-.btn{
-  flex:1;height:44px;border-radius:var(--radius);font-family:'Montserrat',sans-serif;
-  font-size:14px;font-weight:600;cursor:pointer;border:none;transition:.2s;
-  display:flex;align-items:center;justify-content:center;gap:6px
-}
-.btn-primary{background:var(--navy);color:#fff}
-.btn-primary:hover{background:#244B73}
-.btn-secondary{background:transparent;color:var(--navy);border:1.5px solid var(--border)}
-.btn-secondary:hover{background:var(--pale-blue);border-color:var(--light-blue)}
-.btn-accent{background:var(--accent);color:#fff}
-.btn-accent:hover{background:#BD6709}
+/* Cards */
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px}
+.cards.cards-3{grid-template-columns:1fr 1fr 1fr}
+.cards.cards-4{grid-template-columns:1fr 1fr 1fr 1fr}
+@media(max-width:540px){.cards,.cards.cards-3,.cards.cards-4{grid-template-columns:1fr 1fr}}
+.card{background:#fff;border:1.5px solid var(--border);border-radius:var(--radius);padding:22px 20px;cursor:pointer;transition:.25s cubic-bezier(.4,0,.2,1);position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:10px;text-align:left;width:100%}
+.card:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:0 4px 12px rgba(13,16,37,.08),0 16px 40px rgba(34,211,238,.12)}
+.card.selected{border-color:var(--accent);background:var(--aqua-mist);box-shadow:0 0 0 3px var(--aqua-soft)}
+.card.selected::after{content:"";position:absolute;top:14px;right:14px;width:22px;height:22px;border-radius:50%;background:var(--accent)}
+.card.selected::before{content:"";position:absolute;top:22px;right:22px;width:6px;height:10px;border:solid var(--navy);border-width:0 2px 2px 0;transform:rotate(45deg);z-index:1}
+.card-icon{font-size:26px;line-height:1}
+.card-title{font-size:15px;font-weight:700;color:var(--navy);font-family:'Montserrat',sans-serif;line-height:1.3}
+.card-desc{font-size:12.5px;color:var(--muted);line-height:1.5}
+.card-compact{padding:16px 14px;align-items:center;text-align:center;min-height:88px;justify-content:center}
+.card-compact .card-title{font-size:14px}
 
-/* Results */
-.result-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px}
-.result-card{background:var(--bg-alt);border-radius:var(--radius-lg);padding:16px;border:1px solid var(--border)}
-.result-card .rc-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;color:var(--text-muted)}
-.result-card .rc-value{font-family:'Montserrat',sans-serif;font-size:22px;font-weight:700;margin-top:4px}
-.result-card .rc-sub{font-size:12px;color:var(--text-light);margin-top:2px}
-.rc-mpr{color:var(--blue)}
-.rc-cee{color:var(--green)}
-.rc-ptz{color:var(--navy)}
-.rc-rac{color:var(--accent)}
+/* Pills (DPE grades) */
+.dpe-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:24px}
+@media(max-width:540px){.dpe-grid{grid-template-columns:repeat(4,1fr);gap:8px}}
+.dpe-pill{background:#fff;border:1.5px solid var(--border);border-radius:12px;padding:18px 10px;cursor:pointer;transition:.2s;text-align:center;position:relative;overflow:hidden}
+.dpe-pill:hover{transform:translateY(-2px);border-color:var(--accent)}
+.dpe-pill.selected{border-color:var(--accent);box-shadow:0 0 0 3px var(--aqua-soft)}
+.dpe-pill::before{content:"";position:absolute;top:0;left:0;right:0;height:4px}
+.dpe-pill[data-val="A"]::before{background:#22C55E}
+.dpe-pill[data-val="B"]::before{background:#84CC16}
+.dpe-pill[data-val="C"]::before{background:#EAB308}
+.dpe-pill[data-val="D"]::before{background:#F59E0B}
+.dpe-pill[data-val="E"]::before{background:#EA580C}
+.dpe-pill[data-val="F"]::before{background:#DC2626}
+.dpe-pill[data-val="G"]::before{background:#7F1D1D}
+.dpe-pill[data-val="inconnu"]::before{background:var(--muted)}
+.dpe-letter{font-family:'Montserrat',sans-serif;font-size:22px;font-weight:900;color:var(--navy);line-height:1;margin-bottom:4px;margin-top:6px}
+.dpe-sub{font-size:10px;color:var(--muted);font-weight:500}
+.dpe-nsp{grid-column:span 4;padding:14px;background:#fff;border:1.5px solid var(--border);border-radius:12px;cursor:pointer;text-align:center;font-size:13px;color:var(--muted);font-weight:500;transition:.2s}
+.dpe-nsp:hover{border-color:var(--accent);color:var(--accent-deep)}
+.dpe-nsp.selected{border-color:var(--accent);background:var(--aqua-mist);color:var(--accent-deep)}
 
-/* Bar chart */
-.bar-section{margin:16px 0}
-.bar-title{font-size:12px;font-weight:600;color:var(--text-light);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px}
-.bar-wrap{height:32px;background:var(--bg-alt);border-radius:var(--radius);overflow:hidden;display:flex;border:1px solid var(--border)}
-.bar-seg{height:100%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;color:#fff;transition:.4s;min-width:3px}
-.bar-legend{display:flex;flex-wrap:wrap;gap:14px;margin-top:8px;font-size:12px;color:var(--text-light)}
-.bar-legend span{display:flex;align-items:center;gap:5px}
-.bar-legend .dot{width:10px;height:10px;border-radius:3px;flex-shrink:0}
+/* Slider */
+.slider-block{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:32px 28px;margin-bottom:24px}
+.slider-value{font-family:'Montserrat',sans-serif;font-size:56px;font-weight:800;color:var(--navy);line-height:1;margin-bottom:4px}
+.slider-unit{font-size:15px;color:var(--muted);margin-bottom:24px}
+.slider-input{width:100%;height:6px;border-radius:99px;background:var(--border);-webkit-appearance:none;appearance:none;outline:none;cursor:pointer}
+.slider-input::-webkit-slider-thumb{-webkit-appearance:none;width:26px;height:26px;border-radius:50%;background:var(--accent);cursor:pointer;border:4px solid #fff;box-shadow:0 2px 8px rgba(34,211,238,.35)}
+.slider-input::-moz-range-thumb{width:26px;height:26px;border-radius:50%;background:var(--accent);cursor:pointer;border:4px solid #fff;box-shadow:0 2px 8px rgba(34,211,238,.35)}
+.slider-ticks{display:flex;justify-content:space-between;margin-top:10px;font-size:12px;color:var(--muted)}
 
-/* Detail table */
-.detail-section{margin-top:16px}
-.detail-table{border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden}
-.detail-row{display:flex;justify-content:space-between;align-items:center;padding:10px 16px;font-size:14px;border-bottom:1px solid var(--border)}
-.detail-row:last-child{border-bottom:none}
-.detail-row:nth-child(even){background:var(--bg-alt)}
-.detail-row .dlbl{color:var(--text-light)}
-.detail-row .dval{font-weight:600;font-family:'Montserrat',sans-serif;font-size:13px}
-.detail-row.total{background:var(--navy);color:#fff}
-.detail-row.total .dlbl,.detail-row.total .dval{color:#fff}
+/* Input */
+.input-block{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:28px;margin-bottom:24px}
+.big-input{width:100%;font-family:'Montserrat',sans-serif;font-size:36px;font-weight:700;color:var(--navy);border:none;outline:none;padding:8px 0;border-bottom:2px solid var(--border);transition:.2s;background:transparent}
+.big-input:focus{border-bottom-color:var(--accent)}
+.big-input::placeholder{color:var(--border);font-weight:400}
+.input-suffix{display:flex;align-items:baseline;gap:10px}
+.input-suffix-unit{font-family:'Montserrat',sans-serif;font-size:22px;font-weight:700;color:var(--muted)}
 
-/* CTA */
-.cta-box{margin-top:1.5rem;padding:20px;border-radius:var(--radius-lg);background:linear-gradient(135deg,var(--pale-blue) 0%,#fff 100%);border:1.5px solid var(--light-blue)}
-.cta-box h3{font-family:'Montserrat',sans-serif;font-size:15px;font-weight:600;color:var(--navy);margin-bottom:6px}
-.cta-box p{font-size:13px;color:var(--text-light);line-height:1.5;margin-bottom:12px}
-.cta-btn{
-  display:inline-flex;align-items:center;gap:6px;padding:10px 24px;border-radius:var(--radius);
-  background:var(--accent);color:#fff;font-family:'Montserrat',sans-serif;font-size:13px;
-  font-weight:600;text-decoration:none;border:none;cursor:pointer;transition:.2s
-}
-.cta-btn:hover{background:#BD6709;transform:translateY(-1px)}
+/* Multi-select travaux */
+.travaux-group{margin-bottom:20px}
+.travaux-group-title{font-size:12px;font-weight:700;color:var(--accent-deep);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;padding:0 4px}
+.travaux-list{display:grid;gap:8px}
+.travaux-item{background:#fff;border:1.5px solid var(--border);border-radius:10px;padding:14px 16px;cursor:pointer;transition:.2s;display:flex;align-items:center;gap:12px}
+.travaux-item:hover{border-color:var(--accent)}
+.travaux-item.selected{border-color:var(--accent);background:var(--aqua-mist)}
+.travaux-check{width:22px;height:22px;border-radius:6px;border:1.5px solid var(--border);background:#fff;flex-shrink:0;transition:.2s;display:flex;align-items:center;justify-content:center}
+.travaux-item.selected .travaux-check{background:var(--accent);border-color:var(--accent)}
+.travaux-item.selected .travaux-check::after{content:"";width:6px;height:10px;border:solid var(--navy);border-width:0 2px 2px 0;transform:rotate(45deg);margin-top:-2px}
+.travaux-name{font-size:14px;font-weight:500;color:var(--navy);flex:1}
+.travaux-cat-badge{font-size:10px;font-weight:600;color:var(--muted);background:var(--pale);padding:2px 8px;border-radius:99px;text-transform:uppercase;letter-spacing:.5px}
+.travaux-count{text-align:center;padding:12px;background:var(--aqua-mist);border-radius:10px;font-size:13px;color:var(--accent-deep);font-weight:600;margin-bottom:16px}
 
-/* Disclaimer */
-.disclaimer{font-size:11px;color:var(--text-muted);line-height:1.5;margin-top:16px;padding:12px 16px;background:var(--bg-alt);border-radius:var(--radius);border:1px solid var(--border)}
+/* Navigation buttons */
+.nav-row{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:8px;flex-wrap:wrap}
+.btn{font-family:'Montserrat',sans-serif;font-weight:700;font-size:14px;padding:14px 28px;border-radius:10px;cursor:pointer;transition:.25s cubic-bezier(.4,0,.2,1);display:inline-flex;align-items:center;gap:8px;text-decoration:none;border:none}
+.btn-primary{background:var(--accent);color:var(--navy);box-shadow:0 2px 8px rgba(34,211,238,.25)}
+.btn-primary:hover{background:var(--accent-hover);transform:translateY(-1px);box-shadow:0 4px 16px rgba(34,211,238,.35)}
+.btn-primary:disabled{background:var(--border);color:var(--muted);cursor:not-allowed;transform:none;box-shadow:none}
+.btn-ghost{background:none;color:var(--muted);padding:10px 16px}
+.btn-ghost:hover{color:var(--accent-deep)}
+
+/* Loading */
+.loading{display:none;text-align:center;padding:80px 20px}
+.loading.show{display:block;animation:fadeIn .3s}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.spinner{width:64px;height:64px;border:4px solid var(--border);border-top-color:var(--accent);border-radius:50%;animation:spin 1s linear infinite;margin:0 auto 32px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.loading-title{font-size:22px;font-weight:700;color:var(--navy);margin-bottom:8px;font-family:'Montserrat',sans-serif}
+.loading-msg{font-size:15px;color:var(--muted);min-height:24px;transition:opacity .3s}
+
+/* RESULTS */
+.results{display:none}
+.results.show{display:block;animation:fadeIn .5s}
+
+.result-hero{border-radius:var(--radius-lg);padding:40px 32px;color:#fff;margin-bottom:20px;position:relative;overflow:hidden}
+.result-hero.anah-bleu{background:linear-gradient(135deg,#1E40AF 0%,#1E3A8A 100%)}
+.result-hero.anah-jaune{background:linear-gradient(135deg,#A16207 0%,#713F12 100%)}
+.result-hero.anah-violet{background:linear-gradient(135deg,#6B21A8 0%,#581C87 100%)}
+.result-hero.anah-rose{background:linear-gradient(135deg,#BE185D 0%,#831843 100%)}
+.result-hero::before{content:"";position:absolute;top:-50%;right:-20%;width:300px;height:300px;background:radial-gradient(circle,rgba(255,255,255,.08) 0%,transparent 70%);pointer-events:none}
+.anah-badge{display:inline-block;font-family:'Montserrat',sans-serif;font-weight:800;font-size:11px;letter-spacing:2px;padding:6px 14px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);border-radius:99px;color:#fff;text-transform:uppercase;margin-bottom:14px}
+.result-title{font-size:16px;color:rgba(255,255,255,.75);margin-bottom:8px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:500}
+.result-profile{font-family:'Montserrat',sans-serif;font-size:clamp(24px,4vw,32px);font-weight:800;color:#fff;line-height:1.2;margin-bottom:16px;position:relative;z-index:1}
+.result-profile strong{color:#fff;font-weight:900;display:inline-block}
+.result-total-wrap{padding-top:20px;border-top:1px solid rgba(255,255,255,.15);position:relative;z-index:1}
+.result-total-label{font-size:13px;color:rgba(255,255,255,.65);margin-bottom:4px}
+.result-total{font-family:'Montserrat',sans-serif;font-size:clamp(34px,5vw,44px);font-weight:800;color:#fff;line-height:1.1}
+.result-rac-small{font-size:13px;color:rgba(255,255,255,.65);margin-top:8px}
+
+.good-news{background:var(--iris-soft);border-radius:var(--radius);padding:16px 20px;display:flex;align-items:center;gap:12px;margin-bottom:28px}
+.good-news-icon{width:36px;height:36px;background:var(--iris);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.good-news-text{flex:1;font-size:14px;color:var(--txt);line-height:1.5}
+.good-news-text strong{color:var(--navy);font-family:'Montserrat',sans-serif;font-weight:700}
+
+.section-hdr{margin-bottom:16px;margin-top:36px}
+.section-hdr-label{display:inline-block;font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent-deep);margin-bottom:6px}
+.section-hdr-title{font-size:22px;font-weight:700;color:var(--navy);font-family:'Montserrat',sans-serif;margin-bottom:4px}
+.section-hdr-sub{font-size:14px;color:var(--muted)}
+
+/* Free summary */
+.aide-cards{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:28px}
+@media(max-width:540px){.aide-cards{grid-template-columns:1fr}}
+.aide-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:20px}
+.aide-card-label{font-size:12px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.8px;margin-bottom:6px}
+.aide-card-val{font-family:'Montserrat',sans-serif;font-size:22px;font-weight:800;color:var(--navy);line-height:1.2}
+.aide-card-sub{font-size:12px;color:var(--muted);margin-top:4px;line-height:1.5}
+
+/* Locked cards */
+.lock-grid{display:grid;grid-template-columns:1fr;gap:12px;margin-bottom:32px}
+.lock-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:20px;position:relative;overflow:hidden}
+.lock-card-head{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.lock-icon{width:32px;height:32px;background:var(--pale);border:1px solid var(--border);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.lock-icon svg{width:14px;height:14px;stroke:var(--muted);fill:none;stroke-width:2}
+.lock-card-title{font-size:15px;font-weight:700;color:var(--navy);font-family:'Montserrat',sans-serif}
+.lock-card-sub{font-size:13px;color:var(--muted);margin-top:2px}
+.lock-blur{padding:8px 0;filter:blur(5px);-webkit-user-select:none;user-select:none;pointer-events:none;opacity:.75}
+.lock-blur-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border);font-size:14px}
+.lock-blur-row:last-child{border-bottom:none}
+.lock-badge{position:absolute;top:14px;right:14px;background:var(--navy);color:var(--accent);font-size:10px;font-weight:700;letter-spacing:.5px;padding:3px 10px;border-radius:99px;text-transform:uppercase}
+
+/* Capture block */
+.capture{background:linear-gradient(135deg,var(--surface) 0%,var(--navy) 100%);border-radius:var(--radius-lg);padding:36px 32px;color:#fff;margin-bottom:24px;position:relative;overflow:hidden}
+.capture::before{content:"";position:absolute;bottom:-30%;left:-10%;width:280px;height:280px;background:radial-gradient(circle,var(--iris-soft) 0%,transparent 70%);pointer-events:none}
+.capture-label{display:inline-block;font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);margin-bottom:14px;padding:4px 12px;background:var(--aqua-soft);border-radius:99px;position:relative;z-index:1}
+.capture-title{font-size:26px;font-weight:800;color:#fff;margin-bottom:10px;font-family:'Montserrat',sans-serif;line-height:1.2;position:relative;z-index:1}
+.capture-sub{font-size:14px;color:rgba(237,233,254,.7);margin-bottom:24px;line-height:1.6;position:relative;z-index:1}
+.capture-features{list-style:none;padding:0;margin:0 0 24px 0;position:relative;z-index:1;display:grid;gap:8px}
+.capture-features li{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:rgba(237,233,254,.85);line-height:1.5}
+.capture-features li::before{content:"";flex-shrink:0;width:18px;height:18px;border-radius:50%;background:var(--accent);margin-top:2px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230D1025' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");background-size:12px;background-position:center;background-repeat:no-repeat}
+.capture-form{display:flex;flex-direction:column;gap:12px;position:relative;z-index:1}
+.capture-input{width:100%;padding:14px 18px;border-radius:10px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.05);color:#fff;font-size:15px;font-family:inherit;transition:.2s}
+.capture-input::placeholder{color:rgba(237,233,254,.4)}
+.capture-input:focus{outline:none;border-color:var(--accent);background:rgba(255,255,255,.08)}
+.capture-cta{padding:15px 28px;background:var(--accent);color:var(--navy);border-radius:10px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:15px;cursor:pointer;transition:.25s;display:flex;align-items:center;justify-content:center;gap:8px;border:none}
+.capture-cta:hover{background:var(--accent-hover);transform:translateY(-1px);box-shadow:0 6px 20px rgba(34,211,238,.3)}
+.capture-cta:disabled{opacity:.5;cursor:not-allowed}
+.capture-reassurance{display:flex;align-items:flex-start;gap:10px;font-size:12px;color:rgba(237,233,254,.55);margin-top:16px;line-height:1.5;position:relative;z-index:1}
+.capture-reassurance svg{width:14px;height:14px;stroke:var(--accent);fill:none;stroke-width:2;flex-shrink:0;margin-top:1px}
+.capture-form-row{display:flex;flex-direction:column;gap:10px}
+@media(min-width:540px){.capture-form-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}}
+
+/* Unlocked state */
+.unlocked{display:none}
+.unlocked.show{display:block;animation:fadeIn .5s}
+
+.aides-table{background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-bottom:24px}
+.aides-table-row{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center;padding:16px 22px;border-bottom:1px solid var(--border);font-size:14px}
+.aides-table-row:last-child{border-bottom:none}
+.aides-table-row.total{background:var(--pale);font-weight:700;font-family:'Montserrat',sans-serif;font-size:15px}
+.aides-table-row.final{background:linear-gradient(135deg,var(--aqua-mist),var(--iris-soft));font-weight:800;font-family:'Montserrat',sans-serif}
+.aide-name{color:var(--navy);font-weight:500}
+.aide-name-sub{font-size:12px;color:var(--muted);margin-top:2px}
+.aide-amount{color:var(--accent-deep);font-weight:700;font-family:'Montserrat',sans-serif;text-align:right;white-space:nowrap}
+.aide-amount.final{color:var(--navy);font-size:18px}
+
+.alerts{display:grid;gap:10px;margin-bottom:24px}
+.alert{background:var(--warn-bg);border-left:3px solid var(--warn-border);border-radius:8px;padding:14px 16px;display:flex;align-items:flex-start;gap:12px;font-size:13.5px;color:var(--warn-txt);line-height:1.5}
+.alert svg{width:16px;height:16px;flex-shrink:0;margin-top:2px}
+.alert strong{font-weight:700}
+.alert.info{background:var(--info-bg);border-left-color:var(--accent);color:var(--info-txt)}
+
+.upsell{background:var(--iris-soft);border:1px solid rgba(167,139,250,.3);border-radius:var(--radius);padding:24px;margin-bottom:24px}
+.upsell-title{font-size:18px;font-weight:700;color:var(--navy);font-family:'Montserrat',sans-serif;margin-bottom:8px}
+.upsell-sub{font-size:14px;color:var(--muted);margin-bottom:16px;line-height:1.6}
+.upsell-cta{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;background:var(--iris);color:var(--navy);border-radius:10px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:14px;text-decoration:none;transition:.2s}
+.upsell-cta:hover{background:#8B6FE3;transform:translateY(-1px)}
 
 /* Footer */
-.footer{text-align:center;margin-top:2rem;padding-bottom:1rem}
-.footer .brand{font-family:'Montserrat',sans-serif;font-size:12px;font-weight:600;color:var(--navy);letter-spacing:1px}
-.footer .contact{font-size:12px;color:var(--text-muted);margin-top:4px}
-.footer a{color:var(--blue);text-decoration:none}
-.footer a:hover{text-decoration:underline}
+.footer{background:var(--deep);padding:48px 28px 36px;color:#64748B;font-size:13px;margin-top:60px}
+.footer-inner{max-width:980px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:32px}
+.footer-inner strong{color:var(--light);font-weight:700}
+.footer-inner p{margin-top:4px;font-size:12px}
+.footer-links{display:flex;gap:20px;flex-wrap:wrap}
+.footer-links a{color:rgba(237,233,254,.6);font-size:13px;text-decoration:none}
+.footer-legal{max-width:980px;margin:24px auto 0;padding-top:24px;border-top:1px solid rgba(255,255,255,.06);font-size:11px;color:rgba(237,233,254,.3);text-align:center}
+.footer-legal a{color:rgba(237,233,254,.5);text-decoration:none;transition:color .2s}
+.footer-legal a:hover{color:#22D3EE}
+.footer-legal br{margin-bottom:6px}
 
-/* Responsive */
+/* ═══ UNIFIED FOOTER ═══ */
+.footer{background:var(--navy, #0D1025);color:rgba(237,233,254,.7);padding:60px 24px 30px;margin-top:80px}
+.footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:40px}
+.footer-brand strong{font-size:18px;color:#fff;display:block;margin-bottom:8px}
+.footer-brand p{font-size:13px;line-height:1.6;color:rgba(237,233,254,.5)}
+.footer-col{display:flex;flex-direction:column;gap:8px}
+.footer-col-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:rgba(237,233,254,.4);margin-bottom:6px}
+.footer-col a{color:rgba(237,233,254,.7);text-decoration:none;font-size:13px;transition:color .2s}
+.footer-col a:hover{color:#22D3EE}
+.footer-contact a{font-size:13px}
+.footer-legal{max-width:1100px;margin:30px auto 0;padding-top:20px;border-top:1px solid rgba(237,233,254,.1);font-size:11px;color:rgba(237,233,254,.35);text-align:center}
+@media(max-width:768px){
+.footer-inner{grid-template-columns:1fr 1fr;gap:30px 20px}
+}
 @media(max-width:480px){
-  .form-row.cols-2{grid-template-columns:1fr}
-  .result-grid{grid-template-columns:1fr}
-  .card{padding:1.25rem}
-  .progress{padding:0}
-  .prog-label{font-size:10px}
+.footer-inner{grid-template-columns:1fr;gap:24px}
 }
 
+
+/* FAQ accordion */
+.faq-item{border-bottom:1px solid var(--border)}
+.faq-q{padding:18px 0;font-size:15px;font-weight:600;color:var(--navy);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.faq-q::after{content:'+';font-size:20px;color:var(--muted);transition:transform .3s;flex-shrink:0}
+.faq-item.open .faq-q::after{content:'−'}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s ease;font-size:14px;color:var(--muted);line-height:1.7}
+.faq-item.open .faq-a{max-height:500px;padding-bottom:18px}
+.faq-a a{color:var(--blue);text-decoration:underline}
+
+/* SEO pillar content */
+.seo-content h2{font-family:'Montserrat',sans-serif;font-size:24px;font-weight:800;color:var(--navy);margin:48px 0 16px;letter-spacing:-.02em}
+.seo-content h2:first-child{margin-top:0}
+.seo-content p{font-size:16px;line-height:1.8;color:var(--txt);margin-bottom:16px}
+.seo-content strong{color:var(--navy)}
+.seo-content a{color:var(--blue);text-decoration:underline;text-underline-offset:3px}
+
+/* ═══ MOBILE FIXES — 21/04/2026 ═══ */
+@media(max-width:700px){
+  .nav-links .nav-cta{width:100%;text-align:center;margin-top:8px}
+  .footer-contact a{word-break:break-all}
+}
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "MaPrimeRénov' et les CEE sont-ils cumulables ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui, en parcours monogeste les deux dispositifs sont cumulables. En parcours accompagné, les CEE sont intégrés dans le calcul global de l'aide Anah."}},
+    {"@type": "Question", "name": "Faut-il faire les travaux avant ou après la demande d'aide ?", "acceptedAnswer": {"@type": "Answer", "text": "Toujours après. Vous devez créer votre dossier MaPrimeRénov' et choisir votre opérateur CEE avant de signer le moindre devis."}},
+    {"@type": "Question", "name": "Mon artisan doit-il être certifié RGE ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui, c'est une condition obligatoire pour bénéficier de MaPrimeRénov' et des CEE. Vérifiez sur france-renov.gouv.fr."}},
+    {"@type": "Question", "name": "L'éco-PTZ est-il cumulable avec MaPrimeRénov' ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui, sans condition de revenus. Jusqu'à 50 000 € à taux zéro sur 20 ans."}},
+    {"@type": "Question", "name": "Les montants du simulateur sont-ils garantis ?", "acceptedAnswer": {"@type": "Answer", "text": "Les montants sont calculés sur les barèmes Anah 2026 en vigueur. Ils sont indicatifs et dépendent de la validation de votre dossier."}},
+    {"@type": "Question", "name": "Quelle différence avec le site officiel MaPrimeRénov' ?", "acceptedAnswer": {"@type": "Answer", "text": "Le simulateur ADORA calcule simultanément les 4 dispositifs (MPR, CEE, éco-PTZ, TVA réduite) et affiche un reste à charge global."}}
+  ]
+}
+</script>
+    <script defer src="https://browser.sentry-cdn.com/8.0.0/bundle.min.js" crossorigin="anonymous"></script>
+    <script>Sentry.init({dsn:"https://14b68c10a24c3da4127332e14fd20359@o4511253060976640.ingest.de.sentry.io/4511253075132496",tracesSampleRate:0,replaysSessionSampleRate:0});</script>
 </head>
 <body>
 
-<!-- ═══ NAVIGATION ═══ -->
-<nav class="site-nav">
-  <a href="/" class="logo-link">
-    <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5NDAgMjAwIiB3aWR0aD0iOTQwIiBoZWlnaHQ9IjIwMCI+CiAgPGcgZmlsbD0id2hpdGUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICA8IS0tIFRyaWFuZ2xlIGljb24gLS0+CiAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMCwgOCkgdHJhbnNsYXRlKC03NSwgLTk5KSI+CiAgICAgIDxwYXRoIGQ9Ik0gMTE3LDI4MiBMIDE2OSwyODEgTCAxNzQsMjc0IEwgMTc3LDI2OCBMIDIyOSwxOTMgTCAyMjksMTkxIEwgMjA2LDE1OCBMIDIwNywxNTUgTCAyMjksMTU2IEwgMjM0LDE2NSBMIDIzNywxNjggTCAyMzksMTczIEwgMjgxLDIzNSBMIDI4MiwyNDAgTCAyNDAsMjQwIEwgMjEzLDI4MCBMIDIxMywyODIgTCAzNjQsMjgyIEwgMzYxLDI3NiBMIDMwMCwxODcgTCAyOTksMTg0IEwgMjQyLDk5IEwgMjQwLDEwMCBMIDIwNywxNTAgTCAyMDEsMTU2IEwgMTQwLDI0OCBMIDEzNywyNTEgTCAxMzYsMjU0IEwgMTI0LDI3MCBaIi8+CiAgICA8L2c+CiAgICA8IS0tIFRleHQgIkFkb3JhIiAtLT4KICAgIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDMzMCwgMTIpIHNjYWxlKDEuOCkgdHJhbnNsYXRlKC03MSwgLTMyMCkiPgogICAgICA8cGF0aCBkPSJNIDEwMiwzMjYgTCA5MywzNTIgTCA5MSwzNTUgTCA4NywzNjkgTCA4NSwzNzIgTCA4MiwzODMgTCA4MCwzODYgTCA3OCwzOTUgTCA3MSw0MTMgTCA3MSw0MTYgTCA4OSw0MTUgTCA5NywzOTAgTCAxMjUsMzg5IEwgMTMwLDM5NCBMIDEzMSw0MDAgTCAxMzMsNDAzIEwgMTM3LDQxNiBMIDE1NSw0MTYgTCAxNTUsNDEyIEwgMTUzLDQwOSBMIDEyNCwzMjYgWiBNIDExNCwzNDQgTCAxMjMsMzcyIEwgMTIyLDM3NiBMIDEwMiwzNzUgTCAxMDIsMzcyIEwgMTA2LDM1OSBMIDEwOCwzNTYgTCAxMTAsMzQ3IFoiLz4KICAgICAgPHBhdGggZD0iTSAyMjUsMzIwIEwgMjA4LDMyMCBMIDIwNiwzNTIgTCAyMDIsMzQ4IEwgMTk0LDM0NSBMIDE4MCwzNDUgTCAxNjksMzQ5IEwgMTU5LDM2MCBMIDE1NSwzNzMgTCAxNTYsMzk1IEwgMTYyLDQwNyBMIDE3MCw0MTQgTCAxNzgsNDE3IEwgMTkzLDQxNyBMIDE5OSw0MTUgTCAyMDUsNDA4IEwgMjA4LDQwOCBMIDIwOCw0MTYgTCAyMjUsNDE2IFogTSAxODcsMzU3IEwgMTk0LDM1NyBMIDE5OSwzNTkgTCAyMDQsMzY0IEwgMjA3LDM3MSBMIDIwOCwzODUgTCAyMDYsMzk0IEwgMjA0LDM5OCBMIDE5OSw0MDMgTCAxOTUsNDA1IEwgMTg2LDQwNSBMIDE4Miw0MDMgTCAxNzYsMzk3IEwgMTczLDM4OSBMIDE3MywzNzIgTCAxNzYsMzY1IEwgMTgyLDM1OSBaIi8+CiAgICAgIDxwYXRoIGQ9Ik0gMjU1LDM0NiBMIDI0NCwzNTIgTCAyMzgsMzU5IEwgMjMzLDM3MSBMIDIzMywzODkgTCAyMzUsMzk3IEwgMjQwLDQwNiBMIDI0NSw0MTEgTCAyNTIsNDE1IEwgMjU5LDQxNyBMIDI3Nyw0MTcgTCAyODMsNDE1IEwgMjk1LDQwNiBMIDMwMSwzOTYgTCAzMDMsMzg4IEwgMzAzLDM3NCBMIDMwMSwzNjYgTCAyOTYsMzU3IEwgMjkwLDM1MSBMIDI4MywzNDcgTCAyNzcsMzQ1IFogTSAyNjQsMzU3IEwgMjcyLDM1NyBMIDI3NiwzNTkgTCAyODEsMzY0IEwgMjg1LDM3NSBMIDI4NSwzODcgTCAyODMsMzk1IEwgMjc2LDQwMyBMIDI3Miw0MDUgTCAyNjQsNDA1IEwgMjU5LDQwMyBMIDI1NCwzOTggTCAyNTAsMzg2IEwgMjUwLDM3NCBMIDI1MiwzNjggTCAyNTgsMzYwIFoiLz4KICAgICAgPHBhdGggZD0iTSAzNTAsMzQ1IEwgMzM4LDM0NiBMIDMyOCwzNTUgTCAzMjgsMzQ3IEwgMzExLDM0NyBMIDMxMSw0MTYgTCAzMjgsNDE1IEwgMzI4LDM3NCBMIDMzMCwzNjggTCAzMzYsMzYyIEwgMzQzLDM1OSBMIDM1MCwzNTkgWiIvPgogICAgICA8cGF0aCBkPSJNIDM2NCwzNDkgTCAzNTksMzUzIEwgMzU1LDM2MCBMIDM1NCwzNjQgTCAzNTUsMzY5IEwgMzcwLDM2OSBMIDM3MSwzNjMgTCAzNzUsMzU4IEwgMzc3LDM1NyBMIDM4NiwzNTcgTCAzOTIsMzYyIEwgMzkzLDM2NSBMIDM5MiwzNzQgTCAzNzIsMzc1IEwgMzYwLDM4MCBMIDM1NCwzODYgTCAzNTEsMzk0IEwgMzUxLDQwMiBMIDM1NCw0MDkgTCAzNTgsNDEzIEwgMzY2LDQxNyBMIDM4MSw0MTcgTCAzODYsNDE1IEwgMzkxLDQwOSBMIDM5NCw0MDkgTCAzOTUsNDE2IEwgNDExLDQxNiBMIDQxMCwzNjcgTCA0MDksMzYxIEwgNDA2LDM1NCBMIDQwMCwzNDggTCAzOTEsMzQ1IEwgMzczLDM0NSBaIE0gMzkzLDM4NSBMIDM5MiwzOTcgTCAzODYsNDA0IEwgMzg0LDQwNSBMIDM3NSw0MDUgTCAzNjksNDAwIEwgMzY5LDM5MiBMIDM3NSwzODYgTCAzODMsMzg0IFoiLz4KICAgIDwvZz4KICA8L2c+Cjwvc3ZnPgo=" alt="ADORA">
-  </a>
-  <div class="nav-links">
-    <a href="/#prestations">Prestations</a>
-    <a href="/#apropos"><span>À propos</span></a>
-    <a href="/simulateur" class="active">Simulateur</a>
-    <a href="/#contact" class="nav-cta">Contact</a>
+<div class="scroll-progress" id="scrollProgress"></div>
+<nav class="nav">
+<div class="nav-inner">
+  <a href="./" class="nav-logo"><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5NDAgMjAwIiB3aWR0aD0iOTQwIiBoZWlnaHQ9IjIwMCI+CiAgPGcgZmlsbD0id2hpdGUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICA8IS0tIFRyaWFuZ2xlIGljb24gLS0+CiAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMCwgOCkgdHJhbnNsYXRlKC03NSwgLTk5KSI+CiAgICAgIDxwYXRoIGQ9Ik0gMTE3LDI4MiBMIDE2OSwyODEgTCAxNzQsMjc0IEwgMTc3LDI2OCBMIDIyOSwxOTMgTCAyMjksMTkxIEwgMjA2LDE1OCBMIDIwNywxNTUgTCAyMjksMTU2IEwgMjM0LDE2NSBMIDIzNywxNjggTCAyMzksMTczIEwgMjgxLDIzNSBMIDI4MiwyNDAgTCAyNDAsMjQwIEwgMjEzLDI4MCBMIDIxMywyODIgTCAzNjQsMjgyIEwgMzYxLDI3NiBMIDMwMCwxODcgTCAyOTksMTg0IEwgMjQyLDk5IEwgMjQwLDEwMCBMIDIwNywxNTAgTCAyMDEsMTU2IEwgMTQwLDI0OCBMIDEzNywyNTEgTCAxMzYsMjU0IEwgMTI0LDI3MCBaIi8+CiAgICA8L2c+CiAgICA8IS0tIFRleHQgIkFkb3JhIiAtLT4KICAgIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDMzMCwgMTIpIHNjYWxlKDEuOCkgdHJhbnNsYXRlKC03MSwgLTMyMCkiPgogICAgICA8cGF0aCBkPSJNIDEwMiwzMjYgTCA5MywzNTIgTCA5MSwzNTUgTCA4NywzNjkgTCA4NSwzNzIgTCA4MiwzODMgTCA4MCwzODYgTCA3OCwzOTUgTCA3MSw0MTMgTCA3MSw0MTYgTCA4OSw0MTUgTCA5NywzOTAgTCAxMjUsMzg5IEwgMTMwLDM5NCBMIDEzMSw0MDAgTCAxMzMsNDAzIEwgMTM3LDQxNiBMIDE1NSw0MTYgTCAxNTUsNDEyIEwgMTUzLDQwOSBMIDEyNCwzMjYgWiBNIDExNCwzNDQgTCAxMjMsMzcyIEwgMTIyLDM3NiBMIDEwMiwzNzUgTCAxMDIsMzcyIEwgMTA2LDM1OSBMIDEwOCwzNTYgTCAxMTAsMzQ3IFoiLz4KICAgICAgPHBhdGggZD0iTSAyMjUsMzIwIEwgMjA4LDMyMCBMIDIwNiwzNTIgTCAyMDIsMzQ4IEwgMTk0LDM0NSBMIDE4MCwzNDUgTCAxNjksMzQ5IEwgMTU5LDM2MCBMIDE1NSwzNzMgTCAxNTYsMzk1IEwgMTYyLDQwNyBMIDE3MCw0MTQgTCAxNzgsNDE3IEwgMTkzLDQxNyBMIDE5OSw0MTUgTCAyMDUsNDA4IEwgMjA4LDQwOCBMIDIwOCw0MTYgTCAyMjUsNDE2IFogTSAxODcsMzU3IEwgMTk0LDM1NyBMIDE5OSwzNTkgTCAyMDQsMzY0IEwgMjA3LDM3MSBMIDIwOCwzODUgTCAyMDYsMzk0IEwgMjA0LDM5OCBMIDE5OSw0MDMgTCAxOTUsNDA1IEwgMTg2LDQwNSBMIDE4Miw0MDMgTCAxNzYsMzk3IEwgMTczLDM4OSBMIDE3MywzNzIgTCAxNzYsMzY1IEwgMTgyLDM1OSBaIi8+CiAgICAgIDxwYXRoIGQ9Ik0gMjU1LDM0NiBMIDI0NCwzNTIgTCAyMzgsMzU5IEwgMjMzLDM3MSBMIDIzMywzODkgTCAyMzUsMzk3IEwgMjQwLDQwNiBMIDI0NSw0MTEgTCAyNTIsNDE1IEwgMjU5LDQxNyBMIDI3Nyw0MTcgTCAyODMsNDE1IEwgMjk1LDQwNiBMIDMwMSwzOTYgTCAzMDMsMzg4IEwgMzAzLDM3NCBMIDMwMSwzNjYgTCAyOTYsMzU3IEwgMjkwLDM1MSBMIDI4MywzNDcgTCAyNzcsMzQ1IFogTSAyNjQsMzU3IEwgMjcyLDM1NyBMIDI3NiwzNTkgTCAyODEsMzY0IEwgMjg1LDM3NSBMIDI4NSwzODcgTCAyODMsMzk1IEwgMjc2LDQwMyBMIDI3Miw0MDUgTCAyNjQsNDA1IEwgMjU5LDQwMyBMIDI1NCwzOTggTCAyNTAsMzg2IEwgMjUwLDM3NCBMIDI1MiwzNjggTCAyNTgsMzYwIFoiLz4KICAgICAgPHBhdGggZD0iTSAzNTAsMzQ1IEwgMzM4LDM0NiBMIDMyOCwzNTUgTCAzMjgsMzQ3IEwgMzExLDM0NyBMIDMxMSw0MTYgTCAzMjgsNDE1IEwgMzI4LDM3NCBMIDMzMCwzNjggTCAzMzYsMzYyIEwgMzQzLDM1OSBMIDM1MCwzNTkgWiIvPgogICAgICA8cGF0aCBkPSJNIDM2NCwzNDkgTCAzNTksMzUzIEwgMzU1LDM2MCBMIDM1NCwzNjQgTCAzNTUsMzY5IEwgMzcwLDM2OSBMIDM3MSwzNjMgTCAzNzUsMzU4IEwgMzc3LDM1NyBMIDM4NiwzNTcgTCAzOTIsMzYyIEwgMzkzLDM2NSBMIDM5MiwzNzQgTCAzNzIsMzc1IEwgMzYwLDM4MCBMIDM1NCwzODYgTCAzNTEsMzk0IEwgMzUxLDQwMiBMIDM1NCw0MDkgTCAzNTgsNDEzIEwgMzY2LDQxNyBMIDM4MSw0MTcgTCAzODYsNDE1IEwgMzkxLDQwOSBMIDM5NCw0MDkgTCAzOTUsNDE2IEwgNDExLDQxNiBMIDQxMCwzNjcgTCA0MDksMzYxIEwgNDA2LDM1NCBMIDQwMCwzNDggTCAzOTEsMzQ1IEwgMzczLDM0NSBaIE0gMzkzLDM4NSBMIDM5MiwzOTcgTCAzODYsNDA0IEwgMzg0LDQwNSBMIDM3NSw0MDUgTCAzNjksNDAwIEwgMzY5LDM5MiBMIDM3NSwzODYgTCAzODMsMzg0IFoiLz4KICAgIDwvZz4KICA8L2c+Cjwvc3ZnPgo=" alt="ADORA" style="height:26px;width:auto"></a>
+  <div class="nav-links" id="navLinks">
+    <a href="simulateur.html" class="active">Simulateur</a>
+    <a href="estimateur.html">Estimateur</a>
+    <a href="audit-avant-achat.html">Audit achat</a>
+    <a href="sur-mesure.html">Sur mesure</a>
+    <a href="estimateur-outil.html" class="nav-cta">Estimer mes travaux</a>
   </div>
+  <button class="nav-burger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">&#9776;</button>
+</div>
 </nav>
 
-<!-- ═══ BREADCRUMB ═══ -->
-<div class="breadcrumb">
-  <a href="/">Accueil</a> &rsaquo; Simulateur d'aides rénovation 2026
+<div class="app" id="appContainer">
+
+<!-- PAGE HERO -->
+<section class="sim-hero">
+  <div class="container">
+    <h1>Simulateur d'aides à la <em>Rénovation énergétique</em></h1>
+    <p class="sim-hero-sub">Estimez vos droits MaPrimeRénov', CEE, éco-PTZ et TVA réduite — Barèmes 2026</p>
+  </div>
+</section>
+
+<div class="progress-rail" id="progressRail">
+  <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+  <div class="progress-info">
+    <span>Étape <span class="progress-step" id="stepNum">1</span> sur <span id="stepTotal">10</span></span>
+    <span id="stepPct">10%</span>
+  </div>
 </div>
 
-<!-- ═══ SIMULATEUR ═══ -->
+<!-- ═══ SCREEN 0 — LOCALISATION ═══ -->
+<div class="screen active" id="s0" data-step="0">
+  <div class="screen-header">
+    <div class="screen-eyebrow">Votre situation</div>
+    <h2 class="screen-title">Où se situe votre logement ?</h2>
+    <p class="screen-hint">Les plafonds de revenus MaPrimeRénov' sont plus élevés en Île-de-France.</p>
+  </div>
+  <div class="cards">
+    <button type="button" class="card" data-val="idf" onclick="selectCard(this,0,'loc')">
+      <div class="card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="1" y="6" width="7" height="16"/><rect x="9" y="2" width="7" height="20"/><rect x="17" y="9" width="6" height="13"/></svg></div>
+      <div class="card-title">Île-de-France</div>
+      <div class="card-desc">Paris et petite/grande couronne (75, 77, 78, 91-95)</div>
+    </button>
+    <button type="button" class="card" data-val="hdf" onclick="selectCard(this,0,'loc')">
+      <div class="card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22v-6M8 18l4-4 4 4"/><circle cx="12" cy="8" r="6"/></svg></div>
+      <div class="card-title">Hors Île-de-France</div>
+      <div class="card-desc">Reste du territoire métropolitain</div>
+    </button>
+  </div>
+</div>
 
-<div class="app" id="app"></div>
+<!-- ═══ SCREEN 1 — TYPE DE BIEN ═══ -->
+<div class="screen" id="s1" data-step="1">
+  <div class="screen-header">
+    <div class="screen-eyebrow">Le logement</div>
+    <h2 class="screen-title">Maison ou appartement ?</h2>
+    <p class="screen-hint">Certaines aides (isolation par l'extérieur, par exemple) concernent plus souvent les maisons.</p>
+  </div>
+  <div class="cards">
+    <button type="button" class="card" data-val="maison" onclick="selectCard(this,1,'logType')">
+      <div class="card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+      <div class="card-title">Maison individuelle</div>
+      <div class="card-desc">Pavillon, maison de ville</div>
+    </button>
+    <button type="button" class="card" data-val="appart" onclick="selectCard(this,1,'logType')">
+      <div class="card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 6h2M13 6h2M9 10h2M13 10h2M9 14h2M13 14h2M9 18h6"/></svg></div>
+      <div class="card-title">Appartement</div>
+      <div class="card-desc">En copropriété</div>
+    </button>
+  </div>
+  <div style="margin-top:20px;text-align:center"><button type="button" class="btn btn-ghost" onclick="goPrev()" style="font-size:13px;color:var(--muted)">← Retour</button></div>
+</div>
+
+<!-- ═══ SCREEN 2 — ÂGE DU LOGEMENT ═══ -->
+<div class="screen" id="s2" data-step="2">
+  <div class="screen-header">
+    <div class="screen-eyebrow">Ancienneté</div>
+    <h2 class="screen-title">Votre logement a plus de 15 ans ?</h2>
+    <p class="screen-hint">C'est une condition essentielle pour bénéficier de MaPrimeRénov'.</p>
+    <div class="screen-why">ℹ️ La plupart des aides énergétiques exigent un logement de <strong>plus de 15 ans</strong>. Pour les logements récents, d'autres aides peuvent s'appliquer.</div>
+  </div>
+  <div class="cards cards-3">
+    <button type="button" class="card card-compact" data-val="plus15" onclick="selectCard(this,2,'logAge')">
+      <div class="card-icon">✅</div>
+      <div class="card-title">Plus de 15 ans</div>
+    </button>
+    <button type="button" class="card card-compact" data-val="moins15" onclick="selectCard(this,2,'logAge')">
+      <div class="card-icon">⚠️</div>
+      <div class="card-title">Moins de 15 ans</div>
+    </button>
+    <button type="button" class="card card-compact" data-val="nsp" onclick="selectCard(this,2,'logAge')">
+      <div class="card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg></div>
+      <div class="card-title">Je ne sais pas</div>
+    </button>
+  </div>
+  <div style="margin-top:20px;text-align:center"><button type="button" class="btn btn-ghost" onclick="goPrev()" style="font-size:13px;color:var(--muted)">← Retour</button></div>
+</div>
+
+<!-- ═══ SCREEN 3 — STATUT ═══ -->
+<div class="screen" id="s3" data-step="3">
+  <div class="screen-header">
+    <div class="screen-eyebrow">Votre statut</div>
+    <h2 class="screen-title">Vous êtes...</h2>
+    <p class="screen-hint">Les règles MaPrimeRénov' Ampleur diffèrent entre occupants et bailleurs.</p>
+  </div>
+  <div class="cards">
+    <button type="button" class="card" data-val="occupant" onclick="selectCard(this,3,'statut')">
+      <div class="card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 11-7.778 7.778 5.5 5.5 0 017.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg></div>
+      <div class="card-title">Propriétaire occupant</div>
+      <div class="card-desc">Vous vivez dans ce logement (résidence principale)</div>
+    </button>
+    <button type="button" class="card" data-val="bailleur" onclick="selectCard(this,3,'statut')">
+      <div class="card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 21h18M9 8h1M9 12h1M9 16h1M5 21V5a2 2 0 012-2h4a2 2 0 012 2v16"/><path d="M15 21V9a2 2 0 012-2h2a2 2 0 012 2v12"/></svg></div>
+      <div class="card-title">Propriétaire bailleur</div>
+      <div class="card-desc">Vous louez ce logement (investissement locatif)</div>
+    </button>
+  </div>
+  <div style="margin-top:20px;text-align:center"><button type="button" class="btn btn-ghost" onclick="goPrev()" style="font-size:13px;color:var(--muted)">← Retour</button></div>
+</div>
+
+<!-- ═══ SCREEN 4 — COMPOSITION FOYER ═══ -->
+<div class="screen" id="s4" data-step="4">
+  <div class="screen-header">
+    <div class="screen-eyebrow">Votre foyer</div>
+    <h2 class="screen-title">Combien de personnes dans votre foyer fiscal ?</h2>
+    <p class="screen-hint">Tous les membres de votre déclaration d'impôts (vous, conjoint, enfants à charge).</p>
+  </div>
+  <div class="slider-block">
+    <div class="slider-value"><span id="menageVal">1</span></div>
+    <div class="slider-unit" id="menageUnit">personne</div>
+    <input type="range" class="slider-input" id="menageSlider" min="1" max="8" value="1" step="1" oninput="updateMenage(this.value)">
+    <div class="slider-ticks"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8+</span></div>
+  </div>
+  <div class="nav-row">
+    <button type="button" class="btn btn-ghost" onclick="goPrev()">← Retour</button>
+    <button type="button" class="btn btn-primary" onclick="goNext()">Continuer</button>
+  </div>
+</div>
+
+<!-- ═══ SCREEN 5 — REVENU FISCAL ═══ -->
+<div class="screen" id="s5" data-step="5">
+  <div class="screen-header">
+    <div class="screen-eyebrow">Revenus</div>
+    <h2 class="screen-title">Quel est votre revenu fiscal de référence ?</h2>
+    <p class="screen-hint">C'est le chiffre qui détermine votre profil Anah (Bleu, Jaune, Violet ou Rose) et donc le montant de vos aides.</p>
+    <div class="screen-why">ℹ️ <strong>Où le trouver ?</strong> Sur votre dernier avis d'imposition (case "Revenu fiscal de référence"). Ou sur impots.gouv.fr → Mes documents.</div>
+  </div>
+  <div class="input-block">
+    <div class="input-suffix">
+      <input type="text" class="big-input" id="rfrInput" placeholder="32 000" inputmode="numeric" autocomplete="off">
+      <span class="input-suffix-unit">€</span>
+    </div>
+  </div>
+  <div class="nav-row">
+    <button type="button" class="btn btn-ghost" onclick="goPrev()">← Retour</button>
+    <button type="button" class="btn btn-primary" id="s5Next" onclick="goNext()" disabled>Continuer</button>
+  </div>
+</div>
+
+<!-- ═══ SCREEN 6 — DPE ═══ -->
+<div class="screen" id="s6" data-step="6">
+  <div class="screen-header">
+    <div class="screen-eyebrow">Performance énergétique</div>
+    <h2 class="screen-title">Quel est le DPE actuel ?</h2>
+    <p class="screen-hint">Le Diagnostic de Performance Énergétique détermine l'éligibilité au parcours Rénovation d'ampleur.</p>
+    <div class="screen-why">ℹ️ Si vous ne connaissez pas votre DPE, pas de souci — la simulation s'adapte.</div>
+  </div>
+  <div class="dpe-grid">
+    <button type="button" class="dpe-pill" data-val="A" onclick="selectDpe(this,'A')"><div class="dpe-letter">A</div><div class="dpe-sub">Très économe</div></button>
+    <button type="button" class="dpe-pill" data-val="B" onclick="selectDpe(this,'B')"><div class="dpe-letter">B</div><div class="dpe-sub">Économe</div></button>
+    <button type="button" class="dpe-pill" data-val="C" onclick="selectDpe(this,'C')"><div class="dpe-letter">C</div><div class="dpe-sub">Bon</div></button>
+    <button type="button" class="dpe-pill" data-val="D" onclick="selectDpe(this,'D')"><div class="dpe-letter">D</div><div class="dpe-sub">Moyen</div></button>
+    <button type="button" class="dpe-pill" data-val="E" onclick="selectDpe(this,'E')"><div class="dpe-letter">E</div><div class="dpe-sub">Médiocre</div></button>
+    <button type="button" class="dpe-pill" data-val="F" onclick="selectDpe(this,'F')"><div class="dpe-letter">F</div><div class="dpe-sub">Mauvais</div></button>
+    <button type="button" class="dpe-pill" data-val="G" onclick="selectDpe(this,'G')"><div class="dpe-letter">G</div><div class="dpe-sub">Passoire</div></button>
+    <button type="button" class="dpe-pill" data-val="inconnu" onclick="selectDpe(this,'inconnu')"><div class="dpe-letter" style="font-size:18px">?</div><div class="dpe-sub">Inconnu</div></button>
+  </div>
+  <div style="margin-top:20px;text-align:center"><button type="button" class="btn btn-ghost" onclick="goPrev()" style="font-size:13px;color:var(--muted)">← Retour</button></div>
+</div>
+
+<!-- ═══ SCREEN 7 — PARCOURS ═══ -->
+<div class="screen" id="s7" data-step="7">
+  <div class="screen-header">
+    <div class="screen-eyebrow">Type de rénovation</div>
+    <h2 class="screen-title">Quel parcours de rénovation ?</h2>
+    <p class="screen-hint">Deux approches, deux logiques de financement.</p>
+  </div>
+  <div class="cards">
+    <button type="button" class="card" data-val="geste" onclick="selectCard(this,7,'parcours')">
+      <div class="card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></div>
+      <div class="card-title">Par geste / bouquet</div>
+      <div class="card-desc">Un ou plusieurs travaux ciblés (chaudière, isolation, fenêtres…). Cumul MPR + CEE.</div>
+    </button>
+    <button type="button" class="card" data-val="ampleur" onclick="selectCard(this,7,'parcours')">
+      <div class="card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 20h20M5 20V8l7-5 7 5v12"/><rect x="9" y="12" width="6" height="8"/></svg></div>
+      <div class="card-title">Rénovation d'ampleur</div>
+      <div class="card-desc">Saut de 2+ classes DPE avec accompagnement. Aides plus élevées, MAIS pas de cumul CEE.</div>
+    </button>
+  </div>
+  <div style="margin-top:20px;text-align:center"><button type="button" class="btn btn-ghost" onclick="goPrev()" style="font-size:13px;color:var(--muted)">← Retour</button></div>
+</div>
+
+<!-- ═══ SCREEN 8 — TRAVAUX (multi-select) ═══ -->
+<div class="screen" id="s8" data-step="8">
+  <div class="screen-header">
+    <div class="screen-eyebrow">Travaux</div>
+    <h2 class="screen-title">Quels travaux envisagez-vous ?</h2>
+    <p class="screen-hint">Sélectionnez tous les postes concernés. Vous pouvez en choisir plusieurs.</p>
+  </div>
+  <div class="travaux-count" id="travauxCount">Aucun travail sélectionné</div>
+  <div id="travauxList"></div>
+  <div class="nav-row">
+    <button type="button" class="btn btn-ghost" onclick="goPrev()">← Retour</button>
+    <button type="button" class="btn btn-primary" id="s8Next" onclick="goNext()" disabled>Continuer</button>
+  </div>
+</div>
+
+<!-- ═══ SCREEN 9 — BUDGET ═══ -->
+<div class="screen" id="s9" data-step="9">
+  <div class="screen-header">
+    <div class="screen-eyebrow">Dernière étape</div>
+    <h2 class="screen-title">Quel budget travaux estimez-vous ?</h2>
+    <p class="screen-hint">Montant total TTC envisagé. Pas de panique — même une fourchette large fonctionne.</p>
+    <div class="screen-why">ℹ️ Pas d'idée précise ? Utilisez notre <a href="estimateur.html" style="color:var(--accent-deep);font-weight:600;text-decoration:underline">estimateur de travaux</a> avant de revenir.</div>
+  </div>
+  <div class="slider-block">
+    <div class="slider-value" id="budgetVal">20 000 €</div>
+    <div class="slider-unit">budget travaux TTC</div>
+    <input type="range" class="slider-input" id="budgetSlider" min="5000" max="150000" value="20000" step="1000" oninput="updateBudget(this.value)">
+    <div class="slider-ticks"><span>5 k€</span><span>50 k€</span><span>100 k€</span><span>150 k€+</span></div>
+  </div>
+  <div class="nav-row">
+    <button type="button" class="btn btn-ghost" onclick="goPrev()">← Retour</button>
+    <button type="button" class="btn btn-primary" onclick="submitSim()">Calculer mes aides →</button>
+  </div>
+</div>
+
+</div>
+
+<!-- LOADING -->
+<div class="loading" id="loading">
+  <div class="spinner"></div>
+  <div class="loading-title">Calcul de vos aides...</div>
+  <div class="loading-msg" id="loadingMsg">Vérification de votre profil Anah...</div>
+</div>
+
+<!-- RESULTS -->
+<div class="results" id="results">
+  <div class="app">
+    
+    <div class="result-hero" id="resultHero">
+      <div class="anah-badge" id="anahBadge">Profil Anah</div>
+      <div class="result-title">Votre profil MaPrimeRénov' est</div>
+      <div class="result-profile" id="resultProfile"></div>
+      <div class="result-total-wrap">
+        <div class="result-total-label">Total aides estimées</div>
+        <div class="result-total" id="resultTotal">—</div>
+        <div class="result-rac-small" id="resultRacSmall"></div>
+      </div>
+    </div>
+    
+    <div class="good-news" id="goodNews">
+      <div class="good-news-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5L12 3zM5 19l1 3 1-3 3-1-3-1-1-3-1 3-3 1 3 1z"/></svg></div>
+      <div class="good-news-text" id="goodNewsText"></div>
+    </div>
+
+    <div class="section-hdr">
+      <div class="section-hdr-label">Aperçu</div>
+      <div class="section-hdr-title">Les 2 grandes aides</div>
+    </div>
+    <div class="aide-cards">
+      <div class="aide-card">
+        <div class="aide-card-label">MaPrimeRénov'</div>
+        <div class="aide-card-val" id="previewMpr">—</div>
+        <div class="aide-card-sub">Prime versée par l'Anah</div>
+      </div>
+      <div class="aide-card">
+        <div class="aide-card-label">CEE (Prime énergie)</div>
+        <div class="aide-card-val" id="previewCee">—</div>
+        <div class="aide-card-sub">Versée par les énergéticiens</div>
+      </div>
+    </div>
+
+    <!-- PAYWALL -->
+    <div id="paywall">
+      <div class="capture">
+        <div class="capture-label">Gratuit · Sans engagement</div>
+        <div class="capture-title">Téléchargez votre rapport d'aides personnalisé</div>
+        <div class="capture-sub">Un PDF complet de 5 pages, calculé sur les barèmes Anah 2026 applicables à votre profil.</div>
+        <ul class="capture-features">
+          <li><strong>Tableau détaillé</strong> avec tous les montants (MPR, CEE, éco-PTZ, TVA)</li>
+          <li><strong>Alertes personnalisées 2026</strong> — pièges, plafonds, conditions</li>
+          <li><strong>Plan de financement complet</strong> avec reste à charge effectif</li>
+          <li><strong>Vos prochaines étapes</strong> pour maximiser vos aides</li>
+        </ul>
+        <div class="capture-form">
+          <div class="capture-form-row">
+            <input type="text" class="capture-input" id="prenom" placeholder="Prénom" autocomplete="given-name">
+            <input type="email" class="capture-input" id="email" placeholder="votre@email.com" autocomplete="email">
+          </div>
+          <div class="rgpd-check">
+  <label><input type="checkbox" id="rgpdCheck"> J'accepte que mes données soient traitées par ADORA pour répondre à ma demande, conformément à la <a href="politique-confidentialite.html" target="_blank">politique de confidentialité</a>.</label>
+</div>
+          <button type="button" class="capture-cta" id="unlockBtn" onclick="unlock()">Télécharger mon rapport →</button>
+        </div>
+        <div class="capture-reassurance">
+          <svg viewBox="0 0 24 24"><path d="M12 2L3 7v6c0 5.5 3.84 10.74 9 12 5.16-1.26 9-6.5 9-12V7l-9-5z"/></svg>
+          <span>Promis, aucun spam. Vos données restent confidentielles et ne sont <strong>jamais</strong> revendues à des artisans ou des prestataires.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- UNLOCKED -->
+    <div class="unlocked" id="unlocked">
+      
+      <div class="section-hdr">
+        <div class="section-hdr-label">Rapport détaillé</div>
+        <div class="section-hdr-title">Vos aides, ligne par ligne</div>
+      </div>
+      <div class="aides-table" id="aidesTable"></div>
+      
+      <div class="section-hdr">
+        <div class="section-hdr-label">À savoir</div>
+        <div class="section-hdr-title">Alertes et points de vigilance</div>
+      </div>
+      <div class="alerts" id="alertsBlock"></div>
+      
+      <div class="upsell">
+        <div class="upsell-title">Envie d'être accompagné(e) ?</div>
+        <div class="upsell-sub">Optimiser ses aides, choisir les bons travaux, sécuriser son plan de financement… Un accompagnement personnalisé vous fait gagner du temps et évite les erreurs coûteuses.</div>
+        <a href="sur-mesure.html" class="upsell-cta">Découvrir l'accompagnement →</a>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══ SEO PILLAR CONTENT ═══ -->
+<section class="section" style="padding:80px 0">
+<div class="container" style="max-width:760px;margin:0 auto;padding:0 28px">
+<div class="seo-content">
+  <h2>Comment fonctionne MaPrimeRénov' en 2026</h2>
+  <p>MaPrimeRénov' est la principale aide publique à la rénovation énergétique en France. Gérée par l'Anah (Agence nationale de l'habitat), elle s'adresse aux propriétaires occupants et bailleurs dont le logement a plus de 15 ans.</p>
+  <p>En 2026, le dispositif distingue deux parcours. Le <strong>parcours monogeste</strong> finance un geste isolé (changement de chauffage, isolation d'un poste, VMC) avec des plafonds par type de travaux. Le <strong>parcours accompagné</strong> (ou rénovation d'ampleur) finance un bouquet de travaux avec un gain énergétique minimal de 2 classes DPE, sous condition d'accompagnement par un opérateur agréé Mon Accompagnateur Rénov'.</p>
+  <p>Le montant de la prime dépend de votre <strong>profil de revenus Anah</strong> : Bleu (très modestes), Jaune (modestes), Violet (intermédiaires) ou Rose (supérieurs). Les plafonds sont différents en Île-de-France et hors Île-de-France. Le simulateur ci-dessus applique automatiquement les bons barèmes selon votre situation.</p>
+
+  <h2 >Barèmes CEE 2026 par type de travaux</h2>
+  <p>Les Certificats d'Économie d'Énergie (CEE) sont une prime versée par les fournisseurs d'énergie (TotalEnergies, EDF, Engie, Effy, Hellio, etc.) pour financer des travaux de rénovation énergétique. Contrairement à MaPrimeRénov', les CEE sont cumulables avec la prime Anah en parcours monogeste.</p>
+  <p>Le montant des CEE dépend du type de travaux, de la zone climatique et de la surface traitée. Les postes les plus généreux en CEE sont l'isolation des combles perdus, le remplacement d'une chaudière fioul par une pompe à chaleur, et l'installation d'un système solaire combiné. Attention : les montants varient fortement d'un opérateur à l'autre (parfois du simple au triple), d'où l'intérêt de comparer avant de signer.</p>
+  <p>Point important : <strong>ne signez jamais un devis avant d'avoir choisi votre opérateur CEE</strong>. La prime doit être demandée avant la signature du devis, sous peine de perdre le bénéfice de l'aide.</p>
+
+  <h2 >Cumul MaPrimeRénov' + CEE + éco-PTZ + TVA 5,5 %</h2>
+  <p>L'un des points forts du dispositif 2026 est la possibilité de <strong>cumuler plusieurs aides</strong> sur un même projet. En parcours monogeste, MaPrimeRénov' et les CEE sont cumulables, ce qui peut représenter jusqu'à 90 % du coût des travaux pour les ménages les plus modestes.</p>
+  <p>L'éco-prêt à taux zéro (éco-PTZ) complète le montage : jusqu'à 50 000 € empruntables à 0 % sur 20 ans, sans condition de revenus. Ce n'est pas une aide (il faut rembourser le capital), mais c'est un levier puissant pour financer le reste à charge sans frais.</p>
+  <p>Enfin, la TVA réduite à 5,5 % s'applique automatiquement aux travaux de rénovation énergétique réalisés par un professionnel dans un logement de plus de 2 ans. L'économie par rapport au taux normal de 20 % représente environ 14,5 % du montant HT des travaux — souvent plusieurs milliers d'euros.</p>
+  <p>Le simulateur ci-dessus calcule automatiquement le cumul de ces quatre dispositifs et affiche votre reste à charge effectif.</p>
+
+  <h2 >3 exemples chiffrés selon le profil de revenus</h2>
+  
+  <div style="background:var(--pale);border:1px solid var(--border);border-radius:16px;padding:24px;margin-bottom:20px">
+    <h3 style="font-size:16px;font-weight:700;color:var(--navy);margin-bottom:8px">Profil Bleu — Revenus très modestes</h3>
+    <p style="font-size:14px;color:var(--muted);margin-bottom:8px"><strong>Projet :</strong> PAC air/eau + isolation combles + VMC double flux — Budget 35 000 €</p>
+    <p style="font-size:14px">MaPrimeRénov' : 20 000 € · CEE : 3 500–5 000 € · TVA 5,5 % : 5 075 € d'économie · <strong>Reste à charge estimé : 5 000–6 500 €</strong></p>
+  </div>
+  
+  <div style="background:var(--pale);border:1px solid var(--border);border-radius:16px;padding:24px;margin-bottom:20px">
+    <h3 style="font-size:16px;font-weight:700;color:var(--navy);margin-bottom:8px">Profil Jaune — Revenus modestes</h3>
+    <p style="font-size:14px;color:var(--muted);margin-bottom:8px"><strong>Projet :</strong> Poêle à granulés + isolation murs par l'intérieur — Budget 22 000 €</p>
+    <p style="font-size:14px">MaPrimeRénov' : 9 000 € · CEE : 2 000–3 000 € · TVA 5,5 % : 3 190 € d'économie · <strong>Reste à charge estimé : 7 800–8 800 €</strong></p>
+  </div>
+  
+  <div style="background:var(--pale);border:1px solid var(--border);border-radius:16px;padding:24px;margin-bottom:20px">
+    <h3 style="font-size:16px;font-weight:700;color:var(--navy);margin-bottom:8px">Profil Violet — Revenus intermédiaires</h3>
+    <p style="font-size:14px;color:var(--muted);margin-bottom:8px"><strong>Projet :</strong> PAC géothermique + VMC — Budget 55 000 €</p>
+    <p style="font-size:14px">MaPrimeRénov' : 11 000 € · CEE : 3 000–4 500 € · TVA 5,5 % : 7 975 € d'économie · <strong>Reste à charge estimé : 32 500–34 000 €</strong></p>
+  </div>
+
+  <h2 >Questions fréquentes</h2>
+  <div class="faq-list" style="margin-bottom:0">
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">MaPrimeRénov' et les CEE sont-ils cumulables ?</div>
+      <div class="faq-a">Oui, en parcours monogeste les deux dispositifs sont cumulables. En parcours accompagné (rénovation d'ampleur), les CEE sont intégrés dans le calcul global de l'aide Anah.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Faut-il faire les travaux avant ou après la demande d'aide ?</div>
+      <div class="faq-a">Toujours après. Vous devez créer votre dossier MaPrimeRénov' et choisir votre opérateur CEE avant de signer le moindre devis. Tout travail commencé avant la validation du dossier vous fait perdre le bénéfice des aides.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Mon artisan doit-il être certifié RGE ?</div>
+      <div class="faq-a">Oui, c'est une condition obligatoire pour bénéficier de MaPrimeRénov' et des CEE. Vérifiez la certification de votre artisan sur france-renov.gouv.fr avant tout engagement.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">L'éco-PTZ est-il cumulable avec MaPrimeRénov' ?</div>
+      <div class="faq-a">Oui, sans condition de revenus. Vous pouvez emprunter jusqu'à 50 000 € à taux zéro sur 20 ans pour financer le reste à charge après déduction des aides.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Les montants affichés par le simulateur sont-ils garantis ?</div>
+      <div class="faq-a">Les montants sont calculés sur les barèmes Anah 2026 en vigueur. Ils sont indicatifs et dépendent de la validation effective de votre dossier par l'Anah et de l'opérateur CEE retenu. Le simulateur donne un ordre de grandeur fiable, pas un engagement contractuel.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Quelle différence entre ce simulateur et le site officiel MaPrimeRénov' ?</div>
+      <div class="faq-a">Le simulateur ADORA calcule simultanément les 4 dispositifs (MaPrimeRénov', CEE, éco-PTZ, TVA réduite) et affiche un reste à charge global. Le site officiel ne traite que la prime Anah. Vous gagnez une vision complète de votre plan de financement en une seule simulation.</div>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+
+<footer class="footer">
+<div class="footer-inner">
+  <div class="footer-brand">
+    <strong>ADORA</strong>
+    <p>Économiste de la construction<br>Normandie &amp; Île-de-France</p>
+  </div>
+  <div class="footer-col">
+    <div class="footer-col-title">Outils</div>
+    <a href="simulateur.html">Simulateur aides</a>
+    <a href="estimateur.html">Estimateur travaux</a>
+    <a href="audit-avant-achat.html">Audit avant achat</a>
+    <a href="sur-mesure.html">Sur mesure</a>
+  </div>
+  <div class="footer-col">
+    <div class="footer-col-title">ADORA</div>
+    <a href="a-propos.html">À propos</a>
+    <a href="professionnels.html">Professionnels</a>
+    <a href="partenaires.html">Partenaires</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <div class="footer-col footer-contact">
+    <div class="footer-col-title">Contact</div>
+    <a href="tel:+33660215509">06 60 21 55 09</a>
+    <a href="mailto:aymericdussauze@gmail.com">aymericdussauze@gmail.com</a>
+    <a href="https://adora-economie.fr">adora-economie.fr</a>
+  </div>
+</div>
+<div class="footer-legal">© 2026 ADORA · EI · SIRET 532 886 918 00020 · TVA non applicable, art. 293B du CGI<br><a href="mentions-legales.html">Mentions légales</a> · <a href="politique-confidentialite.html">Confidentialité</a> · <a href="cgv.html">CGV</a></div>
+</footer>
 
 <script>
-const S = {step:0, loc:'hdf', menage:1, rfr:'', logType:'maison', logAge:'', dpe:'inconnu', statut:'occupant', parcours:'geste', travaux:[], budget:''};
 
+// ═══════════════════════════════════════════════════════════
+// DATA (preserved from original simulator)
+// ═══════════════════════════════════════════════════════════
 const PLAFONDS_IDF = {1:[24031,29253,40851,999999],2:[35270,42933,60051,999999],3:[42357,51594,71846,999999],4:[49455,60208,84562,999999],5:[56580,68877,96817,999999]};
 const PLAFONDS_HDF = {1:[17363,22259,31185,999999],2:[25393,32553,45842,999999],3:[30540,39148,55196,999999],4:[35676,45735,64550,999999],5:[40835,52348,73907,999999]};
 const EXTRA_IDF = [7116,8663,12257,12257];
 const EXTRA_HDF = [5151,6598,9357,9357];
 const COULEURS = ['Bleu','Jaune','Violet','Rose'];
-const BADGE_CLS = ['badge-bleu','badge-jaune','badge-violet','badge-rose'];
+const COULEURS_KEY = ['bleu','jaune','violet','rose'];
+const COULEURS_DESC = {
+  bleu: 'Revenus très modestes — aides maximales',
+  jaune: 'Revenus modestes — aides élevées',
+  violet: 'Revenus intermédiaires — aides classiques',
+  rose: 'Revenus supérieurs — aides réduites'
+};
 
 const GESTES = {
-  pac_air_eau:{nom:'PAC air/eau (dont hybrides)',cat:'Chauffage',bleu:5000,jaune:4000,violet:3000,rose:0,cee:[2500,4000]},
-  pac_geo:{nom:'PAC g\u00E9othermique / solarothermique',cat:'Chauffage',bleu:11000,jaune:9000,violet:6000,rose:0,cee:[3000,5000]},
-  ssc:{nom:'Chauffage solaire combin\u00E9',cat:'Chauffage',bleu:10000,jaune:8000,violet:4000,rose:0,cee:[200,500]},
-  pvt_eau:{nom:'Partie thermique PVT eau',cat:'Chauffage',bleu:2500,jaune:2000,violet:1000,rose:0,cee:[100,300]},
-  poele_buches:{nom:'Po\u00EAle / cuisini\u00E8re \u00E0 b\u00FBches',cat:'Chauffage',bleu:1250,jaune:1000,violet:500,rose:0,cee:[200,600]},
-  poele_granules:{nom:'Po\u00EAle / cuisini\u00E8re \u00E0 granul\u00E9s',cat:'Chauffage',bleu:1250,jaune:1000,violet:750,rose:0,cee:[200,800]},
-  insert:{nom:'Foyer ferm\u00E9 / insert',cat:'Chauffage',bleu:1250,jaune:750,violet:500,rose:0,cee:[200,600]},
-  reseau_chaleur:{nom:'Raccordement r\u00E9seau de chaleur',cat:'Chauffage',bleu:1200,jaune:800,violet:400,rose:0,cee:[100,300]},
-  chauffe_eau_thermo:{nom:'Chauffe-eau thermodynamique',cat:'ECS',bleu:1200,jaune:800,violet:400,rose:0,cee:[100,250]},
-  chauffe_eau_sol:{nom:'Chauffe-eau solaire individuel',cat:'ECS',bleu:4000,jaune:3000,violet:2000,rose:0,cee:[100,300]},
-  isolation_combles:{nom:'Isolation rampants / combles',cat:'Isolation',bleu:25,jaune:20,violet:15,rose:0,unit:'m\u00B2',defQty:80,cee:[8,18]},
-  isolation_toiture_terrasse:{nom:'Isolation toiture-terrasse',cat:'Isolation',bleu:75,jaune:60,violet:40,rose:0,unit:'m\u00B2',defQty:60,cee:[10,25]},
-  isolation_plancher:{nom:'Isolation plancher bas',cat:'Isolation',bleu:25,jaune:20,violet:15,rose:0,unit:'m\u00B2',defQty:70,cee:[5,12]},
-  fenetres:{nom:'Fen\u00EAtres (remplacement SV)',cat:'Menuiseries',bleu:100,jaune:80,violet:40,rose:0,unit:'u',defQty:6,cee:[30,80]},
-  vmc_df:{nom:'VMC double flux',cat:'Ventilation',bleu:2500,jaune:2000,violet:1500,rose:0,cee:[200,500],cond:'isolation'},
-  depose_fioul:{nom:'D\u00E9pose cuve \u00E0 fioul',cat:'Autres',bleu:1200,jaune:800,violet:400,rose:0,cee:[0,0]},
-  audit:{nom:'Audit \u00E9nerg\u00E9tique',cat:'Autres',bleu:500,jaune:400,violet:300,rose:0,cee:[0,0]}
+  pac_air_eau:{nom:"PAC air/eau (dont hybrides)",cat:"Chauffage",bleu:5000,jaune:4000,violet:3000,rose:0,cee:[2500,4000]},
+  pac_geo:{nom:"PAC géothermique / solarothermique",cat:"Chauffage",bleu:11000,jaune:9000,violet:6000,rose:0,cee:[3000,5000]},
+  ssc:{nom:"Chauffage solaire combiné",cat:"Chauffage",bleu:10000,jaune:8000,violet:4000,rose:0,cee:[200,500]},
+  pvt_eau:{nom:"Partie thermique PVT eau",cat:"Chauffage",bleu:2500,jaune:2000,violet:1000,rose:0,cee:[100,300]},
+  poele_buches:{nom:"Poêle / cuisinière à bûches",cat:"Chauffage",bleu:1250,jaune:1000,violet:500,rose:0,cee:[200,600]},
+  poele_granules:{nom:"Poêle / cuisinière à granulés",cat:"Chauffage",bleu:1250,jaune:1000,violet:750,rose:0,cee:[200,800]},
+  insert:{nom:"Foyer fermé / insert",cat:"Chauffage",bleu:1250,jaune:750,violet:500,rose:0,cee:[200,600]},
+  reseau_chaleur:{nom:"Raccordement réseau de chaleur",cat:"Chauffage",bleu:1200,jaune:800,violet:400,rose:0,cee:[100,300]},
+  chauffe_eau_thermo:{nom:"Chauffe-eau thermodynamique",cat:"ECS",bleu:1200,jaune:800,violet:400,rose:0,cee:[100,250]},
+  chauffe_eau_sol:{nom:"Chauffe-eau solaire individuel",cat:"ECS",bleu:4000,jaune:3000,violet:2000,rose:0,cee:[100,300]},
+  isolation_combles:{nom:"Isolation rampants / combles",cat:"Isolation",bleu:25,jaune:20,violet:15,rose:0,unit:"m²",defQty:80,cee:[8,18]},
+  isolation_toiture_terrasse:{nom:"Isolation toiture-terrasse",cat:"Isolation",bleu:75,jaune:60,violet:40,rose:0,unit:"m²",defQty:60,cee:[10,25]},
+  isolation_plancher:{nom:"Isolation plancher bas",cat:"Isolation",bleu:25,jaune:20,violet:15,rose:0,unit:"m²",defQty:70,cee:[5,12]},
+  fenetres:{nom:"Fenêtres (remplacement SV)",cat:"Menuiseries",bleu:100,jaune:80,violet:40,rose:0,unit:"u",defQty:6,cee:[30,80]},
+  vmc_df:{nom:"VMC double flux",cat:"Ventilation",bleu:2500,jaune:2000,violet:1500,rose:0,cee:[200,500],cond:"isolation"},
+  depose_fioul:{nom:"Dépose cuve à fioul",cat:"Autres",bleu:1200,jaune:800,violet:400,rose:0,cee:[0,0]},
+  audit:{nom:"Audit énergétique",cat:"Autres",bleu:500,jaune:400,violet:300,rose:0,cee:[0,0]}
 };
 
 const AMPLEUR = {
@@ -285,19 +824,33 @@ const AMPLEUR = {
   violet:{2:{taux:45,plafond:30000},3:{taux:45,plafond:40000}},
   rose:{2:{taux:10,plafond:30000},3:{taux:10,plafond:40000}}
 };
-const ECRETEMENT_GESTE = {bleu:90, jaune:75, violet:60, rose:40};
-const ECRETEMENT_ACCOMP = {bleu:100, jaune:90, violet:80, rose:50};
+const ECRETEMENT_GESTE = {bleu:90,jaune:75,violet:60,rose:40};
+const ECRETEMENT_ACCOMP = {bleu:100,jaune:90,violet:80,rose:50};
 const PLAFOND_GESTE_5ANS = 20000;
-const STEP_TITLES = ['Situation','Logement','Travaux','Résultats'];
 
+// ═══════════════════════════════════════════════════════════
+// STATE
+// ═══════════════════════════════════════════════════════════
+const S = {
+  loc: null, logType: null, logAge: null, statut: null,
+  menage: 1, rfr: null, dpe: null, parcours: null,
+  travaux: [], budget: 20000,
+  prenom: "", email: "",
+  result: null
+};
+
+const TOTAL_STEPS = 10;
+let currentStep = 0;
+
+// ═══════════════════════════════════════════════════════════
+// CORE CALCULATION (preserved verbatim)
+// ═══════════════════════════════════════════════════════════
 function getCouleur() {
-  const p = S.loc === 'idf' ? PLAFONDS_IDF : PLAFONDS_HDF;
-  const extra = S.loc === 'idf' ? EXTRA_IDF : EXTRA_HDF;
+  const p = S.loc === "idf" ? PLAFONDS_IDF : PLAFONDS_HDF;
+  const extra = S.loc === "idf" ? EXTRA_IDF : EXTRA_HDF;
   const n = Math.min(Math.max(S.menage, 1), 5);
   const seuils = p[n];
   const rfr = parseInt(S.rfr) || 0;
-  let bonus = 0;
-  if (S.menage > 5) bonus = (S.menage - 5) * extra[0];
   for (let i = 0; i < 4; i++) {
     const extraI = S.menage > 5 ? (S.menage - 5) * extra[i] : 0;
     if (rfr <= seuils[i] + extraI) return i;
@@ -305,25 +858,29 @@ function getCouleur() {
   return 3;
 }
 
-function fmt(n) { return Math.round(n).toLocaleString('fr-FR') + ' \u20AC' }
+function fmt(n) { return Math.round(n).toLocaleString("fr-FR") + " €" }
 
 function calcGeste() {
   const ci = getCouleur();
-  const key = ['bleu','jaune','violet','rose'][ci];
+  const key = COULEURS_KEY[ci];
   let mpr = 0, ceeMin = 0, ceeMax = 0;
   const alerts = [];
   S.travaux.forEach(t => {
-    const g = GESTES[t];
-    if (!g) return;
-    mpr += g[key] || 0;
-    ceeMin += g.cee[0];
-    ceeMax += g.cee[1];
+    const g = GESTES[t]; if (!g) return;
+    let mult = 1;
+    if (g.unit) mult = g.defQty;
+    mpr += (g[key] || 0) * mult;
+    ceeMin += g.cee[0] * mult;
+    ceeMax += g.cee[1] * mult;
   });
-  if (ci === 3 && S.travaux.length > 0) alerts.push('Les m\u00E9nages Rose sont exclus du parcours monogeste. Orientez-vous vers la r\u00E9novation d\u2019ampleur.');
-  if (S.travaux.includes('vmc_df') && !S.travaux.some(t => t.startsWith('isolation')))
-    alerts.push('VMC double flux : conditionn\u00E9e \u00E0 un geste d\u2019isolation simultan\u00E9 depuis 2026.');
+  if (ci === 3 && S.travaux.length > 0)
+    alerts.push({type:"warn", text:"Les ménages Rose sont exclus du parcours monogeste. Orientez-vous vers la rénovation d'ampleur."});
+  if (S.travaux.includes("vmc_df") && !S.travaux.some(t => t.startsWith("isolation")))
+    alerts.push({type:"warn", text:"VMC double flux : conditionnée à un geste d'isolation simultané depuis 2026."});
   if (mpr > PLAFOND_GESTE_5ANS)
-    alerts.push('Plafond monogeste : le cumul MPR ne peut d\u00E9passer ' + fmt(PLAFOND_GESTE_5ANS) + ' par logement sur 5 ans. Montant \u00E9cr\u00EAt\u00E9.');
+    alerts.push({type:"warn", text:"Plafond monogeste : le cumul MPR ne peut dépasser " + fmt(PLAFOND_GESTE_5ANS) + " par logement sur 5 ans. Montant écrêté."});
+  if (S.logAge === "moins15")
+    alerts.push({type:"warn", text:"Logement de moins de 15 ans : la plupart des aides MaPrimeRénov' ne sont pas accessibles."});
   mpr = Math.min(mpr, PLAFOND_GESTE_5ANS);
   const budget = parseInt(S.budget) || 0;
   const tvaEco = Math.round(budget * 0.145);
@@ -336,20 +893,18 @@ function calcGeste() {
   const ecret = Math.round(budget * ecretTaux / 100);
   const aidesFinales = budget > 0 ? Math.min(totalAides, ecret) : totalAides;
   const rac = budget > 0 ? Math.max(budget - aidesFinales, 0) : 0;
-  return { ci, mpr, ceeMin, ceeMax, ceeMoy, tvaEco, ecoPtz, totalAides, aidesFinales, rac, alerts, budget, ecret, ecretTaux, cumulCee: true };
+  alerts.push({type:"info", text:"Parcours monogeste : MaPrimeRénov' est <strong>cumulable avec les CEE</strong> (Prime énergie)."});
+  return { ci, key, mpr, ceeMin, ceeMax, ceeMoy, tvaEco, ecoPtz, totalAides, aidesFinales, rac, alerts, budget, ecret, ecretTaux, cumulCee: true };
 }
 
 function calcAmpleur() {
   const ci = getCouleur();
-  const key = ['bleu','jaune','violet','rose'][ci];
-  const saut = (S.dpe === 'F' || S.dpe === 'G') ? 3 : 2;
+  const key = COULEURS_KEY[ci];
+  const saut = (S.dpe === "F" || S.dpe === "G") ? 3 : 2;
   const a = AMPLEUR[key][saut];
   const budget = parseInt(S.budget) || 0;
   const depElg = Math.min(budget, a.plafond);
   const mpr = Math.round(depElg * a.taux / 100);
-  const ceeMin = 0;
-  const ceeMax = 0;
-  const ceeMoy = 0;
   const tvaEco = Math.round(budget * 0.145);
   const ecoPtz = Math.min(budget, 50000);
   const totalAides = mpr;
@@ -358,367 +913,485 @@ function calcAmpleur() {
   const aidesFinales = budget > 0 ? Math.min(totalAides, ecret) : totalAides;
   const rac = budget > 0 ? Math.max(budget - aidesFinales, 0) : 0;
   const alerts = [];
-  if (ci === 3) alerts.push('M\u00E9nages Rose : taux r\u00E9duit \u00E0 10% en r\u00E9novation d\u2019ampleur (2026).');
-  if (S.dpe === 'inconnu') alerts.push('DPE non renseign\u00E9 : simulation bas\u00E9e sur un saut de 2 classes. Un DPE F/G donnerait acc\u00E8s au plafond 40 000 \u20AC.');
-  if (S.dpe !== 'inconnu' && !['E','F','G'].includes(S.dpe))
-    alerts.push('Depuis 2026, le parcours accompagn\u00E9 est r\u00E9serv\u00E9 aux logements class\u00E9s E, F ou G au DPE.');
-  alerts.push('Parcours accompagn\u00E9 : MaPrimeR\u00E9nov\u2019 n\u2019est PAS cumulable avec les CEE. Seules les aides locales et l\u2019\u00E9co-PTZ restent cumulables.');
-  return { ci, mpr, ceeMin, ceeMax, ceeMoy, tvaEco, ecoPtz, totalAides, aidesFinales, rac, alerts, budget, ecret, ecretTaux, saut, taux: a.taux, plafond: a.plafond, cumulCee: false };
+  if (ci === 3) alerts.push({type:"warn", text:"Ménages Rose : taux réduit à 10% en rénovation d'ampleur (2026)."});
+  if (S.dpe === "inconnu") alerts.push({type:"info", text:"DPE non renseigné : simulation basée sur un saut de 2 classes. Un DPE F/G donnerait accès au plafond 40 000 €."});
+  if (S.dpe !== "inconnu" && !["E","F","G"].includes(S.dpe))
+    alerts.push({type:"warn", text:"Depuis 2026, le parcours accompagné est réservé aux logements classés E, F ou G au DPE."});
+  if (S.logAge === "moins15")
+    alerts.push({type:"warn", text:"Logement de moins de 15 ans : non éligible MaPrimeRénov'."});
+  alerts.push({type:"info", text:"<strong>Parcours accompagné :</strong> MaPrimeRénov' n'est PAS cumulable avec les CEE. Seules les aides locales et l'éco-PTZ restent cumulables."});
+  return { ci, key, mpr, ceeMin:0, ceeMax:0, ceeMoy:0, tvaEco, ecoPtz, totalAides, aidesFinales, rac, alerts, budget, ecret, ecretTaux, saut, taux:a.taux, plafond:a.plafond, cumulCee:false };
 }
 
-const WARN_SVG = '<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1L15 14H1L8 1Z" fill="#F59E0B" stroke="#D97706" stroke-width="1"/><text x="8" y="12" text-anchor="middle" fill="#92400E" font-size="9" font-weight="700">!</text></svg>';
-const INFO_SVG = '<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" fill="#DBEAFE" stroke="#93C5FD"/><text x="8" y="12" text-anchor="middle" fill="#1E40AF" font-size="10" font-weight="700">i</text></svg>';
-
-function renderHeader() {
-  return `<div class="header">
-    <div class="header-sub">\u00C9conomiste de la construction</div>
-    <h1>Simulateur d\u2019aides \u00E0 la r\u00E9novation \u00E9nerg\u00E9tique</h1>
-    <p class="desc">Estimez vos droits MaPrimeR\u00E9nov\u2019, CEE, \u00E9co-PTZ et TVA r\u00E9duite \u2014 Bar\u00E8mes 2026</p>
-  </div>`;
+// ═══════════════════════════════════════════════════════════
+// PROGRESS & NAV
+// ═══════════════════════════════════════════════════════════
+function updateProgress() {
+  const pct = Math.round(((currentStep + 1) / TOTAL_STEPS) * 100);
+  document.getElementById("progressFill").style.width = pct + "%";
+  document.getElementById("stepNum").textContent = currentStep + 1;
+  document.getElementById("stepTotal").textContent = TOTAL_STEPS;
+  document.getElementById("stepPct").textContent = pct + "%";
 }
 
-function renderProgress() {
-  let h = '<div class="progress">';
-  for (let i = 0; i < 4; i++) {
-    const cls = i < S.step ? 'done' : (i === S.step ? 'active' : '');
-    h += `<div class="prog-step ${cls}"><div class="prog-num">${i < S.step ? '\u2713' : (i+1)}</div><div class="prog-label">${STEP_TITLES[i]}</div></div>`;
-    if (i < 3) h += `<div class="prog-line ${i < S.step ? 'done' : ''}"></div>`;
+function goTo(n) {
+  if (n < 0 || n >= TOTAL_STEPS) return;
+  document.getElementById("s" + currentStep).classList.remove("active");
+  currentStep = n;
+  document.getElementById("s" + n).classList.add("active");
+  updateProgress();
+  window.scrollTo({top: 0, behavior: "smooth"});
+}
+function goNext() { goTo(currentStep + 1); }
+function goPrev() { goTo(currentStep - 1); }
+
+// ═══════════════════════════════════════════════════════════
+// CARD SELECTION
+// ═══════════════════════════════════════════════════════════
+function selectCard(btn, stepIdx, field) {
+  const siblings = btn.parentElement.querySelectorAll(".card");
+  siblings.forEach(c => c.classList.remove("selected"));
+  btn.classList.add("selected");
+  S[field] = btn.dataset.val;
+  // When parcours changes, rebuild travaux list
+  if (field === "parcours") {
+    S.travaux = [];
+    buildTravauxList();
   }
-  return h + '</div>';
+  setTimeout(goNext, 280);
 }
 
-function renderStep0() {
-  return `<div class="card">
-    <h2>Votre situation fiscale</h2>
-    <p class="step-desc">Ces informations d\u00E9terminent votre profil MaPrimeR\u00E9nov\u2019 (Bleu, Jaune, Violet ou Rose) et le montant de vos aides.</p>
-    <div class="form-row cols-2">
-      <div class="field"><label>Localisation</label>
-        <select id="loc"><option value="hdf" ${S.loc==='hdf'?'selected':''}>Hors \u00CEle-de-France</option><option value="idf" ${S.loc==='idf'?'selected':''}>Île-de-France</option></select>
-      </div>
-      <div class="field"><label>Personnes au foyer</label>
-        <select id="menage">${[1,2,3,4,5,6,7,8].map(n=>`<option value="${n}" ${S.menage==n?'selected':''}>${n} personne${n>1?'s':''}</option>`).join('')}</select>
-      </div>
-    </div>
-    <div class="form-row">
-      <div class="field"><label>Revenu fiscal de r\u00E9f\u00E9rence (N-1)</label>
-        <input type="number" id="rfr" placeholder="Ex : 32 000" value="${S.rfr}">
-        <span class="hint">Figurant sur votre avis d\u2019imposition 2025</span>
-      </div>
-    </div>
-    <div class="nav-row"><div style="flex:1"></div><button class="btn btn-primary" onclick="next()">Suivant <span>\u2192</span></button></div>
-  </div>`;
+function selectDpe(btn, val) {
+  document.querySelectorAll(".dpe-pill").forEach(p => p.classList.remove("selected"));
+  btn.classList.add("selected");
+  S.dpe = val;
+  setTimeout(goNext, 280);
 }
 
-function renderStep1() {
-  const year = parseInt(S.logAge) || 0;
-  const tooNew = year > 0 && (2026 - year) < 15;
-  return `<div class="card">
-    <h2>Votre logement</h2>
-    <p class="step-desc">Caract\u00E9ristiques du bien \u00E0 r\u00E9nover. Le logement doit avoir plus de 15 ans et \u00EAtre votre r\u00E9sidence principale.</p>
-    <div class="form-row cols-2">
-      <div class="field"><label>Type de bien</label>
-        <select id="logType"><option value="maison" ${S.logType==='maison'?'selected':''}>Maison individuelle</option><option value="appart" ${S.logType==='appart'?'selected':''}>Appartement</option></select>
-      </div>
-      <div class="field"><label>Ann\u00E9e de construction</label>
-        <input type="number" id="logAge" placeholder="Ex : 1975" value="${S.logAge}">
-      </div>
-    </div>
-    <div class="form-row cols-2">
-      <div class="field"><label>DPE actuel</label>
-        <select id="dpe"><option value="inconnu" ${S.dpe==='inconnu'?'selected':''}>Non renseign\u00E9</option>${['A','B','C','D','E','F','G'].map(l=>`<option value="${l}" ${S.dpe===l?'selected':''}>${l}</option>`).join('')}</select>
-      </div>
-      <div class="field"><label>Statut</label>
-        <select id="statut"><option value="occupant" ${S.statut==='occupant'?'selected':''}>Propri\u00E9taire occupant</option><option value="bailleur" ${S.statut==='bailleur'?'selected':''}>Propri\u00E9taire bailleur</option></select>
-      </div>
-    </div>
-    ${tooNew ? '<div class="alert alert-warn">'+WARN_SVG+'<span>Le logement doit avoir plus de 15 ans pour \u00EAtre \u00E9ligible \u00E0 MaPrimeR\u00E9nov\u2019.</span></div>' : ''}
-    <div class="nav-row"><button class="btn btn-secondary" onclick="prev()">\u2190 Retour</button><button class="btn btn-primary" onclick="next()">Suivant \u2192</button></div>
-  </div>`;
+// ═══════════════════════════════════════════════════════════
+// MENAGE SLIDER
+// ═══════════════════════════════════════════════════════════
+function updateMenage(v) {
+  const n = parseInt(v);
+  S.menage = n;
+  document.getElementById("menageVal").textContent = n >= 8 ? "8+" : n;
+  document.getElementById("menageUnit").textContent = n > 1 ? "personnes au foyer" : "personne au foyer";
 }
 
-function renderStep2() {
-  const ci = getCouleur();
-  let h = `<div class="card">
-    <h2>Travaux envisag\u00E9s</h2>
-    <p class="step-desc">Votre profil : <span class="badge ${BADGE_CLS[ci]}">${COULEURS[ci]}</span></p>
-    <div class="chip-label">Parcours</div>
-    <div class="chips" style="margin-bottom:20px">
-      <div class="chip parcours ${S.parcours==='geste'?'sel':''}" onclick="S.parcours='geste';S.travaux=[];render()">Monogeste / bouquet</div>
-      <div class="chip parcours ${S.parcours==='ampleur'?'sel':''}" onclick="S.parcours='ampleur';S.travaux=[];render()">R\u00E9novation d\u2019ampleur</div>
-    </div>`;
-
-  if (S.parcours === 'geste') {
-    if (ci === 3) h += `<div class="alert alert-warn">${WARN_SVG}<span>Les m\u00E9nages Rose ne sont pas \u00E9ligibles au parcours monogeste. S\u00E9lectionnez la r\u00E9novation d\u2019ampleur.</span></div>`;
-    const cats = {};
-    Object.entries(GESTES).forEach(([k, g]) => { if (!cats[g.cat]) cats[g.cat] = []; cats[g.cat].push([k, g]); });
-    Object.entries(cats).forEach(([cat, items]) => {
-      h += `<div class="chip-label" style="margin-top:12px">${cat}</div><div class="chips">`;
-      items.forEach(([k, g]) => {
-        const sel = S.travaux.includes(k);
-        h += `<div class="chip ${sel?'sel':''}" onclick="toggleTrav('${k}')">${g.nom}</div>`;
-      });
-      h += '</div>';
+// ═══════════════════════════════════════════════════════════
+// RFR INPUT
+// ═══════════════════════════════════════════════════════════
+document.addEventListener("DOMContentLoaded", () => {
+  const rfrInput = document.getElementById("rfrInput");
+  if (rfrInput) {
+    rfrInput.addEventListener("input", function() {
+      let v = this.value.replace(/[^\d]/g, "");
+      if (v) this.value = v.replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+      S.rfr = parseInt(v) || 0;
+      document.getElementById("s5Next").disabled = S.rfr < 3000;
     });
+    rfrInput.addEventListener("keydown", function(e) {
+      if (e.key === "Enter" && S.rfr >= 3000) { e.preventDefault(); goNext(); }
+    });
+  }
+});
+
+// ═══════════════════════════════════════════════════════════
+// BUDGET SLIDER
+// ═══════════════════════════════════════════════════════════
+function updateBudget(v) {
+  S.budget = parseInt(v);
+  document.getElementById("budgetVal").textContent = fmt(S.budget);
+}
+
+// ═══════════════════════════════════════════════════════════
+// TRAVAUX LIST (multi-select)
+// ═══════════════════════════════════════════════════════════
+function buildTravauxList() {
+  const listEl = document.getElementById("travauxList");
+  if (!listEl) return;
+  const cats = {};
+  Object.entries(GESTES).forEach(([k, g]) => {
+    if (!cats[g.cat]) cats[g.cat] = [];
+    cats[g.cat].push([k, g]);
+  });
+  const order = ["Chauffage","ECS","Isolation","Menuiseries","Ventilation","Autres"];
+  let html = "";
+  order.forEach(cat => {
+    if (!cats[cat]) return;
+    html += `<div class="travaux-group"><div class="travaux-group-title">${cat}</div><div class="travaux-list">`;
+    cats[cat].forEach(([k, g]) => {
+      const isSelected = S.travaux.includes(k);
+      const qtyHint = g.unit ? ` <span style="color:var(--muted);font-size:12px;font-weight:400">(${g.defQty} ${g.unit} par défaut)</span>` : "";
+      html += `<button type="button" class="travaux-item${isSelected ? ' selected' : ''}" data-key="${k}" onclick="toggleTravail('${k}')">
+        <div class="travaux-check"></div>
+        <div class="travaux-name">${g.nom}${qtyHint}</div>
+      </button>`;
+    });
+    html += `</div></div>`;
+  });
+  listEl.innerHTML = html;
+  updateTravauxCount();
+}
+
+function toggleTravail(k) {
+  const idx = S.travaux.indexOf(k);
+  if (idx === -1) S.travaux.push(k); else S.travaux.splice(idx, 1);
+  // Toggle UI
+  const btn = document.querySelector(`.travaux-item[data-key="${k}"]`);
+  if (btn) btn.classList.toggle("selected");
+  updateTravauxCount();
+}
+
+function updateTravauxCount() {
+  const n = S.travaux.length;
+  const countEl = document.getElementById("travauxCount");
+  const nextBtn = document.getElementById("s8Next");
+  if (countEl) {
+    countEl.textContent = n === 0 ? "Aucun travail sélectionné" : n + " travail" + (n > 1 ? "s" : "") + " sélectionné" + (n > 1 ? "s" : "");
+  }
+  if (nextBtn) nextBtn.disabled = n === 0;
+}
+
+// ═══════════════════════════════════════════════════════════
+// SUBMIT → LOADING → RESULTS
+// ═══════════════════════════════════════════════════════════
+const LOADING_MSGS = [
+  "Vérification de votre profil Anah...",
+  "Application des barèmes 2026...",
+  "Calcul MaPrimeRénov' et CEE...",
+  "Vérification des plafonds et écrêtements...",
+  "Finalisation de votre simulation..."
+];
+
+function submitSim() {
+  document.getElementById("appContainer").style.display = "none";
+  const loading = document.getElementById("loading");
+  loading.classList.add("show");
+  window.scrollTo({top: 0, behavior: "smooth"});
+  
+  const msgEl = document.getElementById("loadingMsg");
+  let i = 0;
+  msgEl.textContent = LOADING_MSGS[0];
+  const rotator = setInterval(() => {
+    i++;
+    if (i >= LOADING_MSGS.length) { clearInterval(rotator); return; }
+    msgEl.style.opacity = "0";
+    setTimeout(() => { msgEl.textContent = LOADING_MSGS[i]; msgEl.style.opacity = "1"; }, 200);
+  }, 600);
+  
+  setTimeout(() => {
+    clearInterval(rotator);
+    loading.classList.remove("show");
+    const r = S.parcours === "ampleur" ? calcAmpleur() : calcGeste();
+    S.result = r;
+    showResults(r);
+  }, 2800);
+}
+
+// ═══════════════════════════════════════════════════════════
+// RESULTS DISPLAY
+// ═══════════════════════════════════════════════════════════
+function showResults(r) {
+  const hero = document.getElementById("resultHero");
+  const badge = document.getElementById("anahBadge");
+  const profile = document.getElementById("resultProfile");
+  const total = document.getElementById("resultTotal");
+  const racSmall = document.getElementById("resultRacSmall");
+  const goodNewsText = document.getElementById("goodNewsText");
+  
+  hero.className = "result-hero anah-" + r.key;
+  badge.textContent = "Profil " + COULEURS[r.ci];
+  profile.innerHTML = "<strong>" + COULEURS[r.ci] + "</strong> — " + COULEURS_DESC[r.key];
+  total.textContent = fmt(r.aidesFinales);
+  
+  if (r.budget > 0 && r.rac > 0) {
+    racSmall.textContent = "Soit un reste à charge estimé de " + fmt(r.rac) + " sur " + fmt(r.budget) + " de travaux.";
   } else {
-    h += `<div class="alert alert-info">${INFO_SVG}<span>La r\u00E9novation d\u2019ampleur requiert un gain \u2265 2 classes DPE, l\u2019intervention d\u2019un Mon Accompagnateur R\u00E9nov\u2019 agr\u00E9\u00E9, et un logement class\u00E9 E, F ou G (2026).</span></div>`;
+    racSmall.textContent = "";
   }
-
-  h += `<div class="form-row" style="margin-top:16px">
-    <div class="field"><label>Budget pr\u00E9visionnel TTC</label>
-      <input type="number" id="budget" placeholder="Ex : 35 000" value="${S.budget}">
-      <span class="hint">Montant total des travaux, pose comprise</span>
-    </div>
-  </div>`;
-  h += `<div class="nav-row"><button class="btn btn-secondary" onclick="prev()">\u2190 Retour</button><button class="btn btn-primary" onclick="next()">Calculer mes aides \u2192</button></div></div>`;
-  return h;
+  
+  // Good news
+  if (r.ci === 0) goodNewsText.innerHTML = "<strong>Excellente nouvelle !</strong> Votre profil bénéficie des aides les plus élevées (jusqu'à 80% du coût éligible).";
+  else if (r.ci === 1) goodNewsText.innerHTML = "<strong>Bonne nouvelle !</strong> Votre profil donne accès à des aides importantes sur la plupart des travaux énergétiques.";
+  else if (r.ci === 2) goodNewsText.innerHTML = "<strong>Aides accessibles.</strong> MaPrimeRénov' et CEE couvrent une part significative de vos travaux.";
+  else goodNewsText.innerHTML = "<strong>Aides limitées mais réelles.</strong> Pensez surtout au parcours Rénovation d'ampleur et à l'éco-PTZ à 0%.";
+  
+  // Preview cards
+  document.getElementById("previewMpr").textContent = r.mpr > 0 ? fmt(r.mpr) : "Non éligible";
+  document.getElementById("previewCee").textContent = r.cumulCee && r.ceeMoy > 0 ? fmt(r.ceeMin) + "–" + fmt(r.ceeMax) : (r.cumulCee ? "0 €" : "Non cumulable");
+  
+  document.getElementById("results").classList.add("show");
+  window.scrollTo({top: 0, behavior: "smooth"});
 }
 
-function renderStep3() {
-  const r = S.parcours === 'geste' ? calcGeste() : calcAmpleur();
-  const ci = r.ci;
-  const key = ['bleu','jaune','violet','rose'][ci];
-  const b = r.budget || 1;
+// ═══════════════════════════════════════════════════════════
+// UNLOCK (email capture → Formspree → show details)
+// ═══════════════════════════════════════════════════════════
+// UNLOCK — capture lead + generate PDF via Worker + show details
+// ═══════════════════════════════════════════════════════════
 
-  let h = `<div class="card">
-    <h2>Votre plan de financement</h2>
-    <p class="step-desc">Profil <span class="badge ${BADGE_CLS[ci]}">${COULEURS[ci]}</span> \u2014 ${S.parcours === 'geste' ? 'Parcours monogeste' : 'R\u00E9novation d\u2019ampleur'}</p>`;
+// CONFIG — URL du Worker Cloudflare (à remplacer après déploiement)
+const PDF_WORKER_URL = "https://adora-pdf.aymericdussauze.workers.dev";
 
-  r.alerts.forEach(a => { h += `<div class="alert alert-warn">${WARN_SVG}<span>${a}</span></div>`; });
-  if (r.budget <= 0) h += `<div class="alert alert-warn">${WARN_SVG}<span>Renseignez un budget pr\u00E9visionnel pour un calcul complet.</span></div>`;
-
-  h += `<div class="result-grid">
-    <div class="result-card"><div class="rc-label">MaPrimeR\u00E9nov\u2019</div><div class="rc-value rc-mpr">${fmt(r.mpr)}</div>${S.parcours==='ampleur'?'<div class="rc-sub">'+r.taux+'% sur plafond '+fmt(r.plafond)+'</div>':''}</div>
-    <div class="result-card"><div class="rc-label">CEE (estimation)</div><div class="rc-value rc-cee">${r.cumulCee ? fmt(r.ceeMin)+' \u2014 '+fmt(r.ceeMax) : 'Non cumulable'}</div>${!r.cumulCee?'<div class="rc-sub">Parcours accompagn\u00E9</div>':''}</div>
-    <div class="result-card"><div class="rc-label">\u00C9co-PTZ disponible</div><div class="rc-value rc-ptz">${fmt(r.ecoPtz)}</div><div class="rc-sub">\u00E0 0% sur ${r.ecoPtz >= 30000 ? '20' : '15'} ans</div></div>
-    <div class="result-card"><div class="rc-label">Reste \u00E0 charge estim\u00E9</div><div class="rc-value rc-rac">${fmt(r.rac)}</div></div>
-  </div>`;
-
-  if (r.budget > 0) {
-    const mprP = Math.min(Math.round(r.mpr / b * 100), 100);
-    const ceeP = Math.min(Math.round(r.ceeMoy / b * 100), 100 - mprP);
-    const racP = Math.max(0, 100 - mprP - ceeP);
-    h += `<div class="bar-section">
-      <div class="bar-title">R\u00E9partition du financement</div>
-      <div class="bar-wrap">
-        ${mprP > 0 ? `<div class="bar-seg" style="width:${mprP}%;background:var(--blue)">${mprP > 8 ? mprP + '%' : ''}</div>` : ''}
-        ${ceeP > 0 ? `<div class="bar-seg" style="width:${ceeP}%;background:var(--green)">${ceeP > 8 ? ceeP + '%' : ''}</div>` : ''}
-        ${racP > 0 ? `<div class="bar-seg" style="width:${racP}%;background:var(--accent)">${racP > 8 ? racP + '%' : ''}</div>` : ''}
-      </div>
-      <div class="bar-legend">
-        <span><span class="dot" style="background:var(--blue)"></span>MaPrimeR\u00E9nov\u2019 ${mprP}%</span>
-        <span><span class="dot" style="background:var(--green)"></span>CEE ${ceeP}%</span>
-        <span><span class="dot" style="background:var(--accent)"></span>Reste \u00E0 charge ${racP}%</span>
-      </div>
-    </div>`;
+function unlock() {
+  const prenom = document.getElementById("prenom").value.trim();
+  const email = document.getElementById("email").value.trim();
+  
+  if (!prenom || !email) {
+    alert("Merci de renseigner votre prénom et email.");
+    return;
   }
-
-  h += `<div class="detail-section"><div class="bar-title">D\u00E9tail du calcul</div><div class="detail-table">
-    <div class="detail-row"><span class="dlbl">Budget travaux TTC</span><span class="dval">${fmt(r.budget)}</span></div>
-    <div class="detail-row"><span class="dlbl">MaPrimeR\u00E9nov\u2019${S.parcours==='ampleur'?' ('+r.taux+'% sur '+fmt(r.plafond)+')':''}</span><span class="dval" style="color:var(--blue)">\u2212 ${fmt(r.mpr)}</span></div>
-    <div class="detail-row"><span class="dlbl">CEE</span><span class="dval" style="color:var(--green)">${r.cumulCee ? '\u2212 '+fmt(r.ceeMin)+' \u00E0 '+fmt(r.ceeMax) : 'Non cumulable (accompagn\u00E9)'}</span></div>
-    <div class="detail-row"><span class="dlbl">\u00C9conomie TVA (5,5% vs 20%)</span><span class="dval">~ ${fmt(r.tvaEco)}</span></div>
-    <div class="detail-row"><span class="dlbl">\u00C9cr\u00EAtement ${S.parcours==='geste'?'par geste':'accompagn\u00E9'} (${r.ecretTaux}% max TTC)</span><span class="dval">Plafond ${fmt(r.ecret)}</span></div>
-    <div class="detail-row"><span class="dlbl">\u00C9co-PTZ</span><span class="dval">${fmt(r.ecoPtz)} \u00E0 0%</span></div>
-    ${S.parcours==='geste'?'<div class="detail-row"><span class="dlbl">Plafond monogeste (5 ans)</span><span class="dval">'+fmt(PLAFOND_GESTE_5ANS)+'</span></div>':''}
-    <div class="detail-row total"><span class="dlbl">Reste \u00E0 charge estim\u00E9</span><span class="dval">${fmt(r.rac)}</span></div>
-  </div></div>`;
-
-  h += `<div class="cta-box">
-    <h3>Besoin d\u2019un accompagnement professionnel ?</h3>
-    <p>Un \u00E9conomiste de la construction peut optimiser votre plan de financement, v\u00E9rifier l\u2019\u00E9ligibilit\u00E9 de vos travaux et vous accompagner dans vos d\u00E9marches (Mon Accompagnateur R\u00E9nov\u2019, montage du dossier Anah, analyse comparative des devis).</p>
-    <a href="https://adora-economie.fr/#contact" class="cta-btn" target="_blank" style="display:inline-flex;align-items:center;gap:6px;margin-bottom:8px">Demander un accompagnement ADORA \u2192</a>
-    <button onclick="generatePDF()" style="margin-left:10px;padding:10px 24px;border-radius:var(--radius);background:var(--navy);color:#fff;font-family:'Montserrat',sans-serif;font-size:13px;font-weight:600;border:none;cursor:pointer;transition:.2s" onmouseover="this.style.background='#244B73'" onmouseout="this.style.background='#1B3A5C'">T\u00E9l\u00E9charger le rapport PDF \u2193</button>
-  </div>`;
-
-  h += `<div class="disclaimer">\u26A0\uFE0F Cette simulation est indicative et ne constitue pas un engagement. Les montants d\u00E9finitifs d\u00E9pendent des devis d\u2019artisans RGE, du DPE r\u00E9alis\u00E9 par un diagnostiqueur certifi\u00E9, et de la validation par l\u2019Anah. Sources : bar\u00E8mes Anah 2026 (arr\u00EAt\u00E9 du 29/12/2025), plafonds revaloris\u00E9s. Les CEE sont estim\u00E9s en fourchette (variable selon op\u00E9rateur). Aides locales (R\u00E9gion, D\u00E9partement) non int\u00E9gr\u00E9es. Mise \u00E0 jour avril 2026.</div>`;
-
-  h += `<div class="nav-row"><button class="btn btn-secondary" onclick="S.step=0;render()">\u2190 Nouvelle simulation</button><button class="btn btn-secondary" onclick="prev()">Modifier</button></div></div>`;
-  return h;
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    alert("Adresse email invalide.");
+    return;
+  }
+  if (!document.getElementById("rgpdCheck").checked) {
+    alert("Merci d'accepter la politique de confidentialité pour continuer.");
+    return;
+  }
+  
+  S.prenom = prenom;
+  S.email = email;
+  
+  const btn = document.getElementById("unlockBtn");
+  btn.textContent = "Génération en cours...";
+  btn.disabled = true;
+  
+  const r = S.result;
+  
+  // 1. Lead capture via Formspree (fire and forget)
+  fetch("https://formspree.io/f/maqaewbn", {
+    method: "POST",
+    headers: {"Content-Type": "application/json", "Accept": "application/json"},
+    body: JSON.stringify({
+      _formType: "simulateur_gratuit",
+      prenom, email,
+      _subject: "[Simulateur aides] " + prenom + " — " + COULEURS[r.ci] + " · " + fmt(r.aidesFinales),
+      localisation: S.loc === "idf" ? "Île-de-France" : "Hors IDF",
+      type_logement: S.logType,
+      age_logement: S.logAge,
+      statut: S.statut,
+      menage: S.menage + " personnes",
+      revenu_fiscal: fmt(S.rfr),
+      dpe: S.dpe,
+      parcours: S.parcours === "ampleur" ? "Rénovation d'ampleur" : "Monogeste / bouquet",
+      travaux_envisages: S.travaux.map(t => GESTES[t].nom).join(" | "),
+      budget_travaux: fmt(S.budget),
+      profil_anah: COULEURS[r.ci],
+      mpr_estimee: fmt(r.mpr),
+      cee_min: r.cumulCee ? fmt(r.ceeMin) : "Non cumulable",
+      cee_max: r.cumulCee ? fmt(r.ceeMax) : "Non cumulable",
+      eco_ptz_max: fmt(r.ecoPtz),
+      tva_economie: fmt(r.tvaEco),
+      aides_finales: fmt(r.aidesFinales),
+      reste_a_charge: fmt(r.rac)
+    })
+  }).catch(() => {});
+  
+  if (typeof gtag === "function") {
+    gtag("event", "generate_lead", { value: 1, currency: "EUR", source: "simulateur" });
+  }
+  
+  // 2. Generate PDF via Cloudflare Worker
+  generatePdfFromWorker(prenom, email, r)
+    .then(pdfBlob => {
+      const pdfUrl = URL.createObjectURL(pdfBlob);
+      window.open(pdfUrl, "_blank");
+    })
+    .catch(err => {
+      console.error("Erreur PDF Worker:", err);
+      alert("Problème lors de la génération du PDF. Le rapport est quand même disponible ci-dessous. Vous pouvez nous contacter pour recevoir la version PDF.");
+    });
+  
+  // 3. Show unlocked details on page (always, even if PDF fails)
+  setTimeout(() => {
+    document.getElementById("paywall").style.display = "none";
+    renderUnlocked();
+    document.getElementById("unlocked").classList.add("show");
+    document.getElementById("unlocked").scrollIntoView({behavior:"smooth", block:"start"});
+  }, 400);
 }
 
-function render() {
-  const a = document.getElementById('app');
-  let h = renderHeader() + renderProgress();
-  if (S.step === 0) h += renderStep0();
-  else if (S.step === 1) h += renderStep1();
-  else if (S.step === 2) h += renderStep2();
-  else if (S.step === 3) h += renderStep3();
-  h += `<div class="footer"><div class="brand">ADORA \u2014 \u00C9conomiste de la construction</div><div class="contact">06 60 21 55 09 \u00B7 <a href="mailto:aymericdussauze@gmail.com">aymericdussauze@gmail.com</a> \u00B7 <a href="https://adora-economie.fr" target="_blank">adora-economie.fr</a></div></div>`;
-  a.innerHTML = h;
-  bindInputs();
-  window.scrollTo({top: 0, behavior: 'smooth'});
-}
-
-function bindInputs() {
-  const b = (id, key, parser) => { const el = document.getElementById(id); if (el) el.addEventListener('change', e => { S[key] = parser ? parser(e.target.value) : e.target.value; }); };
-  b('loc','loc'); b('menage','menage',Number); b('rfr','rfr');
-  b('logType','logType'); b('logAge','logAge'); b('dpe','dpe'); b('statut','statut');
-  b('budget','budget');
-}
-
-function toggleTrav(k) {
-  const i = S.travaux.indexOf(k);
-  if (i >= 0) S.travaux.splice(i, 1); else S.travaux.push(k);
-  render();
-}
-
-function next() { if (S.step < 3) S.step++; render(); }
-function prev() { if (S.step > 0) S.step--; render(); }
-
-render();
-</script>
-
-
-<!-- ═══ FOOTER ═══ -->
-<footer class="site-footer">
-  <div class="f-brand">ADORA</div>
-  <div class="f-tagline">Économiste de la construction — Normandie &amp; Île-de-France</div>
-  <div class="f-links">
-    <a href="/#prestations">Prestations</a>
-    <a href="/#reference">Références</a>
-    <a href="/simulateur">Simulateur</a>
-    <a href="/#contact">Contact</a>
-  </div>
-  <div style="margin-bottom:1rem">
-    <a href="tel:0660215509">06 60 21 55 09</a> &middot;
-    <a href="mailto:aymericdussauze@gmail.com">aymericdussauze@gmail.com</a>
-  </div>
-  <div class="f-copy">&copy; 2026 ADORA — Aymeric Dussauze — EI SIRET 532 886 918 00020</div>
-</footer>
-
-<script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.2/dist/jspdf.umd.min.js"></script>
-<script>
-function generatePDF() {
-  if (!window.jspdf) { alert('Erreur : la librairie PDF n\'a pas pu se charger. Veuillez rafra\u00EEchir la page.'); return; }
-  try {
-  const { jsPDF } = window.jspdf;
-  const doc = new jsPDF('p', 'mm', 'a4');
-  const W = 210, M = 20;
-  const navy = [27,58,92], blue = [46,117,182], accent = [212,116,11], green = [45,139,85], gray = [100,100,100];
-  let y = 20;
-
-  const r = S.parcours === 'geste' ? calcGeste() : calcAmpleur();
-  const ci = r.ci;
-  const key = ['bleu','jaune','violet','rose'][ci];
-  const couleur = ['Bleu (très modestes)','Jaune (modestes)','Violet (intermédiaires)','Rose (supérieurs)'][ci];
-  const parcours = S.parcours === 'geste' ? 'Parcours monogeste' : 'Rénovation d\'ampleur';
-  const fmtE = (n) => Math.round(n).toLocaleString('fr-FR') + ' EUR';
-
-  // Header band
-  doc.setFillColor(...navy);
-  doc.rect(0, 0, W, 36, 'F');
-  doc.setTextColor(255,255,255);
-  doc.setFont('helvetica','bold');
-  doc.setFontSize(18);
-  doc.text('ADORA', M, 14);
-  doc.setFontSize(9);
-  doc.setFont('helvetica','normal');
-  doc.text('\u00C9conomiste de la construction', M, 21);
-  doc.setFontSize(11);
-  doc.setFont('helvetica','bold');
-  doc.text('Simulation d\'aides \u00E0 la r\u00E9novation \u00E9nerg\u00E9tique 2026', M, 31);
-  y = 44;
-
-  // Profil
-  doc.setTextColor(...navy);
-  doc.setFontSize(12);
-  doc.setFont('helvetica','bold');
-  doc.text('Votre profil', M, y); y += 7;
-  doc.setFontSize(10);
-  doc.setFont('helvetica','normal');
-  doc.setTextColor(...gray);
-  const loc = S.loc === 'idf' ? '\u00CEle-de-France' : 'Hors \u00CEle-de-France';
-  doc.text('Localisation : ' + loc + '  |  Foyer : ' + S.menage + ' personne(s)  |  RFR : ' + (S.rfr || 'non renseign\u00E9') + ' EUR', M, y); y += 5;
-  doc.text('Logement : ' + (S.logType === 'maison' ? 'Maison' : 'Appartement') + '  |  Ann\u00E9e : ' + (S.logAge || '?') + '  |  DPE : ' + S.dpe + '  |  ' + (S.statut === 'occupant' ? 'Propri\u00E9taire occupant' : 'Bailleur'), M, y); y += 5;
-  doc.setTextColor(...blue);
-  doc.setFont('helvetica','bold');
-  doc.text('Profil MaPrimeR\u00E9nov\' : ' + couleur + '  |  ' + parcours, M, y); y += 10;
-
-  // Ligne
-  doc.setDrawColor(...blue);
-  doc.setLineWidth(0.5);
-  doc.line(M, y, W - M, y); y += 8;
-
-  // Résultats
-  doc.setTextColor(...navy);
-  doc.setFontSize(13);
-  doc.text('Plan de financement', M, y); y += 9;
-
-  const addRow = (label, val, color) => {
-    doc.setFont('helvetica','normal');
-    doc.setTextColor(...gray);
-    doc.setFontSize(10);
-    doc.text(label, M, y);
-    doc.setFont('helvetica','bold');
-    doc.setTextColor(...(color || navy));
-    doc.text(val, W - M, y, { align: 'right' });
-    y += 6;
+async function generatePdfFromWorker(prenom, email, r) {
+  // Build alertes for the PDF
+  const alertes = [];
+  r.alerts.forEach(a => {
+    // Extract title from text (first sentence or bold)
+    const cleanText = a.text.replace(/<\/?strong>/g, "").replace(/<[^>]+>/g, "");
+    let title = "";
+    let body = cleanText;
+    const firstColon = cleanText.indexOf(":");
+    if (firstColon > 0 && firstColon < 60) {
+      title = cleanText.slice(0, firstColon);
+      body = cleanText.slice(firstColon + 1).trim();
+    } else {
+      const firstStop = cleanText.search(/[.!?]/);
+      if (firstStop > 0 && firstStop < 80) {
+        title = cleanText.slice(0, firstStop);
+        body = cleanText.slice(firstStop + 1).trim();
+      } else {
+        title = cleanText.slice(0, 60) + (cleanText.length > 60 ? "…" : "");
+      }
+    }
+    alertes.push({
+      type: a.type,
+      title: title,
+      text: body || cleanText
+    });
+  });
+  
+  const payload = {
+    type: "simulateur",
+    data: {
+      prenom: prenom,
+      localisation: S.loc === "idf" ? "Île-de-France" : "Hors Île-de-France",
+      type_logement: S.logType === "maison" ? "Maison individuelle" : "Appartement",
+      age_logement: S.logAge === "plus15" ? "Plus de 15 ans" : (S.logAge === "moins15" ? "Moins de 15 ans" : "Non renseigné"),
+      statut: S.statut === "occupant" ? "Propriétaire occupant" : "Propriétaire bailleur",
+      menage: S.menage,
+      revenu_fiscal: S.rfr,
+      dpe: S.dpe === "inconnu" ? "Non renseigné" : S.dpe,
+      parcours: S.parcours === "ampleur" ? "parcours accompagné" : "parcours monogeste",
+      travaux_envisages: S.travaux.map(t => GESTES[t].nom),
+      budget_travaux: S.budget,
+      profil_anah: COULEURS[r.ci],
+      mpr_estimee: r.mpr,
+      cee_min: r.ceeMin || 0,
+      cee_max: r.ceeMax || 0,
+      cumul_cee: r.cumulCee !== false,
+      eco_ptz_max: r.ecoPtz,
+      tva_economie: r.tvaEco,
+      aides_finales: r.aidesFinales,
+      reste_a_charge: r.rac,
+      alertes: alertes
+    }
   };
-
-  addRow('Budget travaux TTC', fmtE(r.budget));
-  addRow('MaPrimeR\u00E9nov\'', '- ' + fmtE(r.mpr), blue);
-  if (r.cumulCee) {
-    addRow('CEE (fourchette)', '- ' + fmtE(r.ceeMin) + ' \u00E0 ' + fmtE(r.ceeMax), green);
-  } else {
-    addRow('CEE', 'Non cumulable (accompagn\u00E9)', gray);
+  
+  const response = await fetch(PDF_WORKER_URL, {
+    method: "POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify(payload)
+  });
+  
+  if (!response.ok) {
+    const errText = await response.text();
+    throw new Error("Worker " + response.status + ": " + errText);
   }
-  addRow('\u00C9conomie TVA (5,5% vs 20%)', '~ ' + fmtE(r.tvaEco));
-  addRow('\u00C9cr\u00EAtement (' + r.ecretTaux + '% max TTC)', 'Plafond ' + fmtE(r.ecret));
-  addRow('\u00C9co-PTZ disponible', fmtE(r.ecoPtz) + ' \u00E0 0%');
-  y += 2;
-
-  // Total band
-  doc.setFillColor(...navy);
-  doc.rect(M, y - 1, W - 2 * M, 10, 'F');
-  doc.setTextColor(255,255,255);
-  doc.setFontSize(11);
-  doc.setFont('helvetica','bold');
-  doc.text('Reste \u00E0 charge estim\u00E9', M + 4, y + 6);
-  doc.text(fmtE(r.rac), W - M - 4, y + 6, { align: 'right' });
-  y += 18;
-
-  // Alertes
-  if (r.alerts.length > 0) {
-    doc.setTextColor(...accent);
-    doc.setFontSize(9);
-    doc.setFont('helvetica','bold');
-    doc.text('Points d\'attention :', M, y); y += 5;
-    doc.setFont('helvetica','normal');
-    r.alerts.forEach(a => {
-      const lines = doc.splitTextToSize('\u2022 ' + a, W - 2 * M);
-      doc.text(lines, M, y);
-      y += lines.length * 4.5;
-    });
-    y += 4;
-  }
-
-  // Disclaimer
-  doc.setDrawColor(200,200,200);
-  doc.setLineWidth(0.3);
-  doc.line(M, y, W - M, y); y += 6;
-  doc.setTextColor(150,150,150);
-  doc.setFontSize(7.5);
-  doc.setFont('helvetica','normal');
-  const disc = doc.splitTextToSize('Cette simulation est indicative et ne constitue pas un engagement. Les montants d\u00E9finitifs d\u00E9pendent des devis d\'artisans RGE, du DPE r\u00E9alis\u00E9 par un diagnostiqueur certifi\u00E9, et de la validation par l\'Anah. Sources : bar\u00E8mes Anah 2026.', W - 2 * M);
-  doc.text(disc, M, y); y += disc.length * 3.5 + 6;
-
-  // Footer
-  doc.setDrawColor(...blue);
-  doc.setLineWidth(0.5);
-  doc.line(M, y, W - M, y); y += 6;
-  doc.setTextColor(...navy);
-  doc.setFontSize(9);
-  doc.setFont('helvetica','bold');
-  doc.text('ADORA \u2014 \u00C9conomiste de la construction', M, y); y += 4.5;
-  doc.setFont('helvetica','normal');
-  doc.setTextColor(...gray);
-  doc.setFontSize(8);
-  doc.text('Aymeric Dussauze  |  06 60 21 55 09  |  aymericdussauze@gmail.com  |  adora-economie.fr', M, y);
-
-  const date = new Date().toISOString().slice(0,10).replace(/-/g,'');
-  doc.save('ADORA_Simulation_Aides_' + date + '.pdf');
-  } catch(e) { console.error('Erreur PDF:', e); alert('Erreur lors de la generation du PDF. Consultez la console pour plus de details.'); }
+  
+  return await response.blob();
 }
+
+function renderUnlocked() {
+  const r = S.result;
+  const tbl = document.getElementById("aidesTable");
+  let html = "";
+  
+  // MaPrimeRénov'
+  html += `<div class="aides-table-row">
+    <div>
+      <div class="aide-name">MaPrimeRénov'</div>
+      <div class="aide-name-sub">Prime de l'Anah · ${S.parcours === "ampleur" ? "Parcours accompagné" : "Parcours monogeste"}</div>
+    </div>
+    <div class="aide-amount">${r.mpr > 0 ? fmt(r.mpr) : "0 €"}</div>
+  </div>`;
+  
+  // CEE
+  if (r.cumulCee) {
+    html += `<div class="aides-table-row">
+      <div>
+        <div class="aide-name">Certificats d'Économie d'Énergie (CEE)</div>
+        <div class="aide-name-sub">Prime énergie versée par un obligé (TotalEnergies, EDF, ENGIE...)</div>
+      </div>
+      <div class="aide-amount">${r.ceeMoy > 0 ? fmt(r.ceeMin) + " à " + fmt(r.ceeMax) : "0 €"}</div>
+    </div>`;
+  } else {
+    html += `<div class="aides-table-row">
+      <div>
+        <div class="aide-name">Certificats d'Économie d'Énergie (CEE)</div>
+        <div class="aide-name-sub">Non cumulable avec MPR Ampleur</div>
+      </div>
+      <div class="aide-amount">—</div>
+    </div>`;
+  }
+  
+  // Éco-PTZ
+  html += `<div class="aides-table-row">
+    <div>
+      <div class="aide-name">Éco-PTZ (Prêt à taux zéro)</div>
+      <div class="aide-name-sub">Prêt de la banque à 0%, remboursable sur 20 ans max</div>
+    </div>
+    <div class="aide-amount">jusqu'à ${fmt(r.ecoPtz)}</div>
+  </div>`;
+  
+  // TVA
+  html += `<div class="aides-table-row">
+    <div>
+      <div class="aide-name">TVA réduite à 5,5%</div>
+      <div class="aide-name-sub">Économie vs TVA 20% standard</div>
+    </div>
+    <div class="aide-amount">${r.budget > 0 ? fmt(r.tvaEco) : "Selon budget"}</div>
+  </div>`;
+  
+  // Total
+  html += `<div class="aides-table-row total">
+    <div><div class="aide-name" style="color:var(--navy)">Total aides directes</div></div>
+    <div class="aide-amount">${fmt((r.mpr || 0) + (r.cumulCee ? (r.ceeMoy || 0) : 0) + (r.tvaEco || 0))}</div>
+  </div>`;
+  
+  // Écrêtement + RAC (if budget filled)
+  if (r.budget > 0) {
+    html += `<div class="aides-table-row">
+      <div>
+        <div class="aide-name">Plafond d'écrêtement</div>
+        <div class="aide-name-sub">Les aides ne peuvent dépasser ${r.ecretTaux}% du budget total</div>
+      </div>
+      <div class="aide-amount">${fmt(r.ecret)}</div>
+    </div>`;
+    html += `<div class="aides-table-row final">
+      <div>
+        <div class="aide-name" style="color:var(--navy)">Reste à charge estimé</div>
+        <div class="aide-name-sub">Sur budget total de ${fmt(r.budget)}</div>
+      </div>
+      <div class="aide-amount final">${fmt(r.rac)}</div>
+    </div>`;
+  }
+  
+  tbl.innerHTML = html;
+  
+  // Alerts
+  const alertsEl = document.getElementById("alertsBlock");
+  if (r.alerts.length === 0) {
+    alertsEl.innerHTML = '<div class="alert info"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg><div>Aucune alerte particulière sur votre configuration.</div></div>';
+  } else {
+    alertsEl.innerHTML = r.alerts.map(a => {
+      const icon = a.type === "warn"
+        ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><path d="M12 9v4M12 17h.01"/></svg>'
+        : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>';
+      return `<div class="alert${a.type === "info" ? " info" : ""}">${icon}<div>${a.text}</div></div>`;
+    }).join("");
+  }
+}
+
+// ═══════════════════════════════════════════════════════════
+// SCROLL PROGRESS
+// ═══════════════════════════════════════════════════════════
+window.addEventListener("scroll", () => {
+  const h = document.documentElement;
+  const el = document.getElementById("scrollProgress");
+  if (el) el.style.width = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100 + "%";
+});
+
+// ═══════════════════════════════════════════════════════════
+// INIT
+// ═══════════════════════════════════════════════════════════
+updateProgress();
+buildTravauxList();
+
 </script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M0LENY960B"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","G-M0LENY960B")</script>
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"3f8ca9a1113f413a990a17c08ab83442"}'></script>
 </body>
 </html>

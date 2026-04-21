@@ -1,32 +1,133 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- ═══ Homepage ═══ -->
   <url>
     <loc>https://adora-economie.fr/</loc>
-    <lastmod>2026-03-20</lastmod>
+    <lastmod>2026-04-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
+
+  <!-- ═══ Outils (tunnel de conversion) ═══ -->
   <url>
-    <loc>https://adora-economie.fr/mentions-legales.html</loc>
-    <lastmod>2026-03-20</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <loc>https://adora-economie.fr/simulateur.html</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://adora-economie.fr/politique-de-confidentialite.html</loc>
-    <lastmod>2026-03-20</lastmod>
+    <loc>https://adora-economie.fr/estimateur.html</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://adora-economie.fr/estimateur-outil.html</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://adora-economie.fr/audit-avant-achat.html</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://adora-economie.fr/audit-formulaire.html</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- ═══ Pages de contenu ═══ -->
+  <url>
+    <loc>https://adora-economie.fr/sur-mesure.html</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://adora-economie.fr/a-propos.html</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://adora-economie.fr/professionnels.html</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://adora-economie.fr/partenaires.html</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://adora-economie.fr/contact.html</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- ═══ Blog ═══ -->
+  <url>
+    <loc>https://adora-economie.fr/blog.html</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://adora-economie.fr/prix-renovation-m2-2026.html</loc>
+    <lastmod>2026-04-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://adora-economie.fr/audit-avant-achat-immobilier.html</loc>
+    <lastmod>2026-04-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://adora-economie.fr/maprimerenov-2026-bareme.html</loc>
+    <lastmod>2026-04-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://adora-economie.fr/pieges-devis-artisans.html</loc>
+    <lastmod>2026-04-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ═══ Pages légales ═══ -->
+  <url>
+    <loc>https://adora-economie.fr/mentions-legales.html</loc>
+    <lastmod>2026-04-21</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <priority>0.2</priority>
+  </url>
+  <url>
+    <loc>https://adora-economie.fr/politique-confidentialite.html</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
   </url>
   <url>
     <loc>https://adora-economie.fr/cgv.html</loc>
-    <lastmod>2026-03-20</lastmod>
+    <lastmod>2026-04-21</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <priority>0.2</priority>
   </url>
-  <url>
-  <loc>https://adora-economie.fr/simulateur</loc>
-  <lastmod>2026-04-13</lastmod>
-  <priority>0.8</priority>
-</url>
+
+  <!-- ═══ Exclues du sitemap (noindex) ═══ -->
+  <!-- paiement-reussi.html — confirmation post-Stripe -->
+  <!-- mon-rapport.html — récupération rapport privé -->
+  <!-- unsubscribe.html — utilitaire RGPD -->
+
 </urlset>

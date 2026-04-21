@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://adora-economie.fr/sitemap.xml

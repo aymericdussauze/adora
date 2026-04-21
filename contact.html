@@ -12,8 +12,8 @@
 <link rel="preconnect" href="https://browser.sentry-cdn.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Montserrat:wght@500;700;800;900&display=swap" rel="stylesheet">
 
-<title>Conditions Générales de Vente — ADORA</title>
-<meta name="description" content="CGV des prestations ADORA : estimation, audit avant achat, accompagnement AMO. Prix, paiement, rétractation. d'économie de la construction fondé par Aymeric Dussauze. 15 ans de gestion de projets, une reconversion BTP, des outils digitaux au service du métier.">
+<title>Contact — ADORA · Économiste de la construction</title>
+<meta name="description" content="Contactez ADORA pour un devis gratuit. Économiste de la construction, Normandie et Île-de-France. Réponse sous 24h sur la rénovation, les aides MaPrimeRénov' 2026, et l'économie de la construction d'économie de la construction fondé par Aymeric Dussauze. 15 ans de gestion de projets, une reconversion BTP, des outils digitaux au service du métier.">
 <style>
 
 /* ═══ ADORA PropTech Design System v2 ═══ */
@@ -287,28 +287,6 @@ img{max-width:100%;height:auto}
 }
 
 </style>
-
-<style>
-.legal-hero{background:var(--navy);padding:56px 0 44px;color:var(--white)}
-.legal-hero h1{font-size:clamp(26px,4vw,38px);font-weight:900;letter-spacing:-.02em;margin-bottom:8px}
-.legal-hero p{font-size:15px;color:rgba(214,228,240,.6)}
-.legal-body{padding:60px 0;max-width:760px;margin:0 auto}
-.legal-body h2{font-size:20px;font-weight:800;color:var(--navy);margin:40px 0 12px;padding-top:24px;border-top:1px solid var(--border)}
-.legal-body h2:first-of-type{margin-top:0;padding-top:0;border-top:none}
-.legal-body h3{font-size:16px;font-weight:700;color:var(--navy);margin:24px 0 8px}
-.legal-body p,.legal-body li{font-size:15px;color:var(--txt);line-height:1.8;margin-bottom:12px}
-.legal-body ul{padding-left:20px;margin-bottom:16px}
-.legal-body a{color:var(--blue);text-decoration:underline}
-.legal-body strong{color:var(--navy)}
-.legal-body .info-block{background:var(--pale);border:1px solid var(--border);border-radius:10px;padding:20px 24px;margin:20px 0}
-.legal-body .info-block p{margin-bottom:4px}
-/* ═══ MOBILE FIXES — 21/04/2026 ═══ */
-@media(max-width:700px){
-  .nav-links .nav-cta{width:100%;text-align:center;margin-top:8px}
-  .footer-contact a{word-break:break-all}
-}
-</style>
-
     <script defer src="https://browser.sentry-cdn.com/8.0.0/bundle.min.js" crossorigin="anonymous"></script>
     <script>Sentry.init({dsn:"https://14b68c10a24c3da4127332e14fd20359@o4511253060976640.ingest.de.sentry.io/4511253075132496",tracesSampleRate:0,replaysSessionSampleRate:0});</script>
 </head>
@@ -328,80 +306,150 @@ img{max-width:100%;height:auto}
 </div>
 </nav>
 
-<section class="legal-hero">
+<style>
+.contact-hero{background:var(--navy);padding:56px 0 44px;color:var(--white)}
+.contact-hero h1{font-size:clamp(28px,4vw,42px);font-weight:900;letter-spacing:-.02em;margin-bottom:10px}
+.contact-hero h1 em{font-style:normal;color:var(--accent)}
+.contact-hero p{font-size:16px;color:rgba(214,228,240,.7);max-width:520px}
+.contact-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:60px;padding:60px 0;align-items:start}
+.contact-info{display:flex;flex-direction:column;gap:24px}
+.contact-card{background:var(--pale);border:1px solid var(--border);border-radius:var(--radius,16px);padding:24px}
+.contact-card-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--blue,#0E7490);margin-bottom:12px}
+.contact-card a{display:flex;align-items:center;gap:12px;font-size:16px;font-weight:600;color:var(--navy,#0D1025);text-decoration:none;padding:8px 0;transition:color .2s}
+.contact-card a:hover{color:var(--accent,#22D3EE)}
+.contact-card a svg{width:20px;height:20px;color:var(--accent,#22D3EE);flex-shrink:0}
+.contact-zone{margin-top:8px}
+.contact-zone-title{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:8px}
+.contact-zone-list{display:flex;flex-wrap:wrap;gap:8px}
+.contact-zone-chip{font-size:13px;padding:6px 12px;background:var(--white);border:1px solid var(--border);border-radius:6px;color:var(--txt)}
+.contact-hours{font-size:14px;color:var(--muted);line-height:1.7;margin-top:4px}
+.contact-form-wrap{background:var(--white);border:1px solid var(--border);border-radius:var(--radius,16px);padding:32px}
+.contact-form-wrap h2{font-size:22px;font-weight:800;color:var(--navy);margin-bottom:6px}
+.contact-form-wrap p{font-size:14px;color:var(--muted);margin-bottom:24px}
+.c-field{margin-bottom:16px}
+.c-field label{display:block;font-size:13px;font-weight:600;color:var(--navy);margin-bottom:6px}
+.c-field input,.c-field textarea,.c-field select{width:100%;padding:12px 16px;border:1.5px solid var(--border);border-radius:8px;font-size:15px;font-family:'Plus Jakarta Sans',sans-serif;transition:border .2s}
+.c-field input:focus,.c-field textarea:focus,.c-field select:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(34,211,238,.1)}
+.c-field textarea{min-height:120px;resize:vertical}
+.c-field-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.c-submit{width:100%;padding:14px;background:var(--accent);color:var(--navy);border:none;border-radius:10px;font-size:15px;font-weight:700;font-family:'Plus Jakarta Sans',sans-serif;cursor:pointer;transition:all .2s;box-shadow:0 2px 8px rgba(34,211,238,.25)}
+.c-submit:hover{background:var(--accent-hover,#06B6D4);transform:translateY(-1px)}
+.rgpd-check{margin:16px 0}
+.rgpd-check label{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--muted);line-height:1.5;cursor:pointer}
+.rgpd-check input[type="checkbox"]{margin-top:3px;flex-shrink:0;width:16px;height:16px;accent-color:var(--accent)}
+.rgpd-check a{color:var(--blue);text-decoration:underline}
+@media(max-width:768px){.contact-grid{grid-template-columns:1fr;gap:32px}.c-field-row{grid-template-columns:1fr}}
+/* ═══ MOBILE FIXES — 21/04/2026 ═══ */
+@media(max-width:700px){
+  .nav-links .nav-cta{width:100%;text-align:center;margin-top:8px}
+  .footer-contact a{word-break:break-all}
+}
+</style>
+
+
+<section class="contact-hero">
   <div class="container">
-    <h1>Conditions Générales de Vente</h1>
-    <p>Applicables aux prestations commercialisées sur adora-economie.fr</p>
+    <h1>Parlons de votre <em>projet</em></h1>
+    <p>Une question, un devis, un besoin de conseil ? Je réponds sous 24 heures, par email ou par téléphone.</p>
   </div>
 </section>
-<section class="legal-body">
+
+<section style="padding:0 0 60px">
   <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="contact-card">
+          <div class="contact-card-label">Coordonnées directes</div>
+          <a href="tel:+33660215509">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            06 60 21 55 09
+          </a>
+          <a href="mailto:aymericdussauze@gmail.com">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 7L2 7"/></svg>
+            aymericdussauze@gmail.com
+          </a>
+          <a href="https://adora-economie.fr" target="_blank">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+            adora-economie.fr
+          </a>
+        </div>
 
-<h2>1. Identification du prestataire</h2>
-<div class="info-block">
-  <p><strong>ADORA</strong> — Aymeric Dussauze</p>
-  <p>Entreprise Individuelle (EI)</p>
-  <p>SIRET : 532 886 918 00020 — APE : 7490A</p>
-  <p>TVA non applicable, article 293B du CGI</p>
-  <p>Contact : <a href="mailto:aymericdussauze@gmail.com">aymericdussauze@gmail.com</a> — <a href="tel:+33660215509">06 60 21 55 09</a></p>
-</div>
+        <div class="contact-card">
+          <div class="contact-card-label">Zone d'intervention</div>
+          <div class="contact-zone">
+            <div class="contact-zone-title">Prestations sur site</div>
+            <div class="contact-zone-list">
+              <span class="contact-zone-chip">Eure (27)</span>
+              <span class="contact-zone-chip">Seine-Maritime (76)</span>
+              <span class="contact-zone-chip">Île-de-France</span>
+            </div>
+          </div>
+          <div class="contact-zone" style="margin-top:16px">
+            <div class="contact-zone-title">Outils en ligne</div>
+            <div class="contact-zone-list">
+              <span class="contact-zone-chip">101 départements</span>
+              <span class="contact-zone-chip">France entière</span>
+            </div>
+          </div>
+        </div>
 
-<h2>2. Objet</h2>
-<p>Les présentes CGV régissent les conditions de vente des prestations proposées sur le site adora-economie.fr, notamment :</p>
-<ul>
-  <li><strong>Rapport d'estimation détaillée</strong> — à partir de 49 € TTC (estimateur en ligne)</li>
-  <li><strong>Audit avant achat</strong> — 499 € TTC</li>
-  <li><strong>Estimation détaillée sur mesure</strong> — à partir de 990 € TTC</li>
-  <li><strong>Packs d'accompagnement</strong> — Essentiel (2 200 € TTC), Confort (3 900 € TTC), Sérénité (5-8 % du montant travaux)</li>
-  <li><strong>Prestations freelance</strong> (professionnels) — TJM de 360 à 450 € HT selon mission</li>
-</ul>
-<p>TVA non applicable, article 293B du CGI. Tous les prix affichés sur le site sont des prix TTC pour les particuliers et des prix HT pour les professionnels, sauf mention contraire.</p>
+        <div class="contact-card">
+          <div class="contact-card-label">Disponibilité</div>
+          <div class="contact-hours">
+            <strong style="color:var(--navy)">Lundi — Vendredi</strong> : 9h — 18h<br>
+            Réponse email sous 24h · Appels et visios sur rendez-vous
+          </div>
+          <a href="https://cal.com/aymeric-adora/decouverte" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;margin-top:16px;padding:12px 24px;background:var(--accent);color:var(--navy);border-radius:var(--radius-sm);font-size:14px;font-weight:700;text-decoration:none;transition:all var(--transition)">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+            Prendre RDV en ligne — 15 min
+          </a>
+        </div>
+      </div>
 
-<h2>3. Acceptation des CGV</h2>
-<p>Le paiement en ligne ou l'envoi d'un formulaire de demande de prestation implique l'acceptation pleine et entière des présentes CGV. Le client reconnaît en avoir pris connaissance avant sa commande.</p>
-
-<h2>4. Commande et paiement</h2>
-
-<h3>Prestations en ligne (49 € / 499 €)</h3>
-<p>Le paiement s'effectue par carte bancaire via la plateforme sécurisée <strong>Stripe</strong> (CB, Visa, Mastercard, Apple Pay, Google Pay). Le paiement est exigé au moment de la commande. La prestation est déclenchée après confirmation du paiement.</p>
-
-<h3>Prestations sur mesure (estimation détaillée, packs, AMO)</h3>
-<p>Un devis est établi et envoyé par email. La prestation démarre après acceptation écrite du devis et versement de l'acompte éventuel (30 à 50 % selon la mission). Le solde est dû à la livraison des livrables.</p>
-
-<h3>Prestations freelance (professionnels)</h3>
-<p>Les conditions de facturation (acompte, fréquence, délai de paiement) sont précisées dans la proposition commerciale. Sauf accord contraire, le paiement est dû à 30 jours date de facture.</p>
-
-<h2>5. Délais de livraison</h2>
-<ul>
-  <li><strong>Rapport estimateur 49 €</strong> : livraison par email sous 48 heures ouvrées</li>
-  <li><strong>Audit avant achat 499 €</strong> : livraison sous 5 jours ouvrés après réception des documents complets</li>
-  <li><strong>Estimation détaillée sur mesure</strong> : sous 10 jours ouvrés</li>
-  <li><strong>Packs AMO</strong> : planning défini dans le devis</li>
-</ul>
-<p>Les délais sont indicatifs et dépendent de la complétude des documents fournis par le client. Tout retard imputable au client (documents manquants, indisponibilité) suspend le délai.</p>
-
-<h2>6. Droit de rétractation</h2>
-<p>Conformément à l'article L221-28 du Code de la consommation, le droit de rétractation <strong>ne s'applique pas</strong> aux prestations de services pleinement exécutées avant la fin du délai de rétractation, lorsque l'exécution a commencé avec l'accord préalable et exprès du consommateur.</p>
-<p>En pratique : le rapport d'estimation (49 €) et l'audit (499 €) étant des livrables numériques personnalisés dont l'exécution commence immédiatement après paiement, ils ne sont pas soumis au droit de rétractation.</p>
-<p>Pour les packs sur mesure, le droit de rétractation de <strong>14 jours</strong> s'applique si aucun travail n'a été engagé.</p>
-
-<h2>7. Propriété intellectuelle</h2>
-<p>Les rapports, estimations, CCTP, DPGF et tout document produit dans le cadre d'une prestation restent la propriété intellectuelle d'ADORA jusqu'au paiement intégral de la prestation.</p>
-<p>Après paiement complet, le client obtient un <strong>droit d'usage personnel</strong> des documents livrés. Il ne peut pas les revendre, les redistribuer, ni les attribuer à un tiers sans autorisation écrite.</p>
-
-<h2>8. Responsabilité</h2>
-<p>Les estimations et simulations fournies sont des <strong>indications budgétaires</strong> basées sur des ratios professionnels et des bases de données de prix. Elles ne constituent pas des devis d'entreprise et ne garantissent pas un prix final de travaux.</p>
-<p>La responsabilité d'ADORA est limitée au montant de la prestation payée par le client.</p>
-
-<h2>9. Réclamations et médiation</h2>
-<p>Pour toute réclamation, contacter <a href="mailto:aymericdussauze@gmail.com">aymericdussauze@gmail.com</a>. Je m'engage à répondre sous 15 jours.</p>
-<p>En cas de litige non résolu, le consommateur peut recourir gratuitement au service de médiation. Le médiateur compétent sera communiqué sur demande, conformément à l'article L612-1 du Code de la consommation.</p>
-
-<h2>10. Droit applicable</h2>
-<p>Les présentes CGV sont soumises au droit français. En cas de litige, les tribunaux compétents sont ceux du ressort du domicile du défendeur.</p>
-
-<p><strong>Dernière mise à jour :</strong> avril 2026</p>
-
+      <div class="contact-form-wrap">
+        <h2>Envoyer un message</h2>
+        <p>Décrivez votre projet en quelques mots, je vous recontacte rapidement.</p>
+        <form action="https://formspree.io/f/maqaewbn" method="POST">
+          <input type="hidden" name="_subject" value="[Contact ADORA] Nouveau message">
+          <input type="hidden" name="_formType" value="contact_direct">
+          <div class="c-field-row">
+            <div class="c-field">
+              <label>Prénom et nom</label>
+              <input type="text" name="nom" required placeholder="Jean Dupont">
+            </div>
+            <div class="c-field">
+              <label>Email</label>
+              <input type="email" name="email" required placeholder="jean@exemple.fr">
+            </div>
+          </div>
+          <div class="c-field">
+            <label>Téléphone <span style="font-weight:400;color:var(--muted)">(optionnel)</span></label>
+            <input type="tel" name="telephone" placeholder="06 12 34 56 78">
+          </div>
+          <div class="c-field">
+            <label>Sujet</label>
+            <select name="sujet" required>
+              <option value="">Sélectionnez...</option>
+              <option value="estimation">Estimation de travaux</option>
+              <option value="audit">Audit avant achat</option>
+              <option value="accompagnement">Accompagnement AMO</option>
+              <option value="freelance">Collaboration freelance (pro)</option>
+              <option value="question">Question générale</option>
+              <option value="autre">Autre</option>
+            </select>
+          </div>
+          <div class="c-field">
+            <label>Message</label>
+            <textarea name="message" required placeholder="Type de bien, surface, localisation, nature du projet, budget approximatif..."></textarea>
+          </div>
+          <div class="rgpd-check">
+            <label><input type="checkbox" name="rgpd_consent" required> J'accepte que mes données soient traitées par ADORA pour répondre à ma demande, conformément à la <a href="politique-confidentialite.html" target="_blank">politique de confidentialité</a>.</label>
+          </div>
+          <button type="submit" class="c-submit">Envoyer mon message</button>
+          <p style="text-align:center;font-size:12px;color:var(--muted);margin-top:10px">Réponse sous 24h · Sans engagement</p>
+        </form>
+      </div>
+    </div>
   </div>
 </section>
 

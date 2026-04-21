@@ -1,0 +1,1738 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Estimateur de travaux — ADORA</title>
+<meta name="description" content="Estimez gratuitement le coût de vos travaux de rénovation en 2 minutes. 15 postes, coefficients régionaux, rapport PDF professionnel.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://browser.sentry-cdn.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0D1025;--surface:#1A1F3D;--deep:#080B1C;
+  --accent:#22D3EE;--accent-hover:#06B6D4;--accent-deep:#0E7490;
+  --iris:#A78BFA;--iris-soft:rgba(167,139,250,.14);
+  --aqua-soft:rgba(34,211,238,.12);--aqua-mist:rgba(34,211,238,.06);
+  --txt:#1E1B4B;--muted:#64748B;--light:#EDE9FE;
+  --bg:#FFFFFF;--pale:#FAFAFC;--border:#E5E7F2;--border-dark:rgba(255,255,255,.08);
+  --radius:16px;--radius-sm:10px;--radius-lg:20px;
+  --shadow:0 1px 3px rgba(13,16,37,.06),0 8px 24px rgba(13,16,37,.04);
+  --shadow-hover:0 4px 12px rgba(13,16,37,.08),0 16px 40px rgba(34,211,238,.12);
+  --shadow-card:0 0 0 1px var(--border);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:var(--txt);background:var(--pale);line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:'Montserrat',sans-serif;color:var(--navy);letter-spacing:-.01em;line-height:1.2}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none}
+input,select{font-family:inherit}
+
+/* ═══ NAV ═══ */
+.scroll-progress{position:fixed;top:0;left:0;height:3px;background:var(--accent);z-index:200;width:0;transition:width .1s linear}
+.nav{position:sticky;top:0;z-index:100;background:rgba(13,16,37,.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--border-dark)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;max-width:980px;margin:0 auto;padding:14px 28px}
+.nav-logo img{height:26px;width:auto}
+.nav-links{display:flex;gap:8px;align-items:center}
+.nav-links a{color:rgba(237,233,254,.8);font-size:13.5px;font-weight:500;padding:6px 14px;border-radius:8px;transition:.3s}
+.nav-links a:hover{color:#fff;background:rgba(255,255,255,.08)}
+.nav-burger{display:none;background:none;color:#fff;font-size:22px;padding:8px}
+@media(max-width:700px){.nav-links{display:none;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:rgba(13,16,37,.97);padding:16px 28px;gap:4px}.nav-links.open{display:flex}.nav-burger{display:block}}
+
+/* ═══ APP SHELL ═══ */
+.app{max-width:680px;margin:0 auto;padding:40px 20px 80px;min-height:calc(100vh - 60px)}
+@media(max-width:600px){.app{padding:24px 16px 48px}}
+
+/* Progress bar */
+.progress-rail{position:sticky;top:56px;z-index:50;background:var(--pale);padding:16px 0 12px}
+.progress-bar{height:4px;background:var(--border);border-radius:99px;overflow:hidden;margin-bottom:10px}
+.progress-fill{height:100%;background:var(--accent);border-radius:99px;width:0;transition:width .5s cubic-bezier(.4,0,.2,1)}
+.progress-info{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--muted);font-weight:500}
+.progress-step{color:var(--accent-deep);font-weight:600}
+
+/* Screens (one question at a time) */
+.screen{display:none;animation:slideIn .4s cubic-bezier(.4,0,.2,1)}
+.screen.active{display:block}
+@keyframes slideIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+
+.screen-header{margin-bottom:28px}
+.screen-eyebrow{display:inline-block;font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent-deep);margin-bottom:10px}
+.screen-title{font-size:clamp(24px,3.6vw,32px);font-weight:800;line-height:1.2;margin-bottom:8px}
+.screen-hint{font-size:15px;color:var(--muted);line-height:1.6;max-width:540px}
+.screen-why{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);margin-top:12px;padding:6px 12px;background:var(--pale);border-radius:8px;border:1px solid var(--border)}
+
+/* Cards (visual option buttons) */
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px}
+.cards.cards-3{grid-template-columns:1fr 1fr 1fr}
+.cards.cards-1{grid-template-columns:1fr}
+@media(max-width:540px){.cards,.cards.cards-3{grid-template-columns:1fr 1fr}.cards.cards-1{grid-template-columns:1fr}}
+
+.card{background:#fff;border:1.5px solid var(--border);border-radius:var(--radius);padding:22px 20px;cursor:pointer;transition:.25s cubic-bezier(.4,0,.2,1);position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:10px;text-align:left;font-family:inherit;color:inherit}
+.card:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:var(--shadow-hover)}
+.card.selected{border-color:var(--accent);background:var(--aqua-mist);box-shadow:0 0 0 3px var(--aqua-soft)}
+.card.selected::after{content:"";position:absolute;top:14px;right:14px;width:22px;height:22px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center}
+.card.selected::before{content:"";position:absolute;top:22px;right:22px;width:6px;height:10px;border:solid var(--navy);border-width:0 2px 2px 0;transform:rotate(45deg);z-index:1}
+.card-icon{font-size:28px;line-height:1}
+.card-title{font-size:16px;font-weight:700;color:var(--navy);font-family:'Montserrat',sans-serif}
+.card-desc{font-size:13px;color:var(--muted);line-height:1.5}
+
+/* Pills (compact horizontal options) */
+.pills{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:24px}
+.pill{padding:12px 20px;background:#fff;border:1.5px solid var(--border);border-radius:99px;font-size:14px;font-weight:500;cursor:pointer;transition:.2s;font-family:inherit;color:var(--txt)}
+.pill:hover{border-color:var(--accent);color:var(--accent-deep)}
+.pill.selected{background:var(--navy);border-color:var(--navy);color:#fff}
+
+/* Slider */
+.slider-block{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:32px 28px;margin-bottom:24px}
+.slider-value{font-family:'Montserrat',sans-serif;font-size:56px;font-weight:800;color:var(--navy);line-height:1;margin-bottom:4px}
+.slider-unit{font-size:15px;color:var(--muted);margin-bottom:24px}
+.slider-input{width:100%;height:6px;border-radius:99px;background:var(--border);-webkit-appearance:none;appearance:none;outline:none;cursor:pointer}
+.slider-input::-webkit-slider-thumb{-webkit-appearance:none;width:26px;height:26px;border-radius:50%;background:var(--accent);cursor:pointer;border:4px solid #fff;box-shadow:0 2px 8px rgba(34,211,238,.35);transition:.2s}
+.slider-input::-moz-range-thumb{width:26px;height:26px;border-radius:50%;background:var(--accent);cursor:pointer;border:4px solid #fff;box-shadow:0 2px 8px rgba(34,211,238,.35)}
+.slider-ticks{display:flex;justify-content:space-between;margin-top:10px;font-size:12px;color:var(--muted)}
+.helper-link{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--accent-deep);font-weight:500;cursor:pointer;margin-top:18px;text-decoration:underline;text-underline-offset:3px}
+
+/* Text input */
+.input-block{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:28px;margin-bottom:24px}
+.big-input{width:100%;font-family:'Montserrat',sans-serif;font-size:42px;font-weight:700;color:var(--navy);border:none;outline:none;padding:8px 0;border-bottom:2px solid var(--border);transition:.2s;letter-spacing:4px}
+.big-input:focus{border-bottom-color:var(--accent)}
+.big-input::placeholder{color:var(--border)}
+.dept-result{margin-top:16px;padding:14px 16px;background:var(--aqua-mist);border-radius:10px;font-size:14px;color:var(--navy);font-weight:500;display:none;border-left:3px solid var(--accent)}
+.dept-result.show{display:block}
+
+/* Multi-toggles */
+.toggles{display:flex;flex-direction:column;gap:10px;margin-bottom:24px}
+.toggle{display:flex;align-items:center;justify-content:space-between;background:#fff;border:1.5px solid var(--border);border-radius:12px;padding:16px 20px;cursor:pointer;transition:.2s;font-family:inherit;color:inherit;text-align:left;width:100%}
+.toggle:hover{border-color:var(--accent)}
+.toggle.on{border-color:var(--accent);background:var(--aqua-mist)}
+.toggle-label{font-size:15px;font-weight:500;color:var(--navy);font-family:'Montserrat',sans-serif}
+.toggle-sub{font-size:12px;color:var(--muted);margin-top:2px;font-weight:400;font-family:'Plus Jakarta Sans',sans-serif}
+.toggle-switch{width:44px;height:24px;background:var(--border);border-radius:99px;position:relative;transition:.2s;flex-shrink:0}
+.toggle-switch::after{content:"";position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:#fff;transition:.2s;box-shadow:0 1px 3px rgba(0,0,0,.15)}
+.toggle.on .toggle-switch{background:var(--accent)}
+.toggle.on .toggle-switch::after{left:23px}
+
+/* Navigation buttons */
+.nav-row{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:8px}
+.btn{font-family:'Montserrat',sans-serif;font-weight:700;font-size:14px;padding:14px 28px;border-radius:10px;cursor:pointer;transition:.25s cubic-bezier(.4,0,.2,1);display:inline-flex;align-items:center;gap:8px;text-decoration:none;border:none}
+.btn-primary{background:var(--accent);color:var(--navy);box-shadow:0 2px 8px rgba(34,211,238,.25)}
+.btn-primary:hover{background:var(--accent-hover);transform:translateY(-1px);box-shadow:0 4px 16px rgba(34,211,238,.35)}
+.btn-primary:disabled{background:var(--border);color:var(--muted);cursor:not-allowed;transform:none;box-shadow:none}
+.btn-ghost{background:none;color:var(--muted);padding:10px 16px}
+.btn-ghost:hover{color:var(--accent-deep)}
+.btn-skip{background:none;color:var(--muted);font-size:13px;font-weight:500;padding:8px 14px;text-decoration:underline;text-underline-offset:3px}
+.btn-skip:hover{color:var(--accent-deep)}
+
+/* ═══ LOADING SCREEN ═══ */
+.loading{display:none;text-align:center;padding:80px 20px;max-width:680px;margin:0 auto}
+.loading.show{display:block;animation:fadeIn .3s}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.spinner{width:64px;height:64px;border:4px solid var(--border);border-top-color:var(--accent);border-radius:50%;animation:spin 1s linear infinite;margin:0 auto 32px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.loading-title{font-size:22px;font-weight:700;color:var(--navy);margin-bottom:8px;font-family:'Montserrat',sans-serif}
+.loading-msg{font-size:15px;color:var(--muted);min-height:24px;transition:opacity .3s}
+
+/* ═══ RESULTS ═══ */
+.results{display:none}
+.results.show{display:block;animation:fadeIn .5s;max-width:680px;margin:0 auto;padding:40px 20px 80px}
+@media(max-width:600px){.results.show{padding:24px 16px 48px}}
+
+.result-hero{background:linear-gradient(135deg,var(--navy) 0%,var(--surface) 100%);border-radius:var(--radius-lg);padding:40px 32px;color:#fff;margin-bottom:20px;position:relative;overflow:hidden}
+.result-hero::before{content:"";position:absolute;top:-50%;right:-20%;width:300px;height:300px;background:radial-gradient(circle,var(--aqua-soft) 0%,transparent 70%);pointer-events:none}
+.result-label{display:inline-block;font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);margin-bottom:12px;padding:4px 12px;background:var(--aqua-soft);border-radius:99px}
+.result-title{font-size:15px;color:rgba(237,233,254,.7);margin-bottom:8px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:500}
+.result-range{font-family:'Montserrat',sans-serif;font-size:clamp(32px,5.5vw,44px);font-weight:800;color:#fff;line-height:1.1;margin-bottom:14px;position:relative;z-index:1}
+.result-range-between{font-size:15px;color:rgba(237,233,254,.6);font-weight:500;display:block;margin-bottom:6px;font-family:'Plus Jakarta Sans',sans-serif}
+.result-scope{font-size:13px;color:rgba(237,233,254,.55);margin-bottom:20px}
+.result-confidence{display:flex;align-items:center;gap:12px;padding-top:18px;border-top:1px solid rgba(255,255,255,.08);position:relative;z-index:1}
+.confidence-bar{flex:1;max-width:200px;height:6px;background:rgba(255,255,255,.1);border-radius:99px;overflow:hidden}
+.confidence-fill{height:100%;background:linear-gradient(90deg,var(--iris),var(--accent));border-radius:99px;width:80%}
+.confidence-label{font-size:12px;color:rgba(237,233,254,.7);white-space:nowrap}
+.confidence-pct{font-weight:700;color:#fff;font-family:'Montserrat',sans-serif}
+
+.good-news{background:var(--iris-soft);border-radius:var(--radius);padding:16px 20px;display:flex;align-items:center;gap:12px;margin-bottom:28px}
+.good-news-icon{width:36px;height:36px;background:var(--iris);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.good-news-text{flex:1;font-size:14px;color:var(--txt);line-height:1.5}
+.good-news-text strong{color:var(--navy);font-family:'Montserrat',sans-serif;font-weight:700}
+
+/* Free summary cards (visible) */
+.summary-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:28px}
+@media(max-width:540px){.summary-grid{grid-template-columns:1fr}}
+.summary-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:20px;text-align:center}
+.summary-label{font-size:12px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.8px;margin-bottom:8px}
+.summary-val{font-family:'Montserrat',sans-serif;font-size:22px;font-weight:800;color:var(--navy)}
+.summary-sub{font-size:11px;color:var(--muted);margin-top:4px}
+
+/* Section header */
+.section-hdr{margin-bottom:16px;margin-top:36px}
+.section-hdr-label{display:inline-block;font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent-deep);margin-bottom:6px}
+.section-hdr-title{font-size:22px;font-weight:700;color:var(--navy);font-family:'Montserrat',sans-serif;margin-bottom:4px}
+.section-hdr-sub{font-size:14px;color:var(--muted)}
+
+/* Locked content (paywall) */
+.lock-grid{display:grid;grid-template-columns:1fr;gap:12px;margin-bottom:32px}
+.lock-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:20px;position:relative;overflow:hidden}
+.lock-card-head{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.lock-icon{width:32px;height:32px;background:var(--pale);border:1px solid var(--border);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.lock-icon svg{width:14px;height:14px;stroke:var(--muted);fill:none;stroke-width:2}
+.lock-card-title{font-size:15px;font-weight:700;color:var(--navy);font-family:'Montserrat',sans-serif}
+.lock-card-sub{font-size:13px;color:var(--muted);margin-top:2px}
+.lock-blur{padding:8px 0;filter:blur(5px);-webkit-user-select:none;user-select:none;pointer-events:none;opacity:.75}
+.lock-blur-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border);font-size:14px}
+.lock-blur-row:last-child{border-bottom:none}
+.lock-badge{position:absolute;top:14px;right:14px;background:var(--navy);color:var(--accent);font-size:10px;font-weight:700;letter-spacing:.5px;padding:3px 10px;border-radius:99px;text-transform:uppercase}
+
+/* Checkout block (Stripe Payment) */
+.checkout{background:linear-gradient(135deg,var(--surface) 0%,var(--navy) 100%);border-radius:var(--radius-lg);padding:36px 32px;color:#fff;margin-bottom:24px;position:relative;overflow:hidden}
+.checkout::before{content:"";position:absolute;bottom:-30%;left:-10%;width:280px;height:280px;background:radial-gradient(circle,var(--iris-soft) 0%,transparent 70%);pointer-events:none}
+.checkout-price-badge{position:absolute;top:24px;right:24px;background:var(--accent);color:var(--navy);padding:10px 18px;border-radius:12px;font-family:'Montserrat',sans-serif;font-weight:800;font-size:22px;line-height:1;box-shadow:0 4px 16px rgba(34,211,238,.35);z-index:2}
+.checkout-price-badge small{display:block;font-size:10px;font-weight:600;opacity:.75;margin-top:2px;letter-spacing:.5px}
+.checkout-label{display:inline-block;font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);margin-bottom:14px;padding:4px 12px;background:var(--aqua-soft);border-radius:99px;position:relative;z-index:1}
+.checkout-title{font-size:26px;font-weight:800;color:#fff;margin-bottom:10px;font-family:'Montserrat',sans-serif;line-height:1.2;position:relative;z-index:1;padding-right:100px}
+.checkout-sub{font-size:14px;color:rgba(237,233,254,.7);margin-bottom:24px;line-height:1.6;position:relative;z-index:1}
+.checkout-features{list-style:none;padding:0;margin:0 0 24px 0;position:relative;z-index:1;display:grid;gap:10px}
+.checkout-features li{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:rgba(237,233,254,.85);line-height:1.5}
+.checkout-features li::before{content:"";flex-shrink:0;width:18px;height:18px;border-radius:50%;background:var(--accent);margin-top:2px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230D1025' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");background-size:12px;background-position:center;background-repeat:no-repeat}
+.checkout-form{display:flex;flex-direction:column;gap:12px;position:relative;z-index:1;margin-bottom:14px}
+.checkout-input{width:100%;padding:14px 18px;border-radius:10px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.05);color:#fff;font-size:15px;font-family:inherit;transition:.2s}
+.checkout-input::placeholder{color:rgba(237,233,254,.4)}
+.checkout-input:focus{outline:none;border-color:var(--accent);background:rgba(255,255,255,.08)}
+.checkout-cta{padding:16px 28px;background:var(--accent);color:var(--navy);border-radius:10px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:15px;cursor:pointer;transition:.25s;display:flex;align-items:center;justify-content:center;gap:10px;border:none;text-decoration:none;width:100%}
+.checkout-cta:hover{background:var(--accent-hover);transform:translateY(-1px);box-shadow:0 6px 20px rgba(34,211,238,.3)}
+.checkout-cta:disabled{opacity:.5;cursor:not-allowed;transform:none}
+.checkout-trust{display:flex;align-items:center;justify-content:center;gap:16px;font-size:11px;color:rgba(237,233,254,.5);margin-top:18px;padding-top:18px;border-top:1px solid rgba(255,255,255,.08);position:relative;z-index:1;flex-wrap:wrap}
+.checkout-trust-item{display:flex;align-items:center;gap:5px}
+.checkout-trust svg{width:12px;height:12px;opacity:.7}
+.checkout-what{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:14px 16px;margin-bottom:20px;position:relative;z-index:1}
+.checkout-what-title{font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--iris);margin-bottom:8px}
+.checkout-steps{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:24px;position:relative;z-index:1}
+.checkout-step{text-align:center}
+.checkout-step-icon{width:36px;height:36px;border-radius:50%;background:var(--aqua-soft);border:1px solid rgba(34,211,238,.2);display:flex;align-items:center;justify-content:center;margin:0 auto 8px;font-size:16px}
+.checkout-step-label{font-size:11px;color:rgba(237,233,254,.7);line-height:1.4}
+.checkout-form-row{display:flex;flex-direction:column;gap:10px}
+@media(min-width:540px){.checkout-form-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}}
+@media(max-width:540px){.checkout-price-badge{position:static;display:inline-block;margin-bottom:14px}.checkout-title{padding-right:0}.checkout-steps{grid-template-columns:1fr;gap:10px}.checkout-step{display:flex;align-items:center;gap:12px;text-align:left}.checkout-step-icon{margin:0;flex-shrink:0}}
+
+/* Unlocked state */
+.unlocked{display:none}
+.unlocked.show{display:block;animation:fadeIn .5s}
+
+/* Detailed results table */
+.lots-table{background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-bottom:24px}
+.lots-table-row{display:grid;grid-template-columns:32px 1fr auto auto;gap:12px;align-items:center;padding:14px 20px;border-bottom:1px solid var(--border);font-size:14px}
+.lots-table-row:last-child{border-bottom:none}
+.lots-table-row.total{background:var(--pale);font-weight:700;font-family:'Montserrat',sans-serif}
+.lot-id{font-size:11px;font-weight:600;color:var(--muted);font-family:'Montserrat',sans-serif;background:var(--pale);padding:3px 7px;border-radius:4px}
+.lot-name{color:var(--navy);font-weight:500}
+.lot-range{color:var(--muted);font-size:12px;text-align:right}
+.lot-mid{color:var(--navy);font-weight:700;font-family:'Montserrat',sans-serif;text-align:right;min-width:100px}
+
+.aides-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:24px;margin-bottom:24px}
+.aides-title{font-size:18px;font-weight:700;color:var(--navy);font-family:'Montserrat',sans-serif;margin-bottom:12px}
+.aides-row{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--border);font-size:14px}
+.aides-row:last-child{border-bottom:none}
+.aides-total{margin-top:12px;padding-top:14px;border-top:2px solid var(--navy);font-size:16px;font-weight:700;color:var(--navy);font-family:'Montserrat',sans-serif;display:flex;justify-content:space-between}
+.aides-total-val{color:var(--accent-deep)}
+
+.upsell{background:var(--iris-soft);border:1px solid rgba(167,139,250,.3);border-radius:var(--radius);padding:24px;margin-bottom:24px}
+.upsell-title{font-size:18px;font-weight:700;color:var(--navy);font-family:'Montserrat',sans-serif;margin-bottom:8px}
+.upsell-sub{font-size:14px;color:var(--muted);margin-bottom:16px;line-height:1.6}
+.upsell-cta{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;background:var(--iris);color:var(--navy);border-radius:10px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:14px;text-decoration:none;transition:.2s}
+.upsell-cta:hover{background:#8B6FE3;transform:translateY(-1px)}
+
+/* Footer */
+.footer{background:var(--deep);padding:48px 28px 36px;color:#64748B;font-size:13px;margin-top:60px}
+.footer-inner{max-width:980px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:32px}
+.footer-inner strong{color:var(--light);font-weight:700}
+.footer-inner p{margin-top:4px;font-size:12px}
+.footer-links{display:flex;gap:20px;flex-wrap:wrap}
+.footer-links a{color:rgba(237,233,254,.6);font-size:13px;text-decoration:none}
+.footer-legal{max-width:980px;margin:24px auto 0;padding-top:24px;border-top:1px solid rgba(255,255,255,.06);font-size:11px;color:rgba(237,233,254,.3);text-align:center}
+.footer-legal a{color:rgba(237,233,254,.5);text-decoration:none;transition:color .2s}
+.footer-legal a:hover{color:#22D3EE}
+.footer-legal br{margin-bottom:6px}
+
+/* Demo banner */
+
+
+
+/* Mobile call button */
+.mobile-call-btn{display:none}
+@media(max-width:768px){
+.mobile-call-btn{display:flex;align-items:center;gap:8px;position:fixed;bottom:20px;right:20px;z-index:90;background:var(--accent);color:var(--navy);padding:12px 20px;border-radius:99px;font-size:14px;font-weight:700;font-family:'Plus Jakarta Sans',sans-serif;text-decoration:none;box-shadow:0 4px 16px rgba(34,211,238,.35);transition:all .2s}
+.mobile-call-btn:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(34,211,238,.45)}
+}
+
+/* ═══ UNIFIED FOOTER ═══ */
+.footer{background:var(--navy, #0D1025);color:rgba(237,233,254,.7);padding:60px 24px 30px;margin-top:80px}
+.footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:40px}
+.footer-brand strong{font-size:18px;color:#fff;display:block;margin-bottom:8px}
+.footer-brand p{font-size:13px;line-height:1.6;color:rgba(237,233,254,.5)}
+.footer-col{display:flex;flex-direction:column;gap:8px}
+.footer-col-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:rgba(237,233,254,.4);margin-bottom:6px}
+.footer-col a{color:rgba(237,233,254,.7);text-decoration:none;font-size:13px;transition:color .2s}
+.footer-col a:hover{color:#22D3EE}
+.footer-contact a{font-size:13px}
+.footer-legal{max-width:1100px;margin:30px auto 0;padding-top:20px;border-top:1px solid rgba(237,233,254,.1);font-size:11px;color:rgba(237,233,254,.35);text-align:center}
+@media(max-width:768px){
+.footer-inner{grid-template-columns:1fr 1fr;gap:30px 20px}
+}
+@media(max-width:480px){
+.footer-inner{grid-template-columns:1fr;gap:24px}
+}
+
+.container{max-width:1120px;margin:0 auto;padding:0 28px}
+/* ESTIM HERO */
+.estim-hero{background:var(--navy);padding:48px 0 40px;color:#fff;text-align:center;position:relative;overflow:hidden}
+.estim-hero::before{content:'';position:absolute;top:-60%;right:-20%;width:800px;height:800px;background:radial-gradient(circle,rgba(14,116,144,.12) 0%,transparent 65%);pointer-events:none}
+.estim-hero h1{font-size:clamp(24px,4vw,38px);font-weight:900;letter-spacing:-.02em;margin-bottom:12px;position:relative}
+.estim-hero h1 em{font-style:normal;color:var(--accent)}
+.estim-hero-sub{font-size:15px;color:rgba(214,228,240,.75);max-width:560px;margin:0 auto;line-height:1.6;position:relative}
+
+/* ═══ LEAD GATE ═══ */
+.lead-gate{background:var(--white);border:2px solid var(--accent);border-radius:var(--radius-lg);padding:32px 28px;text-align:center;margin:24px 0;box-shadow:0 4px 24px rgba(13,16,37,.08)}
+.lead-gate-icon{width:48px;height:48px;border-radius:50%;background:var(--accent-bg);border:1px solid rgba(34,211,238,.2);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;color:var(--accent)}
+.lead-gate-title{font-family:'Montserrat',sans-serif;font-weight:800;font-size:20px;color:var(--navy);margin-bottom:8px;letter-spacing:-.02em}
+.lead-gate-sub{font-size:14px;color:var(--txt);line-height:1.6;margin-bottom:20px;max-width:420px;margin-left:auto;margin-right:auto}
+.lead-gate-form{display:flex;gap:10px;max-width:440px;margin:0 auto 12px}
+@media(max-width:540px){.lead-gate-form{flex-direction:column}.lead-gate-btn{width:100%}}
+.lead-gate-input{flex:1;padding:14px 16px;border:1px solid var(--border);border-radius:10px;font-size:15px;font-family:inherit;background:var(--white);color:var(--navy);transition:.2s}
+.lead-gate-input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(34,211,238,.12)}
+.lead-gate-btn{padding:14px 24px;background:var(--accent);color:var(--navy);border:none;border-radius:10px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:14px;cursor:pointer;transition:.25s;white-space:nowrap}
+.lead-gate-btn:hover{background:var(--accent-hover);transform:translateY(-1px)}
+.lead-gate-trust{font-size:11px;color:var(--muted);margin-top:4px}
+.lead-gate-trust svg{width:12px;height:12px;vertical-align:-2px;margin-right:3px;opacity:.5}
+.lead-gate-error{color:#DC2626;font-size:13px;margin-top:8px;display:none}
+/* ═══ MOBILE FIXES — 21/04/2026 ═══ */
+@media(max-width:700px){
+  .nav-links .nav-cta{width:100%;text-align:center;margin-top:8px}
+  .footer-contact a{word-break:break-all}
+}
+</style>
+    <script defer src="https://browser.sentry-cdn.com/8.0.0/bundle.min.js" crossorigin="anonymous"></script>
+    <script>Sentry.init({dsn:"https://14b68c10a24c3da4127332e14fd20359@o4511253060976640.ingest.de.sentry.io/4511253075132496",tracesSampleRate:0,replaysSessionSampleRate:0});</script>
+</head>
+<body>
+
+<div class="scroll-progress" id="scrollProgress"></div>
+<nav class="nav">
+<div class="nav-inner">
+  <a href="./" class="nav-logo"><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5NDAgMjAwIiB3aWR0aD0iOTQwIiBoZWlnaHQ9IjIwMCI+CiAgPGcgZmlsbD0id2hpdGUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICA8IS0tIFRyaWFuZ2xlIGljb24gLS0+CiAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMCwgOCkgdHJhbnNsYXRlKC03NSwgLTk5KSI+CiAgICAgIDxwYXRoIGQ9Ik0gMTE3LDI4MiBMIDE2OSwyODEgTCAxNzQsMjc0IEwgMTc3LDI2OCBMIDIyOSwxOTMgTCAyMjksMTkxIEwgMjA2LDE1OCBMIDIwNywxNTUgTCAyMjksMTU2IEwgMjM0LDE2NSBMIDIzNywxNjggTCAyMzksMTczIEwgMjgxLDIzNSBMIDI4MiwyNDAgTCAyNDAsMjQwIEwgMjEzLDI4MCBMIDIxMywyODIgTCAzNjQsMjgyIEwgMzYxLDI3NiBMIDMwMCwxODcgTCAyOTksMTg0IEwgMjQyLDk5IEwgMjQwLDEwMCBMIDIwNywxNTAgTCAyMDEsMTU2IEwgMTQwLDI0OCBMIDEzNywyNTEgTCAxMzYsMjU0IEwgMTI0LDI3MCBaIi8+CiAgICA8L2c+CiAgICA8IS0tIFRleHQgIkFkb3JhIiAtLT4KICAgIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDMzMCwgMTIpIHNjYWxlKDEuOCkgdHJhbnNsYXRlKC03MSwgLTMyMCkiPgogICAgICA8cGF0aCBkPSJNIDEwMiwzMjYgTCA5MywzNTIgTCA5MSwzNTUgTCA4NywzNjkgTCA4NSwzNzIgTCA4MiwzODMgTCA4MCwzODYgTCA3OCwzOTUgTCA3MSw0MTMgTCA3MSw0MTYgTCA4OSw0MTUgTCA5NywzOTAgTCAxMjUsMzg5IEwgMTMwLDM5NCBMIDEzMSw0MDAgTCAxMzMsNDAzIEwgMTM3LDQxNiBMIDE1NSw0MTYgTCAxNTUsNDEyIEwgMTUzLDQwOSBMIDEyNCwzMjYgWiBNIDExNCwzNDQgTCAxMjMsMzcyIEwgMTIyLDM3NiBMIDEwMiwzNzUgTCAxMDIsMzcyIEwgMTA2LDM1OSBMIDEwOCwzNTYgTCAxMTAsMzQ3IFoiLz4KICAgICAgPHBhdGggZD0iTSAyMjUsMzIwIEwgMjA4LDMyMCBMIDIwNiwzNTIgTCAyMDIsMzQ4IEwgMTk0LDM0NSBMIDE4MCwzNDUgTCAxNjksMzQ5IEwgMTU5LDM2MCBMIDE1NSwzNzMgTCAxNTYsMzk1IEwgMTYyLDQwNyBMIDE3MCw0MTQgTCAxNzgsNDE3IEwgMTkzLDQxNyBMIDE5OSw0MTUgTCAyMDUsNDA4IEwgMjA4LDQwOCBMIDIwOCw0MTYgTCAyMjUsNDE2IFogTSAxODcsMzU3IEwgMTk0LDM1NyBMIDE5OSwzNTkgTCAyMDQsMzY0IEwgMjA3LDM3MSBMIDIwOCwzODUgTCAyMDYsMzk0IEwgMjA0LDM5OCBMIDE5OSw0MDMgTCAxOTUsNDA1IEwgMTg2LDQwNSBMIDE4Miw0MDMgTCAxNzYsMzk3IEwgMTczLDM4OSBMIDE3MywzNzIgTCAxNzYsMzY1IEwgMTgyLDM1OSBaIi8+CiAgICAgIDxwYXRoIGQ9Ik0gMjU1LDM0NiBMIDI0NCwzNTIgTCAyMzgsMzU5IEwgMjMzLDM3MSBMIDIzMywzODkgTCAyMzUsMzk3IEwgMjQwLDQwNiBMIDI0NSw0MTEgTCAyNTIsNDE1IEwgMjU5LDQxNyBMIDI3Nyw0MTcgTCAyODMsNDE1IEwgMjk1LDQwNiBMIDMwMSwzOTYgTCAzMDMsMzg4IEwgMzAzLDM3NCBMIDMwMSwzNjYgTCAyOTYsMzU3IEwgMjkwLDM1MSBMIDI4MywzNDcgTCAyNzcsMzQ1IFogTSAyNjQsMzU3IEwgMjcyLDM1NyBMIDI3NiwzNTkgTCAyODEsMzY0IEwgMjg1LDM3NSBMIDI4NSwzODcgTCAyODMsMzk1IEwgMjc2LDQwMyBMIDI3Miw0MDUgTCAyNjQsNDA1IEwgMjU5LDQwMyBMIDI1NCwzOTggTCAyNTAsMzg2IEwgMjUwLDM3NCBMIDI1MiwzNjggTCAyNTgsMzYwIFoiLz4KICAgICAgPHBhdGggZD0iTSAzNTAsMzQ1IEwgMzM4LDM0NiBMIDMyOCwzNTUgTCAzMjgsMzQ3IEwgMzExLDM0NyBMIDMxMSw0MTYgTCAzMjgsNDE1IEwgMzI4LDM3NCBMIDMzMCwzNjggTCAzMzYsMzYyIEwgMzQzLDM1OSBMIDM1MCwzNTkgWiIvPgogICAgICA8cGF0aCBkPSJNIDM2NCwzNDkgTCAzNTksMzUzIEwgMzU1LDM2MCBMIDM1NCwzNjQgTCAzNTUsMzY5IEwgMzcwLDM2OSBMIDM3MSwzNjMgTCAzNzUsMzU4IEwgMzc3LDM1NyBMIDM4NiwzNTcgTCAzOTIsMzYyIEwgMzkzLDM2NSBMIDM5MiwzNzQgTCAzNzIsMzc1IEwgMzYwLDM4MCBMIDM1NCwzODYgTCAzNTEsMzk0IEwgMzUxLDQwMiBMIDM1NCw0MDkgTCAzNTgsNDEzIEwgMzY2LDQxNyBMIDM4MSw0MTcgTCAzODYsNDE1IEwgMzkxLDQwOSBMIDM5NCw0MDkgTCAzOTUsNDE2IEwgNDExLDQxNiBMIDQxMCwzNjcgTCA0MDksMzYxIEwgNDA2LDM1NCBMIDQwMCwzNDggTCAzOTEsMzQ1IEwgMzczLDM0NSBaIE0gMzkzLDM4NSBMIDM5MiwzOTcgTCAzODYsNDA0IEwgMzg0LDQwNSBMIDM3NSw0MDUgTCAzNjksNDAwIEwgMzY5LDM5MiBMIDM3NSwzODYgTCAzODMsMzg0IFoiLz4KICAgIDwvZz4KICA8L2c+Cjwvc3ZnPgo=" alt="ADORA" style="height:26px;width:auto"></a>
+  <div class="nav-links" id="navLinks">
+    <a href="simulateur.html">Simulateur</a>
+    <a href="estimateur.html" class="active">Estimateur</a>
+    <a href="audit-avant-achat.html">Audit achat</a>
+    <a href="sur-mesure.html">Sur mesure</a>
+    <a href="estimateur-outil.html" class="nav-cta">Estimer mes travaux</a>
+  </div>
+  <button class="nav-burger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">&#9776;</button>
+</div>
+</nav>
+
+<!-- PAGE HERO -->
+<section style="background:#0D1025;padding:48px 0 40px;text-align:center;color:#fff">
+  <div style="max-width:900px;margin:0 auto;padding:0 28px">
+    <h1 style="font-family:'Montserrat',sans-serif;font-size:clamp(24px,4vw,36px);font-weight:900;letter-spacing:-.02em;margin:0 0 12px;color:#fff;text-align:center">Estimateur de travaux de <span style="color:#22D3EE">Rénovation</span></h1>
+    <p style="font-size:15px;color:rgba(214,228,240,.75);max-width:560px;margin:0 auto;line-height:1.6;text-align:center">Estimation détaillée en 15 lots TCE · Prix Batichiffrage T1 2026 · 101 départements</p>
+  </div>
+</section>
+
+<div class="app">
+
+<div class="progress-rail" id="progressRail">
+  <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+  <div class="progress-info">
+    <span>Étape <span class="progress-step" id="stepNum">1</span> sur <span id="stepTotal">8</span></span>
+    <span id="stepPct">12%</span>
+  </div>
+</div>
+
+<!-- ═══════════ SCREEN 0 — TYPE DE PROJET ═══════════ -->
+<div class="screen active" id="s0" data-step="0">
+  <div class="screen-header">
+    <div class="screen-eyebrow">Votre projet</div>
+    <h2 class="screen-title">Quel est votre projet ?</h2>
+    <p class="screen-hint">Cela nous permet de définir les postes de travaux pertinents.</p>
+  </div>
+  <div class="cards">
+    <button class="card" data-val="complete" data-profile="complete" onclick="selectCard(this,0)">
+      <div class="card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+      <div class="card-title">Rénovation intérieure complète</div>
+      <div class="card-desc">Second œuvre complet, sans façades ni toiture</div>
+    </button>
+    <button class="card" data-val="totale" data-profile="totale" onclick="selectCard(this,0)">
+      <div class="card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="6" width="20" height="15" rx="2"/><path d="M12 2L2 8h20L12 2z"/><path d="M6 12h4v5H6zM14 12h4v5h-4z"/></svg></div>
+      <div class="card-title">Rénovation totale</div>
+      <div class="card-desc">Tous corps d'état, toiture et façades incluses</div>
+    </button>
+    <button class="card" data-val="energetique" data-profile="partielle" onclick="selectCard(this,0)">
+      <div class="card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+      <div class="card-title">Rénovation énergétique</div>
+      <div class="card-desc">Isolation, chauffage, menuiseries</div>
+    </button>
+    <button class="card" data-val="achat" data-profile="complete" onclick="selectCard(this,0)">
+      <div class="card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 11-7.778 7.778 5.5 5.5 0 017.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg></div>
+      <div class="card-title">Achat d'un bien à rénover</div>
+      <div class="card-desc">Chiffrage avant acquisition</div>
+    </button>
+    <button class="card" data-val="rafraichissement" data-profile="rafraichissement" onclick="selectCard(this,0)">
+      <div class="card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="13.5" cy="6.5" r="1.5"/><circle cx="17.5" cy="10.5" r="1.5"/><circle cx="8.5" cy="7.5" r="1.5"/><circle cx="6.5" cy="12.5" r="1.5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.93 0 1.5-.67 1.5-1.5 0-.4-.15-.77-.42-1.05-.27-.28-.42-.65-.42-1.05 0-.83.67-1.5 1.5-1.5H16c3.31 0 6-2.69 6-6 0-5.5-4.5-9-10-9z"/></svg></div>
+      <div class="card-title">Rafraîchissement</div>
+      <div class="card-desc">Peinture, sols, finitions</div>
+    </button>
+  </div>
+</div>
+
+<!-- ═══════════ SCREEN 1 — TYPE DE BIEN ═══════════ -->
+<div class="screen" id="s1" data-step="1">
+  <div class="screen-header">
+    <div class="screen-eyebrow">Le bien</div>
+    <h2 class="screen-title">Quel type de bien ?</h2>
+    <p class="screen-hint">Le type de bien influence les coûts d'accès et de logistique.</p>
+  </div>
+  <div class="cards cards-3">
+    <button class="card" data-val="maison" onclick="selectCard(this,1)">
+      <div class="card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+      <div class="card-title">Maison</div>
+    </button>
+    <button class="card" data-val="appartement" onclick="selectCard(this,1)">
+      <div class="card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 6h2M13 6h2M9 10h2M13 10h2M9 14h2M13 14h2M9 18h6"/></svg></div>
+      <div class="card-title">Appartement</div>
+    </button>
+    <button class="card" data-val="immeuble" onclick="selectCard(this,1)">
+      <div class="card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="1" y="2" width="14" height="20" rx="1"/><path d="M15 10h6a1 1 0 011 1v11"/><path d="M5 6h2M9 6h2M5 10h2M9 10h2M5 14h2M9 14h2M5 18h2M18 14h2M18 18h2"/></svg></div>
+      <div class="card-title">Immeuble entier</div>
+    </button>
+  </div>
+  <div style="margin-top:20px;text-align:center"><button type="button" class="btn btn-ghost" onclick="goPrev()" style="font-size:13px;color:var(--muted)">← Retour</button></div>
+</div>
+
+<!-- ═══════════ SCREEN 2 — SURFACE ═══════════ -->
+<div class="screen" id="s2" data-step="2">
+  <div class="screen-header">
+    <div class="screen-eyebrow">Surface</div>
+    <h2 class="screen-title">Quelle surface habitable ?</h2>
+    <p class="screen-hint">Environ — la surface exacte n'est pas nécessaire pour cette estimation.</p>
+  </div>
+  <div class="slider-block">
+    <div class="slider-value"><span id="surfaceVal">100</span></div>
+    <div class="slider-unit">m² habitables</div>
+    <input type="range" class="slider-input" id="surface" min="20" max="400" value="100" step="5" oninput="updateSurface(this.value)">
+    <div class="slider-ticks"><span>20 m²</span><span>100 m²</span><span>200 m²</span><span>400+ m²</span></div>
+  </div>
+  <div class="nav-row">
+    <button class="btn btn-ghost" onclick="goPrev()">← Retour</button>
+    <button class="btn btn-primary" onclick="goNext()">Continuer</button>
+  </div>
+</div>
+
+<!-- ═══════════ SCREEN 3 — CODE POSTAL ═══════════ -->
+<div class="screen" id="s3" data-step="3">
+  <div class="screen-header">
+    <div class="screen-eyebrow">Localisation</div>
+    <h2 class="screen-title">Où se situe le bien ?</h2>
+    <p class="screen-hint">Les coûts varient de -15% à +25% selon le département (main d'œuvre, approvisionnement).</p>
+  </div>
+  <div class="input-block">
+    <input type="text" class="big-input" id="cp" placeholder="27000" maxlength="5" inputmode="numeric" oninput="detectDept(this.value)">
+    <div class="dept-result" id="deptResult"></div>
+  </div>
+  <div class="nav-row">
+    <button class="btn btn-ghost" onclick="goPrev()">← Retour</button>
+    <button class="btn btn-primary" id="btnS3Next" onclick="goNext()" disabled>Continuer</button>
+  </div>
+</div>
+
+<!-- ═══════════ SCREEN 4 — ANNÉE ═══════════ -->
+<div class="screen" id="s4" data-step="4">
+  <div class="screen-header">
+    <div class="screen-eyebrow">Âge du bien</div>
+    <h2 class="screen-title">Année de construction ?</h2>
+    <p class="screen-hint">L'époque de construction détermine les contraintes techniques et les aides disponibles.</p>
+    <div class="screen-why">ℹ️ Avant 1948 : plomb fréquent · 1948-1997 : amiante possible · Après 2005 : RT performante</div>
+  </div>
+  <div class="cards">
+    <button class="card" data-val="avant1948" onclick="selectCard(this,4)">
+      <div class="card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 20h20M12 2L2 7h20L12 2zM4 7v13M8 7v13M12 7v13M16 7v13M20 7v13"/></svg></div>
+      <div class="card-title">Avant 1948</div>
+      <div class="card-desc">Bâti ancien, pierre, colombage</div>
+    </button>
+    <button class="card" data-val="1948-1974" onclick="selectCard(this,4)">
+      <div class="card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 10h20M2 16h20M7 4v6M17 4v6M12 10v6M7 16v4M17 16v4"/></svg></div>
+      <div class="card-title">1948 — 1974</div>
+      <div class="card-desc">Reconstruction, béton, amiante possible</div>
+    </button>
+    <button class="card" data-val="1975-1990" onclick="selectCard(this,4)">
+      <div class="card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 21h18M9 8h1M9 12h1M9 16h1M5 21V5a2 2 0 012-2h4a2 2 0 012 2v16"/><path d="M15 21V9a2 2 0 012-2h2a2 2 0 012 2v12"/></svg></div>
+      <div class="card-title">1975 — 1990</div>
+      <div class="card-desc">Première isolation, chauffage central</div>
+    </button>
+    <button class="card" data-val="1991-2005" onclick="selectCard(this,4)">
+      <div class="card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+      <div class="card-title">1991 — 2005</div>
+      <div class="card-desc">RT 2000, isolation renforcée</div>
+    </button>
+    <button class="card" data-val="apres2005" onclick="selectCard(this,4)">
+      <div class="card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5L12 3zM5 19l1 3 1-3 3-1-3-1-1-3-1 3-3 1 3 1z"/></svg></div>
+      <div class="card-title">Après 2005</div>
+      <div class="card-desc">RT 2005/2012, BBC possible</div>
+    </button>
+  </div>
+  <div style="margin-top:20px;text-align:center"><button type="button" class="btn btn-ghost" onclick="goPrev()" style="font-size:13px;color:var(--muted)">← Retour</button></div>
+</div>
+
+<!-- ═══════════ SCREEN 5 — ÉTAT ═══════════ -->
+<div class="screen" id="s5" data-step="5">
+  <div class="screen-header">
+    <div class="screen-eyebrow">État</div>
+    <h2 class="screen-title">État général du bien ?</h2>
+    <p class="screen-hint">Soyez honnête — cela affecte fortement le coût. Un bien dégradé coûte 30% de plus à rénover.</p>
+  </div>
+  <div class="cards">
+    <button class="card" data-val="bon" onclick="selectCard(this,5)">
+      <div class="card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg></div>
+      <div class="card-title">Bon état</div>
+      <div class="card-desc">Habitable en l'état, rénovation confort</div>
+    </button>
+    <button class="card" data-val="moyen" onclick="selectCard(this,5)">
+      <div class="card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></div>
+      <div class="card-title">État moyen</div>
+      <div class="card-desc">Travaux nécessaires mais structure saine</div>
+    </button>
+    <button class="card" data-val="degrade" onclick="selectCard(this,5)">
+      <div class="card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M15 12l-8.5 8.5a2.12 2.12 0 01-3-3L12 9M17.64 15L22 10.64"/><path d="M20.91 11.7a1 1 0 00-.28-.72l-4.6-4.6a1 1 0 00-.72-.28 1 1 0 00-.71.28L12 9l6 6 2.63-2.63a1 1 0 00.28-.67z"/></svg></div>
+      <div class="card-title">Dégradé</div>
+      <div class="card-desc">Rénovation lourde à prévoir</div>
+    </button>
+    <button class="card" data-val="tres_degrade" onclick="selectCard(this,5)">
+      <div class="card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+      <div class="card-title">Très dégradé</div>
+      <div class="card-desc">Réhabilitation, gros œuvre à revoir</div>
+    </button>
+  </div>
+  <div style="margin-top:20px;text-align:center"><button type="button" class="btn btn-ghost" onclick="goPrev()" style="font-size:13px;color:var(--muted)">← Retour</button></div>
+</div>
+
+<!-- ═══════════ SCREEN 6 — GAMME ═══════════ -->
+<div class="screen" id="s6" data-step="6">
+  <div class="screen-header">
+    <div class="screen-eyebrow">Niveau de finition</div>
+    <h2 class="screen-title">Quelle gamme de finitions ?</h2>
+    <p class="screen-hint">Le niveau de finition représente ~30% du budget total. Choisissez selon votre usage (résidence principale, locatif, investissement).</p>
+  </div>
+  <div class="cards">
+    <button class="card" data-val="eco" onclick="selectCard(this,6)">
+      <div class="card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="8"/><path d="M12 6v12M9 9.5h6M9 14.5h6"/></svg></div>
+      <div class="card-title">Économique</div>
+      <div class="card-desc">Entrée de gamme, matériaux standards</div>
+    </button>
+    <button class="card" data-val="standard" onclick="selectCard(this,6)">
+      <div class="card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 9V5a3 3 0 00-3-3l-4 9v11h11.28a2 2 0 002-1.7l1.38-9a2 2 0 00-2-2.3H14z"/><path d="M7 22H4a2 2 0 01-2-2v-7a2 2 0 012-2h3"/></svg></div>
+      <div class="card-title">Standard</div>
+      <div class="card-desc">Bon rapport qualité/prix, grandes marques</div>
+    </button>
+    <button class="card" data-val="confort" onclick="selectCard(this,6)">
+      <div class="card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5L12 3zM5 19l1 3 1-3 3-1-3-1-1-3-1 3-3 1 3 1z"/></svg></div>
+      <div class="card-title">Confort</div>
+      <div class="card-desc">Matériaux premium, domotique de base</div>
+    </button>
+    <button class="card" data-val="hdg" onclick="selectCard(this,6)">
+      <div class="card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 3h12l4 6-10 13L2 9z"/><path d="M2 9h20M12 22L6 9M12 22l6-13M6 3l6 6 6-6"/></svg></div>
+      <div class="card-title">Haut de gamme</div>
+      <div class="card-desc">Sur-mesure, matériaux nobles</div>
+    </button>
+  </div>
+  <div style="margin-top:20px;text-align:center"><button type="button" class="btn btn-ghost" onclick="goPrev()" style="font-size:13px;color:var(--muted)">← Retour</button></div>
+</div>
+
+<!-- ═══════════ SCREEN 7 — CONTRAINTES ═══════════ -->
+<div class="screen" id="s7" data-step="7">
+  <div class="screen-header">
+    <div class="screen-eyebrow">Dernière étape</div>
+    <h2 class="screen-title">Des contraintes particulières ?</h2>
+    <p class="screen-hint">Ces éléments peuvent majorer le coût de 5 à 20%. Passez si vous ne savez pas — on les évaluera lors d'un audit.</p>
+  </div>
+  <div class="toggles">
+    <button class="toggle" onclick="toggleOn(this,'amiante')">
+      <div>
+        <div class="toggle-label">Amiante diagnostiqué</div>
+        <div class="toggle-sub">Matériau utilisé jusqu'en 1997, nécessite une dépose spécifique</div>
+      </div>
+      <div class="toggle-switch"></div>
+    </button>
+    <button class="toggle" onclick="toggleOn(this,'plomb')">
+      <div>
+        <div class="toggle-label">Plomb diagnostiqué</div>
+        <div class="toggle-sub">Peintures anciennes d'avant 1949, peut nécessiter un traitement</div>
+      </div>
+      <div class="toggle-switch"></div>
+    </button>
+    <button class="toggle" onclick="toggleOn(this,'acces_difficile')">
+      <div>
+        <div class="toggle-label">Accès chantier difficile</div>
+        <div class="toggle-sub">Centre ancien, rue étroite, étages sans ascenseur</div>
+      </div>
+      <div class="toggle-switch"></div>
+    </button>
+  </div>
+  <div class="nav-row">
+    <button class="btn btn-ghost" onclick="goPrev()">← Retour</button>
+    <div style="display:flex;gap:12px;align-items:center">
+      <button class="btn-skip" onclick="submitForm()">Passer cette étape</button>
+      <button class="btn btn-primary" onclick="submitForm()">Calculer mon estimation →</button>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<!-- ═══════════ LOADING ═══════════ -->
+<div class="loading" id="loading">
+  <div class="spinner"></div>
+  <div class="loading-title">Analyse en cours...</div>
+  <div class="loading-msg" id="loadingMsg">Analyse de votre région...</div>
+</div>
+
+<!-- ═══════════ RESULTS ═══════════ -->
+<div class="results" id="results">
+    
+    <div class="result-hero">
+      <div class="result-label">Votre estimation</div>
+      <div class="result-title">Pour un projet de <span id="rScope">rénovation complète</span></div>
+      <div>
+        <span class="result-range-between">Entre</span>
+        <div class="result-range"><span id="rLow">45 000 €</span> et <span id="rHigh">58 000 €</span></div>
+      </div>
+      <div class="result-scope" id="rDetails">100 m² · Eure (27) · Standard</div>
+      <div class="result-confidence">
+        <div class="confidence-label">Indice de précision <span class="confidence-pct">80%</span></div>
+        <div class="confidence-bar"><div class="confidence-fill"></div></div>
+      </div>
+    </div>
+    
+    <!-- ═══ LEAD GATE — Email capture avant résultats détaillés ═══ -->
+    <div class="lead-gate" id="leadGate">
+      <div class="lead-gate-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 7L2 7"/></svg></div>
+      <div class="lead-gate-title">Recevez votre estimation par email</div>
+      <div class="lead-gate-sub">Entrez votre email pour accéder à la synthèse détaillée de votre estimation et la conserver.</div>
+      <div class="lead-gate-form">
+        <input type="email" class="lead-gate-input" id="leadEmail" placeholder="votre@email.com" autocomplete="email" onkeydown="if(event.key==='Enter'){event.preventDefault();unlockWithEmail()}">
+        <button class="lead-gate-btn" onclick="unlockWithEmail()">Voir mes résultats →</button>
+      </div>
+      <div class="lead-gate-error" id="leadError">Adresse email invalide.</div>
+      <div class="lead-gate-trust"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/></svg> Pas de spam. Vos données restent confidentielles.</div>
+    </div>
+
+    <!-- Contenu gated — visible uniquement après capture email -->
+    <div id="gatedContent" style="display:none">
+
+    <div class="good-news">
+      <div class="good-news-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5L12 3zM5 19l1 3 1-3 3-1-3-1-1-3-1 3-3 1 3 1z"/></svg></div>
+      <div class="good-news-text"><strong>Bonne nouvelle :</strong> votre projet semble éligible à plusieurs aides d'État. Le montant sera détaillé dans votre rapport.</div>
+    </div>
+
+    <div class="section-hdr">
+      <div class="section-hdr-label">Répartition globale</div>
+      <div class="section-hdr-title">Le budget en 3 grands postes</div>
+    </div>
+    <div class="summary-grid">
+      <div class="summary-card">
+        <div class="summary-label">Gros œuvre</div>
+        <div class="summary-val" id="rGO">—</div>
+        <div class="summary-sub">Structure, façades, VRD</div>
+      </div>
+      <div class="summary-card">
+        <div class="summary-label">Second œuvre</div>
+        <div class="summary-val" id="rSO">—</div>
+        <div class="summary-sub">Cloisons, sols, menuiseries</div>
+      </div>
+      <div class="summary-card">
+        <div class="summary-label">Équipements</div>
+        <div class="summary-val" id="rTE">—</div>
+        <div class="summary-sub">Plomberie, élec., CVC</div>
+      </div>
+    </div>
+
+    <!-- PAYWALL STATE -->
+    <div id="paywall">
+      <div class="section-hdr">
+        <div class="section-hdr-label">Rapport détaillé</div>
+        <div class="section-hdr-title">Ce que vous obtenez avec votre rapport</div>
+        <div class="section-hdr-sub">3 blocs supplémentaires qui font la différence lors d'une consultation d'entreprises.</div>
+      </div>
+
+      <div class="lock-grid">
+        <div class="lock-card">
+          <div class="lock-badge">Verrouillé</div>
+          <div class="lock-card-head">
+            <div class="lock-icon"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/></svg></div>
+            <div>
+              <div class="lock-card-title">Détail budget par lot (15 postes)</div>
+              <div class="lock-card-sub">Gros œuvre, menuiseries, plomberie, électricité…</div>
+            </div>
+          </div>
+          <div class="lock-blur">
+            <div class="lock-blur-row"><span>Gros œuvre / Maçonnerie</span><strong>X XXX €</strong></div>
+            <div class="lock-blur-row"><span>Plomberie / Sanitaires</span><strong>X XXX €</strong></div>
+            <div class="lock-blur-row"><span>Électricité</span><strong>X XXX €</strong></div>
+            <div class="lock-blur-row"><span>Menuiseries extérieures</span><strong>X XXX €</strong></div>
+          </div>
+        </div>
+
+        <div class="lock-card">
+          <div class="lock-badge">Verrouillé</div>
+          <div class="lock-card-head">
+            <div class="lock-icon"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/></svg></div>
+            <div>
+              <div class="lock-card-title">Montant exact des aides</div>
+              <div class="lock-card-sub">MaPrimeRénov', CEE, éco-PTZ, TVA réduite</div>
+            </div>
+          </div>
+          <div class="lock-blur">
+            <div class="lock-blur-row"><span>MaPrimeRénov'</span><strong>X XXX €</strong></div>
+            <div class="lock-blur-row"><span>CEE (Prime énergie)</span><strong>X XXX €</strong></div>
+            <div class="lock-blur-row"><span>Éco-PTZ</span><strong>XX XXX €</strong></div>
+            <div class="lock-blur-row"><span>TVA 5,5% (économie)</span><strong>X XXX €</strong></div>
+          </div>
+        </div>
+
+        <div class="lock-card">
+          <div class="lock-badge">Verrouillé</div>
+          <div class="lock-card-head">
+            <div class="lock-icon"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/></svg></div>
+            <div>
+              <div class="lock-card-title">3 points de vigilance technique</div>
+              <div class="lock-card-sub">Alertes métier personnalisées sur votre projet</div>
+            </div>
+          </div>
+          <div class="lock-blur">
+            <div class="lock-blur-row"><span>⚠ Risque amiante</span><strong>Diagnostic obligatoire</strong></div>
+            <div class="lock-blur-row"><span>⚠ Structure porteuse</span><strong>Avis BE à solliciter</strong></div>
+            <div class="lock-blur-row"><span>⚠ Évacuations</span><strong>Mise aux normes</strong></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="checkout">
+        <div class="checkout-price-badge">49 €<small>TTC · unique</small></div>
+        <div class="checkout-label">Rapport complet</div>
+        <div class="checkout-title">Obtenez votre rapport d'estimation détaillé</div>
+        <div class="checkout-sub">Un document professionnel de 8 pages, que vous pouvez partager avec votre banquier, votre notaire ou vos artisans.</div>
+        
+        <ul class="checkout-features">
+          <li><strong>Budget détaillé par lot</strong> — 15 postes chiffrés avec fourchettes basse/haute</li>
+          <li><strong>Montant exact des aides</strong> — MaPrimeRénov', CEE, éco-PTZ, TVA 5,5%</li>
+          <li><strong>3 points de vigilance technique</strong> — alertes métier sur votre projet</li>
+          <li><strong>Rapport PDF brandé ADORA</strong> — envoyé sous 5 minutes par email</li>
+        </ul>
+        
+        <div class="checkout-form">
+          <div class="checkout-form-row">
+            <input type="text" class="checkout-input" id="prenom" placeholder="Prénom" autocomplete="given-name">
+            <input type="email" class="checkout-input" id="email" placeholder="votre@email.com" autocomplete="email">
+          </div>
+          <button class="checkout-cta" id="payBtn" onclick="proceedToPayment()">
+            Obtenir mon rapport — 49 € →
+          </button>
+        </div>
+        
+        <div class="checkout-trust">
+          <span class="checkout-trust-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/></svg>
+            Paiement sécurisé Stripe
+          </span>
+          <span class="checkout-trust-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="1" y="4" width="22" height="16" rx="2"/><path d="M1 10h22"/></svg> CB</span>
+          <span class="checkout-trust-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2c-2 0-3 1-3 1s-1-1-3-1C3 2 1 5 1 8c0 6 11 14 11 14s11-8 11-14c0-3-2-6-5-6-2 0-3 1-3 1s-1-1-3-1z"/></svg> Apple Pay</span>
+          <span class="checkout-trust-item">🅶 Google Pay</span>
+        </div>
+        
+        <div class="checkout-steps">
+          <div class="checkout-step">
+            <div class="checkout-step-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="1" y="4" width="22" height="16" rx="2"/><path d="M1 10h22"/></svg></div>
+            <div class="checkout-step-label"><strong style="color:#fff;font-size:12px;display:block;margin-bottom:2px">1. Paiement</strong>En 30 secondes sur Stripe</div>
+          </div>
+          <div class="checkout-step">
+            <div class="checkout-step-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 7L2 7"/></svg></div>
+            <div class="checkout-step-label"><strong style="color:#fff;font-size:12px;display:block;margin-bottom:2px">2. Résultats</strong>Affichage immédiat + PDF</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    </div><!-- /gatedContent -->
+
+    <!-- UNLOCKED STATE -->
+    <div class="unlocked" id="unlocked">
+      
+      <div class="section-hdr">
+        <div class="section-hdr-label">Détail chiffré</div>
+        <div class="section-hdr-title">Budget par poste de travaux</div>
+        <div class="section-hdr-sub">Les 15 lots techniques avec fourchettes basse/haute. Le tri correspond à la numérotation standard TCE.</div>
+      </div>
+      <div class="lots-table" id="lotsTable"></div>
+
+      <div class="section-hdr">
+        <div class="section-hdr-label">Aides mobilisables</div>
+        <div class="section-hdr-title">Estimation des aides disponibles</div>
+        <div class="section-hdr-sub">Basé sur le type et l'ampleur du projet. Montants précis confirmés par le simulateur d'aides ADORA.</div>
+      </div>
+      <div class="aides-card" id="aidesCard"></div>
+
+      <div class="upsell">
+        <div class="upsell-title">Besoin d'une estimation opposable ?</div>
+        <div class="upsell-sub">Cette estimation est indicative. Pour négocier avec les entreprises et solliciter un financement, un chiffrage détaillé par un économiste vous donne des bases solides.</div>
+        <a href="sur-mesure.html" class="upsell-cta">Découvrir l'accompagnement sur mesure →</a>
+      </div>
+
+    </div>
+</div>
+
+<footer class="footer">
+<div class="footer-inner">
+  <div class="footer-brand">
+    <strong>ADORA</strong>
+    <p>Économiste de la construction<br>Normandie &amp; Île-de-France</p>
+  </div>
+  <div class="footer-col">
+    <div class="footer-col-title">Outils</div>
+    <a href="simulateur.html">Simulateur aides</a>
+    <a href="estimateur.html">Estimateur travaux</a>
+    <a href="audit-avant-achat.html">Audit avant achat</a>
+    <a href="sur-mesure.html">Sur mesure</a>
+  </div>
+  <div class="footer-col">
+    <div class="footer-col-title">ADORA</div>
+    <a href="a-propos.html">À propos</a>
+    <a href="professionnels.html">Professionnels</a>
+    <a href="partenaires.html">Partenaires</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <div class="footer-col footer-contact">
+    <div class="footer-col-title">Contact</div>
+    <a href="tel:+33660215509">06 60 21 55 09</a>
+    <a href="mailto:aymericdussauze@gmail.com">aymericdussauze@gmail.com</a>
+    <a href="https://adora-economie.fr">adora-economie.fr</a>
+  </div>
+</div>
+<div class="footer-legal">© 2026 ADORA · EI · SIRET 532 886 918 00020 · TVA non applicable, art. 293B du CGI<br><a href="mentions-legales.html">Mentions légales</a> · <a href="politique-confidentialite.html">Confidentialité</a> · <a href="cgv.html">CGV</a></div>
+</footer>
+
+<script>
+
+// ═══════════════════════════════════════════════════════════
+// DATA — RATIOS (€ HT/m² SHAB) — Batichiffrage 2025
+// Calibrés le 21/04/2026 — validés par Aymeric Dussauze
+// Source : BCR1 + BCR2 + BCR3 (22 960 ouvrages)
+// ═══════════════════════════════════════════════════════════
+const LOTS = [
+  {id:1,  nom:"Démolition / Curage",            eco:12, std:25, confort:40,  hdg:55},
+  {id:2,  nom:"Gros-œuvre / Maçonnerie",        eco:10, std:45, confort:100, hdg:180},
+  {id:3,  nom:"Charpente / Couverture",         eco:30, std:65, confort:110, hdg:180},
+  {id:4,  nom:"Étanchéité",                     eco:8,  std:18, confort:30,  hdg:50},
+  {id:5,  nom:"Menuiseries extérieures",        eco:45, std:90, confort:160, hdg:280},
+  {id:6,  nom:"Isolation / Doublages",          eco:25, std:50, confort:85,  hdg:130},
+  {id:7,  nom:"Cloisons / Plâtrerie",           eco:18, std:40, confort:65,  hdg:95},
+  {id:8,  nom:"Menuiseries intérieures",        eco:15, std:35, confort:60,  hdg:100},
+  {id:9,  nom:"Revêtements de sols et murs",    eco:18, std:40, confort:75,  hdg:130},
+  {id:10, nom:"Peinture / Décoration",          eco:15, std:28, confort:50,  hdg:80},
+  {id:11, nom:"Plomberie / Sanitaires",         eco:30, std:60, confort:110, hdg:190},
+  {id:12, nom:"Électricité",                    eco:30, std:60, confort:95,  hdg:150},
+  {id:13, nom:"Chauffage / Ventilation",        eco:25, std:55, confort:100, hdg:180},
+  {id:14, nom:"VRD / Réseaux",                  eco:8,  std:20, confort:35,  hdg:60},
+  {id:15, nom:"Aménagements extérieurs",        eco:8,  std:18, confort:35,  hdg:60}
+];
+
+const PROFILES = {
+  rafraichissement: [9,10],
+  partielle: [1,5,6,11,12,13],
+  complete: [1,5,6,7,8,9,10,11,12,13],
+  totale: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15],
+  lourde: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+};
+
+function getCoeffEtat(v){return{bon:0.85,moyen:1.0,degrade:1.15,tres_degrade:1.35}[v]||1.0}
+function getCoeffAncien(v){return{avant1948:1.25,'1948-1974':1.15,'1975-1990':1.05,'1991-2005':1.0,apres2005:0.90}[v]||1.0}
+function getCoeffAcces(v){return v?1.15:1.0}
+function getCoeffAmiante(v){return v?1.15:1.0}
+function getCoeffPlomb(v){return v?1.05:1.0}
+function getCoeffType(v){return{maison:1.0,appartement:0.95,immeuble:0.92}[v]||1.0}
+
+const DEPT_COEFF = {
+"01":0.95,"02":0.93,"03":0.93,"04":0.96,"05":0.97,"06":1.08,"07":0.95,"08":0.92,"09":0.94,
+"10":0.93,"11":0.94,"12":0.93,"13":1.05,"14":0.97,"15":0.93,"16":0.93,"17":0.95,"18":0.92,
+"19":0.93,"20":1.05,"21":0.95,"22":0.94,"23":0.92,"24":0.93,"25":0.95,"26":0.96,"27":0.97,
+"28":0.96,"29":0.95,"30":0.98,"31":1.00,"32":0.93,"33":0.98,"34":0.99,"35":0.96,"36":0.91,
+"37":0.95,"38":1.00,"39":0.94,"40":0.95,"41":0.94,"42":0.96,"43":0.93,"44":0.98,"45":0.95,
+"46":0.93,"47":0.94,"48":0.93,"49":0.95,"50":0.96,"51":0.94,"52":0.92,"53":0.93,"54":0.95,
+"55":0.92,"56":0.95,"57":0.95,"58":0.92,"59":0.97,"60":0.98,"61":0.95,"62":0.96,"63":0.95,
+"64":0.97,"65":0.95,"66":0.96,"67":1.00,"68":1.00,"69":1.03,"70":0.93,"71":0.94,"72":0.94,
+"73":1.02,"74":1.05,"75":1.20,"76":0.97,"77":1.05,"78":1.10,"79":0.93,"80":0.93,"81":0.94,
+"82":0.93,"83":1.03,"84":0.98,"85":0.95,"86":0.93,"87":0.93,"88":0.93,"89":0.93,"90":0.95,
+"91":1.08,"92":1.18,"93":1.12,"94":1.12,"95":1.08,"2A":1.05,"2B":1.05,
+"971":1.15,"972":1.15,"973":1.20,"974":1.15,"976":1.25
+};
+
+const DEPT_NAMES = {
+"01":"Ain","02":"Aisne","03":"Allier","04":"Alpes-de-Haute-Provence","05":"Hautes-Alpes",
+"06":"Alpes-Maritimes","07":"Ardèche","08":"Ardennes","09":"Ariège","10":"Aube",
+"11":"Aude","12":"Aveyron","13":"Bouches-du-Rhône","14":"Calvados","15":"Cantal",
+"16":"Charente","17":"Charente-Maritime","18":"Cher","19":"Corrèze","20":"Corse",
+"2A":"Corse-du-Sud","2B":"Haute-Corse","21":"Côte-d\'Or","22":"Côtes-d\'Armor","23":"Creuse",
+"24":"Dordogne","25":"Doubs","26":"Drôme","27":"Eure","28":"Eure-et-Loir",
+"29":"Finistère","30":"Gard","31":"Haute-Garonne","32":"Gers","33":"Gironde",
+"34":"Hérault","35":"Ille-et-Vilaine","36":"Indre","37":"Indre-et-Loire","38":"Isère",
+"39":"Jura","40":"Landes","41":"Loir-et-Cher","42":"Loire","43":"Haute-Loire",
+"44":"Loire-Atlantique","45":"Loiret","46":"Lot","47":"Lot-et-Garonne","48":"Lozère",
+"49":"Maine-et-Loire","50":"Manche","51":"Marne","52":"Haute-Marne","53":"Mayenne",
+"54":"Meurthe-et-Moselle","55":"Meuse","56":"Morbihan","57":"Moselle","58":"Nièvre",
+"59":"Nord","60":"Oise","61":"Orne","62":"Pas-de-Calais","63":"Puy-de-Dôme",
+"64":"Pyrénées-Atlantiques","65":"Hautes-Pyrénées","66":"Pyrénées-Orientales","67":"Bas-Rhin",
+"68":"Haut-Rhin","69":"Rhône","70":"Haute-Saône","71":"Saône-et-Loire","72":"Sarthe",
+"73":"Savoie","74":"Haute-Savoie","75":"Paris","76":"Seine-Maritime","77":"Seine-et-Marne",
+"78":"Yvelines","79":"Deux-Sèvres","80":"Somme","81":"Tarn","82":"Tarn-et-Garonne",
+"83":"Var","84":"Vaucluse","85":"Vendée","86":"Vienne","87":"Haute-Vienne",
+"88":"Vosges","89":"Yonne","90":"Territoire de Belfort","91":"Essonne","92":"Hauts-de-Seine",
+"93":"Seine-Saint-Denis","94":"Val-de-Marne","95":"Val-d\'Oise",
+"971":"Guadeloupe","972":"Martinique","973":"Guyane","974":"Réunion","976":"Mayotte"
+};
+
+// ═══════════════════════════════════════════════════════════
+// STATE
+// ═══════════════════════════════════════════════════════════
+const STATE = {
+  projet: null,
+  profile: "complete",
+  typeBien: null,
+  surface: 100,
+  cp: null,
+  dept: null,
+  annee: null,
+  etat: null,
+  gamme: null,
+  amiante: false,
+  plomb: false,
+  acces_difficile: false,
+  result: null,
+  prenom: "",
+  email: ""
+};
+
+const TOTAL_STEPS = 8;
+let currentStep = 0;
+
+// ═══════════════════════════════════════════════════════════
+// PROGRESS
+// ═══════════════════════════════════════════════════════════
+function updateProgress() {
+  const pct = Math.round(((currentStep + 1) / TOTAL_STEPS) * 100);
+  document.getElementById("progressFill").style.width = pct + "%";
+  document.getElementById("stepNum").textContent = currentStep + 1;
+  document.getElementById("stepTotal").textContent = TOTAL_STEPS;
+  document.getElementById("stepPct").textContent = pct + "%";
+}
+
+// ═══════════════════════════════════════════════════════════
+// NAVIGATION
+// ═══════════════════════════════════════════════════════════
+function goTo(n) {
+  if (n < 0 || n >= TOTAL_STEPS) return;
+  document.getElementById("s" + currentStep).classList.remove("active");
+  currentStep = n;
+  document.getElementById("s" + n).classList.add("active");
+  updateProgress();
+  window.scrollTo({top: 0, behavior: "smooth"});
+  // Save progress to localStorage
+  try {
+    localStorage.setItem("adora_estim_state", JSON.stringify(STATE));
+    localStorage.setItem("adora_estim_step", currentStep);
+    localStorage.setItem("adora_estim_ts", Date.now());
+  } catch(e) {}
+}
+function goNext() { goTo(currentStep + 1); }
+function goPrev() { goTo(currentStep - 1); }
+
+// ═══════════════════════════════════════════════════════════
+// CARD SELECTION (auto-advance for single-choice screens)
+// ═══════════════════════════════════════════════════════════
+const FIELD_MAP = {
+  0: { field: "projet", profileFromCard: true, autoAdvance: true },
+  1: { field: "typeBien", autoAdvance: true },
+  4: { field: "annee", autoAdvance: true },
+  5: { field: "etat", autoAdvance: true },
+  6: { field: "gamme", autoAdvance: true }
+};
+
+function selectCard(btn, stepIdx) {
+  const cfg = FIELD_MAP[stepIdx];
+  if (!cfg) return;
+  const siblings = btn.parentElement.querySelectorAll(".card");
+  siblings.forEach(c => c.classList.remove("selected"));
+  btn.classList.add("selected");
+  STATE[cfg.field] = btn.dataset.val;
+  if (cfg.profileFromCard) STATE.profile = btn.dataset.profile;
+  if (cfg.autoAdvance) setTimeout(goNext, 280);
+}
+
+// ═══════════════════════════════════════════════════════════
+// SURFACE SLIDER
+// ═══════════════════════════════════════════════════════════
+function updateSurface(v) {
+  document.getElementById("surfaceVal").textContent = v;
+  STATE.surface = parseInt(v);
+}
+
+// ═══════════════════════════════════════════════════════════
+// CODE POSTAL + DEPT DETECTION
+// ═══════════════════════════════════════════════════════════
+function detectDept(cp) {
+  STATE.cp = cp;
+  if (cp.length < 5) {
+    document.getElementById("deptResult").classList.remove("show");
+    document.getElementById("btnS3Next").disabled = true;
+    return;
+  }
+  let dept;
+  if (cp.startsWith("20")) {
+    const num = parseInt(cp);
+    dept = num <= 20190 ? "2A" : "2B";
+  } else if (cp.startsWith("97")) {
+    dept = cp.substring(0, 3);
+  } else {
+    dept = cp.substring(0, 2);
+  }
+  if (DEPT_NAMES[dept]) {
+    STATE.dept = dept;
+    const coeff = DEPT_COEFF[dept] || 1.0;
+    const variance = Math.abs((coeff - 1) * 100).toFixed(0);
+    const sign = coeff > 1 ? "+" : "-";
+    const label = coeff === 1 ? "Référence nationale" : `${sign}${variance}% vs moyenne nationale`;
+    document.getElementById("deptResult").innerHTML =
+      `📍 <strong>${dept} — ${DEPT_NAMES[dept]}</strong> · ${label}`;
+    document.getElementById("deptResult").classList.add("show");
+    document.getElementById("btnS3Next").disabled = false;
+  } else {
+    document.getElementById("deptResult").classList.remove("show");
+    document.getElementById("btnS3Next").disabled = true;
+  }
+}
+
+// ═══════════════════════════════════════════════════════════
+// TOGGLES (S7)
+// ═══════════════════════════════════════════════════════════
+function toggleOn(btn, field) {
+  btn.classList.toggle("on");
+  STATE[field] = btn.classList.contains("on");
+}
+
+// ═══════════════════════════════════════════════════════════
+// SUBMIT → LOADING → CALCULATE → RESULTS
+// ═══════════════════════════════════════════════════════════
+const LOADING_MSGS = [
+  "Analyse de votre région...",
+  "Croisement avec les barèmes 2026...",
+  "Application des coefficients correcteurs...",
+  "Calcul des fourchettes par lot...",
+  "Finalisation de votre estimation..."
+];
+
+function submitForm() {
+  clearSession(); // Clear saved progress on successful submit
+  // Hide app, show loading
+  document.querySelector(".app").style.display = "none";
+  const loading = document.getElementById("loading");
+  loading.classList.add("show");
+  window.scrollTo({top: 0, behavior: "smooth"});
+  
+  // Rotate messages
+  const msgEl = document.getElementById("loadingMsg");
+  let i = 0;
+  msgEl.textContent = LOADING_MSGS[0];
+  const rotator = setInterval(() => {
+    i++;
+    if (i >= LOADING_MSGS.length) { clearInterval(rotator); return; }
+    msgEl.style.opacity = "0";
+    setTimeout(() => { msgEl.textContent = LOADING_MSGS[i]; msgEl.style.opacity = "1"; }, 200);
+  }, 600);
+  
+  // After 2.8s, show results
+  setTimeout(() => {
+    clearInterval(rotator);
+    loading.classList.remove("show");
+    calculate();
+    showResults();
+  }, 2800);
+}
+
+// ═══════════════════════════════════════════════════════════
+// CALCULATION ENGINE
+// ═══════════════════════════════════════════════════════════
+function calculate() {
+  const s = STATE;
+  const gamme = s.gamme || "standard";
+  const activeLots = PROFILES[s.profile] || PROFILES.complete;
+  
+  const coeffTotal = 
+    (DEPT_COEFF[s.dept] || 1.0) *
+    getCoeffEtat(s.etat) *
+    getCoeffAncien(s.annee) *
+    getCoeffAcces(s.acces_difficile) *
+    getCoeffAmiante(s.amiante) *
+    getCoeffPlomb(s.plomb) *
+    getCoeffType(s.typeBien);
+  
+  const scaleFactor = s.surface <= 50 ? 1.15 : s.surface <= 80 ? 1.05 : s.surface <= 120 ? 1.0 : s.surface <= 180 ? 0.95 : 0.90;
+  
+  const results = [];
+  let totalLow = 0, totalMid = 0, totalHigh = 0;
+  
+  LOTS.forEach(lot => {
+    if (!activeLots.includes(lot.id)) return;
+    const ratio = lot[gamme] || lot.std;
+    const base = ratio * s.surface * coeffTotal * scaleFactor;
+    const low = Math.round(base * 0.85);
+    const mid = Math.round(base);
+    const high = Math.round(base * 1.15);
+    results.push({id: lot.id, nom: lot.nom, low, mid, high});
+    totalLow += low; totalMid += mid; totalHigh += high;
+  });
+  
+  // Round ranges to nearest 500 for cleanliness
+  totalLow = Math.round(totalLow / 500) * 500;
+  totalHigh = Math.round(totalHigh / 500) * 500;
+  
+  const goLots = results.filter(r => [1,2,3,4,14].includes(r.id));
+  const soLots = results.filter(r => [5,6,7,8,9,10].includes(r.id));
+  const teLots = results.filter(r => [11,12,13,15].includes(r.id));
+  const goTotal = goLots.reduce((s,r) => s + r.mid, 0);
+  const soTotal = soLots.reduce((s,r) => s + r.mid, 0);
+  const teTotal = teLots.reduce((s,r) => s + r.mid, 0);
+  
+  STATE.result = { results, totalLow, totalMid, totalHigh, goTotal, soTotal, teTotal };
+}
+
+// ═══════════════════════════════════════════════════════════
+// FORMAT
+// ═══════════════════════════════════════════════════════════
+function euros(v) {
+  return new Intl.NumberFormat("fr-FR", {style:"currency", currency:"EUR", maximumFractionDigits:0}).format(v);
+}
+
+
+// ═══════════════════════════════════════════════════════════
+// LEAD GATE — Email capture avant résultats détaillés
+// ═══════════════════════════════════════════════════════════
+function unlockWithEmail() {
+  const email = document.getElementById("leadEmail").value.trim();
+  const errEl = document.getElementById("leadError");
+  
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    errEl.style.display = "block";
+    return;
+  }
+  errEl.style.display = "none";
+  
+  STATE.leadEmail = email;
+  
+  // Fire & forget lead capture
+  const r = STATE.result;
+  fetch("https://formspree.io/f/maqaewbn", {
+    method: "POST",
+    headers: {"Content-Type":"application/json","Accept":"application/json"},
+    body: JSON.stringify({
+      _formType: "estimateur_lead_gratuit",
+      email,
+      _subject: "[Estimateur Lead] " + (STATE.dept || "") + " · " + STATE.surface + " m² · " + euros(r.totalLow) + "-" + euros(r.totalHigh),
+      projet: STATE.projet,
+      surface: STATE.surface,
+      dept: STATE.dept,
+      dept_nom: DEPT_NAMES[STATE.dept] || "",
+      estimation_low: r.totalLow,
+      estimation_mid: r.totalMid,
+      estimation_high: r.totalHigh
+    })
+  }).catch(() => {});
+  
+  if (typeof gtag === "function") {
+    gtag("event", "generate_lead", { value: 0, currency: "EUR", source: "estimateur_email" });
+  }
+  
+  // Show gated content with smooth scroll
+  document.getElementById("leadGate").style.display = "none";
+  const gated = document.getElementById("gatedContent");
+  gated.style.display = "block";
+  
+  // Scroll vers le contenu révélé
+  setTimeout(() => {
+    gated.scrollIntoView({behavior: "smooth", block: "start"});
+  }, 100);
+  
+  // Pre-fill checkout email
+  const checkoutEmail = document.getElementById("email");
+  if (checkoutEmail && !checkoutEmail.value) {
+    checkoutEmail.value = email;
+  }
+}
+
+// ═══════════════════════════════════════════════════════════
+// RESULTS DISPLAY
+// ═══════════════════════════════════════════════════════════
+function showResults() {
+  const r = STATE.result;
+  const s = STATE;
+  
+  const scopeMap = {complete:"rénovation intérieure complète",totale:"rénovation totale",energetique:"rénovation énergétique",achat:"rénovation après achat",rafraichissement:"rafraîchissement"};
+  document.getElementById("rScope").textContent = scopeMap[s.projet] || "rénovation";
+  document.getElementById("rLow").textContent = euros(r.totalLow);
+  document.getElementById("rHigh").textContent = euros(r.totalHigh);
+  
+  const gammeMap = {eco:"Économique",standard:"Standard",confort:"Confort",hdg:"Haut de gamme"};
+  document.getElementById("rDetails").textContent =
+    `${s.surface} m² · ${DEPT_NAMES[s.dept] || ""} (${s.dept}) · ${gammeMap[s.gamme] || "Standard"}`;
+  
+  document.getElementById("rGO").textContent = euros(r.goTotal);
+  document.getElementById("rSO").textContent = euros(r.soTotal);
+  document.getElementById("rTE").textContent = euros(r.teTotal);
+  
+  document.getElementById("results").classList.add("show");
+  window.scrollTo({top: 0, behavior: "smooth"});
+}
+
+// ═══════════════════════════════════════════════════════════
+// STRIPE PAYMENT LINK (à remplacer par ton URL Stripe)
+// ═══════════════════════════════════════════════════════════
+// Créer le produit "Rapport d'estimation ADORA - 49€" dans ton dashboard Stripe
+// puis coller l'URL Payment Link ici :
+const STRIPE_PAYMENT_LINK = "https://buy.stripe.com/5kQdRbcdj5VAgxQ82F4Rq01";
+
+// ═══════════════════════════════════════════════════════════
+// WORKER PDF — URL du Worker Cloudflare
+// ═══════════════════════════════════════════════════════════
+const PDF_WORKER_URL = "https://adora-pdf.aymericdussauze.workers.dev";
+
+// ═══════════════════════════════════════════════════════════
+// ORDER ID — Référence unique commande ADORA
+// ═══════════════════════════════════════════════════════════
+function generateOrderId() {
+  const year = new Date().getFullYear();
+  const rand = Math.floor(Math.random() * 9000) + 1000;
+  return `EST-${year}-${rand}`;
+}
+
+// ═══════════════════════════════════════════════════════════
+// SAVE TO WORKER KV — Sauvegarde serveur avant Stripe
+// ═══════════════════════════════════════════════════════════
+async function saveOrderToWorker(ref, payload) {
+  try {
+    const resp = await fetch(PDF_WORKER_URL + "/save", {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({ ref, data: payload })
+    });
+    const result = await resp.json();
+    console.log("💾 Commande sauvegardée:", ref, result.ok ? "✓" : "✗");
+    return result.ok;
+  } catch(e) {
+    console.warn("⚠ Sauvegarde KV échouée (non bloquant):", e);
+    return false;
+  }
+}
+
+// ═══════════════════════════════════════════════════════════
+// SEND EMAIL — Demande au Worker d'envoyer le PDF par email
+// ═══════════════════════════════════════════════════════════
+async function sendEmailWithPdf(ref, type, data, email) {
+  try {
+    const resp = await fetch(PDF_WORKER_URL + "/send-email", {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({ ref, type, data, email })
+    });
+    const result = await resp.json();
+    console.log("📧 Email envoyé:", result.ok ? "✓" : "✗", result);
+    return result.ok;
+  } catch(e) {
+    console.warn("⚠ Envoi email échoué:", e);
+    return false;
+  }
+}
+
+function proceedToPayment() {
+  const prenom = document.getElementById("prenom").value.trim();
+  const email = document.getElementById("email").value.trim();
+  
+  if (!prenom || !email) {
+    alert("Merci de renseigner votre prénom et email avant de procéder au paiement.");
+    return;
+  }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    alert("Adresse email invalide.");
+    return;
+  }
+  
+  STATE.prenom = prenom;
+  STATE.email = email;
+  
+  const btn = document.getElementById("payBtn");
+  btn.textContent = "Redirection vers le paiement...";
+  btn.disabled = true;
+  
+  // ═══ 1. Envoi des données au backend Make/Zapier via Formspree ═══
+  const formData = {
+    _formType: "estimateur_payant",
+    prenom, email,
+    projet: STATE.projet,
+    typeBien: STATE.typeBien,
+    surface: STATE.surface,
+    dept: STATE.dept,
+    dept_nom: DEPT_NAMES[STATE.dept] || "",
+    annee: STATE.annee,
+    etat: STATE.etat,
+    gamme: STATE.gamme,
+    amiante: STATE.amiante,
+    plomb: STATE.plomb,
+    acces_difficile: STATE.acces_difficile,
+    estimation_low: STATE.result.totalLow,
+    estimation_mid: STATE.result.totalMid,
+    estimation_high: STATE.result.totalHigh,
+    go_total: STATE.result.goTotal,
+    so_total: STATE.result.soTotal,
+    te_total: STATE.result.teTotal,
+    lots_detail: JSON.stringify(STATE.result.results),
+    _subject: `[Estimateur Pro] ${prenom} ${email} — ${STATE.dept} · ${STATE.surface} m² · ${euros(STATE.result.totalLow)}-${euros(STATE.result.totalHigh)}`
+  };
+  
+  fetch("https://formspree.io/f/maqaewbn", {
+    method: "POST",
+    headers: {"Content-Type":"application/json","Accept":"application/json"},
+    body: JSON.stringify(formData)
+  }).catch(() => {});
+  
+  // ═══ 2. Tracking GA4 ═══
+  if (typeof gtag === "function") {
+    gtag("event", "begin_checkout", {
+      currency: "EUR",
+      value: 49,
+      items: [{item_name: "Rapport estimation ADORA", price: 49, quantity: 1}]
+    });
+  }
+  
+  // ═══ 3. Générer ID commande + sauvegarder ═══
+  const orderRef = generateOrderId();
+  STATE.orderRef = orderRef;
+  
+  try {
+    localStorage.setItem("adora_prenom", prenom);
+    localStorage.setItem("adora_email", email);
+    localStorage.setItem("adora_state", JSON.stringify(STATE));
+    localStorage.setItem("adora_order_ref", orderRef);
+  } catch(e) {}
+  
+  // Sauvegarde serveur (KV) — fire & forget, ne bloque pas Stripe
+  const kvPayload = {
+    prenom, email, orderRef,
+    projet: STATE.projet, typeBien: STATE.typeBien, surface: STATE.surface,
+    dept: STATE.dept, dept_nom: DEPT_NAMES[STATE.dept] || "",
+    annee: STATE.annee, etat: STATE.etat, gamme: STATE.gamme,
+    amiante: STATE.amiante, plomb: STATE.plomb, acces_difficile: STATE.acces_difficile,
+    profile: STATE.profile,
+    result: STATE.result,
+    timestamp: new Date().toISOString()
+  };
+  saveOrderToWorker(orderRef, kvPayload);
+  
+  console.log("🏷️ Commande:", orderRef);
+  
+  // ═══ 4. Redirection Stripe ou mode recette ═══
+  if (STRIPE_PAYMENT_LINK.includes("REMPLACER")) {
+    console.log("🧪 MODE RECETTE — Stripe non configuré, bypass paiement");
+    setTimeout(() => {
+      showUnlockedResults(btn);
+      generateEstimateurPdf();
+    }, 800);
+    return;
+  }
+  
+  // Stripe Payment Link avec ref comme client_reference_id
+  setTimeout(() => {
+    const url = STRIPE_PAYMENT_LINK 
+      + "?prefilled_email=" + encodeURIComponent(email)
+      + "&client_reference_id=" + encodeURIComponent(orderRef);
+    window.location.href = url;
+  }, 500);
+}
+
+// ═══════════════════════════════════════════════════════════
+// OPTION C — Affichage page + PDF Worker en parallèle
+// ═══════════════════════════════════════════════════════════
+function showUnlockedResults(btn) {
+  document.getElementById("paywall").style.display = "none";
+  renderUnlocked();
+  document.getElementById("unlocked").classList.add("show");
+  document.getElementById("unlocked").scrollIntoView({behavior:"smooth", block:"start"});
+  if (btn) btn.textContent = "✓ Résultats affichés";
+}
+
+function buildWorkerPayload() {
+  const s = STATE;
+  const r = s.result;
+  const activeLots = PROFILES[s.profile] || PROFILES.complete;
+  
+  const coeffDept = DEPT_COEFF[s.dept] || 1.0;
+  const coeffEtat = getCoeffEtat(s.etat);
+  const coeffAnc = getCoeffAncien(s.annee);
+  const coeffAmiante = getCoeffAmiante(s.amiante);
+  const coeffType = getCoeffType(s.typeBien);
+  const coeffGlobal = coeffDept * coeffEtat * coeffAnc * coeffAmiante * coeffType * getCoeffAcces(s.acces_difficile) * getCoeffPlomb(s.plomb);
+  
+  const lotsDetail = r.results.map(l => ({
+    id: l.id, nom: l.nom,
+    eco: l.low, std: l.mid,
+    confort: Math.round(l.mid * 1.5),
+    hdg: Math.round(l.mid * 2.2)
+  }));
+  
+  return {
+    prenom: s.prenom || "Client",
+    email: s.email || "",
+    ref: s.orderRef || "",
+    type_renovation: s.projet,
+    type_bien: s.typeBien,
+    surface_m2: s.surface,
+    dept: s.dept,
+    dept_nom: DEPT_NAMES[s.dept] || "",
+    annee: s.annee,
+    etat: s.etat,
+    gamme: s.gamme || "standard",
+    amiante: !!s.amiante,
+    plomb: !!s.plomb,
+    acces_difficile: !!s.acces_difficile,
+    lots_actifs: activeLots,
+    coefficients: {
+      dept: coeffDept, anciennete: coeffAnc, etat: coeffEtat,
+      amiante: coeffAmiante, type_bien: coeffType,
+      global: Math.round(coeffGlobal * 100) / 100
+    },
+    lots_detail: lotsDetail,
+    estimation: {
+      eco: r.totalLow, standard: r.totalMid,
+      confort: Math.round(r.totalMid * 1.5),
+      hdg: Math.round(r.totalMid * 2.2),
+      fourchette_basse: Math.round(r.totalMid * 0.85),
+      fourchette_haute: Math.round(r.totalMid * 1.20)
+    }
+  };
+}
+
+async function generateEstimateurPdf() {
+  const s = STATE;
+  
+  const workerData = buildWorkerPayload();
+  const payload = { type: "estimateur", data: workerData };
+  
+  console.log("📄 Appel Worker PDF...", PDF_WORKER_URL);
+  
+  // Show PDF loading indicator
+  const pdfStatus = document.createElement("div");
+  pdfStatus.id = "pdfStatus";
+  pdfStatus.style.cssText = "background:var(--navy);color:#fff;padding:16px 20px;border-radius:10px;margin:20px 0;display:flex;align-items:center;gap:12px;font-size:14px";
+  pdfStatus.innerHTML = '<div class="spinner" style="width:20px;height:20px;border-width:2px"></div> Génération de votre rapport PDF en cours...';
+  const unlocked = document.getElementById("unlocked");
+  unlocked.parentNode.insertBefore(pdfStatus, unlocked);
+  
+  try {
+    const response = await fetch(PDF_WORKER_URL, {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify(payload)
+    });
+    
+    if (!response.ok) {
+      throw new Error("Worker " + response.status);
+    }
+    
+    const blob = await response.blob();
+    const url = URL.createObjectURL(blob);
+    
+    // Replace loading indicator with download link
+    pdfStatus.style.background = "var(--green-bg)";
+    pdfStatus.style.color = "var(--navy)";
+    pdfStatus.style.border = "1px solid rgba(5,150,105,.2)";
+    pdfStatus.innerHTML = `
+      <span style="font-size:20px">✓</span>
+      <span style="flex:1"><strong>Votre rapport PDF est prêt !</strong></span>
+      <a href="${url}" target="_blank" download="ADORA_Estimation_${s.dept}_${s.surface}m2.pdf" 
+         style="padding:8px 18px;background:var(--navy);color:#fff;border-radius:8px;text-decoration:none;font-weight:700;font-size:13px;display:inline-flex;align-items:center;gap:6px">
+        Télécharger le PDF →
+      </a>`;
+    
+    // Auto-open in new tab
+    window.open(url, "_blank");
+    
+    console.log("✅ PDF généré avec succès");
+    
+  } catch (err) {
+    console.error("❌ Erreur génération PDF:", err);
+    pdfStatus.style.background = "var(--amber-bg)";
+    pdfStatus.style.color = "var(--navy)";
+    pdfStatus.style.border = "1px solid rgba(217,119,6,.2)";
+    pdfStatus.innerHTML = `
+      <span style="font-size:20px">⚠</span>
+      <span style="flex:1"><strong>Le PDF est en cours de préparation.</strong> Vous le recevrez par email sous 5 minutes à <strong>${escHtml(s.email||"")}</strong>.</span>`;
+  }
+}
+
+function escHtml(s) { return (s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
+
+function renderUnlocked() {
+  const r = STATE.result;
+  
+  // Lots table
+  const tbl = document.getElementById("lotsTable");
+  let html = "";
+  r.results.forEach(l => {
+    html += `<div class="lots-table-row">
+      <span class="lot-id">${String(l.id).padStart(2,"0")}</span>
+      <span class="lot-name">${l.nom}</span>
+      <span class="lot-range">${euros(l.low)} — ${euros(l.high)}</span>
+      <span class="lot-mid">${euros(l.mid)}</span>
+    </div>`;
+  });
+  html += `<div class="lots-table-row total">
+    <span></span><span>Total estimé</span>
+    <span class="lot-range">${euros(r.totalLow)} — ${euros(r.totalHigh)}</span>
+    <span class="lot-mid">${euros(r.totalMid)}</span>
+  </div>`;
+  tbl.innerHTML = html;
+  
+  // Aides (rough estimate)
+  const aidesEstimee = estimerAides(STATE);
+  const aidesEl = document.getElementById("aidesCard");
+  aidesEl.innerHTML = `
+    <div class="aides-title">Aides mobilisables (estimation)</div>
+    <div class="aides-row"><span>MaPrimeRénov\' (selon revenus)</span><strong>${euros(aidesEstimee.mpr)}</strong></div>
+    <div class="aides-row"><span>CEE — Prime énergie</span><strong>${euros(aidesEstimee.cee)}</strong></div>
+    <div class="aides-row"><span>Éco-PTZ (prêt à 0%)</span><strong>jusqu\'à ${euros(aidesEstimee.ecoptz)}</strong></div>
+    <div class="aides-row"><span>TVA réduite 5,5% (économie)</span><strong>${euros(aidesEstimee.tva)}</strong></div>
+    <div class="aides-total"><span>Total aides estimé</span><span class="aides-total-val">${euros(aidesEstimee.total)}</span></div>
+    <p style="font-size:12px;color:var(--muted);margin-top:14px;line-height:1.5">Montants indicatifs. Pour un calcul précis selon vos revenus, utilisez le <a href="simulateur.html" style="color:var(--accent-deep);font-weight:600;text-decoration:underline">simulateur d\'aides détaillé</a>.</p>
+  `;
+}
+
+function estimerAides(s) {
+  // Rough estimation based on project type and scope
+  const r = s.result;
+  const isEnerg = s.projet === "energetique" || s.projet === "complete" || s.projet === "totale" || s.projet === "achat";
+  const mpr = isEnerg ? Math.round(r.totalMid * 0.12) : 0;
+  const cee = isEnerg ? Math.round(r.totalMid * 0.05) : 0;
+  const ecoptz = isEnerg ? Math.min(50000, r.totalMid) : 0;
+  const tva = Math.round(r.totalMid * 0.14);  // Economy from 20% to 5.5%
+  return { mpr, cee, ecoptz, tva, total: mpr + cee + tva };
+}
+
+// ═══════════════════════════════════════════════════════════
+// SCROLL PROGRESS
+// ═══════════════════════════════════════════════════════════
+window.addEventListener("scroll", () => {
+  const h = document.documentElement;
+  const el = document.getElementById("scrollProgress");
+  if (el) el.style.width = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100 + "%";
+});
+
+// ═══════════════════════════════════════════════════════════
+// INIT — check for saved progress
+// ═══════════════════════════════════════════════════════════
+(function initWizard() {
+  try {
+    const savedTs = localStorage.getItem("adora_estim_ts");
+    const savedStep = localStorage.getItem("adora_estim_step");
+    const savedState = localStorage.getItem("adora_estim_state");
+    
+    // Check if saved session exists and is less than 7 days old
+    if (savedTs && savedStep && savedState) {
+      const age = Date.now() - parseInt(savedTs);
+      const sevenDays = 7 * 24 * 60 * 60 * 1000;
+      
+      if (age < sevenDays && parseInt(savedStep) > 0) {
+        // Show resume banner
+        const banner = document.createElement("div");
+        banner.id = "resumeBanner";
+        banner.style.cssText = "position:fixed;bottom:0;left:0;right:0;z-index:200;background:var(--navy,#0D1025);color:#fff;padding:16px 24px;display:flex;align-items:center;justify-content:center;gap:16px;box-shadow:0 -4px 20px rgba(0,0,0,.15);font-size:14px;font-family:'Plus Jakarta Sans',sans-serif";
+        banner.innerHTML = '<span>Vous avez une estimation en cours (étape ' + (parseInt(savedStep) + 1) + '/8)</span>' +
+          '<button onclick="restoreSession()" style="background:var(--accent,#22D3EE);color:var(--navy,#0D1025);border:none;padding:8px 20px;border-radius:8px;font-weight:700;font-size:13px;cursor:pointer;font-family:inherit">Reprendre</button>' +
+          '<button onclick="clearSession()" style="background:transparent;color:rgba(237,233,254,.6);border:1px solid rgba(255,255,255,.15);padding:8px 16px;border-radius:8px;font-size:13px;cursor:pointer;font-family:inherit">Recommencer</button>';
+        document.body.appendChild(banner);
+      } else if (age >= sevenDays) {
+        // Expired, clean up
+        localStorage.removeItem("adora_estim_state");
+        localStorage.removeItem("adora_estim_step");
+        localStorage.removeItem("adora_estim_ts");
+      }
+    }
+  } catch(e) {}
+  updateProgress();
+})();
+
+function restoreSession() {
+  try {
+    const saved = JSON.parse(localStorage.getItem("adora_estim_state"));
+    const step = parseInt(localStorage.getItem("adora_estim_step"));
+    if (saved) Object.assign(STATE, saved);
+    if (step > 0) goTo(step);
+    const banner = document.getElementById("resumeBanner");
+    if (banner) banner.remove();
+  } catch(e) { clearSession(); }
+}
+
+function clearSession() {
+  try {
+    localStorage.removeItem("adora_estim_state");
+    localStorage.removeItem("adora_estim_step");
+    localStorage.removeItem("adora_estim_ts");
+  } catch(e) {}
+  const banner = document.getElementById("resumeBanner");
+  if (banner) banner.remove();
+}
+
+// ═══════════════════════════════════════════════════════════
+// POST-PAIEMENT — Retour Stripe avec ?paid=1
+// ═══════════════════════════════════════════════════════════
+(async function checkPostPayment() {
+  const params = new URLSearchParams(window.location.search);
+  if (!params.has("paid")) return;
+  
+  let saved = null;
+  let orderRef = null;
+  
+  // Stratégie 1 : localStorage (fast path)
+  try {
+    const savedRaw = localStorage.getItem("adora_state");
+    orderRef = localStorage.getItem("adora_order_ref");
+    if (savedRaw) {
+      saved = JSON.parse(savedRaw);
+      console.log("💳 Retour paiement — restauration depuis localStorage", orderRef);
+    }
+  } catch(e) {}
+  
+  // Stratégie 2 : récupération depuis Worker KV (si localStorage vide)
+  if (!saved && orderRef) {
+    console.log("🔄 localStorage vide — tentative récupération KV:", orderRef);
+    try {
+      const resp = await fetch(PDF_WORKER_URL + "/retrieve?ref=" + encodeURIComponent(orderRef));
+      if (resp.ok) {
+        const result = await resp.json();
+        if (result.ok && result.data) {
+          saved = result.data;
+          console.log("✓ Récupération KV réussie");
+        }
+      }
+    } catch(e) {
+      console.warn("⚠ Récupération KV échouée:", e);
+    }
+  }
+  
+  // Stratégie 3 : ref dans l'URL (dernier recours)
+  if (!saved) {
+    const urlRef = params.get("ref");
+    if (urlRef) {
+      console.log("🔄 Tentative récupération KV via URL ref:", urlRef);
+      orderRef = urlRef;
+      try {
+        const resp = await fetch(PDF_WORKER_URL + "/retrieve?ref=" + encodeURIComponent(urlRef));
+        if (resp.ok) {
+          const result = await resp.json();
+          if (result.ok && result.data) {
+            saved = result.data;
+            console.log("✓ Récupération KV via URL réussie");
+          }
+        }
+      } catch(e) {}
+    }
+  }
+  
+  if (!saved) {
+    console.error("❌ Retour paiement — aucune donnée récupérable");
+    return;
+  }
+  
+  Object.assign(STATE, saved);
+  orderRef = orderRef || STATE.orderRef || "—";
+  
+  // Masquer le wizard
+  document.querySelector(".app").style.display = "none";
+  const heroSection = document.querySelector(".estim-hero");
+  if (heroSection) heroSection.style.display = "none";
+  
+  // Recalculer si nécessaire
+  if (!STATE.result) calculate();
+  
+  // Afficher les résultats
+  showResults();
+  document.getElementById("leadGate").style.display = "none";
+  document.getElementById("gatedContent").style.display = "block";
+  document.getElementById("paywall").style.display = "none";
+  renderUnlocked();
+  document.getElementById("unlocked").classList.add("show");
+  
+  // Bandeau de confirmation avec ref commande
+  const confirm = document.createElement("div");
+  confirm.style.cssText = "background:var(--green-bg,#ECFDF5);border:1px solid rgba(5,150,105,.2);border-radius:12px;padding:20px 24px;margin-bottom:20px;display:flex;align-items:center;gap:14px";
+  confirm.innerHTML = '<span style="font-size:24px">✓</span><div><strong style="color:var(--navy);font-size:15px">Paiement confirmé — merci ' + escHtml(STATE.prenom||"") + ' !</strong><div style="color:var(--muted);font-size:13px;margin-top:4px">Référence : <strong>' + escHtml(orderRef) + '</strong> · Votre rapport PDF se génère et vous sera envoyé par email.</div></div>';
+  const results = document.getElementById("results");
+  results.insertBefore(confirm, results.firstChild);
+  
+  // Générer le PDF en parallèle (affichage dans le navigateur)
+  generateEstimateurPdf();
+  
+  // Envoyer le PDF par email (via Worker + Resend)
+  if (STATE.email) {
+    try {
+      const emailPayload = buildWorkerPayload();
+      console.log("📧 Envoi email en cours...", STATE.email, orderRef);
+      sendEmailWithPdf(orderRef, "estimateur", emailPayload, STATE.email);
+    } catch(emailErr) {
+      console.error("❌ Erreur préparation email:", emailErr);
+    }
+  } else {
+    console.warn("⚠ Pas d'email dans STATE — email non envoyé");
+  }
+  
+  // Tracking GA4
+  if (typeof gtag === "function") {
+    gtag("event", "purchase", {
+      currency: "EUR",
+      value: 49,
+      transaction_id: orderRef,
+      items: [{item_name: "Rapport estimation ADORA", price: 49, quantity: 1}]
+    });
+  }
+  
+  // Nettoyage
+  try {
+    localStorage.removeItem("adora_state");
+    localStorage.removeItem("adora_order_ref");
+  } catch(e) {}
+  window.history.replaceState({}, "", window.location.pathname);
+  
+})();
+
+</script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M0LENY960B"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-M0LENY960B')</script>
+
+<!-- Mobile call button -->
+<a href="tel:+33660215509" class="mobile-call-btn" aria-label="Appeler Aymeric">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+  <span>Appeler</span>
+</a>
+
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"3f8ca9a1113f413a990a17c08ab83442"}'></script>
+</body>
+</html>

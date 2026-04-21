@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mon rapport d'estimation | ADORA</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://browser.sentry-cdn.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0D1025;--blue:#0E7490;--accent:#22D3EE;--accent-hover:#06B6D4;--txt:#1E1B4B;--muted:#64748B;--border:#E5E7F2;--white:#FFFFFF;--pale:#FAFAFC;--green:#059669;--green-bg:#ECFDF5;--radius:16px;--radius-sm:10px;--shadow-card:0 1px 3px rgba(13,16,37,.06),0 8px 24px rgba(13,16,37,.04);--transition:.3s cubic-bezier(.4,0,.2,1)}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:var(--txt);background:var(--white);line-height:1.7;font-size:16px;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:'Montserrat',sans-serif;line-height:1.2}
+a{color:var(--blue);text-decoration:none}
+.container{max-width:640px;margin:0 auto;padding:0 28px}
+
+.nav{background:rgba(13,16,37,.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.06);padding:14px 28px;display:flex;align-items:center;justify-content:center}
+.nav img{height:26px}
+
+.page{padding:60px 0 80px;min-height:80vh}
+.page h1{font-size:28px;font-weight:900;color:var(--navy);margin-bottom:8px;letter-spacing:-.02em}
+.page .lead{color:var(--muted);margin-bottom:32px}
+
+.search-box{background:var(--pale);border:1px solid var(--border);border-radius:var(--radius);padding:28px;margin-bottom:32px}
+.search-box label{font-size:14px;font-weight:600;color:var(--navy);display:block;margin-bottom:8px}
+.search-form{display:flex;gap:10px}
+.search-form input{flex:1;padding:12px 16px;border:1.5px solid var(--border);border-radius:var(--radius-sm);font-size:15px;font-family:inherit}
+.search-form input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(34,211,238,.12)}
+.search-form button{padding:12px 24px;background:var(--accent);color:var(--white);border:none;border-radius:var(--radius-sm);font-weight:700;font-size:14px;font-family:inherit;cursor:pointer;white-space:nowrap}
+.search-form button:hover{background:var(--accent-hover)}
+
+.status{padding:20px 24px;border-radius:var(--radius-sm);margin-bottom:24px;display:flex;align-items:center;gap:12px;font-size:14px}
+.status.loading{background:rgba(34,211,238,.06);color:var(--blue);border:1px solid rgba(34,211,238,.15)}
+.status.success{background:var(--green-bg);color:var(--green);border:1px solid rgba(5,150,105,.2)}
+.status.error{background:#FEF2F2;color:#DC2626;border:1px solid rgba(220,59,34,.15)}
+.spinner{width:20px;height:20px;border:2px solid rgba(14,116,144,.2);border-top-color:var(--blue);border-radius:50%;animation:spin .6s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+.result-card{background:var(--pale);border:1px solid var(--border);border-radius:var(--radius);padding:28px;margin-bottom:20px}
+.result-card h3{font-size:16px;color:var(--navy);margin-bottom:12px}
+.result-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border);font-size:14px}
+.result-row:last-child{border-bottom:none}
+.result-key{color:var(--muted)}
+.result-val{font-weight:600;color:var(--navy)}
+
+.btn-group{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 24px;border-radius:var(--radius-sm);font-weight:700;font-size:14px;font-family:inherit;border:none;cursor:pointer;text-decoration:none;transition:all var(--transition)}
+.btn-accent{background:var(--accent);color:var(--white)}
+.btn-accent:hover{background:var(--accent-hover);color:var(--white)}
+.btn-navy{background:var(--navy);color:var(--white)}
+.btn-navy:hover{background:var(--blue);color:var(--white)}
+
+.footer-mini{text-align:center;padding:24px;font-size:12px;color:var(--muted);border-top:1px solid var(--border);margin-top:40px}
+
+/* ═══ MOBILE FIXES — 21/04/2026 ═══ */
+@media(max-width:500px){
+  .search-form{flex-direction:column}
+  .search-form button{width:100%}
+  .btn-group{flex-direction:column}
+  .btn-group .btn{width:100%;justify-content:center}
+  .page h1{font-size:22px}
+  .search-box{padding:20px}
+  .result-row{flex-direction:column;gap:4px}
+  .result-val{font-size:15px}
+}
+</style>
+    <script defer src="https://browser.sentry-cdn.com/8.0.0/bundle.min.js" crossorigin="anonymous"></script>
+    <script>Sentry.init({dsn:"https://14b68c10a24c3da4127332e14fd20359@o4511253060976640.ingest.de.sentry.io/4511253075132496",tracesSampleRate:0,replaysSessionSampleRate:0});</script>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="./"><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5NDAgMjAwIiB3aWR0aD0iOTQwIiBoZWlnaHQ9IjIwMCI+CiAgPGcgZmlsbD0id2hpdGUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICA8IS0tIFRyaWFuZ2xlIGljb24gLS0+CiAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMCwgOCkgdHJhbnNsYXRlKC03NSwgLTk5KSI+CiAgICAgIDxwYXRoIGQ9Ik0gMTE3LDI4MiBMIDE2OSwyODEgTCAxNzQsMjc0IEwgMTc3LDI2OCBMIDIyOSwxOTMgTCAyMjksMTkxIEwgMjA2LDE1OCBMIDIwNywxNTUgTCAyMjksMTU2IEwgMjM0LDE2NSBMIDIzNywxNjggTCAyMzksMTczIEwgMjgxLDIzNSBMIDI4MiwyNDAgTCAyNDAsMjQwIEwgMjEzLDI4MCBMIDIxMywyODIgTCAzNjQsMjgyIEwgMzYxLDI3NiBMIDMwMCwxODcgTCAyOTksMTg0IEwgMjQyLDk5IEwgMjQwLDEwMCBMIDIwNywxNTAgTCAyMDEsMTU2IEwgMTQwLDI0OCBMIDEzNywyNTEgTCAxMzYsMjU0IEwgMTI0LDI3MCBaIi8+CiAgICA8L2c+CiAgICA8IS0tIFRleHQgIkFkb3JhIiAtLT4KICAgIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDMzMCwgMTIpIHNjYWxlKDEuOCkgdHJhbnNsYXRlKC03MSwgLTMyMCkiPgogICAgICA8cGF0aCBkPSJNIDEwMiwzMjYgTCA5MywzNTIgTCA5MSwzNTUgTCA4NywzNjkgTCA4NSwzNzIgTCA4MiwzODMgTCA4MCwzODYgTCA3OCwzOTUgTCA3MSw0MTMgTCA3MSw0MTYgTCA4OSw0MTUgTCA5NywzOTAgTCAxMjUsMzg5IEwgMTMwLDM5NCBMIDEzMSw0MDAgTCAxMzMsNDAzIEwgMTM3LDQxNiBMIDE1NSw0MTYgTCAxNTUsNDEyIEwgMTUzLDQwOSBMIDEyNCwzMjYgWiBNIDExNCwzNDQgTCAxMjMsMzcyIEwgMTIyLDM3NiBMIDEwMiwzNzUgTCAxMDIsMzcyIEwgMTA2LDM1OSBMIDEwOCwzNTYgTCAxMTAsMzQ3IFoiLz4KICAgICAgPHBhdGggZD0iTSAyMjUsMzIwIEwgMjA4LDMyMCBMIDIwNiwzNTIgTCAyMDIsMzQ4IEwgMTk0LDM0NSBMIDE4MCwzNDUgTCAxNjksMzQ5IEwgMTU5LDM2MCBMIDE1NSwzNzMgTCAxNTYsMzk1IEwgMTYyLDQwNyBMIDE3MCw0MTQgTCAxNzgsNDE3IEwgMTkzLDQxNyBMIDE5OSw0MTUgTCAyMDUsNDA4IEwgMjA4LDQwOCBMIDIwOCw0MTYgTCAyMjUsNDE2IFogTSAxODcsMzU3IEwgMTk0LDM1NyBMIDE5OSwzNTkgTCAyMDQsMzY0IEwgMjA3LDM3MSBMIDIwOCwzODUgTCAyMDYsMzk0IEwgMjA0LDM5OCBMIDE5OSw0MDMgTCAxOTUsNDA1IEwgMTg2LDQwNSBMIDE4Miw0MDMgTCAxNzYsMzk3IEwgMTczLDM4OSBMIDE3MywzNzIgTCAxNzYsMzY1IEwgMTgyLDM1OSBaIi8+CiAgICAgIDxwYXRoIGQ9Ik0gMjU1LDM0NiBMIDI0NCwzNTIgTCAyMzgsMzU5IEwgMjMzLDM3MSBMIDIzMywzODkgTCAyMzUsMzk3IEwgMjQwLDQwNiBMIDI0NSw0MTEgTCAyNTIsNDE1IEwgMjU5LDQxNyBMIDI3Nyw0MTcgTCAyODMsNDE1IEwgMjk1LDQwNiBMIDMwMSwzOTYgTCAzMDMsMzg4IEwgMzAzLDM3NCBMIDMwMSwzNjYgTCAyOTYsMzU3IEwgMjkwLDM1MSBMIDI4MywzNDcgTCAyNzcsMzQ1IFogTSAyNjQsMzU3IEwgMjcyLDM1NyBMIDI3NiwzNTkgTCAyODEsMzY0IEwgMjg1LDM3NSBMIDI4NSwzODcgTCAyODMsMzk1IEwgMjc2LDQwMyBMIDI3Miw0MDUgTCAyNjQsNDA1IEwgMjU5LDQwMyBMIDI1NCwzOTggTCAyNTAsMzg2IEwgMjUwLDM3NCBMIDI1MiwzNjggTCAyNTgsMzYwIFoiLz4KICAgICAgPHBhdGggZD0iTSAzNTAsMzQ1IEwgMzM4LDM0NiBMIDMyOCwzNTUgTCAzMjgsMzQ3IEwgMzExLDM0NyBMIDMxMSw0MTYgTCAzMjgsNDE1IEwgMzI4LDM3NCBMIDMzMCwzNjggTCAzMzYsMzYyIEwgMzQzLDM1OSBMIDM1MCwzNTkgWiIvPgogICAgICA8cGF0aCBkPSJNIDM2NCwzNDkgTCAzNTksMzUzIEwgMzU1LDM2MCBMIDM1NCwzNjQgTCAzNTUsMzY5IEwgMzcwLDM2OSBMIDM3MSwzNjMgTCAzNzUsMzU4IEwgMzc3LDM1NyBMIDM4NiwzNTcgTCAzOTIsMzYyIEwgMzkzLDM2NSBMIDM5MiwzNzQgTCAzNzIsMzc1IEwgMzYwLDM4MCBMIDM1NCwzODYgTCAzNTEsMzk0IEwgMzUxLDQwMiBMIDM1NCw0MDkgTCAzNTgsNDEzIEwgMzY2LDQxNyBMIDM4MSw0MTcgTCAzODYsNDE1IEwgMzkxLDQwOSBMIDM5NCw0MDkgTCAzOTUsNDE2IEwgNDExLDQxNiBMIDQxMCwzNjcgTCA0MDksMzYxIEwgNDA2LDM1NCBMIDQwMCwzNDggTCAzOTEsMzQ1IEwgMzczLDM0NSBaIE0gMzkzLDM4NSBMIDM5MiwzOTcgTCAzODYsNDA0IEwgMzg0LDQwNSBMIDM3NSw0MDUgTCAzNjksNDAwIEwgMzY5LDM5MiBMIDM3NSwzODYgTCAzODMsMzg0IFoiLz4KICAgIDwvZz4KICA8L2c+Cjwvc3ZnPgo=" alt="ADORA"></a>
+</nav>
+
+<section class="page">
+<div class="container">
+  <h1>Mon rapport d'estimation</h1>
+  <p class="lead">Retrouvez votre rapport à partir de votre référence de commande.</p>
+
+  <div class="search-box" id="searchBox">
+    <label for="refInput">Référence de commande (ex : EST-2026-1847)</label>
+    <div class="search-form">
+      <input type="text" id="refInput" placeholder="EST-2026-XXXX" autocomplete="off">
+      <button onclick="retrieveOrder()">Retrouver</button>
+    </div>
+  </div>
+
+  <div id="statusArea"></div>
+  <div id="resultArea"></div>
+</div>
+</section>
+
+<div class="footer-mini">
+  ADORA · Économiste de la construction · 06 60 21 55 09 · aymericdussauze@gmail.com
+</div>
+
+<script>
+const WORKER_URL = "https://adora-pdf.aymericdussauze.workers.dev";
+
+// Auto-load si ref dans l'URL
+(function() {
+  const params = new URLSearchParams(window.location.search);
+  const ref = params.get("ref");
+  if (ref) {
+    document.getElementById("refInput").value = ref;
+    retrieveOrder();
+  }
+})();
+
+async function retrieveOrder() {
+  const ref = document.getElementById("refInput").value.trim();
+  if (!ref) { alert("Entrez votre référence de commande."); return; }
+  
+  const statusEl = document.getElementById("statusArea");
+  const resultEl = document.getElementById("resultArea");
+  
+  statusEl.innerHTML = '<div class="status loading"><div class="spinner"></div> Recherche de votre commande...</div>';
+  resultEl.innerHTML = "";
+  
+  try {
+    const resp = await fetch(WORKER_URL + "/retrieve?ref=" + encodeURIComponent(ref));
+    const result = await resp.json();
+    
+    if (!resp.ok || !result.ok) {
+      statusEl.innerHTML = '<div class="status error">Commande non trouvée. Vérifiez votre référence ou contactez-moi directement.</div>';
+      return;
+    }
+    
+    const d = result.data;
+    statusEl.innerHTML = '<div class="status success">✓ Commande trouvée — ' + esc(d.prenom || "") + '</div>';
+    
+    const fmt = n => new Intl.NumberFormat("fr-FR", {style:"currency",currency:"EUR",maximumFractionDigits:0}).format(n||0);
+    
+    resultEl.innerHTML = `
+      <div class="result-card">
+        <h3>Récapitulatif — ${esc(ref)}</h3>
+        <div class="result-row"><span class="result-key">Client</span><span class="result-val">${esc(d.prenom||"")}</span></div>
+        <div class="result-row"><span class="result-key">Email</span><span class="result-val">${esc(d.email||"")}</span></div>
+        <div class="result-row"><span class="result-key">Projet</span><span class="result-val">${esc(d.projet || d.type_renovation || "")}</span></div>
+        <div class="result-row"><span class="result-key">Surface</span><span class="result-val">${d.surface || d.surface_m2 || "—"} m²</span></div>
+        <div class="result-row"><span class="result-key">Département</span><span class="result-val">${esc(d.dept_nom||"")} (${esc(d.dept||"")})</span></div>
+        <div class="result-row"><span class="result-key">Estimation</span><span class="result-val">${d.result ? fmt(d.result.totalLow) + " — " + fmt(d.result.totalHigh) : "—"}</span></div>
+        <div class="result-row"><span class="result-key">Date</span><span class="result-val">${d.saved_at ? new Date(d.saved_at).toLocaleDateString("fr-FR") : "—"}</span></div>
+      </div>
+      <div class="btn-group">
+        <button class="btn btn-accent" onclick="regeneratePdf('${esc(ref)}')">Régénérer mon PDF</button>
+        <a href="mailto:aymericdussauze@gmail.com?subject=Rapport%20${esc(ref)}%20-%20besoin%20d%27aide" class="btn btn-navy">Contacter ADORA</a>
+      </div>
+    `;
+    
+    // Save data for PDF regeneration
+    window._orderData = d;
+    
+  } catch(e) {
+    statusEl.innerHTML = '<div class="status error">Erreur de connexion. Réessayez ou contactez-moi directement au 06 60 21 55 09.</div>';
+  }
+}
+
+async function regeneratePdf(ref) {
+  const d = window._orderData;
+  if (!d) { alert("Données non disponibles. Contactez ADORA."); return; }
+  
+  const statusEl = document.getElementById("statusArea");
+  statusEl.innerHTML = '<div class="status loading"><div class="spinner"></div> Génération du PDF en cours...</div>';
+  
+  try {
+    // Build minimal payload for Worker
+    const payload = {
+      type: "estimateur",
+      data: {
+        prenom: d.prenom, email: d.email, ref: ref,
+        type_renovation: d.projet || d.type_renovation,
+        type_bien: d.typeBien || d.type_bien,
+        surface_m2: d.surface || d.surface_m2,
+        dept: d.dept, dept_nom: d.dept_nom,
+        annee: d.annee, etat: d.etat, gamme: d.gamme,
+        amiante: d.amiante, plomb: d.plomb, acces_difficile: d.acces_difficile,
+        lots_actifs: d.lots_actifs || [],
+        coefficients: d.coefficients || {},
+        lots_detail: d.lots_detail || (d.result ? d.result.results.map(l => ({id:l.id,nom:l.nom,eco:l.low,std:l.mid,confort:Math.round(l.mid*1.5),hdg:Math.round(l.mid*2.2)})) : []),
+        estimation: d.estimation || (d.result ? {eco:d.result.totalLow,standard:d.result.totalMid,confort:Math.round(d.result.totalMid*1.5),hdg:Math.round(d.result.totalMid*2.2),fourchette_basse:Math.round(d.result.totalMid*0.85),fourchette_haute:Math.round(d.result.totalMid*1.20)} : {})
+      }
+    };
+    
+    const resp = await fetch(WORKER_URL, {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify(payload)
+    });
+    
+    if (!resp.ok) throw new Error("Worker " + resp.status);
+    
+    const blob = await resp.blob();
+    const url = URL.createObjectURL(blob);
+    
+    statusEl.innerHTML = `<div class="status success">✓ PDF prêt ! <a href="${url}" target="_blank" download="ADORA_Estimation_${ref}.pdf" style="font-weight:700;color:var(--green);margin-left:8px">Télécharger →</a></div>`;
+    window.open(url, "_blank");
+    
+  } catch(e) {
+    statusEl.innerHTML = '<div class="status error">Erreur de génération. Contactez-moi directement : aymericdussauze@gmail.com</div>';
+  }
+}
+
+function esc(s) { return (s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"); }
+</script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M0LENY960B"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-M0LENY960B')</script>
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"3f8ca9a1113f413a990a17c08ab83442"}'></script>
+</body>
+</html>
