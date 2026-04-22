@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://browser.sentry-cdn.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Montserrat:wght@500;700;800;900&display=swap" rel="stylesheet">
+
+<title>Diagnostic parasitaire : comment négocier le prix d'achat</title>
+<meta name="description" content="Un diagnostic parasitaire défavorable n'est pas un motif de retrait mais un levier de négociation. Méthode d'un économiste pour décoter 5 à 20 % en toute sécurité.">
+
+<meta property="og:title" content="Diagnostic parasitaire : comment négocier le prix d'achat">
+<meta property="og:description" content="Comment un économiste traduit un diagnostic parasitaire en chiffrage opposable et en décote justifiée sans perdre le bien.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://adora-economie.fr/diagnostic-parasitaire-negociation.html">
+
+<style>
+
+/* ═══ ADORA PropTech Design System v2 ═══ */
+:root{--navy:#0D1025;--blue:#0E7490;--accent:#22D3EE;--accent-hover:#06B6D4;--light:#EDE9FE;--pale:#FAFAFC;--green:#A78BFA;--green-hover:#8B6FE3;--txt:#1E1B4B;--muted:#64748B;--border:#E5E7F2;--white:#FFFFFF;--radius:16px;--radius-sm:10px;--shadow-card:0 1px 3px rgba(13,16,37,.06),0 8px 24px rgba(13,16,37,.04);--shadow-hover:0 4px 12px rgba(13,16,37,.08),0 16px 40px rgba(13,16,37,.06);--shadow-btn:0 2px 8px rgba(34,211,238,.25);--transition:.3s cubic-bezier(.4,0,.2,1)}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;color:var(--txt);background:var(--white);line-height:1.7;font-size:16px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,h4{font-family:'Montserrat',sans-serif;line-height:1.2}
+a{color:var(--blue);text-decoration:none;transition:color var(--transition)}
+a:hover{color:var(--navy)}
+img{max-width:100%;height:auto}
+.container{max-width:1120px;margin:0 auto;padding:0 28px}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.4,0,.2,1),transform .7s cubic-bezier(.4,0,.2,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:100;background:rgba(13,16,37,.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.06)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;max-width:1120px;margin:0 auto;padding:14px 28px}
+.nav-logo img{height:26px;width:auto}
+.nav-links{display:flex;gap:8px;align-items:center}
+.nav-links a{color:rgba(237,233,254,.8);font-size:13.5px;font-weight:500;padding:6px 14px;border-radius:8px;transition:all var(--transition)}
+.nav-links a:hover{color:var(--white);background:rgba(255,255,255,.08);text-decoration:none}
+.nav-links a.active{color:var(--accent);background:rgba(34,211,238,.1)}
+.nav-cta{background:var(--accent)!important;color:var(--white)!important;padding:8px 20px!important;border-radius:8px;font-weight:700!important;font-size:13px!important;box-shadow:var(--shadow-btn)}
+.nav-cta:hover{background:var(--accent-hover)!important;transform:translateY(-1px)}
+.nav-burger{display:none;background:none;border:none;color:var(--white);font-size:22px;cursor:pointer;padding:8px}
+
+/* HERO */
+.hero{background:var(--navy);padding:72px 0 80px;color:var(--white);position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-40%;right:-20%;width:900px;height:900px;background:radial-gradient(circle,rgba(14,116,144,.15) 0%,transparent 65%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-30%;left:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(34,211,238,.08) 0%,transparent 65%);pointer-events:none}
+.hero h1{font-size:clamp(30px,5vw,48px);font-weight:900;margin-bottom:16px;letter-spacing:-.02em;position:relative}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero .subtitle{font-size:17px;color:rgba(214,228,240,.85);margin-bottom:32px;max-width:540px;line-height:1.7}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:15px 30px;border-radius:var(--radius-sm);font-size:15px;font-weight:700;font-family:'Plus Jakarta Sans',sans-serif;transition:all var(--transition);border:none;cursor:pointer;text-decoration:none!important}
+.btn-accent{background:var(--accent);color:var(--white);box-shadow:var(--shadow-btn)}
+.btn-accent:hover{background:var(--accent-hover);color:var(--white);transform:translateY(-2px);box-shadow:0 4px 16px rgba(34,211,238,.35)}
+.btn-green{background:var(--green);color:var(--white)}
+.btn-green:hover{background:var(--green-hover);color:var(--white);transform:translateY(-2px)}
+.btn-outline{background:transparent;color:rgba(214,228,240,.9);border:1.5px solid rgba(255,255,255,.2)}
+.btn-outline:hover{background:rgba(255,255,255,.08);color:var(--white);transform:translateY(-2px)}
+.btn-white{background:var(--white);color:var(--navy)}
+.btn-white:hover{background:#F1F5F9;color:var(--navy);transform:translateY(-2px)}
+
+/* SECTIONS */
+.section{padding:100px 0}
+.section-alt{background:var(--pale)}
+.section-label{display:inline-block;font-size:12px;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:2px;margin-bottom:12px}
+.section-title{font-size:clamp(28px,4vw,40px);font-weight:800;color:var(--navy);margin-bottom:12px;letter-spacing:-.01em}
+.section-sub{font-size:17px;color:var(--muted);max-width:560px;line-height:1.7}
+.section-header{margin-bottom:56px}
+.section-header.center{text-align:center}
+.section-header.center .section-sub{margin:0 auto}
+
+/* FAQ */
+.faq-list{max-width:720px;margin:0 auto}
+.faq-item{border-bottom:1px solid var(--border);padding:20px 0}
+.faq-q{font-weight:700;color:var(--navy);font-size:16px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;font-family:'Montserrat',sans-serif}
+.faq-q::after{content:'+';font-size:24px;color:var(--accent);font-weight:300;flex-shrink:0;transition:transform var(--transition)}
+.faq-item.open .faq-q::after{transform:rotate(45deg)}
+.faq-a{display:none;padding:12px 0 4px;font-size:15px;color:var(--muted);line-height:1.7}
+.faq-item.open .faq-a{display:block}
+
+/* CTA BAND */
+.cta-band{background:linear-gradient(135deg,var(--navy) 0%,#1F4E75 60%,#234E77 100%);padding:80px 28px;text-align:center;color:var(--white);position:relative;overflow:hidden}
+.cta-band::before{content:'';position:absolute;top:-50%;right:-20%;width:600px;height:600px;background:radial-gradient(circle,rgba(34,211,238,.1) 0%,transparent 60%);pointer-events:none}
+.cta-band h2{font-size:clamp(26px,4vw,36px);font-weight:800;margin-bottom:12px;position:relative}
+.cta-band .cta-sub{font-size:17px;color:rgba(237,233,254,.8);margin-bottom:36px;max-width:520px;margin-left:auto;margin-right:auto;position:relative}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative}
+.cta-links{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-top:20px;position:relative}
+.cta-links a{color:rgba(237,233,254,.5);font-size:13px;font-weight:500;transition:color var(--transition)}
+.cta-links a:hover{color:var(--white)}
+
+/* FOOTER */
+.footer{background:#080B1C;padding:48px 28px 36px;color:var(--muted);font-size:13px}
+.footer-inner{max-width:1120px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:32px}
+.footer-brand strong{color:var(--light);font-weight:700}
+.footer-brand p{margin-top:4px;font-size:12px}
+.footer-links{display:flex;gap:20px;flex-wrap:wrap}
+.footer-links a{color:rgba(237,233,254,.6);font-size:13px;font-weight:500;transition:color var(--transition)}
+.footer-links a:hover{color:var(--white)}
+.footer-contact{font-size:12px;color:rgba(237,233,254,.4);text-align:right}
+.footer-legal{max-width:1120px;margin:24px auto 0;padding-top:24px;border-top:1px solid rgba(255,255,255,.06);font-size:11px;color:rgba(237,233,254,.3);text-align:center}
+.footer-legal a{color:rgba(237,233,254,.5);text-decoration:none;transition:color .2s}
+.footer-legal a:hover{color:#22D3EE}
+.footer-legal br{margin-bottom:6px}
+
+/* FORMS */
+.form-container{max-width:720px;margin:0 auto;background:var(--white);border-radius:var(--radius);border:1px solid var(--border);padding:40px;box-shadow:var(--shadow-card)}
+.form-section{margin-bottom:32px}
+.form-section h3{font-size:17px;color:var(--navy);margin-bottom:4px}
+.form-section .section-hint{font-size:13px;color:var(--muted);margin-bottom:20px}
+.field{margin-bottom:18px}
+.field label{display:block;font-size:13px;font-weight:600;color:var(--navy);margin-bottom:6px}
+.field label .opt{font-weight:400;color:var(--muted);font-size:11px}
+.field input,.field select,.field textarea{width:100%;padding:12px 16px;border:1.5px solid var(--border);border-radius:var(--radius-sm);font-size:15px;font-family:'Plus Jakarta Sans',sans-serif;background:var(--white);transition:all var(--transition)}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 4px rgba(14,116,144,.1)}
+.field textarea{resize:vertical;min-height:110px}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.btn-submit{width:100%;padding:16px;background:var(--accent);color:var(--white);border:none;border-radius:var(--radius-sm);font-size:16px;font-weight:700;font-family:'Plus Jakarta Sans',sans-serif;cursor:pointer;transition:all var(--transition);box-shadow:var(--shadow-btn)}
+.btn-submit:hover{background:var(--accent-hover);transform:translateY(-1px)}
+
+/* SCROLL PROGRESS */
+.scroll-progress{position:fixed;top:0;left:0;height:3px;background:var(--accent);z-index:200;width:0;transition:width .1s linear}
+
+@media(max-width:700px){
+  .nav-links{display:none;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--navy);padding:16px 28px;gap:4px;border-top:1px solid rgba(255,255,255,.08)}
+  .nav-links.open{display:flex}
+  .nav-burger{display:block}
+  .hero{padding:56px 0 64px}
+  .section{padding:72px 0}
+  .field-row{grid-template-columns:1fr}
+  .footer-inner{flex-direction:column}
+  .footer-contact{text-align:left}
+}
+
+
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center;position:relative;z-index:1}
+.hero-badges{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px}
+.hero-badge{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);padding:6px 16px;border-radius:100px;font-size:13px;color:rgba(237,233,254,.8);font-weight:500}
+.explain-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;max-width:960px;margin:0 auto}
+.explain-text h3{font-size:22px;color:var(--navy);margin-bottom:14px}
+.explain-text p{font-size:15.5px;color:var(--txt);margin-bottom:16px;line-height:1.7}
+.lots-visual{background:var(--pale);border:1px solid var(--border);border-radius:var(--radius);padding:28px}
+.lots-example{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.lot-pill{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-sm);padding:10px 14px;font-size:13px;display:flex;justify-content:space-between;color:var(--navy);transition:all var(--transition)}
+.lot-pill:hover{border-color:var(--blue);transform:translateY(-1px)}
+.lot-pill .price{font-weight:700;color:var(--blue)}
+.lot-pill.highlight{background:var(--accent);border-color:var(--accent);color:var(--white)}
+.lot-pill.highlight .price{color:var(--white)}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;max-width:860px;margin:0 auto}
+.compare-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:32px 28px;position:relative;transition:all var(--transition)}
+.compare-card:hover{box-shadow:var(--shadow-hover)}
+.compare-card.premium{border-color:var(--accent);border-width:2px}
+.compare-card.premium::before{content:'Recommandé';position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--accent);color:var(--white);padding:4px 18px;border-radius:100px;font-size:11px;font-weight:700;font-family:'Montserrat',sans-serif}
+.compare-header{text-align:center;padding-bottom:20px;border-bottom:1px solid var(--border);margin-bottom:24px}
+.compare-header h3{font-size:19px;color:var(--navy);margin-bottom:6px}
+.compare-price{font-family:'Montserrat',sans-serif;font-size:36px;font-weight:900}
+.compare-price.free{color:var(--green)}
+.compare-price.paid{color:var(--accent)}
+.compare-price small{font-size:14px;font-weight:400;color:var(--muted)}
+.compare-list{list-style:none;padding:0}
+.compare-list li{padding:10px 0;font-size:14.5px;display:flex;align-items:flex-start;gap:10px;border-bottom:1px solid #f5f5f5}
+.compare-list li:last-child{border-bottom:none}
+.check{color:var(--green);font-weight:700;font-size:16px;flex-shrink:0}
+.cross{color:#D1D5DB;font-weight:700;font-size:16px;flex-shrink:0}
+.compare-cta{text-align:center;margin-top:24px}
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;max-width:960px;margin:0 auto}
+.step-card{text-align:center;padding:28px 20px}
+.step-num{width:48px;height:48px;background:var(--navy);color:var(--white);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Montserrat',sans-serif;font-weight:800;font-size:18px;margin:0 auto 16px}
+.step-card h4{font-size:15px;color:var(--navy);margin-bottom:8px}
+.step-card p{font-size:13.5px;color:var(--muted);line-height:1.5}
+@media(max-width:900px){.hero-grid,.explain-grid{grid-template-columns:1fr}.compare-grid{grid-template-columns:1fr}}
+@media(max-width:700px){.steps-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:450px){.steps-grid{grid-template-columns:1fr}}
+
+
+
+/* PORTRAIT */
+.portrait-photo{width:180px;height:180px;border-radius:50%;object-fit:cover;border:4px solid var(--border);box-shadow:0 4px 20px rgba(13,16,37,.1)}
+.portrait-block{display:flex;flex-direction:column;align-items:center;gap:16px;margin-bottom:24px}
+.portrait-block-inline{display:flex;align-items:center;gap:20px}
+@media(max-width:768px){.portrait-photo{width:140px;height:140px}.portrait-block-inline{flex-direction:column;text-align:center}}
+
+/* ═══ UNIFIED FOOTER ═══ */
+.footer{background:var(--navy, #0D1025);color:rgba(237,233,254,.7);padding:60px 24px 30px;margin-top:80px}
+.footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:40px}
+.footer-brand strong{font-size:18px;color:#fff;display:block;margin-bottom:8px}
+.footer-brand p{font-size:13px;line-height:1.6;color:rgba(237,233,254,.5)}
+.footer-col{display:flex;flex-direction:column;gap:8px}
+.footer-col-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:rgba(237,233,254,.4);margin-bottom:6px}
+.footer-col a{color:rgba(237,233,254,.7);text-decoration:none;font-size:13px;transition:color .2s}
+.footer-col a:hover{color:#22D3EE}
+.footer-contact a{font-size:13px}
+.footer-legal{max-width:1100px;margin:30px auto 0;padding-top:20px;border-top:1px solid rgba(237,233,254,.1);font-size:11px;color:rgba(237,233,254,.35);text-align:center}
+@media(max-width:768px){
+.footer-inner{grid-template-columns:1fr 1fr;gap:30px 20px}
+}
+@media(max-width:480px){
+.footer-inner{grid-template-columns:1fr;gap:24px}
+}
+
+
+/* ═══ PAGE-SPECIFIC STYLES ═══ */
+.page-hero{background:var(--navy);padding:80px 0 60px;color:var(--white);position:relative;overflow:hidden}
+.page-hero::before{content:'';position:absolute;top:-40%;right:-20%;width:800px;height:800px;background:radial-gradient(circle,rgba(14,116,144,.12) 0%,transparent 65%);pointer-events:none}
+.page-hero h1{font-size:clamp(32px,5vw,52px);font-weight:900;margin-bottom:16px;letter-spacing:-.02em;position:relative}
+.page-hero h1 em{font-style:normal;color:var(--accent)}
+.page-hero .lead{font-size:18px;color:rgba(214,228,240,.85);max-width:600px;line-height:1.7;position:relative}
+
+/* Content sections */
+.content-section{padding:80px 0}
+.content-section:nth-child(even){background:var(--pale)}
+.content-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.content-narrow{max-width:720px}
+
+.content-label{display:inline-block;font-size:12px;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:2px;margin-bottom:14px}
+.content-title{font-size:clamp(26px,3.5vw,36px);font-weight:800;color:var(--navy);margin-bottom:20px;letter-spacing:-.01em;line-height:1.2}
+.content-text{font-size:16px;color:var(--txt);line-height:1.8;margin-bottom:20px}
+.content-text strong{color:var(--navy);font-weight:700}
+
+/* Value cards */
+.value-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px}
+.value-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:32px 28px;transition:all var(--transition)}
+.value-card:hover{box-shadow:var(--shadow-hover);transform:translateY(-3px)}
+.value-card-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:16px}
+.value-card-icon.blue{background:rgba(34,211,238,.1);color:var(--blue)}
+.value-card-icon.iris{background:rgba(167,139,250,.1);color:var(--green)}
+.value-card-icon.teal{background:rgba(14,116,144,.1);color:#0E7490}
+.value-card h3{font-size:17px;font-weight:700;color:var(--navy);margin-bottom:8px}
+.value-card p{font-size:14px;color:var(--muted);line-height:1.6}
+
+/* Timeline / parcours */
+.timeline{position:relative;padding-left:36px;margin-top:32px}
+.timeline::before{content:'';position:absolute;left:12px;top:4px;bottom:4px;width:2px;background:var(--border)}
+.timeline-item{position:relative;padding-bottom:32px}
+.timeline-item:last-child{padding-bottom:0}
+.timeline-item::before{content:'';position:absolute;left:-30px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--accent);border:3px solid var(--white);box-shadow:0 0 0 2px var(--accent)}
+.timeline-year{font-size:13px;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.timeline-title{font-size:16px;font-weight:700;color:var(--navy);margin-bottom:4px}
+.timeline-desc{font-size:14px;color:var(--muted);line-height:1.6}
+
+/* Stats row */
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding:40px 0}
+.stat{text-align:center}
+.stat-value{font-family:'Montserrat',sans-serif;font-size:36px;font-weight:900;color:var(--navy);letter-spacing:-.02em;line-height:1}
+.stat-value span{color:var(--accent)}
+.stat-label{font-size:13px;color:var(--muted);margin-top:8px;font-weight:500}
+
+/* Pricing table */
+.pricing-table{width:100%;border-collapse:separate;border-spacing:0;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);margin-top:32px}
+.pricing-table thead th{background:var(--navy);color:var(--white);padding:16px 24px;font-size:13px;font-weight:700;text-align:left;letter-spacing:.5px}
+.pricing-table thead th:last-child{text-align:right}
+.pricing-table tbody td{padding:18px 24px;border-bottom:1px solid var(--border);font-size:15px;color:var(--txt)}
+.pricing-table tbody tr:last-child td{border-bottom:none}
+.pricing-table tbody tr:nth-child(even) td{background:var(--pale)}
+.pricing-table tbody td:last-child{text-align:right;font-family:'Montserrat',sans-serif;font-weight:700;color:var(--navy);font-size:16px;white-space:nowrap}
+.pricing-table .prestation-name{font-weight:600;color:var(--navy);margin-bottom:2px}
+.pricing-table .prestation-desc{font-size:13px;color:var(--muted)}
+.pricing-note{font-size:13px;color:var(--muted);margin-top:16px;font-style:italic}
+
+/* Tools grid */
+.tools-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:24px}
+.tool-chip{background:var(--pale);border:1px solid var(--border);border-radius:8px;padding:12px 16px;font-size:14px;font-weight:600;color:var(--navy);text-align:center;transition:all var(--transition)}
+.tool-chip:hover{background:rgba(34,211,238,.08);border-color:var(--accent)}
+
+/* CTA band */
+.cta-band{background:var(--navy);padding:80px 0;color:var(--white);text-align:center;position:relative;overflow:hidden}
+.cta-band::before{content:'';position:absolute;top:-60%;left:50%;transform:translateX(-50%);width:800px;height:800px;background:radial-gradient(circle,rgba(167,139,250,.1) 0%,transparent 60%);pointer-events:none}
+.cta-band h2{font-size:clamp(28px,4vw,40px);font-weight:800;margin-bottom:16px;position:relative}
+.cta-band h2 em{font-style:normal;color:var(--accent)}
+.cta-band p{font-size:17px;color:rgba(214,228,240,.8);max-width:560px;margin:0 auto 32px;line-height:1.7;position:relative}
+.cta-band .btn-group{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative}
+
+/* Reference card */
+.ref-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:32px;display:flex;gap:24px;align-items:start;margin-top:32px}
+.ref-card-icon{width:56px;height:56px;border-radius:14px;background:rgba(34,211,238,.08);display:flex;align-items:center;justify-content:center;font-size:28px;flex-shrink:0}
+.ref-card-body h4{font-size:16px;font-weight:700;color:var(--navy);margin-bottom:6px}
+.ref-card-body p{font-size:14px;color:var(--muted);line-height:1.6}
+.ref-card-badge{display:inline-block;background:rgba(34,211,238,.1);color:var(--blue);font-size:13px;font-weight:700;padding:4px 10px;border-radius:6px;margin-top:8px}
+
+@media(max-width:768px){
+  .content-grid{grid-template-columns:1fr;gap:40px}
+  .value-grid{grid-template-columns:1fr}
+  .stats-row{grid-template-columns:repeat(2,1fr);gap:20px}
+  .tools-grid{grid-template-columns:repeat(2,1fr)}
+  .pricing-table thead th,.pricing-table tbody td{padding:12px 14px;font-size:14px}
+}
+@media(max-width:480px){
+  .stats-row{grid-template-columns:1fr}
+}
+
+</style>
+<link rel="canonical" href="https://adora-economie.fr/diagnostic-parasitaire-negociation.html">
+    <script defer src="https://browser.sentry-cdn.com/8.0.0/bundle.min.js" crossorigin="anonymous"></script>
+    <script>Sentry.init({dsn:"https://14b68c10a24c3da4127332e14fd20359@o4511253060976640.ingest.de.sentry.io/4511253075132496",tracesSampleRate:0,replaysSessionSampleRate:0});</script>
+</head>
+<body>
+
+<nav class="nav">
+<div class="nav-inner">
+  <a href="./" class="nav-logo"><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5NDAgMjAwIiB3aWR0aD0iOTQwIiBoZWlnaHQ9IjIwMCI+CiAgPGcgZmlsbD0id2hpdGUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICA8IS0tIFRyaWFuZ2xlIGljb24gLS0+CiAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMCwgOCkgdHJhbnNsYXRlKC03NSwgLTk5KSI+CiAgICAgIDxwYXRoIGQ9Ik0gMTE3LDI4MiBMIDE2OSwyODEgTCAxNzQsMjc0IEwgMTc3LDI2OCBMIDIyOSwxOTMgTCAyMjksMTkxIEwgMjA2LDE1OCBMIDIwNywxNTUgTCAyMjksMTU2IEwgMjM0LDE2NSBMIDIzNywxNjggTCAyMzksMTczIEwgMjgxLDIzNSBMIDI4MiwyNDAgTCAyNDAsMjQwIEwgMjEzLDI4MCBMIDIxMywyODIgTCAzNjQsMjgyIEwgMzYxLDI3NiBMIDMwMCwxODcgTCAyOTksMTg0IEwgMjQyLDk5IEwgMjQwLDEwMCBMIDIwNywxNTAgTCAyMDEsMTU2IEwgMTQwLDI0OCBMIDEzNywyNTEgTCAxMzYsMjU0IEwgMTI0LDI3MCBaIi8+CiAgICA8L2c+CiAgICA8IS0tIFRleHQgIkFkb3JhIiAtLT4KICAgIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDMzMCwgMTIpIHNjYWxlKDEuOCkgdHJhbnNsYXRlKC03MSwgLTMyMCkiPgogICAgICA8cGF0aCBkPSJNIDEwMiwzMjYgTCA5MywzNTIgTCA5MSwzNTUgTCA4NywzNjkgTCA4NSwzNzIgTCA4MiwzODMgTCA4MCwzODYgTCA3OCwzOTUgTCA3MSw0MTMgTCA3MSw0MTYgTCA4OSw0MTUgTCA5NywzOTAgTCAxMjUsMzg5IEwgMTMwLDM5NCBMIDEzMSw0MDAgTCAxMzMsNDAzIEwgMTM3LDQxNiBMIDE1NSw0MTYgTCAxNTUsNDEyIEwgMTUzLDQwOSBMIDEyNCwzMjYgWiBNIDExNCwzNDQgTCAxMjMsMzcyIEwgMTIyLDM3NiBMIDEwMiwzNzUgTCAxMDIsMzcyIEwgMTA2LDM1OSBMIDEwOCwzNTYgTCAxMTAsMzQ3IFoiLz4KICAgICAgPHBhdGggZD0iTSAyMjUsMzIwIEwgMjA4LDMyMCBMIDIwNiwzNTIgTCAyMDIsMzQ4IEwgMTk0LDM0NSBMIDE4MCwzNDUgTCAxNjksMzQ5IEwgMTU5LDM2MCBMIDE1NSwzNzMgTCAxNTYsMzk1IEwgMTYyLDQwNyBMIDE3MCw0MTQgTCAxNzgsNDE3IEwgMTkzLDQxNyBMIDE5OSw0MTUgTCAyMDUsNDA4IEwgMjA4LDQwOCBMIDIwOCw0MTYgTCAyMjUsNDE2IFogTSAxODcsMzU3IEwgMTk0LDM1NyBMIDE5OSwzNTkgTCAyMDQsMzY0IEwgMjA3LDM3MSBMIDIwOCwzODUgTCAyMDYsMzk0IEwgMjA0LDM5OCBMIDE5OSw0MDMgTCAxOTUsNDA1IEwgMTg2LDQwNSBMIDE4Miw0MDMgTCAxNzYsMzk3IEwgMTczLDM4OSBMIDE3MywzNzIgTCAxNzYsMzY1IEwgMTgyLDM1OSBaIi8+CiAgICAgIDxwYXRoIGQ9Ik0gMjU1LDM0NiBMIDI0NCwzNTIgTCAyMzgsMzU5IEwgMjMzLDM3MSBMIDIzMywzODkgTCAyMzUsMzk3IEwgMjQwLDQwNiBMIDI0NSw0MTEgTCAyNTIsNDE1IEwgMjU5LDQxNyBMIDI3Nyw0MTcgTCAyODMsNDE1IEwgMjk1LDQwNiBMIDMwMSwzOTYgTCAzMDMsMzg4IEwgMzAzLDM3NCBMIDMwMSwzNjYgTCAyOTYsMzU3IEwgMjkwLDM1MSBMIDI4MywzNDcgTCAyNzcsMzQ1IFogTSAyNjQsMzU3IEwgMjcyLDM1NyBMIDI3NiwzNTkgTCAyODEsMzY0IEwgMjg1LDM3NSBMIDI4NSwzODcgTCAyODMsMzk1IEwgMjc2LDQwMyBMIDI3Miw0MDUgTCAyNjQsNDA1IEwgMjU5LDQwMyBMIDI1NCwzOTggTCAyNTAsMzg2IEwgMjUwLDM3NCBMIDI1MiwzNjggTCAyNTgsMzYwIFoiLz4KICAgICAgPHBhdGggZD0iTSAzNTAsMzQ1IEwgMzM4LDM0NiBMIDMyOCwzNTUgTCAzMjgsMzQ3IEwgMzExLDM0NyBMIDMxMSw0MTYgTCAzMjgsNDE1IEwgMzI4LDM3NCBMIDMzMCwzNjggTCAzMzYsMzYyIEwgMzQzLDM1OSBMIDM1MCwzNTkgWiIvPgogICAgICA8cGF0aCBkPSJNIDM2NCwzNDkgTCAzNTksMzUzIEwgMzU1LDM2MCBMIDM1NCwzNjQgTCAzNTUsMzY5IEwgMzcwLDM2OSBMIDM3MSwzNjMgTCAzNzUsMzU4IEwgMzc3LDM1NyBMIDM4NiwzNTcgTCAzOTIsMzYyIEwgMzkzLDM2NSBMIDM5MiwzNzQgTCAzNzIsMzc1IEwgMzYwLDM4MCBMIDM1NCwzODYgTCAzNTEsMzk0IEwgMzUxLDQwMiBMIDM1NCw0MDkgTCAzNTgsNDEzIEwgMzY2LDQxNyBMIDM4MSw0MTcgTCAzODYsNDE1IEwgMzkxLDQwOSBMIDM5NCw0MDkgTCAzOTUsNDE2IEwgNDExLDQxNiBMIDQxMCwzNjcgTCA0MDksMzYxIEwgNDA2LDM1NCBMIDQwMCwzNDggTCAzOTEsMzQ1IEwgMzczLDM0NSBaIE0gMzkzLDM4NSBMIDM5MiwzOTcgTCAzODYsNDA0IEwgMzg0LDQwNSBMIDM3NSw0MDUgTCAzNjksNDAwIEwgMzY5LDM5MiBMIDM3NSwzODYgTCAzODMsMzg0IFoiLz4KICAgIDwvZz4KICA8L2c+Cjwvc3ZnPgo=" alt="ADORA" style="height:26px;width:auto"></a>
+  <div class="nav-links" id="navLinks">
+    <a href="simulateur.html">Simulateur</a>
+    <a href="estimateur.html">Estimateur</a>
+    <a href="audit-avant-achat.html">Audit achat</a>
+    <a href="sur-mesure.html">Sur mesure</a>
+    <a href="estimateur-outil.html" class="nav-cta">Estimer mes travaux</a>
+  </div>
+  <button class="nav-burger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">&#9776;</button>
+</div>
+</nav>
+<style>
+/* Article specifics */
+.article-hero{background:var(--navy);padding:56px 0 44px;color:var(--white)}
+.article-meta{display:flex;gap:16px;align-items:center;margin-bottom:16px;font-size:13px;color:rgba(214,228,240,.5);flex-wrap:wrap}
+.article-meta span{display:flex;align-items:center;gap:6px}
+.article-tag{padding:4px 10px;background:rgba(34,211,238,.15);color:var(--accent);border-radius:6px;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.5px}
+.article-hero h1{font-size:clamp(26px,4vw,38px);font-weight:900;letter-spacing:-.02em;margin-bottom:12px;max-width:720px}
+.article-hero h1 em{font-style:normal;color:var(--accent)}
+.article-hero .lead{font-size:16px;color:rgba(214,228,240,.7);max-width:620px;line-height:1.7}
+.article-body{max-width:720px;margin:0 auto;padding:60px 28px}
+.article-body h2{font-size:22px;font-weight:800;color:var(--navy);margin:48px 0 14px}
+.article-body h2:first-of-type{margin-top:0}
+.article-body h3{font-size:17px;font-weight:700;color:var(--navy);margin:28px 0 10px}
+.article-body p{font-size:16px;line-height:1.8;margin-bottom:16px;color:var(--txt)}
+.article-body ul,.article-body ol{padding-left:24px;margin-bottom:16px}
+.article-body li{font-size:15px;line-height:1.7;margin-bottom:8px}
+.article-body strong{color:var(--navy)}
+.article-body blockquote{border-left:3px solid var(--accent);padding:16px 24px;margin:24px 0;background:var(--pale);border-radius:0 10px 10px 0;font-size:15px;color:var(--muted)}
+.article-cta{background:var(--navy);border-radius:16px;padding:40px;text-align:center;color:var(--white);margin:48px 0}
+.article-cta h3{color:var(--white);font-size:22px;margin-bottom:8px}
+.article-cta p{color:rgba(237,233,254,.7);margin-bottom:20px;font-size:15px}
+
+/* Data table */
+.data-table{width:100%;border-collapse:separate;border-spacing:0;border-radius:12px;overflow:hidden;border:1px solid var(--border);margin:24px 0}
+.data-table thead th{background:var(--navy);color:var(--white);padding:14px 18px;font-size:13px;font-weight:700;text-align:left;letter-spacing:.3px}
+.data-table thead th:last-child{text-align:right}
+.data-table tbody td{padding:14px 18px;border-bottom:1px solid var(--border);font-size:14px;color:var(--txt)}
+.data-table tbody tr:last-child td{border-bottom:none}
+.data-table tbody tr:nth-child(even) td{background:var(--pale)}
+.data-table tbody td:last-child{text-align:right;font-family:'Montserrat',sans-serif;font-weight:700;color:var(--navy);white-space:nowrap}
+.data-table .lot-name{font-weight:600;color:var(--navy)}
+.data-table .lot-desc{font-size:12px;color:var(--muted);margin-top:2px}
+
+/* Level cards */
+.level-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:24px 0}
+.level-card{border:1px solid var(--border);border-radius:12px;padding:24px 20px;text-align:center;transition:all .25s}
+.level-card:hover{box-shadow:var(--shadow-hover);transform:translateY(-2px)}
+.level-card-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:8px}
+.level-card-price{font-family:'Montserrat',sans-serif;font-size:24px;font-weight:800;color:var(--navy);margin-bottom:6px}
+.level-card-price small{font-size:14px;font-weight:600;color:var(--muted)}
+.level-card-desc{font-size:13px;color:var(--muted);line-height:1.5}
+.level-card.green{border-color:rgba(45,139,85,.3);background:rgba(45,139,85,.03)}.level-card.green .level-card-label{color:#2D8B55}
+.level-card.blue{border-color:rgba(34,211,238,.3);background:rgba(34,211,238,.03)}.level-card.blue .level-card-label{color:var(--blue)}
+.level-card.navy{border-color:rgba(13,16,37,.15);background:rgba(13,16,37,.02)}.level-card.navy .level-card-label{color:var(--navy)}
+
+/* Coeff table */
+.coeff-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:24px 0}
+.coeff-card{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;border:1px solid var(--border);border-radius:10px;font-size:14px}
+.coeff-card-region{font-weight:600;color:var(--navy)}
+.coeff-card-val{font-family:'Montserrat',sans-serif;font-weight:700;font-size:15px;padding:4px 10px;border-radius:6px}
+.coeff-card-val.up{color:#991B1B;background:#FEF2F2}
+.coeff-card-val.neutral{color:var(--blue);background:rgba(34,211,238,.08)}
+.coeff-card-val.down{color:#2D8B55;background:rgba(45,139,85,.08)}
+
+/* Callout box */
+.callout{background:var(--pale);border:1px solid var(--border);border-radius:12px;padding:24px;margin:24px 0}
+.callout-title{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:8px;display:flex;align-items:center;gap:8px}
+
+/* Error grid */
+.error-list{display:flex;flex-direction:column;gap:12px;margin:16px 0}
+.error-item{display:flex;gap:14px;padding:16px;border:1px solid var(--border);border-radius:10px}
+.error-num{width:28px;height:28px;border-radius:8px;background:#FEF2F2;color:#991B1B;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0}
+.error-text{font-size:14px;line-height:1.6}
+.error-text strong{display:block;color:var(--navy);margin-bottom:2px}
+
+@media(max-width:768px){
+  .level-grid{grid-template-columns:1fr}
+  .coeff-grid{grid-template-columns:1fr}
+  .data-table thead th,.data-table tbody td{padding:10px 12px;font-size:13px}
+}
+</style>
+
+<style>
+.faq-item{border-bottom:1px solid var(--border)}
+.faq-q{padding:18px 0;font-size:15px;font-weight:600;color:var(--navy);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.faq-q::after{content:'+';font-size:20px;color:var(--muted);transition:transform .3s;flex-shrink:0}
+.faq-item.open .faq-q::after{content:'−'}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s ease;font-size:14px;color:var(--muted);line-height:1.7}
+.faq-item.open .faq-a{max-height:500px;padding-bottom:18px}
+/* ═══ MOBILE FIXES — 21/04/2026 ═══ */
+@media(max-width:700px){
+  .nav-links .nav-cta{width:100%;text-align:center;margin-top:8px}
+  .footer-contact a{word-break:break-all}
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Diagnostic parasitaire : comment négocier le prix d'achat d'un bien immobilier",
+  "description": "Comment un économiste traduit un diagnostic parasitaire en chiffrage opposable et en décote justifiée sans perdre le bien.",
+  "author": {"@type": "Person", "name": "Aymeric Dussauze", "jobTitle": "Économiste de la construction"},
+  "publisher": {"@type": "Organization", "name": "ADORA"},
+  "datePublished": "2026-04-22",
+  "dateModified": "2026-04-22",
+  "mainEntityOfPage": "https://adora-economie.fr/diagnostic-parasitaire-negociation.html"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "Le diagnostic parasitaire est-il obligatoire partout en France ?", "acceptedAnswer": {"@type": "Answer", "text": "Non. Seul le diagnostic termites est obligatoire, et uniquement dans les communes couvertes par un arrêté préfectoral. La liste varie par département et évolue régulièrement — consultez l'arrêté en vigueur de votre département. Les autres agents xylophages (capricorne, vrillette, lyctus) et les champignons lignivores (mérule, coniophore) ne font pas l'objet d'une obligation légale de diagnostic, mais ils sont systématiquement examinés quand un diagnostic parasitaire complet est commandé."}},
+    {"@type": "Question", "name": "Quelle est la durée de validité d'un diagnostic parasitaire ?", "acceptedAnswer": {"@type": "Answer", "text": "Six mois pour le diagnostic termites obligatoire. Pour les autres agents, pas de validité légale stricte, mais la prudence professionnelle considère qu'au-delà de douze mois un diagnostic mérite d'être actualisé, surtout si des modifications du bâti ou des conditions d'humidité ont eu lieu entre-temps."}},
+    {"@type": "Question", "name": "Combien coûte un traitement contre les termites ?", "acceptedAnswer": {"@type": "Answer", "text": "Pour une infestation active, le traitement curatif d'une structure bois se situe entre 25 et 45 € HT par mètre linéaire de poutre traitée. Si une injection dans les sols est nécessaire pour créer une barrière chimique, comptez 80 à 150 € HT par mètre carré de sous-sol traité. Pour une maison de 120 m² avec infestation établie sur la charpente, l'enveloppe globale se situe entre 6 000 et 15 000 € HT, hors reprise structurelle des bois dégradés."}},
+    {"@type": "Question", "name": "Puis-je annuler mon compromis si le diagnostic parasitaire est défavorable ?", "acceptedAnswer": {"@type": "Answer", "text": "Pas automatiquement. Un diagnostic parasitaire défavorable ne constitue pas en soi une condition suspensive sauf si elle a été explicitement prévue dans le compromis. C'est précisément pour cela qu'il faut anticiper : insérer dans le compromis une clause suspensive liée à une expertise approfondie parasitaire ou structurelle, ou négocier directement le prix en présentant un chiffrage opposable des travaux correctifs."}},
+    {"@type": "Question", "name": "Qui paie les travaux si des parasites sont détectés après la vente ?", "acceptedAnswer": {"@type": "Answer", "text": "En principe l'acquéreur, sauf si le vendeur a sciemment dissimulé l'état réel du bien (vice caché). La jurisprudence est exigeante : il faut prouver que le vendeur savait et qu'il a menti par omission ou par action. Si le diagnostic du DDT mentionnait des agents xylophages et que vous avez signé en connaissance de cause, il sera difficile de se retourner. D'où l'importance de chiffrer avant signature, pas après."}},
+    {"@type": "Question", "name": "Un diagnostic parasitaire peut-il passer à côté d'une infestation ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui, pour plusieurs raisons. Le diagnostiqueur contrôle les zones accessibles visuellement : charpente visible, pieds de murs, lambourdes apparentes. Les zones non-inspectables (combles perdus non accessibles, plafonds, faux-plafonds, doublages) ressortent dans le rapport comme « non-inspecté » — ce n'est pas un diagnostic favorable, c'est un trou. Lire attentivement ces mentions est essentiel."}},
+    {"@type": "Question", "name": "La mérule est-elle traitable ou faut-il démolir ?", "acceptedAnswer": {"@type": "Answer", "text": "Les deux, selon l'étendue. Une mérule détectée tôt sur une zone localisée se traite par élimination mécanique des éléments contaminés (doublages, lambris, parfois menuiseries), assèchement complet de la zone source d'humidité, et traitement chimique curatif. Coût : 150 à 400 € HT par mètre carré de zone traitée. Si la mérule a colonisé des éléments porteurs (solives, pannes de charpente), on passe à la démolition-reconstruction partielle, et l'enveloppe peut tripler. La mérule ne pardonne pas les traitements approximatifs."}},
+    {"@type": "Question", "name": "Comment négocier le prix d'un bien avec diagnostic parasitaire défavorable ?", "acceptedAnswer": {"@type": "Answer", "text": "En transformant l'inquiétude en chiffrage opposable. Un économiste de la construction traduit chaque mention du diagnostic en coût de traitement et de reprise structurelle induite, avec fourchettes 2026 sourcées. Cette estimation devient l'annexe d'une contre-proposition factuelle : prix moins le coût des travaux correctifs, soit 5 à 20 % de décote selon la gravité. Le vendeur ne négocie jamais sur une inquiétude, il négocie toujours sur un chiffrage étayé."}}
+  ]
+}
+</script>
+
+<section class="article-hero">
+  <div class="container">
+    <div class="article-meta">
+      <span class="article-tag">Méthode audit avant achat</span>
+      <span>Avril 2026</span>
+      <span>11 min de lecture</span>
+    </div>
+    <h1>Diagnostic parasitaire : comment <em>négocier</em> le prix d'achat</h1>
+    <p class="lead">Un diagnostic défavorable n'est pas un motif de retrait. C'est un levier de négociation — à condition de savoir le chiffrer et le formuler. Méthode d'un économiste, avec ratios 2026 et cas réel.</p>
+  </div>
+</section>
+
+<div class="article-body">
+
+<p>Il y a quelques semaines, une cliente m'a confié un audit avant achat sur une maison bourgeoise de 158 m² dans l'Eure. Prix affiché 199 k€ FAI. Compromis pas encore signé, apport partiel bloqué, primo-accédante sans filet. Le diagnostic parasitaire joint au DDT listait <strong>trois agents xylophages actifs et un champignon de pourriture profonde</strong> en cave. Sa première réaction a été la bonne : elle a voulu retirer son offre.</p>
+
+<p>Retirer son offre n'était pas la bonne réponse. Chiffrer, si. Ma première estimation après analyse du diagnostic et du DDT a donné une règle simple : le projet restait réalisable, mais <strong>uniquement si le prix d'achat redescendait à 150 k€ ou moins</strong>, au-delà les travaux correctifs faisaient basculer l'enveloppe globale hors de son budget. Sur cette base, elle a formulé une offre écrite à 138 k€, annexée du chiffrage. Les vendeurs ont accepté directement, sans contre-proposition.</p>
+
+<p>Une décote de 31 % sur le prix affiché. Obtenue sans bataille de négociation, sans menace de rupture, sans énième aller-retour. Juste un chiffrage opposable remis au bon moment. Ce n'est pas de la chance — c'est une méthode. Un diagnostic parasitaire défavorable n'est pas un motif de retrait, c'est un <strong>levier de négociation</strong> — à condition de savoir en extraire les bons chiffres et de formuler la demande dans un langage que le vendeur ne peut pas refuser. Voici cette méthode, avec les ratios 2026 à jour et les points de vigilance qu'on ne trouve nulle part en ligne.</p>
+
+<h2>Ce que dit vraiment un diagnostic parasitaire (et ce qu'il ne dit pas)</h2>
+
+<p>Avant de négocier, il faut lire. Un diagnostic parasitaire n'est pas un document homogène sur tout le territoire et il ne couvre pas tout ce qu'on croit qu'il couvre. Beaucoup d'acquéreurs se trompent à l'étape de lecture.</p>
+
+<h3>Ce qui est obligatoire selon la zone</h3>
+
+<p>Seul le <strong>diagnostic termites</strong> est obligatoire, et uniquement dans les communes couvertes par un arrêté préfectoral. Chaque département publie son propre arrêté, régulièrement mis à jour. En Normandie, par exemple, tout le département de l'Eure est couvert, une grande partie de la Seine-Maritime aussi. En Île-de-France, l'obligation s'applique sur la quasi-totalité des communes. Mais certaines zones rurales restent hors obligation — d'où l'importance de vérifier l'arrêté en vigueur au moment de la vente, disponible en préfecture ou sur Géorisques.</p>
+
+<p>Les <strong>autres agents xylophages</strong> (capricorne des maisons, vrillette, lyctus) et les <strong>champignons lignivores</strong> (mérule, coniophore, polypore) ne sont pas obligatoires au titre du DDT. Mais la plupart des diagnostiqueurs les contrôlent dans une prestation combinée « termites + états parasitaires » pour 150 à 250 € TTC, et tous les diagnostics parasitaires professionnels sérieux les examinent.</p>
+
+<p>Conséquence pratique : si le compromis ne mentionne qu'un diagnostic termites réglementaire, <strong>vous n'avez pas d'information sur les autres agents</strong>. Sur un bien ancien en zone humide, c'est un angle mort dangereux. Demandez un diagnostic parasitaire complet avant de signer, même si le vendeur estime que l'obligation légale est satisfaite.</p>
+
+<h3>Les 5 agents que peut lister un diagnostic</h3>
+
+<p>Chaque agent a une signature propre, des zones géographiques à risque, et un coût de traitement spécifique. Les confondre revient à chiffrer à côté.</p>
+
+<div style="overflow-x:auto;-webkit-overflow-scrolling:touch">
+<table class="data-table">
+  <thead>
+    <tr><th>Agent</th><th>Ce qu'il attaque</th><th>Gravité structurelle</th><th>Coût traitement</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="lot-name">Termites souterrains</span><div class="lot-desc">Obligation légale de diagnostic</div></td>
+      <td>Bois de structure, planchers, poutres, lambourdes</td>
+      <td>Très élevée — galeries invisibles, fragilisation progressive</td>
+      <td>25-45 € HT/ml + injection sols 80-150 €/m²</td>
+    </tr>
+    <tr>
+      <td><span class="lot-name">Capricorne des maisons</span><div class="lot-desc">Zones humides et charpentes anciennes</div></td>
+      <td>Charpentes résineuses, planchers bois</td>
+      <td>Élevée — les galeries suivent l'axe des fibres</td>
+      <td>30-50 € HT/m² de charpente traitée</td>
+    </tr>
+    <tr>
+      <td><span class="lot-name">Vrillette</span><div class="lot-desc">Surtout sur bois anciens</div></td>
+      <td>Meubles, parquets, lambris, poutres décoratives</td>
+      <td>Modérée — surtout esthétique, rarement structurelle</td>
+      <td>20-35 € HT/m² de surface traitée</td>
+    </tr>
+    <tr>
+      <td><span class="lot-name">Lyctus</span><div class="lot-desc">Bois récents avec amidon résiduel</div></td>
+      <td>Planchers flottants, menuiseries feuillues récentes</td>
+      <td>Faible à modérée — traitement localisé suffisant</td>
+      <td>20-30 € HT/m² de surface traitée</td>
+    </tr>
+    <tr>
+      <td><span class="lot-name">Mérule et champignons lignivores</span><div class="lot-desc">Zones d'humidité chronique, caves mal ventilées</div></td>
+      <td>Tout bois et matériaux cellulosiques, propagation rapide</td>
+      <td>Très élevée — démolition-reconstruction partielle fréquente</td>
+      <td>150-400 € HT/m² de zone contaminée</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>À ces coûts de traitement s'ajoutent presque toujours des <strong>travaux induits de reprise structurelle</strong> : remplacement de poutres dégradées, dépose-repose de planchers, reprise de doublages contaminés. Ces travaux sont ceux qui font basculer l'enveloppe de quelques milliers d'euros à plusieurs dizaines.</p>
+
+<h3>La différence critique : infestation active vs trace ancienne</h3>
+
+<p>C'est le point sur lequel l'acquéreur novice perd le plus souvent la main dans la négociation. Un diagnostic ne dit pas toujours « il y a des termites ». Il peut dire :</p>
+
+<ul>
+  <li><strong>« Présence de traces d'activité xylophage »</strong> — galeries visibles, sciure présente, mais sans certitude sur l'activité en cours</li>
+  <li><strong>« Infestation active constatée »</strong> — agents vivants observés, sciure fraîche, bois en cours de dégradation</li>
+  <li><strong>« Pas d'indice d'infestation »</strong> — absence d'attaque visible dans les zones inspectées</li>
+  <li><strong>« Zones non-inspectées »</strong> — parties du bien non accessibles lors du diagnostic, ni confirmées ni infirmées</li>
+</ul>
+
+<p>Le levier de négociation n'est pas le même dans les quatre cas. Une infestation active justifie une décote pleine sur les coûts de traitement et de reprise. Des traces sans activité justifient une décote réduite plus un traitement préventif. Une zone non-inspectée doit déclencher une condition suspensive pour expertise approfondie, pas une décote directe. Savoir lire ces nuances change tout.</p>
+
+<h2>Traduire le diagnostic en coûts de reprise (ratios 2026)</h2>
+
+<p>La partie lecture étant faite, on passe à l'étape que personne ne fait correctement à votre place : traduire chaque mention du rapport en coût opposable. C'est ici que l'économiste apporte de la valeur là où ni l'agent immobilier, ni le notaire, ni même le diagnostiqueur ne peuvent intervenir.</p>
+
+<h3>Ratios par agent, à appliquer en 2026</h3>
+
+<p>Les ratios ci-dessous sont ceux que j'applique dans mes audits, calibrés sur la base <strong>Batichiffrage 2025</strong> (dernière édition disponible) et ajustés pour les prix du second trimestre 2026. Ils concernent uniquement les traitements curatifs sur bâtiments existants, en conditions normales d'accès.</p>
+
+<p><strong>Traitement termites curatif</strong> : injection-pulvérisation sur bois de structure visible, 25 à 45 € HT par mètre linéaire de poutre traitée. Si une barrière chimique dans les sols est nécessaire (détection d'activité en pied de mur ou en cave), prévoir 80 à 150 € HT par mètre carré de surface traitée. Pour une charpente de maison moyenne (120 m² habitables, environ 200 ml de poutres + 80 m² de sols), l'enveloppe brute de traitement se situe entre 11 000 et 21 000 € HT.</p>
+
+<p><strong>Traitement capricorne</strong> : 30 à 50 € HT par mètre carré de charpente traitée. Une charpente traditionnelle de maison 120 m² représente 100 à 130 m² de surface traitée. Enveloppe : 3 000 à 6 500 € HT. Si des poutres sont structurellement affaiblies (galeries dépassant 30 % de la section), il faut prévoir leur remplacement : 150 à 300 € HT par mètre linéaire selon la section.</p>
+
+<p><strong>Traitement mérule</strong> : 150 à 400 € HT par mètre carré de zone contaminée. Mais le chiffrage réel doit inclure la dépose des matériaux contaminés (doublages, lambris, parfois menuiseries et lambourdes), l'assèchement complet de la source d'humidité (souvent le facteur déclenchant), et la reconstruction. Pour une mérule limitée à une cave de 30 m², compter 15 000 à 30 000 € HT tous travaux inclus. Pour une mérule ayant atteint les éléments porteurs, l'enveloppe triple.</p>
+
+<h3>Méthode de chiffrage depuis le diagnostic</h3>
+
+<p>Le chiffrage n'est pas une multiplication des ratios par des surfaces. La méthode qui produit un résultat opposable devant le vendeur suit quatre étapes :</p>
+
+<ol>
+  <li><strong>Identifier les surfaces et linéaires réellement concernés</strong> à partir du diagnostic, du DDT et des plans du bien (surface habitable, surface de charpente, linéaire de poutres, zones contaminées déclarées).</li>
+  <li><strong>Appliquer les ratios par agent</strong>, en distinguant le traitement de la reprise structurelle.</li>
+  <li><strong>Ajouter les travaux induits</strong> que le diagnostic ne chiffre jamais : reprise de planchers après dépose, remise en état des faux-plafonds, peinture et revêtements, éventuellement remise en service d'installations techniques (électricité, plomberie dans les zones touchées).</li>
+  <li><strong>Appliquer un aléa de 10 à 25 %</strong> selon l'âge du bâti, la présence de zones non-inspectées, et la typologie de la construction. Un aléa faible pour une maison contemporaine, un aléa fort pour une bâtisse normande à pans de bois de 1850.</li>
+</ol>
+
+<p>Le résultat est un <strong>chiffrage à trois colonnes</strong> : fourchette basse (hypothèse favorable), fourchette haute (hypothèse défavorable), enveloppe recommandée (mi-fourchette + aléa). C'est ce document qui sera annexé à la contre-proposition d'achat.</p>
+
+<h3>Cas réel : le chiffrage d'une maison bourgeoise de 158 m²</h3>
+
+<p>Voici, anonymisé, le cas mentionné en introduction. Primo-accédante, budget bloqué, bien affiché <strong>199 k€ FAI</strong>. Le diagnostic parasitaire du DDT arrive et change la donne avant même que le compromis soit signé.</p>
+
+<div class="callout">
+  <div class="callout-title">Extraits du diagnostic parasitaire (cas réel anonymisé)</div>
+  <ul style="margin-top:8px">
+    <li>Termites souterrains : infestation active constatée en cave et en pied de mur façade nord</li>
+    <li>Capricorne des maisons : présence d'insectes adultes vivants dans la charpente du comble</li>
+    <li>Vrillette : traces d'activité récente sur menuiseries intérieures et parquet</li>
+    <li>Champignon de pourriture profonde : zone de développement actif sur solives de la cave, environ 8 m² concernés</li>
+    <li>Zones non-inspectées : combles perdus du second, charpente partiellement non accessible</li>
+  </ul>
+</div>
+
+<p>Chiffrage produit en 48 heures, lot par lot :</p>
+
+<div style="overflow-x:auto;-webkit-overflow-scrolling:touch">
+<table class="data-table">
+  <thead>
+    <tr><th>Poste</th><th>Fourchette basse</th><th>Fourchette haute</th><th>Recommandée</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Traitement termites structure + sols</td><td>11 000 €</td><td>18 500 €</td><td>15 000 €</td></tr>
+    <tr><td>Traitement capricorne charpente</td><td>4 200 €</td><td>6 800 €</td><td>5 500 €</td></tr>
+    <tr><td>Traitement vrillette</td><td>1 800 €</td><td>3 200 €</td><td>2 500 €</td></tr>
+    <tr><td>Traitement et reprise champignon cave (8 m²)</td><td>12 000 €</td><td>22 000 €</td><td>17 000 €</td></tr>
+    <tr><td>Reprise structurelle solives dégradées</td><td>8 000 €</td><td>18 000 €</td><td>13 000 €</td></tr>
+    <tr><td>Travaux induits (planchers, doublages, peintures)</td><td>6 000 €</td><td>14 000 €</td><td>10 000 €</td></tr>
+    <tr><td>Aléa sur zones non-inspectées (+20 %)</td><td>8 600 €</td><td>16 500 €</td><td>12 600 €</td></tr>
+    <tr style="font-weight:700;background:rgba(34,211,238,.08)"><td>Total travaux parasitaires TTC</td><td>51 600 €</td><td>99 000 €</td><td>75 600 €</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Au vu du chiffrage, j'ai recalé l'équation : pour que le projet tienne financièrement, <strong>l'acquisition devait se faire à 150 k€ maximum</strong>. Au-dessus, l'addition prix + travaux + aléa faisait basculer le budget hors des possibilités de financement. C'est cette analyse qui a structuré l'offre.</p>
+
+<p>L'acquéreuse a formulé une offre écrite à <strong>138 k€</strong>, accompagnée du chiffrage en annexe. Les vendeurs ont accepté directement, sans contre-proposition ni négociation supplémentaire. Décote finale : <strong>31 % sur le prix affiché</strong>, obtenue en une seule passe. Le bien est acquis, les travaux correctifs sont intégrés au plan de financement via éco-PTZ de 50 k€ à 0 %.</p>
+
+<div class="article-cta">
+  <h3>Vous préparez l'achat d'un bien ancien ?</h3>
+  <p>Un audit avant achat ADORA chiffre les travaux visibles et cachés, analyse le DDT, et construit votre stratégie de négociation. Résultat sous 48-72 h, 499 € TTC.</p>
+  <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+    <a href="audit-avant-achat.html" class="btn btn-accent" style="font-size:14px;padding:14px 28px">Commander un audit</a>
+    <a href="https://cal.com/aymeric-adora/decouverte" class="btn" style="font-size:14px;padding:14px 28px;background:rgba(255,255,255,.1);color:var(--white);border-radius:10px;font-weight:700">Appel découverte 15 min</a>
+  </div>
+</div>
+
+<h2>Transformer le chiffrage en levier de négociation</h2>
+
+<p>Avoir le bon chiffrage ne suffit pas. La négociation immobilière obéit à des codes précis — le vendeur ne cède jamais sur une inquiétude, il ne cède que sur un argument structuré et opposable.</p>
+
+<h3>Le principe : décote justifiée par opposabilité</h3>
+
+<p>Un agent immobilier sérieux ne défendra pas une contre-proposition qui se résume à « mon client a peur des parasites ». Il défendra en revanche une contre-proposition qui s'appuie sur un document signé d'un économiste, détaillant poste par poste le coût des travaux correctifs, avec des ratios sourcés et une méthode documentée. La différence entre les deux arguments est immense : le premier est émotionnel, le second est opposable.</p>
+
+<p>Le diagnostic parasitaire est opposable par nature (rapport officiel d'un professionnel certifié). Le chiffrage économiste l'est aussi (document signé, ratios sourcés, méthode traçable). La combinaison des deux crée un <strong>dossier de négociation structuré</strong> qui remonte jusqu'au vendeur en passant par l'agent et le notaire. C'est exactement le circuit dans lequel les décotes de 5 à 20 % sont obtenues sans drame.</p>
+
+<h3>Les trois leviers de négociation</h3>
+
+<p>Selon le cas, trois leviers peuvent être actionnés — seuls ou en combinaison.</p>
+
+<p><strong>Levier 1 — Décote directe sur le prix</strong>. Pertinent quand les travaux correctifs sont non-optionnels et suffisamment documentés. La décote demandée correspond au chiffrage recommandé, éventuellement ajusté du caractère « agréable » ou « désagréable » du bien pour d'autres critères (prix plafond du quartier, rareté, concurrence d'autres acheteurs). Réaliste : 60 à 80 % du chiffrage total obtenu en décote.</p>
+
+<p><strong>Levier 2 — Condition suspensive</strong>. Pertinent quand une partie du diagnostic est incomplète (zones non-inspectées, doute sur l'activité). Insérer dans le compromis une clause suspensive liée à une expertise approfondie parasitaire ou structurelle, avec seuil financier déclencheur. Exemple de formulation : « la présente vente est conditionnée au résultat d'une expertise parasitaire approfondie réalisée par un cabinet indépendant, dont le coût de traitement excédant 40 000 € TTC donnerait droit à la résiliation du compromis sans pénalité ». Ce levier <strong>protège l'acquéreur sans fâcher le vendeur</strong>.</p>
+
+<p><strong>Levier 3 — Prise en charge partielle par le vendeur</strong>. Pertinent pour des biens où la négociation sur le prix est bloquée mais où une répartition des travaux peut être acceptée. Le vendeur s'engage à faire réaliser à ses frais le traitement d'un agent spécifique avant la signature de l'acte authentique, avec facture probante. Ce levier est rare mais efficace sur les ventes où le vendeur est émotionnellement attaché au prix affiché.</p>
+
+<h3>Formuler sa demande : le ton qui marche</h3>
+
+<p>La formulation compte autant que le chiffre. Une contre-proposition <strong>écrite, factuelle, respectueuse</strong>, remise via l'agent immobilier avec le chiffrage en annexe, obtient dix fois plus de résultats qu'un appel téléphonique sous le coup de l'émotion.</p>
+
+<p>Les ingrédients d'une bonne formulation :</p>
+
+<ul>
+  <li>Reconnaître la valeur du bien (« bien qui nous plaît beaucoup », « charme certain », « projet que nous souhaitons porter »)</li>
+  <li>Présenter objectivement les éléments qui justifient la révision (diagnostic parasitaire officiel, chiffrage économiste annexé)</li>
+  <li>Proposer un prix précis (pas une fourchette, un chiffre unique)</li>
+  <li>Laisser une porte ouverte (« dans l'attente de votre retour », « disponible pour en discuter »)</li>
+  <li>Éviter absolument les menaces, les ultimatums, les commentaires désagréables sur l'état du bien</li>
+</ul>
+
+<p>La cliente du cas réel a repris ces principes à la lettre. Les vendeurs n'ont jamais senti d'agression. Ils ont reçu un dossier structuré — offre chiffrée, chiffrage travaux en annexe, formulation respectueuse — et ils ont accepté sans contre-proposition. Quand le chiffrage est clair et opposable, négocier devient inutile : la demande s'auto-justifie.</p>
+
+<h2>Les risques et pièges à connaître</h2>
+
+<p>Jusqu'ici, tout semble maîtrisable. Mais le diagnostic parasitaire contient trois pièges dans lesquels un acquéreur mal conseillé tombe régulièrement.</p>
+
+<h3>Ne pas sous-estimer les traitements (et ne pas tous les accepter)</h3>
+
+<p>Certaines techniques de traitement sont excellentes en théorie et désastreuses en pratique selon le contexte. L'exemple que j'ai rencontré récemment sur un dossier différent : une famille m'a consultée pour une fissure structurelle, et un commercial venait de leur proposer un traitement par <strong>injection de résine dans les sols</strong>. Le rapport géotechnique G5 révélait des sols argileux (RGA) à sensibilité moyenne. Injecter de la résine dans un sol RGA, c'est créer une zone rigide dans un sol qui se déforme — l'effet est inverse de celui recherché. J'ai écarté cette technique par écrit.</p>
+
+<p>Sur le plan parasitaire, les mêmes logiques s'appliquent. Un traitement par fumigation est adapté pour des biens vides, pas pour des habitations meublées. Un traitement par chaleur excessive peut endommager des menuiseries patrimoniales. Avant d'accepter un chiffrage d'entreprise, demandez à quoi correspond la technique proposée et pourquoi elle est adaptée à votre bien.</p>
+
+<h3>L'assurance ne couvre pas tout</h3>
+
+<p>Beaucoup d'acquéreurs pensent que leur multirisque habitation couvrira les découvertes post-achat. Rarement. La plupart des contrats excluent explicitement les dommages liés aux agents xylophages et aux champignons lignivores, sauf garantie spécifique souscrite séparément. La garantie décennale de l'entreprise ayant réalisé le traitement précédent a souvent expiré (elle dure 10 ans après la fin des travaux, pas 10 ans après votre acquisition).</p>
+
+<p>Quant à un recours contre le vendeur pour vice caché, la jurisprudence est exigeante : il faut prouver que le vendeur <strong>savait</strong> et qu'il <strong>a dissimulé</strong>. Un diagnostic parasitaire remis en bonne et due forme au moment du compromis fait perdre tout recours ultérieur sur cette base.</p>
+
+<h3>Le délai : ne pas signer l'acte authentique sans avoir compris</h3>
+
+<p>Entre compromis et acte authentique, le délai standard est de 60 à 90 jours. C'est la <strong>fenêtre de négociation unique</strong>. Une fois l'acte signé chez le notaire, la négociation est terminée — le prix est le prix, les travaux correctifs sont à votre charge, et les seuls recours sont judiciaires avec charge de preuve lourde.</p>
+
+<p>Les primo-accédants sous-estiment souvent cette fenêtre parce qu'ils sont en tension psychologique (peur de perdre le bien, pression de la banque, timing avec le logement actuel). C'est précisément dans cette tension qu'un tiers neutre apporte de la valeur : prendre 3 jours pour faire chiffrer un diagnostic, c'est économiser 5 à 20 % du prix d'achat.</p>
+
+<h2>Quand faire intervenir un économiste plutôt qu'un autre professionnel</h2>
+
+<p>La chaîne de professionnels autour d'une acquisition immobilière est dense : agent, notaire, banquier, diagnostiqueur, éventuellement expert bâtiment. Pourquoi ajouter un économiste à ce carrousel ?</p>
+
+<h3>Le diagnostiqueur constate, l'économiste chiffre</h3>
+
+<p>Le diagnostiqueur parasitaire est certifié pour <strong>identifier et décrire</strong>. Son rapport vous dit ce qu'il a vu. Il n'est pas habilité — ni rémunéré — à traduire ses constats en coûts de reprise. Quand vous lui demandez « ça coûte combien à traiter ? », il vous oriente vers des entreprises spécialisées ou reste délibérément vague, et c'est normal.</p>
+
+<p>L'expert bâtiment généraliste chiffre parfois, mais rarement avec la précision d'un économiste sur la partie parasitaire. L'économiste de la construction, lui, a accès aux <strong>bases de prix professionnelles</strong> (Batichiffrage, bordereaux régionaux), connaît les ratios de reprise structurelle induite, et sait annoter un rapport de diagnostic ligne à ligne avec des fourchettes défendables.</p>
+
+<h3>Le positionnement ADORA sur ce sujet</h3>
+
+<p>C'est précisément ce que propose mon offre d'<strong>audit avant achat immobilier</strong> à 499 € TTC. Analyse complète du DDT fourni, chiffrage des travaux par lot avec fourchettes 2026 sourcées, hiérarchisation des risques, et construction d'une stratégie de négociation opposable. Rapport PDF sous 48 à 72 heures, transmissible à votre banquier ou votre agent. Un échange téléphonique de 30 minutes est inclus pour reprendre les points clés.</p>
+
+<p>Pour les cas plus complexes (biens patrimoniaux, projets de restructuration lourde, enveloppe de travaux supérieure à 200 k€), l'audit peut être prolongé en accompagnement AMO sur toute la durée du projet. Les 499 € de l'audit sont alors intégralement déduits.</p>
+
+<h2>Questions fréquentes</h2>
+
+<div style="display:flex;flex-direction:column;gap:0">
+  <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Le diagnostic parasitaire est-il obligatoire partout en France ?</div><div class="faq-a">Non. Seul le diagnostic termites est obligatoire, et uniquement dans les communes couvertes par un arrêté préfectoral. La liste varie par département et évolue régulièrement — consultez l'arrêté en vigueur de votre département. Les autres agents xylophages (capricorne, vrillette, lyctus) et les champignons lignivores (mérule, coniophore) ne font pas l'objet d'une obligation légale de diagnostic, mais ils sont systématiquement examinés quand un diagnostic parasitaire complet est commandé.</div></div>
+  <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Quelle est la durée de validité d'un diagnostic parasitaire ?</div><div class="faq-a">Six mois pour le diagnostic termites obligatoire. Pour les autres agents, pas de validité légale stricte, mais la prudence professionnelle considère qu'au-delà de douze mois un diagnostic mérite d'être actualisé, surtout si des modifications du bâti ou des conditions d'humidité ont eu lieu entre-temps.</div></div>
+  <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Combien coûte un traitement contre les termites ?</div><div class="faq-a">Pour une infestation active, le traitement curatif d'une structure bois se situe entre 25 et 45 € HT par mètre linéaire de poutre traitée. Si une injection dans les sols est nécessaire pour créer une barrière chimique, comptez 80 à 150 € HT par mètre carré de sous-sol traité. Pour une maison de 120 m² avec infestation établie sur la charpente, l'enveloppe globale se situe entre 6 000 et 15 000 € HT, hors reprise structurelle des bois dégradés.</div></div>
+  <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Puis-je annuler mon compromis si le diagnostic parasitaire est défavorable ?</div><div class="faq-a">Pas automatiquement. Un diagnostic parasitaire défavorable ne constitue pas en soi une condition suspensive sauf si elle a été explicitement prévue dans le compromis. C'est précisément pour cela qu'il faut anticiper : insérer dans le compromis une clause suspensive liée à une expertise approfondie parasitaire ou structurelle, ou négocier directement le prix en présentant un chiffrage opposable des travaux correctifs. Je détaille la méthode dans l'<a href="audit-avant-achat-immobilier.html">article sur l'audit avant achat immobilier</a>.</div></div>
+  <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Qui paie les travaux si des parasites sont détectés après la vente ?</div><div class="faq-a">En principe l'acquéreur, sauf si le vendeur a sciemment dissimulé l'état réel du bien (vice caché). La jurisprudence est exigeante : il faut prouver que le vendeur savait et qu'il a menti par omission ou par action. Si le diagnostic du DDT mentionnait des agents xylophages et que vous avez signé en connaissance de cause, il sera difficile de se retourner. D'où l'importance de chiffrer avant signature, pas après.</div></div>
+  <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Un diagnostic parasitaire peut-il passer à côté d'une infestation ?</div><div class="faq-a">Oui, pour plusieurs raisons. Le diagnostiqueur contrôle les zones accessibles visuellement : charpente visible, pieds de murs, lambourdes apparentes. Les zones non-inspectables (combles perdus non accessibles, plafonds, faux-plafonds, doublages) ressortent dans le rapport comme « non-inspecté » — ce n'est pas un diagnostic favorable, c'est un trou. Lire attentivement ces mentions est essentiel.</div></div>
+  <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">La mérule est-elle traitable ou faut-il démolir ?</div><div class="faq-a">Les deux, selon l'étendue. Une mérule détectée tôt sur une zone localisée se traite par élimination mécanique des éléments contaminés (doublages, lambris, parfois menuiseries), assèchement complet de la zone source d'humidité, et traitement chimique curatif. Coût : 150 à 400 € HT par mètre carré de zone traitée. Si la mérule a colonisé des éléments porteurs (solives, pannes de charpente), on passe à la démolition-reconstruction partielle, et l'enveloppe peut tripler. La mérule ne pardonne pas les traitements approximatifs.</div></div>
+  <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Comment négocier le prix d'un bien avec diagnostic parasitaire défavorable ?</div><div class="faq-a">En transformant l'inquiétude en chiffrage opposable. Un économiste de la construction traduit chaque mention du diagnostic en coût de traitement et de reprise structurelle induite, avec fourchettes 2026 sourcées. Cette estimation devient l'annexe d'une contre-proposition factuelle : prix moins le coût des travaux correctifs, soit 5 à 20 % de décote selon la gravité. Le vendeur ne négocie jamais sur une inquiétude, il négocie toujours sur un chiffrage étayé.</div></div>
+</div>
+
+<p style="margin-top:32px;font-size:13px;color:var(--muted);line-height:1.6"><strong>À propos de l'auteur :</strong> Aymeric Dussauze est économiste de la construction (Titre Professionnel Niveau 5 HUPSO) et fondateur d'ADORA. Il accompagne particuliers, architectes et maîtres d'ouvrage en Normandie et en Île-de-France sur le chiffrage, la rédaction des pièces écrites et le pilotage de chantiers.</p>
+
+<p style="text-align:center;margin-top:32px"><a href="blog.html" style="color:var(--blue);font-weight:600">← Retour au blog</a> · <a href="audit-avant-achat-immobilier.html" style="color:var(--blue);font-weight:600">Audit avant achat immobilier →</a></p>
+
+</div>
+
+<footer class="footer">
+<div class="footer-inner">
+  <div class="footer-brand">
+    <strong>ADORA</strong>
+    <p>Économiste de la construction<br>Normandie &amp; Île-de-France</p>
+  </div>
+  <div class="footer-col">
+    <div class="footer-col-title">Outils</div>
+    <a href="simulateur.html">Simulateur aides</a>
+    <a href="estimateur.html">Estimateur travaux</a>
+    <a href="audit-avant-achat.html">Audit avant achat</a>
+    <a href="sur-mesure.html">Sur mesure</a>
+  </div>
+  <div class="footer-col">
+    <div class="footer-col-title">ADORA</div>
+    <a href="a-propos.html">À propos</a>
+    <a href="professionnels.html">Professionnels</a>
+    <a href="partenaires.html">Partenaires</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <div class="footer-col footer-contact">
+    <div class="footer-col-title">Contact</div>
+    <a href="tel:+33672010767">06 72 01 07 67</a>
+    <a href="mailto:aymericdussauze@gmail.com">aymericdussauze@gmail.com</a>
+    <a href="https://adora-economie.fr">adora-economie.fr</a>
+  </div>
+</div>
+<div class="footer-legal">© 2026 ADORA · EI · SIRET 532 886 918 00020 · TVA non applicable, art. 293B du CGI<br><a href="mentions-legales.html">Mentions légales</a> · <a href="politique-confidentialite.html">Confidentialité</a> · <a href="cgv.html">CGV</a></div>
+</footer>
+<script>
+document.addEventListener("DOMContentLoaded",()=>{
+  const obs=new IntersectionObserver(e=>e.forEach(el=>{if(el.isIntersecting){el.target.classList.add("visible");obs.unobserve(el.target)}}),{threshold:.12});
+  document.querySelectorAll(".reveal").forEach(el=>obs.observe(el));
+});
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M0LENY960B"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","G-M0LENY960B");</script>
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"3f8ca9a1113f413a990a17c08ab83442"}'></script>
+</body>
+</html>
