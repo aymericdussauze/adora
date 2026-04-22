@@ -12,8 +12,14 @@
 <link rel="preconnect" href="https://browser.sentry-cdn.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Montserrat:wght@500;700;800;900&display=swap" rel="stylesheet">
 
-<title>Blog — ADORA · Économiste de la construction</title>
-<meta name="description" content="Blog ADORA : articles et guides sur la rénovation, les aides MaPrimeRénov' 2026, les pièges des devis d'artisans et l'économie de la construction. Par Aymeric Dussauze, économiste de la construction en Normandie et Île-de-France.">
+<title>Choisir sa gamme de rénovation 2026 : éco, standard, confort, HDG — ADORA Blog</title>
+<meta name="description" content="Éco, standard, confort ou haut de gamme : quelle gamme choisir pour votre rénovation ? Ratios Batichiffrage 2026, critères de choix, exemple chiffré maison 120 m².">
+
+<meta property="og:title" content="Choisir sa gamme de rénovation : éco, standard, confort ou haut de gamme">
+<meta property="og:description" content="Comparaison chiffrée des 4 gammes de rénovation, critères de choix et exemple concret maison 120 m².">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://adora-economie.fr/choisir-sa-gamme-renovation.html">
+
 <style>
 
 /* ═══ ADORA PropTech Design System v2 ═══ */
@@ -285,17 +291,9 @@ img{max-width:100%;height:auto}
 @media(max-width:480px){
   .stats-row{grid-template-columns:1fr}
 }
-/* ═══ MOBILE FIXES — 21/04/2026 ═══ */
-.cta-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;max-width:520px;margin:0 auto}
-@media(max-width:540px){
-  .cta-grid{grid-template-columns:1fr}
-}
-@media(max-width:700px){
-  .nav-links .nav-cta{width:100%;text-align:center;margin-top:8px}
-  .footer-contact a{word-break:break-all}
-}
 
 </style>
+<link rel="canonical" href="https://adora-economie.fr/choisir-sa-gamme-renovation.html">
     <script defer src="https://browser.sentry-cdn.com/8.0.0/bundle.min.js" crossorigin="anonymous"></script>
     <script>Sentry.init({dsn:"https://14b68c10a24c3da4127332e14fd20359@o4511253060976640.ingest.de.sentry.io/4511253075132496",tracesSampleRate:0,replaysSessionSampleRate:0});</script>
 </head>
@@ -314,130 +312,250 @@ img{max-width:100%;height:auto}
   <button class="nav-burger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">&#9776;</button>
 </div>
 </nav>
+<style>
+/* Article specifics */
+.article-hero{background:var(--navy);padding:56px 0 44px;color:var(--white)}
+.article-meta{display:flex;gap:16px;align-items:center;margin-bottom:16px;font-size:13px;color:rgba(214,228,240,.5);flex-wrap:wrap}
+.article-meta span{display:flex;align-items:center;gap:6px}
+.article-tag{padding:4px 10px;background:rgba(34,211,238,.15);color:var(--accent);border-radius:6px;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.5px}
+.article-hero h1{font-size:clamp(26px,4vw,38px);font-weight:900;letter-spacing:-.02em;margin-bottom:12px;max-width:720px}
+.article-hero h1 em{font-style:normal;color:var(--accent)}
+.article-hero .lead{font-size:16px;color:rgba(214,228,240,.7);max-width:620px;line-height:1.7}
+.article-body{max-width:720px;margin:0 auto;padding:60px 28px}
+.article-body h2{font-size:22px;font-weight:800;color:var(--navy);margin:48px 0 14px}
+.article-body h2:first-of-type{margin-top:0}
+.article-body h3{font-size:17px;font-weight:700;color:var(--navy);margin:28px 0 10px}
+.article-body p{font-size:16px;line-height:1.8;margin-bottom:16px;color:var(--txt)}
+.article-body ul,.article-body ol{padding-left:24px;margin-bottom:16px}
+.article-body li{font-size:15px;line-height:1.7;margin-bottom:8px}
+.article-body strong{color:var(--navy)}
+.article-body blockquote{border-left:3px solid var(--accent);padding:16px 24px;margin:24px 0;background:var(--pale);border-radius:0 10px 10px 0;font-size:15px;color:var(--muted)}
+.article-cta{background:var(--navy);border-radius:16px;padding:40px;text-align:center;color:var(--white);margin:48px 0}
+.article-cta h3{color:var(--white);font-size:22px;margin-bottom:8px}
+.article-cta p{color:rgba(237,233,254,.7);margin-bottom:20px;font-size:15px}
 
-<!-- HERO -->
-<section class="page-hero" style="padding:60px 0 50px">
-  <div class="container" style="text-align:center">
-    <span class="section-label" style="color:var(--accent)">Blog</span>
-    <h1 style="font-size:clamp(28px,4vw,42px);font-weight:900;letter-spacing:-.02em;margin-bottom:14px;position:relative">
-      Rénovation, aides, <em style="font-style:normal;color:var(--accent)">chiffres</em>
-    </h1>
-    <p class="lead" style="font-size:16px;color:rgba(214,228,240,.75);max-width:520px;margin:0 auto;line-height:1.7;position:relative">
-      Articles pratiques sur l'économie de la construction, les aides à la rénovation, et les pièges à éviter avant de signer.
-    </p>
+/* Data table */
+.data-table{width:100%;border-collapse:separate;border-spacing:0;border-radius:12px;overflow:hidden;border:1px solid var(--border);margin:24px 0}
+.data-table thead th{background:var(--navy);color:var(--white);padding:14px 18px;font-size:13px;font-weight:700;text-align:left;letter-spacing:.3px}
+.data-table thead th:last-child{text-align:right}
+.data-table tbody td{padding:14px 18px;border-bottom:1px solid var(--border);font-size:14px;color:var(--txt)}
+.data-table tbody tr:last-child td{border-bottom:none}
+.data-table tbody tr:nth-child(even) td{background:var(--pale)}
+.data-table tbody td:last-child{text-align:right;font-family:'Montserrat',sans-serif;font-weight:700;color:var(--navy);white-space:nowrap}
+.data-table .lot-name{font-weight:600;color:var(--navy)}
+.data-table .lot-desc{font-size:12px;color:var(--muted);margin-top:2px}
+
+/* Level cards */
+.level-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:24px 0}
+.level-card{border:1px solid var(--border);border-radius:12px;padding:24px 20px;text-align:center;transition:all .25s}
+.level-card:hover{box-shadow:var(--shadow-hover);transform:translateY(-2px)}
+.level-card-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:8px}
+.level-card-price{font-family:'Montserrat',sans-serif;font-size:24px;font-weight:800;color:var(--navy);margin-bottom:6px}
+.level-card-price small{font-size:14px;font-weight:600;color:var(--muted)}
+.level-card-desc{font-size:13px;color:var(--muted);line-height:1.5}
+.level-card.green{border-color:rgba(45,139,85,.3);background:rgba(45,139,85,.03)}.level-card.green .level-card-label{color:#2D8B55}
+.level-card.blue{border-color:rgba(34,211,238,.3);background:rgba(34,211,238,.03)}.level-card.blue .level-card-label{color:var(--blue)}
+.level-card.navy{border-color:rgba(13,16,37,.15);background:rgba(13,16,37,.02)}.level-card.navy .level-card-label{color:var(--navy)}
+
+/* Coeff table */
+.coeff-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:24px 0}
+.coeff-card{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;border:1px solid var(--border);border-radius:10px;font-size:14px}
+.coeff-card-region{font-weight:600;color:var(--navy)}
+.coeff-card-val{font-family:'Montserrat',sans-serif;font-weight:700;font-size:15px;padding:4px 10px;border-radius:6px}
+.coeff-card-val.up{color:#991B1B;background:#FEF2F2}
+.coeff-card-val.neutral{color:var(--blue);background:rgba(34,211,238,.08)}
+.coeff-card-val.down{color:#2D8B55;background:rgba(45,139,85,.08)}
+
+/* Callout box */
+.callout{background:var(--pale);border:1px solid var(--border);border-radius:12px;padding:24px;margin:24px 0}
+.callout-title{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:8px;display:flex;align-items:center;gap:8px}
+
+/* Error grid */
+.error-list{display:flex;flex-direction:column;gap:12px;margin:16px 0}
+.error-item{display:flex;gap:14px;padding:16px;border:1px solid var(--border);border-radius:10px}
+.error-num{width:28px;height:28px;border-radius:8px;background:#FEF2F2;color:#991B1B;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0}
+.error-text{font-size:14px;line-height:1.6}
+.error-text strong{display:block;color:var(--navy);margin-bottom:2px}
+
+@media(max-width:768px){
+  .level-grid{grid-template-columns:1fr}
+  .coeff-grid{grid-template-columns:1fr}
+  .data-table thead th,.data-table tbody td{padding:10px 12px;font-size:13px}
+}
+</style>
+
+<style>
+.faq-item{border-bottom:1px solid var(--border)}
+.faq-q{padding:18px 0;font-size:15px;font-weight:600;color:var(--navy);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.faq-q::after{content:'+';font-size:20px;color:var(--muted);transition:transform .3s;flex-shrink:0}
+.faq-item.open .faq-q::after{content:'−'}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s ease;font-size:14px;color:var(--muted);line-height:1.7}
+.faq-item.open .faq-a{max-height:500px;padding-bottom:18px}
+/* ═══ MOBILE FIXES — 21/04/2026 ═══ */
+@media(max-width:700px){
+  .nav-links .nav-cta{width:100%;text-align:center;margin-top:8px}
+  .footer-contact a{word-break:break-all}
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Choisir sa gamme de rénovation : éco, standard, confort ou haut de gamme",
+  "description": "Comparaison chiffrée des 4 gammes de rénovation, critères de choix et exemple concret maison 120 m².",
+  "author": {"@type": "Person", "name": "Aymeric Dussauze", "jobTitle": "Économiste de la construction"},
+  "publisher": {"@type": "Organization", "name": "ADORA"},
+  "datePublished": "2026-04-22",
+  "dateModified": "2026-04-22",
+  "mainEntityOfPage": "https://adora-economie.fr/choisir-sa-gamme-renovation.html"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "Quelle est la différence entre gamme et niveau de rénovation ?", "acceptedAnswer": {"@type": "Answer", "text": "Le niveau de rénovation décrit l'ampleur des travaux (rafraîchissement, rénovation lourde, rénovation complète). La gamme décrit le standing des matériaux et équipements utilisés pour un niveau donné. Vous pouvez faire une rénovation complète en gamme éco ou en gamme haut de gamme : même périmètre de travaux, même entreprises potentielles, mais budget du simple au sextuple."}},
+    {"@type": "Question", "name": "Peut-on mélanger plusieurs gammes dans un même chantier ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui, c'est même fréquent et recommandé. Monter en gamme sur les pièces à vivre (cuisine, salle de bain, pièces de réception) et rester en standard sur les pièces techniques ou les chambres permet d'équilibrer le budget. Attention toutefois à ne pas créer de rupture visuelle trop forte : une salle de bain HDG avec des portes intérieures entrée de gamme crée un déséquilibre perçu comme du sur-jeu."}},
+    {"@type": "Question", "name": "La gamme haut de gamme se rentabilise-t-elle à la revente ?", "acceptedAnswer": {"@type": "Answer", "text": "Rarement en totalité. Le marché local impose un plafond de prix au m². Si votre quartier plafonne à 3 500 €/m² à la revente, investir 1 920 €/m² en HDG sur une maison achetée 1 800 €/m² vous positionne au-dessus du marché. Une partie de la prime est récupérée par l'attractivité (vente plus rapide, négociation limitée), mais la rentabilité stricte de la surqualité n'est presque jamais atteinte hors zones ultra-premium."}},
+    {"@type": "Question", "name": "Peut-on commencer en standard et monter en gamme plus tard ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui pour les revêtements (peinture, sols, faïence) et l'équipement cuisine-sanitaire. Non pour les lots techniques (électricité, plomberie, chauffage, isolation) où une montée en gamme ultérieure implique une dépose-repose coûteuse. Règle opérationnelle : faire les bons choix de gamme dès le départ sur les lots invisibles et garder la flexibilité sur les finitions."}},
+    {"@type": "Question", "name": "Comment un économiste peut-il aider à choisir la bonne gamme ?", "acceptedAnswer": {"@type": "Answer", "text": "En chiffrant les 4 scénarios sur votre projet précis, avec les coefficients de votre département et l'état réel de votre bâti. L'estimateur en ligne vous donne déjà une fourchette gratuite par gamme. Un Pack AMO permet d'aller plus loin : arbitrages lot par lot, mix de gammes optimisé selon vos priorités (durée de détention, revente, usage, budget), et CCTP qui contractualise le niveau attendu avec les entreprises."}}
+  ]
+}
+</script>
+
+<section class="article-hero">
+  <div class="container">
+    <div class="article-meta">
+      <span class="article-tag">Guide rénovation</span>
+      <span>Avril 2026</span>
+      <span>7 min de lecture</span>
+    </div>
+    <h1>Choisir sa <em>gamme</em> de rénovation : éco, standard, confort ou haut de gamme</h1>
+    <p class="lead">Les 4 gammes qui structurent mes chiffrages, leurs ratios réels, les critères pour choisir la bonne — et les pièges à éviter.</p>
   </div>
 </section>
 
-<!-- COMING SOON -->
-<section class="section" style="padding:80px 0">
-  <div class="container" style="max-width:640px;text-align:center">
-    <div style="width:72px;height:72px;border-radius:18px;background:rgba(34,211,238,.08);display:flex;align-items:center;justify-content:center;margin:0 auto 24px;font-size:32px">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M17 3a2.83 2.83 0 114 4L7.5 20.5 2 22l1.5-5.5L17 3z"/></svg>
-    </div>
-    <h2 style="font-size:28px;font-weight:800;color:var(--navy);margin-bottom:12px">Guides pratiques</h2>
-    <p style="font-size:16px;color:var(--muted);line-height:1.7;margin-bottom:32px">
-      Des articles opérationnels sur les aides à la rénovation, les prix de travaux et les pièges à éviter avant un achat immobilier. Par un économiste de la construction, pas un agrégateur.
-    </p>
+<div class="article-body">
 
-    <div style="background:var(--pale);border:1px solid var(--border);border-radius:var(--radius);padding:32px;text-align:left;margin-bottom:40px">
-      <h3 style="font-size:16px;font-weight:700;color:var(--navy);margin-bottom:16px">Articles publiés</h3>
-      <div style="display:flex;flex-direction:column;gap:14px">
-      <a href="choisir-sa-gamme-renovation.html" style="display:flex;gap:14px;align-items:start;text-decoration:none;padding:14px;border-radius:10px;background:rgba(34,211,238,.04);border:1px solid rgba(34,211,238,.15)">
-        <span style="background:var(--accent);color:var(--navy);min-width:24px;height:24px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0">✓</span>
-        <div>
-          <div style="font-weight:700;color:var(--navy);margin-bottom:2px">Choisir sa gamme de rénovation : éco, standard, confort ou haut de gamme<span style="display:inline-block;background:rgba(167,139,250,.15);color:var(--green);font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;text-transform:uppercase;letter-spacing:.8px;margin-left:8px;vertical-align:middle;font-family:'Montserrat',sans-serif">Nouveau</span></div>
-          <div style="font-size:13px;color:var(--muted)">4 gammes chiffrées au m², 4 critères de choix, exemple maison 120 m² Eure — 7 min</div>
-        </div>
-      </a>
-      <a href="15-lots-tce-expliques-particulier.html" style="display:flex;gap:14px;align-items:start;text-decoration:none;padding:14px;border-radius:10px;background:rgba(34,211,238,.04);border:1px solid rgba(34,211,238,.15)">
-        <span style="background:var(--accent);color:var(--navy);min-width:24px;height:24px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0">✓</span>
-        <div>
-          <div style="font-weight:700;color:var(--navy);margin-bottom:2px">Les 15 lots TCE expliqués à un particulier</div>
-          <div style="font-size:13px;color:var(--muted)">La grille professionnelle à 15 lots, ratios Batichiffrage, cas concret 120 m² — 7 min</div>
-        </div>
-      </a>
-      <a href="pieges-devis-artisans.html" style="display:flex;gap:14px;align-items:start;text-decoration:none;padding:14px;border-radius:10px;background:rgba(34,211,238,.04);border:1px solid rgba(34,211,238,.15)">
-        <span style="background:var(--accent);color:var(--navy);min-width:24px;height:24px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0">✓</span>
-        <div>
-          <div style="font-weight:700;color:var(--navy);margin-bottom:2px">7 pièges des devis d'artisans en 2026 : les détecter avant de signer</div>
-          <div style="font-size:13px;color:var(--muted)">Forfait global, F&amp;P agrégée, décennale douteuse, échéancier déséquilibré — 7 pièges classiques et leur parade, par un économiste neutre — 8 min</div>
-        </div>
-      </a>
-      <a href="prix-renovation-m2-2026.html" style="display:flex;gap:14px;align-items:start;text-decoration:none;padding:14px;border-radius:10px;background:rgba(34,211,238,.04);border:1px solid rgba(34,211,238,.15)">
-        <span style="background:var(--accent);color:var(--navy);min-width:24px;height:24px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0">✓</span>
-        <div>
-          <div style="font-weight:700;color:var(--navy);margin-bottom:2px">Prix rénovation au m² en 2026 : guide complet par poste TCE</div>
-          <div style="font-size:13px;color:var(--muted)">Fourchettes Batichiffrage par lot, coefficients régionaux, erreurs classiques d'estimation — 12 min</div>
-        </div>
-      </a>
-      <a href="audit-avant-achat-immobilier.html" style="display:flex;gap:14px;align-items:start;text-decoration:none;padding:14px;border-radius:10px;background:rgba(34,211,238,.04);border:1px solid rgba(34,211,238,.15)">
-        <span style="background:var(--accent);color:var(--navy);min-width:24px;height:24px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0">✓</span>
-        <div>
-          <div style="font-weight:700;color:var(--navy);margin-bottom:2px">Audit avant achat immobilier : ce qu'analyse un économiste</div>
-          <div style="font-size:13px;color:var(--muted)">Ce que le DDT ne montre pas, cas concrets, et comment un audit de 499 € peut vous faire économiser des milliers d'euros — 8 min</div>
-        </div>
-      </a>
-      <a href="maprimerenov-2026-bareme.html" style="display:flex;gap:14px;align-items:start;text-decoration:none;padding:14px;border-radius:10px;background:rgba(34,211,238,.04);border:1px solid rgba(34,211,238,.15)">
-        <span style="background:var(--accent);color:var(--navy);min-width:24px;height:24px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0">✓</span>
-        <div>
-          <div style="font-weight:700;color:var(--navy);margin-bottom:2px">MaPrimeRénov' 2026 : barèmes, plafonds et conditions à jour</div>
-          <div style="font-size:13px;color:var(--muted)">4 profils de revenus, parcours monogeste vs ampleur, cumul CEE/éco-PTZ/TVA 5,5 % — 10 min</div>
-        </div>
-      </a>
-      </div>
-    </div>
+<p>Deux maisons identiques dans la même rue, toutes deux rénovées cette année. La première a coûté 35 000 €, la deuxième 230 000 €. Non, ce n'est pas une erreur de frappe. Elles n'ont pas la même surface ? Si, 120 m² toutes les deux. Elles n'ont pas été rénovées de la même manière ? Si, tous les lots ont été traités dans les deux cas. Alors comment on arrive à un écart de 195 000 € ?</p>
 
-    <p style="font-size:15px;color:var(--txt);margin-bottom:24px;font-weight:500">Envie d'être prévenu(e) à la publication ?</p>
-    
-    <form id="blogNewsletter" style="display:flex;gap:10px;max-width:440px;margin:0 auto">
-      <input type="hidden" name="_subject" value="[Blog ADORA] Inscription newsletter">
-      <input type="hidden" name="_formType" value="blog_newsletter">
-      <input type="email" name="email" id="nlEmail" required placeholder="votre@email.com" style="flex:1;padding:12px 16px;border:1.5px solid var(--border);border-radius:8px;font-size:15px;font-family:'Plus Jakarta Sans',sans-serif">
-      <button type="submit" class="btn btn-accent" style="padding:12px 24px;font-size:14px;white-space:nowrap">M'inscrire</button>
-    </form>
-    <div id="nlSuccess" style="display:none;max-width:440px;margin:0 auto;padding:16px 24px;background:rgba(5,150,105,.08);border:1px solid rgba(5,150,105,.2);border-radius:10px;text-align:center">
-      <p style="font-size:15px;color:#059669;font-weight:600;margin:0">✓ Merci ! Votre inscription a été prise en compte.</p>
-      <p style="font-size:13px;color:var(--muted);margin-top:6px">Vous recevrez un email à chaque nouvel article publié.</p>
-    </div>
-    <p id="nlNote" style="font-size:12px;color:var(--muted);margin-top:10px">Pas de spam. 1 email par article publié, c'est tout.</p>
-    <script>
-    document.getElementById("blogNewsletter").addEventListener("submit", async function(e) {
-      e.preventDefault();
-      var btn = this.querySelector("button");
-      btn.textContent = "Envoi...";
-      btn.disabled = true;
-      try {
-        var resp = await fetch("https://formspree.io/f/maqaewbn", {
-          method: "POST",
-          body: new FormData(this),
-          headers: { "Accept": "application/json" }
-        });
-        if (resp.ok) {
-          this.style.display = "none";
-          document.getElementById("nlNote").style.display = "none";
-          document.getElementById("nlSuccess").style.display = "block";
-        } else { throw new Error(); }
-      } catch(err) {
-        btn.textContent = "M'inscrire";
-        btn.disabled = false;
-        alert("Erreur lors de l'inscription. Réessayez ou contactez-moi directement.");
-      }
-    });
-    </script>
+<p>La réponse est un mot qu'on entend peu dans les conversations entre particuliers mais tout le temps dans les cabinets d'économistes : la <strong>gamme</strong>. Chaque lot de travaux peut se chiffrer sur 4 niveaux de standing. C'est la décision budgétaire la plus structurante de votre projet — et aussi la plus mal comprise.</p>
+
+<h2>Qu'est-ce qu'une gamme (et pourquoi ce n'est pas un niveau de rénovation)</h2>
+
+<p>D'abord une distinction qui coince beaucoup de particuliers. Le <strong>niveau de rénovation</strong> décrit <em>l'ampleur</em> des travaux : rafraîchissement, rénovation lourde, rénovation complète. La <strong>gamme</strong> décrit le <em>standing</em> des matériaux et équipements utilisés pour un niveau donné.</p>
+
+<p>Vous pouvez faire une rénovation complète en gamme éco (tous les lots refaits, mais avec du matériel d'entrée de gamme) ou une rénovation complète en haut de gamme (mêmes lots, matériel premium). Le périmètre de travaux est identique. Les entreprises candidates peuvent être les mêmes. Mais le budget peut varier du simple au sextuple.</p>
+
+<p>Chez ADORA, je structure tous mes chiffrages sur 4 gammes standardisées, calibrées sur la base <strong>Batichiffrage 2025</strong>. C'est la même grille que j'applique que vous rénoviez une maison de 80 m² dans l'Eure ou une villa de 250 m² en Île-de-France.</p>
+
+<h2>Les 4 gammes chiffrées, ratio au m²</h2>
+
+<p>Voici le tableau de référence. Les ratios sont exprimés en € HT/m² de surface habitable, sur une <strong>rénovation complète tous lots TCE</strong>. Ils ne s'appliquent pas à un rafraîchissement (où la notion de gamme reste pertinente mais les fourchettes absolues sont plus basses).</p>
+
+<div style="overflow-x:auto;-webkit-overflow-scrolling:touch">
+<table class="data-table">
+  <thead>
+    <tr><th>Gamme</th><th>Positionnement</th><th>€ HT/m²</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><span class="lot-name">Éco</span><div class="lot-desc">Matériel d'entrée de gamme, fonctions basiques assurées</div></td><td>Rénovation locative, résidence secondaire, budget serré</td><td>297</td></tr>
+    <tr><td><span class="lot-name">Standard</span><div class="lot-desc">Qualité courante, milieu de gamme marques reconnues</div></td><td>Résidence principale classique, bon rapport qualité-prix</td><td>649</td></tr>
+    <tr><td><span class="lot-name">Confort</span><div class="lot-desc">Matériaux haut de gamme, équipements soignés, finitions détaillées</div></td><td>Résidence principale de standing, recherche de qualité visible</td><td>1 150</td></tr>
+    <tr><td><span class="lot-name">Haut de gamme</span><div class="lot-desc">Matériaux premium, sur-mesure, marques prestige</div></td><td>Patrimoine d'exception, quartiers haut marché, exigence esthétique forte</td><td>1 920</td></tr>
+  </tbody>
+</table>
+</div>
+
+<div class="callout">
+<div class="callout-title">Lecture des ratios</div>
+<p style="margin:0;font-size:14px;color:var(--muted);line-height:1.7">Ces ratios intègrent les 15 lots TCE. Pour comprendre comment ils se décomposent par lot, consultez <a href="15-lots-tce-expliques-particulier.html">mon article sur les 15 lots TCE</a>. Les chiffres sont calibrés sur une maison individuelle moyenne ; ils doivent être pondérés par les coefficients de votre département, l'ancienneté du bâti et son état initial.</p>
+</div>
+
+<h2>Le même projet, 4 gammes : l'exemple qui parle</h2>
+
+<p>Reprenons l'exemple de la maison 120 m² évoquée en intro. Voici ce que donnent les 4 gammes, <strong>avec les coefficients correcteurs appliqués</strong> (département Eure, bâti pré-1948, état travaux importants).</p>
+
+<div style="overflow-x:auto;-webkit-overflow-scrolling:touch">
+<table class="data-table">
+  <thead>
+    <tr><th>Gamme</th><th>Budget total</th><th>Écart vs standard</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><span class="lot-name">Éco</span><div class="lot-desc">Rénovation fonctionnelle</div></td><td>45 800 €</td><td>−54 %</td></tr>
+    <tr><td><span class="lot-name">Standard</span><div class="lot-desc">Rénovation classique de qualité courante</div></td><td>100 000 €</td><td>référence</td></tr>
+    <tr><td><span class="lot-name">Confort</span><div class="lot-desc">Montée en gamme visible, finitions soignées</div></td><td>177 200 €</td><td>+77 %</td></tr>
+    <tr><td><span class="lot-name">Haut de gamme</span><div class="lot-desc">Matériaux premium, sur-mesure</div></td><td>295 900 €</td><td>+196 %</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Six fois l'écart entre éco et haut de gamme sur le même projet. C'est considérable. Et c'est la raison pour laquelle comparer deux devis sans connaître la gamme ciblée n'a aucun sens : un devis « rénovation complète maison 120 m² » peut légitimement aller de 45 k€ à 300 k€ selon la gamme sous-jacente.</p>
+
+<blockquote>La question « combien coûte une rénovation au m² ? » n'a pas de réponse unique. La vraie question est : « quelle gamme pour quel projet ? »</blockquote>
+
+<h2>4 critères pour choisir votre gamme</h2>
+
+<p>Il n'y a pas de bonne ou de mauvaise gamme dans l'absolu. Il y a une bonne gamme pour votre projet, compte tenu de 4 critères que j'examine systématiquement avec mes clients avant tout chiffrage détaillé.</p>
+
+<h3>Critère 1 — Durée de détention prévue</h3>
+
+<p>Si vous prévoyez d'habiter la maison au moins 15 à 20 ans, vous amortissez l'investissement et la montée en gamme se défend par le confort quotidien. Si l'horizon est plus court (5 à 10 ans), la gamme standard reste généralement le meilleur compromis : au-delà, vous investissez pour le futur acquéreur plus que pour vous-même.</p>
+
+<h3>Critère 2 — Usage du bien</h3>
+
+<p>Une résidence principale justifie un niveau de confort différent d'une résidence secondaire occupée 6 semaines par an, qui elle-même se justifie différemment d'un bien locatif. Pour un investissement locatif classique, la gamme éco ou standard suffit — la gamme confort n'augmente pas proportionnellement le loyer.</p>
+
+<h3>Critère 3 — Marché local</h3>
+
+<p>Dans un quartier où le plafond de prix à la revente s'établit à 3 000 €/m², passer en haut de gamme (1 920 €/m² de travaux) sur une maison achetée 1 800 €/m² vous positionne nettement au-dessus du marché. Le marché local est un plafond qu'il faut connaître avant de décider de la gamme.</p>
+
+<h3>Critère 4 — Cohérence entre lots</h3>
+
+<p>Une cuisine HDG dans une maison aux peintures éco crée une dissonance. Le cerveau d'un visiteur repère immédiatement le déséquilibre. En rénovation, la cohérence visuelle entre les lots compte autant que la gamme absolue : mieux vaut une maison homogène en standard qu'un mix confort/éco mal dosé.</p>
+
+<h2>3 erreurs classiques quand on choisit sa gamme</h2>
+
+<div class="error-list">
+  <div class="error-item">
+    <div class="error-num">1</div>
+    <div class="error-text"><strong>Choisir HDG sur un bien de revente à 5 ans</strong>L'erreur la plus coûteuse. Vous investissez pour un futur acquéreur qui n'existe pas forcément. Sur un bien destiné à la revente à horizon 5-10 ans, la gamme confort suffit à différencier le bien sur le marché sans surinvestir.</div>
   </div>
-</section>
-
-<!-- OUTILS -->
-<section class="section" style="background:var(--pale);padding:60px 0">
-  <div class="container" style="text-align:center">
-    <h2 style="font-size:22px;font-weight:800;color:var(--navy);margin-bottom:8px">Besoin de chiffres concrets ?</h2>
-    <p style="font-size:15px;color:var(--muted);margin-bottom:32px">Mes outils gratuits vous donnent des réponses en quelques minutes.</p>
-    <div class="cta-grid">
-      <a href="simulateur.html" class="btn btn-accent" style="font-size:14px;padding:14px 20px">Simuler mes aides</a>
-      <a href="estimateur-outil.html" class="btn" style="font-size:14px;padding:14px 20px;background:var(--navy);color:var(--white);border-radius:10px;font-weight:700">Estimer mes travaux</a>
-    </div>
+  <div class="error-item">
+    <div class="error-num">2</div>
+    <div class="error-text"><strong>Mixer les gammes dans le désordre</strong>Une cuisine premium avec des portes intérieures entrée de gamme, un dressing sur-mesure dans une chambre aux murs mal enduits. Le mix peut être pertinent (confort sur les pièces à vivre, standard sur les pièces techniques) à condition d'être <strong>délibéré et équilibré</strong>, pas dicté au coup par coup.</div>
   </div>
-</section>
+  <div class="error-item">
+    <div class="error-num">3</div>
+    <div class="error-text"><strong>Sous-équiper les lots techniques invisibles</strong>L'isolation, l'électricité, la plomberie et le chauffage sont tentants à passer en éco — on ne les voit pas. Sauf que ce sont aussi les lots qu'on ne peut pas reprendre sans gros œuvre. <strong>Règle opérationnelle : au moins standard sur les lots invisibles, flexible sur les finitions.</strong></div>
+  </div>
+</div>
+
+<div class="article-cta">
+  <h3>Quelle gamme pour votre projet ?</h3>
+  <p>L'estimateur ADORA chiffre gratuitement votre rénovation dans les 4 gammes, avec les coefficients de votre département.</p>
+  <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+    <a href="estimateur-outil.html" class="btn btn-accent" style="font-size:14px;padding:14px 28px">Estimer mes travaux</a>
+    <a href="simulateur.html" class="btn" style="font-size:14px;padding:14px 28px;background:rgba(255,255,255,.1);color:var(--white);border-radius:10px;font-weight:700">Simuler mes aides</a>
+  </div>
+</div>
+
+<h2>Questions fréquentes</h2>
+
+<div style="display:flex;flex-direction:column;gap:0">
+  <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Quelle est la différence entre gamme et niveau de rénovation ?</div><div class="faq-a">Le niveau de rénovation décrit l'ampleur des travaux (rafraîchissement, rénovation lourde, rénovation complète). La gamme décrit le standing des matériaux et équipements utilisés pour un niveau donné. Vous pouvez faire une rénovation complète en gamme éco ou en gamme haut de gamme : même périmètre, budget du simple au sextuple.</div></div>
+  <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Peut-on mélanger plusieurs gammes dans un même chantier ?</div><div class="faq-a">Oui, c'est même fréquent et recommandé. Monter en gamme sur les pièces à vivre (cuisine, salle de bain, pièces de réception) et rester en standard sur les pièces techniques ou les chambres permet d'équilibrer le budget. Attention à ne pas créer de rupture visuelle trop forte : une salle de bain HDG avec des portes intérieures entrée de gamme crée un déséquilibre perçu comme du sur-jeu.</div></div>
+  <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">La gamme haut de gamme se rentabilise-t-elle à la revente ?</div><div class="faq-a">Rarement en totalité. Le marché local impose un plafond de prix au m². Si votre quartier plafonne à 3 500 €/m² à la revente, investir 1 920 €/m² en HDG sur une maison achetée 1 800 €/m² vous positionne au-dessus du marché. Une partie de la prime est récupérée par l'attractivité (vente plus rapide, négociation limitée), mais la rentabilité stricte de la surqualité n'est presque jamais atteinte hors zones ultra-premium.</div></div>
+  <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Peut-on commencer en standard et monter en gamme plus tard ?</div><div class="faq-a">Oui pour les revêtements (peinture, sols, faïence) et l'équipement cuisine-sanitaire. Non pour les lots techniques (électricité, plomberie, chauffage, isolation) où une montée en gamme ultérieure implique une dépose-repose coûteuse. Règle opérationnelle : faire les bons choix de gamme dès le départ sur les lots invisibles et garder la flexibilité sur les finitions. J'explique les pièges du phasage dans l'<a href="pieges-devis-artisans.html">article sur les pièges des devis d'artisans</a>.</div></div>
+  <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Comment un économiste peut-il aider à choisir la bonne gamme ?</div><div class="faq-a">En chiffrant les 4 scénarios sur votre projet précis, avec les coefficients de votre département et l'état réel de votre bâti. L'estimateur en ligne vous donne déjà une fourchette gratuite par gamme. Un Pack AMO permet d'aller plus loin : arbitrages lot par lot, mix de gammes optimisé selon vos priorités, et CCTP qui contractualise le niveau attendu avec les entreprises.</div></div>
+</div>
+
+<p style="margin-top:32px;font-size:13px;color:var(--muted);line-height:1.6"><strong>À propos de l'auteur :</strong> Aymeric Dussauze est économiste de la construction (Titre Professionnel Niveau 5 HUPSO) et fondateur d'ADORA. Il accompagne particuliers, architectes et maîtres d'ouvrage en Normandie et en Île-de-France sur le chiffrage, la rédaction des pièces écrites et le pilotage de chantiers.</p>
+
+<p style="text-align:center;margin-top:32px"><a href="blog.html" style="color:var(--blue);font-weight:600">← Retour au blog</a> · <a href="prix-renovation-m2-2026.html" style="color:var(--blue);font-weight:600">Prix rénovation m² 2026 →</a></p>
+
+</div>
 
 <footer class="footer">
 <div class="footer-inner">
