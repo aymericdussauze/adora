@@ -9,10 +9,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <title>Estimateur de travaux — ADORA</title>
 <meta name="description" content="Estimez gratuitement le coût de vos travaux de rénovation en 2 minutes. 15 postes, coefficients régionaux, rapport PDF professionnel.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://browser.sentry-cdn.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://browser.sentry-cdn.com" crossorigin>
+<link rel="stylesheet" href="/assets/fonts/adora-fonts.css">
 <style>
 :root{
   --navy:#0D1025;--surface:#1A1F3D;--deep:#080B1C;
@@ -259,8 +257,6 @@ input,select{font-family:inherit}
 .footer-legal br{margin-bottom:6px}
 
 /* Demo banner */
-
-
 
 /* Mobile call button */
 .mobile-call-btn{display:none}
@@ -1123,7 +1119,6 @@ function calculate() {
 function euros(v) {
   return new Intl.NumberFormat("fr-FR", {style:"currency", currency:"EUR", maximumFractionDigits:0}).format(v);
 }
-
 
 // ═══════════════════════════════════════════════════════════
 // LEAD GATE — Email capture avant résultats détaillés
