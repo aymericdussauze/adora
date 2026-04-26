@@ -1,0 +1,5 @@
+# GitHub Pages — Configuration Jekyll
+# Force l'inclusion du dossier .well-known qui est ignoré par défaut
+# (Jekyll exclut tous les dossiers commençant par un point)
+include:
+  - ".well-known"
