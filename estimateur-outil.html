@@ -618,6 +618,7 @@ input,select{font-family:inherit}
       <div class="lead-gate-title">Dernière étape avant vos résultats</div>
       <div class="lead-gate-sub">Renseignez votre email pour découvrir votre estimation personnalisée.</div>
       <div class="lead-gate-form">
+        <input type="text" class="lead-gate-input" id="leadFirstName" placeholder="Votre prénom" autocomplete="given-name" maxlength="50" onkeydown="if(event.key==='Enter'){event.preventDefault();unlockWithEmail()}">
         <input type="email" class="lead-gate-input" id="leadEmail" placeholder="votre@email.com" autocomplete="email" onkeydown="if(event.key==='Enter'){event.preventDefault();unlockWithEmail()}">
         <button class="lead-gate-btn" onclick="unlockWithEmail()">Voir mes résultats →</button>
       </div>
@@ -1125,25 +1126,30 @@ function euros(v) {
 // ═══════════════════════════════════════════════════════════
 function unlockWithEmail() {
   const email = document.getElementById("leadEmail").value.trim();
+  const firstName = document.getElementById("leadFirstName").value.trim();
   const errEl = document.getElementById("leadError");
   
   if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    errEl.textContent = "Adresse email invalide.";
     errEl.style.display = "block";
     return;
   }
   errEl.style.display = "none";
   
   STATE.leadEmail = email;
+  STATE.leadFirstName = firstName;
   
-  // Fire & forget lead capture
   const r = STATE.result;
+  
+  // ═══ 1. Lead capture Formspree (notif Aymeric — fire & forget) ═══
   fetch("https://formspree.io/f/maqaewbn", {
     method: "POST",
     headers: {"Content-Type":"application/json","Accept":"application/json"},
     body: JSON.stringify({
       _formType: "estimateur_lead_gratuit",
       email,
-      _subject: "[Estimateur Lead] " + (STATE.dept || "") + " · " + STATE.surface + " m² · " + euros(r.totalLow) + "-" + euros(r.totalHigh),
+      firstName,
+      _subject: "[Estimateur Lead] " + (firstName || "—") + " · " + (STATE.dept || "") + " · " + STATE.surface + " m² · " + euros(r.totalLow) + "-" + euros(r.totalHigh),
       projet: STATE.projet,
       surface: STATE.surface,
       dept: STATE.dept,
@@ -1154,24 +1160,42 @@ function unlockWithEmail() {
     })
   }).catch(() => {});
   
+  // ═══ 2. Séquence A — Worker Resend (fire & forget) ═══
+  // Trigger A1 immédiat + scheduling A2-A5 (J+1, J+3, J+7, J+29)
+  // A6 (J+90) sera gérée plus tard via Cloudflare Cron Trigger
+  fetch("https://adora-resend-sequence-a.aymericdussauze.workers.dev/sequence-a", {
+    method: "POST",
+    headers: {"Content-Type":"application/json"},
+    body: JSON.stringify({
+      email,
+      firstName,
+      deptNom: DEPT_NAMES[STATE.dept] || "",
+      surface: STATE.surface,
+      estimateMid: r.totalMid
+    })
+  }).catch(() => {});
+  
+  // ═══ 3. Tracking GA4 ═══
   if (typeof gtag === "function") {
     gtag("event", "generate_lead", { value: 0, currency: "EUR", source: "estimateur_email" });
   }
   
-  // Show gated content with smooth scroll
+  // ═══ 4. Affichage contenu gated ═══
   document.getElementById("leadGate").style.display = "none";
   const gated = document.getElementById("gatedContent");
   gated.style.display = "block";
-  
-  // Scroll vers le contenu révélé
   setTimeout(() => {
     gated.scrollIntoView({behavior: "smooth", block: "start"});
   }, 100);
   
-  // Pre-fill checkout email
+  // ═══ 5. Pre-fill checkout email + prénom ═══
   const checkoutEmail = document.getElementById("email");
   if (checkoutEmail && !checkoutEmail.value) {
     checkoutEmail.value = email;
+  }
+  const checkoutFirstName = document.getElementById("prenom");
+  if (checkoutFirstName && !checkoutFirstName.value && firstName) {
+    checkoutFirstName.value = firstName;
   }
 }
 
