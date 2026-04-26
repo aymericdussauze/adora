@@ -1,8 +1,11 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://adora-economie.fr/sitemap.xml
-
 # Email templates — non destinés à l'indexation
-User-agent: *
 Disallow: /email-templates/
+
+# Dossiers techniques
+Disallow: /.well-known/
+Disallow: /_scripts/
+
+Sitemap: https://adora-economie.fr/sitemap.xml
