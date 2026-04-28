@@ -800,6 +800,7 @@ document.getElementById("auditForm").addEventListener("submit", async function(e
       // SUCCÈS réel — GA4 + success screen
       if (typeof gtag === "function") {
         gtag("event", "audit_request", { surface: STATE.surface, type_bien: STATE.type_bien });
+        gtag("event", "form_submit", { form_id: "audit", value: 499, currency: "EUR" });
       }
       // Clear localStorage draft if exists
       try { localStorage.removeItem("adora_audit_draft"); } catch(ex) {}

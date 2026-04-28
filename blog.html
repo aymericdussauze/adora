@@ -417,6 +417,9 @@ img{max-width:100%;height:auto}
           this.style.display = "none";
           document.getElementById("nlNote").style.display = "none";
           document.getElementById("nlSuccess").style.display = "block";
+          if (typeof gtag === "function") {
+            gtag("event", "form_submit", { form_id: "newsletter_blog" });
+          }
         } else { throw new Error(); }
       } catch(err) {
         btn.textContent = "M'inscrire";
