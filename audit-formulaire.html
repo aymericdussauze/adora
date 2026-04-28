@@ -595,7 +595,7 @@ method="POST">
   <div class="footer-col footer-contact">
     <div class="footer-col-title">Contact</div>
     <a href="tel:+33660215509">06 60 21 55 09</a>
-    <a href="mailto:aymericdussauze@gmail.com">aymericdussauze@gmail.com</a>
+    <a href="mailto:contact@adora-economie.fr">contact@adora-economie.fr</a>
     <a href="https://adora-economie.fr">adora-economie.fr</a>
   </div>
 </div>
@@ -812,7 +812,7 @@ document.getElementById("auditForm").addEventListener("submit", async function(e
       var refEl = document.getElementById("successRef");
       if (refEl) refEl.textContent = refNum;
       var mailtoEl = document.getElementById("mailtoDoc");
-      if (mailtoEl) mailtoEl.href = "mailto:aymericdussauze@gmail.com?subject=" + encodeURIComponent("[AUDIT " + refNum + "] Documents pour mon audit") + "&body=" + encodeURIComponent("Bonjour,\n\nVoici mes documents pour la demande d'audit " + refNum + ".\n\nCordialement");
+      if (mailtoEl) mailtoEl.href = "mailto:contact@adora-economie.fr?subject=" + encodeURIComponent("[AUDIT " + refNum + "] Documents pour mon audit") + "&body=" + encodeURIComponent("Bonjour,\n\nVoici mes documents pour la demande d'audit " + refNum + ".\n\nCordialement");
       window.scrollTo({top: 0, behavior: "smooth"});
     } else {
       throw new Error("Formspree a répondu " + response.status);

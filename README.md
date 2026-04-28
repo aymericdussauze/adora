@@ -135,4 +135,4 @@ Coût total stack : ~75,50 €/mois
 **ADORA** — Aymeric Dussauze
 Économiste de la construction · EI · SIRET 532 886 918 00020
 TVA non applicable, art. 293B du CGI
-06 60 21 55 09 · aymericdussauze@gmail.com
+06 60 21 55 09 · contact@adora-economie.fr

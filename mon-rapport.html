@@ -97,7 +97,7 @@ a{color:var(--blue);text-decoration:none}
 </section>
 
 <div class="footer-mini">
-  ADORA · Économiste de la construction · 06 60 21 55 09 · aymericdussauze@gmail.com
+  ADORA · Économiste de la construction · 06 60 21 55 09 · contact@adora-economie.fr
 </div>
 
 <script>
@@ -150,7 +150,7 @@ async function retrieveOrder() {
       </div>
       <div class="btn-group">
         <button class="btn btn-accent" onclick="regeneratePdf('${esc(ref)}')">Régénérer mon PDF</button>
-        <a href="mailto:aymericdussauze@gmail.com?subject=Rapport%20${esc(ref)}%20-%20besoin%20d%27aide" class="btn btn-navy">Contacter ADORA</a>
+        <a href="mailto:contact@adora-economie.fr?subject=Rapport%20${esc(ref)}%20-%20besoin%20d%27aide" class="btn btn-navy">Contacter ADORA</a>
       </div>
     `;
     
@@ -203,7 +203,7 @@ async function regeneratePdf(ref) {
     window.open(url, "_blank");
     
   } catch(e) {
-    statusEl.innerHTML = '<div class="status error">Erreur de génération. Contactez-moi directement : aymericdussauze@gmail.com</div>';
+    statusEl.innerHTML = '<div class="status error">Erreur de génération. Contactez-moi directement : contact@adora-economie.fr</div>';
   }
 }
 
