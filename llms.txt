@@ -1,0 +1,43 @@
+# ADORA — Économiste de la construction
+
+> Cabinet indépendant d'économie de la construction basé à Louviers (Normandie),
+> intervenant en Eure (27), Seine-Maritime (76) et Île-de-France. Estimations
+> tous corps d'état (TCE), CCTP, DPGF, AMO et audits avant achat immobilier
+> pour particuliers, architectes, BET et maîtres d'ouvrage. Outils en ligne
+> gratuits (estimateur de travaux, simulateur d'aides MaPrimeRénov').
+> Fondé par Aymeric Dussauze.
+
+## Pages-piliers
+
+- [Accueil](https://adora-economie.fr/): Présentation des services et outils gratuits.
+- [À propos](https://adora-economie.fr/a-propos.html): Méthode et parcours d'Aymeric Dussauze, économiste de la construction.
+- [Contact](https://adora-economie.fr/contact.html): Devis gratuit, réponse sous 24 h.
+
+## Services
+
+- [Audit avant achat immobilier](https://adora-economie.fr/audit-avant-achat.html): Analyse économiste avant signature, 499 €. Pour acheteurs en Normandie et IDF.
+- [Accompagnement sur mesure](https://adora-economie.fr/sur-mesure.html): Estimation détaillée, CCTP/DPGF, suivi de chantier. À partir de 990 €.
+- [Offre professionnels](https://adora-economie.fr/professionnels.html): Renfort économiste pour architectes, BET et maîtres d'ouvrage.
+
+## Outils gratuits
+
+- [Estimateur de travaux](https://adora-economie.fr/estimateur-outil.html): Estimation par 15 lots techniques, gratuit. Rapport PDF complet 49 €.
+- [Simulateur d'aides](https://adora-economie.fr/simulateur.html): MaPrimeRénov' 2026, CEE, éco-PTZ, TVA réduite 5,5 %.
+
+## Articles de référence
+
+- [Audit avant achat immobilier : ce qu'un économiste voit que les diagnostics ne montrent pas](https://adora-economie.fr/audit-avant-achat-immobilier.html): Méthodologie de l'audit économiste, différences avec les diagnostics obligatoires.
+- [Prix rénovation au m² en 2026, poste par poste](https://adora-economie.fr/prix-renovation-m2-2026.html): Fourchettes par lot TCE, coefficients régionaux Normandie et IDF, sources Batichiffrage 2026.
+- [MaPrimeRénov' 2026 : barème, plafonds, éligibilité](https://adora-economie.fr/maprimerenov-2026-bareme.html): Barème actualisé, plafonds de ressources ANAH, articulation avec CEE et éco-PTZ.
+- [7 pièges des devis d'artisans en 2026](https://adora-economie.fr/pieges-devis-artisans.html): Mentions obligatoires, postes flous, cas de litige.
+- [Les 15 lots TCE expliqués à un particulier](https://adora-economie.fr/15-lots-tce-expliques-particulier.html): Découpage chantier, ratios Batichiffrage, exemple chiffré 120 m².
+- [Choisir sa gamme de rénovation : éco, standard, confort, haut de gamme](https://adora-economie.fr/choisir-sa-gamme-renovation.html): Critères de choix, ratios par gamme, exemple chiffré.
+- [Diagnostic parasitaire : comment négocier le prix d'achat](https://adora-economie.fr/diagnostic-parasitaire-negociation.html): Méthode de décote 5-20 % sur la base d'un diag défavorable.
+
+## Méta
+
+- Auteur principal : Aymeric Dussauze, économiste de la construction.
+- Zone d'intervention : Louviers (27400), Normandie (Eure, Seine-Maritime), Île-de-France.
+- Contact : voir [/contact](https://adora-economie.fr/contact.html).
+- Profil LinkedIn : https://www.linkedin.com/in/aymericdussauze/
+- Sitemap : https://adora-economie.fr/sitemap.xml
