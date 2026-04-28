@@ -1,11 +1,62 @@
+# ═══════════════════════════════════════════════════════════════════════════
+# robots.txt — adora-economie.fr
+# ═══════════════════════════════════════════════════════════════════════════
+# Posture : HYBRIDE (décision actée 28/04/2026)
+#   • Crawlers de RECHERCHE / RÉPONSE LIVE IA → autorisés (visibilité)
+#   • Crawlers d'ENTRAÎNEMENT IA → bloqués (protection contenu)
+#
+# Source : audit SEO 28/04/2026, section "AI Search Readiness"
+# Référence : https://llmstxt.org/ + https://platform.openai.com/docs/bots
+# ═══════════════════════════════════════════════════════════════════════════
+
+# ─── Crawlers SEO classiques ─────────────────────────────────────────────
 User-agent: *
 Allow: /
-
-# Email templates — non destinés à l'indexation
 Disallow: /email-templates/
-
-# Dossiers techniques
 Disallow: /.well-known/
 Disallow: /_scripts/
 
+# ─── IA — RÉPONSES LIVE (autorisés) ──────────────────────────────────────
+# OpenAI ChatGPT (mode search, ne sert pas à l'entraînement)
+User-agent: OAI-SearchBot
+Allow: /
+
+# Perplexity.ai (recherche live)
+User-agent: PerplexityBot
+Allow: /
+
+# Anthropic Claude (recherche live + accès web in-chat)
+User-agent: ClaudeBot
+Allow: /
+
+# Google AI Overviews + Gemini (dual-use, nécessaire pour AI Overviews SERP)
+User-agent: Google-Extended
+Allow: /
+
+# ─── IA — ENTRAÎNEMENT (bloqués) ─────────────────────────────────────────
+# OpenAI GPT training crawler
+User-agent: GPTBot
+Disallow: /
+
+# Common Crawl (data utilisée par de nombreux LLM open-source)
+User-agent: CCBot
+Disallow: /
+
+# ByteDance / TikTok / Doubao
+User-agent: Bytespider
+Disallow: /
+
+# Apple Intelligence training (Applebot continue à être autorisé pour Spotlight/Siri)
+User-agent: Applebot-Extended
+Disallow: /
+
+# Meta AI training
+User-agent: meta-externalagent
+Disallow: /
+
+# Amazon Alexa / Rufus training
+User-agent: Amazonbot
+Disallow: /
+
+# ─── Sitemap ─────────────────────────────────────────────────────────────
 Sitemap: https://adora-economie.fr/sitemap.xml
