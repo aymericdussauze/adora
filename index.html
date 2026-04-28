@@ -678,13 +678,20 @@ img { max-width: 100%; height: auto; }
 }
 
 </style>
-<script type="application/ld+json">
+
+    <script defer src="https://browser.sentry-cdn.com/8.0.0/bundle.min.js" crossorigin="anonymous"></script>
+    <script>Sentry.init({dsn:"https://14b68c10a24c3da4127332e14fd20359@o4511253060976640.ingest.de.sentry.io/4511253075132496",tracesSampleRate:0,replaysSessionSampleRate:0});</script>
+<script type="application/ld+json" data-adora-schema="professional-service">
 {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
+  "@type": "ProfessionalService",
+  "@id": "https://adora-economie.fr/#business",
   "name": "ADORA — Économiste de la construction",
+  "alternateName": "ADORA",
   "description": "Cabinet indépendant d'économie de la construction. Estimations TCE, CCTP/DPGF, AMO pour particuliers et professionnels.",
-  "url": "https://adora-economie.fr",
+  "url": "https://adora-economie.fr/",
+  "logo": "https://adora-economie.fr/logo.svg",
+  "image": "https://adora-economie.fr/og-default.jpg",
   "telephone": "+33672010767",
   "email": "contact@adora-economie.fr",
   "address": {
@@ -695,22 +702,31 @@ img { max-width: 100%; height: auto; }
     "addressCountry": "FR"
   },
   "areaServed": [
-    {"@type": "AdministrativeArea", "name": "Eure (27)"},
-    {"@type": "AdministrativeArea", "name": "Seine-Maritime (76)"},
-    {"@type": "AdministrativeArea", "name": "Île-de-France"}
+    { "@type": "AdministrativeArea", "name": "Eure (27)" },
+    { "@type": "AdministrativeArea", "name": "Seine-Maritime (76)" },
+    { "@type": "AdministrativeArea", "name": "Île-de-France" }
   ],
-  "priceRange": "49€ — 3900€",
   "founder": {
     "@type": "Person",
+    "@id": "https://adora-economie.fr/a-propos.html#aymeric",
     "name": "Aymeric Dussauze",
     "jobTitle": "Économiste de la construction",
     "sameAs": "https://www.linkedin.com/in/aymericdussauze/"
   },
-  "sameAs": ["https://www.linkedin.com/in/aymericdussauze/"]
+  "sameAs": [
+    "https://www.linkedin.com/in/aymericdussauze/"
+  ],
+  "knowsAbout": [
+    "économie de la construction",
+    "estimation tous corps d'état",
+    "CCTP",
+    "DPGF",
+    "MaPrimeRénov'",
+    "audit avant achat immobilier",
+    "AMO"
+  ]
 }
 </script>
-    <script defer src="https://browser.sentry-cdn.com/8.0.0/bundle.min.js" crossorigin="anonymous"></script>
-    <script>Sentry.init({dsn:"https://14b68c10a24c3da4127332e14fd20359@o4511253060976640.ingest.de.sentry.io/4511253075132496",tracesSampleRate:0,replaysSessionSampleRate:0});</script>
 </head>
 <body>
 
