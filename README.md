@@ -1,4 +1,4 @@
-# ADORA — Staging
+# ADORA
 
 **Environnement de staging** pour le site [adora-economie.fr](https://adora-economie.fr)
 
