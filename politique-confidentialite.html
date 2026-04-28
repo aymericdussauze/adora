@@ -304,7 +304,11 @@ img{max-width:100%;height:auto}
 </style>
 
     <script defer src="https://browser.sentry-cdn.com/8.0.0/bundle.min.js" crossorigin="anonymous"></script>
-    <script>Sentry.init({dsn:"https://14b68c10a24c3da4127332e14fd20359@o4511253060976640.ingest.de.sentry.io/4511253075132496",tracesSampleRate:0,replaysSessionSampleRate:0});</script>
+    <script type="text/plain" data-adora-consent="analytics">Sentry.init({dsn:"https://14b68c10a24c3da4127332e14fd20359@o4511253060976640.ingest.de.sentry.io/4511253075132496",tracesSampleRate:0,replaysSessionSampleRate:0});</script>
+<!-- ADORA CMP -->
+  <link rel="stylesheet" href="/assets/css/adora-cmp.css">
+  <script src="/assets/js/adora-cmp.js"></script>
+  <!-- /ADORA CMP -->
 </head>
 <body>
 
@@ -453,6 +457,7 @@ img{max-width:100%;height:auto}
   </div>
 </div>
 <div class="footer-legal">© 2026 ADORA · EI · SIRET 532 886 918 00020 · TVA non applicable, art. 293B du CGI<br><a href="mentions-legales.html">Mentions légales</a> · <a href="politique-confidentialite.html">Confidentialité</a> · <a href="cgv.html">CGV</a></div>
+<div style="margin-top:12px;font-size:13px;opacity:0.8"><button type="button" class="adora-cmp-footer-link" onclick="if(window.adoraConsent)window.adoraConsent.show()">🍪 Gérer mes cookies</button></div>
 </footer>
 <script>
 document.addEventListener("DOMContentLoaded",()=>{
@@ -460,8 +465,8 @@ document.addEventListener("DOMContentLoaded",()=>{
   document.querySelectorAll(".reveal").forEach(el=>obs.observe(el));
 });
 </script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-M0LENY960B"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","G-M0LENY960B");</script>
+<script type="text/plain" data-adora-consent="analytics" src="https://www.googletagmanager.com/gtag/js?id=G-M0LENY960B"></script>
+<script type="text/plain" data-adora-consent="analytics">window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","G-M0LENY960B");</script>
     <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"3f8ca9a1113f413a990a17c08ab83442"}'></script>
 </body>
 </html>
