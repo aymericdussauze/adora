@@ -44,7 +44,7 @@ img{max-width:100%;height:auto}
 .hero h1{font-size:clamp(30px,5vw,48px);font-weight:900;margin-bottom:16px;letter-spacing:-.02em;position:relative}
 .hero h1 em{font-style:normal;color:var(--accent)}
 .hero .subtitle{font-size:17px;color:rgba(214,228,240,.85);margin-bottom:32px;max-width:540px;line-height:1.7}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:15px 30px;border-radius:var(--radius-sm);font-size:15px;font-weight:700;font-family:'Plus Jakarta Sans',sans-serif;transition:all var(--transition);border:none;cursor:pointer;text-decoration:none!important}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:15px 30px;border-radius:var(--radius-sm);font-size:15px;font-weight:700;font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;transition:all var(--transition);border:none;cursor:pointer;text-decoration:none!important;letter-spacing:-.005em}
 .btn-accent{background:var(--accent);color:var(--white);box-shadow:var(--shadow-btn)}
 .btn-accent:hover{background:var(--accent-hover);color:var(--white);transform:translateY(-2px);box-shadow:0 4px 16px rgba(34,211,238,.35)}
 .btn-green{background:var(--green);color:var(--white)}
@@ -105,11 +105,11 @@ img{max-width:100%;height:auto}
 .field{margin-bottom:18px}
 .field label{display:block;font-size:13px;font-weight:600;color:var(--navy);margin-bottom:6px}
 .field label .opt{font-weight:400;color:var(--muted);font-size:11px}
-.field input,.field select,.field textarea{width:100%;padding:12px 16px;border:1.5px solid var(--border);border-radius:var(--radius-sm);font-size:15px;font-family:'Plus Jakarta Sans',sans-serif;background:var(--white);transition:all var(--transition)}
+.field input,.field select,.field textarea{width:100%;padding:12px 16px;border:1.5px solid var(--border);border-radius:var(--radius-sm);font-size:15px;font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;background:var(--white);transition:all var(--transition)}
 .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 4px rgba(14,116,144,.1)}
 .field textarea{resize:vertical;min-height:110px}
 .field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.btn-submit{width:100%;padding:16px;background:var(--accent);color:var(--white);border:none;border-radius:var(--radius-sm);font-size:16px;font-weight:700;font-family:'Plus Jakarta Sans',sans-serif;cursor:pointer;transition:all var(--transition);box-shadow:var(--shadow-btn)}
+.btn-submit{width:100%;padding:16px;background:var(--accent);color:var(--white);border:none;border-radius:var(--radius-sm);font-size:16px;font-weight:700;font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;cursor:pointer;transition:all var(--transition);box-shadow:var(--shadow-btn)}
 .btn-submit:hover{background:var(--accent-hover);transform:translateY(-1px)}
 
 /* SCROLL PROGRESS */
@@ -190,6 +190,57 @@ img{max-width:100%;height:auto}
   .nav-links .nav-cta{width:100%;text-align:center;margin-top:8px}
   .footer-contact a{word-break:break-all}
 }
+
+/* ═══ PAIN POINTS — 29/04/2026 ═══ */
+.pain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.pain-card{background:var(--white);border:1.5px solid var(--border);border-radius:var(--radius);padding:32px 28px;transition:all var(--transition)}
+.pain-card:hover{border-color:rgba(239,68,68,.25);box-shadow:var(--shadow-hover);transform:translateY(-3px)}
+.pain-icon{width:44px;height:44px;border-radius:12px;background:rgba(239,68,68,.08);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+.pain-card h3{font-size:17px;font-weight:700;color:var(--navy);margin-bottom:10px;line-height:1.35;font-family:'Montserrat',sans-serif}
+.pain-card p{font-size:14.5px;color:var(--muted);line-height:1.65}
+@media(max-width:900px){.pain-grid{grid-template-columns:1fr;gap:16px}}
+
+/* ═══ VS SIMULATEUR — 29/04/2026 ═══ */
+.vs-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.vs-intro h2{font-size:clamp(26px,3.6vw,36px);font-weight:800;color:var(--navy);margin-bottom:16px;letter-spacing:-.01em;line-height:1.2}
+.vs-intro p{font-size:15.5px;color:var(--txt);line-height:1.75;margin-bottom:14px}
+.vs-intro p:last-of-type{margin-bottom:0}
+.vs-signature{display:flex;gap:14px;align-items:center;margin-top:28px;padding-top:24px;border-top:1px solid var(--border)}
+.vs-signature-avatar{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--navy) 0%,var(--blue) 100%);display:flex;align-items:center;justify-content:center;color:var(--accent);font-family:'Montserrat',system-ui,-apple-system,sans-serif;font-weight:900;font-size:20px;flex-shrink:0;letter-spacing:-.02em}
+.vs-signature-name{font-family:'Montserrat',system-ui,-apple-system,sans-serif;font-weight:800;font-size:15px;color:var(--navy)}
+.vs-signature-role{font-size:13px;color:var(--muted);margin-top:2px}
+.vs-table{background:var(--white);border:1.5px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-card)}
+.vs-headers{display:grid;grid-template-columns:1fr 1fr}
+.vs-header{padding:18px 20px;font-family:'Montserrat',system-ui,-apple-system,sans-serif;font-weight:800;font-size:13px;text-align:center;letter-spacing:.02em}
+.vs-header.bad{background:rgba(239,68,68,.06);color:#DC2626}
+.vs-header.good{background:rgba(34,211,238,.1);color:var(--blue)}
+.vs-row-label{padding:10px 20px;background:var(--pale);font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;border-top:1px solid var(--border)}
+.vs-row{display:grid;grid-template-columns:1fr 1fr}
+.vs-cell{padding:18px 20px;font-size:14px;line-height:1.55;color:var(--muted);border-top:1px solid var(--border)}
+.vs-cell.good{background:rgba(34,211,238,.04);color:var(--navy);font-weight:500}
+.vs-cell.good strong{color:var(--navy);font-weight:700}
+.vs-cell::before{margin-right:9px;font-weight:800;display:inline-block;font-size:13px}
+.vs-cell:not(.good)::before{content:"\2715";color:#DC2626}
+.vs-cell.good::before{content:"\2713";color:var(--accent)}
+@media(max-width:900px){.vs-grid{grid-template-columns:1fr;gap:36px}.vs-cell{padding:14px 16px;font-size:13.5px}.vs-header{padding:14px 16px;font-size:12px}.vs-row-label{padding:8px 16px;font-size:10px}}
+
+/* ═══ TESTIMONIALS NAVY — 29/04/2026 ═══ */
+.testimonials-section{background:var(--navy);color:rgba(237,233,254,.92);padding:100px 0;position:relative;overflow:hidden}
+.testimonials-section::before{content:'';position:absolute;top:-30%;right:-15%;width:700px;height:700px;background:radial-gradient(circle,rgba(34,211,238,.08) 0%,transparent 65%);pointer-events:none}
+.testimonials-section .section-label{color:var(--accent)}
+.testimonials-section .section-title{color:var(--white)}
+.testimonials-section .section-sub{color:rgba(237,233,254,.7)}
+.testimonials-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;position:relative;z-index:1}
+.testimonial{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:32px 28px;position:relative;transition:all var(--transition)}
+.testimonial:hover{border-color:rgba(34,211,238,.25);transform:translateY(-3px)}
+.testimonial::before{content:'\201C';position:absolute;top:8px;left:22px;font-family:'Montserrat',sans-serif;font-size:64px;font-weight:900;color:var(--accent);opacity:.22;line-height:1;pointer-events:none}
+.testimonial-text{position:relative;z-index:2;font-size:15.5px;line-height:1.7;color:rgba(237,233,254,.9);margin-bottom:22px;padding-top:6px;font-style:italic}
+.testimonial-author{display:flex;gap:13px;align-items:flex-start;padding-top:18px;border-top:1px solid rgba(255,255,255,.08)}
+.testimonial-tag{display:inline-block;padding:5px 12px;border-radius:99px;background:rgba(34,211,238,.14);color:var(--accent);font-family:'Montserrat',system-ui,-apple-system,sans-serif;font-size:10.5px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;flex-shrink:0;margin-top:1px}
+.author-name{font-family:'Montserrat',system-ui,-apple-system,sans-serif;font-weight:700;font-size:14px;color:var(--white)}
+.author-project{font-size:12.5px;color:rgba(34,211,238,.85);margin-top:2px}
+.testimonials-note{text-align:center;margin-top:40px;font-size:12.5px;color:rgba(237,233,254,.5);font-style:italic;position:relative;z-index:1}
+@media(max-width:900px){.testimonials-grid{grid-template-columns:1fr;gap:16px}.testimonials-section{padding:72px 0}}
 </style>
 <script type="application/ld+json">
 {
@@ -229,8 +280,8 @@ img{max-width:100%;height:auto}
 <div class="container">
 <div class="hero-grid">
 <div>
-<h1>Combien vont coûter<br>vos <em>travaux</em> ?</h1>
-<p class="subtitle">Obtenez une estimation structurée par lot, avec des fourchettes réalistes et des coefficients régionaux. Comme un économiste de la construction, en 3 minutes.</p>
+<h1>Sachez <em>réellement</em> ce que vont coûter vos travaux.</h1>
+<p class="subtitle">L'Estimateur ADORA structure votre projet par lot, avec des fourchettes réalistes et des coefficients régionaux. Comme le ferait un économiste de la construction sur dossier — en 3 minutes.</p>
 <div class="hero-badges">
 <span class="hero-badge">✓ 15 postes de travaux</span>
 <span class="hero-badge">✓ 101 départements</span>
@@ -242,6 +293,33 @@ img{max-width:100%;height:auto}
 </div>
 </div>
 <div class="lots-visual" style="display:none"></div>
+</div>
+</div>
+</section>
+
+<section class="section section-alt">
+<div class="container">
+<div class="section-header center reveal">
+<div class="section-label">Ce que les devis ne disent pas</div>
+<h2 class="section-title">Mal estimer ses travaux coûte plus cher qu'on ne le pense.</h2>
+<p class="section-sub" style="margin:0 auto">Trois situations rencontrées chaque semaine chez les particuliers — et qui auraient pu être évitées avec un chiffrage en amont.</p>
+</div>
+<div class="pain-grid reveal">
+<div class="pain-card">
+<div class="pain-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polygon points="12 2 22 22 2 22 12 2"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+<h3>Des devis qui varient du simple au triple</h3>
+<p>95 €/m² chez l'un, 280 €/m² chez l'autre, pour la même prestation. Sans référence professionnelle, impossible de savoir qui surfacture, qui sous-évalue — et qui reviendra avec des « imprévus » en cours de chantier.</p>
+</div>
+<div class="pain-card">
+<div class="pain-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="3" x2="21" y2="21"/><line x1="9" y1="9" x2="15" y2="9"/></svg></div>
+<h3>Un budget refusé par la banque</h3>
+<p>Vous présentez un dossier de prêt avec une enveloppe estimée « au doigt mouillé ». Le banquier demande un détail par poste, vous n'en avez pas. Le dossier traîne, parfois il passe à côté. Un chiffrage structuré pèse infiniment plus qu'un total sec.</p>
+</div>
+<div class="pain-card">
+<div class="pain-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 20h20"/><path d="M5 20V8l7-5 7 5v12"/><path d="M9 20v-6h6v6"/></svg></div>
+<h3>Un chantier qui s'arrête en plein milieu</h3>
+<p>30 % du budget englouti dès la démolition, et le reste ne suffit plus pour finir. Un projet correctement chiffré au départ vous protège du pire scénario : laisser sa maison à moitié rénovée parce que l'argent est parti trop vite.</p>
+</div>
 </div>
 </div>
 </section>
@@ -270,7 +348,53 @@ img{max-width:100%;height:auto}
 </div>
 </section>
 
-<section class="section section-alt" id="compare">
+<section class="section section-alt">
+<div class="container">
+<div class="vs-grid reveal">
+<div class="vs-intro">
+<div class="section-label">Pourquoi pas un simulateur gratuit ?</div>
+<h2>Parce qu'un calcul approximatif ne sécurise pas un projet de 80 000 €.</h2>
+<p>La plupart des simulateurs en ligne sont alimentés par des artisans qui veulent vos coordonnées. Les prix sont moyennés, datés, et conçus pour générer du lead — pas pour vous donner une vision juste.</p>
+<p>L'Estimateur ADORA part d'une logique inverse : je suis économiste de la construction indépendant, je ne vends rien d'autre que mon expertise, et j'utilise les mêmes bases tarifaires que celles employées en bureau d'études — Batichiffrage, mise à jour 2026.</p>
+<div class="vs-signature">
+<div class="vs-signature-avatar">AD</div>
+<div>
+<div class="vs-signature-name">Aymeric Dussauze</div>
+<div class="vs-signature-role">Économiste de la construction · ADORA</div>
+</div>
+</div>
+</div>
+<div class="vs-table">
+<div class="vs-headers">
+<div class="vs-header bad">Simulateurs gratuits</div>
+<div class="vs-header good">Estimateur ADORA</div>
+</div>
+<div class="vs-row-label">Source des prix</div>
+<div class="vs-row">
+<div class="vs-cell">Moyennes vagues, parfois datées de 3 ans</div>
+<div class="vs-cell good"><strong>Batichiffrage 2026</strong> — référentiel utilisé en bureau d'études</div>
+</div>
+<div class="vs-row-label">Granularité</div>
+<div class="vs-row">
+<div class="vs-cell">Un total opaque</div>
+<div class="vs-cell good"><strong>15 lots TCE détaillés</strong>, 4 niveaux de gamme</div>
+</div>
+<div class="vs-row-label">Indépendance</div>
+<div class="vs-row">
+<div class="vs-cell">Financés par les artisans qui rachètent vos leads</div>
+<div class="vs-cell good"><strong>Indépendant</strong> — je ne touche aucune commission</div>
+</div>
+<div class="vs-row-label">Livrable</div>
+<div class="vs-row">
+<div class="vs-cell">Un email avec votre numéro redistribué</div>
+<div class="vs-cell good"><strong>PDF professionnel</strong>, vos données restent chez ADORA</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section" id="compare">
 <div class="container">
 <div class="section-header center reveal">
 <div class="section-label">Formules</div>
@@ -433,6 +557,40 @@ img{max-width:100%;height:auto}
 </div>
 </section>
 
+<!-- Témoignages anonymisés — situations rencontrées en mission, identités client protégées par confidentialité. -->
+<section class="testimonials-section">
+<div class="container">
+<div class="section-header center reveal">
+<div class="section-label">Cas vécus en mission</div>
+<h2 class="section-title">Ce que change un chiffrage avant de signer.</h2>
+<p class="section-sub" style="margin:0 auto">Deux situations rencontrées avec des particuliers qui ont utilisé l'Estimateur en amont de leur projet.</p>
+</div>
+<div class="testimonials-grid reveal">
+<div class="testimonial">
+<p class="testimonial-text">Trois devis pour une rénovation complète : 78 000 €, 124 000 € et 156 000 €. Le client ne savait pas lequel était juste. Le rapport ADORA a donné une fourchette médiane à 92 000 € avec le détail par poste — assez pour négocier précisément poste par poste avec l'artisan retenu, et signer finalement à 89 500 €. Sur ce chantier, les 49 € de l'estimateur ont sécurisé près de 35 000 € d'écart entre devis.</p>
+<div class="testimonial-author">
+<div class="testimonial-tag">Cas vécu</div>
+<div>
+<div class="author-name">Rénovation complète 110 m²</div>
+<div class="author-project">Particulier · Eure (27)</div>
+</div>
+</div>
+</div>
+<div class="testimonial">
+<p class="testimonial-text">Une banque demandait un plan de financement détaillé pour un prêt travaux. Le courtier oriente vers un économiste — l'outil ADORA a été utilisé en attendant. Le rapport était suffisamment structuré pour que la banque le prenne tel quel. Dossier accepté en deux semaines, sans expertise complémentaire facturée par ailleurs.</p>
+<div class="testimonial-author">
+<div class="testimonial-tag">Cas vécu</div>
+<div>
+<div class="author-name">Achat-rénovation maison de ville</div>
+<div class="author-project">Acquéreur · Yvelines (78)</div>
+</div>
+</div>
+</div>
+</div>
+<p class="testimonials-note">Situations réelles rencontrées en mission, anonymisées par confidentialité client. Les avis nominatifs sont publiés sur la fiche Google Business Profile ADORA.</p>
+</div>
+</section>
+
 <section class="section">
 <div class="container">
 <div class="section-header center reveal">
@@ -516,6 +674,22 @@ img{max-width:100%;height:auto}
 window.addEventListener('scroll',()=>{const h=document.documentElement;document.getElementById('scrollProgress').style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight))*100+'%'});
 const obs=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting){el.target.classList.add('visible');obs.unobserve(el.target)}})},{threshold:.15,rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+/* CTA tracking — push GA4 event with source section identifier (consent-aware via gtag presence check) */
+document.querySelectorAll('a[href="estimateur-outil.html"]').forEach(link=>{
+  link.addEventListener('click',()=>{
+    if(typeof gtag!=='function')return;
+    const sec=link.closest('section,nav');
+    let source='unknown';
+    if(sec){
+      if(sec.classList.contains('hero'))source='hero';
+      else if(sec.id==='compare'){source=link.classList.contains('btn-accent')?'compare_paid':'compare_free';}
+      else if(sec.classList.contains('cta-band'))source='cta_band';
+      else if(sec.classList.contains('nav'))source='nav';
+    }
+    gtag('event','cta_click',{cta_source:source,cta_destination:'estimateur_tunnel'});
+  });
+});
 </script>
 <script type="text/plain" data-adora-consent="analytics" src="https://www.googletagmanager.com/gtag/js?id=G-M0LENY960B"></script>
 <script type="text/plain" data-adora-consent="analytics">window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-M0LENY960B');</script>
