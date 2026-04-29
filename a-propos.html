@@ -11,7 +11,30 @@
 <link rel="stylesheet" href="/assets/fonts/adora-fonts.css">
 
 <title>À propos — ADORA · Économiste de la construction</title>
-<meta name="description" content="Découvrez ADORA : cabinet indépendant d'économie de la construction fondé par Aymeric Dussauze. 15 ans de gestion de projets, une reconversion BTP, des outils digitaux au service du métier.">
+<meta name="description" content="Aymeric Dussauze, économiste de la construction indépendant à Louviers (27). Estimations TCE, audits avant achat, AMO. Normandie et Île-de-France.">
+<link rel="canonical" href="https://adora-economie.fr/a-propos.html">
+
+<!-- Open Graph (Facebook, LinkedIn, Slack…) -->
+<meta property="og:type" content="profile">
+<meta property="og:url" content="https://adora-economie.fr/a-propos.html">
+<meta property="og:title" content="Aymeric Dussauze, économiste de la construction indépendant — ADORA">
+<meta property="og:description" content="Cabinet indépendant. Estimations TCE sourcées, audits avant achat, AMO. Normandie et Île-de-France.">
+<meta property="og:image" content="https://adora-economie.fr/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="ADORA — Économiste de la construction indépendant">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="ADORA">
+<meta property="profile:first_name" content="Aymeric">
+<meta property="profile:last_name" content="Dussauze">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://adora-economie.fr/a-propos.html">
+<meta name="twitter:title" content="Aymeric Dussauze — Économiste de la construction indépendant">
+<meta name="twitter:description" content="Cabinet indépendant. Estimations TCE, audits avant achat, AMO. Normandie et IDF.">
+<meta name="twitter:image" content="https://adora-economie.fr/og-default.jpg">
+<meta name="twitter:image:alt" content="ADORA — Économiste de la construction indépendant">
 <style>
 
 /* ═══ ADORA PropTech Design System v2 ═══ */
@@ -285,36 +308,161 @@ img{max-width:100%;height:auto}
   .nav-links .nav-cta{width:100%;text-align:center;margin-top:8px}
   .footer-contact a{word-break:break-all}
 }
+
+/* Hero stats */
+.hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;margin-top:48px;padding-top:32px;border-top:1px solid rgba(237,233,254,.15)}
+.hero-stat{text-align:left}
+.hero-stat-value{font-family:'Montserrat',sans-serif;font-size:36px;font-weight:900;color:var(--accent);line-height:1;letter-spacing:-.02em;margin-bottom:6px}
+.hero-stat-label{font-size:13px;color:rgba(237,233,254,.7);font-weight:500;line-height:1.4}
+@media(max-width:768px){.hero-stats{grid-template-columns:repeat(2,1fr);gap:24px}}
+
+/* Timeline parcours */
+.parcours-timeline{position:relative;padding-left:40px;margin-top:40px}
+.parcours-timeline::before{content:'';position:absolute;left:14px;top:8px;bottom:8px;width:2px;background:linear-gradient(to bottom,var(--accent),var(--green))}
+.parcours-step{position:relative;padding-bottom:40px}
+.parcours-step:last-child{padding-bottom:0}
+.parcours-step::before{content:'';position:absolute;left:-32px;top:8px;width:14px;height:14px;border-radius:50%;background:var(--accent);border:3px solid var(--white);box-shadow:0 0 0 2px var(--accent)}
+.parcours-year{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;color:var(--blue);background:rgba(14,116,144,.08);padding:4px 10px;border-radius:6px;margin-bottom:8px;letter-spacing:.5px}
+.parcours-step h3{font-size:18px;font-weight:700;color:var(--navy);margin-bottom:10px}
+.parcours-step p{font-size:15px;line-height:1.7;color:var(--txt);margin:0}
+.parcours-step p+p{margin-top:8px}
+
+/* Quote pull */
+.quote-pull{background:var(--navy);color:var(--white);padding:48px 40px;border-radius:var(--radius);margin-top:40px;text-align:center;position:relative;overflow:hidden}
+.quote-pull::before{content:'';position:absolute;top:-40%;right:-10%;width:400px;height:400px;background:radial-gradient(circle,rgba(34,211,238,.15) 0%,transparent 70%);pointer-events:none}
+.quote-pull blockquote{font-family:'Montserrat',sans-serif;font-size:22px;font-weight:700;line-height:1.4;letter-spacing:-.01em;max-width:680px;margin:0 auto;position:relative}
+.quote-pull blockquote em{color:var(--accent);font-style:normal}
+@media(max-width:768px){.quote-pull{padding:32px 24px}.quote-pull blockquote{font-size:18px}}
+
+/* Method value-cards */
+.method-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px}
+.method-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:32px 28px;transition:all var(--transition);box-shadow:var(--shadow-card)}
+.method-card:hover{box-shadow:var(--shadow-hover);transform:translateY(-3px);border-color:var(--accent)}
+.method-card-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:20px}
+.method-card-icon.blue{background:rgba(34,211,238,.1);color:var(--blue)}
+.method-card-icon.iris{background:rgba(167,139,250,.1);color:#8B6FE3}
+.method-card-icon.teal{background:rgba(14,116,144,.1);color:#0E7490}
+.method-card h3{font-size:18px;font-weight:700;color:var(--navy);margin-bottom:14px;letter-spacing:-.01em}
+.method-card p{font-size:14px;color:var(--muted);line-height:1.6;margin-bottom:10px}
+.method-card p:last-child{margin-bottom:0}
+.method-card p strong{color:var(--navy)}
+@media(max-width:768px){.method-grid{grid-template-columns:1fr;gap:16px}}
+
+/* Missions twin cards */
+.missions-twin{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:40px}
+.mission-block{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:36px 32px;transition:all var(--transition);box-shadow:var(--shadow-card);position:relative}
+.mission-block:hover{box-shadow:var(--shadow-hover);transform:translateY(-3px)}
+.mission-block.featured{border-color:var(--accent);border-width:2px}
+.mission-block.featured::before{content:'Le plus demandé';position:absolute;top:-12px;left:32px;background:var(--accent);color:var(--navy);padding:5px 12px;border-radius:999px;font-size:11px;font-weight:800;letter-spacing:.5px;text-transform:uppercase}
+.mission-icon{width:56px;height:56px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;background:linear-gradient(135deg,rgba(34,211,238,.12),rgba(167,139,250,.12));color:var(--blue)}
+.mission-block h3{font-size:22px;font-weight:800;color:var(--navy);margin-bottom:12px;font-family:'Montserrat',sans-serif;letter-spacing:-.01em}
+.mission-block .mission-lead{font-size:15px;color:var(--muted);line-height:1.6;margin-bottom:24px}
+.mission-list{list-style:none;padding:0;margin:0 0 24px 0}
+.mission-list li{padding:14px 0;border-bottom:1px solid var(--border);font-size:14px;color:var(--txt);line-height:1.5;display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.mission-list li:last-child{border-bottom:none}
+.mission-list li strong{color:var(--navy);font-weight:700;flex:1}
+.mission-list .price{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600;color:var(--blue);background:rgba(14,116,144,.08);padding:4px 10px;border-radius:6px;white-space:nowrap;flex-shrink:0}
+.mission-link{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:700;color:var(--blue);transition:color var(--transition)}
+.mission-link:hover{color:var(--accent-hover)}
+.mission-link svg{transition:transform var(--transition)}
+.mission-link:hover svg{transform:translateX(3px)}
+@media(max-width:768px){.missions-twin{grid-template-columns:1fr;gap:20px}}
+
+/* Engagements 4 cols */
+.engagement-grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:40px}
+.engagement-block{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:28px 24px;transition:all var(--transition);box-shadow:var(--shadow-card);text-align:center}
+.engagement-block:hover{box-shadow:var(--shadow-hover);transform:translateY(-3px);border-color:var(--accent)}
+.engagement-block-icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 18px;background:linear-gradient(135deg,rgba(34,211,238,.14),rgba(167,139,250,.14));color:var(--blue)}
+.engagement-block h3{font-size:16px;font-weight:700;color:var(--navy);margin-bottom:10px;letter-spacing:-.01em}
+.engagement-block p{font-size:13px;color:var(--muted);line-height:1.5;margin:0}
+@media(max-width:1024px){.engagement-grid-4{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:540px){.engagement-grid-4{grid-template-columns:1fr}}
+
+/* Territoire 3 cards */
+.territory-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px}
+.territory-block-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:32px 28px;transition:all var(--transition);box-shadow:var(--shadow-card)}
+.territory-block-card:hover{box-shadow:var(--shadow-hover);transform:translateY(-3px)}
+.territory-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+.territory-icon.cyan{background:rgba(34,211,238,.1);color:var(--blue)}
+.territory-icon.iris{background:rgba(167,139,250,.1);color:#8B6FE3}
+.territory-icon.teal{background:rgba(14,116,144,.1);color:#0E7490}
+.territory-block-card h3{font-size:17px;font-weight:700;color:var(--navy);margin-bottom:10px}
+.territory-block-card p{font-size:14px;color:var(--muted);line-height:1.65;margin:0}
+@media(max-width:768px){.territory-grid{grid-template-columns:1fr;gap:16px}}
+
+/* Témoignages */
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px}
+.review-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:28px;transition:all var(--transition);box-shadow:var(--shadow-card);display:flex;flex-direction:column}
+.review-card:hover{box-shadow:var(--shadow-hover);transform:translateY(-3px)}
+.review-stars{display:flex;gap:2px;margin-bottom:16px;color:#FBBF24}
+.review-quote{font-size:14px;line-height:1.7;color:var(--txt);margin-bottom:20px;flex:1;font-style:italic;position:relative;padding-left:14px;border-left:3px solid var(--accent)}
+.review-author{display:flex;align-items:center;gap:12px;padding-top:16px;border-top:1px solid var(--border)}
+.review-avatar{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--green));display:flex;align-items:center;justify-content:center;color:var(--white);font-weight:800;font-size:15px;flex-shrink:0}
+.review-author-info{font-size:13px;line-height:1.4}
+.review-author-info strong{color:var(--navy);font-weight:700;display:block;margin-bottom:2px}
+.review-author-info span{color:var(--muted);font-size:12px}
+.reviews-cta{margin-top:32px;text-align:center;padding:20px;background:var(--pale);border-radius:var(--radius);font-size:14px;color:var(--muted);line-height:1.6}
+.reviews-cta a{color:var(--blue);font-weight:700;display:inline-flex;align-items:center;gap:6px;margin-left:4px}
+.reviews-cta a:hover{color:var(--accent-hover)}
+@media(max-width:1024px){.reviews-grid{grid-template-columns:1fr}}
+
+/* Contact direct */
+.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:32px}
+.contact-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius);padding:28px 24px;text-align:center;transition:all var(--transition)}
+.contact-card:hover{background:rgba(255,255,255,.08);transform:translateY(-3px);border-color:rgba(34,211,238,.4)}
+.contact-card-icon{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;background:rgba(34,211,238,.15);color:var(--accent)}
+.contact-card a{display:block;font-size:16px;font-weight:700;color:var(--white);margin-bottom:6px}
+.contact-card a:hover{color:var(--accent)}
+.contact-card span{display:block;font-size:13px;color:rgba(237,233,254,.6);line-height:1.4}
+@media(max-width:768px){.contact-grid{grid-template-columns:1fr;gap:12px}}
+
 </style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "ADORA — Économiste de la construction",
-  "description": "Cabinet indépendant d'économie de la construction. Estimations TCE, CCTP/DPGF, AMO pour particuliers et professionnels.",
-  "url": "https://adora-economie.fr",
+  "@type": "Person",
+  "@id": "https://adora-economie.fr/a-propos.html#aymeric",
+  "name": "Aymeric Dussauze",
+  "givenName": "Aymeric",
+  "familyName": "Dussauze",
+  "jobTitle": "Économiste de la construction",
+  "image": "https://adora-economie.fr/og-default.jpg",
+  "url": "https://adora-economie.fr/a-propos.html",
   "telephone": "+33672010767",
   "email": "contact@adora-economie.fr",
+  "sameAs": ["https://www.linkedin.com/in/aymericdussauze/"],
+  "knowsAbout": [
+    "économie de la construction",
+    "estimation tous corps d'état",
+    "CCTP",
+    "DPGF",
+    "audit avant achat immobilier",
+    "AMO maîtrise d'ouvrage",
+    "MaPrimeRénov'",
+    "Batichiffrage",
+    "rénovation énergétique"
+  ],
+  "knowsLanguage": ["fr"],
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Louviers",
-    "postalCode": "27400",
     "addressRegion": "Normandie",
+    "postalCode": "27400",
     "addressCountry": "FR"
   },
+  "worksFor": {
+    "@id": "https://adora-economie.fr/#business"
+  },
+  "hasCredential": [{
+    "@type": "EducationalOccupationalCredential",
+    "name": "Titre Professionnel Niveau 5 — Économiste de la construction",
+    "credentialCategory": "professional certification"
+  }],
   "areaServed": [
     {"@type": "AdministrativeArea", "name": "Eure (27)"},
     {"@type": "AdministrativeArea", "name": "Seine-Maritime (76)"},
     {"@type": "AdministrativeArea", "name": "Île-de-France"}
-  ],
-  "priceRange": "49€ — 3900€",
-  "founder": {
-    "@type": "Person",
-    "name": "Aymeric Dussauze",
-    "jobTitle": "Économiste de la construction",
-    "sameAs": "https://www.linkedin.com/in/aymericdussauze/"
-  },
-  "sameAs": ["https://www.linkedin.com/in/aymericdussauze/"]
+  ]
 }
 </script>
     <script defer src="https://browser.sentry-cdn.com/8.0.0/bundle.min.js" crossorigin="anonymous"></script>
@@ -343,129 +491,360 @@ img{max-width:100%;height:auto}
 <!-- HERO -->
 <section class="page-hero">
   <div class="container">
-    <span class="section-label" style="color:var(--accent)">À propos</span>
-    <h1>La rigueur des grands projets.<br><em>La simplicité</em> dont vous avez besoin.</h1>
-    <p class="lead">ADORA est un cabinet indépendant d'économie de la construction, fondé par Aymeric Dussauze. J'aide les particuliers et les professionnels à maîtriser les coûts de leurs projets de rénovation et de construction.</p>
-  </div>
-</section>
+    <h1>Construire ou rénover, c'est d'abord savoir <em>combien</em>.</h1>
+    <p class="lead">Je suis Aymeric Dussauze, économiste de la construction indépendant. J'aide particuliers et professionnels à maîtriser le coût de leurs projets — sans intérêt commercial caché, avec des chiffres sourcés.</p>
 
-<!-- PARCOURS -->
-<section class="content-section">
-  <div class="container">
-    <div class="content-grid">
-      <div>
-        <span class="content-label">Le fondateur</span>
-        <h2 class="content-title">Un double regard,<br>digital et terrain</h2>
-        <p class="content-text">
-          Avant de fonder ADORA, Aymeric a passé <strong>15 ans dans le secteur digital</strong> en tant que cofondateur d'une agence spécialisée. Gestion de projets complexes, relation client exigeante, pilotage budgétaire serré : ces années ont forgé une rigueur méthodologique qui s'applique aujourd'hui à chaque mission d'économie de la construction.
-        </p>
-        <p class="content-text">
-          La reconversion vers le BTP n'a pas été un saut dans le vide, mais un <strong>choix mûri</strong>. Diplômé d'un Titre Professionnel Niveau 5 en économie de la construction (HUPSO), Aymeric combine désormais une compétence technique solide avec une culture de l'optimisation et des outils numériques.
-        </p>
-        <p class="content-text">
-          Le résultat : des livrables professionnels, des chiffrages précis, et une approche tournée vers le client — pas vers l'administratif.
-        </p>
+    <div class="hero-stats reveal">
+      <div class="hero-stat">
+        <div class="hero-stat-value">15 ans</div>
+        <div class="hero-stat-label">de pilotage de projets complexes</div>
       </div>
-      <div>
-        <div class="portrait-block" style="margin-bottom:32px">
-          <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAEsASwDASIAAhEBAxEB/8QAHQAAAQQDAQEAAAAAAAAAAAAAAAIDBAcBBQYICf/EAEMQAAEDAgQDBQUFBQcEAwEAAAEAAgMEEQUGEiExQVEHEyJhcRQygZGhI0JSscEIFWJygjNDkqLR4fAkJWPxFjSywv/EABUBAQEAAAAAAAAAAAAAAAAAAAAB/8QAFhEBAQEAAAAAAAAAAAAAAAAAAAER/9oADAMBAAIRAxEAPwD1OhCFAIQhAIQhAIQhAIQhAIWlzLmjBstU/e4zXw01xdkZN5H/AMrRuVTeau3Krn1w5ZoBTM4CprAHvPmGA2HxJ9EF9zSxQROlmkZHG0Xc97gAB5krhce7WsoYO5zP3ia2ZpsY6Jhl/wA3u/VeZ8fx3FcwTd7jWIVFY7iBI86G+jRsPktWGhqC7Ma7fagktwXAomjlJWTEk/0sH6rjsT7X851xOjEIaJp+7SwNH1cCVwhCxp3CDeVWbczVpPtWYcVeDy9pc0fIWC1z6qqmdeerqpCfxzOd+ZTDG3TzY3O4NJQAFzuSfUp+Fz2e5I9p/hcQsMp5LX0GyWGOHEKjYUmM4rSf/WxXEIbfgqXj9VvaDP8AmyjI7vHKuQdJ9Mo/zArlWjqE4wXKCzMO7ZMxQWFXS4fWN5ktdE4/EXH0XZYR2zYPUaW4pRVdE8/eYO+YPlY/RUK0J0KD1jgmY8HxtoOFYjTVB/A19nj1adx8ltl47DRqDtw4bgg2I+K7XLvaFmLB9DBV+20zf7qqBft0DveHzKD0ehcDlrtQwfFC2LEA7DKk7fbEGMnyfy+IC7yN7ZGNexwcxwuHNNwR5IFIQhAIQhAIQsIMoQhAIQhAIQhAIQhAFCyFgoBCFwnaJ2k4ZlGN1MwCtxYi7aZjtmdDIfujy4n6oOuxnFaDBaCStxWqipaWP3pJHWHoOp8huqLzx201lZ3lJlOM0kB29tlAMrh1a07N9Tc+QVa5ozHiuaMQ9sxmqdM8f2cbdo4h0Y3l68TzK1KBVVPPW1UlTWzy1NTIbvlmcXvd6kpJaiyUAgbISS1PWUnD6Cauqo4KeN0ksjg1rWi5JQQWRudwBK3+AZUxPG5dNFSSSAcXDZo9SdlbmSuyungjjqcctLN73s4Pgb/MeZ+itOkoYaaNsUETI428GtAACCmMC7HnkNfilWG/+OFuo/MrsqDsyy/SgB9M+dw5yPJ+gsrADLcENjG5HFByYyZgjIywYZTaD1YtHiHZrgVQD3UMlO7rG82+RVkObvtuE29m1+KCjMY7LqiG7qCdsw5NeNJ+fBcNiWCVuGyFlXTyRH+IbH0K9RyRA31WstViOG09XE6OeJkjDye0EIPMgaWndKAVk5uyQIg6fCmnbcxXv8v9FXjoXROLXggg2sUCWhPMSADdOxtQONF+S6PLGasWy68ewVBdTg3NNL4oz8OXqFz7W7JwDkgv7KOfsMx8sp5SKPEDt3Ejtnn+B3P02K7ELymG7qxMm9olVhvd0mNGSrohZrZeMsY8/wAQ+vqguhCYoqynrqWOopJmTQSC7XsNwVIQYQhAQCFlYugFhZQgEIQgFhZQgFhZVF9r/aY6R0+A5bnLWAllXWRmxPWNh+hd8B1QTu1PtXFC+fB8rSNfVi7J65ti2E82s5F3nwHmeFCvL5ZXyyuc+V7i573G7nE8STzKVpAACyGoEAJVk4GgLAFyqEBt+KWGpbWpyOPU4AC6BVDRy1dQyGnY6SR5DWtaLkleiOzrJMGXqJk1Sxr8Skb9o/jo/hb+p5rV9k+T2YfSR4nWxf8AWStvG13920/qVaEbLHZQKZHawHAJwiwtyWWAJ0NQNBm6Vbkl8EEBA3ZNPaHbJ8cTdIsN/JBHkbYKJOyzb3U2Xh5KLJuAEGmrIw4kqu88ZbFSHVVHHpnbu5oHvj/VWTVtsdlpqxt2O1blBRboyw2I3CcY3Zd1jeXm1zZqilAbVN3dGLASDqPNcUGaTYghAManQ1Ja3knGoMgBLsgNunA3ZBusp5lrst1hfTHvKZ5vLTuPhf5jo7z+avPL+N0eO4e2qoJNTeD2H3o3dHBectNls8AxmswLEWVlC+zhs+N3uyN/CR/yyD0YsrVZbxykx/DWVdISD7skbvejd0P+vNbVAIAQhAWsEIQgEIQgEIK4XtZzszKOCBlK5rsWqwWU7eOgc5COg5dTbzQct21doLqISZewKcireNNZUMO8LSP7MH8RHE8h5naimMFhYWSrvme6SZ75JXkuc95uXE7kk8yltYeSob0brIang3qsW3CBq1wgN523Tgbus22QJ0iy7Ds0wL98Zih7xuqng+1k8wDsPibLk2s1EDqr87HsGFFlt1cW2lqnE3P4G7D63UosCkiDYwALBSm+Sbg9wfVOAckDjeN04CmRunECieiSSgo4IMcCmnPsClOdumTvdAiQ8lGmcBwS5nHVcHZRJ3eHa9+KCPUm4uCtPOS55B6FbGV5bH4hYnda+QXkJHVBzdc809VHJuBq3A6Lk810TKXEy6MAMlGsAG9jzXTZllArIowSC4EAqBj0BqsLDnG88NnCw4jmg5ABLDUoN8ksNvsgGCyWBsstaltagbIJQWm6e0rDm/BBsMt45VYBiTKukOoe7LETtI3of0PJX1guJ02MYdFW0T9cMg58WnmD0IXnIiy6bIWZXZfxPTO4nD6ggTN/AeTx6c/L0QXqhJY5r2NewhzXAEEbghKAQAQhYQZQhCCFjeKUuC4TVYjXyCOlpozI93kOQ8ydh5leR8049V5ox+pxSuuHynTHHfaKMe6weg+ZuVY/7QOajW4jFlujkvT0xElXb70lrtZ/SDf1I6Kp4mWKQLY3oE+1uyGNsnLKhs7rFuqdDRxRYcFA1pSbG+ycIRpsqJeDUj63EIKeNpc+R7WNA6k2XqmjpWUWGw0sQAjhYGNA8gqI7HMOFXmuKZwOimY6Y+trD6lX5xbZQOQ+4LJ4JqAeHZOcAgyD04pbfikDY3Sw7dAonqk3WSUgnY+igSdzsmnj6JTXeNo6hYkIF7qiNIN+HnxUaZttxuVJe4B1xwTEr7jyQa6dt2u5la+VvABbKXc7KFO3SdkHE5mH/dqMj3w4pWIABrW3u9402J6hNZkcW4xSuO4bJ+ijYrKXkTRyNBjIABF7nhayDnu7Ie5pG7TYpQG6l1WmSXvGm/eDUfXmmtBQIaEtrbJwNKLIEhBbdOBvwWXAWQRHi2ybcCpBFysaEFndlGY++h/ctY/7WJpdTOP3mDiz4cvL0VkLzZS1E1FVw1VK/RPC8PY7oQvQGXsVixrCKeug2Eg8TPwOGzm/AoNkjZCLIBabOWOxZby1X4pLZxgjPdsP35Ds1vxJC3Kof9ofH/aMSocvwP8ABTgVdQBzc4EMB9Bc/EIKgknnrKqaqq5DJUTvMsrzxc4m5PzUiJvXgkRs4KTG22yoW1vRLa253S2DZOBtlA0WbJBFuIUgt2TUguga0i6S4FOEbeSRubILZ7CYPFitQRu1rIwfW5/0Vtx73Vedi0DosuVkp2bJUi3nZoVhQnc2PFQSYBbZOWHOyjPnZECLguJ2uozZah7iW6dIVGyISNYHNaWsxGaOS3hbzGonf05LXHH4y57e8DTuW35+Y33CDqTL1Tfegsfv5Ll6LMlNVSPhJ0TN2LSQfqFuIJw8HSb732QTe8AljA62TdVLYu4ceCgz1Bjmitw1BQcXxFsIkJI8IJ3NkE+ScC26bdKHO2K5GDM0DpI+D3HiGvB0jqttBWU0soYJjI5wLj3elwYPM3Qbhoa4aQ4et1HqYrg2USufSRxBvtjWFw1AOc1oI9OPK+y0ozHBQuDa2eJ7XW0OadNrmwvfjex3CDXZkbHFVAuFi5wN+i4/EZzC52q+hw8tvPquozTVQy2nje27hawPyVeYpiAklfADeYj3ncGi4CDdUVWa6KWR9y5shGrTbULCx8ipTWrWZZ1COpie5ztRDhvcC35Lb2QJARp22CUGpVvkgSG7JLwngEh7OJQQ/vcUviElzTqS2iwQIeNgu47Kca9kxWTC5n/YVXjjueEg5fEfkuJduRZKgkfT1MU8LtM0T2yMd0INwg9HoUPB6+PFMLpa2H3J4w+3Q8x8DcKYUCJpWQQySyuDI2NLnOPIAXJXj7H8Tfj2PV+KzX1VczpAD91t7NHwaAF6L7acVdhXZ9X908tmqy2kYR/GfF/lDl5piAFrBAtjbcVKiYkRtUiMWQZY1OBvVZDd04gZkHLko+91IkuAmSBfcIG3pcMEkzgI2OcSeAFyVh45gLsOy+c0+OmbuxI+KGR7GnqB+droO67M8Rp8Ny+6ixWQUMschkAqQY7tIG4JS8a7Xck4K90cuNR1MwO0VHG6Yk9LtFr/ABT2dsvR9pWWKVtPWPw+anmFRDI+PXoeARpc24Nt+R891U3Zpgdbi3bBijM29zNiGXqVukMYNBfq0xv4bgAlwPHh0QWh+/8AMWLN76kwePDI5PFHJiUhdLpPC8Mfu3H4nA+SSX5mmb3Jx98bjfeOiYwN9CS4kLcRllGyplqXANa6+q9rrhcwdojKWMvoe7bGCQJ5Glwef4Gjd3rsPNBNx/As11NLpp8fqJbt8fetj3PUWaLKr8Zw7ONNM5sc8tm3BJ3b8Nzb4BZzD2tzNp6lmqve6N2hwfP7M5x291jWnb1cmMCzBiOI0klbhlVWwBjgZY61wmjJPR/EIGsOzTiuD19Mcb+xeDpZM73HDoXD8ir+ylizHYLHW1tRDBHMNnOkAB87lVh7NJjlKGYthQdBK0sk7sAtdfmCOfTmqrwXID8ZzJjOAOr53VmHT9xFStdvI3ez7nYNAtcAX3Qem8x5xy7Qn7XHsNjeN9LqloPyuqvz5nemxCkAoMRpRTvdpdMyUSattw1rbkn/AISFxuLdg+M4dA+UNZJE0XLY5bv+oVX07I6Z1Q1rge7l7prrWNuZ+gCDtYscnp5nNwyCWWR9297Uu1k32uGDwg+uo+a6jD8u5xxqk8NTL3bgCIzI6Ng8tLSAuVyxWPLo4qHuoXu3dUzDwsHUdSrDqMfoMqRQProMSqpZITUMnraqSCOUA2+yZG0m55XAFhe6DVDs8xajBmxGnpqxxFrSx6vqd/ktRjeFUVI10lZSzULxs1tHM+JrRbgPEdvgit7WH17rxw4hh5cfD3c5mb8Q8cFCr83S4pC6nxKKKQu9yaNtifUHgUEFmYceoWubh+LurKRviEFWxr5ABubOsCbc90qTMU8bYqypgppBIOMMxBubncG9rLnsPDqfMELmEud3gNvK/wDwLp8o4XRDE8VFZC1/sk744w/do0k/M8EHUZBxqJ+JvgnljbNOy0cY1F2x4na2+5ViSQuidZwG42sqVw+viwfEamtmjFx/Z26lbrstxuvxrMeLVFbM98bohpjJ8LBfYAILNASgEoNuEoNI3QItZJcCU9p8klzbIIZbZ1ysFvRPPG5CQUDRbusO2TtiXJMg6oLN7I8SMtBV4c929O8SRg/hdx+o+qsBUh2f15oM10XiIjqCYH/1Db/MArvQUh+0XiJdVYLhbSdIZJVPHncMb/8A0qhZxC7btprDW9oVa0Ou2lijpx/h1H6uXFsCokMFhspLL7KPGpcSgW3ZDiOqWR4U0W6jxQNuN0hwsn+7SC31QMWXUdm8jYs1UIebMkcYz/U0hc5pUvDZXUlXDNHs6N4e31Bug9G4fEKaMsaLEggjzC42OgZhfbV7ZqDG47hPcgngZoHg2/wH6Ls4pRPQw1kdi2VjX/BwutNnWjrJsHirsHibNi+Gyispoz/fWFnx35am3A87II3aFgdTjWFSUdJUMhlk27xnIczb0XK4T2Z4VAYal5lqq2EaRNK8m3o3gFY2F4lTY7hVJiOGyCWkqYw+MniOoI5EG4I5EFJqMLrDd1JUBjnHxB3BBWWMdl2W6rEZ62qhrtch1uZFO1rC7rYhSaPCMDw6jkpKChayN+8jpHF7nG1je/6Lsp8uYrVutUVsTGc9LCSpuG5TpKVzZZ5JKiQG4LzYD4BBrssYfSspf+lw6Kmge0XPN/RcF2VYAyq7bs/5gaL01PUexREDYyEN1/IN+qsvPeYKbKGU67FpgHGBloIhxlmOzGAdSbfC6g9j+AT5eyVRQYiCcUqy6uri7j38p1OB9Nh8EHT4tG17CLfBeM8YyX7B2iY9g8jg2PvhWU9x70byT9L2+C9pVzPCTdefO2HDK4Zmosw4XT+0TYY0umib70sBPiA6kcQgm5UyVg9B7NUTYdG+U+LvXEu+i67M2A4NmOhjZXUrZZIgRHJHJpeAeXmFssq1NDjOD0lVh8rJ6KePUxw3B6jyI4EclIxHKdNUh0kE0tPIRy3HyQVHifZpl+ON7o6SokkDS1olqNhfyaBuq1zNk4YPGXVVSyGNxvTtafGTwAt08yvQlTk7G3Pe2mxOGNp+8Y3OI+F1q4eyenZWyV2KV1TiFW52rVIdIb6AIKpyzkaskezEaiGKNkFpHPkmFgweJxsB0WswmnmhwyaeogbA+sL6p0l9RdrcXNG3DwkcVdmaaCnnbBl2kb3M2INtVTsJHc0gNpHE8Lu9xvm4nkq57T4RQ10uqKOMu3iLG6bgbAG23kgrnEHio0sLh721uBHALr+xigfTT4m543Nmj0uVxUrZKuuw6LUwO8XkdN7/AOquXs5owzCpahzQHSPsPQC/6oOljZZKsn9FtljTZAwbALFr8U/pv6pJbfigiPbvtum9Cmd113SXR2CCKWhNvapRZum3s6oIrZHwPbNHcPiIkb6jcfkvRNJO2ppYZ2e7Kxrx6EXXnlzeN1deQpzVZTw9xO8bDEf6SR+QCDzVnOo9rznj017h1dKB6B2kfktZGlVrzLidbKeL6iR/zcSiMIH2DyUhpACZaPVOsF0DzdwlAb7JTRtZZAQJ0lIc1SANk2W7oGQzyS2CxTgZ1WQxBcmQMSFZk90b7ufSO7m3EkHdq6ujk1xBw2vvsq07LA7vsRjcS2IwB59QdvzK7/B5NdNE4btN+d0EOPBZsFxCorsADDBVyGWqw57tLHyHjJE7gx55j3XcdjuthDmnChOIKypFBU8O5rR3LvgT4Xf0kqY8ardAdlBxTDYK2ndFUASRu4scLg/BBtXYhR93r9rptFr371trfNc9ieeMEoy5kdayuqRwp6IiZ/xIOlo83ELkcXyVgEbZHuooGC33WNH6Lj2YbTzVjaXCbkNO5GzW7oOuwajqs65wp8XzBG19Dh15KOiYdUMT+Tifvv6utbkBa5NqQgl5J5lQcIo6fDMOip6cANY0AnqeZU6FwFztsgTXC8ZHNVrneSWilgnp93ueGFtrkgqxpZdTCfguMzXAxsbqiQgCLxboKjweLG8mY7U1WBaY6Sqd3slBVg9zKeZFt2O/iHHmCu/g7W8MgaGY1huKYfINiWQ+0xnzDmb29QEZ1xHC6vKckkkjWSMj7yJ4NnBwFxZaPKWL4fXxwsq4GuLmgh72DdB2NN2mZbqgPY5cRqnngyHDpi7/APIU2LMFZiYtTUrMPi2vNXkF4HlE08f5nBJp8BwuUF7KSEE77NAKxU4HTxRuMbA08tOyDX4iKahfUOge58kx1yTyOu+QjgDyAAuA0bD5qke1Cu9plbGQNnXaelyrDzLVSYa9jSXtYH2Pivsqkzk5s8L36vte8B48B0Qa1+HH2yklFzE6INve+jbxC/zA9VeWXqL2HB6WG1iGAnyJ3/VVRlq1VjcNNNE0RtIYQARcaxY7+V1d2iwA6IGQ3okubZSAzdYLEEbTssaE+WbrBZYII54pLgDwTrm3vssabckEZ4sUy8dVLkb5Jh7UEVw6cVZXZniDIMvyxSHdtS+3oQ0/qq5PDZbPB6t1NTyMabAyF30CCogSSSeJNyn2Jt4DJZGc2vLfkU5HugkRg2TzG80iIbDqpLAEC4/TdPMb5JLAn2NugQWWQGJ/RdZ0Hogj92UsMsFIa0XWSByQdHkSvNJiLoi0ubPG6PbiOYVk4VpZTsazSA0defBVdk5p/f8AR7bB4urBpq1sNQ8PaYmG+hptsAbfXig3Jn0vN3XaeXmoGI4kII3OuAAolbUhsBe0jgq2zpmllDDMyZ5abbIG86ZpM16emc58rzpa0O94rp+zrAnUNC19WNdRL4pCd9/JV1kjLFdX4kzGq9oBkINLE8XLG33cR1tbjyJKvShfFpiZTlha8X2NjYbfmg02csQxjCWMqMGEM7eMkE19/wCVwP0WspO0amdQSOqmSUtWwXfC8fMtPMLrMTkZT00r5md61t7AgbcBb1N1UGe8tiuhxXEWlkc7A2TSB4WAWG1uek8fIIOti7SaDuSXSWsNW5CqDtM7WX1mulh8MJNg0HxO8z0CrGopcQnnLIKmWPXqLNTiAR/zZaOfCqzvm6mukdIC5p4lwBsfqg2TswYpX1VpZ5HRO/u2nYDor9yq7uqBmgAB0YcLi99lTeWsDdC7vp2vYTHdpcNtRPhI+F/l5K4MpVNJWMjhpa2HvYWytEErCHEgXAvw3sLH19EFlZaxlstPoe+0rNiCtniGIfYucHtFgdydgqxxLvaqGPFMGe9krSGvidxdw8PmbG49FNkxR82GiX3y5gNyeCCBnXEGTkgvaLNcQL8duvJVIah0tfFHJfu76n6hcWvzW/zNiD5pXxDTvcG5J1Dy+S4uCqE2IsFnOF9FmmzrHiPNBbWQ8DNVmOapjJ9ip7PJvs55sWtA325n4BWiWblc/wBn8UbcKmkgOqKSUua61i4aQLn5fJdRp22QR9KwWKRo3QW2KCMWJDmKUQOSwWBBCLE2W7bqa9iYe3jZBDe3dNObupUjOajv2ugivbY80hrtNwnJDcrNPCZGuI5GyCvMdgNNmDFIDt3dXKz5PKZj5LoO0uk9iz/jbCCA+o74ej2h36laCPigmR7AXUmJvMqLEL2U6MWbsgcjCkRjfgmoxYqUxvCyDLW9ErT5JwNFvNFrFA3pKNO6kBt1gtugl4DO2mrmSyX0tcDsumx2curZHhzwwRg6zuSb8PkSei5KlAEzS/3QV1ssrJamNzyGxzx6Aw7X2NyDy4cenqgMLqv3hQwSjxNeC4ne1v8AfiuKzRk92K4tBKxzdDXarE7l9vAAOe9j8F3OAU8UbZDF3sELS5jadwF26eluX+i3dJTRSB0haWvF2kgbi44j4oOBq8z4Vg0rsHkqGQNghDaiZwsAA3g38R4b8Bq6rNJ2gYKylEzMVoYpA7SYXvFwLCx8+XxXJZ/yAzGu0zXJrNE5rNm/cbYC1/pYLfYh2B5brqZjoYpqaYD3mP4n0KDp67OOG1kU7I6+nqIoj3hMZB1lpBDR13tv5LlsVzJhpy9W4eAJXVEYBvY+IvFw4nlZod8lIyx2Tx5fpailbIK1r/d72MNLTvbcetlvKvJ+Hd7LJW4FIYhGNMsIEt3X3Ggbj1QU+aDDKCnE0soOotaG+9pYW+I77XJB+ey0mIVuFVFcJmObHE86+7jYWthO9yCTzIB+KsGswDA58Xqaf9xZgawRNs/2N5YXEm4sCfLdcpjuS6+OsdHg2Bz905oHfVREIB6aTcn6IOcoc1UEJpoZYInU0TWiVruBcH3uL8Li/HqknOsVDKZqN8T5pZA9ziA4bONwediHG3w6LT4j2eY1HqMzWREEki23nYpzC+zqpmc108hI1adm2CDuco5ww6TEnzEdyJHlpDHXDAdwW+mlu1uBNlYmUaAVODVDpWF5795YHeK4Iva/Pfn0KrvJ2QXYXisVVLB9myQNMxN2tBBu4jyAO3U81dYkDcGrI4wxsroHNi0ttuRYHbnp3/8ASDz/ANoYLJoe6a5sdSXmEkW1AcbH1Nj6LlcCa5mJB5LiQfA8u9N7/r5rts90cbaLDKqGpfK6mpwNDmWczVd79Q87j6rjsJk9nrqWsbIwiPXYaOWnYkHbjc2QelOz5rP/AIvSOgIMUmpzSB1cePmulLSqc/ZzzK/FIscwyWQOZTyippha1mPJ1D0BA+auoNQMBu3mgsTunkshqCMWWSHDZSnNTTmoIzm3Tbm9Qpbm2CZlAsggSi19lDk5qdMocgCCG8WK6nJ+F+24dNLYm05b/lauYl47K0+zeHucsMc615pXyD0vb9EFU9vNEIM3UtU0eGqpBc24uY635FqruMbXV5dvuG+0Zbo8QaLvpKgNJ/geLH6hqo+IIJMG1rqdGRYKDFxClx8kEuPdS49rKLAR8VLj3CB8C6zpWGGycAvfogwAlaOaW0BKt8kDYbv0Ug4+RWRYO4NdPI0T0+ogAua9t2/EE+trJA8PGwCq7tFr5aDPWF1VOGGSCJj2lxAsdZ58vVB6cpjHcOdZpP2j3EWIFt9k1hFV31XUWIB1khjeIA236cStZh+IxYhgUFdQSRv9qh1693NaSNwfO5J9FOyvTf8AdKohhaY26XOcLEu9OQtZANwHvK99fOC2Vxv4t9IBsCeu3Jb5hEVgwlzQbHVxKlQU7GucBuS7W4k8TwufhyQ+HVI48QPvE80DEpYTq1FpBtcLLqtjWhpe11uuyjTxWe7i8AEi35LQVsfdRue59n8Gta3UXOO//DysUHSPqYGMLrx+ZIXO409lRG5xkja0butyUM1Xe1dNDI5jmOjLZHjhcGwv8VCxeeGjrWxvLNEru61tffj90t4nlYjzQc5VU0cskpZHI9xBs5zLnluAfqo1LhDjOBv3hJOk7WttYHgD/qplf7aZoY6uKNjQ0uLmk2fYWtrG9vULd5aie/EBFMDIO6uNbrhw4CxO/C4QTKGmp8TwqWCosS4WDx72w8ue3P6rl8GllhxuopsQL4xFM43kFmsB4X8uO/6Kx30LYrvDgA5oBcACfIHr6ql8yYpLhma5GVPdRU9dUiQB7+IDNIFwNgCWkceY8kGo7QonYVTY3TzNf7ZI4d04eMBhdcO/pDQL9HFVJiVYyiw/2jS10kzSzuybANdc7f8AOisTP7W1tRTsbM+Z8EBEwk8MjSQCWnfdu2wsqZzFW+1VdmXbGPu22+CCxv2Zp3M7Q54mOIjloZLtvxs5pC9UrwNhWJVmE1kdZhtTLS1URuyWJ2lzVe2Ru3vuqdlNm6lkke3b2ylaPF/Mzr5j5IPQdkWXOZfzxlzMAAwrF6SaQj+yL9Dx/SbFdEHX4EIMOFgmnJxx2TTygQ4piTgnSVHl5oI03NQZjYqXM7YrXzG26BiZwDXHmArsy9S+yYFQQEWLIW39SLn6lU5g9N7fjNDSWuJpmtd/LxP0BV6DYbcEGqzZhTcby5iOHOFzPC5rPJ43afmAvKjNQNnNLXAkOB5EcV7BXm/tSwU4PnSs7tummq/+qj228XvD/Ff5hBzEW3JS2HgosZ2UiPiglxGxClsdsocY3UmNBKaQpMYuLrVz1UNLGZJ5GsYOJcVy2NZ/gpg+LDYjNJwEjtm3/MoO+fJHEwulc1jRvdxsAuWxzPWE4cXMieaqdv3YuHxdwVUYvjlfis7TX1D3Nvs0eFtvRaoyaxYjS3hbl1Qdji+fcUxEOayRtFB/4j4j6u4/JclNVGSR0k8zpjcjxkkknhclIILHaWs19AVjXI43fpAbuLbm4VFodhGaY8BxiWixSpbDT1L2tjMkhDQSLCw9Rz8l6ayvpZTPIdqbI7WSTfVfe/n/ALrwfIHVVOZS4gje7drL1F2H5qmzJlVstdZlRRl0b3PIHeBthdoFr8QL2+qguylc2aMyNtod+SdDAIy5oFidr8lrsPqmSU0bmkCNxFh5Ke6QuAJ+A80DcsLHRG9g0cVoq3Di95INme87b3rDa5428l0b3NADfugbeq1VfK2RjYwbF1xx6oNNPgkEbjM0F0jmWAbYAW4bcOZSazB4Xta6YbGzXXseW/xW8hsYYy4WbwJvw32TcoEtM3xDU0OJNtjdBzrcIEOiEBr2sBczfh1t9duG6myYewTQ1MZPduJ1G9uAtf8AJTA0OlLoSAWxWJt57beig45iDafDKUuJe10vdtDeLidr38kD1dU07Y4jNKTFrDGnTzJ2H1XmfPksdXnOae4MZld3ZuXEaTYl3Q7DbiOnFdv2g5vOH+0QRSO7svaA+M3DXNBNzfhuG+u6pb94dzh01XXOtJKbiwA4XIBHXdA5n7Mk1RXVMxnD3SsF7CwbcAcOfBVk5xe4ucbkp2tqX1NTJJI65c4lMjZUZKy1JShsEDjHkODmkgjh5Ls8r9pOaMvFjaTE5J6dv9xVHvWfXcfAri2hODfog9F5Z7eKOpcyLMVA6kJ27+nJkZ8W8R9VaOC5jwnHIBNhVfBUtP4H7j1HELxOxSaWomppmzQSvilbwexxaR8Qg9xXvwTEpXmnLXa1j+FMbHVvZiEA2+2Fn/4hx+KsbBe1/BK8NbiDZ6GQ8S8amf4goO/qDuVrpnWJSqbFKPEYRLRVEc0bhcOY4FNyEF2/BB1vZfQ+0YzUVrh4aWPS0/xO/wBgfmrSXOZBw04dlyAvbpmqPt33478B8rLo0AuA7ZsC/eeWhXQsJqcOcZdhuYyLPH5H4Lv0mRjZY3Me0OY4aXNPAg8Qg8lxi5BUqNu3RSe0ekhyZj9RR1DiIXfa0u1y+M8PlwPoqxxXNdbUl0dOBDHbkfER6oO+rsZoMNjLqqoY233eJPwXKYvnl4OjDYiBze88PQLh3SSvc55vJxdcm9+iz4pA1rhxO23Ha5QScTxatr36qmeSS5vYmwHwUBgLnFo2LiDY7A3/ANk80FseptiSNx5uNkmpaLEsubEkDjsBayoQRqY7SText8dgsNDg/wDh6/G36LEALQ1uo3Ft7cgLpyZwDPAQdufl/uUGCNL3aHBr3C1yOaYmAZpMjnyyDcN8/ROyt1tBaLW3t/qUmNzGi0EYJNje1h8SghCUMnDXE934rDj/AM5rf5TzDWYDjlLWUlXOyjYdM0YIsWFwLmkHgCRx4/NczW3ZM0g6i3e/VLgrj3DIzZzh4Nxt5fn9EHtDJWb6DG6OZ2GySSxQW7wm5e03PEdOI4lWBHUjuhJsddiAN9l4i7NM3OyZiznvjNTTTeFzCbDna9vMl3PflzHojL+fKbF8IjqMNeypkbGXSQtd9pFsCGlnGx2HT1UFoz1B1mxabE232Gy0UM7Y56ps77yMj1g34XO3/tcrLnNtJCx8Qp3ta3VLAX3kAPDccdui0GK5wjo6lksGppnZGXyubaNu2zdRNrWHC3EeaC2oJWnugxxAA032tsFFrsREEbmwjWNZjLrWA58eYHNctheY4m1M9TI+V1PSl7pn6OZG2kcLm4sOm5WgzDnIU+FmVlY2F08jiGsuXOa0C/isLX36deBCDt6zGWupI3ABgrWlrQ4aSAOLrc7A/VVTnvO8La80VHKZ6Wgja0TNf4TIQSd+Z90dAuOxHPFRA+QRvD6ksLNbRdseq4DG32AA4kbk+S4Ssqwz7WdxMYGrT5f+0GxxzGO8FWaiQmCV5fpcdrk9Piq+xivkqpdGoGFvugfmlYvir652lt2xgggDqtYqAcEIWEAlgJIS29UDg3WRb4JLU4222yBbRtbrcJxvA3vbYpDB68ing3YeQIRA08L36fJPMttpdYE8CmyADZpvwcEprNTNuTT9Cip+H1lXQSCWiqJYH9Y3aVdHYnj+L5szdRYHWRe0wAGaecbFkbON/UkN+Ko6OwJubBpub9CvYv7L+Sjl/Jhxuui04ljAEg1DdlOL92Pjcu+I6ILpAsABYDohCFAIQhBWPb3kR2cspmfD4w7GcO1S03WRp9+P4gXHmB1Xjkt8LyQbi5/RfRSy8p/tF5Bfl3FpMw4VCBg+IPAnjY3aCoc65P8AK/j5G45hBTIFpHR8AHNaD5AXWGao2a2n7rr7dSn+6f43nxtDyTbltsmXWdHp0EDQNr8yqMPboFwTcvADelgmXnVHuRYNNxe3EpwuL37km7yb9NrJmZpiu3n4QR6FA4Hts5zbFrSTYcTy4JqTSQWEEB22/LdZO7nk3AAN7HhunGG7RwcSboEQSNaAHO03J5cr7Jl/eF4ga4AHdpcTtf8A0TcjbO8LnF1mb+d904ImPh+01d6Pdc3c8f8AmyCPPTt1MjjuZL3J5+q0rxobsbG9tj0W9M4DCxjCJzYOB4n/AGWvqqUsdGCLOJu4WQMxVWqRgeTY3vvzW6wPNGIYBLJJg1Q+GSRhjLtZsGnjtwufpyXOStAedN7Wumy8t3HPYhBZkedmVsPcTxF9ROR9lTsIs8feuQbk+VkmSsqZGaXVRqLj+z8TrW38VtgRx8lWxfd3EjzBTzK6eJjmxyvF9iQdyOnooLCrsQxJkOh1VVBtw4wmYgcLbcgbWWsNTJMfHNJpADGNc8kADlc8tuS5X96VDo3te4uLrWLnE2sb/PhuozqqZzHsL3Wc65H6Kjoa3FaeBpbEdbiNVwNr8loa2umqiO9eSG3DeWx5KKTdYQCysIQCFkIQZS272SG+SeYBeyDNrcFlh8XBB5WS4QfXyQOsB08dhe6cuCRxLfL0WGgC59UuxtcAWHO+6IywWbttsAnY2nTvw1OCQ0mwFgTbpvxU7DcOrMVxGlw/DYHVFZUzd1DE3i954D/fkEV3fYhkOTPWcoaeoiJwWjDZ653It+7Hfq4i3oCvc8TGsY1jGtaxosGtFgB0C47smyPTZCyhTYXDpkrHfa1lQB/azEbn+UcB5BdooMIQUIBCEIBQ8Yw2kxjC6nD8RhbPSVDDHJG7gQfyPMHkQpiAEHh3tTyZW5CzG6hmEj6CfU6jqgL97HbgTyeDYEfEbFcO29mDVdxDb/Ne98+5Rw3OuXZ8JxVnhf4opmjxwyW2e3z8uYuF4mz5lfEsk5gkwrGItMjReCZg8E8d9nt2+nI7FUaRzhpNmhziSeG35JIHePtJYkFoN9khocXXDATc8B/slSMcHbfiAsRt6cECDu1m4AANxbz9Etz9Li4uu43ubWTTHAxkEXIbffnvw4JzSGl7iwWJ21Xv+gQOGIkg2aSXNJI6KM+8b7nSDYnb+a26ea8OJcHAu2Fr+Vr2SHtBjBBF9Dt3DqeKCNUxyNeJm3D9RsbXBtyKYM2vU+UlsoFgC23xU7VbVYcTa/HiP9lDqYHPjc5wcQDcEfduL3QQ2w6Y3vNgHWA25c1EdDdpd5qQ+pe5jWPu5o4G29kqSSMRNEbg4hvBBrHCwSVMkYWx2c21gmnxgBAzdYul6bi6TZBhCysIBCFlAXWWrACca1BljdxYJ5jfDusNaAL7lBJ3HVAlxu5PxbAXTDBuNiSpLGjTw3sgcHK1hvzSmkubc2AJA2QNgdr36LBPMm1rHogXYW6fC/6L2B+zh2WPyzQjMeYINGNVbLQQPG9LEevR7hx6DbquW/Zz7HS40ubM20hbptJh1FM34iZ4/wDyD6nkvTllAIuhAQCEIQCEIQCAhCAK5ftCyRhOesCdh2MReJp1wVDAO8gf+Jp6dRwIXUIKDwN2gZOxbIeLuw3F4bseHOp6mMfZ1DerT16tO4XNxi8h0m93cbX5chZfQPNuWcKzbgs2FY7StqaSUejo3cnMcN2uHULyJ2qdlOLZDqHVTNdbgTpLx1kbP7Icmyi/hPnwPkdlRWwiIGpptduwt5+iw677NtsdQ2Fv0SGuDmBoNxbrw3TpY1rSdrkmwFth8kDYiDTqd4Lncj1vb6rJcHsuZAQBYXtvvw4+STUDfwC97m5G17eiQ5wddwvcg73NiOIQOjfe3jLm2vbgE24h4czgQXAE8bjcfqhshMpA2OsczwO/VOXbpbqH4jbmLoIlVTMbcMO5249RcFamamLbu3F7GwW7LD3TtQue7B1eh2TdULzPYCS3Vp38+H1QaR7pL3J1DhvzSHvLuLQPRbaSlDmsf+Ln5j8lDkp9i4evoPNBEL+AssF21gE66LyKS6O23TigauhLcy1/JGnmgQAlAFLDdvisho4HqgSG8OqcYNvgstAG5BtwS2cRvsCgALHa226Q656JRPMDjdYAu7e5CBUVhw6cU+3cBJjA0u424WU/CsPrMVr4KDC6Serrp3aYoYWFznH06eaCJIPeJPMbr0x2Adh7pPZczZ3pdLRaWjwyVvykmBHxDPiei6rsU7C6XLD4cazW2GtxsWfDTjxRUh69Hv8APgOXVXqoC1kIQgOSEIQCEIQCEIQCFlYQCLIQgym54Y54XxTRskie0tex4Ba4HiCDxCWhB597S+wCGofPiWRTHTTO8TsMldpicefdu+5f8J8PmF5pxyhrsGr34di1JNRV0ZIfHO0tcPPjuOhGx6r6MLns45OwLONB7JmDD4qpoH2cvuyxHqx43b8NkHgANsCfCC4gi1ttt1HfJqdZpBu0XuB0sr7z9+z3jOFvlqso1JxWivq9lldoqGeh91/+U+RVH4hh1Zh1W6lxSkqKOoZp1QVEbo3ix4kHdUQISAGl5u4aSbEdbHklxvBaLlgsHDYjf6Jud2geAbm/0KRdzpHB3EOcLnhw9UEx8jXOfGPCC0AbjmR5IcGuebX1Bw53tYlRDIWsuTYlrXc+qcErg4uDj/ae9vvf/wBoFRts9t7e+4cCOSaEZDoiRt3bgfmlseXBnLUSTe5tbbokueRHwtqYXXA9eGyBh8ZJaWkXMX/CmZGAjqdA63upbjYAEeLTsByF024BoOgDiBc8uCCLJGDrJFjpCQ+PxOA8reaffvrsfvBYJ8RPHcjfZAwGgcdhe6zbY7X5rIIOn8jzQ6wuBx0oC1vhZB48uJWQBblbUgnS4EmwuT0sgb5DyHVPNA52HFdnkTsvzXnd7DguFyNozxraoGKADqHH3v6QV6c7Nv2esuZZMNZj7v35ibbOtK3TTRnyj+96uv6BB557Mux/MmfJoaiCH934ITd2IVDfC4f+NvF59LN817A7OOzjAMg0Biwam11kjQJ66azppvU8m/wiwXZMY2NjWMaGtaLBoFgB0WVAIQhAIQhAIWUIMIQj5oBCEIBCEIBCChAIQhAIQhALTZmyvgmaKT2bMGGUtfCPd75l3N/ldxb8CFuUIPPObf2ZsKq5HzZZxefDydRFNVM76O55B2zgPW6qHM3YrnrAe8e3BHYhA1wPe4fI2a9uPg2f/lXuRFkHzOraeajmfBWwS01QAWmKdhjcN+jgEg2dYhtgADbbfqvpTiGG0OIxd3iFHTVcfDRPE2QfIgrhcW7F8gYu5zpsu01PIfv0b3wH5MIH0VHhJpZqAIABebbX2Rq1hjbE+Hjfh9V6zzN+zrk2mhE1JU43AS4nS2qa4cP4mEqksxdn+GYRMxlNV17hZx8b2H8mBBW776Xm1yGfXfzSX3u4EiwsLhSqynbDII2OdpEN91NwbBoK+qdFNJM1oja7wFoPH0QaV5uX2Fmgj9Egcd7e9yPFehcmdiuXcbaDWV2Li+naOWNvIf8AjVsYb+zr2f0Tg+ajr64je1TWPI+TdKDw+HNa5pJa0b8TYrosu5IzNmMA4FgOI1rXADvI4SIx/W6zfqvemA5Aylgek4VlzCqZ7eEgp2ueP6nXP1XUNaALAWA4BTR4/wApfsz5lxBzJMx4hSYPBe5jjPtE3ptZo+ZV4ZL7Dck5YMUxw796VzNxU4ge9seoZ7g+XxVooQYa0Ma1rQGtAsANgAsoQgEIQgEIKEAhCEAhCEAhCyg//9k=" alt="Aymeric Dussauze — Économiste de la construction" class="portrait-photo">
-        </div>
-        <div class="timeline reveal">
-          <div class="timeline-item">
-            <div class="timeline-year">2009 — 2024</div>
-            <div class="timeline-title">15 ans dans le digital</div>
-            <div class="timeline-desc">Cofondateur d'agence · Gestion de projets · Pilotage budgétaire · Direction technique</div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-year">2024 — 2025</div>
-            <div class="timeline-title">Formation économie de la construction</div>
-            <div class="timeline-desc">Titre Professionnel Niveau 5 · HUPSO · Métrés, CCTP, DPGF, OPC, AMO</div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-year">2025</div>
-            <div class="timeline-title">Création d'ADORA</div>
-            <div class="timeline-desc">Cabinet indépendant · Normandie & Île-de-France · Particuliers & professionnels</div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-year">2026</div>
-            <div class="timeline-title">Lancement des outils digitaux</div>
-            <div class="timeline-desc">Simulateur d'aides · Estimateur TCE en ligne · Rapports automatisés</div>
-          </div>
-        </div>
+      <div class="hero-stat">
+        <div class="hero-stat-value">100 %</div>
+        <div class="hero-stat-label">indépendant des artisans &amp; fournisseurs</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-value">27 / 76</div>
+        <div class="hero-stat-label">Normandie + Île-de-France</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-value">&lt; 24 h</div>
+        <div class="hero-stat-label">de délai de réponse ouvré</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PHILOSOPHIE -->
+<!-- LE DÉCLIC — TIMELINE -->
+<section class="content-section">
+  <div class="container">
+    <div class="section-header center reveal" style="text-align:center;max-width:720px;margin:0 auto 8px">
+      <span class="section-label" style="display:inline-block;font-size:13px;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px">L'ORIGINE</span>
+      <h2 class="section-title">Pourquoi j'ai créé <em>ADORA</em></h2>
+    </div>
+
+    <div class="content-grid" style="margin-top:40px">
+      <div class="reveal">
+        <div class="parcours-timeline">
+          <div class="parcours-step">
+            <div class="parcours-year">2008 — 2023</div>
+            <h3>15 ans à piloter des projets à fort enjeu</h3>
+            <p>Cofondateur d'une agence, j'ai dirigé pendant quinze ans des projets clients à <strong>fort enjeu budgétaire et stratégique</strong>. Pilotage multi-équipes, délais serrés, arbitrages permanents entre coût, qualité et planning, négociations avec des décideurs et des techniciens.</p>
+            <p>Un métier qui m'a appris à transformer un brief flou en livrable cadré, à anticiper les dérives avant qu'elles ne coûtent, et à <strong>ne jamais perdre un budget de vue</strong>.</p>
+          </div>
+
+          <div class="parcours-step">
+            <div class="parcours-year">2023 — Le déclic</div>
+            <h3>Des proches piégés sur leurs chantiers</h3>
+            <p>Plusieurs proches m'ont demandé, au fil des années, de relire des devis de travaux qu'ils s'apprêtaient à signer. Le même constat à chaque fois : des écarts de chiffrage entre artisans qui dépassaient 50 %, des prestations sous-évaluées « pour rester compétitives », des contraintes techniques absentes.</p>
+            <p>Personne, dans leur entourage, ne pouvait leur dire si le prix était juste. Et personne n'avait intérêt à leur dire la vérité — l'artisan qui chiffre n'est pas neutre, l'agent immobilier non plus.</p>
+          </div>
+
+          <div class="parcours-step">
+            <div class="parcours-year">2024 — La reconversion</div>
+            <h3>Titre Professionnel Niveau 5</h3>
+            <p>J'ai préparé ma reconversion : un Titre Professionnel Niveau 5 en économie de la construction, des outils pro (Batichiffrage, Attic+, AutoCAD, Revit), et une posture claire dès le départ — l'<strong>indépendance totale</strong> vis-à-vis des artisans et des fournisseurs.</p>
+          </div>
+
+          <div class="parcours-step">
+            <div class="parcours-year">2025 — ADORA</div>
+            <h3>Le service que j'aurais aimé offrir à mes proches</h3>
+            <p>ADORA est né de ce mélange : la rigueur du pilotage de projets, la solidité technique d'un économiste de la construction, et un service que j'aurais aimé offrir à mes proches il y a dix ans.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-photo reveal" style="display:flex;flex-direction:column;align-items:center;gap:20px">
+        <img src="data:image/jpeg;base64,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" alt="Aymeric Dussauze — Économiste de la construction" class="portrait-photo" loading="lazy">
+        <div style="text-align:center;font-size:13px;color:var(--muted);line-height:1.5">
+          <strong style="color:var(--navy);display:block;font-size:15px;margin-bottom:4px">Aymeric Dussauze</strong>
+          Économiste de la construction<br>
+          Fondateur d'ADORA
+        </div>
+        <div style="margin-top:8px;max-width:280px;text-align:center">
+          <p style="font-family:'Montserrat',sans-serif;font-size:17px;font-weight:700;line-height:1.35;color:var(--navy);letter-spacing:-.01em;margin:0">15 ans à piloter des projets à fort enjeu.<br><span style="color:var(--blue)">Aujourd'hui, le vôtre.</span></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="quote-pull reveal">
+      <blockquote>
+        Mon rôle est simple : vous donner les <em>vrais chiffres</em> avant que vous signiez quoi que ce soit.
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- MA MÉTHODE -->
 <section class="content-section" style="background:var(--pale)">
   <div class="container">
-    <div class="section-header center">
-      <span class="section-label">Ma philosophie</span>
-      <h2 class="section-title">Trois convictions qui guident chaque mission</h2>
-      <p class="section-sub">Ce ne sont pas des slogans marketing. Ce sont les principes concrets qui structurent mon travail au quotidien.</p>
+    <div class="section-header center reveal" style="text-align:center;max-width:720px;margin:0 auto">
+      <span class="section-label" style="display:inline-block;font-size:13px;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px">MA MÉTHODE</span>
+      <h2 class="section-title">Trois principes qui structurent <em>chaque mission</em></h2>
+      <p style="color:var(--muted);margin-top:14px">Du chiffrage rapide à l'accompagnement complet, ces trois principes ne changent jamais.</p>
     </div>
-    <div class="value-grid">
-      <div class="value-card reveal">
-        <div class="value-card-icon blue"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 21L3 3h18L3 21z"/><path d="M3 14l7-7"/></svg></div>
-        <h3>Transparence des chiffres</h3>
-        <p>Chaque estimation est détaillée, sourcée, explicable. Pas de "forfait global" opaque — vous savez d'où vient chaque euro du budget, et pourquoi il est là.</p>
+
+    <div class="method-grid reveal">
+      <div class="method-card">
+        <div class="method-card-icon blue">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+        </div>
+        <h3>Chiffrage sourcé, pas approximatif</h3>
+        <p>Mes estimations s'appuient sur <strong>Batichiffrage 2025</strong>, la base de référence du métier. Je croise systématiquement avec ma propre base terrain : les prix réels observés sur les chantiers en cours.</p>
+        <p>Pas de boîte noire. Vous avez les ratios par lot, les coefficients régionaux, les hypothèses de gamme.</p>
       </div>
-      <div class="value-card reveal">
-        <div class="value-card-icon iris"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
-        <h3>Outils digitaux au service du métier</h3>
-        <p>Le numérique n'est pas une fin en soi. Mais un simulateur d'aides qui fait gagner 2 heures à un particulier, ou un DPGF auto-calculé qui élimine les erreurs — ça, c'est concret.</p>
+
+      <div class="method-card">
+        <div class="method-card-icon iris">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        </div>
+        <h3>Outils pro, dossiers carrés</h3>
+        <p><strong>Attic+</strong> pour les métrés, <strong>AutoCAD et Revit</strong> pour les plans, <strong>Batichiffrage</strong> pour les ratios, des scripts Python pour l'analyse DXF/DWG quand le projet l'exige.</p>
+        <p>Mes livrables sortent en CCTP/DPGF structurés, conformes aux usages de la maîtrise d'ouvrage publique comme privée.</p>
       </div>
-      <div class="value-card reveal">
-        <div class="value-card-icon teal"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+
+      <div class="method-card">
+        <div class="method-card-icon teal">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
         <h3>Indépendance totale</h3>
-        <p>ADORA n'est lié à aucun artisan, aucune marque, aucun fournisseur. Les recommandations sont neutres. La seule obligation : servir l'intérêt du client.</p>
+        <p>Aucun lien commercial avec un artisan, un fournisseur, un courtier ou une marque. Je ne touche pas de commission. Mes honoraires sont mes seuls revenus.</p>
+        <p>C'est cette indépendance qui rend mon avis utile — quand je vous dis qu'un devis est gonflé de 25 %, vous pouvez vous y fier.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CHIFFRES -->
+<!-- LES MISSIONS -->
 <section class="content-section">
   <div class="container">
-    <div class="stats-row reveal">
-      <div class="stat">
-        <div class="stat-value">15<span>+</span></div>
-        <div class="stat-label">Années d'expérience en gestion de projets</div>
-      </div>
-      <div class="stat">
-        <div class="stat-value">-12<span>%</span></div>
-        <div class="stat-label">vs marché sur un premier projet livré (136 m², Seine-Maritime)</div>
-      </div>
-      <div class="stat">
-        <div class="stat-value">15</div>
-        <div class="stat-label">Lots techniques dans chaque estimation TCE</div>
-      </div>
-      <div class="stat">
-        <div class="stat-value">2<span>h</span></div>
-        <div class="stat-label">Gagnées par simulation d'aides automatisée</div>
-      </div>
+    <div class="section-header center reveal" style="text-align:center;max-width:720px;margin:0 auto">
+      <span class="section-label" style="display:inline-block;font-size:13px;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px">MES MISSIONS</span>
+      <h2 class="section-title">Avec qui je <em>travaille</em></h2>
     </div>
-    
-    <div class="ref-card reveal">
-      <div class="ref-card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
-      <div class="ref-card-body">
-        <h4>Référence — Rénovation complète 136 m²</h4>
-        <p>Rénovation d'une maison individuelle en Seine-Maritime. Estimation TCE complète en 15 lots, suivi de la consultation entreprises. Le budget final réalisé a été <strong>12 % en dessous</strong> de l'estimation initiale du marché.</p>
-        <span class="ref-card-badge">-12 % vs estimation marché</span>
+
+    <div class="missions-twin reveal">
+      <div class="mission-block featured">
+        <div class="mission-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <h3>Pour les particuliers</h3>
+        <p class="mission-lead">Vous achetez, vous rénovez, vous construisez. Vous avez besoin d'un avis indépendant avant de signer un compromis, ou d'un accompagnement de bout en bout.</p>
+        <ul class="mission-list">
+          <li><strong>Rapport estimateur en ligne</strong> — chiffrage instantané par lots TCE depuis l'outil web<span class="price">49 €</span></li>
+          <li><strong>Audit avant achat</strong> — analyse complète d'un bien avant signature<span class="price">dès 499 €</span></li>
+          <li><strong>Estimation détaillée TCE</strong> — chiffrage tous corps d'état sourcé<span class="price">dès 990 €</span></li>
+          <li><strong>AMO Pack Essentiel</strong> — accompagnement de la conception à la réception<span class="price">2 200 €</span></li>
+          <li><strong>AMO Pack Sérénité</strong> — accompagnement complet sur le pourcentage des travaux<span class="price">5–8 %</span></li>
+        </ul>
+        <a href="audit-avant-achat.html" class="mission-link">
+          Voir tous les services aux particuliers
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+
+      <div class="mission-block">
+        <div class="mission-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
+        <h3>Pour les professionnels</h3>
+        <p class="mission-lead">Architectes, bureaux d'études, maîtres d'ouvrage publics ou privés — je viens en renfort sur les phases économiques quand votre charge dépasse votre capacité interne.</p>
+        <ul class="mission-list">
+          <li><strong>Estimations TCE</strong> — esquisse, APS, APD, PRO<span class="price">forfait</span></li>
+          <li><strong>Rédaction CCTP et DPGF</strong> — pièces écrites complètes<span class="price">forfait</span></li>
+          <li><strong>Analyse comparative d'offres</strong> — négociation incluse<span class="price">TJM</span></li>
+          <li><strong>AMO et OPC</strong> — missions ponctuelles ou récurrentes<span class="price">TJM</span></li>
+          <li><strong>Tarif TJM transparent</strong> — selon mission et complexité<span class="price">380–450 € HT</span></li>
+        </ul>
+        <a href="professionnels.html" class="mission-link">
+          Voir l'offre professionnels
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CTA -->
+<!-- ENGAGEMENTS -->
+<section class="content-section" style="background:var(--pale)">
+  <div class="container">
+    <div class="section-header center reveal" style="text-align:center;max-width:720px;margin:0 auto">
+      <span class="section-label" style="display:inline-block;font-size:13px;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px">MES ENGAGEMENTS</span>
+      <h2 class="section-title">4 promesses <em>concrètes</em></h2>
+    </div>
+
+    <div class="engagement-grid-4 reveal">
+      <div class="engagement-block">
+        <div class="engagement-block-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+        </div>
+        <h3>Indépendance totale</h3>
+        <p>Aucun lien commercial avec artisans ou fournisseurs. Mes honoraires sont mes seuls revenus.</p>
+      </div>
+      <div class="engagement-block">
+        <div class="engagement-block-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+        </div>
+        <h3>Transparence des chiffres</h3>
+        <p>Toutes mes estimations citent leurs sources. Vous savez d'où vient chaque ligne.</p>
+      </div>
+      <div class="engagement-block">
+        <div class="engagement-block-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <h3>Réponse sous 24 h ouvrées</h3>
+        <p>Une demande envoyée le lundi reçoit une réponse cadrée le mardi au plus tard.</p>
+      </div>
+      <div class="engagement-block">
+        <div class="engagement-block-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        </div>
+        <h3>Conseil objectif</h3>
+        <p>Si votre projet n'est pas viable, je vous le dis — chiffres à l'appui — même si cela me coûte la mission.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TERRITOIRE -->
+<section class="content-section">
+  <div class="container">
+    <div class="section-header center reveal" style="text-align:center;max-width:720px;margin:0 auto">
+      <span class="section-label" style="display:inline-block;font-size:13px;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px">MON TERRAIN</span>
+      <h2 class="section-title">Où <em>j'interviens</em></h2>
+    </div>
+
+    <div class="territory-grid reveal">
+      <div class="territory-block-card">
+        <div class="territory-icon cyan">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <h3>Cœur d'activité : Normandie</h3>
+        <p>Eure (27) et Seine-Maritime (76) en intervention directe. Visite de chantier dans un rayon de <strong>80 km autour de Louviers</strong> — Rouen, Évreux, Vernon, Les Andelys, Pacy, secteur des Trois Lacs.</p>
+      </div>
+      <div class="territory-block-card">
+        <div class="territory-icon iris">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><line x1="9" y1="22" x2="9" y2="2"/><line x1="15" y1="22" x2="15" y2="2"/></svg>
+        </div>
+        <h3>Île-de-France</h3>
+        <p>Interventions ponctuelles ou récurrentes en IDF, particulièrement pour les <strong>cabinets d'architecture, bureaux d'études et maîtres d'ouvrage</strong> qui cherchent un renfort économiste sur projets ponctuels ou en sous-traitance régulière.</p>
+      </div>
+      <div class="territory-block-card">
+        <div class="territory-icon teal">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
+        <h3>À distance : partout en France</h3>
+        <p>Pour les estimations sur plans et la rédaction de pièces écrites, je travaille en <strong>remote sans contrainte géographique</strong>. Visio possible pour les pré-études et revues de dossier.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AVIS & TÉMOIGNAGES -->
+<section class="content-section" style="background:var(--pale)">
+  <div class="container">
+    <div class="section-header center reveal" style="text-align:center;max-width:720px;margin:0 auto">
+      <span class="section-label" style="display:inline-block;font-size:13px;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px">CE QU'EN DISENT MES CLIENTS</span>
+      <h2 class="section-title">Des avis <em>vérifiés</em></h2>
+    </div>
+
+    <div class="reviews-grid reveal">
+      <div class="review-card">
+        <div class="review-stars">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="review-quote">L'audit avant achat nous a fait découvrir un problème de charpente que ni le diagnostic parasitaire ni l'agent immobilier n'avaient signalé. Nous avons négocié 12 000 € sur le prix puis signé en confiance.</p>
+        <div class="review-author">
+          <div class="review-avatar">A</div>
+          <div class="review-author-info">
+            <strong>A., acquéreuse</strong>
+            <span>Eure (27) · audit avant achat · mars 2026</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="review-quote">Pour notre installation de poêle à granulés, ADORA a comparé trois devis et identifié des prestations sur-facturées. Sources Batichiffrage citées en regard de chaque ligne. Économie de 1 700 €.</p>
+        <div class="review-author">
+          <div class="review-avatar">M</div>
+          <div class="review-author-info">
+            <strong>M. &amp; Mme M., propriétaires</strong>
+            <span>Tosny (27) · AMO confort thermique · avril 2026</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="review-quote">Aymeric en renfort sur un dossier DCE complexe avec délai serré. Pièces livrées au planning, structure conforme à nos standards, communication fluide. Une vraie ressource externe.</p>
+        <div class="review-author">
+          <div class="review-avatar">C</div>
+          <div class="review-author-info">
+            <strong>Cabinet d'architecture partenaire</strong>
+            <span>Île-de-France · mission renfort éco · 2026</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reviews-cta">
+      Témoignages anonymisés avec accord écrit, conformément au RGPD.
+      <a href="https://www.google.com/search?q=ADORA+%E2%80%94+%C3%89conomiste+de+la+construction" target="_blank" rel="noopener">
+        Voir les avis non anonymisés sur Google
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
 <section class="cta-band">
   <div class="container">
-    <h2>Envie d'en <em>discuter</em> ?</h2>
-    <p>Que vous soyez un particulier avec un projet de rénovation ou un professionnel à la recherche d'un renfort en économie de la construction — un appel de 15 minutes suffit pour voir si on peut travailler ensemble.</p>
-    <div class="btn-group">
-      <a href="simulateur.html" class="btn btn-accent">Simuler mes aides</a>
-      <a href="sur-mesure.html" class="btn btn-outline">Découvrir l'accompagnement</a>
+    <div class="reveal" style="text-align:center">
+      <span style="display:inline-block;font-size:13px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px">CONTACT</span>
+      <h2>Discutons de votre <em>projet</em></h2>
+      <p style="max-width:600px;margin:14px auto 0;color:rgba(237,233,254,.85);font-size:16px;line-height:1.6">15 minutes au téléphone pour cadrer votre besoin et vérifier que je suis le bon interlocuteur. Sans engagement.</p>
+    </div>
+
+    <div class="contact-grid reveal">
+      <div class="contact-card">
+        <div class="contact-card-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </div>
+        <a href="tel:+33672010767">06 72 01 07 67</a>
+        <span>Lundi-vendredi · 9 h–19 h</span>
+      </div>
+      <div class="contact-card">
+        <div class="contact-card-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <a href="mailto:contact@adora-economie.fr">contact@adora-economie.fr</a>
+        <span>Réponse sous 24 h ouvrées</span>
+      </div>
+      <div class="contact-card">
+        <div class="contact-card-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        </div>
+        <a href="https://cal.com/aymeric-adora/decouverte-15min" target="_blank" rel="noopener">Réserver 15 min</a>
+        <span>Appel découverte · gratuit</span>
+      </div>
     </div>
   </div>
 </section>
