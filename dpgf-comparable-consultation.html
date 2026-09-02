@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://browser.sentry-cdn.com" crossorigin>
+<link rel="stylesheet" href="/assets/fonts/adora-fonts.css">
+
+<title>Structurer un DPGF pour obtenir des offres comparables | ADORA</title>
+<meta name="description" content="Numérotation miroir du CCTP, unités mesurables, options hors total, aléas cadrés : six règles pour obtenir des offres comparables ligne à ligne.">
+<link rel="canonical" href="https://adora-economie.fr/dpgf-comparable-consultation.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="ADORA — Économiste de la construction">
+<meta property="og:title" content="Comment structurer un DPGF pour que les offres soient réellement comparables">
+<meta property="og:description" content="Numérotation miroir du CCTP, unités mesurables, options hors total, aléas cadrés : six règles pour obtenir des offres comparables ligne à ligne.">
+<meta property="og:url" content="https://adora-economie.fr/dpgf-comparable-consultation.html">
+<meta property="og:image" content="https://adora-economie.fr/img/articles/dpgf-comparable-consultation.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Comment structurer un DPGF pour que les offres soient réellement comparables">
+<meta name="twitter:description" content="Numérotation miroir du CCTP, unités mesurables, options hors total, aléas cadrés : six règles pour obtenir des offres comparables ligne à ligne.">
+<meta name="twitter:image" content="https://adora-economie.fr/img/articles/dpgf-comparable-consultation.jpg">
+<meta name="geo.region" content="FR-NOR">
+<meta name="geo.placename" content="Louviers">
+<style>
+
+/* ═══ ADORA PropTech Design System v2 ═══ */
+:root{--navy:#0D1025;--blue:#0E7490;--accent:#22D3EE;--accent-hover:#06B6D4;--light:#EDE9FE;--pale:#FAFAFC;--green:#A78BFA;--green-hover:#8B6FE3;--txt:#1E1B4B;--muted:#64748B;--border:#E5E7F2;--white:#FFFFFF;--radius:16px;--radius-sm:10px;--shadow-card:0 1px 3px rgba(13,16,37,.06),0 8px 24px rgba(13,16,37,.04);--shadow-hover:0 4px 12px rgba(13,16,37,.08),0 16px 40px rgba(13,16,37,.06);--shadow-btn:0 2px 8px rgba(34,211,238,.25);--transition:.3s cubic-bezier(.4,0,.2,1)}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;color:var(--txt);background:var(--white);line-height:1.7;font-size:16px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,h4{font-family:'Montserrat',sans-serif;line-height:1.2}
+a{color:var(--blue);text-decoration:none;transition:color var(--transition)}
+a:hover{color:var(--navy)}
+img{max-width:100%;height:auto}
+.container{max-width:1120px;margin:0 auto;padding:0 28px}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.4,0,.2,1),transform .7s cubic-bezier(.4,0,.2,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:100;background:rgba(13,16,37,.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.06)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;max-width:1120px;margin:0 auto;padding:14px 28px}
+.nav-logo img{height:26px;width:auto}
+.nav-links{display:flex;gap:8px;align-items:center}
+.nav-links a{color:rgba(237,233,254,.8);font-size:13.5px;font-weight:500;padding:6px 14px;border-radius:8px;transition:all var(--transition)}
+.nav-links a:hover{color:var(--white);background:rgba(255,255,255,.08);text-decoration:none}
+.nav-links a.active{color:var(--accent);background:rgba(34,211,238,.1)}
+.nav-cta{background:var(--accent)!important;color:var(--white)!important;padding:8px 20px!important;border-radius:8px;font-weight:700!important;font-size:13px!important;box-shadow:var(--shadow-btn)}
+.nav-cta:hover{background:var(--accent-hover)!important;transform:translateY(-1px)}
+.nav-burger{display:none;background:none;border:none;color:var(--white);font-size:22px;cursor:pointer;padding:8px}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:15px 30px;border-radius:var(--radius-sm);font-size:15px;font-weight:700;font-family:'Plus Jakarta Sans',sans-serif;transition:all var(--transition);border:none;cursor:pointer;text-decoration:none!important}
+.btn-accent{background:var(--accent);color:var(--white);box-shadow:var(--shadow-btn)}
+.btn-accent:hover{background:var(--accent-hover);color:var(--white);transform:translateY(-2px);box-shadow:0 4px 16px rgba(34,211,238,.35)}
+
+/* FOOTER */
+.footer{background:var(--navy);color:rgba(237,233,254,.7);padding:60px 24px 30px;margin-top:80px}
+.footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:40px}
+.footer-brand strong{font-size:18px;color:#fff;display:block;margin-bottom:8px}
+.footer-brand p{font-size:13px;line-height:1.6;color:rgba(237,233,254,.5)}
+.footer-col{display:flex;flex-direction:column;gap:8px}
+.footer-col-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:rgba(237,233,254,.4);margin-bottom:6px}
+.footer-col a{color:rgba(237,233,254,.7);text-decoration:none;font-size:13px;transition:color .2s}
+.footer-col a:hover{color:#22D3EE}
+.footer-contact a{font-size:13px}
+.footer-legal{max-width:1100px;margin:30px auto 0;padding-top:20px;border-top:1px solid rgba(237,233,254,.1);font-size:11px;color:rgba(237,233,254,.35);text-align:center}
+.footer-legal a{color:rgba(237,233,254,.5);text-decoration:none;transition:color .2s}
+.footer-legal a:hover{color:#22D3EE}
+@media(max-width:768px){.footer-inner{grid-template-columns:1fr 1fr;gap:30px 20px}}
+@media(max-width:480px){.footer-inner{grid-template-columns:1fr;gap:24px}}
+
+/* Article specifics */
+.article-hero{background:var(--navy);padding:56px 0 44px;color:var(--white)}
+.article-meta{display:flex;gap:16px;align-items:center;margin-bottom:16px;font-size:13px;color:rgba(214,228,240,.5);flex-wrap:wrap}
+.article-meta span{display:flex;align-items:center;gap:6px}
+.article-tag{padding:4px 10px;background:rgba(34,211,238,.15);color:var(--accent);border-radius:6px;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.5px}
+.article-hero h1{font-size:clamp(26px,4vw,38px);font-weight:900;letter-spacing:-.02em;margin-bottom:12px;max-width:720px}
+.article-hero h1 em{font-style:normal;color:var(--accent)}
+.article-hero .lead{font-size:16px;color:rgba(214,228,240,.7);max-width:620px;line-height:1.7}
+.article-body{max-width:720px;margin:0 auto;padding:60px 28px}
+.article-body h2{font-size:22px;font-weight:800;color:var(--navy);margin:48px 0 14px}
+.article-body h2:first-of-type{margin-top:0}
+.article-body h3{font-size:17px;font-weight:700;color:var(--navy);margin:28px 0 10px}
+.article-body p{font-size:16px;line-height:1.8;margin-bottom:16px;color:var(--txt)}
+.article-body ul,.article-body ol{padding-left:24px;margin-bottom:16px}
+.article-body li{font-size:15px;line-height:1.7;margin-bottom:8px}
+.article-body strong{color:var(--navy)}
+.article-body blockquote{border-left:3px solid var(--accent);padding:16px 24px;margin:24px 0;background:var(--pale);border-radius:0 10px 10px 0;font-size:15px;color:var(--muted)}
+.article-cta{background:var(--navy);border-radius:16px;padding:40px;text-align:center;color:var(--white);margin:48px 0}
+.article-cta h3{color:var(--white);font-size:22px;margin-bottom:8px}
+.article-cta p{color:rgba(237,233,254,.7);margin-bottom:20px;font-size:15px}
+
+/* Data table */
+.data-table{width:100%;border-collapse:separate;border-spacing:0;border-radius:12px;overflow:hidden;border:1px solid var(--border);margin:24px 0}
+.data-table thead th{background:var(--navy);color:var(--white);padding:14px 18px;font-size:13px;font-weight:700;text-align:left;letter-spacing:.3px}
+.data-table tbody td{padding:14px 18px;border-bottom:1px solid var(--border);font-size:14px;color:var(--txt);vertical-align:top;line-height:1.55}
+.data-table tbody tr:last-child td{border-bottom:none}
+.data-table tbody tr:nth-child(even) td{background:var(--pale)}
+.data-table .crit-name{font-weight:600;color:var(--navy);font-family:'Montserrat',sans-serif;font-size:13.5px}
+.data-table .bad{color:#991B1B}
+.data-table .good{color:#2D8B55}
+
+/* Callout box */
+.callout{background:var(--pale);border:1px solid var(--border);border-radius:12px;padding:22px 24px;margin:20px 0}
+.callout-title{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:8px;display:flex;align-items:center;gap:8px;text-transform:uppercase;letter-spacing:.8px;font-family:'Montserrat',sans-serif}
+.callout p{margin:0;font-size:14.5px;line-height:1.65;color:var(--txt)}
+.callout em{color:var(--navy);font-style:italic}
+
+/* Trap number inline (numéros des pièges dans h3) */
+.article-body h3 .trap-num{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:8px;background:rgba(34,211,238,.12);color:var(--blue);font-size:13px;font-weight:800;margin-right:12px;font-family:'Montserrat',sans-serif;vertical-align:middle}
+
+/* Sub-labels "Comment détecter / La parade" */
+.trap-label{display:inline-block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:var(--green);margin-top:14px;margin-bottom:4px;font-family:'Montserrat',sans-serif}
+
+/* Stats inline compactes */
+.stats-inline{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:24px 0}
+.stat-pill{background:var(--pale);border-left:3px solid var(--accent);border-radius:0 10px 10px 0;padding:16px 18px}
+.stat-pill-num{font-family:'Montserrat',sans-serif;font-size:28px;font-weight:900;color:var(--navy);line-height:1;margin-bottom:4px;letter-spacing:-.02em}
+.stat-pill-num span{color:var(--accent)}
+.stat-pill-lbl{font-size:13px;color:var(--muted);line-height:1.5}
+.stat-pill-src{display:block;font-size:11px;color:var(--muted);margin-top:4px;font-style:italic;opacity:.7}
+@media(max-width:600px){.stats-inline{grid-template-columns:1fr}}
+
+/* FAQ */
+.faq-item{border-bottom:1px solid var(--border)}
+.faq-q{padding:18px 0;font-size:15px;font-weight:600;color:var(--navy);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;font-family:'Montserrat',sans-serif}
+.faq-q::after{content:'+';font-size:20px;color:var(--muted);transition:transform .3s;flex-shrink:0}
+.faq-item.open .faq-q::after{content:'−'}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s ease;font-size:14px;color:var(--muted);line-height:1.7}
+.faq-item.open .faq-a{max-height:500px;padding-bottom:18px}
+
+@media(max-width:700px){
+  .nav-links{display:none;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--navy);padding:16px 28px;gap:4px;border-top:1px solid rgba(255,255,255,.08)}
+  .nav-links.open{display:flex}
+  .nav-burger{display:block}
+  .article-body{padding:40px 24px}
+  .article-cta{padding:32px 24px}
+  .data-table thead th,.data-table tbody td{padding:10px 12px;font-size:13px}
+}
+
+/* ═══ MOBILE FIXES — 21/04/2026 ═══ */
+@media(max-width:700px){
+  .nav-links .nav-cta{width:100%;text-align:center;margin-top:8px}
+  .footer-contact a{word-break:break-all}
+}
+</style>
+
+<script defer src="https://browser.sentry-cdn.com/8.0.0/bundle.min.js" crossorigin="anonymous"></script>
+    <script type="text/plain" data-adora-consent="analytics">Sentry.init({dsn:"https://14b68c10a24c3da4127332e14fd20359@o4511253060976640.ingest.de.sentry.io/4511253075132496",tracesSampleRate:0,replaysSessionSampleRate:0});</script>
+<!-- data-adora-image-added="true" -->
+<!-- ADORA CMP -->
+  <link rel="stylesheet" href="/assets/css/adora-cmp.css">
+  <script src="/assets/js/adora-cmp.js"></script>
+  <!-- /ADORA CMP -->
+<script type="application/ld+json" data-adora-schema="article">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://adora-economie.fr/img/articles/dpgf-comparable-consultation.jpg",
+    "width": 1200,
+    "height": 630
+  },
+  "headline": "Comment structurer un DPGF pour que les offres soient réellement comparables",
+  "description": "Numérotation miroir du CCTP, unités mesurables, options hors total, aléas cadrés : six règles pour obtenir des offres comparables ligne à ligne.",
+  "author": {
+    "@type": "Person",
+    "name": "Aymeric Dussauze",
+    "jobTitle": "Économiste de la construction",
+    "url": "https://adora-economie.fr/a-propos.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ADORA",
+    "@id": "https://adora-economie.fr/#business"
+  },
+  "datePublished": "2026-09-02",
+  "dateModified": "2026-09-02",
+  "mainEntityOfPage": "https://adora-economie.fr/dpgf-comparable-consultation.html",
+  "audience": {
+    "@type": "BusinessAudience",
+    "audienceType": "Architectes, maîtres d'œuvre, bureaux d'études, maîtres d'ouvrage, entreprises du bâtiment"
+  },
+  "about": "Décomposition du prix global et forfaitaire (DPGF), dossier de consultation des entreprises"
+}
+</script>
+<script type="application/ld+json" data-adora-schema="faq">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Quelle différence entre DPGF, DQE et BPU ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La DPGF (décomposition du prix global et forfaitaire) décompose un prix forfaitaire : les quantités sont réputées vérifiées par l'entreprise, qui s'engage sur le total. Le BPU (bordereau de prix unitaires) engage l'entreprise sur des prix unitaires, sans quantité ferme. Le DQE (détail quantitatif estimatif) applique des quantités estimatives au BPU pour permettre le classement des offres, sans valeur contractuelle sur les quantités. On utilise la DPGF quand le projet est défini, le couple BPU/DQE quand les quantités restent incertaines."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Faut-il donner les quantités aux entreprises ou les laisser métrer ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Donnez-les. Laisser cinq entreprises métrer le même ouvrage produit cinq quantités différentes, donc cinq offres incomparables, et transfère à chacune un coût d'étude qu'elles répercutent. Fournir le quantitatif ne dispense pas l'entreprise de le vérifier : le règlement de consultation prévoit qu'elle signale toute discordance avant remise, ce qui vous donne un contrôle supplémentaire."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "En quel format diffuser la DPGF dans le DCE ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "En tableur, feuille protégée, avec les seules colonnes de prix unitaires déverrouillées et les formules de total posées. Un PDF oblige les entreprises à ressaisir le cadre à la main, ce qui multiplie les erreurs de frappe et rend la comparaison ligne à ligne beaucoup plus lourde à l'analyse."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Comment traiter le compte prorata dans la DPGF ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Par une ligne dédiée au lot 0 ou dans chaque lot selon la convention retenue, avec un mode de calcul explicite au CCTP. Ce qu'il ne faut pas faire, c'est le laisser implicite : certaines entreprises l'intègrent, d'autres non, et l'écart apparent entre les offres ne reflète alors plus un écart de prix mais un écart de périmètre."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Peut-on rendre une offre irrégulière si l'entreprise a modifié le cadre ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui, à condition de l'avoir écrit dans le règlement de consultation. La mention doit être explicite et la protection technique du fichier doit rendre la modification volontaire. En pratique, avant d'écarter une offre, il vaut mieux vérifier si la modification porte sur le fond ou sur une simple mise en forme."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<nav class="nav">
+<div class="nav-inner">
+  <a href="./" class="nav-logo"><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5NDAgMjAwIiB3aWR0aD0iOTQwIiBoZWlnaHQ9IjIwMCI+CiAgPGcgZmlsbD0id2hpdGUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICA8IS0tIFRyaWFuZ2xlIGljb24gLS0+CiAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMCwgOCkgdHJhbnNsYXRlKC03NSwgLTk5KSI+CiAgICAgIDxwYXRoIGQ9Ik0gMTE3LDI4MiBMIDE2OSwyODEgTCAxNzQsMjc0IEwgMTc3LDI2OCBMIDIyOSwxOTMgTCAyMjksMTkxIEwgMjA2LDE1OCBMIDIwNywxNTUgTCAyMjksMTU2IEwgMjM0LDE2NSBMIDIzNywxNjggTCAyMzksMTczIEwgMjgxLDIzNSBMIDI4MiwyNDAgTCAyNDAsMjQwIEwgMjEzLDI4MCBMIDIxMywyODIgTCAzNjQsMjgyIEwgMzYxLDI3NiBMIDMwMCwxODcgTCAyOTksMTg0IEwgMjQyLDk5IEwgMjQwLDEwMCBMIDIwNywxNTAgTCAyMDEsMTU2IEwgMTQwLDI0OCBMIDEzNywyNTEgTCAxMzYsMjU0IEwgMTI0LDI3MCBaIi8+CiAgICA8L2c+CiAgICA8IS0tIFRleHQgIkFkb3JhIiAtLT4KICAgIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDMzMCwgMTIpIHNjYWxlKDEuOCkgdHJhbnNsYXRlKC03MSwgLTMyMCkiPgogICAgICA8cGF0aCBkPSJNIDEwMiwzMjYgTCA5MywzNTIgTCA5MSwzNTUgTCA4NywzNjkgTCA4NSwzNzIgTCA4MiwzODMgTCA4MCwzODYgTCA3OCwzOTUgTCA3MSw0MTMgTCA3MSw0MTYgTCA4OSw0MTUgTCA5NywzOTAgTCAxMjUsMzg5IEwgMTMwLDM5NCBMIDEzMSw0MDAgTCAxMzMsNDAzIEwgMTM3LDQxNiBMIDE1NSw0MTYgTCAxNTUsNDEyIEwgMTUzLDQwOSBMIDEyNCwzMjYgWiBNIDExNCwzNDQgTCAxMjMsMzcyIEwgMTIyLDM3NiBMIDEwMiwzNzUgTCAxMDIsMzcyIEwgMTA2LDM1OSBMIDEwOCwzNTYgTCAxMTAsMzQ3IFoiLz4KICAgICAgPHBhdGggZD0iTSAyMjUsMzIwIEwgMjA4LDMyMCBMIDIwNiwzNTIgTCAyMDIsMzQ4IEwgMTk0LDM0NSBMIDE4MCwzNDUgTCAxNjksMzQ5IEwgMTU5LDM2MCBMIDE1NSwzNzMgTCAxNTYsMzk1IEwgMTYyLDQwNyBMIDE3MCw0MTQgTCAxNzgsNDE3IEwgMTkzLDQxNyBMIDE5OSw0MTUgTCAyMDUsNDA4IEwgMjA4LDQwOCBMIDIwOCw0MTYgTCAyMjUsNDE2IFogTSAxODcsMzU3IEwgMTk0LDM1NyBMIDE5OSwzNTkgTCAyMDQsMzY0IEwgMjA3LDM3MSBMIDIwOCwzODUgTCAyMDYsMzk0IEwgMjA0LDM5OCBMIDE5OSw0MDMgTCAxOTUsNDA1IEwgMTg2LDQwNSBMIDE4Miw0MDMgTCAxNzYsMzk3IEwgMTczLDM4OSBMIDE3MywzNzIgTCAxNzYsMzY1IEwgMTgyLDM1OSBaIi8+CiAgICAgIDxwYXRoIGQ9Ik0gMjU1LDM0NiBMIDI0NCwzNTIgTCAyMzgsMzU5IEwgMjMzLDM3MSBMIDIzMywzODkgTCAyMzUsMzk3IEwgMjQwLDQwNiBMIDI0NSw0MTEgTCAyNTIsNDE1IEwgMjU5LDQxNyBMIDI3Nyw0MTcgTCAyODMsNDE1IEwgMjk1LDQwNiBMIDMwMSwzOTYgTCAzMDMsMzg4IEwgMzAzLDM3NCBMIDMwMSwzNjYgTCAyOTYsMzU3IEwgMjkwLDM1MSBMIDI4MywzNDcgTCAyNzcsMzQ1IFogTSAyNjQsMzU3IEwgMjcyLDM1NyBMIDI3NiwzNTkgTCAyODEsMzY0IEwgMjg1LDM3NSBMIDI4NSwzODcgTCAyODMsMzk1IEwgMjc2LDQwMyBMIDI3Miw0MDUgTCAyNjQsNDA1IEwgMjU5LDQwMyBMIDI1NCwzOTggTCAyNTAsMzg2IEwgMjUwLDM3NCBMIDI1MiwzNjggTCAyNTgsMzYwIFoiLz4KICAgICAgPHBhdGggZD0iTSAzNTAsMzQ1IEwgMzM4LDM0NiBMIDMyOCwzNTUgTCAzMjgsMzQ3IEwgMzExLDM0NyBMIDMxMSw0MTYgTCAzMjgsNDE1IEwgMzI4LDM3NCBMIDMzMCwzNjggTCAzMzYsMzYyIEwgMzQzLDM1OSBMIDM1MCwzNTkgWiIvPgogICAgICA8cGF0aCBkPSJNIDM2NCwzNDkgTCAzNTksMzUzIEwgMzU1LDM2MCBMIDM1NCwzNjQgTCAzNTUsMzY5IEwgMzcwLDM2OSBMIDM3MSwzNjMgTCAzNzUsMzU4IEwgMzc3LDM1NyBMIDM4NiwzNTcgTCAzOTIsMzYyIEwgMzkzLDM2NSBMIDM5MiwzNzQgTCAzNzIsMzc1IEwgMzYwLDM4MCBMIDM1NCwzODYgTCAzNTEsMzk0IEwgMzUxLDQwMiBMIDM1NCw0MDkgTCAzNTgsNDEzIEwgMzY2LDQxNyBMIDM4MSw0MTcgTCAzODYsNDE1IEwgMzkxLDQwOSBMIDM5NCw0MDkgTCAzOTUsNDE2IEwgNDExLDQxNiBMIDQxMCwzNjcgTCA0MDksMzYxIEwgNDA2LDM1NCBMIDQwMCwzNDggTCAzOTEsMzQ1IEwgMzczLDM0NSBaIE0gMzkzLDM4NSBMIDM5MiwzOTcgTCAzODYsNDA0IEwgMzg0LDQwNSBMIDM3NSw0MDUgTCAzNjksNDAwIEwgMzY5LDM5MiBMIDM3NSwzODYgTCAzODMsMzg0IFoiLz4KICAgIDwvZz4KICA8L2c+Cjwvc3ZnPgo=" alt="ADORA" style="height:26px;width:auto"></a>
+  <div class="nav-links" id="navLinks">
+    <a href="simulateur.html">Simulateur</a>
+    <a href="estimateur.html">Estimateur</a>
+    <a href="audit-avant-achat.html">Audit achat</a>
+    <a href="sur-mesure.html">Sur mesure</a>
+    <a href="estimateur-outil.html" class="nav-cta">Estimer mes travaux</a>
+  </div>
+  <button class="nav-burger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">&#9776;</button>
+</div>
+</nav>
+
+<section class="article-hero">
+  <div class="container">
+    <div class="article-meta">
+      <span class="article-tag">Méthode</span>
+      <span>Septembre 2026</span>
+      <span>8 min de lecture</span>
+    </div>
+    <h1>Comment structurer un DPGF pour que les offres soient <em>réellement</em> comparables</h1>
+    <p class="lead">Un DPGF mal construit ne se voit pas au moment de l'envoi du DCE. Il se voit à l'ouverture des plis, quand cinq offres portent le même intitulé de lot et ne recouvrent pas le même périmètre. Voici les six règles que j'applique systématiquement, et le test de relecture qui prend dix minutes.</p>
+  </div>
+</section>
+
+<div class="article-body">
+
+
+<p>La DPGF est le seul document du DCE que les entreprises remplissent vraiment. Le CCTP, elles le survolent&#8239;; les plans, elles les regardent&#8239;; la DPGF, elles la remplissent cellule par cellule, et c'est cette grille-là qui deviendra le prix du marché, puis la base des situations de travaux, puis la référence en cas de litige.</p>
+
+<p>D'où une conséquence simple&#8239;: <strong>la qualité de vos offres est plafonnée par la qualité de votre DPGF</strong>. Si le cadre laisse une ambiguïté, chaque entreprise la résoudra à sa manière — et vous vous retrouverez à l'analyse avec cinq offres qui ne portent pas sur le même ouvrage. Les écarts que vous croirez lire comme des écarts de prix seront en réalité des écarts de périmètre.</p>
+
+<blockquote>Le vrai risque d'une DPGF, ce n'est pas qu'elle soit fausse. C'est qu'elle soit ambiguë, et que personne ne s'en aperçoive avant l'ouverture des plis.</blockquote>
+
+<h2>Règle 1 — Numérotation miroir du CCTP</h2>
+
+<p>L'article 3.2.4 du CCTP doit être la ligne 3.2.4 de la DPGF. Pas «&#8239;environ&#8239;», pas «&#8239;dans le même ordre&#8239;»&#8239;: la même numérotation hiérarchique, article par article. C'est la règle la plus simple et la plus souvent négligée.</p>
+
+<p>Le bénéfice est double. Pour l'entreprise, chaque ligne à chiffrer renvoie sans effort à sa description technique — plus de prix posés au jugé sur un intitulé de deux mots. Pour vous, la comparaison des offres devient mécanique&#8239;: à numéro identique, prestation identique, et un écart de prix sur la ligne 3.2.4 est un vrai écart de prix.</p>
+
+<p>Corollaire&#8239;: si un article du CCTP n'a pas de ligne DPGF, il ne sera pas chiffré. Si une ligne DPGF n'a pas d'article CCTP, elle sera chiffrée au doigt mouillé. Les deux se contrôlent en quelques minutes par un simple rapprochement des numérotations.</p>
+
+<h2>Règle 2 — Une ligne, un ouvrage mesurable</h2>
+
+<p>Chaque ligne doit porter une unité qui se mesure&#8239;: m², ml, m³, u, kg. L'unité «&#8239;ensemble&#8239;» est un aveu&#8239;: elle signifie que l'ouvrage n'a pas été quantifié, et elle transfère à l'entreprise le travail de métré que vous n'avez pas fait — avec la marge de sécurité qui va avec.</p>
+
+<p>Un forfait n'est pas interdit, mais il doit rester l'exception et être borné par le CCTP. «&#8239;Installation de chantier, ens.&#8239;» est acceptable. «&#8239;Cloisonnement étage, ens.&#8239;» ne l'est pas&#8239;: personne ne saura si l'offre couvre 180&nbsp;m² ou 240&nbsp;m² de cloisons, et l'écart se paiera en travaux supplémentaires.</p>
+
+<div class="callout">
+  <div class="callout-title">Le réflexe à prendre</div>
+  <p>Avant d'envoyer le DCE, filtrez la colonne «&#8239;unité&#8239;» de votre DPGF et comptez les «&#8239;ens.&#8239;». Au-delà de 5&nbsp;% des lignes d'un lot, le lot n'est pas prêt à être consulté.</p>
+</div>
+
+<h2>Règle 3 — Verrouiller ce que l'entreprise peut écrire</h2>
+
+<p>Une DPGF diffusée en tableur ouvert revient chez vous modifiée. Quantités corrigées «&#8239;par erreur&#8239;», lignes supprimées, totaux qui ne totalisent plus. C'est rarement malveillant&#8239;; c'est presque toujours ingérable à l'analyse.</p>
+
+<p>La parade est technique et prend cinq minutes&#8239;: protection de la feuille, seules les colonnes «&#8239;prix unitaire&#8239;» déverrouillées, formules de total et de sous-total posées et protégées, ligne de contrôle qui recalcule le total général. Vous ajoutez une mention au règlement de consultation&#8239;: toute modification du cadre rend l'offre irrégulière. Et vous livrez le cadre en tableur, pas en PDF — une DPGF envoyée en PDF sera ressaisie à la main par cinq entreprises, avec cinq occasions de faute de frappe.</p>
+
+<p>Un détail qui coûte cher&#8239;: évitez les <code>SOMMEPROD</code> sur des champs susceptibles d'être vides. Une somme simple sur des colonnes propres ne renvoie jamais d'erreur&#8239;; une formule élégante sur des cellules vides renvoie un <code>#VALEUR!</code> que l'entreprise résoudra en écrasant votre formule.</p>
+
+<h2>Règle 4 — Sortir les options du total</h2>
+
+<p>Les prestations supplémentaires éventuelles, les variantes et les tranches optionnelles doivent figurer <strong>en dehors</strong> du total de l'offre de base, dans un bloc séparé et clairement identifié. Une option intégrée au total, c'est un candidat pénalisé pour avoir bien lu le dossier, et un autre récompensé pour l'avoir mal lu.</p>
+
+<p>Le même principe vaut pour la note prix à l'analyse&#8239;: elle se calcule sur l'offre de base seule. Les options se comparent ensuite, entre elles, une fois le classement établi.</p>
+
+<h2>Règle 5 — Cadrer les aléas plutôt que les subir</h2>
+
+<p>C'est le point qui fausse le plus discrètement une consultation. Compte prorata, provisions pour découvertes, sujétions d'accès, protections, nettoyage&#8239;: si le DCE ne dit pas qui les porte et à quelle hauteur, chaque entreprise arbitre seule. Certaines les intègrent, d'autres non.</p>
+
+<p>Le résultat est mécanique et j'y ai été confronté sur une consultation récente&#8239;: le candidat le moins-disant l'était parce qu'il avait chiffré les travaux seuls, quand ses concurrents avaient inclus les provisions et le compte prorata. À la lecture, dix points d'écart&#8239;; en réalité, deux périmètres différents. Ce genre d'écart ne se règle pas à l'analyse, il se règle au DCE&#8239;: lignes dédiées, montants imposés le cas échéant, et une phrase sans ambiguïté au CCTP lot 0.</p>
+
+<h2>Règle 6 — BPU quand les quantités sont incertaines</h2>
+
+<p>Réhabilitation, curage, reprises structurelles, réseaux enterrés&#8239;: il y a des lots où la quantité exacte ne sera connue qu'après ouverture. Forcer un forfait dans ces cas-là, c'est acheter une provision d'entreprise que vous ne verrez jamais si l'aléa ne survient pas.</p>
+
+<p>Le bordereau de prix unitaires règle le problème&#8239;: vous consultez sur des prix unitaires, avec des quantités estimatives affichées au DQE pour permettre le classement, et vous réglez au constat contradictoire. La quantité devient une variable, le prix reste un engagement.</p>
+
+<h2>Le test de relecture avant envoi</h2>
+
+<p>Dix minutes par lot, sur le cadre vierge, avant que le DCE ne parte&#8239;:</p>
+
+<table class="data-table">
+  <thead><tr><th>Contrôle</th><th>Ce qui doit être vrai</th></tr></thead>
+  <tbody>
+    <tr><td>Rapprochement CCTP / DPGF</td><td>Aucun article sans ligne, aucune ligne sans article</td></tr>
+    <tr><td>Colonne unité</td><td>Moins de 5&nbsp;% de lignes en «&#8239;ens.&#8239;»</td></tr>
+    <tr><td>Cohérence des quantités</td><td>Chaque quantité passe le test du ratio (voir l'article sur les erreurs de quantitatif)</td></tr>
+    <tr><td>Formules</td><td>Totaux et sous-totaux protégés, aucune erreur sur cadre vide</td></tr>
+    <tr><td>Options et variantes</td><td>Hors total de l'offre de base, bloc identifié</td></tr>
+    <tr><td>Aléas</td><td>Compte prorata et provisions traités explicitement au lot 0</td></tr>
+    <tr><td>Format de diffusion</td><td>Tableur protégé, pas de PDF à ressaisir</td></tr>
+  </tbody>
+</table>
+
+<p>Ce test ne remplace pas le travail de fond, mais il attrape l'essentiel des ambiguïtés qui coûtent cher à l'analyse. Et il coûte infiniment moins qu'une consultation à relancer.</p>
+
+
+<div class="callout">
+  <div class="callout-title">Pour aller plus loin</div>
+  <p>
+    <a href="erreur-quantitatif-dce.html">→ Ce que coûte réellement une erreur de quantitatif au DCE</a><br>
+    <a href="rapport-analyse-offres-mapa.html">→ Analyse des offres en MAPA : 6 pièges du rapport d'analyse</a><br>
+    <a href="honoraires-economiste-mission-moe.html">→ Honoraires d'économiste dans la mission de maîtrise d'œuvre</a><br>
+    <a href="professionnels.html">→ L'offre ADORA pour les professionnels&#8239;: phases, livrables, TJM</a>
+  </p>
+</div>
+
+<h2>Questions fréquentes</h2>
+
+<div style="display:flex;flex-direction:column;gap:0">
+  <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Quelle différence entre DPGF, DQE et BPU ?</div><div class="faq-a">La DPGF (décomposition du prix global et forfaitaire) décompose un prix forfaitaire : les quantités sont réputées vérifiées par l'entreprise, qui s'engage sur le total. Le BPU (bordereau de prix unitaires) engage l'entreprise sur des prix unitaires, sans quantité ferme. Le DQE (détail quantitatif estimatif) applique des quantités estimatives au BPU pour permettre le classement des offres, sans valeur contractuelle sur les quantités. On utilise la DPGF quand le projet est défini, le couple BPU/DQE quand les quantités restent incertaines.</div></div>
+  <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Faut-il donner les quantités aux entreprises ou les laisser métrer ?</div><div class="faq-a">Donnez-les. Laisser cinq entreprises métrer le même ouvrage produit cinq quantités différentes, donc cinq offres incomparables, et transfère à chacune un coût d'étude qu'elles répercutent. Fournir le quantitatif ne dispense pas l'entreprise de le vérifier : le règlement de consultation prévoit qu'elle signale toute discordance avant remise, ce qui vous donne un contrôle supplémentaire.</div></div>
+  <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">En quel format diffuser la DPGF dans le DCE ?</div><div class="faq-a">En tableur, feuille protégée, avec les seules colonnes de prix unitaires déverrouillées et les formules de total posées. Un PDF oblige les entreprises à ressaisir le cadre à la main, ce qui multiplie les erreurs de frappe et rend la comparaison ligne à ligne beaucoup plus lourde à l'analyse.</div></div>
+  <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Comment traiter le compte prorata dans la DPGF ?</div><div class="faq-a">Par une ligne dédiée au lot 0 ou dans chaque lot selon la convention retenue, avec un mode de calcul explicite au CCTP. Ce qu'il ne faut pas faire, c'est le laisser implicite : certaines entreprises l'intègrent, d'autres non, et l'écart apparent entre les offres ne reflète alors plus un écart de prix mais un écart de périmètre.</div></div>
+  <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Peut-on rendre une offre irrégulière si l'entreprise a modifié le cadre ?</div><div class="faq-a">Oui, à condition de l'avoir écrit dans le règlement de consultation. La mention doit être explicite et la protection technique du fichier doit rendre la modification volontaire. En pratique, avant d'écarter une offre, il vaut mieux vérifier si la modification porte sur le fond ou sur une simple mise en forme.</div></div>
+</div>
+
+<div class="article-cta">
+  <h3>Besoin d'un économiste sur votre prochaine opération&#8239;?</h3>
+  <p>Métrés, estimations par phases, CCTP, DPGF, analyse des offres&#8239;: j'interviens en renfort de votre équipe, en mission ponctuelle ou récurrente. Tarifs journaliers affichés, proposition sous 48&nbsp;h.</p>
+  <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+    <a href="professionnels.html" class="btn btn-accent" style="font-size:14px;padding:14px 28px">Voir l'offre professionnels</a>
+    <a href="https://cal.com/aymeric-adora/decouverte" target="_blank" rel="noopener" class="btn" style="font-size:14px;padding:14px 28px;background:rgba(255,255,255,.1);color:var(--white);border-radius:10px;font-weight:700">Réserver 15 min →</a>
+  </div>
+</div>
+
+<p style="margin-top:32px;font-size:13px;color:var(--muted);line-height:1.6"><strong>À propos de l'auteur&#8239;:</strong> Aymeric Dussauze est économiste de la construction (Titre Professionnel Niveau&nbsp;5) et fondateur d'ADORA. Il intervient en renfort des architectes, bureaux d'études, maîtres d'ouvrage et entreprises du bâtiment en Normandie et en Île-de-France&#8239;: métrés, estimations par phases, CCTP, DPGF, DCE, analyse des offres, OPC et AMO. Les prix utilisés dans ses livrables s'appuient sur la base Batichiffrage.</p>
+
+<p style="text-align:center;margin-top:32px"><a href="blog.html" style="color:var(--blue);font-weight:600">← Retour au blog</a> · <a href="professionnels.html" style="color:var(--blue);font-weight:600">Offre professionnels →</a></p>
+
+</div>
+
+<footer class="footer">
+<div class="footer-inner">
+  <div class="footer-brand">
+    <strong>ADORA</strong>
+    <p>Économiste de la construction<br>Normandie &amp; Île-de-France</p>
+  </div>
+  <div class="footer-col">
+    <div class="footer-col-title">Outils</div>
+    <a href="simulateur.html">Simulateur aides</a>
+    <a href="estimateur.html">Estimateur travaux</a>
+    <a href="audit-avant-achat.html">Audit avant achat</a>
+    <a href="sur-mesure.html">Sur mesure</a>
+  </div>
+  <div class="footer-col">
+    <div class="footer-col-title">ADORA</div>
+    <a href="a-propos.html">À propos</a>
+    <a href="professionnels.html">Professionnels</a>
+    <a href="partenaires.html">Partenaires</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <div class="footer-col footer-contact">
+    <div class="footer-col-title">Contact</div>
+    <a href="tel:+33672010767">06 72 01 07 67</a>
+    <a href="/cdn-cgi/l/email-protection#46252928322725320627222934276b23252928292b2f23682034"><span class="__cf_email__" data-cfemail="b2d1dddcc6d3d1c6f2d3d6ddc0d39fd7d1dddcdddfdbd79cd4c0">[email&#160;protected]</span></a>
+    <a href="https://adora-economie.fr">adora-economie.fr</a>
+  </div>
+</div>
+<div class="footer-legal">© 2026 ADORA · EI · SIRET 532 886 918 00020 · TVA non applicable, art. 293B du CGI<br><a href="mentions-legales.html">Mentions légales</a> · <a href="politique-confidentialite.html">Confidentialité</a> · <a href="cgv.html">CGV</a></div>
+<div style="margin-top:12px;font-size:13px;opacity:0.8"><button type="button" class="adora-cmp-footer-link" onclick="if(window.adoraConsent)window.adoraConsent.show()">🍪 Gérer mes cookies</button></div>
+</footer>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+document.addEventListener("DOMContentLoaded",()=>{
+  const obs=new IntersectionObserver(e=>e.forEach(el=>{if(el.isIntersecting){el.target.classList.add("visible");obs.unobserve(el.target)}}),{threshold:.12});
+  document.querySelectorAll(".reveal").forEach(el=>obs.observe(el));
+});
+</script>
+<script type="text/plain" data-adora-consent="analytics" src="https://www.googletagmanager.com/gtag/js?id=G-M0LENY960B"></script>
+<script type="text/plain" data-adora-consent="analytics">window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","G-M0LENY960B");</script>
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"3f8ca9a1113f413a990a17c08ab83442"}'></script>
+</body>
+</html>

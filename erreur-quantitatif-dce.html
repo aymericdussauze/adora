@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://browser.sentry-cdn.com" crossorigin>
+<link rel="stylesheet" href="/assets/fonts/adora-fonts.css">
+
+<title>Ce que coûte une erreur de quantitatif au DCE | ADORA</title>
+<meta name="description" content="Une toiture-terrasse de 160 m² chiffrée pour 12 m² : comment une erreur de quantité se propage jusqu'au chantier, et les 4 contrôles qui l'arrêtent.">
+<link rel="canonical" href="https://adora-economie.fr/erreur-quantitatif-dce.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="ADORA — Économiste de la construction">
+<meta property="og:title" content="Ce que coûte réellement une erreur de quantitatif au DCE">
+<meta property="og:description" content="Une toiture-terrasse de 160 m² chiffrée pour 12 m² : comment une erreur de quantité se propage jusqu'au chantier, et les 4 contrôles qui l'arrêtent.">
+<meta property="og:url" content="https://adora-economie.fr/erreur-quantitatif-dce.html">
+<meta property="og:image" content="https://adora-economie.fr/img/articles/erreur-quantitatif-dce.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ce que coûte réellement une erreur de quantitatif au DCE">
+<meta name="twitter:description" content="Une toiture-terrasse de 160 m² chiffrée pour 12 m² : comment une erreur de quantité se propage jusqu'au chantier, et les 4 contrôles qui l'arrêtent.">
+<meta name="twitter:image" content="https://adora-economie.fr/img/articles/erreur-quantitatif-dce.jpg">
+<meta name="geo.region" content="FR-NOR">
+<meta name="geo.placename" content="Louviers">
+<style>
+
+/* ═══ ADORA PropTech Design System v2 ═══ */
+:root{--navy:#0D1025;--blue:#0E7490;--accent:#22D3EE;--accent-hover:#06B6D4;--light:#EDE9FE;--pale:#FAFAFC;--green:#A78BFA;--green-hover:#8B6FE3;--txt:#1E1B4B;--muted:#64748B;--border:#E5E7F2;--white:#FFFFFF;--radius:16px;--radius-sm:10px;--shadow-card:0 1px 3px rgba(13,16,37,.06),0 8px 24px rgba(13,16,37,.04);--shadow-hover:0 4px 12px rgba(13,16,37,.08),0 16px 40px rgba(13,16,37,.06);--shadow-btn:0 2px 8px rgba(34,211,238,.25);--transition:.3s cubic-bezier(.4,0,.2,1)}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;color:var(--txt);background:var(--white);line-height:1.7;font-size:16px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,h4{font-family:'Montserrat',sans-serif;line-height:1.2}
+a{color:var(--blue);text-decoration:none;transition:color var(--transition)}
+a:hover{color:var(--navy)}
+img{max-width:100%;height:auto}
+.container{max-width:1120px;margin:0 auto;padding:0 28px}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.4,0,.2,1),transform .7s cubic-bezier(.4,0,.2,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:100;background:rgba(13,16,37,.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.06)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;max-width:1120px;margin:0 auto;padding:14px 28px}
+.nav-logo img{height:26px;width:auto}
+.nav-links{display:flex;gap:8px;align-items:center}
+.nav-links a{color:rgba(237,233,254,.8);font-size:13.5px;font-weight:500;padding:6px 14px;border-radius:8px;transition:all var(--transition)}
+.nav-links a:hover{color:var(--white);background:rgba(255,255,255,.08);text-decoration:none}
+.nav-links a.active{color:var(--accent);background:rgba(34,211,238,.1)}
+.nav-cta{background:var(--accent)!important;color:var(--white)!important;padding:8px 20px!important;border-radius:8px;font-weight:700!important;font-size:13px!important;box-shadow:var(--shadow-btn)}
+.nav-cta:hover{background:var(--accent-hover)!important;transform:translateY(-1px)}
+.nav-burger{display:none;background:none;border:none;color:var(--white);font-size:22px;cursor:pointer;padding:8px}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:15px 30px;border-radius:var(--radius-sm);font-size:15px;font-weight:700;font-family:'Plus Jakarta Sans',sans-serif;transition:all var(--transition);border:none;cursor:pointer;text-decoration:none!important}
+.btn-accent{background:var(--accent);color:var(--white);box-shadow:var(--shadow-btn)}
+.btn-accent:hover{background:var(--accent-hover);color:var(--white);transform:translateY(-2px);box-shadow:0 4px 16px rgba(34,211,238,.35)}
+
+/* FOOTER */
+.footer{background:var(--navy);color:rgba(237,233,254,.7);padding:60px 24px 30px;margin-top:80px}
+.footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:40px}
+.footer-brand strong{font-size:18px;color:#fff;display:block;margin-bottom:8px}
+.footer-brand p{font-size:13px;line-height:1.6;color:rgba(237,233,254,.5)}
+.footer-col{display:flex;flex-direction:column;gap:8px}
+.footer-col-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:rgba(237,233,254,.4);margin-bottom:6px}
+.footer-col a{color:rgba(237,233,254,.7);text-decoration:none;font-size:13px;transition:color .2s}
+.footer-col a:hover{color:#22D3EE}
+.footer-contact a{font-size:13px}
+.footer-legal{max-width:1100px;margin:30px auto 0;padding-top:20px;border-top:1px solid rgba(237,233,254,.1);font-size:11px;color:rgba(237,233,254,.35);text-align:center}
+.footer-legal a{color:rgba(237,233,254,.5);text-decoration:none;transition:color .2s}
+.footer-legal a:hover{color:#22D3EE}
+@media(max-width:768px){.footer-inner{grid-template-columns:1fr 1fr;gap:30px 20px}}
+@media(max-width:480px){.footer-inner{grid-template-columns:1fr;gap:24px}}
+
+/* Article specifics */
+.article-hero{background:var(--navy);padding:56px 0 44px;color:var(--white)}
+.article-meta{display:flex;gap:16px;align-items:center;margin-bottom:16px;font-size:13px;color:rgba(214,228,240,.5);flex-wrap:wrap}
+.article-meta span{display:flex;align-items:center;gap:6px}
+.article-tag{padding:4px 10px;background:rgba(34,211,238,.15);color:var(--accent);border-radius:6px;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.5px}
+.article-hero h1{font-size:clamp(26px,4vw,38px);font-weight:900;letter-spacing:-.02em;margin-bottom:12px;max-width:720px}
+.article-hero h1 em{font-style:normal;color:var(--accent)}
+.article-hero .lead{font-size:16px;color:rgba(214,228,240,.7);max-width:620px;line-height:1.7}
+.article-body{max-width:720px;margin:0 auto;padding:60px 28px}
+.article-body h2{font-size:22px;font-weight:800;color:var(--navy);margin:48px 0 14px}
+.article-body h2:first-of-type{margin-top:0}
+.article-body h3{font-size:17px;font-weight:700;color:var(--navy);margin:28px 0 10px}
+.article-body p{font-size:16px;line-height:1.8;margin-bottom:16px;color:var(--txt)}
+.article-body ul,.article-body ol{padding-left:24px;margin-bottom:16px}
+.article-body li{font-size:15px;line-height:1.7;margin-bottom:8px}
+.article-body strong{color:var(--navy)}
+.article-body blockquote{border-left:3px solid var(--accent);padding:16px 24px;margin:24px 0;background:var(--pale);border-radius:0 10px 10px 0;font-size:15px;color:var(--muted)}
+.article-cta{background:var(--navy);border-radius:16px;padding:40px;text-align:center;color:var(--white);margin:48px 0}
+.article-cta h3{color:var(--white);font-size:22px;margin-bottom:8px}
+.article-cta p{color:rgba(237,233,254,.7);margin-bottom:20px;font-size:15px}
+
+/* Data table */
+.data-table{width:100%;border-collapse:separate;border-spacing:0;border-radius:12px;overflow:hidden;border:1px solid var(--border);margin:24px 0}
+.data-table thead th{background:var(--navy);color:var(--white);padding:14px 18px;font-size:13px;font-weight:700;text-align:left;letter-spacing:.3px}
+.data-table tbody td{padding:14px 18px;border-bottom:1px solid var(--border);font-size:14px;color:var(--txt);vertical-align:top;line-height:1.55}
+.data-table tbody tr:last-child td{border-bottom:none}
+.data-table tbody tr:nth-child(even) td{background:var(--pale)}
+.data-table .crit-name{font-weight:600;color:var(--navy);font-family:'Montserrat',sans-serif;font-size:13.5px}
+.data-table .bad{color:#991B1B}
+.data-table .good{color:#2D8B55}
+
+/* Callout box */
+.callout{background:var(--pale);border:1px solid var(--border);border-radius:12px;padding:22px 24px;margin:20px 0}
+.callout-title{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:8px;display:flex;align-items:center;gap:8px;text-transform:uppercase;letter-spacing:.8px;font-family:'Montserrat',sans-serif}
+.callout p{margin:0;font-size:14.5px;line-height:1.65;color:var(--txt)}
+.callout em{color:var(--navy);font-style:italic}
+
+/* Trap number inline (numéros des pièges dans h3) */
+.article-body h3 .trap-num{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:8px;background:rgba(34,211,238,.12);color:var(--blue);font-size:13px;font-weight:800;margin-right:12px;font-family:'Montserrat',sans-serif;vertical-align:middle}
+
+/* Sub-labels "Comment détecter / La parade" */
+.trap-label{display:inline-block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:var(--green);margin-top:14px;margin-bottom:4px;font-family:'Montserrat',sans-serif}
+
+/* Stats inline compactes */
+.stats-inline{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:24px 0}
+.stat-pill{background:var(--pale);border-left:3px solid var(--accent);border-radius:0 10px 10px 0;padding:16px 18px}
+.stat-pill-num{font-family:'Montserrat',sans-serif;font-size:28px;font-weight:900;color:var(--navy);line-height:1;margin-bottom:4px;letter-spacing:-.02em}
+.stat-pill-num span{color:var(--accent)}
+.stat-pill-lbl{font-size:13px;color:var(--muted);line-height:1.5}
+.stat-pill-src{display:block;font-size:11px;color:var(--muted);margin-top:4px;font-style:italic;opacity:.7}
+@media(max-width:600px){.stats-inline{grid-template-columns:1fr}}
+
+/* FAQ */
+.faq-item{border-bottom:1px solid var(--border)}
+.faq-q{padding:18px 0;font-size:15px;font-weight:600;color:var(--navy);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;font-family:'Montserrat',sans-serif}
+.faq-q::after{content:'+';font-size:20px;color:var(--muted);transition:transform .3s;flex-shrink:0}
+.faq-item.open .faq-q::after{content:'−'}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s ease;font-size:14px;color:var(--muted);line-height:1.7}
+.faq-item.open .faq-a{max-height:500px;padding-bottom:18px}
+
+@media(max-width:700px){
+  .nav-links{display:none;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--navy);padding:16px 28px;gap:4px;border-top:1px solid rgba(255,255,255,.08)}
+  .nav-links.open{display:flex}
+  .nav-burger{display:block}
+  .article-body{padding:40px 24px}
+  .article-cta{padding:32px 24px}
+  .data-table thead th,.data-table tbody td{padding:10px 12px;font-size:13px}
+}
+
+/* ═══ MOBILE FIXES — 21/04/2026 ═══ */
+@media(max-width:700px){
+  .nav-links .nav-cta{width:100%;text-align:center;margin-top:8px}
+  .footer-contact a{word-break:break-all}
+}
+</style>
+
+<script defer src="https://browser.sentry-cdn.com/8.0.0/bundle.min.js" crossorigin="anonymous"></script>
+    <script type="text/plain" data-adora-consent="analytics">Sentry.init({dsn:"https://14b68c10a24c3da4127332e14fd20359@o4511253060976640.ingest.de.sentry.io/4511253075132496",tracesSampleRate:0,replaysSessionSampleRate:0});</script>
+<!-- data-adora-image-added="true" -->
+<!-- ADORA CMP -->
+  <link rel="stylesheet" href="/assets/css/adora-cmp.css">
+  <script src="/assets/js/adora-cmp.js"></script>
+  <!-- /ADORA CMP -->
+<script type="application/ld+json" data-adora-schema="article">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://adora-economie.fr/img/articles/erreur-quantitatif-dce.jpg",
+    "width": 1200,
+    "height": 630
+  },
+  "headline": "Ce que coûte réellement une erreur de quantitatif au DCE",
+  "description": "Une toiture-terrasse de 160 m² chiffrée pour 12 m² : comment une erreur de quantité se propage jusqu'au chantier, et les 4 contrôles qui l'arrêtent.",
+  "author": {
+    "@type": "Person",
+    "name": "Aymeric Dussauze",
+    "jobTitle": "Économiste de la construction",
+    "url": "https://adora-economie.fr/a-propos.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ADORA",
+    "@id": "https://adora-economie.fr/#business"
+  },
+  "datePublished": "2026-09-02",
+  "dateModified": "2026-09-02",
+  "mainEntityOfPage": "https://adora-economie.fr/erreur-quantitatif-dce.html",
+  "audience": {
+    "@type": "BusinessAudience",
+    "audienceType": "Architectes, maîtres d'œuvre, bureaux d'études, maîtres d'ouvrage, entreprises du bâtiment"
+  },
+  "about": "Contrôle de cohérence des quantitatifs, dossier de consultation des entreprises"
+}
+</script>
+<script type="application/ld+json" data-adora-schema="faq">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "En marché forfaitaire, qui supporte une erreur de quantité du DCE ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "En principe l'entreprise, réputée avoir vérifié les quantités avant de s'engager sur un prix global et forfaitaire. En pratique, un écart manifeste sur un poste visible se solde presque toujours par une négociation, un avenant ou un contentieux, parce que l'entreprise soutiendra qu'elle a chiffré ce qui lui était demandé. Le débat juridique coûte de toute façon plus cher que le contrôle qui l'aurait évité."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Comment vérifier un quantitatif sans refaire le métré ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Par des contrôles de cohérence : rattacher chaque quantité à une géométrie du bâtiment, rapporter chaque lot à un ratio au mètre carré, vérifier que les lots corrélés varient ensemble, et contrôler le poids relatif de chaque lot dans le total. Ces quatre tests se mènent en quelques minutes par lot et attrapent l'essentiel des erreurs d'ordre de grandeur."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "À quel moment faut-il contrôler les quantités ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Avant l'envoi du dossier de consultation. Un contrôle après remise des offres oblige à publier un additif, à prolonger le délai ou à relancer la consultation. Un contrôle après signature des marchés ne s'appelle plus un contrôle mais un avenant, négocié sans concurrence."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Un quantitatif faux fausse-t-il aussi l'estimation ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui, doublement. L'estimation servant de référence à l'analyse est faussée du même montant, ce qui rend le contrôle des offres inopérant : une offre qui intègre correctement l'ouvrage manquant apparaîtra anormalement chère, et une offre qui reprend l'erreur apparaîtra conforme à l'estimation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Faut-il faire relire son DPGF par un tiers ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sur les opérations à enjeu, oui, au moins sur les lots les plus lourds. La relecture par quelqu'un qui n'a pas produit le quantitatif détecte des erreurs que l'auteur ne voit plus. Elle peut être limitée à un contrôle de cohérence, ce qui la rend rapide et peu coûteuse par rapport au risque couvert."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<nav class="nav">
+<div class="nav-inner">
+  <a href="./" class="nav-logo"><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5NDAgMjAwIiB3aWR0aD0iOTQwIiBoZWlnaHQ9IjIwMCI+CiAgPGcgZmlsbD0id2hpdGUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICA8IS0tIFRyaWFuZ2xlIGljb24gLS0+CiAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMCwgOCkgdHJhbnNsYXRlKC03NSwgLTk5KSI+CiAgICAgIDxwYXRoIGQ9Ik0gMTE3LDI4MiBMIDE2OSwyODEgTCAxNzQsMjc0IEwgMTc3LDI2OCBMIDIyOSwxOTMgTCAyMjksMTkxIEwgMjA2LDE1OCBMIDIwNywxNTUgTCAyMjksMTU2IEwgMjM0LDE2NSBMIDIzNywxNjggTCAyMzksMTczIEwgMjgxLDIzNSBMIDI4MiwyNDAgTCAyNDAsMjQwIEwgMjEzLDI4MCBMIDIxMywyODIgTCAzNjQsMjgyIEwgMzYxLDI3NiBMIDMwMCwxODcgTCAyOTksMTg0IEwgMjQyLDk5IEwgMjQwLDEwMCBMIDIwNywxNTAgTCAyMDEsMTU2IEwgMTQwLDI0OCBMIDEzNywyNTEgTCAxMzYsMjU0IEwgMTI0LDI3MCBaIi8+CiAgICA8L2c+CiAgICA8IS0tIFRleHQgIkFkb3JhIiAtLT4KICAgIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDMzMCwgMTIpIHNjYWxlKDEuOCkgdHJhbnNsYXRlKC03MSwgLTMyMCkiPgogICAgICA8cGF0aCBkPSJNIDEwMiwzMjYgTCA5MywzNTIgTCA5MSwzNTUgTCA4NywzNjkgTCA4NSwzNzIgTCA4MiwzODMgTCA4MCwzODYgTCA3OCwzOTUgTCA3MSw0MTMgTCA3MSw0MTYgTCA4OSw0MTUgTCA5NywzOTAgTCAxMjUsMzg5IEwgMTMwLDM5NCBMIDEzMSw0MDAgTCAxMzMsNDAzIEwgMTM3LDQxNiBMIDE1NSw0MTYgTCAxNTUsNDEyIEwgMTUzLDQwOSBMIDEyNCwzMjYgWiBNIDExNCwzNDQgTCAxMjMsMzcyIEwgMTIyLDM3NiBMIDEwMiwzNzUgTCAxMDIsMzcyIEwgMTA2LDM1OSBMIDEwOCwzNTYgTCAxMTAsMzQ3IFoiLz4KICAgICAgPHBhdGggZD0iTSAyMjUsMzIwIEwgMjA4LDMyMCBMIDIwNiwzNTIgTCAyMDIsMzQ4IEwgMTk0LDM0NSBMIDE4MCwzNDUgTCAxNjksMzQ5IEwgMTU5LDM2MCBMIDE1NSwzNzMgTCAxNTYsMzk1IEwgMTYyLDQwNyBMIDE3MCw0MTQgTCAxNzgsNDE3IEwgMTkzLDQxNyBMIDE5OSw0MTUgTCAyMDUsNDA4IEwgMjA4LDQwOCBMIDIwOCw0MTYgTCAyMjUsNDE2IFogTSAxODcsMzU3IEwgMTk0LDM1NyBMIDE5OSwzNTkgTCAyMDQsMzY0IEwgMjA3LDM3MSBMIDIwOCwzODUgTCAyMDYsMzk0IEwgMjA0LDM5OCBMIDE5OSw0MDMgTCAxOTUsNDA1IEwgMTg2LDQwNSBMIDE4Miw0MDMgTCAxNzYsMzk3IEwgMTczLDM4OSBMIDE3MywzNzIgTCAxNzYsMzY1IEwgMTgyLDM1OSBaIi8+CiAgICAgIDxwYXRoIGQ9Ik0gMjU1LDM0NiBMIDI0NCwzNTIgTCAyMzgsMzU5IEwgMjMzLDM3MSBMIDIzMywzODkgTCAyMzUsMzk3IEwgMjQwLDQwNiBMIDI0NSw0MTEgTCAyNTIsNDE1IEwgMjU5LDQxNyBMIDI3Nyw0MTcgTCAyODMsNDE1IEwgMjk1LDQwNiBMIDMwMSwzOTYgTCAzMDMsMzg4IEwgMzAzLDM3NCBMIDMwMSwzNjYgTCAyOTYsMzU3IEwgMjkwLDM1MSBMIDI4MywzNDcgTCAyNzcsMzQ1IFogTSAyNjQsMzU3IEwgMjcyLDM1NyBMIDI3NiwzNTkgTCAyODEsMzY0IEwgMjg1LDM3NSBMIDI4NSwzODcgTCAyODMsMzk1IEwgMjc2LDQwMyBMIDI3Miw0MDUgTCAyNjQsNDA1IEwgMjU5LDQwMyBMIDI1NCwzOTggTCAyNTAsMzg2IEwgMjUwLDM3NCBMIDI1MiwzNjggTCAyNTgsMzYwIFoiLz4KICAgICAgPHBhdGggZD0iTSAzNTAsMzQ1IEwgMzM4LDM0NiBMIDMyOCwzNTUgTCAzMjgsMzQ3IEwgMzExLDM0NyBMIDMxMSw0MTYgTCAzMjgsNDE1IEwgMzI4LDM3NCBMIDMzMCwzNjggTCAzMzYsMzYyIEwgMzQzLDM1OSBMIDM1MCwzNTkgWiIvPgogICAgICA8cGF0aCBkPSJNIDM2NCwzNDkgTCAzNTksMzUzIEwgMzU1LDM2MCBMIDM1NCwzNjQgTCAzNTUsMzY5IEwgMzcwLDM2OSBMIDM3MSwzNjMgTCAzNzUsMzU4IEwgMzc3LDM1NyBMIDM4NiwzNTcgTCAzOTIsMzYyIEwgMzkzLDM2NSBMIDM5MiwzNzQgTCAzNzIsMzc1IEwgMzYwLDM4MCBMIDM1NCwzODYgTCAzNTEsMzk0IEwgMzUxLDQwMiBMIDM1NCw0MDkgTCAzNTgsNDEzIEwgMzY2LDQxNyBMIDM4MSw0MTcgTCAzODYsNDE1IEwgMzkxLDQwOSBMIDM5NCw0MDkgTCAzOTUsNDE2IEwgNDExLDQxNiBMIDQxMCwzNjcgTCA0MDksMzYxIEwgNDA2LDM1NCBMIDQwMCwzNDggTCAzOTEsMzQ1IEwgMzczLDM0NSBaIE0gMzkzLDM4NSBMIDM5MiwzOTcgTCAzODYsNDA0IEwgMzg0LDQwNSBMIDM3NSw0MDUgTCAzNjksNDAwIEwgMzY5LDM5MiBMIDM3NSwzODYgTCAzODMsMzg0IFoiLz4KICAgIDwvZz4KICA8L2c+Cjwvc3ZnPgo=" alt="ADORA" style="height:26px;width:auto"></a>
+  <div class="nav-links" id="navLinks">
+    <a href="simulateur.html">Simulateur</a>
+    <a href="estimateur.html">Estimateur</a>
+    <a href="audit-avant-achat.html">Audit achat</a>
+    <a href="sur-mesure.html">Sur mesure</a>
+    <a href="estimateur-outil.html" class="nav-cta">Estimer mes travaux</a>
+  </div>
+  <button class="nav-burger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">&#9776;</button>
+</div>
+</nav>
+
+<section class="article-hero">
+  <div class="container">
+    <div class="article-meta">
+      <span class="article-tag">Retour d'expérience</span>
+      <span>Septembre 2026</span>
+      <span>7 min de lecture</span>
+    </div>
+    <h1>Ce que coûte <em>réellement</em> une erreur de quantitatif au DCE</h1>
+    <p class="lead">Une erreur de quantité ne coûte presque rien le jour où on l'écrit. Elle coûte cher trois mois plus tard, quand elle est devenue un prix de marché. Anatomie d'un écart réel — une toiture-terrasse portée pour 12 m² au lieu d'environ 160 — et les contrôles qui l'attrapent en quelques minutes.</p>
+  </div>
+</section>
+
+<div class="article-body">
+
+
+<p>Sur une mission de relecture de DPGF, un lot d'étanchéité m'a arrêté. La ligne était correctement rédigée, l'unité était juste, le prix unitaire cohérent. Seule la quantité posait problème&#8239;: <strong>12&nbsp;m² de toiture-terrasse</strong>, quand les plans donnaient une emprise de dalle haute d'environ 160&nbsp;m² au dernier niveau.</p>
+
+<p>Ce n'est pas une faute de compétence. C'est le genre d'erreur qui arrive quand une ligne est reprise d'un projet antérieur, ou quand une saisie est faite en fin de journée. Elle est invisible dans un tableau de 400 lignes, et parfaitement lisible dès qu'on la rapporte à la géométrie du bâtiment.</p>
+
+<h2>Comment une quantité fausse se propage</h2>
+
+<p>Le problème d'une erreur de quantitatif, c'est qu'elle ne reste pas une erreur de quantitatif. Elle change de nature à chaque étape, et son coût de correction est multiplié à chaque fois.</p>
+
+<table class="data-table">
+  <thead><tr><th>Étape</th><th>Ce que devient l'erreur</th><th>Coût de correction</th></tr></thead>
+  <tbody>
+    <tr><td>Saisie du quantitatif</td><td>Une cellule à corriger</td><td>Deux minutes</td></tr>
+    <tr><td>Envoi du DCE</td><td>Une question d'entreprise, ou pas</td><td>Un additif au DCE, un délai prolongé</td></tr>
+    <tr><td>Remise des offres</td><td>Une estimation faussée et des offres incomparables</td><td>Analyse à refaire, parfois consultation à relancer</td></tr>
+    <tr><td>Signature des marchés</td><td>Un prix de marché sous-évalué</td><td>Travaux supplémentaires au prix de l'entreprise, sans concurrence</td></tr>
+    <tr><td>Chantier</td><td>Un avenant et un litige de périmètre</td><td>Le prix fort, plus le temps de la négociation</td></tr>
+  </tbody>
+</table>
+
+<p>Sur ce cas précis, l'écart portait sur environ 150&nbsp;m² d'étanchéité non chiffrés. En prenant les ordres de grandeur d'une étanchéité bicouche sur support béton avec isolation et relevés, l'impact se compte en dizaines de milliers d'euros — un montant qui, découvert en cours de chantier, se négocie face à une entreprise déjà installée et sans autre offre pour arbitrer.</p>
+
+<blockquote>Une quantité fausse détectée au DCE coûte deux minutes. La même quantité détectée en travaux coûte le prix de l'ouvrage, plus la position de négociation.</blockquote>
+
+<h2>L'entreprise ne vous sauvera pas</h2>
+
+<p>On entend souvent qu'en marché forfaitaire, l'entreprise est réputée avoir vérifié les quantités et supporte donc l'erreur. C'est vrai sur le principe et fragile en pratique.</p>
+
+<p>D'abord parce qu'un écart de cette ampleur — un facteur supérieur à dix sur un poste visible — ne relève pas de l'aléa normal de métré&#8239;: l'entreprise soutiendra sans difficulté qu'elle a chiffré ce qui lui était demandé. Ensuite parce que la vraie question n'est pas juridique mais économique&#8239;: même en gagnant l'argument, vous aurez perdu le planning, la relation et la sérénité de l'opération. Enfin parce qu'en marché public, une erreur qui bouleverse l'économie du marché finit rarement en faveur de l'acheteur.</p>
+
+<p>La bonne stratégie n'est pas de préparer sa défense. C'est de ne pas envoyer l'erreur.</p>
+
+<h2>Quatre contrôles de cohérence qui l'auraient arrêtée</h2>
+
+<h3>1. Le test de la géométrie</h3>
+
+<p>Toute quantité d'ouvrage doit se rapporter à une dimension du bâtiment. Une toiture-terrasse se compare à l'emprise du niveau qu'elle couvre. Une façade se compare au périmètre multiplié par la hauteur, moins les baies. Un plancher se compare à la surface de plancher du niveau. Quand une quantité ne peut pas être rattachée à une géométrie, elle est suspecte.</p>
+
+<h3>2. Le test du ratio au m²</h3>
+
+<p>Rapportez chaque lot à la surface du projet et comparez le résultat à vos références. Sur une opération de logement en rénovation, on connaît les ordres de grandeur de chaque lot en euros par mètre carré de surface habitable&#8239;; un lot qui sort de la fourchette de plus de moitié signale soit une particularité du projet, soit une erreur. Les ratios que j'utilise sont calibrés à partir des bases Batichiffrage, tous lots confondus, par gamme de prestation.</p>
+
+<h3>3. Le test des lots corrélés</h3>
+
+<p>Certains lots varient ensemble. L'étanchéité suit la couverture, qui suit la charpente, qui suit l'emprise. Les menuiseries extérieures suivent le nombre de baies, qui suit le linéaire de façade. Le carrelage suit la surface des pièces humides. Quand un lot décroche seul de ses voisins, c'est un signal.</p>
+
+<h3>4. Le test du poids relatif</h3>
+
+<p>Dans un estimatif tous corps d'état, chaque lot pèse une part connue du total. Un lot d'étanchéité qui représente moins d'un pour cent d'une opération avec toiture-terrasse est une anomalie qui se voit sur un simple tri décroissant des montants.</p>
+
+<div class="callout">
+  <div class="callout-title">Le principe commun aux quatre</div>
+  <p>Aucun ne demande de refaire le métré. Tous consistent à rapporter une quantité à une autre grandeur du projet et à regarder si le rapport est plausible. C'est une relecture, pas une reprise — un lot se contrôle en quelques minutes.</p>
+</div>
+
+<h2>Qui doit faire ce contrôle</h2>
+
+<p>Idéalement, quelqu'un qui n'a pas produit le quantitatif. Le métreur relit ses propres chiffres avec les yeux qui les ont écrits&#8239;: c'est vrai pour tout le monde, et c'est la raison d'être du regard croisé.</p>
+
+<p>Concrètement, cela peut prendre trois formes. Un contrôle interne par un autre membre de l'équipe, si l'agence en a la capacité. Une relecture externe ponctuelle, sur les seuls lots à enjeu, avant envoi du DCE. Ou une mission d'économie complète, quand le projet le justifie. Dans les trois cas, l'important est que le contrôle intervienne <strong>avant</strong> la diffusion du dossier — après, ce n'est plus un contrôle, c'est une réclamation.</p>
+
+<p>Une dernière remarque, adressée aux équipes de maîtrise d'œuvre&#8239;: le temps consacré à cette vérification n'est jamais gratuit, et c'est précisément pour cela qu'il doit être prévu au contrat. Une mission de relecture non provisionnée est une mission qui ne sera pas faite.</p>
+
+
+<div class="callout">
+  <div class="callout-title">Pour aller plus loin</div>
+  <p>
+    <a href="dpgf-comparable-consultation.html">→ Comment structurer un DPGF pour que les offres soient comparables</a><br>
+    <a href="rapport-analyse-offres-mapa.html">→ Analyse des offres en MAPA : 6 pièges du rapport d'analyse</a><br>
+    <a href="honoraires-economiste-mission-moe.html">→ Honoraires d'économiste dans la mission de maîtrise d'œuvre</a><br>
+    <a href="professionnels.html">→ L'offre ADORA pour les professionnels&#8239;: phases, livrables, TJM</a>
+  </p>
+</div>
+
+<h2>Questions fréquentes</h2>
+
+<div style="display:flex;flex-direction:column;gap:0">
+  <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">En marché forfaitaire, qui supporte une erreur de quantité du DCE ?</div><div class="faq-a">En principe l'entreprise, réputée avoir vérifié les quantités avant de s'engager sur un prix global et forfaitaire. En pratique, un écart manifeste sur un poste visible se solde presque toujours par une négociation, un avenant ou un contentieux, parce que l'entreprise soutiendra qu'elle a chiffré ce qui lui était demandé. Le débat juridique coûte de toute façon plus cher que le contrôle qui l'aurait évité.</div></div>
+  <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Comment vérifier un quantitatif sans refaire le métré ?</div><div class="faq-a">Par des contrôles de cohérence : rattacher chaque quantité à une géométrie du bâtiment, rapporter chaque lot à un ratio au mètre carré, vérifier que les lots corrélés varient ensemble, et contrôler le poids relatif de chaque lot dans le total. Ces quatre tests se mènent en quelques minutes par lot et attrapent l'essentiel des erreurs d'ordre de grandeur.</div></div>
+  <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">À quel moment faut-il contrôler les quantités ?</div><div class="faq-a">Avant l'envoi du dossier de consultation. Un contrôle après remise des offres oblige à publier un additif, à prolonger le délai ou à relancer la consultation. Un contrôle après signature des marchés ne s'appelle plus un contrôle mais un avenant, négocié sans concurrence.</div></div>
+  <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Un quantitatif faux fausse-t-il aussi l'estimation ?</div><div class="faq-a">Oui, doublement. L'estimation servant de référence à l'analyse est faussée du même montant, ce qui rend le contrôle des offres inopérant : une offre qui intègre correctement l'ouvrage manquant apparaîtra anormalement chère, et une offre qui reprend l'erreur apparaîtra conforme à l'estimation.</div></div>
+  <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Faut-il faire relire son DPGF par un tiers ?</div><div class="faq-a">Sur les opérations à enjeu, oui, au moins sur les lots les plus lourds. La relecture par quelqu'un qui n'a pas produit le quantitatif détecte des erreurs que l'auteur ne voit plus. Elle peut être limitée à un contrôle de cohérence, ce qui la rend rapide et peu coûteuse par rapport au risque couvert.</div></div>
+</div>
+
+<div class="article-cta">
+  <h3>Besoin d'un économiste sur votre prochaine opération&#8239;?</h3>
+  <p>Métrés, estimations par phases, CCTP, DPGF, analyse des offres&#8239;: j'interviens en renfort de votre équipe, en mission ponctuelle ou récurrente. Tarifs journaliers affichés, proposition sous 48&nbsp;h.</p>
+  <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+    <a href="professionnels.html" class="btn btn-accent" style="font-size:14px;padding:14px 28px">Voir l'offre professionnels</a>
+    <a href="https://cal.com/aymeric-adora/decouverte" target="_blank" rel="noopener" class="btn" style="font-size:14px;padding:14px 28px;background:rgba(255,255,255,.1);color:var(--white);border-radius:10px;font-weight:700">Réserver 15 min →</a>
+  </div>
+</div>
+
+<p style="margin-top:32px;font-size:13px;color:var(--muted);line-height:1.6"><strong>À propos de l'auteur&#8239;:</strong> Aymeric Dussauze est économiste de la construction (Titre Professionnel Niveau&nbsp;5) et fondateur d'ADORA. Il intervient en renfort des architectes, bureaux d'études, maîtres d'ouvrage et entreprises du bâtiment en Normandie et en Île-de-France&#8239;: métrés, estimations par phases, CCTP, DPGF, DCE, analyse des offres, OPC et AMO. Les prix utilisés dans ses livrables s'appuient sur la base Batichiffrage.</p>
+
+<p style="text-align:center;margin-top:32px"><a href="blog.html" style="color:var(--blue);font-weight:600">← Retour au blog</a> · <a href="professionnels.html" style="color:var(--blue);font-weight:600">Offre professionnels →</a></p>
+
+</div>
+
+<footer class="footer">
+<div class="footer-inner">
+  <div class="footer-brand">
+    <strong>ADORA</strong>
+    <p>Économiste de la construction<br>Normandie &amp; Île-de-France</p>
+  </div>
+  <div class="footer-col">
+    <div class="footer-col-title">Outils</div>
+    <a href="simulateur.html">Simulateur aides</a>
+    <a href="estimateur.html">Estimateur travaux</a>
+    <a href="audit-avant-achat.html">Audit avant achat</a>
+    <a href="sur-mesure.html">Sur mesure</a>
+  </div>
+  <div class="footer-col">
+    <div class="footer-col-title">ADORA</div>
+    <a href="a-propos.html">À propos</a>
+    <a href="professionnels.html">Professionnels</a>
+    <a href="partenaires.html">Partenaires</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <div class="footer-col footer-contact">
+    <div class="footer-col-title">Contact</div>
+    <a href="tel:+33672010767">06 72 01 07 67</a>
+    <a href="/cdn-cgi/l/email-protection#46252928322725320627222934276b23252928292b2f23682034"><span class="__cf_email__" data-cfemail="b2d1dddcc6d3d1c6f2d3d6ddc0d39fd7d1dddcdddfdbd79cd4c0">[email&#160;protected]</span></a>
+    <a href="https://adora-economie.fr">adora-economie.fr</a>
+  </div>
+</div>
+<div class="footer-legal">© 2026 ADORA · EI · SIRET 532 886 918 00020 · TVA non applicable, art. 293B du CGI<br><a href="mentions-legales.html">Mentions légales</a> · <a href="politique-confidentialite.html">Confidentialité</a> · <a href="cgv.html">CGV</a></div>
+<div style="margin-top:12px;font-size:13px;opacity:0.8"><button type="button" class="adora-cmp-footer-link" onclick="if(window.adoraConsent)window.adoraConsent.show()">🍪 Gérer mes cookies</button></div>
+</footer>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+document.addEventListener("DOMContentLoaded",()=>{
+  const obs=new IntersectionObserver(e=>e.forEach(el=>{if(el.isIntersecting){el.target.classList.add("visible");obs.unobserve(el.target)}}),{threshold:.12});
+  document.querySelectorAll(".reveal").forEach(el=>obs.observe(el));
+});
+</script>
+<script type="text/plain" data-adora-consent="analytics" src="https://www.googletagmanager.com/gtag/js?id=G-M0LENY960B"></script>
+<script type="text/plain" data-adora-consent="analytics">window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","G-M0LENY960B");</script>
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"3f8ca9a1113f413a990a17c08ab83442"}'></script>
+</body>
+</html>

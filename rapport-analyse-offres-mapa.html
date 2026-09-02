@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://browser.sentry-cdn.com" crossorigin>
+<link rel="stylesheet" href="/assets/fonts/adora-fonts.css">
+
+<title>Analyse des offres en MAPA : 6 pièges du rapport d'analyse | ADORA</title>
+<meta name="description" content="Formule de notation, périmètres différents, offre anormalement basse, PSE, traçabilité : six pièges du rapport d'analyse des offres en MAPA.">
+<link rel="canonical" href="https://adora-economie.fr/rapport-analyse-offres-mapa.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="ADORA — Économiste de la construction">
+<meta property="og:title" content="Analyse des offres en MAPA : six pièges du rapport d'analyse">
+<meta property="og:description" content="Formule de notation, périmètres différents, offre anormalement basse, PSE, traçabilité : six pièges du rapport d'analyse des offres en MAPA.">
+<meta property="og:url" content="https://adora-economie.fr/rapport-analyse-offres-mapa.html">
+<meta property="og:image" content="https://adora-economie.fr/img/articles/rapport-analyse-offres-mapa.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Analyse des offres en MAPA : six pièges du rapport d'analyse">
+<meta name="twitter:description" content="Formule de notation, périmètres différents, offre anormalement basse, PSE, traçabilité : six pièges du rapport d'analyse des offres en MAPA.">
+<meta name="twitter:image" content="https://adora-economie.fr/img/articles/rapport-analyse-offres-mapa.jpg">
+<meta name="geo.region" content="FR-NOR">
+<meta name="geo.placename" content="Louviers">
+<style>
+
+/* ═══ ADORA PropTech Design System v2 ═══ */
+:root{--navy:#0D1025;--blue:#0E7490;--accent:#22D3EE;--accent-hover:#06B6D4;--light:#EDE9FE;--pale:#FAFAFC;--green:#A78BFA;--green-hover:#8B6FE3;--txt:#1E1B4B;--muted:#64748B;--border:#E5E7F2;--white:#FFFFFF;--radius:16px;--radius-sm:10px;--shadow-card:0 1px 3px rgba(13,16,37,.06),0 8px 24px rgba(13,16,37,.04);--shadow-hover:0 4px 12px rgba(13,16,37,.08),0 16px 40px rgba(13,16,37,.06);--shadow-btn:0 2px 8px rgba(34,211,238,.25);--transition:.3s cubic-bezier(.4,0,.2,1)}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;color:var(--txt);background:var(--white);line-height:1.7;font-size:16px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,h4{font-family:'Montserrat',sans-serif;line-height:1.2}
+a{color:var(--blue);text-decoration:none;transition:color var(--transition)}
+a:hover{color:var(--navy)}
+img{max-width:100%;height:auto}
+.container{max-width:1120px;margin:0 auto;padding:0 28px}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.4,0,.2,1),transform .7s cubic-bezier(.4,0,.2,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:100;background:rgba(13,16,37,.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.06)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;max-width:1120px;margin:0 auto;padding:14px 28px}
+.nav-logo img{height:26px;width:auto}
+.nav-links{display:flex;gap:8px;align-items:center}
+.nav-links a{color:rgba(237,233,254,.8);font-size:13.5px;font-weight:500;padding:6px 14px;border-radius:8px;transition:all var(--transition)}
+.nav-links a:hover{color:var(--white);background:rgba(255,255,255,.08);text-decoration:none}
+.nav-links a.active{color:var(--accent);background:rgba(34,211,238,.1)}
+.nav-cta{background:var(--accent)!important;color:var(--white)!important;padding:8px 20px!important;border-radius:8px;font-weight:700!important;font-size:13px!important;box-shadow:var(--shadow-btn)}
+.nav-cta:hover{background:var(--accent-hover)!important;transform:translateY(-1px)}
+.nav-burger{display:none;background:none;border:none;color:var(--white);font-size:22px;cursor:pointer;padding:8px}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:15px 30px;border-radius:var(--radius-sm);font-size:15px;font-weight:700;font-family:'Plus Jakarta Sans',sans-serif;transition:all var(--transition);border:none;cursor:pointer;text-decoration:none!important}
+.btn-accent{background:var(--accent);color:var(--white);box-shadow:var(--shadow-btn)}
+.btn-accent:hover{background:var(--accent-hover);color:var(--white);transform:translateY(-2px);box-shadow:0 4px 16px rgba(34,211,238,.35)}
+
+/* FOOTER */
+.footer{background:var(--navy);color:rgba(237,233,254,.7);padding:60px 24px 30px;margin-top:80px}
+.footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:40px}
+.footer-brand strong{font-size:18px;color:#fff;display:block;margin-bottom:8px}
+.footer-brand p{font-size:13px;line-height:1.6;color:rgba(237,233,254,.5)}
+.footer-col{display:flex;flex-direction:column;gap:8px}
+.footer-col-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:rgba(237,233,254,.4);margin-bottom:6px}
+.footer-col a{color:rgba(237,233,254,.7);text-decoration:none;font-size:13px;transition:color .2s}
+.footer-col a:hover{color:#22D3EE}
+.footer-contact a{font-size:13px}
+.footer-legal{max-width:1100px;margin:30px auto 0;padding-top:20px;border-top:1px solid rgba(237,233,254,.1);font-size:11px;color:rgba(237,233,254,.35);text-align:center}
+.footer-legal a{color:rgba(237,233,254,.5);text-decoration:none;transition:color .2s}
+.footer-legal a:hover{color:#22D3EE}
+@media(max-width:768px){.footer-inner{grid-template-columns:1fr 1fr;gap:30px 20px}}
+@media(max-width:480px){.footer-inner{grid-template-columns:1fr;gap:24px}}
+
+/* Article specifics */
+.article-hero{background:var(--navy);padding:56px 0 44px;color:var(--white)}
+.article-meta{display:flex;gap:16px;align-items:center;margin-bottom:16px;font-size:13px;color:rgba(214,228,240,.5);flex-wrap:wrap}
+.article-meta span{display:flex;align-items:center;gap:6px}
+.article-tag{padding:4px 10px;background:rgba(34,211,238,.15);color:var(--accent);border-radius:6px;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.5px}
+.article-hero h1{font-size:clamp(26px,4vw,38px);font-weight:900;letter-spacing:-.02em;margin-bottom:12px;max-width:720px}
+.article-hero h1 em{font-style:normal;color:var(--accent)}
+.article-hero .lead{font-size:16px;color:rgba(214,228,240,.7);max-width:620px;line-height:1.7}
+.article-body{max-width:720px;margin:0 auto;padding:60px 28px}
+.article-body h2{font-size:22px;font-weight:800;color:var(--navy);margin:48px 0 14px}
+.article-body h2:first-of-type{margin-top:0}
+.article-body h3{font-size:17px;font-weight:700;color:var(--navy);margin:28px 0 10px}
+.article-body p{font-size:16px;line-height:1.8;margin-bottom:16px;color:var(--txt)}
+.article-body ul,.article-body ol{padding-left:24px;margin-bottom:16px}
+.article-body li{font-size:15px;line-height:1.7;margin-bottom:8px}
+.article-body strong{color:var(--navy)}
+.article-body blockquote{border-left:3px solid var(--accent);padding:16px 24px;margin:24px 0;background:var(--pale);border-radius:0 10px 10px 0;font-size:15px;color:var(--muted)}
+.article-cta{background:var(--navy);border-radius:16px;padding:40px;text-align:center;color:var(--white);margin:48px 0}
+.article-cta h3{color:var(--white);font-size:22px;margin-bottom:8px}
+.article-cta p{color:rgba(237,233,254,.7);margin-bottom:20px;font-size:15px}
+
+/* Data table */
+.data-table{width:100%;border-collapse:separate;border-spacing:0;border-radius:12px;overflow:hidden;border:1px solid var(--border);margin:24px 0}
+.data-table thead th{background:var(--navy);color:var(--white);padding:14px 18px;font-size:13px;font-weight:700;text-align:left;letter-spacing:.3px}
+.data-table tbody td{padding:14px 18px;border-bottom:1px solid var(--border);font-size:14px;color:var(--txt);vertical-align:top;line-height:1.55}
+.data-table tbody tr:last-child td{border-bottom:none}
+.data-table tbody tr:nth-child(even) td{background:var(--pale)}
+.data-table .crit-name{font-weight:600;color:var(--navy);font-family:'Montserrat',sans-serif;font-size:13.5px}
+.data-table .bad{color:#991B1B}
+.data-table .good{color:#2D8B55}
+
+/* Callout box */
+.callout{background:var(--pale);border:1px solid var(--border);border-radius:12px;padding:22px 24px;margin:20px 0}
+.callout-title{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:8px;display:flex;align-items:center;gap:8px;text-transform:uppercase;letter-spacing:.8px;font-family:'Montserrat',sans-serif}
+.callout p{margin:0;font-size:14.5px;line-height:1.65;color:var(--txt)}
+.callout em{color:var(--navy);font-style:italic}
+
+/* Trap number inline (numéros des pièges dans h3) */
+.article-body h3 .trap-num{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:8px;background:rgba(34,211,238,.12);color:var(--blue);font-size:13px;font-weight:800;margin-right:12px;font-family:'Montserrat',sans-serif;vertical-align:middle}
+
+/* Sub-labels "Comment détecter / La parade" */
+.trap-label{display:inline-block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:var(--green);margin-top:14px;margin-bottom:4px;font-family:'Montserrat',sans-serif}
+
+/* Stats inline compactes */
+.stats-inline{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:24px 0}
+.stat-pill{background:var(--pale);border-left:3px solid var(--accent);border-radius:0 10px 10px 0;padding:16px 18px}
+.stat-pill-num{font-family:'Montserrat',sans-serif;font-size:28px;font-weight:900;color:var(--navy);line-height:1;margin-bottom:4px;letter-spacing:-.02em}
+.stat-pill-num span{color:var(--accent)}
+.stat-pill-lbl{font-size:13px;color:var(--muted);line-height:1.5}
+.stat-pill-src{display:block;font-size:11px;color:var(--muted);margin-top:4px;font-style:italic;opacity:.7}
+@media(max-width:600px){.stats-inline{grid-template-columns:1fr}}
+
+/* FAQ */
+.faq-item{border-bottom:1px solid var(--border)}
+.faq-q{padding:18px 0;font-size:15px;font-weight:600;color:var(--navy);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;font-family:'Montserrat',sans-serif}
+.faq-q::after{content:'+';font-size:20px;color:var(--muted);transition:transform .3s;flex-shrink:0}
+.faq-item.open .faq-q::after{content:'−'}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s ease;font-size:14px;color:var(--muted);line-height:1.7}
+.faq-item.open .faq-a{max-height:500px;padding-bottom:18px}
+
+@media(max-width:700px){
+  .nav-links{display:none;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--navy);padding:16px 28px;gap:4px;border-top:1px solid rgba(255,255,255,.08)}
+  .nav-links.open{display:flex}
+  .nav-burger{display:block}
+  .article-body{padding:40px 24px}
+  .article-cta{padding:32px 24px}
+  .data-table thead th,.data-table tbody td{padding:10px 12px;font-size:13px}
+}
+
+/* ═══ MOBILE FIXES — 21/04/2026 ═══ */
+@media(max-width:700px){
+  .nav-links .nav-cta{width:100%;text-align:center;margin-top:8px}
+  .footer-contact a{word-break:break-all}
+}
+</style>
+
+<script defer src="https://browser.sentry-cdn.com/8.0.0/bundle.min.js" crossorigin="anonymous"></script>
+    <script type="text/plain" data-adora-consent="analytics">Sentry.init({dsn:"https://14b68c10a24c3da4127332e14fd20359@o4511253060976640.ingest.de.sentry.io/4511253075132496",tracesSampleRate:0,replaysSessionSampleRate:0});</script>
+<!-- data-adora-image-added="true" -->
+<!-- ADORA CMP -->
+  <link rel="stylesheet" href="/assets/css/adora-cmp.css">
+  <script src="/assets/js/adora-cmp.js"></script>
+  <!-- /ADORA CMP -->
+<script type="application/ld+json" data-adora-schema="article">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://adora-economie.fr/img/articles/rapport-analyse-offres-mapa.jpg",
+    "width": 1200,
+    "height": 630
+  },
+  "headline": "Analyse des offres en MAPA : six pièges du rapport d'analyse",
+  "description": "Formule de notation, périmètres différents, offre anormalement basse, PSE, traçabilité : six pièges du rapport d'analyse des offres en MAPA.",
+  "author": {
+    "@type": "Person",
+    "name": "Aymeric Dussauze",
+    "jobTitle": "Économiste de la construction",
+    "url": "https://adora-economie.fr/a-propos.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ADORA",
+    "@id": "https://adora-economie.fr/#business"
+  },
+  "datePublished": "2026-09-02",
+  "dateModified": "2026-09-02",
+  "mainEntityOfPage": "https://adora-economie.fr/rapport-analyse-offres-mapa.html",
+  "audience": {
+    "@type": "BusinessAudience",
+    "audienceType": "Architectes, maîtres d'œuvre, bureaux d'études, maîtres d'ouvrage, entreprises du bâtiment"
+  },
+  "about": "Analyse des offres, procédure adaptée (MAPA), rapport d'analyse des offres"
+}
+</script>
+<script type="application/ld+json" data-adora-schema="faq">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Peut-on négocier en procédure adaptée ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui, si le règlement de consultation l'a prévu. La négociation doit alors être conduite avec tous les candidats admis à négocier, dans les mêmes conditions et sur les mêmes bases. Si le règlement ne l'a pas prévue, la négociation n'est pas ouverte : seule reste une mise au point du marché, qui ne peut ni modifier l'objet du marché ni bouleverser l'économie de l'offre retenue."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Comment traiter une offre anormalement basse ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Le code de la commande publique interdit tout rejet automatique. L'acheteur doit demander par écrit au candidat des précisions et justifications sur le montant de son offre, examiner les réponses, et ne rejeter que si les justifications ne permettent pas d'écarter le caractère manifestement sous-évalué du prix. Toute la procédure doit être tracée dans le rapport d'analyse."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Faut-il publier la formule de notation du prix dans le règlement de consultation ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ce n'est pas systématiquement obligatoire, mais c'est fortement recommandé. Une formule annoncée à l'avance sécurise la procédure, désamorce les contestations et évite le soupçon d'un choix de méthode fait après connaissance des offres. Dans tous les cas, la formule doit être fixée avant l'ouverture des plis et figurer dans le rapport."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Le rapport d'analyse des offres est-il communicable ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui, à un candidat qui en fait la demande, sous réserve d'occulter les éléments couverts par le secret des affaires des autres candidats, notamment les détails de prix unitaires et les éléments de savoir-faire du mémoire technique. Cette communicabilité est une raison suffisante pour écrire le rapport de façon factuelle et sans appréciation personnelle."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Que faire si deux offres ne portent pas sur le même périmètre ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ne pas retraiter les offres soi-même. Il faut identifier l'écart, interroger le candidat concerné dans le cadre prévu par le règlement de consultation, consigner sa réponse et en tirer les conséquences : soit la prestation est incluse et cela devient un engagement opposable, soit l'offre est incomplète et le rapport le constate."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<nav class="nav">
+<div class="nav-inner">
+  <a href="./" class="nav-logo"><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5NDAgMjAwIiB3aWR0aD0iOTQwIiBoZWlnaHQ9IjIwMCI+CiAgPGcgZmlsbD0id2hpdGUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICA8IS0tIFRyaWFuZ2xlIGljb24gLS0+CiAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMCwgOCkgdHJhbnNsYXRlKC03NSwgLTk5KSI+CiAgICAgIDxwYXRoIGQ9Ik0gMTE3LDI4MiBMIDE2OSwyODEgTCAxNzQsMjc0IEwgMTc3LDI2OCBMIDIyOSwxOTMgTCAyMjksMTkxIEwgMjA2LDE1OCBMIDIwNywxNTUgTCAyMjksMTU2IEwgMjM0LDE2NSBMIDIzNywxNjggTCAyMzksMTczIEwgMjgxLDIzNSBMIDI4MiwyNDAgTCAyNDAsMjQwIEwgMjEzLDI4MCBMIDIxMywyODIgTCAzNjQsMjgyIEwgMzYxLDI3NiBMIDMwMCwxODcgTCAyOTksMTg0IEwgMjQyLDk5IEwgMjQwLDEwMCBMIDIwNywxNTAgTCAyMDEsMTU2IEwgMTQwLDI0OCBMIDEzNywyNTEgTCAxMzYsMjU0IEwgMTI0LDI3MCBaIi8+CiAgICA8L2c+CiAgICA8IS0tIFRleHQgIkFkb3JhIiAtLT4KICAgIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDMzMCwgMTIpIHNjYWxlKDEuOCkgdHJhbnNsYXRlKC03MSwgLTMyMCkiPgogICAgICA8cGF0aCBkPSJNIDEwMiwzMjYgTCA5MywzNTIgTCA5MSwzNTUgTCA4NywzNjkgTCA4NSwzNzIgTCA4MiwzODMgTCA4MCwzODYgTCA3OCwzOTUgTCA3MSw0MTMgTCA3MSw0MTYgTCA4OSw0MTUgTCA5NywzOTAgTCAxMjUsMzg5IEwgMTMwLDM5NCBMIDEzMSw0MDAgTCAxMzMsNDAzIEwgMTM3LDQxNiBMIDE1NSw0MTYgTCAxNTUsNDEyIEwgMTUzLDQwOSBMIDEyNCwzMjYgWiBNIDExNCwzNDQgTCAxMjMsMzcyIEwgMTIyLDM3NiBMIDEwMiwzNzUgTCAxMDIsMzcyIEwgMTA2LDM1OSBMIDEwOCwzNTYgTCAxMTAsMzQ3IFoiLz4KICAgICAgPHBhdGggZD0iTSAyMjUsMzIwIEwgMjA4LDMyMCBMIDIwNiwzNTIgTCAyMDIsMzQ4IEwgMTk0LDM0NSBMIDE4MCwzNDUgTCAxNjksMzQ5IEwgMTU5LDM2MCBMIDE1NSwzNzMgTCAxNTYsMzk1IEwgMTYyLDQwNyBMIDE3MCw0MTQgTCAxNzgsNDE3IEwgMTkzLDQxNyBMIDE5OSw0MTUgTCAyMDUsNDA4IEwgMjA4LDQwOCBMIDIwOCw0MTYgTCAyMjUsNDE2IFogTSAxODcsMzU3IEwgMTk0LDM1NyBMIDE5OSwzNTkgTCAyMDQsMzY0IEwgMjA3LDM3MSBMIDIwOCwzODUgTCAyMDYsMzk0IEwgMjA0LDM5OCBMIDE5OSw0MDMgTCAxOTUsNDA1IEwgMTg2LDQwNSBMIDE4Miw0MDMgTCAxNzYsMzk3IEwgMTczLDM4OSBMIDE3MywzNzIgTCAxNzYsMzY1IEwgMTgyLDM1OSBaIi8+CiAgICAgIDxwYXRoIGQ9Ik0gMjU1LDM0NiBMIDI0NCwzNTIgTCAyMzgsMzU5IEwgMjMzLDM3MSBMIDIzMywzODkgTCAyMzUsMzk3IEwgMjQwLDQwNiBMIDI0NSw0MTEgTCAyNTIsNDE1IEwgMjU5LDQxNyBMIDI3Nyw0MTcgTCAyODMsNDE1IEwgMjk1LDQwNiBMIDMwMSwzOTYgTCAzMDMsMzg4IEwgMzAzLDM3NCBMIDMwMSwzNjYgTCAyOTYsMzU3IEwgMjkwLDM1MSBMIDI4MywzNDcgTCAyNzcsMzQ1IFogTSAyNjQsMzU3IEwgMjcyLDM1NyBMIDI3NiwzNTkgTCAyODEsMzY0IEwgMjg1LDM3NSBMIDI4NSwzODcgTCAyODMsMzk1IEwgMjc2LDQwMyBMIDI3Miw0MDUgTCAyNjQsNDA1IEwgMjU5LDQwMyBMIDI1NCwzOTggTCAyNTAsMzg2IEwgMjUwLDM3NCBMIDI1MiwzNjggTCAyNTgsMzYwIFoiLz4KICAgICAgPHBhdGggZD0iTSAzNTAsMzQ1IEwgMzM4LDM0NiBMIDMyOCwzNTUgTCAzMjgsMzQ3IEwgMzExLDM0NyBMIDMxMSw0MTYgTCAzMjgsNDE1IEwgMzI4LDM3NCBMIDMzMCwzNjggTCAzMzYsMzYyIEwgMzQzLDM1OSBMIDM1MCwzNTkgWiIvPgogICAgICA8cGF0aCBkPSJNIDM2NCwzNDkgTCAzNTksMzUzIEwgMzU1LDM2MCBMIDM1NCwzNjQgTCAzNTUsMzY5IEwgMzcwLDM2OSBMIDM3MSwzNjMgTCAzNzUsMzU4IEwgMzc3LDM1NyBMIDM4NiwzNTcgTCAzOTIsMzYyIEwgMzkzLDM2NSBMIDM5MiwzNzQgTCAzNzIsMzc1IEwgMzYwLDM4MCBMIDM1NCwzODYgTCAzNTEsMzk0IEwgMzUxLDQwMiBMIDM1NCw0MDkgTCAzNTgsNDEzIEwgMzY2LDQxNyBMIDM4MSw0MTcgTCAzODYsNDE1IEwgMzkxLDQwOSBMIDM5NCw0MDkgTCAzOTUsNDE2IEwgNDExLDQxNiBMIDQxMCwzNjcgTCA0MDksMzYxIEwgNDA2LDM1NCBMIDQwMCwzNDggTCAzOTEsMzQ1IEwgMzczLDM0NSBaIE0gMzkzLDM4NSBMIDM5MiwzOTcgTCAzODYsNDA0IEwgMzg0LDQwNSBMIDM3NSw0MDUgTCAzNjksNDAwIEwgMzY5LDM5MiBMIDM3NSwzODYgTCAzODMsMzg0IFoiLz4KICAgIDwvZz4KICA8L2c+Cjwvc3ZnPgo=" alt="ADORA" style="height:26px;width:auto"></a>
+  <div class="nav-links" id="navLinks">
+    <a href="simulateur.html">Simulateur</a>
+    <a href="estimateur.html">Estimateur</a>
+    <a href="audit-avant-achat.html">Audit achat</a>
+    <a href="sur-mesure.html">Sur mesure</a>
+    <a href="estimateur-outil.html" class="nav-cta">Estimer mes travaux</a>
+  </div>
+  <button class="nav-burger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">&#9776;</button>
+</div>
+</nav>
+
+<section class="article-hero">
+  <div class="container">
+    <div class="article-meta">
+      <span class="article-tag">Marchés publics</span>
+      <span>Septembre 2026</span>
+      <span>9 min de lecture</span>
+    </div>
+    <h1>Analyse des offres en MAPA&#8239;: six pièges du rapport d'analyse</h1>
+    <p class="lead">Le rapport d'analyse des offres est le document qui expose le plus la maîtrise d'œuvre. Il justifie un choix, il est communicable, et il sera lu en priorité par le candidat évincé. Voici les six pièges que je vois le plus souvent en procédure adaptée.</p>
+  </div>
+</section>
+
+<div class="article-body">
+
+
+<p>En procédure adaptée, l'acheteur dispose d'une réelle liberté d'organisation. Cette liberté est confortable jusqu'au jour où une offre est écartée et où le rapport d'analyse doit tenir debout tout seul, sans son auteur pour l'expliquer.</p>
+
+<p>Rappel de cadrage&#8239;: la procédure adaptée s'applique en travaux en dessous du seuil européen de procédure formalisée, <a href="https://www.economie.gouv.fr/daj/commande-publique-les-seuils-europeens-de-procedure-formalisee-changent-au-1er-janvier-2026" target="_blank" rel="noopener">fixé à 5&nbsp;404&nbsp;000&nbsp;€ HT pour la période 2026-2027</a>. Autant dire que la quasi-totalité des opérations de bâtiment courantes s'y trouve.</p>
+
+<h2>Piège 1 — La méthode de notation du prix n'est pas neutre</h2>
+
+<p>Choisir une pondération, c'est visible. Choisir une formule de notation du prix, c'est discret — et pourtant c'est souvent ce qui détermine le classement.</p>
+
+<p>Une note calculée en rapportant l'offre la moins-disante à l'offre examinée écrase les écarts entre candidats proches. Une note construite sur l'écart à la moyenne récompense le positionnement plutôt que le prix. Une note linéaire bornée entre le moins-disant et le plus-disant amplifie l'effet d'un candidat très cher sur tout le classement. Trois formules défendables, trois classements potentiellement différents à partir des mêmes offres.</p>
+
+<p>Le réflexe&#8239;: choisir la formule <strong>avant</strong> l'ouverture des plis, la documenter dans le rapport, et vérifier après coup si un autre choix aurait changé le vainqueur. Si oui, il faut pouvoir expliquer pourquoi celui-là.</p>
+
+<h2>Piège 2 — Comparer des offres qui ne portent pas sur le même périmètre</h2>
+
+<p>C'est le piège le plus fréquent et le plus coûteux. Un candidat chiffre les travaux seuls&#8239;; les autres intègrent le compte prorata, les provisions, les protections. À la lecture, l'écart ressemble à un écart de compétitivité. C'est un écart de périmètre.</p>
+
+<p>La correction ne consiste pas à retraiter les offres dans un coin du tableur — cela reviendrait à modifier une offre, ce qui est exclu. Elle consiste à identifier l'écart, à interroger le candidat dans le cadre prévu par le règlement de consultation, et à consigner sa réponse. Si le candidat confirme que sa prestation est complète au prix indiqué, l'écart devient un engagement contractuel opposable. S'il reconnaît une omission, son offre devient incomplète et le rapport le dit.</p>
+
+<div class="callout">
+  <div class="callout-title">La prévention est en amont</div>
+  <p>Ce piège se ferme au DCE, pas à l'analyse&#8239;: lignes dédiées pour le compte prorata et les provisions, montants imposés si nécessaire, rédaction sans ambiguïté au lot&nbsp;0. À l'analyse, il ne reste qu'à gérer les conséquences.</p>
+</div>
+
+<h2>Piège 3 — Traiter une offre basse comme une élimination automatique</h2>
+
+<p>Une offre nettement en dessous des autres n'est pas éliminable en soi. Le code de la commande publique définit l'offre anormalement basse comme celle dont le prix est manifestement sous-évalué et de nature à compromettre la bonne exécution du marché (<a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000037703657" target="_blank" rel="noopener">article L2152-5</a>), et impose à l'acheteur de demander des précisions au candidat puis de vérifier ses justifications avant tout rejet (<a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000037703659" target="_blank" rel="noopener">article L2152-6</a>).</p>
+
+<p>Concrètement&#8239;: pas de seuil automatique, pas de formule d'exclusion, une procédure contradictoire écrite, et une décision motivée au regard des justifications reçues. Le rapport d'analyse doit porter la trace de cet échange, sans quoi le rejet est fragile.</p>
+
+<p>Symétriquement, une offre basse justifiée n'a pas à être écartée. Un candidat peut avoir un prix bas parce qu'il dispose déjà du matériel sur un chantier voisin, ou parce qu'il maîtrise particulièrement le procédé. C'est précisément ce que la procédure contradictoire permet d'établir.</p>
+
+<h2>Piège 4 — Les variantes et PSE contaminent l'offre de base</h2>
+
+<p>Une prestation supplémentaire éventuelle notée dans l'offre de base pénalise le candidat qui l'a chiffrée et avantage celui qui l'a oubliée. Une variante comparée à une offre de base d'un autre candidat compare deux ouvrages différents.</p>
+
+<p>La règle&#8239;: classement sur l'offre de base seule, comparaison des PSE entre elles ensuite, et traitement des variantes selon ce que prévoit le règlement de consultation — sur des critères annoncés, et jamais en mélange avec les solutions de base. Le rapport doit présenter les deux niveaux séparément.</p>
+
+<h2>Piège 5 — Le rapport n'est pas reconstituable</h2>
+
+<p>Le rapport d'analyse est communicable au candidat évincé, dans les limites du secret des affaires. Il doit permettre à un tiers de refaire le calcul&#8239;: montants retenus, formule appliquée, notes obtenues critère par critère, pondération, total. Un tableau de notes sans les montants ni la formule ne justifie rien&#8239;; il affirme.</p>
+
+<p>Ce qui n'a pas sa place dans le rapport&#8239;: les jugements de valeur sur les candidats, les considérations extérieures aux critères annoncés, les appréciations qui ne s'appuient sur aucun élément du mémoire technique. Ce qui doit y figurer&#8239;: le rappel des critères tels qu'annoncés, la méthode, les échanges intervenus avec les candidats, et la motivation du choix.</p>
+
+<h2>Piège 6 — Confondre mise au point et négociation</h2>
+
+<p>En procédure adaptée, la négociation est possible <strong>si le règlement de consultation l'a prévue</strong>, et elle doit alors être conduite avec tous les candidats admis, dans les mêmes conditions. Si le règlement ne l'a pas prévue, il n'est pas possible de négocier après coup&#8239;: seule une mise au point du marché reste ouverte, et elle ne peut ni modifier l'objet ni bouleverser l'économie de l'offre retenue.</p>
+
+<p>La frontière est ténue en pratique. Demander à un candidat de préciser une prestation ambiguë relève de la mise au point. Lui demander de revoir son prix relève de la négociation. Le rapport d'analyse doit qualifier chaque échange, dater et consigner&#8239;: c'est ce qui distingue une procédure défendable d'une procédure racontée après coup.</p>
+
+<h2>La structure d'un rapport qui tient</h2>
+
+<table class="data-table">
+  <thead><tr><th>Partie</th><th>Contenu attendu</th></tr></thead>
+  <tbody>
+    <tr><td>Rappel de la consultation</td><td>Objet, allotissement, procédure, dates, critères et pondérations tels qu'annoncés</td></tr>
+    <tr><td>Candidatures</td><td>Liste des plis, recevabilité, pièces manquantes et régularisations</td></tr>
+    <tr><td>Analyse financière</td><td>Montants par lot, écarts à l'estimation, périmètre de chaque offre, formule de notation</td></tr>
+    <tr><td>Analyse technique</td><td>Notation critère par critère, appuyée sur des éléments du mémoire technique</td></tr>
+    <tr><td>Échanges avec les candidats</td><td>Demandes de précisions, procédure contradictoire éventuelle, réponses reçues</td></tr>
+    <tr><td>Classement et proposition</td><td>Tableau de synthèse reconstituable, proposition d'attribution motivée</td></tr>
+    <tr><td>Points de mise au point</td><td>Sujets à traiter avant notification, sans modification de l'économie du marché</td></tr>
+  </tbody>
+</table>
+
+<p>Un rapport ainsi construit a une propriété utile&#8239;: il se relit un an plus tard sans son auteur. C'est le seul test qui compte vraiment.</p>
+
+
+<div class="callout">
+  <div class="callout-title">Pour aller plus loin</div>
+  <p>
+    <a href="dpgf-comparable-consultation.html">→ Comment structurer un DPGF pour que les offres soient comparables</a><br>
+    <a href="erreur-quantitatif-dce.html">→ Ce que coûte réellement une erreur de quantitatif au DCE</a><br>
+    <a href="honoraires-economiste-mission-moe.html">→ Honoraires d'économiste dans la mission de maîtrise d'œuvre</a><br>
+    <a href="professionnels.html">→ L'offre ADORA pour les professionnels&#8239;: phases, livrables, TJM</a>
+  </p>
+</div>
+
+<h2>Questions fréquentes</h2>
+
+<div style="display:flex;flex-direction:column;gap:0">
+  <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Peut-on négocier en procédure adaptée ?</div><div class="faq-a">Oui, si le règlement de consultation l'a prévu. La négociation doit alors être conduite avec tous les candidats admis à négocier, dans les mêmes conditions et sur les mêmes bases. Si le règlement ne l'a pas prévue, la négociation n'est pas ouverte : seule reste une mise au point du marché, qui ne peut ni modifier l'objet du marché ni bouleverser l'économie de l'offre retenue.</div></div>
+  <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Comment traiter une offre anormalement basse ?</div><div class="faq-a">Le code de la commande publique interdit tout rejet automatique. L'acheteur doit demander par écrit au candidat des précisions et justifications sur le montant de son offre, examiner les réponses, et ne rejeter que si les justifications ne permettent pas d'écarter le caractère manifestement sous-évalué du prix. Toute la procédure doit être tracée dans le rapport d'analyse.</div></div>
+  <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Faut-il publier la formule de notation du prix dans le règlement de consultation ?</div><div class="faq-a">Ce n'est pas systématiquement obligatoire, mais c'est fortement recommandé. Une formule annoncée à l'avance sécurise la procédure, désamorce les contestations et évite le soupçon d'un choix de méthode fait après connaissance des offres. Dans tous les cas, la formule doit être fixée avant l'ouverture des plis et figurer dans le rapport.</div></div>
+  <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Le rapport d'analyse des offres est-il communicable ?</div><div class="faq-a">Oui, à un candidat qui en fait la demande, sous réserve d'occulter les éléments couverts par le secret des affaires des autres candidats, notamment les détails de prix unitaires et les éléments de savoir-faire du mémoire technique. Cette communicabilité est une raison suffisante pour écrire le rapport de façon factuelle et sans appréciation personnelle.</div></div>
+  <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Que faire si deux offres ne portent pas sur le même périmètre ?</div><div class="faq-a">Ne pas retraiter les offres soi-même. Il faut identifier l'écart, interroger le candidat concerné dans le cadre prévu par le règlement de consultation, consigner sa réponse et en tirer les conséquences : soit la prestation est incluse et cela devient un engagement opposable, soit l'offre est incomplète et le rapport le constate.</div></div>
+</div>
+
+<div class="article-cta">
+  <h3>Besoin d'un économiste sur votre prochaine opération&#8239;?</h3>
+  <p>Métrés, estimations par phases, CCTP, DPGF, analyse des offres&#8239;: j'interviens en renfort de votre équipe, en mission ponctuelle ou récurrente. Tarifs journaliers affichés, proposition sous 48&nbsp;h.</p>
+  <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+    <a href="professionnels.html" class="btn btn-accent" style="font-size:14px;padding:14px 28px">Voir l'offre professionnels</a>
+    <a href="https://cal.com/aymeric-adora/decouverte" target="_blank" rel="noopener" class="btn" style="font-size:14px;padding:14px 28px;background:rgba(255,255,255,.1);color:var(--white);border-radius:10px;font-weight:700">Réserver 15 min →</a>
+  </div>
+</div>
+
+<p style="margin-top:32px;font-size:13px;color:var(--muted);line-height:1.6"><strong>À propos de l'auteur&#8239;:</strong> Aymeric Dussauze est économiste de la construction (Titre Professionnel Niveau&nbsp;5) et fondateur d'ADORA. Il intervient en renfort des architectes, bureaux d'études, maîtres d'ouvrage et entreprises du bâtiment en Normandie et en Île-de-France&#8239;: métrés, estimations par phases, CCTP, DPGF, DCE, analyse des offres, OPC et AMO. Les prix utilisés dans ses livrables s'appuient sur la base Batichiffrage.</p>
+
+<p style="text-align:center;margin-top:32px"><a href="blog.html" style="color:var(--blue);font-weight:600">← Retour au blog</a> · <a href="professionnels.html" style="color:var(--blue);font-weight:600">Offre professionnels →</a></p>
+
+</div>
+
+<footer class="footer">
+<div class="footer-inner">
+  <div class="footer-brand">
+    <strong>ADORA</strong>
+    <p>Économiste de la construction<br>Normandie &amp; Île-de-France</p>
+  </div>
+  <div class="footer-col">
+    <div class="footer-col-title">Outils</div>
+    <a href="simulateur.html">Simulateur aides</a>
+    <a href="estimateur.html">Estimateur travaux</a>
+    <a href="audit-avant-achat.html">Audit avant achat</a>
+    <a href="sur-mesure.html">Sur mesure</a>
+  </div>
+  <div class="footer-col">
+    <div class="footer-col-title">ADORA</div>
+    <a href="a-propos.html">À propos</a>
+    <a href="professionnels.html">Professionnels</a>
+    <a href="partenaires.html">Partenaires</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <div class="footer-col footer-contact">
+    <div class="footer-col-title">Contact</div>
+    <a href="tel:+33672010767">06 72 01 07 67</a>
+    <a href="/cdn-cgi/l/email-protection#46252928322725320627222934276b23252928292b2f23682034"><span class="__cf_email__" data-cfemail="b2d1dddcc6d3d1c6f2d3d6ddc0d39fd7d1dddcdddfdbd79cd4c0">[email&#160;protected]</span></a>
+    <a href="https://adora-economie.fr">adora-economie.fr</a>
+  </div>
+</div>
+<div class="footer-legal">© 2026 ADORA · EI · SIRET 532 886 918 00020 · TVA non applicable, art. 293B du CGI<br><a href="mentions-legales.html">Mentions légales</a> · <a href="politique-confidentialite.html">Confidentialité</a> · <a href="cgv.html">CGV</a></div>
+<div style="margin-top:12px;font-size:13px;opacity:0.8"><button type="button" class="adora-cmp-footer-link" onclick="if(window.adoraConsent)window.adoraConsent.show()">🍪 Gérer mes cookies</button></div>
+</footer>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+document.addEventListener("DOMContentLoaded",()=>{
+  const obs=new IntersectionObserver(e=>e.forEach(el=>{if(el.isIntersecting){el.target.classList.add("visible");obs.unobserve(el.target)}}),{threshold:.12});
+  document.querySelectorAll(".reveal").forEach(el=>obs.observe(el));
+});
+</script>
+<script type="text/plain" data-adora-consent="analytics" src="https://www.googletagmanager.com/gtag/js?id=G-M0LENY960B"></script>
+<script type="text/plain" data-adora-consent="analytics">window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","G-M0LENY960B");</script>
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"3f8ca9a1113f413a990a17c08ab83442"}'></script>
+</body>
+</html>
