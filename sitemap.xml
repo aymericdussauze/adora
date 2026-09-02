@@ -126,4 +126,26 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://adora-economie.fr/dpgf-comparable-consultation.html</loc>
+    <lastmod>2026-09-02</lastmod><changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+<url>
+  <loc>https://adora-economie.fr/erreur-quantitatif-dce.html</loc>
+  <lastmod>2026-09-02</lastmod><changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
+<url>
+  <loc>https://adora-economie.fr/rapport-analyse-offres-mapa.html</loc>
+  <lastmod>2026-09-02</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
+<url>
+  <loc>https://adora-economie.fr/honoraires-economiste-mission-moe.html</loc>
+  <lastmod>2026-09-02</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
 </urlset>
