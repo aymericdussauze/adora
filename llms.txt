@@ -18,6 +18,7 @@
 - [Audit avant achat immobilier](https://adora-economie.fr/audit-avant-achat.html): Analyse économiste avant signature, 499 €. Pour acheteurs en Normandie et IDF.
 - [Accompagnement sur mesure](https://adora-economie.fr/sur-mesure.html): Estimation détaillée, CCTP/DPGF, suivi de chantier. À partir de 990 €.
 - [Offre professionnels](https://adora-economie.fr/professionnels.html): Renfort économiste pour architectes, BET et maîtres d'ouvrage.
+- [Benchmark des honoraires en marché public](https://adora-economie.fr/benchmark-honoraires.html): Rapport PDF et classeur Excel, 4 398 marchés publics de maîtrise d'œuvre et d'ingénierie (CPV 71) en Île-de-France et Normandie, fourchettes p10 à p90 par typologie et par département. Précommande 79 €, livraison le 9 novembre 2026.
 
 ## Outils gratuits
 
@@ -33,6 +34,13 @@
 - [Les 15 lots TCE expliqués à un particulier](https://adora-economie.fr/15-lots-tce-expliques-particulier.html): Découpage chantier, ratios Batichiffrage, exemple chiffré 120 m².
 - [Choisir sa gamme de rénovation : éco, standard, confort, haut de gamme](https://adora-economie.fr/choisir-sa-gamme-renovation.html): Critères de choix, ratios par gamme, exemple chiffré.
 - [Diagnostic parasitaire : comment négocier le prix d'achat](https://adora-economie.fr/diagnostic-parasitaire-negociation.html): Méthode de décote 5-20 % sur la base d'un diag défavorable.
+
+## Articles pour les professionnels
+
+- [Honoraires d'économiste : qui les provisionne dans la mission de maîtrise d'œuvre ?](https://adora-economie.fr/honoraires-economiste-mission-moe.html): Où se loge la charge d'économie dans chaque phase de la mission MOE, les trois montages possibles.
+- [Analyse des offres en MAPA : six pièges du rapport d'analyse](https://adora-economie.fr/rapport-analyse-offres-mapa.html): Formule de notation, périmètres différents, offre anormalement basse, PSE, traçabilité.
+- [Comment structurer un DPGF pour que les offres soient réellement comparables](https://adora-economie.fr/dpgf-comparable-consultation.html): Numérotation miroir du CCTP, unités mesurables, options hors total, aléas cadrés.
+- [Ce que coûte réellement une erreur de quantitatif au DCE](https://adora-economie.fr/erreur-quantitatif-dce.html): Propagation d'une erreur de quantité jusqu'au chantier et quatre contrôles pour l'arrêter.
 
 ## Méta
 

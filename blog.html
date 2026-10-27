@@ -8,10 +8,11 @@
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://browser.sentry-cdn.com" crossorigin>
-<link rel="stylesheet" href="/assets/fonts/adora-fonts.css">
+<link rel="stylesheet" href="assets/fonts/adora-fonts.css">
 
-<title>Blog — ADORA · Économiste de la construction</title>
-<meta name="description" content="Blog ADORA : prix de rénovation, aides, pièges des devis pour les particuliers ; DPGF, quantitatifs, analyse des offres pour les professionnels.">
+<title>Publications | ADORA · Économiste de la construction</title>
+<meta name="description" content="Guides chiffrés d'un économiste de la construction : prix de rénovation au m², aides 2026, devis et achat immobilier ; DPGF, métrés, analyse des offres et honoraires en marché public.">
+<link rel="canonical" href="https://adora-economie.fr/blog.html">
 <style>
 
 /* ═══ ADORA PropTech Design System v2 ═══ */
@@ -296,9 +297,9 @@ img{max-width:100%;height:auto}
 {
   "@context": "https://schema.org",
   "@type": "Blog",
-  "name": "Blog ADORA — Rénovation, aides, chiffres",
+  "name": "Publications ADORA : rénovation, aides, devis et marchés publics",
   "url": "https://adora-economie.fr/blog.html",
-  "description": "Articles et guides d'un économiste de la construction sur la rénovation, les aides MaPrimeRénov' 2026, les pièges des devis d'artisans et la maîtrise des coûts.",
+  "description": "Guides chiffrés d'un économiste de la construction : prix de rénovation, aides 2026, devis et achat immobilier pour les particuliers ; DCE, métrés, analyse des offres et honoraires pour les professionnels.",
   "author": {
     "@type": "Person",
     "@id": "https://adora-economie.fr/a-propos.html#aymeric",
@@ -311,233 +312,536 @@ img{max-width:100%;height:auto}
     "name": "ADORA",
     "url": "https://adora-economie.fr/"
   },
-  "inLanguage": "fr-FR"
+  "inLanguage": "fr-FR",
+  "blogPost": [
+    {
+      "@type": "BlogPosting",
+      "headline": "Prix rénovation au m² en 2026 : guide complet par poste TCE",
+      "url": "https://adora-economie.fr/prix-renovation-m2-2026.html",
+      "datePublished": "2026-04-17"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "7 pièges des devis d'artisans en 2026 : les détecter avant de signer",
+      "url": "https://adora-economie.fr/pieges-devis-artisans.html",
+      "datePublished": "2026-04-19"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "Choisir sa gamme de rénovation : éco, standard, confort ou haut de gamme",
+      "url": "https://adora-economie.fr/choisir-sa-gamme-renovation.html",
+      "datePublished": "2026-04-22"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "Les 15 lots TCE expliqués à un particulier",
+      "url": "https://adora-economie.fr/15-lots-tce-expliques-particulier.html",
+      "datePublished": "2026-04-21"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "Diagnostic parasitaire : comment négocier le prix d'achat",
+      "url": "https://adora-economie.fr/diagnostic-parasitaire-negociation.html",
+      "datePublished": "2026-04-22"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "Audit avant achat immobilier : ce qu'analyse un économiste",
+      "url": "https://adora-economie.fr/audit-avant-achat-immobilier.html",
+      "datePublished": "2026-04-18"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "MaPrimeRénov' 2026 : barèmes, plafonds et conditions à jour",
+      "url": "https://adora-economie.fr/maprimerenov-2026-bareme.html",
+      "datePublished": "2026-04-18"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "Honoraires d'économiste : qui les provisionne dans la mission MOE ?",
+      "url": "https://adora-economie.fr/honoraires-economiste-mission-moe.html",
+      "datePublished": "2026-09-02"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "Analyse des offres en MAPA : six pièges du rapport d'analyse",
+      "url": "https://adora-economie.fr/rapport-analyse-offres-mapa.html",
+      "datePublished": "2026-09-02"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "Structurer un DPGF pour que les offres soient comparables",
+      "url": "https://adora-economie.fr/dpgf-comparable-consultation.html",
+      "datePublished": "2026-09-02"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "Ce que coûte réellement une erreur de quantitatif au DCE",
+      "url": "https://adora-economie.fr/erreur-quantitatif-dce.html",
+      "datePublished": "2026-09-02"
+    }
+  ]
 }
 </script>
+<!-- ADORA PUBLICATIONS CSS -->
+<style>
+/* ═══ PUBLICATIONS (refonte 2026-10) ═══ */
+.pb{--pb-ink:#0D1025;--pb-cyan:#22D3EE;--pb-iris:#A78BFA;--pb-teal:#0E7490;--pb-paper:#FAFAFC;--pb-rule:#E5E7F2;--pb-text:#1E1B4B;--pb-muted:#64748B;--pb-grid:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px)}
+.pb a:focus-visible,.pb button:focus-visible,.pb input:focus-visible{outline:3px solid var(--pb-cyan);outline-offset:3px}
+
+/* Hero */
+.pb-hero{background-color:var(--pb-ink);background-image:var(--pb-grid);background-size:24px 24px;color:#fff;padding:64px 0 72px}
+.pb-hero-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:56px;align-items:center}
+.pb-hero h1{font-family:'Montserrat',sans-serif;font-weight:900;font-size:clamp(32px,4.4vw,52px);line-height:1.08;letter-spacing:-.025em;color:#fff;margin:0 0 20px;max-width:13ch}
+.pb-lead{font-size:17px;line-height:1.7;color:rgba(214,228,240,.84);max-width:46ch;margin:0 0 32px}
+.pb-aud{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:560px}
+.pb-aud a{display:block;padding:14px 16px 14px 18px;border:1px solid rgba(255,255,255,.14);border-left:3px solid var(--pb-cyan);border-radius:10px;color:#fff;text-decoration:none;background:rgba(255,255,255,.03);transition:background .2s,border-color .2s}
+.pb-aud a.is-pro{border-left-color:var(--pb-iris)}
+.pb-aud a:hover{background:rgba(255,255,255,.07);color:#fff}
+.pb-aud strong{display:block;font-family:'Montserrat',sans-serif;font-size:15px;font-weight:800;margin-bottom:2px}
+.pb-aud span{display:block;font-size:13px;line-height:1.5;color:rgba(214,228,240,.72)}
+
+/* Couverture "cote" */
+.pb-cover{position:relative;display:flex;flex-direction:column;justify-content:flex-end;min-height:168px;padding:24px 22px 18px;background-color:#11152E;background-image:var(--pb-grid);background-size:22px 22px;color:var(--pb-cyan)}
+.pb-cover.is-pro{color:var(--pb-iris)}
+.pb-measure{display:inline-flex;flex-direction:column;align-self:flex-start;max-width:100%}
+.pb-fig{font-family:'Montserrat',sans-serif;font-weight:900;font-size:38px;line-height:1;letter-spacing:-.02em;font-variant-numeric:tabular-nums;white-space:nowrap;color:currentColor}
+.pb-dim{position:relative;display:block;height:11px;margin:10px 0 9px;border-left:1.5px solid currentColor;border-right:1.5px solid currentColor;opacity:.75}
+.pb-dim::before{content:'';position:absolute;left:0;right:0;top:5px;border-top:1px solid currentColor}
+.pb-cap{display:block;font-size:13px;line-height:1.45;font-weight:600;color:rgba(237,233,254,.74);max-width:32ch}
+.pb-new{position:absolute;top:14px;right:14px;font-size:11.5px;font-weight:700;line-height:1;padding:6px 9px;border-radius:999px;background:rgba(167,139,250,.16);color:#D9CCFF}
+
+/* Cartes */
+.pb-card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--pb-rule);border-radius:16px;overflow:hidden;color:var(--pb-text);text-decoration:none;transition:border-color .2s}
+.pb-card:hover{border-color:rgba(34,211,238,.7);color:var(--pb-text)}
+.pb-card.is-pro:hover{border-color:rgba(167,139,250,.8)}
+.pb-card:hover h3{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px;text-decoration-color:var(--pb-cyan)}
+.pb-card.is-pro:hover h3{text-decoration-color:var(--pb-iris)}
+.pb-body{display:flex;flex-direction:column;flex:1;padding:20px 22px 18px}
+.pb-topic{font-size:12.5px;font-weight:700;color:var(--pb-teal);margin-bottom:6px}
+.pb-card.is-pro .pb-topic{color:#6D4FD1}
+.pb-card h3{font-family:'Montserrat',sans-serif;font-size:18px;font-weight:800;line-height:1.3;color:var(--pb-ink);margin:0 0 8px}
+.pb-card p{font-size:14px;line-height:1.6;color:var(--pb-muted);margin:0}
+.pb-meta{display:flex;justify-content:space-between;gap:12px;margin-top:auto;padding-top:16px;font-size:12.5px;color:var(--pb-muted)}
+
+/* Carte à la une (hero) */
+.pb-feature{border:0;box-shadow:0 24px 60px rgba(0,0,0,.35)}
+.pb-feature .pb-cover{min-height:220px;padding:30px 28px 22px;background-color:#151A38}
+.pb-feature .pb-fig{font-size:clamp(40px,4.6vw,56px)}
+.pb-feature .pb-body{padding:22px 28px 22px}
+.pb-feature h3{font-size:21px}
+.pb-feature:hover{color:var(--pb-text)}
+
+/* Sections */
+.pb-sec{padding:88px 0 80px;scroll-margin-top:64px}
+.pb-sec.is-pro{background:var(--pb-paper);border-top:1px solid var(--pb-rule);border-bottom:1px solid var(--pb-rule)}
+.pb-head{max-width:640px;margin-bottom:36px}
+.pb-head h2{font-family:'Montserrat',sans-serif;font-size:clamp(26px,3vw,34px);font-weight:900;letter-spacing:-.015em;color:var(--pb-ink);margin:0 0 10px}
+.pb-head p{font-size:16px;line-height:1.7;color:var(--pb-muted);margin:0}
+.pb-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+
+/* Encart estimateur */
+.pb-offer{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1.4fr) auto;gap:32px;align-items:center;padding:30px 34px;border-radius:16px;background:linear-gradient(0deg,rgba(34,211,238,.07),rgba(34,211,238,.07)),#fff;border:1px solid rgba(34,211,238,.45)}
+.pb-offer h3{font-family:'Montserrat',sans-serif;font-size:22px;font-weight:900;letter-spacing:-.01em;color:var(--pb-ink);margin:0 0 8px}
+.pb-offer p{font-size:15px;line-height:1.65;color:var(--pb-text);margin:0;max-width:58ch}
+.pb-offer-act{display:flex;flex-direction:column;align-items:flex-start;gap:12px}
+.pb-offer-links{display:flex;flex-direction:column;gap:6px;font-size:14px}
+.pb-offer-links a{color:var(--pb-teal);font-weight:600}
+.pb-btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 26px;border-radius:10px;background:var(--pb-cyan);color:var(--pb-ink)!important;font-weight:800;font-size:15px;text-decoration:none!important;white-space:nowrap;transition:background .2s}
+.pb-btn:hover{background:#06B6D4}
+
+/* Professionnels : grille + benchmark */
+.pb-grid.is-pro{grid-template-columns:repeat(3,minmax(0,1fr))}
+.pb-grid.is-pro .pb-card:nth-of-type(1){grid-column:1;grid-row:1}
+.pb-grid.is-pro .pb-card:nth-of-type(2){grid-column:2;grid-row:1}
+.pb-grid.is-pro .pb-card:nth-of-type(3){grid-column:1;grid-row:2}
+.pb-grid.is-pro .pb-card:nth-of-type(4){grid-column:2;grid-row:2}
+.pb-bench{grid-column:3;grid-row:1/span 2;display:flex;flex-direction:column;padding:30px 28px 26px;border-radius:16px;background-color:var(--pb-ink);background-image:var(--pb-grid);background-size:22px 22px;color:#fff}
+.pb-bench-tag{align-self:flex-start;font-size:12px;font-weight:700;padding:6px 10px;border-radius:999px;background:rgba(167,139,250,.18);color:#D9CCFF;margin-bottom:18px}
+.pb-bench h3{font-family:'Montserrat',sans-serif;font-size:22px;font-weight:900;line-height:1.2;color:#fff;margin:0 0 22px}
+.pb-bench .pb-measure{color:var(--pb-iris)}
+.pb-bench .pb-fig{font-size:48px}
+.pb-bench .pb-cap{margin-bottom:20px}
+.pb-bench-stats{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:0 0 22px;padding:16px 0;border-top:1px solid rgba(255,255,255,.12);border-bottom:1px solid rgba(255,255,255,.12)}
+.pb-bench-stats dt{font-family:'Montserrat',sans-serif;font-size:20px;font-weight:900;color:#fff;line-height:1.1;white-space:nowrap}
+.pb-bench-stats dd{margin:4px 0 0;font-size:12.5px;line-height:1.4;color:rgba(214,228,240,.72)}
+.pb-bench ul{list-style:none;margin:0 0 24px;padding:0;display:grid;gap:9px}
+.pb-bench li{position:relative;padding-left:20px;font-size:14px;line-height:1.5;color:rgba(237,233,254,.88)}
+.pb-bench li::before{content:'';position:absolute;left:0;top:10px;width:9px;height:1.5px;background:var(--pb-iris)}
+.pb-price{display:flex;align-items:baseline;gap:12px;margin-top:auto;padding-top:20px;border-top:1px solid rgba(255,255,255,.12);margin-bottom:18px}
+.pb-price strong{font-family:'Montserrat',sans-serif;font-size:36px;font-weight:900;line-height:1;color:#fff;white-space:nowrap}
+.pb-price span{font-size:13px;line-height:1.45;color:rgba(214,228,240,.75)}
+.pb-bench .pb-btn{align-self:stretch}
+.pb-bench-alt{margin-top:14px;font-size:13.5px;font-weight:600;color:rgba(214,228,240,.85)!important;text-align:center;text-decoration:underline;text-underline-offset:3px}
+.pb-bench-alt:hover{color:#fff!important}
+
+/* Auteur + lettre */
+.pb-sign{padding:80px 0 88px}
+.pb-sign-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:stretch}
+.pb-author{display:flex;gap:22px;align-items:flex-start;padding:30px;border:1px solid var(--pb-rule);border-radius:16px}
+.pb-author img{width:88px;height:88px;border-radius:50%;object-fit:cover;flex-shrink:0}
+.pb-sign h2{font-family:'Montserrat',sans-serif;font-size:21px;font-weight:900;color:var(--pb-ink);margin:0 0 8px;letter-spacing:-.01em}
+.pb-sign p{font-size:15px;line-height:1.65;color:var(--pb-muted);margin:0 0 12px}
+.pb-author a{font-weight:700;font-size:14.5px;color:var(--pb-teal)}
+.pb-news{padding:30px;border-radius:16px;background:var(--pb-paper);border:1px solid var(--pb-rule)}
+.pb-form{display:flex;gap:10px;margin-top:4px}
+.pb-form input[type=email]{flex:1;min-width:0;padding:13px 16px;border:1.5px solid var(--pb-rule);border-radius:10px;font:inherit;font-size:15px;color:var(--pb-text);background:#fff}
+.pb-form input[type=email]:focus{border-color:var(--pb-cyan);outline:none}
+.pb-form button{border:0;cursor:pointer;font-family:inherit}
+.pb-form button[disabled]{opacity:.7;cursor:progress}
+.pb-note{font-size:12.5px!important;margin:10px 0 0!important}
+.pb-ok{display:none;padding:16px 18px;border-radius:10px;background:rgba(5,150,105,.08);border:1px solid rgba(5,150,105,.25)}
+.pb-ok p{margin:0;color:#047857!important;font-weight:600}
+.pb-err{margin:10px 0 0!important;font-size:13.5px!important;color:#B42318!important}
+
+@media (max-width:980px){
+  .pb-hero-grid{grid-template-columns:1fr;gap:40px}
+  .pb-grid,.pb-grid.is-pro{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .pb-grid.is-pro .pb-card:nth-of-type(n){grid-column:auto;grid-row:auto}
+  .pb-bench{grid-column:1/-1;grid-row:auto}
+  .pb-offer{grid-template-columns:1fr;gap:20px}
+  .pb-sign-grid{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  .pb-hero{padding:44px 0 52px}
+  .pb-aud{grid-template-columns:1fr}
+  .pb-grid,.pb-grid.is-pro{grid-template-columns:1fr;gap:16px}
+  .pb-sec{padding:60px 0 56px}
+  .pb-offer{padding:24px 22px}
+  .pb-cover{min-height:0;padding:20px 20px 14px}
+  .pb-fig{font-size:30px}
+  .pb-dim{margin:8px 0 7px}
+  .pb-body{padding:16px 18px 16px}
+  .pb-card h3{font-size:17px}
+  .pb-feature .pb-cover{min-height:180px;padding:24px 22px 18px}
+  .pb-feature .pb-body{padding:20px 22px}
+  .pb-author{flex-direction:column;padding:24px}
+  .pb-news{padding:24px}
+  .pb-form{flex-direction:column}
+  .pb-bench .pb-fig{font-size:42px}
+}
+@media (prefers-reduced-motion:reduce){.pb *{transition:none!important}}
+.pb-sr{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+</style>
+<!-- /ADORA PUBLICATIONS CSS -->
+<!-- ADORA LAYOUT -->
+<link rel="stylesheet" href="assets/css/adora-layout.css">
+<script src="assets/js/adora-layout.js" defer></script>
+<!-- /ADORA LAYOUT -->
 <!-- ADORA CMP -->
-  <link rel="stylesheet" href="/assets/css/adora-cmp.css">
-  <script src="/assets/js/adora-cmp.js"></script>
+  <link rel="stylesheet" href="assets/css/adora-cmp.css">
+  <script src="assets/js/adora-cmp.js"></script>
   <!-- /ADORA CMP -->
 </head>
 <body>
 
-<nav class="nav">
-<div class="nav-inner">
-  <a href="./" class="nav-logo"><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5NDAgMjAwIiB3aWR0aD0iOTQwIiBoZWlnaHQ9IjIwMCI+CiAgPGcgZmlsbD0id2hpdGUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICA8IS0tIFRyaWFuZ2xlIGljb24gLS0+CiAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMCwgOCkgdHJhbnNsYXRlKC03NSwgLTk5KSI+CiAgICAgIDxwYXRoIGQ9Ik0gMTE3LDI4MiBMIDE2OSwyODEgTCAxNzQsMjc0IEwgMTc3LDI2OCBMIDIyOSwxOTMgTCAyMjksMTkxIEwgMjA2LDE1OCBMIDIwNywxNTUgTCAyMjksMTU2IEwgMjM0LDE2NSBMIDIzNywxNjggTCAyMzksMTczIEwgMjgxLDIzNSBMIDI4MiwyNDAgTCAyNDAsMjQwIEwgMjEzLDI4MCBMIDIxMywyODIgTCAzNjQsMjgyIEwgMzYxLDI3NiBMIDMwMCwxODcgTCAyOTksMTg0IEwgMjQyLDk5IEwgMjQwLDEwMCBMIDIwNywxNTAgTCAyMDEsMTU2IEwgMTQwLDI0OCBMIDEzNywyNTEgTCAxMzYsMjU0IEwgMTI0LDI3MCBaIi8+CiAgICA8L2c+CiAgICA8IS0tIFRleHQgIkFkb3JhIiAtLT4KICAgIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDMzMCwgMTIpIHNjYWxlKDEuOCkgdHJhbnNsYXRlKC03MSwgLTMyMCkiPgogICAgICA8cGF0aCBkPSJNIDEwMiwzMjYgTCA5MywzNTIgTCA5MSwzNTUgTCA4NywzNjkgTCA4NSwzNzIgTCA4MiwzODMgTCA4MCwzODYgTCA3OCwzOTUgTCA3MSw0MTMgTCA3MSw0MTYgTCA4OSw0MTUgTCA5NywzOTAgTCAxMjUsMzg5IEwgMTMwLDM5NCBMIDEzMSw0MDAgTCAxMzMsNDAzIEwgMTM3LDQxNiBMIDE1NSw0MTYgTCAxNTUsNDEyIEwgMTUzLDQwOSBMIDEyNCwzMjYgWiBNIDExNCwzNDQgTCAxMjMsMzcyIEwgMTIyLDM3NiBMIDEwMiwzNzUgTCAxMDIsMzcyIEwgMTA2LDM1OSBMIDEwOCwzNTYgTCAxMTAsMzQ3IFoiLz4KICAgICAgPHBhdGggZD0iTSAyMjUsMzIwIEwgMjA4LDMyMCBMIDIwNiwzNTIgTCAyMDIsMzQ4IEwgMTk0LDM0NSBMIDE4MCwzNDUgTCAxNjksMzQ5IEwgMTU5LDM2MCBMIDE1NSwzNzMgTCAxNTYsMzk1IEwgMTYyLDQwNyBMIDE3MCw0MTQgTCAxNzgsNDE3IEwgMTkzLDQxNyBMIDE5OSw0MTUgTCAyMDUsNDA4IEwgMjA4LDQwOCBMIDIwOCw0MTYgTCAyMjUsNDE2IFogTSAxODcsMzU3IEwgMTk0LDM1NyBMIDE5OSwzNTkgTCAyMDQsMzY0IEwgMjA3LDM3MSBMIDIwOCwzODUgTCAyMDYsMzk0IEwgMjA0LDM5OCBMIDE5OSw0MDMgTCAxOTUsNDA1IEwgMTg2LDQwNSBMIDE4Miw0MDMgTCAxNzYsMzk3IEwgMTczLDM4OSBMIDE3MywzNzIgTCAxNzYsMzY1IEwgMTgyLDM1OSBaIi8+CiAgICAgIDxwYXRoIGQ9Ik0gMjU1LDM0NiBMIDI0NCwzNTIgTCAyMzgsMzU5IEwgMjMzLDM3MSBMIDIzMywzODkgTCAyMzUsMzk3IEwgMjQwLDQwNiBMIDI0NSw0MTEgTCAyNTIsNDE1IEwgMjU5LDQxNyBMIDI3Nyw0MTcgTCAyODMsNDE1IEwgMjk1LDQwNiBMIDMwMSwzOTYgTCAzMDMsMzg4IEwgMzAzLDM3NCBMIDMwMSwzNjYgTCAyOTYsMzU3IEwgMjkwLDM1MSBMIDI4MywzNDcgTCAyNzcsMzQ1IFogTSAyNjQsMzU3IEwgMjcyLDM1NyBMIDI3NiwzNTkgTCAyODEsMzY0IEwgMjg1LDM3NSBMIDI4NSwzODcgTCAyODMsMzk1IEwgMjc2LDQwMyBMIDI3Miw0MDUgTCAyNjQsNDA1IEwgMjU5LDQwMyBMIDI1NCwzOTggTCAyNTAsMzg2IEwgMjUwLDM3NCBMIDI1MiwzNjggTCAyNTgsMzYwIFoiLz4KICAgICAgPHBhdGggZD0iTSAzNTAsMzQ1IEwgMzM4LDM0NiBMIDMyOCwzNTUgTCAzMjgsMzQ3IEwgMzExLDM0NyBMIDMxMSw0MTYgTCAzMjgsNDE1IEwgMzI4LDM3NCBMIDMzMCwzNjggTCAzMzYsMzYyIEwgMzQzLDM1OSBMIDM1MCwzNTkgWiIvPgogICAgICA8cGF0aCBkPSJNIDM2NCwzNDkgTCAzNTksMzUzIEwgMzU1LDM2MCBMIDM1NCwzNjQgTCAzNTUsMzY5IEwgMzcwLDM2OSBMIDM3MSwzNjMgTCAzNzUsMzU4IEwgMzc3LDM1NyBMIDM4NiwzNTcgTCAzOTIsMzYyIEwgMzkzLDM2NSBMIDM5MiwzNzQgTCAzNzIsMzc1IEwgMzYwLDM4MCBMIDM1NCwzODYgTCAzNTEsMzk0IEwgMzUxLDQwMiBMIDM1NCw0MDkgTCAzNTgsNDEzIEwgMzY2LDQxNyBMIDM4MSw0MTcgTCAzODYsNDE1IEwgMzkxLDQwOSBMIDM5NCw0MDkgTCAzOTUsNDE2IEwgNDExLDQxNiBMIDQxMCwzNjcgTCA0MDksMzYxIEwgNDA2LDM1NCBMIDQwMCwzNDggTCAzOTEsMzQ1IEwgMzczLDM0NSBaIE0gMzkzLDM4NSBMIDM5MiwzOTcgTCAzODYsNDA0IEwgMzg0LDQwNSBMIDM3NSw0MDUgTCAzNjksNDAwIEwgMzY5LDM5MiBMIDM3NSwzODYgTCAzODMsMzg0IFoiLz4KICAgIDwvZz4KICA8L2c+Cjwvc3ZnPgo=" alt="ADORA" style="height:26px;width:auto"></a>
-  <div class="nav-links" id="navLinks">
-    <a href="simulateur.html">Simulateur</a>
-    <a href="estimateur.html">Estimateur</a>
-    <a href="audit-avant-achat.html">Audit achat</a>
-    <a href="sur-mesure.html">Sur mesure</a>
-    <a href="estimateur-outil.html" class="nav-cta">Estimer mes travaux</a>
+<!-- ADORA NAV -->
+<nav class="anav" aria-label="Navigation principale" data-section="pub">
+<div class="anav-inner">
+  <a href="./" class="anav-logo"><img src="assets/img/adora-logo-blanc.svg" alt="ADORA, accueil" width="122" height="26"></a>
+  <button type="button" class="anav-burger" aria-expanded="false" aria-controls="anav-menu" aria-label="Ouvrir le menu"><span></span><span></span><span></span></button>
+  <div class="anav-menu" id="anav-menu">
+    <ul class="anav-list">
+      <li class="anav-item" data-key="part">
+        <button type="button" class="anav-trigger" aria-expanded="false" aria-controls="anav-part">Particuliers<svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="anav-drop" id="anav-part"><div class="anav-drop-card">
+          <a href="estimateur.html" class="anav-link"><span class="t">Estimer mes travaux</span><span class="d">Estimation tous corps d&#x27;état en 3 minutes, gratuite</span></a>
+          <a href="simulateur.html" class="anav-link"><span class="t">Simulateur d&#x27;aides 2026</span><span class="d">Les aides à la rénovation en quelques clics</span></a>
+          <a href="audit-avant-achat.html" class="anav-link"><span class="t">Audit avant achat</span><span class="d">Le coût réel des travaux avant de signer</span></a>
+          <a href="sur-mesure.html" class="anav-link"><span class="t">Accompagnement sur mesure</span><span class="d">Assistance à maîtrise d&#x27;ouvrage, du projet à la réception</span></a>
+        </div></div>
+      </li>
+      <li class="anav-item" data-key="pro">
+        <button type="button" class="anav-trigger" aria-expanded="false" aria-controls="anav-pro">Professionnels<svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="anav-drop" id="anav-pro"><div class="anav-drop-card">
+          <a href="professionnels.html" class="anav-link"><span class="t">Offre professionnels</span><span class="d">Estimations, métrés, CCTP, DPGF, analyse des offres</span></a>
+          <a href="benchmark-honoraires.html" class="anav-link"><span class="t">Benchmark des honoraires <span class="anav-new">Nouveau</span></span><span class="d">4 398 marchés publics analysés</span></a>
+          <a href="partenaires.html#devenir-partenaire" class="anav-link"><span class="t">Devenir partenaire</span><span class="d">Architectes et professionnels du bâtiment</span></a>
+        </div></div>
+      </li>
+      <li class="anav-item" data-key="adora">
+        <button type="button" class="anav-trigger" aria-expanded="false" aria-controls="anav-adora">ADORA<svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="anav-drop" id="anav-adora"><div class="anav-drop-card">
+          <a href="a-propos.html" class="anav-link"><span class="t">À propos</span><span class="d">Parcours, méthode et références</span></a>
+          <a href="partenaires.html" class="anav-link"><span class="t">Partenaires</span><span class="d">Le réseau de professionnels qui m&#x27;entoure</span></a>
+          <a href="contact.html" class="anav-link"><span class="t">Contact</span><span class="d">Un échange découverte de 15 minutes</span></a>
+        </div></div>
+      </li>
+      <li class="anav-item" data-key="pub"><a href="blog.html" class="anav-trigger" aria-current="page">Publications</a></li>
+    </ul>
+    <a href="estimateur-outil.html" class="anav-cta">Estimer mes travaux</a>
   </div>
-  <button class="nav-burger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">&#9776;</button>
 </div>
 </nav>
+<!-- /ADORA NAV -->
+
+<main class="pb">
 
 <!-- HERO -->
-<section class="page-hero" style="padding:60px 0 50px">
-  <div class="container" style="text-align:center">
-    <span class="section-label" style="color:var(--accent)">Blog</span>
-    <h1 style="font-size:clamp(28px,4vw,42px);font-weight:900;letter-spacing:-.02em;margin-bottom:14px;position:relative">
-      Rénovation, aides, <em style="font-style:normal;color:var(--accent)">chiffres</em>
-    </h1>
-    <p class="lead" style="font-size:16px;color:rgba(214,228,240,.75);max-width:520px;margin:0 auto;line-height:1.7;position:relative">
-      Articles pratiques sur l'économie de la construction : pour les particuliers qui préparent un projet, et pour les professionnels qui produisent des pièces écrites.
-    </p>
+<section class="pb-hero">
+  <div class="container pb-hero-grid">
+    <div>
+      <h1>Les chiffres à connaître avant de signer</h1>
+      <p class="pb-lead">Des guides chiffrés par un économiste de la construction, pour décider avant de signer un devis, un compromis ou un marché public.</p>
+      <nav class="pb-aud" aria-label="Choisir un public">
+        <a href="#particuliers"><strong>Particuliers</strong><span>7 guides : prix, aides, devis et achat</span></a>
+        <a href="#professionnels" class="is-pro"><strong>Professionnels</strong><span>4 guides : DCE, métrés, analyse des offres et honoraires</span></a>
+      </nav>
+    </div>
+      <a class="pb-card pb-feature" href="prix-renovation-m2-2026.html">
+        <div class="pb-cover"><span class="pb-measure"><span class="pb-fig">300 à 2 000 €</span><span class="pb-dim"></span></span><span class="pb-cap">HT par m², du rafraîchissement à la rénovation complète</span></div>
+        <div class="pb-body">
+          <span class="pb-topic">Budget travaux</span>
+          <h3>Prix rénovation au m² en 2026 : guide complet par poste TCE</h3>
+          <p>Les fourchettes par lot, les coefficients régionaux et les erreurs classiques d&#x27;estimation, pour bâtir un budget qui tient.</p>
+          <div class="pb-meta"><span>12 min de lecture</span><time datetime="2026-04-17">avril 2026</time></div>
+        </div>
+      </a>
   </div>
 </section>
 
-<!-- COMING SOON -->
-<section class="section" style="padding:80px 0">
-  <div class="container" style="max-width:640px;text-align:center">
-    <div style="width:72px;height:72px;border-radius:18px;background:rgba(34,211,238,.08);display:flex;align-items:center;justify-content:center;margin:0 auto 24px;font-size:32px">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M17 3a2.83 2.83 0 114 4L7.5 20.5 2 22l1.5-5.5L17 3z"/></svg>
+<!-- PARTICULIERS -->
+<section class="pb-sec" id="particuliers">
+  <div class="container">
+    <div class="pb-head">
+      <h2>Pour les particuliers</h2>
+      <p>Budget, devis, aides et achat : de quoi préparer votre projet et parler chiffres avec les artisans ou le vendeur.</p>
     </div>
-    <h2 style="font-size:28px;font-weight:800;color:var(--navy);margin-bottom:12px">Guides pratiques</h2>
-    <p style="font-size:16px;color:var(--muted);line-height:1.7;margin-bottom:32px">
-      Des articles opérationnels sur les aides à la rénovation, les prix de travaux et les pièges à éviter avant un achat immobilier. Par un économiste de la construction, pas un agrégateur.
-    </p>
-
-    <div style="background:var(--pale);border:1px solid var(--border);border-radius:var(--radius);padding:32px;text-align:left;margin-bottom:40px">
-      <h3 style="font-size:16px;font-weight:700;color:var(--navy);margin-bottom:4px">Pour les particuliers</h3>
-      <p style="font-size:13px;color:var(--muted);margin-bottom:16px">Achat, rénovation, aides et devis — pour préparer un projet et décider en connaissance de cause.</p>
-      <div style="display:flex;flex-direction:column;gap:14px">
-      <a href="diagnostic-parasitaire-negociation.html" style="display:flex;gap:14px;align-items:start;text-decoration:none;padding:14px;border-radius:10px;background:rgba(34,211,238,.04);border:1px solid rgba(34,211,238,.15)">
-  <span style="background:var(--accent);color:var(--navy);min-width:24px;height:24px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0">✓</span>
-  <div>
-    <div style="font-weight:700;color:var(--navy);margin-bottom:2px">Diagnostic parasitaire : comment négocier le prix d'achat<span style="display:inline-block;background:rgba(167,139,250,.15);color:var(--green);font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;text-transform:uppercase;letter-spacing:.8px;margin-left:8px;vertical-align:middle;font-family:'Montserrat',sans-serif">Nouveau</span></div>
-    <div style="font-size:13px;color:var(--muted)">5 agents xylophages décryptés, ratios de traitement 2026 et méthode pour transformer un diagnostic défavorable en décote de 5 à 20 % — 11 min</div>
+    <div class="pb-grid">
+      <a class="pb-card" href="pieges-devis-artisans.html">
+        <div class="pb-cover"><span class="pb-measure"><span class="pb-fig">7 pièges</span><span class="pb-dim"></span></span><span class="pb-cap">à repérer avant de signer</span></div>
+        <div class="pb-body">
+          <span class="pb-topic">Devis d&#x27;artisans</span>
+          <h3>7 pièges des devis d&#x27;artisans en 2026 : les détecter avant de signer</h3>
+          <p>Forfait global, fournitures et pose agrégées, décennale douteuse, échéancier déséquilibré : les pièges classiques et leur parade.</p>
+          <div class="pb-meta"><span>8 min de lecture</span><time datetime="2026-04-19">avril 2026</time></div>
+        </div>
+      </a>
+      <a class="pb-card" href="choisir-sa-gamme-renovation.html">
+        <div class="pb-cover"><span class="pb-measure"><span class="pb-fig">4 gammes</span><span class="pb-dim"></span></span><span class="pb-cap">chiffrées au m²</span></div>
+        <div class="pb-body">
+          <span class="pb-topic">Budget travaux</span>
+          <h3>Choisir sa gamme de rénovation : éco, standard, confort ou haut de gamme</h3>
+          <p>Quatre gammes chiffrées au m², quatre critères de choix et l&#x27;exemple d&#x27;une maison de 120 m² dans l&#x27;Eure.</p>
+          <div class="pb-meta"><span>7 min de lecture</span><time datetime="2026-04-22">avril 2026</time></div>
+        </div>
+      </a>
+      <a class="pb-card" href="15-lots-tce-expliques-particulier.html">
+        <div class="pb-cover"><span class="pb-measure"><span class="pb-fig">15 lots</span><span class="pb-dim"></span></span><span class="pb-cap">pour lire un devis comme un pro</span></div>
+        <div class="pb-body">
+          <span class="pb-topic">Lots de travaux</span>
+          <h3>Les 15 lots TCE expliqués à un particulier</h3>
+          <p>La grille à 15 lots qu&#x27;utilisent les professionnels, avec des ratios de prix et un cas concret de 120 m².</p>
+          <div class="pb-meta"><span>7 min de lecture</span><time datetime="2026-04-21">avril 2026</time></div>
+        </div>
+      </a>
+      <aside class="pb-offer" aria-label="Estimer vos travaux">
+        <div>
+          <h3>Votre projet chiffré par lot, en 3 minutes</h3>
+          <p>L'estimateur ADORA applique les barèmes 2026 et le coefficient de votre département à 15 postes de travaux. C'est gratuit, et vous savez quoi demander aux artisans.</p>
+        </div>
+        <div class="pb-offer-act">
+          <a class="pb-btn" href="estimateur-outil.html">Estimer mes travaux</a>
+          <div class="pb-offer-links">
+            <a href="simulateur.html">Simuler mes aides 2026</a>
+            <a href="audit-avant-achat.html">Faire auditer un bien avant l'achat (499 €)</a>
+          </div>
+        </div>
+      </aside>
+      <a class="pb-card" href="diagnostic-parasitaire-negociation.html">
+        <div class="pb-cover"><span class="pb-measure"><span class="pb-fig">5 à 20 %</span><span class="pb-dim"></span></span><span class="pb-cap">de décote à négocier</span></div>
+        <div class="pb-body">
+          <span class="pb-topic">Achat immobilier</span>
+          <h3>Diagnostic parasitaire : comment négocier le prix d&#x27;achat</h3>
+          <p>Cinq agents xylophages décryptés, les ratios de traitement 2026 et la méthode pour faire d&#x27;un diagnostic défavorable un argument de prix.</p>
+          <div class="pb-meta"><span>11 min de lecture</span><time datetime="2026-04-22">avril 2026</time></div>
+        </div>
+      </a>
+      <a class="pb-card" href="audit-avant-achat-immobilier.html">
+        <div class="pb-cover"><span class="pb-measure"><span class="pb-fig">49 000 €</span><span class="pb-dim"></span></span><span class="pb-cap">négociés sur une maison à Louviers</span></div>
+        <div class="pb-body">
+          <span class="pb-topic">Achat immobilier</span>
+          <h3>Audit avant achat immobilier : ce qu&#x27;analyse un économiste</h3>
+          <p>Ce que le DDT ne montre pas, trois biens audités et ce que l&#x27;audit a changé dans la négociation.</p>
+          <div class="pb-meta"><span>8 min de lecture</span><time datetime="2026-04-18">avril 2026</time></div>
+        </div>
+      </a>
+      <a class="pb-card" href="maprimerenov-2026-bareme.html">
+        <div class="pb-cover"><span class="pb-measure"><span class="pb-fig">4 profils</span><span class="pb-dim"></span></span><span class="pb-cap">de revenus, quatre barèmes</span></div>
+        <div class="pb-body">
+          <span class="pb-topic">Aides</span>
+          <h3>MaPrimeRénov&#x27; 2026 : barèmes, plafonds et conditions à jour</h3>
+          <p>Monogeste ou rénovation d&#x27;ampleur, cumul avec les CEE, l&#x27;éco-PTZ et la TVA à 5,5 % : les règles de l&#x27;année.</p>
+          <div class="pb-meta"><span>10 min de lecture</span><time datetime="2026-04-18">avril 2026</time></div>
+        </div>
+      </a>
+    </div>
   </div>
-</a>
-<a href="choisir-sa-gamme-renovation.html" style="display:flex;gap:14px;align-items:start;text-decoration:none;padding:14px;border-radius:10px;background:rgba(34,211,238,.04);border:1px solid rgba(34,211,238,.15)">
-        <span style="background:var(--accent);color:var(--navy);min-width:24px;height:24px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0">✓</span>
-        <div>
-          <div style="font-weight:700;color:var(--navy);margin-bottom:2px">Choisir sa gamme de rénovation : éco, standard, confort ou haut de gamme</div>
-          <div style="font-size:13px;color:var(--muted)">4 gammes chiffrées au m², 4 critères de choix, exemple maison 120 m² Eure — 7 min</div>
+</section>
+
+<!-- PROFESSIONNELS -->
+<section class="pb-sec is-pro" id="professionnels">
+  <div class="container">
+    <div class="pb-head">
+      <h2>Pour les professionnels</h2>
+      <p>Maîtres d'œuvre, architectes, BET et maîtres d'ouvrage : la méthode derrière les pièces écrites, l'analyse des offres et les honoraires.</p>
+    </div>
+    <div class="pb-grid is-pro">
+      <a class="pb-card is-pro" href="honoraires-economiste-mission-moe.html">
+        <div class="pb-cover is-pro"><span class="pb-new">Nouveau</span><span class="pb-measure"><span class="pb-fig">3 montages</span><span class="pb-dim"></span></span><span class="pb-cap">pour intégrer l&#x27;économiste</span></div>
+        <div class="pb-body">
+          <span class="pb-topic">Mission MOE</span>
+          <h3>Honoraires d&#x27;économiste : qui les provisionne dans la mission MOE ?</h3>
+          <p>La charge d&#x27;économie phase par phase, trois montages contractuels et la façon de fixer le prix.</p>
+          <div class="pb-meta"><span>8 min de lecture</span><time datetime="2026-09-02">septembre 2026</time></div>
         </div>
       </a>
-      <a href="15-lots-tce-expliques-particulier.html" style="display:flex;gap:14px;align-items:start;text-decoration:none;padding:14px;border-radius:10px;background:rgba(34,211,238,.04);border:1px solid rgba(34,211,238,.15)">
-        <span style="background:var(--accent);color:var(--navy);min-width:24px;height:24px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0">✓</span>
-        <div>
-          <div style="font-weight:700;color:var(--navy);margin-bottom:2px">Les 15 lots TCE expliqués à un particulier</div>
-          <div style="font-size:13px;color:var(--muted)">La grille professionnelle à 15 lots, ratios Batichiffrage, cas concret 120 m² — 7 min</div>
+      <a class="pb-card is-pro" href="rapport-analyse-offres-mapa.html">
+        <div class="pb-cover is-pro"><span class="pb-new">Nouveau</span><span class="pb-measure"><span class="pb-fig">6 pièges</span><span class="pb-dim"></span></span><span class="pb-cap">du rapport d&#x27;analyse</span></div>
+        <div class="pb-body">
+          <span class="pb-topic">Analyse des offres</span>
+          <h3>Analyse des offres en MAPA : six pièges du rapport d&#x27;analyse</h3>
+          <p>Formule de notation, périmètres différents, offre anormalement basse, PSE, traçabilité et mise au point.</p>
+          <div class="pb-meta"><span>9 min de lecture</span><time datetime="2026-09-02">septembre 2026</time></div>
         </div>
       </a>
-      <a href="pieges-devis-artisans.html" style="display:flex;gap:14px;align-items:start;text-decoration:none;padding:14px;border-radius:10px;background:rgba(34,211,238,.04);border:1px solid rgba(34,211,238,.15)">
-        <span style="background:var(--accent);color:var(--navy);min-width:24px;height:24px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0">✓</span>
-        <div>
-          <div style="font-weight:700;color:var(--navy);margin-bottom:2px">7 pièges des devis d'artisans en 2026 : les détecter avant de signer</div>
-          <div style="font-size:13px;color:var(--muted)">Forfait global, F&amp;P agrégée, décennale douteuse, échéancier déséquilibré — 7 pièges classiques et leur parade, par un économiste neutre — 8 min</div>
+      <aside class="pb-bench" aria-labelledby="pb-bench-title">
+        <span class="pb-bench-tag">Précommande ouverte</span>
+        <h3 id="pb-bench-title">Benchmark des honoraires en marché public 2026</h3>
+        <span class="pb-measure"><span class="pb-fig">4 398</span><span class="pb-dim"></span></span>
+        <span class="pb-cap">marchés attribués en Île-de-France et en Normandie, classés par typologie et par département</span>
+        <dl class="pb-bench-stats">
+          <div><dt>3,76 Md€</dt><dd>de montants cumulés HT</dd></div>
+          <div><dt>2 123</dt><dd>titulaires différents</dd></div>
+        </dl>
+        <ul>
+          <li>Fourchettes d'honoraires du p10 au p90</li>
+          <li>Rapport PDF et classeur Excel détaillé</li>
+          <li>Livraison par email le 9 novembre 2026</li>
+        </ul>
+        <div class="pb-price"><strong>79 €</strong><span>pour les 20 premières précommandes, puis 129 €</span></div>
+        <a class="pb-btn" href="benchmark-honoraires.html">Découvrir le benchmark</a>
+        <a class="pb-bench-alt" href="professionnels.html">Un économiste en renfort sur vos consultations</a>
+      </aside>
+      <a class="pb-card is-pro" href="dpgf-comparable-consultation.html">
+        <div class="pb-cover is-pro"><span class="pb-new">Nouveau</span><span class="pb-measure"><span class="pb-fig">6 règles</span><span class="pb-dim"></span></span><span class="pb-cap">pour des offres comparables</span></div>
+        <div class="pb-body">
+          <span class="pb-topic">DCE</span>
+          <h3>Structurer un DPGF pour que les offres soient comparables</h3>
+          <p>Numérotation miroir du CCTP, unités mesurables, options hors total, aléas cadrés et le test de relecture.</p>
+          <div class="pb-meta"><span>8 min de lecture</span><time datetime="2026-09-02">septembre 2026</time></div>
         </div>
       </a>
-      <a href="prix-renovation-m2-2026.html" style="display:flex;gap:14px;align-items:start;text-decoration:none;padding:14px;border-radius:10px;background:rgba(34,211,238,.04);border:1px solid rgba(34,211,238,.15)">
-        <span style="background:var(--accent);color:var(--navy);min-width:24px;height:24px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0">✓</span>
-        <div>
-          <div style="font-weight:700;color:var(--navy);margin-bottom:2px">Prix rénovation au m² en 2026 : guide complet par poste TCE</div>
-          <div style="font-size:13px;color:var(--muted)">Fourchettes Batichiffrage par lot, coefficients régionaux, erreurs classiques d'estimation — 12 min</div>
+      <a class="pb-card is-pro" href="erreur-quantitatif-dce.html">
+        <div class="pb-cover is-pro"><span class="pb-new">Nouveau</span><span class="pb-measure"><span class="pb-fig">12 m²</span><span class="pb-dim"></span></span><span class="pb-cap">chiffrés pour environ 160 m² de toiture</span></div>
+        <div class="pb-body">
+          <span class="pb-topic">Métrés</span>
+          <h3>Ce que coûte réellement une erreur de quantitatif au DCE</h3>
+          <p>Une ligne d&#x27;étanchéité sous-estimée, sa propagation jusqu&#x27;au marché et quatre contrôles de cohérence pour l&#x27;arrêter.</p>
+          <div class="pb-meta"><span>7 min de lecture</span><time datetime="2026-09-02">septembre 2026</time></div>
         </div>
       </a>
-      <a href="audit-avant-achat-immobilier.html" style="display:flex;gap:14px;align-items:start;text-decoration:none;padding:14px;border-radius:10px;background:rgba(34,211,238,.04);border:1px solid rgba(34,211,238,.15)">
-        <span style="background:var(--accent);color:var(--navy);min-width:24px;height:24px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0">✓</span>
-        <div>
-          <div style="font-weight:700;color:var(--navy);margin-bottom:2px">Audit avant achat immobilier : ce qu'analyse un économiste</div>
-          <div style="font-size:13px;color:var(--muted)">Ce que le DDT ne montre pas, cas concrets, et comment un audit de 499 € peut vous faire économiser des milliers d'euros — 8 min</div>
-        </div>
-      </a>
-      <a href="maprimerenov-2026-bareme.html" style="display:flex;gap:14px;align-items:start;text-decoration:none;padding:14px;border-radius:10px;background:rgba(34,211,238,.04);border:1px solid rgba(34,211,238,.15)">
-        <span style="background:var(--accent);color:var(--navy);min-width:24px;height:24px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0">✓</span>
-        <div>
-          <div style="font-weight:700;color:var(--navy);margin-bottom:2px">MaPrimeRénov' 2026 : barèmes, plafonds et conditions à jour</div>
-          <div style="font-size:13px;color:var(--muted)">4 profils de revenus, parcours monogeste vs ampleur, cumul CEE/éco-PTZ/TVA 5,5 % — 10 min</div>
-        </div>
-      </a>
+    </div>
+  </div>
+</section>
+
+<!-- AUTEUR ET LETTRE -->
+<section class="pb-sign">
+  <div class="container pb-sign-grid">
+    <div class="pb-author">
+      <img src="data:image/jpeg;base64,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" alt="Aymeric Dussauze" width="88" height="88">
+      <div>
+        <h2>Écrit par Aymeric Dussauze</h2>
+        <p>Économiste de la construction en Normandie et en Île-de-France. J'écris ces guides comme je chiffre un projet : poste par poste, sources à l'appui.</p>
+        <a href="a-propos.html">Découvrir ADORA</a>
       </div>
     </div>
-
-    <div style="background:var(--white);border:1px solid rgba(167,139,250,.35);border-radius:var(--radius);padding:32px;text-align:left;margin-bottom:40px">
-      <h3 style="font-size:16px;font-weight:700;color:var(--navy);margin-bottom:4px">Pour les professionnels</h3>
-      <p style="font-size:13px;color:var(--muted);margin-bottom:16px">Architectes, maîtres d'œuvre, BET, maîtres d'ouvrage et entreprises — méthode, pièces écrites et marchés.</p>
-      <div style="display:flex;flex-direction:column;gap:14px">
-      <a href="dpgf-comparable-consultation.html" style="display:flex;gap:14px;align-items:start;text-decoration:none;padding:14px;border-radius:10px;background:rgba(167,139,250,.05);border:1px solid rgba(167,139,250,.18)">
-        <span style="background:var(--green);color:var(--white);min-width:24px;height:24px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;font-family:'Montserrat',sans-serif">DCE</span>
-        <div>
-          <div style="font-weight:700;color:var(--navy);margin-bottom:2px">Structurer un DPGF pour que les offres soient comparables<span style="display:inline-block;background:rgba(167,139,250,.15);color:var(--green);font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;text-transform:uppercase;letter-spacing:.8px;margin-left:8px;vertical-align:middle;font-family:'Montserrat',sans-serif">Nouveau</span></div>
-          <div style="font-size:13px;color:var(--muted)">Numérotation miroir du CCTP, unités mesurables, options hors total, aléas cadrés — six règles et le test de relecture — 8 min</div>
-        </div>
-      </a>
-      <a href="erreur-quantitatif-dce.html" style="display:flex;gap:14px;align-items:start;text-decoration:none;padding:14px;border-radius:10px;background:rgba(167,139,250,.05);border:1px solid rgba(167,139,250,.18)">
-        <span style="background:var(--green);color:var(--white);min-width:24px;height:24px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;font-family:'Montserrat',sans-serif">MÉT</span>
-        <div>
-          <div style="font-weight:700;color:var(--navy);margin-bottom:2px">Ce que coûte réellement une erreur de quantitatif au DCE<span style="display:inline-block;background:rgba(167,139,250,.15);color:var(--green);font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;text-transform:uppercase;letter-spacing:.8px;margin-left:8px;vertical-align:middle;font-family:'Montserrat',sans-serif">Nouveau</span></div>
-          <div style="font-size:13px;color:var(--muted)">Une toiture-terrasse de 160 m² chiffrée pour 12 m², la propagation de l'erreur et 4 contrôles de cohérence — 7 min</div>
-        </div>
-      </a>
-      <a href="rapport-analyse-offres-mapa.html" style="display:flex;gap:14px;align-items:start;text-decoration:none;padding:14px;border-radius:10px;background:rgba(167,139,250,.05);border:1px solid rgba(167,139,250,.18)">
-        <span style="background:var(--green);color:var(--white);min-width:24px;height:24px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;font-family:'Montserrat',sans-serif">ACT</span>
-        <div>
-          <div style="font-weight:700;color:var(--navy);margin-bottom:2px">Analyse des offres en MAPA : six pièges du rapport d'analyse<span style="display:inline-block;background:rgba(167,139,250,.15);color:var(--green);font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;text-transform:uppercase;letter-spacing:.8px;margin-left:8px;vertical-align:middle;font-family:'Montserrat',sans-serif">Nouveau</span></div>
-          <div style="font-size:13px;color:var(--muted)">Formule de notation, périmètres différents, offre anormalement basse, PSE, traçabilité, mise au point — 9 min</div>
-        </div>
-      </a>
-      <a href="honoraires-economiste-mission-moe.html" style="display:flex;gap:14px;align-items:start;text-decoration:none;padding:14px;border-radius:10px;background:rgba(167,139,250,.05);border:1px solid rgba(167,139,250,.18)">
-        <span style="background:var(--green);color:var(--white);min-width:24px;height:24px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;font-family:'Montserrat',sans-serif">MOE</span>
-        <div>
-          <div style="font-weight:700;color:var(--navy);margin-bottom:2px">Honoraires d'économiste : qui les provisionne dans la mission MOE ?<span style="display:inline-block;background:rgba(167,139,250,.15);color:var(--green);font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;text-transform:uppercase;letter-spacing:.8px;margin-left:8px;vertical-align:middle;font-family:'Montserrat',sans-serif">Nouveau</span></div>
-          <div style="font-size:13px;color:var(--muted)">La charge d'économie phase par phase, trois montages contractuels, et comment fixer le prix — 8 min</div>
-        </div>
-      </a>
-      </div>
-      <p style="font-size:13px;margin-top:18px;margin-bottom:0"><a href="professionnels.html" style="color:var(--blue);font-weight:600">Voir l'offre ADORA pour les professionnels →</a></p>
+    <div class="pb-news">
+      <h2>Recevoir le prochain guide</h2>
+      <p>Un email à chaque nouvel article publié, rien d'autre.</p>
+      <form id="blogNewsletter" class="pb-form" novalidate>
+        <input type="hidden" name="_subject" value="[Blog ADORA] Inscription newsletter">
+        <input type="hidden" name="_formType" value="blog_newsletter">
+        <label for="nlEmail" class="pb-sr">Adresse email</label>
+        <input type="email" name="email" id="nlEmail" required autocomplete="email" placeholder="votre@email.fr">
+        <button type="submit" class="pb-btn">M'inscrire</button>
+      </form>
+      <p id="nlError" class="pb-err" role="alert" hidden></p>
+      <div id="nlSuccess" class="pb-ok" role="status"><p>Inscription confirmée. Vous recevrez le prochain guide dès sa parution.</p></div>
+      <p id="nlNote" class="pb-note">Pas de spam, désinscription sur simple demande.</p>
     </div>
-
-    <p style="font-size:15px;color:var(--txt);margin-bottom:24px;font-weight:500">Envie d'être prévenu(e) à la publication ?</p>
-    
-    <form id="blogNewsletter" style="display:flex;gap:10px;max-width:440px;margin:0 auto">
-      <input type="hidden" name="_subject" value="[Blog ADORA] Inscription newsletter">
-      <input type="hidden" name="_formType" value="blog_newsletter">
-      <input type="email" name="email" id="nlEmail" required placeholder="votre@email.com" style="flex:1;padding:12px 16px;border:1.5px solid var(--border);border-radius:8px;font-size:15px;font-family:'Plus Jakarta Sans',sans-serif">
-      <button type="submit" class="btn btn-accent" style="padding:12px 24px;font-size:14px;white-space:nowrap">M'inscrire</button>
-    </form>
-    <div id="nlSuccess" style="display:none;max-width:440px;margin:0 auto;padding:16px 24px;background:rgba(5,150,105,.08);border:1px solid rgba(5,150,105,.2);border-radius:10px;text-align:center">
-      <p style="font-size:15px;color:#059669;font-weight:600;margin:0">✓ Merci ! Votre inscription a été prise en compte.</p>
-      <p style="font-size:13px;color:var(--muted);margin-top:6px">Vous recevrez un email à chaque nouvel article publié.</p>
-    </div>
-    <p id="nlNote" style="font-size:12px;color:var(--muted);margin-top:10px">Pas de spam. 1 email par article publié, c'est tout.</p>
-    <script>
-    document.getElementById("blogNewsletter").addEventListener("submit", async function(e) {
+  </div>
+  <script>
+  (function () {
+    var form = document.getElementById("blogNewsletter");
+    var err = document.getElementById("nlError");
+    form.addEventListener("submit", async function (e) {
       e.preventDefault();
-      var btn = this.querySelector("button");
-      btn.textContent = "Envoi...";
-      btn.disabled = true;
+      var email = document.getElementById("nlEmail");
+      if (!email.value || !email.checkValidity()) {
+        err.textContent = "Saisissez une adresse email complète, par exemple prenom@domaine.fr.";
+        err.hidden = false; email.focus(); return;
+      }
+      err.hidden = true;
+      var btn = form.querySelector("button");
+      btn.textContent = "Inscription…"; btn.disabled = true;
       try {
-        var resp = await fetch("https://formspree.io/f/maqaewbn", {
-          method: "POST",
-          body: new FormData(this),
-          headers: { "Accept": "application/json" }
-        });
-        if (resp.ok) {
-          this.style.display = "none";
-          document.getElementById("nlNote").style.display = "none";
-          document.getElementById("nlSuccess").style.display = "block";
-          if (typeof gtag === "function") {
-            gtag("event", "form_submit", { form_id: "newsletter_blog" });
-          }
-        } else { throw new Error(); }
-      } catch(err) {
-        btn.textContent = "M'inscrire";
-        btn.disabled = false;
-        alert("Erreur lors de l'inscription. Réessayez ou contactez-moi directement.");
+        var resp = await fetch("https://formspree.io/f/maqaewbn", { method: "POST", body: new FormData(form), headers: { "Accept": "application/json" } });
+        if (!resp.ok) throw new Error();
+        form.style.display = "none";
+        document.getElementById("nlNote").style.display = "none";
+        document.getElementById("nlSuccess").style.display = "block";
+        if (typeof gtag === "function") { gtag("event", "form_submit", { form_id: "newsletter_blog" }); }
+      } catch (x) {
+        btn.textContent = "M'inscrire"; btn.disabled = false;
+        err.textContent = "L'inscription n'a pas abouti. Réessayez dans un instant ou écrivez à contact@adora-economie.fr.";
+        err.hidden = false;
       }
     });
-    </script>
-  </div>
+  })();
+  </script>
 </section>
 
-<!-- OUTILS -->
-<section class="section" style="background:var(--pale);padding:60px 0">
-  <div class="container" style="text-align:center">
-    <h2 style="font-size:22px;font-weight:800;color:var(--navy);margin-bottom:8px">Besoin de chiffres concrets ?</h2>
-    <p style="font-size:15px;color:var(--muted);margin-bottom:32px">Mes outils gratuits vous donnent des réponses en quelques minutes.</p>
-    <div class="cta-grid">
-      <a href="simulateur.html" class="btn btn-accent" style="font-size:14px;padding:14px 20px">Simuler mes aides</a>
-      <a href="estimateur-outil.html" class="btn" style="font-size:14px;padding:14px 20px;background:var(--navy);color:var(--white);border-radius:10px;font-weight:700">Estimer mes travaux</a>
-    </div>
-  </div>
-</section>
+</main>
 
-<footer class="footer">
-<div class="footer-inner">
-  <div class="footer-brand">
-    <strong>ADORA</strong>
+<!-- ADORA FOOTER -->
+<footer class="afoot">
+<div class="afoot-inner">
+  <div class="afoot-brand">
+    <img src="assets/img/adora-logo-blanc.svg" alt="ADORA" width="113" height="24" loading="lazy">
     <p>Économiste de la construction<br>Normandie &amp; Île-de-France</p>
   </div>
-  <div class="footer-col">
-    <div class="footer-col-title">Outils</div>
-    <a href="simulateur.html">Simulateur aides</a>
-    <a href="estimateur.html">Estimateur travaux</a>
+  <div class="afoot-col">
+    <p class="afoot-title">Particuliers</p>
+    <a href="estimateur.html">Estimer mes travaux</a>
+    <a href="simulateur.html">Simulateur d'aides</a>
     <a href="audit-avant-achat.html">Audit avant achat</a>
-    <a href="sur-mesure.html">Sur mesure</a>
+    <a href="sur-mesure.html">Accompagnement sur mesure</a>
   </div>
-  <div class="footer-col">
-    <div class="footer-col-title">ADORA</div>
+  <div class="afoot-col">
+    <p class="afoot-title">Professionnels</p>
+    <a href="professionnels.html">Offre professionnels</a>
+    <a href="benchmark-honoraires.html">Benchmark des honoraires</a>
+    <a href="partenaires.html#devenir-partenaire">Devenir partenaire</a>
+  </div>
+  <div class="afoot-col">
+    <p class="afoot-title">ADORA</p>
     <a href="a-propos.html">À propos</a>
-    <a href="professionnels.html">Professionnels</a>
     <a href="partenaires.html">Partenaires</a>
-    <a href="blog.html">Blog</a>
+    <a href="blog.html">Publications</a>
     <a href="contact.html">Contact</a>
   </div>
-  <div class="footer-col footer-contact">
-    <div class="footer-col-title">Contact</div>
+  <div class="afoot-col">
+    <p class="afoot-title">Contact</p>
     <a href="tel:+33672010767">06 72 01 07 67</a>
-    <a href="/cdn-cgi/l/email-protection#e685898892878592a68782899487cb83858988898b8f83c88094"><span class="__cf_email__" data-cfemail="583b37362c393b2c18393c372a39753d3b37363735313d763e2a">[email&#160;protected]</span></a>
-    <a href="https://adora-economie.fr">adora-economie.fr</a>
+    <a href="mailto:contact@adora-economie.fr">contact@adora-economie.fr</a>
+    <a href="https://cal.com/aymeric-adora/decouverte" target="_blank" rel="noopener">Réserver un appel</a>
   </div>
 </div>
-<div class="footer-legal">© 2026 ADORA · EI · SIRET 532 886 918 00020 · TVA non applicable, art. 293B du CGI<br><a href="mentions-legales.html">Mentions légales</a> · <a href="politique-confidentialite.html">Confidentialité</a> · <a href="cgv.html">CGV</a></div>
-<div style="margin-top:12px;font-size:13px;opacity:0.8"><button type="button" class="adora-cmp-footer-link" onclick="if(window.adoraConsent)window.adoraConsent.show()">🍪 Gérer mes cookies</button></div>
+<div class="afoot-legal">© 2026 ADORA · EI · SIRET 532 886 918 00020 · TVA non applicable, art. 293 B du CGI<br><a href="mentions-legales.html">Mentions légales</a> · <a href="politique-confidentialite.html">Confidentialité</a> · <a href="cgv.html">CGV</a> · <button type="button" class="adora-cmp-footer-link" onclick="if(window.adoraConsent)window.adoraConsent.show()">Gérer mes cookies</button></div>
 </footer>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<!-- /ADORA FOOTER -->
+<script>
 document.addEventListener("DOMContentLoaded",()=>{
   const obs=new IntersectionObserver(e=>e.forEach(el=>{if(el.isIntersecting){el.target.classList.add("visible");obs.unobserve(el.target)}}),{threshold:.12});
   document.querySelectorAll(".reveal").forEach(el=>obs.observe(el));

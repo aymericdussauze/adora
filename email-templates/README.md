@@ -11,6 +11,7 @@ email-templates/
 ├── c/  — Séquence C : Audit avant achat 499€ (4 mails, C1-C4)
 ├── d/  — Séquence D : Ex-clients 12 mois (4 mails, D1-D4)
 └── e/  — Séquence E : Prescripteurs 6 mois (5 mails, E1-E5)
+benchmark/  Benchmark des honoraires : confirmation de précommande (BM1, transactionnel)
 ```
 
 ## Pattern URL
@@ -49,6 +50,8 @@ Les templates contiennent des variables `{{xxx}}` qui doivent être substituées
 | `plaquettePDFLink` | E1 | URL plaquette ADORA |
 | `blogArticleLink` | E2 | URL article blog |
 | `calLink` | E4 | URL Cal.com café prescripteur |
+| `deliveryDate` | BM1 | Date de livraison du benchmark, en toutes lettres (ex. lundi 9 novembre 2026) |
+| `invoiceLink` | BM1 | URL publique de la facture Qonto (bloc retiré par le Worker si absente) |
 
 ### Variable native Resend
 
@@ -84,6 +87,7 @@ Les templates contiennent des variables `{{xxx}}` qui doivent être substituées
 | E3 | 3 cas où l'audit a changé la négociation — ADORA |
 | E4 | Un café pour en parler ? — ADORA |
 | E5 | Invitation — petit-déjeuner « Sécuriser l'achat immo » — ADORA |
+| BM1 | Votre précommande est confirmée · Benchmark ADORA |
 
 ## Versioning
 
@@ -104,3 +108,7 @@ Pour une future v5, créer un dossier `email-templates-v5/` (ne pas remplacer ce
 - Source de production v4 : 26/04/2026
 - Voie de production : Worker Cloudflare → API Resend `/emails`
 - Pas d'UI Resend dans le pipeline (UI Templates incompatible avec HTML email complexe)
+
+## Benchmark des honoraires (BM1)
+
+Envoyé par le Worker `adora-stripe-qonto` (v5, oct. 2026) dès le paiement d'une précommande, quand la session Stripe porte `product_type = benchmark_honoraires`. Email transactionnel : pas de lien de désabonnement. Le bloc entre `<!--INVOICE-->` et `<!--/INVOICE-->` est retiré si Qonto ne renvoie pas de lien de facture.

@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://browser.sentry-cdn.com" crossorigin>
+<link rel="stylesheet" href="assets/fonts/adora-fonts.css">
+
+<title>Précommande confirmée | Benchmark des honoraires | ADORA</title>
+<meta name="description" content="Votre précommande du Benchmark des honoraires en marché public est confirmée. Livraison par e-mail le 9 novembre 2026.">
+<style>
+/* ═══ ADORA PropTech Design System v2 ═══ */
+:root{--navy:#0D1025;--blue:#0E7490;--accent:#22D3EE;--accent-hover:#06B6D4;--light:#EDE9FE;--pale:#FAFAFC;--green:#A78BFA;--green-hover:#8B6FE3;--txt:#1E1B4B;--muted:#64748B;--border:#E5E7F2;--white:#FFFFFF;--radius:16px;--radius-sm:10px;--shadow-card:0 1px 3px rgba(13,16,37,.06),0 8px 24px rgba(13,16,37,.04);--shadow-hover:0 4px 12px rgba(13,16,37,.08),0 16px 40px rgba(13,16,37,.06);--shadow-btn:0 2px 8px rgba(34,211,238,.25);--transition:.3s cubic-bezier(.4,0,.2,1)}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;color:var(--txt);background:var(--white);line-height:1.7;font-size:16px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,h4{font-family:'Montserrat',sans-serif;line-height:1.2}
+a{color:var(--blue);text-decoration:none;transition:color var(--transition)}
+a:hover{color:var(--navy)}
+img{max-width:100%;height:auto}
+.container{max-width:1120px;margin:0 auto;padding:0 28px}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.4,0,.2,1),transform .7s cubic-bezier(.4,0,.2,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:100;background:rgba(13,16,37,.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.06)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;max-width:1120px;margin:0 auto;padding:14px 28px}
+.nav-logo img{height:26px;width:auto}
+.nav-links{display:flex;gap:8px;align-items:center}
+.nav-links a{color:rgba(237,233,254,.8);font-size:13.5px;font-weight:500;padding:6px 14px;border-radius:8px;transition:all var(--transition)}
+.nav-links a:hover{color:var(--white);background:rgba(255,255,255,.08);text-decoration:none}
+.nav-links a.active{color:var(--accent);background:rgba(34,211,238,.1)}
+.nav-cta{background:var(--accent)!important;color:var(--white)!important;padding:8px 20px!important;border-radius:8px;font-weight:700!important;font-size:13px!important;box-shadow:var(--shadow-btn)}
+.nav-cta:hover{background:var(--accent-hover)!important;transform:translateY(-1px)}
+.nav-burger{display:none;background:none;border:none;color:var(--white);font-size:22px;cursor:pointer;padding:8px}
+
+/* HERO */
+.hero{background:var(--navy);padding:72px 0 80px;color:var(--white);position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-40%;right:-20%;width:900px;height:900px;background:radial-gradient(circle,rgba(14,116,144,.15) 0%,transparent 65%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-30%;left:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(34,211,238,.08) 0%,transparent 65%);pointer-events:none}
+.hero h1{font-size:clamp(30px,5vw,48px);font-weight:900;margin-bottom:16px;letter-spacing:-.02em;position:relative}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero .subtitle{font-size:17px;color:rgba(214,228,240,.85);margin-bottom:32px;max-width:540px;line-height:1.7}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:15px 30px;border-radius:var(--radius-sm);font-size:15px;font-weight:700;font-family:'Plus Jakarta Sans',sans-serif;transition:all var(--transition);border:none;cursor:pointer;text-decoration:none!important}
+.btn-accent{background:var(--accent);color:var(--white);box-shadow:var(--shadow-btn)}
+.btn-accent:hover{background:var(--accent-hover);color:var(--white);transform:translateY(-2px);box-shadow:0 4px 16px rgba(34,211,238,.35)}
+.btn-green{background:var(--green);color:var(--white)}
+.btn-green:hover{background:var(--green-hover);color:var(--white);transform:translateY(-2px)}
+.btn-outline{background:transparent;color:rgba(214,228,240,.9);border:1.5px solid rgba(255,255,255,.2)}
+.btn-outline:hover{background:rgba(255,255,255,.08);color:var(--white);transform:translateY(-2px)}
+.btn-white{background:var(--white);color:var(--navy)}
+.btn-white:hover{background:#F1F5F9;color:var(--navy);transform:translateY(-2px)}
+
+/* SECTIONS */
+.section{padding:100px 0}
+.section-alt{background:var(--pale)}
+.section-label{display:inline-block;font-size:12px;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:2px;margin-bottom:12px}
+.section-title{font-size:clamp(28px,4vw,40px);font-weight:800;color:var(--navy);margin-bottom:12px;letter-spacing:-.01em}
+.section-sub{font-size:17px;color:var(--muted);max-width:560px;line-height:1.7}
+.section-header{margin-bottom:56px}
+.section-header.center{text-align:center}
+.section-header.center .section-sub{margin:0 auto}
+
+/* FAQ */
+.faq-list{max-width:720px;margin:0 auto}
+.faq-item{border-bottom:1px solid var(--border);padding:20px 0}
+.faq-q{font-weight:700;color:var(--navy);font-size:16px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;font-family:'Montserrat',sans-serif}
+.faq-q::after{content:'+';font-size:24px;color:var(--accent);font-weight:300;flex-shrink:0;transition:transform var(--transition)}
+.faq-item.open .faq-q::after{transform:rotate(45deg)}
+.faq-a{display:none;padding:12px 0 4px;font-size:15px;color:var(--muted);line-height:1.7}
+.faq-item.open .faq-a{display:block}
+
+/* CTA BAND */
+.cta-band{background:linear-gradient(135deg,var(--navy) 0%,#1F4E75 60%,#234E77 100%);padding:80px 28px;text-align:center;color:var(--white);position:relative;overflow:hidden}
+.cta-band::before{content:'';position:absolute;top:-50%;right:-20%;width:600px;height:600px;background:radial-gradient(circle,rgba(34,211,238,.1) 0%,transparent 60%);pointer-events:none}
+.cta-band h2{font-size:clamp(26px,4vw,36px);font-weight:800;margin-bottom:12px;position:relative}
+.cta-band .cta-sub{font-size:17px;color:rgba(237,233,254,.8);margin-bottom:36px;max-width:520px;margin-left:auto;margin-right:auto;position:relative}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative}
+.cta-links{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-top:20px;position:relative}
+.cta-links a{color:rgba(237,233,254,.5);font-size:13px;font-weight:500;transition:color var(--transition)}
+.cta-links a:hover{color:var(--white)}
+
+/* FOOTER */
+.footer{background:#080B1C;padding:48px 28px 36px;color:var(--muted);font-size:13px}
+.footer-inner{max-width:1120px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:32px}
+.footer-brand strong{color:var(--light);font-weight:700}
+.footer-brand p{margin-top:4px;font-size:12px}
+.footer-links{display:flex;gap:20px;flex-wrap:wrap}
+.footer-links a{color:rgba(237,233,254,.6);font-size:13px;font-weight:500;transition:color var(--transition)}
+.footer-links a:hover{color:var(--white)}
+.footer-contact{font-size:12px;color:rgba(237,233,254,.4);text-align:right}
+.footer-legal{max-width:1120px;margin:24px auto 0;padding-top:24px;border-top:1px solid rgba(255,255,255,.06);font-size:11px;color:rgba(237,233,254,.3);text-align:center}
+.footer-legal a{color:rgba(237,233,254,.5);text-decoration:none;transition:color .2s}
+.footer-legal a:hover{color:#22D3EE}
+.footer-legal br{margin-bottom:6px}
+
+/* FORMS */
+.form-container{max-width:720px;margin:0 auto;background:var(--white);border-radius:var(--radius);border:1px solid var(--border);padding:40px;box-shadow:var(--shadow-card)}
+.form-section{margin-bottom:32px}
+.form-section h3{font-size:17px;color:var(--navy);margin-bottom:4px}
+.form-section .section-hint{font-size:13px;color:var(--muted);margin-bottom:20px}
+.field{margin-bottom:18px}
+.field label{display:block;font-size:13px;font-weight:600;color:var(--navy);margin-bottom:6px}
+.field label .opt{font-weight:400;color:var(--muted);font-size:11px}
+.field input,.field select,.field textarea{width:100%;padding:12px 16px;border:1.5px solid var(--border);border-radius:var(--radius-sm);font-size:15px;font-family:'Plus Jakarta Sans',sans-serif;background:var(--white);transition:all var(--transition)}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 4px rgba(14,116,144,.1)}
+.field textarea{resize:vertical;min-height:110px}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.btn-submit{width:100%;padding:16px;background:var(--accent);color:var(--white);border:none;border-radius:var(--radius-sm);font-size:16px;font-weight:700;font-family:'Plus Jakarta Sans',sans-serif;cursor:pointer;transition:all var(--transition);box-shadow:var(--shadow-btn)}
+.btn-submit:hover{background:var(--accent-hover);transform:translateY(-1px)}
+
+/* SCROLL PROGRESS */
+.scroll-progress{position:fixed;top:0;left:0;height:3px;background:var(--accent);z-index:200;width:0;transition:width .1s linear}
+
+@media(max-width:700px){
+  .nav-links{display:none;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--navy);padding:16px 28px;gap:4px;border-top:1px solid rgba(255,255,255,.08)}
+  .nav-links.open{display:flex}
+  .nav-burger{display:block}
+  .hero{padding:56px 0 64px}
+  .section{padding:72px 0}
+  .field-row{grid-template-columns:1fr}
+  .footer-inner{flex-direction:column}
+  .footer-contact{text-align:left}
+}
+
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center;position:relative;z-index:1}
+.hero-badges{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px}
+.hero-badge{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);padding:6px 16px;border-radius:100px;font-size:13px;color:rgba(237,233,254,.8);font-weight:500}
+.explain-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;max-width:960px;margin:0 auto}
+.explain-text h3{font-size:22px;color:var(--navy);margin-bottom:14px}
+.explain-text p{font-size:15.5px;color:var(--txt);margin-bottom:16px;line-height:1.7}
+.lots-visual{background:var(--pale);border:1px solid var(--border);border-radius:var(--radius);padding:28px}
+.lots-example{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.lot-pill{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-sm);padding:10px 14px;font-size:13px;display:flex;justify-content:space-between;color:var(--navy);transition:all var(--transition)}
+.lot-pill:hover{border-color:var(--blue);transform:translateY(-1px)}
+.lot-pill .price{font-weight:700;color:var(--blue)}
+.lot-pill.highlight{background:var(--accent);border-color:var(--accent);color:var(--white)}
+.lot-pill.highlight .price{color:var(--white)}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;max-width:860px;margin:0 auto}
+.compare-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:32px 28px;position:relative;transition:all var(--transition)}
+.compare-card:hover{box-shadow:var(--shadow-hover)}
+.compare-card.premium{border-color:var(--accent);border-width:2px}
+.compare-card.premium::before{content:'Recommandé';position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--accent);color:var(--white);padding:4px 18px;border-radius:100px;font-size:11px;font-weight:700;font-family:'Montserrat',sans-serif}
+.compare-header{text-align:center;padding-bottom:20px;border-bottom:1px solid var(--border);margin-bottom:24px}
+.compare-header h3{font-size:19px;color:var(--navy);margin-bottom:6px}
+.compare-price{font-family:'Montserrat',sans-serif;font-size:36px;font-weight:900}
+.compare-price.free{color:var(--green)}
+.compare-price.paid{color:var(--accent)}
+.compare-price small{font-size:14px;font-weight:400;color:var(--muted)}
+.compare-list{list-style:none;padding:0}
+.compare-list li{padding:10px 0;font-size:14.5px;display:flex;align-items:flex-start;gap:10px;border-bottom:1px solid #f5f5f5}
+.compare-list li:last-child{border-bottom:none}
+.check{color:var(--green);font-weight:700;font-size:16px;flex-shrink:0}
+.cross{color:#D1D5DB;font-weight:700;font-size:16px;flex-shrink:0}
+.compare-cta{text-align:center;margin-top:24px}
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;max-width:960px;margin:0 auto}
+.step-card{text-align:center;padding:28px 20px}
+.step-num{width:48px;height:48px;background:var(--navy);color:var(--white);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Montserrat',sans-serif;font-weight:800;font-size:18px;margin:0 auto 16px}
+.step-card h4{font-size:15px;color:var(--navy);margin-bottom:8px}
+.step-card p{font-size:13.5px;color:var(--muted);line-height:1.5}
+@media(max-width:900px){.hero-grid,.explain-grid{grid-template-columns:1fr}.compare-grid{grid-template-columns:1fr}}
+@media(max-width:700px){.steps-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:450px){.steps-grid{grid-template-columns:1fr}}
+
+/* PORTRAIT */
+.portrait-photo{width:180px;height:180px;border-radius:50%;object-fit:cover;border:4px solid var(--border);box-shadow:0 4px 20px rgba(13,16,37,.1)}
+.portrait-block{display:flex;flex-direction:column;align-items:center;gap:16px;margin-bottom:24px}
+.portrait-block-inline{display:flex;align-items:center;gap:20px}
+@media(max-width:768px){.portrait-photo{width:140px;height:140px}.portrait-block-inline{flex-direction:column;text-align:center}}
+
+/* Mobile call button */
+.mobile-call-btn{display:none}
+@media(max-width:768px){
+.mobile-call-btn{display:flex;align-items:center;gap:8px;position:fixed;bottom:20px;right:20px;z-index:90;background:var(--accent);color:var(--navy);padding:12px 20px;border-radius:99px;font-size:14px;font-weight:700;font-family:'Plus Jakarta Sans',sans-serif;text-decoration:none;box-shadow:0 4px 16px rgba(34,211,238,.35);transition:all .2s}
+.mobile-call-btn:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(34,211,238,.45)}
+}
+
+/* ═══ UNIFIED FOOTER ═══ */
+.footer{background:var(--navy, #0D1025);color:rgba(237,233,254,.7);padding:60px 24px 30px;margin-top:80px}
+.footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:40px}
+.footer-brand strong{font-size:18px;color:#fff;display:block;margin-bottom:8px}
+.footer-brand p{font-size:13px;line-height:1.6;color:rgba(237,233,254,.5)}
+.footer-col{display:flex;flex-direction:column;gap:8px}
+.footer-col-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:rgba(237,233,254,.4);margin-bottom:6px}
+.footer-col a{color:rgba(237,233,254,.7);text-decoration:none;font-size:13px;transition:color .2s}
+.footer-col a:hover{color:#22D3EE}
+.footer-contact a{font-size:13px}
+.footer-legal{max-width:1100px;margin:30px auto 0;padding-top:20px;border-top:1px solid rgba(237,233,254,.1);font-size:11px;color:rgba(237,233,254,.35);text-align:center}
+@media(max-width:768px){
+.footer-inner{grid-template-columns:1fr 1fr;gap:30px 20px}
+}
+@media(max-width:480px){
+.footer-inner{grid-template-columns:1fr;gap:24px}
+}
+/* ═══ PAIEMENT RÉUSSI BENCHMARK : 27/10/2026 ═══ */
+.nav-cta,.btn-accent{color:var(--navy)!important}
+.ok-hero{background:radial-gradient(circle at 88% 0%,rgba(14,116,144,.28) 0%,rgba(13,16,37,0) 55%),var(--navy);color:var(--white);padding:72px 0 64px;text-align:center}
+.ok-badge{width:64px;height:64px;margin:0 auto 24px;border-radius:50%;background:rgba(34,211,238,.16);border:2px solid var(--accent);display:flex;align-items:center;justify-content:center}
+.ok-hero h1{font-size:clamp(28px,4.6vw,44px);font-weight:900;line-height:1.15;letter-spacing:-.02em;margin-bottom:14px}
+.ok-hero h1 em{font-style:normal;color:var(--accent)}
+.ok-hero .lead{font-size:17px;color:rgba(214,228,240,.88);max-width:600px;margin:0 auto}
+.ok-wrap{max-width:760px;margin:0 auto}
+.ok-steps{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:16px}
+.ok-step{display:flex;gap:18px;align-items:flex-start;background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow-card)}
+.ok-num{flex:none;width:44px;height:44px;border-radius:50%;background:var(--navy);color:var(--white);display:flex;align-items:center;justify-content:center;font-family:'Montserrat',sans-serif;font-weight:800;font-size:17px}
+.ok-step h2{font-size:17px;color:var(--navy);margin-bottom:4px}
+.ok-step p{font-size:15px;color:var(--muted);line-height:1.6}
+.ok-refund{margin-top:28px;padding:20px 24px;border-radius:var(--radius);background:rgba(34,211,238,.1);border:1px solid rgba(34,211,238,.35);font-size:15px;color:var(--txt);line-height:1.6}
+.ok-refund strong{color:var(--navy)}
+.ok-next{margin-top:48px;text-align:center}
+.ok-next h2{font-size:clamp(22px,3vw,28px);font-weight:800;color:var(--navy);margin-bottom:10px}
+.ok-next p{font-size:16px;color:var(--muted);max-width:560px;margin:0 auto 24px}
+.ok-next .btns{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+.ok-next .btn-ghost{background:var(--white);color:var(--navy);border:1.5px solid var(--border)}
+.ok-next .btn-ghost:hover{border-color:var(--blue);color:var(--navy);transform:translateY(-2px)}
+.ok-contact{margin-top:28px;font-size:14.5px;color:var(--muted);text-align:center}
+</style>
+    <script defer src="https://browser.sentry-cdn.com/8.0.0/bundle.min.js" crossorigin="anonymous"></script>
+    <script type="text/plain" data-adora-consent="analytics">Sentry.init({dsn:"https://14b68c10a24c3da4127332e14fd20359@o4511253060976640.ingest.de.sentry.io/4511253075132496",tracesSampleRate:0,replaysSessionSampleRate:0});</script>
+<!-- ADORA LAYOUT -->
+<link rel="stylesheet" href="assets/css/adora-layout.css">
+<script src="assets/js/adora-layout.js" defer></script>
+<!-- /ADORA LAYOUT -->
+<!-- ADORA CMP -->
+  <link rel="stylesheet" href="assets/css/adora-cmp.css">
+  <script src="assets/js/adora-cmp.js"></script>
+  <!-- /ADORA CMP -->
+</head>
+<body>
+
+<!-- ADORA NAV -->
+<nav class="anav" aria-label="Navigation principale" data-section="pro">
+<div class="anav-inner">
+  <a href="./" class="anav-logo"><img src="assets/img/adora-logo-blanc.svg" alt="ADORA, accueil" width="122" height="26"></a>
+  <button type="button" class="anav-burger" aria-expanded="false" aria-controls="anav-menu" aria-label="Ouvrir le menu"><span></span><span></span><span></span></button>
+  <div class="anav-menu" id="anav-menu">
+    <ul class="anav-list">
+      <li class="anav-item" data-key="part">
+        <button type="button" class="anav-trigger" aria-expanded="false" aria-controls="anav-part">Particuliers<svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="anav-drop" id="anav-part"><div class="anav-drop-card">
+          <a href="estimateur.html" class="anav-link"><span class="t">Estimer mes travaux</span><span class="d">Estimation tous corps d&#x27;état en 3 minutes, gratuite</span></a>
+          <a href="simulateur.html" class="anav-link"><span class="t">Simulateur d&#x27;aides 2026</span><span class="d">Les aides à la rénovation en quelques clics</span></a>
+          <a href="audit-avant-achat.html" class="anav-link"><span class="t">Audit avant achat</span><span class="d">Le coût réel des travaux avant de signer</span></a>
+          <a href="sur-mesure.html" class="anav-link"><span class="t">Accompagnement sur mesure</span><span class="d">Assistance à maîtrise d&#x27;ouvrage, du projet à la réception</span></a>
+        </div></div>
+      </li>
+      <li class="anav-item" data-key="pro">
+        <button type="button" class="anav-trigger" aria-expanded="false" aria-controls="anav-pro">Professionnels<svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="anav-drop" id="anav-pro"><div class="anav-drop-card">
+          <a href="professionnels.html" class="anav-link"><span class="t">Offre professionnels</span><span class="d">Estimations, métrés, CCTP, DPGF, analyse des offres</span></a>
+          <a href="benchmark-honoraires.html" class="anav-link" aria-current="page"><span class="t">Benchmark des honoraires <span class="anav-new">Nouveau</span></span><span class="d">4 398 marchés publics analysés</span></a>
+          <a href="partenaires.html#devenir-partenaire" class="anav-link"><span class="t">Devenir partenaire</span><span class="d">Architectes et professionnels du bâtiment</span></a>
+        </div></div>
+      </li>
+      <li class="anav-item" data-key="adora">
+        <button type="button" class="anav-trigger" aria-expanded="false" aria-controls="anav-adora">ADORA<svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="anav-drop" id="anav-adora"><div class="anav-drop-card">
+          <a href="a-propos.html" class="anav-link"><span class="t">À propos</span><span class="d">Parcours, méthode et références</span></a>
+          <a href="partenaires.html" class="anav-link"><span class="t">Partenaires</span><span class="d">Le réseau de professionnels qui m&#x27;entoure</span></a>
+          <a href="contact.html" class="anav-link"><span class="t">Contact</span><span class="d">Un échange découverte de 15 minutes</span></a>
+        </div></div>
+      </li>
+      <li class="anav-item" data-key="pub"><a href="blog.html" class="anav-trigger">Publications</a></li>
+    </ul>
+    <a href="https://cal.com/aymeric-adora/decouverte" class="anav-cta" target="_blank" rel="noopener">Réserver un appel</a>
+  </div>
+</div>
+</nav>
+<!-- /ADORA NAV -->
+
+<main>
+<section class="ok-hero">
+  <div class="container">
+    <div class="ok-badge"><svg aria-hidden="true" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#22D3EE" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+    <h1>Merci, votre précommande est <em>confirmée</em>.</h1>
+    <p class="lead">Le Benchmark des honoraires en marché public, édition 2026, vous sera livré par e-mail le lundi 9 novembre 2026.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container ok-wrap">
+    <ol class="ok-steps">
+      <li class="ok-step"><span class="ok-num" aria-hidden="true">1</span><div><h2>Dans les minutes qui suivent</h2><p>Vous recevez le reçu de paiement Stripe à l'adresse e-mail utilisée lors du paiement.</p></div></li>
+      <li class="ok-step"><span class="ok-num" aria-hidden="true">2</span><div><h2>Votre facture</h2><p>Un e-mail de confirmation ADORA vous donne le lien vers votre facture, établie au nom de votre structure.</p></div></li>
+      <li class="ok-step"><span class="ok-num" aria-hidden="true">3</span><div><h2>Le lundi 9 novembre 2026</h2><p>Vous recevez le rapport PDF de synthèse et le classeur Excel détaillé, à la même adresse e-mail.</p></div></li>
+    </ol>
+    <p class="ok-refund"><strong>Vous changez d'avis ?</strong> Jusqu'à la livraison, un simple e-mail à <a href="mailto:contact@adora-economie.fr?subject=Remboursement%20pr%C3%A9commande%20benchmark">contact@adora-economie.fr</a> suffit : je vous rembourse intégralement.</p>
+
+    <div class="ok-next">
+      <h2>En attendant la livraison</h2>
+      <p>Vous répondez à une consultation et vous avez besoin d'un économiste en renfort ? Découvrez mon offre pour les équipes de maîtrise d'œuvre.</p>
+      <div class="btns">
+        <a href="professionnels.html" class="btn btn-accent">Voir l'offre professionnels</a>
+        <a href="honoraires-economiste-mission-moe.html" class="btn btn-ghost">Lire : les honoraires d'économiste en MOE</a>
+      </div>
+    </div>
+    <p class="ok-contact">Une question sur votre commande ? Écrivez-moi à <a href="mailto:contact@adora-economie.fr">contact@adora-economie.fr</a> ou appelez le <a href="tel:+33672010767">06 72 01 07 67</a>.</p>
+  </div>
+</section>
+</main>
+
+<!-- ADORA FOOTER -->
+<footer class="afoot">
+<div class="afoot-inner">
+  <div class="afoot-brand">
+    <img src="assets/img/adora-logo-blanc.svg" alt="ADORA" width="113" height="24" loading="lazy">
+    <p>Économiste de la construction<br>Normandie &amp; Île-de-France</p>
+  </div>
+  <div class="afoot-col">
+    <p class="afoot-title">Particuliers</p>
+    <a href="estimateur.html">Estimer mes travaux</a>
+    <a href="simulateur.html">Simulateur d'aides</a>
+    <a href="audit-avant-achat.html">Audit avant achat</a>
+    <a href="sur-mesure.html">Accompagnement sur mesure</a>
+  </div>
+  <div class="afoot-col">
+    <p class="afoot-title">Professionnels</p>
+    <a href="professionnels.html">Offre professionnels</a>
+    <a href="benchmark-honoraires.html">Benchmark des honoraires</a>
+    <a href="partenaires.html#devenir-partenaire">Devenir partenaire</a>
+  </div>
+  <div class="afoot-col">
+    <p class="afoot-title">ADORA</p>
+    <a href="a-propos.html">À propos</a>
+    <a href="partenaires.html">Partenaires</a>
+    <a href="blog.html">Publications</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <div class="afoot-col">
+    <p class="afoot-title">Contact</p>
+    <a href="tel:+33672010767">06 72 01 07 67</a>
+    <a href="mailto:contact@adora-economie.fr">contact@adora-economie.fr</a>
+    <a href="https://cal.com/aymeric-adora/decouverte" target="_blank" rel="noopener">Réserver un appel</a>
+  </div>
+</div>
+<div class="afoot-legal">© 2026 ADORA · EI · SIRET 532 886 918 00020 · TVA non applicable, art. 293 B du CGI<br><a href="mentions-legales.html">Mentions légales</a> · <a href="politique-confidentialite.html">Confidentialité</a> · <a href="cgv.html">CGV</a> · <button type="button" class="adora-cmp-footer-link" onclick="if(window.adoraConsent)window.adoraConsent.show()">Gérer mes cookies</button></div>
+</footer>
+<!-- /ADORA FOOTER -->
+
+<script>
+/* Suivi GA4 de l'achat : envoyé uniquement après consentement (événement
+   adora:consent:granted émis par la CMP une fois GA4 configuré), une seule
+   fois par session de paiement Stripe. Redirection Stripe attendue :
+   paiement-reussi-benchmark.html?prix=79&session_id={CHECKOUT_SESSION_ID} */
+(function () {
+  'use strict';
+  var params = new URLSearchParams(window.location.search);
+  var PRICES = { '79': 79, '129': 129 };
+  var price = PRICES[params.get('prix')] || 79;
+  var sid = params.get('session_id') || '';
+  if (!/^cs_[A-Za-z0-9_]+$/.test(sid)) { sid = ''; }
+  var txid = sid || ('benchmark_' + Date.now());
+  var key = 'adora_purchase_' + txid;
+
+  function sendPurchase() {
+    try { if (sid && window.localStorage.getItem(key)) { return; } } catch (e) {}
+    if (typeof window.gtag !== 'function') { return; }
+    window.gtag('event', 'purchase', {
+      transaction_id: txid,
+      value: price,
+      currency: 'EUR',
+      items: [{ item_id: 'benchmark-honoraires-2026', item_name: 'Benchmark des honoraires en marché public 2026', price: price, quantity: 1 }]
+    });
+    try { if (sid) { window.localStorage.setItem(key, '1'); } } catch (e) {}
+  }
+  window.addEventListener('adora:consent:granted', sendPurchase, { once: true });
+})();
+</script>
+
+<script type="text/plain" data-adora-consent="analytics" src="https://www.googletagmanager.com/gtag/js?id=G-M0LENY960B"></script>
+<script type="text/plain" data-adora-consent="analytics">window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","G-M0LENY960B");</script>
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"3f8ca9a1113f413a990a17c08ab83442"}'></script>
+</body>
+</html>

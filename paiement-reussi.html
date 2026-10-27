@@ -7,10 +7,10 @@
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Paiement confirmé — ADORA</title>
+<title>Paiement confirmé | Audit avant achat | ADORA</title>
 <meta name="robots" content="noindex, nofollow">
     <link rel="preconnect" href="https://browser.sentry-cdn.com" crossorigin>
-<link rel="stylesheet" href="/assets/fonts/adora-fonts.css">
+<link rel="stylesheet" href="assets/fonts/adora-fonts.css">
 <style>
 :root{
   --navy:#0D1025;--surface:#1A1F3D;--deep:#080B1C;
@@ -140,26 +140,56 @@ a{color:inherit;text-decoration:none}
 </style>
     <script defer src="https://browser.sentry-cdn.com/8.0.0/bundle.min.js" crossorigin="anonymous"></script>
     <script type="text/plain" data-adora-consent="analytics">Sentry.init({dsn:"https://14b68c10a24c3da4127332e14fd20359@o4511253060976640.ingest.de.sentry.io/4511253075132496",tracesSampleRate:0,replaysSessionSampleRate:0});</script>
+<!-- ADORA LAYOUT -->
+<link rel="stylesheet" href="assets/css/adora-layout.css">
+<script src="assets/js/adora-layout.js" defer></script>
+<!-- /ADORA LAYOUT -->
 <!-- ADORA CMP -->
-  <link rel="stylesheet" href="/assets/css/adora-cmp.css">
-  <script src="/assets/js/adora-cmp.js"></script>
+  <link rel="stylesheet" href="assets/css/adora-cmp.css">
+  <script src="assets/js/adora-cmp.js"></script>
   <!-- /ADORA CMP -->
 </head>
 <body>
 
-<nav class="nav">
-<div class="nav-inner">
-  <a href="./" class="nav-logo"><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5NDAgMjAwIiB3aWR0aD0iOTQwIiBoZWlnaHQ9IjIwMCI+CiAgPGcgZmlsbD0id2hpdGUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICA8IS0tIFRyaWFuZ2xlIGljb24gLS0+CiAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMCwgOCkgdHJhbnNsYXRlKC03NSwgLTk5KSI+CiAgICAgIDxwYXRoIGQ9Ik0gMTE3LDI4MiBMIDE2OSwyODEgTCAxNzQsMjc0IEwgMTc3LDI2OCBMIDIyOSwxOTMgTCAyMjksMTkxIEwgMjA2LDE1OCBMIDIwNywxNTUgTCAyMjksMTU2IEwgMjM0LDE2NSBMIDIzNywxNjggTCAyMzksMTczIEwgMjgxLDIzNSBMIDI4MiwyNDAgTCAyNDAsMjQwIEwgMjEzLDI4MCBMIDIxMywyODIgTCAzNjQsMjgyIEwgMzYxLDI3NiBMIDMwMCwxODcgTCAyOTksMTg0IEwgMjQyLDk5IEwgMjQwLDEwMCBMIDIwNywxNTAgTCAyMDEsMTU2IEwgMTQwLDI0OCBMIDEzNywyNTEgTCAxMzYsMjU0IEwgMTI0LDI3MCBaIi8+CiAgICA8L2c+CiAgICA8IS0tIFRleHQgIkFkb3JhIiAtLT4KICAgIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDMzMCwgMTIpIHNjYWxlKDEuOCkgdHJhbnNsYXRlKC03MSwgLTMyMCkiPgogICAgICA8cGF0aCBkPSJNIDEwMiwzMjYgTCA5MywzNTIgTCA5MSwzNTUgTCA4NywzNjkgTCA4NSwzNzIgTCA4MiwzODMgTCA4MCwzODYgTCA3OCwzOTUgTCA3MSw0MTMgTCA3MSw0MTYgTCA4OSw0MTUgTCA5NywzOTAgTCAxMjUsMzg5IEwgMTMwLDM5NCBMIDEzMSw0MDAgTCAxMzMsNDAzIEwgMTM3LDQxNiBMIDE1NSw0MTYgTCAxNTUsNDEyIEwgMTUzLDQwOSBMIDEyNCwzMjYgWiBNIDExNCwzNDQgTCAxMjMsMzcyIEwgMTIyLDM3NiBMIDEwMiwzNzUgTCAxMDIsMzcyIEwgMTA2LDM1OSBMIDEwOCwzNTYgTCAxMTAsMzQ3IFoiLz4KICAgICAgPHBhdGggZD0iTSAyMjUsMzIwIEwgMjA4LDMyMCBMIDIwNiwzNTIgTCAyMDIsMzQ4IEwgMTk0LDM0NSBMIDE4MCwzNDUgTCAxNjksMzQ5IEwgMTU5LDM2MCBMIDE1NSwzNzMgTCAxNTYsMzk1IEwgMTYyLDQwNyBMIDE3MCw0MTQgTCAxNzgsNDE3IEwgMTkzLDQxNyBMIDE5OSw0MTUgTCAyMDUsNDA4IEwgMjA4LDQwOCBMIDIwOCw0MTYgTCAyMjUsNDE2IFogTSAxODcsMzU3IEwgMTk0LDM1NyBMIDE5OSwzNTkgTCAyMDQsMzY0IEwgMjA3LDM3MSBMIDIwOCwzODUgTCAyMDYsMzk0IEwgMjA0LDM5OCBMIDE5OSw0MDMgTCAxOTUsNDA1IEwgMTg2LDQwNSBMIDE4Miw0MDMgTCAxNzYsMzk3IEwgMTczLDM4OSBMIDE3MywzNzIgTCAxNzYsMzY1IEwgMTgyLDM1OSBaIi8+CiAgICAgIDxwYXRoIGQ9Ik0gMjU1LDM0NiBMIDI0NCwzNTIgTCAyMzgsMzU5IEwgMjMzLDM3MSBMIDIzMywzODkgTCAyMzUsMzk3IEwgMjQwLDQwNiBMIDI0NSw0MTEgTCAyNTIsNDE1IEwgMjU5LDQxNyBMIDI3Nyw0MTcgTCAyODMsNDE1IEwgMjk1LDQwNiBMIDMwMSwzOTYgTCAzMDMsMzg4IEwgMzAzLDM3NCBMIDMwMSwzNjYgTCAyOTYsMzU3IEwgMjkwLDM1MSBMIDI4MywzNDcgTCAyNzcsMzQ1IFogTSAyNjQsMzU3IEwgMjcyLDM1NyBMIDI3NiwzNTkgTCAyODEsMzY0IEwgMjg1LDM3NSBMIDI4NSwzODcgTCAyODMsMzk1IEwgMjc2LDQwMyBMIDI3Miw0MDUgTCAyNjQsNDA1IEwgMjU5LDQwMyBMIDI1NCwzOTggTCAyNTAsMzg2IEwgMjUwLDM3NCBMIDI1MiwzNjggTCAyNTgsMzYwIFoiLz4KICAgICAgPHBhdGggZD0iTSAzNTAsMzQ1IEwgMzM4LDM0NiBMIDMyOCwzNTUgTCAzMjgsMzQ3IEwgMzExLDM0NyBMIDMxMSw0MTYgTCAzMjgsNDE1IEwgMzI4LDM3NCBMIDMzMCwzNjggTCAzMzYsMzYyIEwgMzQzLDM1OSBMIDM1MCwzNTkgWiIvPgogICAgICA8cGF0aCBkPSJNIDM2NCwzNDkgTCAzNTksMzUzIEwgMzU1LDM2MCBMIDM1NCwzNjQgTCAzNTUsMzY5IEwgMzcwLDM2OSBMIDM3MSwzNjMgTCAzNzUsMzU4IEwgMzc3LDM1NyBMIDM4NiwzNTcgTCAzOTIsMzYyIEwgMzkzLDM2NSBMIDM5MiwzNzQgTCAzNzIsMzc1IEwgMzYwLDM4MCBMIDM1NCwzODYgTCAzNTEsMzk0IEwgMzUxLDQwMiBMIDM1NCw0MDkgTCAzNTgsNDEzIEwgMzY2LDQxNyBMIDM4MSw0MTcgTCAzODYsNDE1IEwgMzkxLDQwOSBMIDM5NCw0MDkgTCAzOTUsNDE2IEwgNDExLDQxNiBMIDQxMCwzNjcgTCA0MDksMzYxIEwgNDA2LDM1NCBMIDQwMCwzNDggTCAzOTEsMzQ1IEwgMzczLDM0NSBaIE0gMzkzLDM4NSBMIDM5MiwzOTcgTCAzODYsNDA0IEwgMzg0LDQwNSBMIDM3NSw0MDUgTCAzNjksNDAwIEwgMzY5LDM5MiBMIDM3NSwzODYgTCAzODMsMzg0IFoiLz4KICAgIDwvZz4KICA8L2c+Cjwvc3ZnPgo=" alt="ADORA" style="height:26px;width:auto"></a>
-  <div class="nav-links" id="navLinks">
-    <a href="simulateur.html">Simulateur</a>
-    <a href="estimateur.html">Estimateur</a>
-    <a href="audit-avant-achat.html">Audit achat</a>
-    <a href="sur-mesure.html">Sur mesure</a>
-    <a href="estimateur-outil.html" class="nav-cta">Estimer mes travaux</a>
+<!-- ADORA NAV -->
+<nav class="anav" aria-label="Navigation principale" data-section="part">
+<div class="anav-inner">
+  <a href="./" class="anav-logo"><img src="assets/img/adora-logo-blanc.svg" alt="ADORA, accueil" width="122" height="26"></a>
+  <button type="button" class="anav-burger" aria-expanded="false" aria-controls="anav-menu" aria-label="Ouvrir le menu"><span></span><span></span><span></span></button>
+  <div class="anav-menu" id="anav-menu">
+    <ul class="anav-list">
+      <li class="anav-item" data-key="part">
+        <button type="button" class="anav-trigger" aria-expanded="false" aria-controls="anav-part">Particuliers<svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="anav-drop" id="anav-part"><div class="anav-drop-card">
+          <a href="estimateur.html" class="anav-link"><span class="t">Estimer mes travaux</span><span class="d">Estimation tous corps d&#x27;état en 3 minutes, gratuite</span></a>
+          <a href="simulateur.html" class="anav-link"><span class="t">Simulateur d&#x27;aides 2026</span><span class="d">Les aides à la rénovation en quelques clics</span></a>
+          <a href="audit-avant-achat.html" class="anav-link"><span class="t">Audit avant achat</span><span class="d">Le coût réel des travaux avant de signer</span></a>
+          <a href="sur-mesure.html" class="anav-link"><span class="t">Accompagnement sur mesure</span><span class="d">Assistance à maîtrise d&#x27;ouvrage, du projet à la réception</span></a>
+        </div></div>
+      </li>
+      <li class="anav-item" data-key="pro">
+        <button type="button" class="anav-trigger" aria-expanded="false" aria-controls="anav-pro">Professionnels<svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="anav-drop" id="anav-pro"><div class="anav-drop-card">
+          <a href="professionnels.html" class="anav-link"><span class="t">Offre professionnels</span><span class="d">Estimations, métrés, CCTP, DPGF, analyse des offres</span></a>
+          <a href="benchmark-honoraires.html" class="anav-link"><span class="t">Benchmark des honoraires <span class="anav-new">Nouveau</span></span><span class="d">4 398 marchés publics analysés</span></a>
+          <a href="partenaires.html#devenir-partenaire" class="anav-link"><span class="t">Devenir partenaire</span><span class="d">Architectes et professionnels du bâtiment</span></a>
+        </div></div>
+      </li>
+      <li class="anav-item" data-key="adora">
+        <button type="button" class="anav-trigger" aria-expanded="false" aria-controls="anav-adora">ADORA<svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="anav-drop" id="anav-adora"><div class="anav-drop-card">
+          <a href="a-propos.html" class="anav-link"><span class="t">À propos</span><span class="d">Parcours, méthode et références</span></a>
+          <a href="partenaires.html" class="anav-link"><span class="t">Partenaires</span><span class="d">Le réseau de professionnels qui m&#x27;entoure</span></a>
+          <a href="contact.html" class="anav-link"><span class="t">Contact</span><span class="d">Un échange découverte de 15 minutes</span></a>
+        </div></div>
+      </li>
+      <li class="anav-item" data-key="pub"><a href="blog.html" class="anav-trigger">Publications</a></li>
+    </ul>
+    <a href="estimateur-outil.html" class="anav-cta">Estimer mes travaux</a>
   </div>
-  <button class="nav-burger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">&#9776;</button>
 </div>
 </nav>
+<!-- /ADORA NAV -->
 
 <section class="hero">
 <div class="hero-inner">
@@ -168,104 +198,110 @@ a{color:inherit;text-decoration:none}
   </div>
   <div class="hero-label">Paiement confirmé</div>
   <h1>Merci <span id="prenomGreet">!</span></h1>
-  <p>Votre paiement a été validé. Votre rapport d'estimation détaillé est en cours de préparation.</p>
-  <div class="hero-order">Rapport d'estimation ADORA · <strong>49 € TTC</strong></div>
+  <p>Votre paiement a été validé. Je finalise l'analyse de votre bien.</p>
+  <div class="hero-order">Audit avant achat immobilier <strong>ADORA</strong></div>
 </div>
 </section>
 
 <div class="container">
-  
+
   <div class="section-label">Ce qui se passe maintenant</div>
   <h2 class="section-title">Vos 3 prochaines étapes</h2>
-  <p class="section-sub">Tout est automatisé. Vous n'avez rien à faire — nous nous occupons du reste.</p>
-  
+  <p class="section-sub">Vous n'avez rien de plus à faire : je m'occupe de la suite.</p>
+
   <div class="timeline">
     <div class="tl-item">
       <div class="tl-icon aqua"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 7L2 7"/></svg></div>
       <div class="tl-content">
-        <div class="tl-when">Dans 5 minutes</div>
-        <div class="tl-title">Votre rapport PDF arrive par email</div>
-        <div class="tl-sub">8 pages · 15 postes détaillés · aides chiffrées · points de vigilance. Adresse : <strong id="emailConfirm">celle utilisée au paiement</strong></div>
+        <div class="tl-when">Dans les minutes qui suivent</div>
+        <div class="tl-title">Votre reçu et votre facture</div>
+        <div class="tl-sub">Le reçu de paiement Stripe et la facture arrivent par email. Adresse : <strong id="emailConfirm">celle utilisée au paiement</strong></div>
       </div>
       <div class="tl-status progress">En cours</div>
     </div>
-    
+
     <div class="tl-item">
-      <div class="tl-icon iris"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+      <div class="tl-icon aqua"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8"/><path d="M8 17h5"/></svg></div>
       <div class="tl-content">
-        <div class="tl-when">Sous 48h ouvrées</div>
-        <div class="tl-title">Appel téléphonique de 30 minutes</div>
-        <div class="tl-sub">Je vous contacte personnellement pour débriefer votre estimation et répondre à vos questions. Inclus dans votre commande.</div>
+        <div class="tl-when">Sous 48 à 72 h ouvrées</div>
+        <div class="tl-title">Votre rapport d'audit PDF</div>
+        <div class="tl-sub">Travaux à prévoir chiffrés, points de vigilance relevés dans les diagnostics et arguments pour négocier le prix d'achat.</div>
       </div>
       <div class="tl-status upcoming">Planifié</div>
     </div>
-    
+
     <div class="tl-item">
-      <div class="tl-icon aqua"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
+      <div class="tl-icon iris"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
       <div class="tl-content">
-        <div class="tl-when">Quand vous voulez</div>
-        <div class="tl-title">Aller plus loin si vous le souhaitez</div>
-        <div class="tl-sub">Audit avant achat, accompagnement sur mesure, rédaction du cahier des charges… sans engagement.</div>
+        <div class="tl-when">Après la remise du rapport</div>
+        <div class="tl-title">Échange téléphonique de 30 minutes</div>
+        <div class="tl-sub">Je vous appelle pour commenter le rapport et répondre à vos questions avant votre décision. Inclus dans l'audit.</div>
       </div>
-      <div class="tl-status upcoming">En option</div>
+      <div class="tl-status upcoming">Planifié</div>
     </div>
   </div>
-  
+
   <div class="section-label" style="margin-top:20px">Besoin d'aide ?</div>
-  <h2 class="section-title">Pas de rapport reçu ? Un souci ?</h2>
-  
+  <h2 class="section-title">Un document à ajouter ? Une question ?</h2>
+
   <div class="info-card">
     <div class="info-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
     <div>
       <h3>Je m'occupe personnellement de chaque dossier</h3>
-      <p>Si votre rapport n'arrive pas dans les 15 minutes, vérifiez votre dossier <strong>Spam / Indésirables</strong>. Si rien ne s'y trouve, contactez-moi — je règle ça immédiatement.</p>
+      <p>Vous recevez un nouveau diagnostic ou une pièce complémentaire ? Envoyez-la-moi par email, je l'intègre à l'analyse. Si le reçu n'arrive pas, vérifiez votre dossier <strong>Spam / Indésirables</strong>.</p>
       <p>Aymeric Dussauze · <a href="tel:+33672010767">06 72 01 07 67</a> · <a href="mailto:contact@adora-economie.fr">contact@adora-economie.fr</a></p>
       <div class="actions">
-        <a href="mailto:contact@adora-economie.fr?subject=Rapport%20d%27estimation%20non%20re%C3%A7u" class="btn btn-ghost">Signaler un problème</a>
+        <a href="mailto:contact@adora-economie.fr?subject=Audit%20avant%20achat%20%3A%20document%20compl%C3%A9mentaire" class="btn btn-ghost">Envoyer un document</a>
       </div>
     </div>
   </div>
-  
+
   <div class="upsell">
     <div class="upsell-label">Pour aller plus loin</div>
-    <h3>Prêt à passer du chiffrage à la réalisation ?</h3>
-    <p>Votre estimation est une base solide. Pour transformer ce budget en un chantier maîtrisé, découvrez mes formules d'accompagnement complet — de la rédaction du cahier des charges à la réception du chantier.</p>
+    <h3>Vous achetez et vous engagez des travaux ?</h3>
+    <p>Je peux vous accompagner de l'estimation détaillée jusqu'à la réception du chantier. Si vous poursuivez avec un accompagnement, les 499 € de l'audit sont intégralement déduits.</p>
     <a href="sur-mesure.html" class="btn">Découvrir l'accompagnement →</a>
   </div>
-  
+
 </div>
 
-<footer class="footer">
-<div class="footer-inner">
-  <div class="footer-brand">
-    <strong>ADORA</strong>
+<!-- ADORA FOOTER -->
+<footer class="afoot">
+<div class="afoot-inner">
+  <div class="afoot-brand">
+    <img src="assets/img/adora-logo-blanc.svg" alt="ADORA" width="113" height="24" loading="lazy">
     <p>Économiste de la construction<br>Normandie &amp; Île-de-France</p>
   </div>
-  <div class="footer-col">
-    <div class="footer-col-title">Outils</div>
-    <a href="simulateur.html">Simulateur aides</a>
-    <a href="estimateur.html">Estimateur travaux</a>
+  <div class="afoot-col">
+    <p class="afoot-title">Particuliers</p>
+    <a href="estimateur.html">Estimer mes travaux</a>
+    <a href="simulateur.html">Simulateur d'aides</a>
     <a href="audit-avant-achat.html">Audit avant achat</a>
-    <a href="sur-mesure.html">Sur mesure</a>
+    <a href="sur-mesure.html">Accompagnement sur mesure</a>
   </div>
-  <div class="footer-col">
-    <div class="footer-col-title">ADORA</div>
+  <div class="afoot-col">
+    <p class="afoot-title">Professionnels</p>
+    <a href="professionnels.html">Offre professionnels</a>
+    <a href="benchmark-honoraires.html">Benchmark des honoraires</a>
+    <a href="partenaires.html#devenir-partenaire">Devenir partenaire</a>
+  </div>
+  <div class="afoot-col">
+    <p class="afoot-title">ADORA</p>
     <a href="a-propos.html">À propos</a>
-    <a href="professionnels.html">Professionnels</a>
     <a href="partenaires.html">Partenaires</a>
-    <a href="blog.html">Blog</a>
+    <a href="blog.html">Publications</a>
     <a href="contact.html">Contact</a>
   </div>
-  <div class="footer-col footer-contact">
-    <div class="footer-col-title">Contact</div>
+  <div class="afoot-col">
+    <p class="afoot-title">Contact</p>
     <a href="tel:+33672010767">06 72 01 07 67</a>
     <a href="mailto:contact@adora-economie.fr">contact@adora-economie.fr</a>
-    <a href="https://adora-economie.fr">adora-economie.fr</a>
+    <a href="https://cal.com/aymeric-adora/decouverte" target="_blank" rel="noopener">Réserver un appel</a>
   </div>
 </div>
-<div class="footer-legal">© 2026 ADORA · EI · SIRET 532 886 918 00020 · TVA non applicable, art. 293B du CGI<br><a href="mentions-legales.html">Mentions légales</a> · <a href="politique-confidentialite.html">Confidentialité</a> · <a href="cgv.html">CGV</a></div>
-<div style="margin-top:12px;font-size:13px;opacity:0.8"><button type="button" class="adora-cmp-footer-link" onclick="if(window.adoraConsent)window.adoraConsent.show()">🍪 Gérer mes cookies</button></div>
+<div class="afoot-legal">© 2026 ADORA · EI · SIRET 532 886 918 00020 · TVA non applicable, art. 293 B du CGI<br><a href="mentions-legales.html">Mentions légales</a> · <a href="politique-confidentialite.html">Confidentialité</a> · <a href="cgv.html">CGV</a> · <button type="button" class="adora-cmp-footer-link" onclick="if(window.adoraConsent)window.adoraConsent.show()">Gérer mes cookies</button></div>
 </footer>
+<!-- /ADORA FOOTER -->
 
 <script>
 // ═══════════════════════════════════════════════════════════
@@ -311,15 +347,20 @@ a{color:inherit;text-decoration:none}
     localStorage.removeItem("adora_email");
   } catch(e) {}
   
-  // Tracking GA4 — purchase event
-  if (typeof gtag === "function") {
+  // Tracking GA4 : purchase envoyé après consentement (événement de la CMP émis
+  // une fois GA4 configuré), une seule fois par session Stripe
+  var adoraPurchaseKey = "adora_purchase_" + (params.get("session_id") || "");
+  window.addEventListener("adora:consent:granted", function () {
+    try { if (params.get("session_id") && localStorage.getItem(adoraPurchaseKey)) return; } catch (e) {}
+    if (typeof gtag !== "function") return;
     gtag("event", "purchase", {
       transaction_id: params.get("session_id") || ("adora_" + Date.now()),
       value: 499,
       currency: "EUR",
       items: [{item_name: "Audit avant achat ADORA", price: 499, quantity: 1}]
     });
-  }
+    try { if (params.get("session_id")) localStorage.setItem(adoraPurchaseKey, "1"); } catch (e) {}
+  }, { once: true });
 })();
 </script>
 

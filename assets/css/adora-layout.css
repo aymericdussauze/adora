@@ -1,0 +1,97 @@
+/* ═══════════════════════════════════════════════════════════════════════
+   ADORA : menu de navigation, fil d'Ariane et pied de page communs
+   Chargé sur toutes les pages. Valeurs en dur (indépendant des :root
+   propres à chaque page). Date : 27/10/2026
+   ═══════════════════════════════════════════════════════════════════════ */
+
+/* ─── Menu ─────────────────────────────────────────────────────────── */
+.anav{position:sticky;top:0;z-index:100;background:rgba(13,16,37,.97);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.06);font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif}
+.anav *{box-sizing:border-box}
+.anav-inner{max-width:1120px;margin:0 auto;padding:10px 28px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.anav-logo{flex:none;display:inline-flex;align-items:center;min-height:44px}
+.anav-logo img{display:block;height:26px;width:auto;max-width:none}
+.anav-menu{display:flex;align-items:center;gap:20px}
+.anav-list{list-style:none;margin:0;padding:0;display:flex;align-items:center;gap:4px}
+.anav-item{position:relative;margin:0;padding:0}
+.anav-trigger{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:0 14px;border:none;border-radius:8px;background:transparent;color:rgba(237,233,254,.85);font-family:inherit;font-size:14px;font-weight:600;line-height:1;text-decoration:none;cursor:pointer;transition:background .2s,color .2s}
+.anav-trigger:hover,.anav-trigger:focus-visible{background:rgba(255,255,255,.08);color:#FFFFFF;text-decoration:none}
+.anav-trigger svg{flex:none;transition:transform .2s}
+.anav-drop{display:none}
+.anav-link{display:flex;flex-direction:column;gap:2px;padding:12px 14px;border-radius:10px;text-decoration:none}
+.anav-link .t{display:flex;align-items:center;gap:8px;font-size:14.5px;font-weight:700;color:#0D1025;line-height:1.3}
+.anav-link .d{font-size:13px;line-height:1.45;color:#64748B;font-weight:400}
+.anav-new{font-size:10.5px;font-weight:700;color:#0D1025;background:#22D3EE;padding:2px 8px;border-radius:100px;line-height:1.4}
+.anav-cta{flex:none;display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 20px;border-radius:8px;background:#22D3EE;color:#0D1025;font-size:13.5px;font-weight:700;text-decoration:none;box-shadow:0 2px 8px rgba(34,211,238,.25);transition:background .2s,transform .2s;white-space:nowrap}
+.anav-cta:hover{background:#06B6D4;color:#0D1025;text-decoration:none;transform:translateY(-1px)}
+.anav-burger{display:none}
+.anav a:focus-visible,.anav button:focus-visible{outline:2px solid #22D3EE;outline-offset:2px}
+
+/* Section active et page courante */
+.anav[data-section="part"] .anav-item[data-key="part"]>.anav-trigger,
+.anav[data-section="pro"] .anav-item[data-key="pro"]>.anav-trigger,
+.anav[data-section="adora"] .anav-item[data-key="adora"]>.anav-trigger,
+.anav[data-section="pub"] .anav-item[data-key="pub"]>.anav-trigger{color:#22D3EE;background:rgba(34,211,238,.1)}
+.anav-link[aria-current="page"]{background:rgba(34,211,238,.1)}
+
+@media (min-width:901px){
+  .anav-drop{position:absolute;top:100%;left:50%;transform:translateX(-50%);padding-top:10px;min-width:340px;z-index:2}
+  .anav-drop-card{background:#FFFFFF;border-radius:16px;padding:8px;display:flex;flex-direction:column;gap:2px;box-shadow:0 4px 12px rgba(13,16,37,.12),0 20px 48px rgba(13,16,37,.22)}
+  .anav-link:hover,.anav-link:focus-visible{background:#F1F5F9}
+  .anav-item:hover>.anav-drop,.anav-item.is-open>.anav-drop{display:block}
+  .anav-item:has(:focus-visible)>.anav-drop{display:block}
+  .anav-item.is-closed>.anav-drop{display:none!important}
+  .anav-item:hover>.anav-trigger svg,.anav-item.is-open>.anav-trigger svg{transform:rotate(180deg)}
+  .anav-item.is-closed>.anav-trigger svg{transform:none}
+}
+
+@media (max-width:900px){
+  .anav-inner{padding:10px 16px;flex-wrap:wrap;gap:0}
+  .anav-logo img{height:24px}
+  .anav-burger{display:flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid rgba(255,255,255,.16);border-radius:10px;background:transparent;cursor:pointer;padding:0;flex-direction:column;gap:4px}
+  .anav-burger span{display:block;width:18px;height:2px;border-radius:2px;background:#FFFFFF;transition:transform .2s,opacity .2s}
+  .anav.is-open .anav-burger span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+  .anav.is-open .anav-burger span:nth-child(2){opacity:0}
+  .anav.is-open .anav-burger span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+  .anav-menu{display:none;flex-basis:100%;flex-direction:column;align-items:stretch;gap:0;margin-top:10px;padding:4px 0 20px;border-top:1px solid rgba(255,255,255,.08);max-height:calc(100vh - 70px);overflow-y:auto}
+  .anav.is-open .anav-menu{display:flex}
+  .anav-list{flex-direction:column;align-items:stretch;gap:0}
+  .anav-item{border-bottom:1px solid rgba(255,255,255,.08)}
+  .anav-trigger{width:100%;justify-content:space-between;min-height:56px;padding:0 4px;border-radius:0;background:none;color:#FFFFFF;font-family:'Montserrat',sans-serif;font-size:16px;font-weight:700}
+  .anav-trigger:hover,.anav-trigger:focus-visible{background:none}
+  .anav-item.is-open>.anav-drop{display:block;padding:0 0 14px}
+  .anav-item.is-open>.anav-trigger svg{transform:rotate(180deg)}
+  .anav-drop-card{display:flex;flex-direction:column;gap:4px}
+  .anav-link{background:rgba(255,255,255,.04);padding:10px 12px}
+  .anav-link .t{color:#FFFFFF;font-weight:600;font-size:15px}
+  .anav-link .d{color:rgba(214,228,240,.75)}
+  .anav-link[aria-current="page"]{background:rgba(34,211,238,.16)}
+  .anav[data-section] .anav-item>.anav-trigger{background:none}
+  .anav-cta{width:100%;min-height:52px;margin-top:20px;font-size:15px;border-radius:10px}
+}
+@media (prefers-reduced-motion:reduce){.anav *{transition:none!important}}
+
+/* ─── Fil d'Ariane ─────────────────────────────────────────────────── */
+.abc{position:relative;margin:0 0 18px;font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:13px;line-height:1.5}
+.abc ol{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;align-items:center;gap:4px 0}
+.abc li{display:inline-flex;align-items:center;color:rgba(237,233,254,.72)}
+.abc li+li::before{content:'›';margin:0 8px;color:rgba(237,233,254,.5)}
+.abc a{color:rgba(237,233,254,.88);text-decoration:none}
+.abc a:hover{color:#22D3EE;text-decoration:underline}
+.abc [aria-current="page"]{color:rgba(237,233,254,.72)}
+
+/* ─── Pied de page ─────────────────────────────────────────────────── */
+.afoot{background:#0D1025;color:rgba(237,233,254,.7);padding:60px 24px 28px;margin:0;font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif}
+.afoot *{box-sizing:border-box}
+.afoot-inner{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr 1.2fr;gap:36px}
+.afoot-brand img{display:block;height:24px;width:auto;max-width:none;margin-bottom:12px}
+.afoot-brand p{margin:0;font-size:13px;line-height:1.6;color:rgba(237,233,254,.6)}
+.afoot-col{display:flex;flex-direction:column;gap:2px}
+.afoot-title{margin:0 0 8px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:rgba(237,233,254,.55)}
+.afoot-col a{display:inline-flex;align-items:center;min-height:32px;color:rgba(237,233,254,.78);text-decoration:none;font-size:13.5px;line-height:1.4;transition:color .2s}
+.afoot-col a:hover{color:#22D3EE}
+.afoot-legal{max-width:1120px;margin:32px auto 0;padding-top:20px;border-top:1px solid rgba(237,233,254,.1);font-size:12px;line-height:1.8;color:rgba(237,233,254,.55);text-align:center}
+.afoot-legal a{color:rgba(237,233,254,.75);text-decoration:none}
+.afoot-legal a:hover{color:#22D3EE}
+.afoot-legal .adora-cmp-footer-link{background:none;border:none;padding:0;color:rgba(237,233,254,.75);font:inherit;cursor:pointer;text-decoration:underline}
+@media (max-width:900px){.afoot-inner{grid-template-columns:1fr 1fr;gap:28px 20px}.afoot-brand{grid-column:1/-1}}
+@media (max-width:480px){.afoot-inner{grid-template-columns:1fr}}

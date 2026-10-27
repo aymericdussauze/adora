@@ -16,7 +16,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://adora-economie.fr/">
     <link rel="preconnect" href="https://browser.sentry-cdn.com" crossorigin>
-<link rel="stylesheet" href="/assets/fonts/adora-fonts.css">
+<link rel="stylesheet" href="assets/fonts/adora-fonts.css">
 <style>
 /* ═══════════════════════════════════════════════════
    ADORA — PropTech B2C Design System
@@ -677,6 +677,32 @@ img { max-width: 100%; height: auto; }
   .footer-contact a{word-break:break-all}
 }
 
+/* ADORA HOME CSS */
+.aud{padding:56px 0 8px}
+.aud-head{text-align:center;margin-bottom:28px}
+.aud-head p{font-size:12px;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:2px;margin-bottom:8px}
+.aud-head h2{font-size:clamp(24px,3.2vw,32px);font-weight:800;color:var(--navy);letter-spacing:-.01em}
+.aud-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.aud-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:32px;display:flex;flex-direction:column;gap:16px;box-shadow:var(--shadow-card)}
+.aud-card.pro{background:var(--navy);border-color:var(--navy);color:var(--white)}
+.aud-top{display:flex;align-items:center;gap:14px}
+.aud-ico{flex:none;width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;background:rgba(34,211,238,.14)}
+.aud-card.pro .aud-ico{background:rgba(34,211,238,.16)}
+.aud-card h3{font-size:22px;font-weight:800;color:var(--navy)}
+.aud-card.pro h3{color:var(--white)}
+.aud-sub{font-size:14.5px;color:var(--muted);margin-top:2px}
+.aud-card.pro .aud-sub{color:rgba(214,228,240,.8)}
+.aud-links{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:2px}
+.aud-links a{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:46px;padding:0 4px;border-bottom:1px solid var(--border);color:var(--navy);font-weight:600;font-size:15px;text-decoration:none}
+.aud-card.pro .aud-links a{color:var(--white);border-bottom-color:rgba(255,255,255,.1)}
+.aud-links a:hover{color:var(--blue)}
+.aud-card.pro .aud-links a:hover{color:var(--accent)}
+.aud-links a::after{content:'→';color:var(--blue)}
+.aud-card.pro .aud-links a::after{color:var(--accent)}
+.aud-new{font-size:10.5px;font-weight:700;color:var(--navy);background:var(--accent);padding:2px 8px;border-radius:100px;margin-left:8px}
+.aud-card .btn{align-self:flex-start;margin-top:auto;color:var(--navy)}
+@media(max-width:800px){.aud-grid{grid-template-columns:1fr}.aud-card{padding:26px 22px}}
+/* /ADORA HOME CSS */
 </style>
 
     <script defer src="https://browser.sentry-cdn.com/8.0.0/bundle.min.js" crossorigin="anonymous"></script>
@@ -727,9 +753,13 @@ img { max-width: 100%; height: auto; }
   ]
 }
 </script>
+<!-- ADORA LAYOUT -->
+<link rel="stylesheet" href="assets/css/adora-layout.css">
+<script src="assets/js/adora-layout.js" defer></script>
+<!-- /ADORA LAYOUT -->
 <!-- ADORA CMP -->
-  <link rel="stylesheet" href="/assets/css/adora-cmp.css">
-  <script src="/assets/js/adora-cmp.js"></script>
+  <link rel="stylesheet" href="assets/css/adora-cmp.css">
+  <script src="assets/js/adora-cmp.js"></script>
   <!-- /ADORA CMP -->
 </head>
 <body>
@@ -738,19 +768,45 @@ img { max-width: 100%; height: auto; }
 <div class="scroll-progress" id="scrollProgress"></div>
 
 <!-- ═══ NAV ═══ -->
-<nav class="nav">
-<div class="nav-inner">
-  <a href="./" class="nav-logo"><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5NDAgMjAwIiB3aWR0aD0iOTQwIiBoZWlnaHQ9IjIwMCI+CiAgPGcgZmlsbD0id2hpdGUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICA8IS0tIFRyaWFuZ2xlIGljb24gLS0+CiAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMCwgOCkgdHJhbnNsYXRlKC03NSwgLTk5KSI+CiAgICAgIDxwYXRoIGQ9Ik0gMTE3LDI4MiBMIDE2OSwyODEgTCAxNzQsMjc0IEwgMTc3LDI2OCBMIDIyOSwxOTMgTCAyMjksMTkxIEwgMjA2LDE1OCBMIDIwNywxNTUgTCAyMjksMTU2IEwgMjM0LDE2NSBMIDIzNywxNjggTCAyMzksMTczIEwgMjgxLDIzNSBMIDI4MiwyNDAgTCAyNDAsMjQwIEwgMjEzLDI4MCBMIDIxMywyODIgTCAzNjQsMjgyIEwgMzYxLDI3NiBMIDMwMCwxODcgTCAyOTksMTg0IEwgMjQyLDk5IEwgMjQwLDEwMCBMIDIwNywxNTAgTCAyMDEsMTU2IEwgMTQwLDI0OCBMIDEzNywyNTEgTCAxMzYsMjU0IEwgMTI0LDI3MCBaIi8+CiAgICA8L2c+CiAgICA8IS0tIFRleHQgIkFkb3JhIiAtLT4KICAgIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDMzMCwgMTIpIHNjYWxlKDEuOCkgdHJhbnNsYXRlKC03MSwgLTMyMCkiPgogICAgICA8cGF0aCBkPSJNIDEwMiwzMjYgTCA5MywzNTIgTCA5MSwzNTUgTCA4NywzNjkgTCA4NSwzNzIgTCA4MiwzODMgTCA4MCwzODYgTCA3OCwzOTUgTCA3MSw0MTMgTCA3MSw0MTYgTCA4OSw0MTUgTCA5NywzOTAgTCAxMjUsMzg5IEwgMTMwLDM5NCBMIDEzMSw0MDAgTCAxMzMsNDAzIEwgMTM3LDQxNiBMIDE1NSw0MTYgTCAxNTUsNDEyIEwgMTUzLDQwOSBMIDEyNCwzMjYgWiBNIDExNCwzNDQgTCAxMjMsMzcyIEwgMTIyLDM3NiBMIDEwMiwzNzUgTCAxMDIsMzcyIEwgMTA2LDM1OSBMIDEwOCwzNTYgTCAxMTAsMzQ3IFoiLz4KICAgICAgPHBhdGggZD0iTSAyMjUsMzIwIEwgMjA4LDMyMCBMIDIwNiwzNTIgTCAyMDIsMzQ4IEwgMTk0LDM0NSBMIDE4MCwzNDUgTCAxNjksMzQ5IEwgMTU5LDM2MCBMIDE1NSwzNzMgTCAxNTYsMzk1IEwgMTYyLDQwNyBMIDE3MCw0MTQgTCAxNzgsNDE3IEwgMTkzLDQxNyBMIDE5OSw0MTUgTCAyMDUsNDA4IEwgMjA4LDQwOCBMIDIwOCw0MTYgTCAyMjUsNDE2IFogTSAxODcsMzU3IEwgMTk0LDM1NyBMIDE5OSwzNTkgTCAyMDQsMzY0IEwgMjA3LDM3MSBMIDIwOCwzODUgTCAyMDYsMzk0IEwgMjA0LDM5OCBMIDE5OSw0MDMgTCAxOTUsNDA1IEwgMTg2LDQwNSBMIDE4Miw0MDMgTCAxNzYsMzk3IEwgMTczLDM4OSBMIDE3MywzNzIgTCAxNzYsMzY1IEwgMTgyLDM1OSBaIi8+CiAgICAgIDxwYXRoIGQ9Ik0gMjU1LDM0NiBMIDI0NCwzNTIgTCAyMzgsMzU5IEwgMjMzLDM3MSBMIDIzMywzODkgTCAyMzUsMzk3IEwgMjQwLDQwNiBMIDI0NSw0MTEgTCAyNTIsNDE1IEwgMjU5LDQxNyBMIDI3Nyw0MTcgTCAyODMsNDE1IEwgMjk1LDQwNiBMIDMwMSwzOTYgTCAzMDMsMzg4IEwgMzAzLDM3NCBMIDMwMSwzNjYgTCAyOTYsMzU3IEwgMjkwLDM1MSBMIDI4MywzNDcgTCAyNzcsMzQ1IFogTSAyNjQsMzU3IEwgMjcyLDM1NyBMIDI3NiwzNTkgTCAyODEsMzY0IEwgMjg1LDM3NSBMIDI4NSwzODcgTCAyODMsMzk1IEwgMjc2LDQwMyBMIDI3Miw0MDUgTCAyNjQsNDA1IEwgMjU5LDQwMyBMIDI1NCwzOTggTCAyNTAsMzg2IEwgMjUwLDM3NCBMIDI1MiwzNjggTCAyNTgsMzYwIFoiLz4KICAgICAgPHBhdGggZD0iTSAzNTAsMzQ1IEwgMzM4LDM0NiBMIDMyOCwzNTUgTCAzMjgsMzQ3IEwgMzExLDM0NyBMIDMxMSw0MTYgTCAzMjgsNDE1IEwgMzI4LDM3NCBMIDMzMCwzNjggTCAzMzYsMzYyIEwgMzQzLDM1OSBMIDM1MCwzNTkgWiIvPgogICAgICA8cGF0aCBkPSJNIDM2NCwzNDkgTCAzNTksMzUzIEwgMzU1LDM2MCBMIDM1NCwzNjQgTCAzNTUsMzY5IEwgMzcwLDM2OSBMIDM3MSwzNjMgTCAzNzUsMzU4IEwgMzc3LDM1NyBMIDM4NiwzNTcgTCAzOTIsMzYyIEwgMzkzLDM2NSBMIDM5MiwzNzQgTCAzNzIsMzc1IEwgMzYwLDM4MCBMIDM1NCwzODYgTCAzNTEsMzk0IEwgMzUxLDQwMiBMIDM1NCw0MDkgTCAzNTgsNDEzIEwgMzY2LDQxNyBMIDM4MSw0MTcgTCAzODYsNDE1IEwgMzkxLDQwOSBMIDM5NCw0MDkgTCAzOTUsNDE2IEwgNDExLDQxNiBMIDQxMCwzNjcgTCA0MDksMzYxIEwgNDA2LDM1NCBMIDQwMCwzNDggTCAzOTEsMzQ1IEwgMzczLDM0NSBaIE0gMzkzLDM4NSBMIDM5MiwzOTcgTCAzODYsNDA0IEwgMzg0LDQwNSBMIDM3NSw0MDUgTCAzNjksNDAwIEwgMzY5LDM5MiBMIDM3NSwzODYgTCAzODMsMzg0IFoiLz4KICAgIDwvZz4KICA8L2c+Cjwvc3ZnPgo=" alt="ADORA" style="height:26px;width:auto"></a>
-  <div class="nav-links" id="navLinks">
-    <a href="simulateur.html">Simulateur</a>
-    <a href="estimateur.html">Estimateur</a>
-    <a href="audit-avant-achat.html">Audit achat</a>
-    <a href="sur-mesure.html">Sur mesure</a>
-    <a href="estimateur-outil.html" class="nav-cta">Estimer mes travaux</a>
+<!-- ADORA NAV -->
+<nav class="anav" aria-label="Navigation principale">
+<div class="anav-inner">
+  <a href="./" class="anav-logo"><img src="assets/img/adora-logo-blanc.svg" alt="ADORA, accueil" width="122" height="26"></a>
+  <button type="button" class="anav-burger" aria-expanded="false" aria-controls="anav-menu" aria-label="Ouvrir le menu"><span></span><span></span><span></span></button>
+  <div class="anav-menu" id="anav-menu">
+    <ul class="anav-list">
+      <li class="anav-item" data-key="part">
+        <button type="button" class="anav-trigger" aria-expanded="false" aria-controls="anav-part">Particuliers<svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="anav-drop" id="anav-part"><div class="anav-drop-card">
+          <a href="estimateur.html" class="anav-link"><span class="t">Estimer mes travaux</span><span class="d">Estimation tous corps d&#x27;état en 3 minutes, gratuite</span></a>
+          <a href="simulateur.html" class="anav-link"><span class="t">Simulateur d&#x27;aides 2026</span><span class="d">Les aides à la rénovation en quelques clics</span></a>
+          <a href="audit-avant-achat.html" class="anav-link"><span class="t">Audit avant achat</span><span class="d">Le coût réel des travaux avant de signer</span></a>
+          <a href="sur-mesure.html" class="anav-link"><span class="t">Accompagnement sur mesure</span><span class="d">Assistance à maîtrise d&#x27;ouvrage, du projet à la réception</span></a>
+        </div></div>
+      </li>
+      <li class="anav-item" data-key="pro">
+        <button type="button" class="anav-trigger" aria-expanded="false" aria-controls="anav-pro">Professionnels<svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="anav-drop" id="anav-pro"><div class="anav-drop-card">
+          <a href="professionnels.html" class="anav-link"><span class="t">Offre professionnels</span><span class="d">Estimations, métrés, CCTP, DPGF, analyse des offres</span></a>
+          <a href="benchmark-honoraires.html" class="anav-link"><span class="t">Benchmark des honoraires <span class="anav-new">Nouveau</span></span><span class="d">4 398 marchés publics analysés</span></a>
+          <a href="partenaires.html#devenir-partenaire" class="anav-link"><span class="t">Devenir partenaire</span><span class="d">Architectes et professionnels du bâtiment</span></a>
+        </div></div>
+      </li>
+      <li class="anav-item" data-key="adora">
+        <button type="button" class="anav-trigger" aria-expanded="false" aria-controls="anav-adora">ADORA<svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="anav-drop" id="anav-adora"><div class="anav-drop-card">
+          <a href="a-propos.html" class="anav-link"><span class="t">À propos</span><span class="d">Parcours, méthode et références</span></a>
+          <a href="partenaires.html" class="anav-link"><span class="t">Partenaires</span><span class="d">Le réseau de professionnels qui m&#x27;entoure</span></a>
+          <a href="contact.html" class="anav-link"><span class="t">Contact</span><span class="d">Un échange découverte de 15 minutes</span></a>
+        </div></div>
+      </li>
+      <li class="anav-item" data-key="pub"><a href="blog.html" class="anav-trigger">Publications</a></li>
+    </ul>
+    <a href="estimateur-outil.html" class="anav-cta">Estimer mes travaux</a>
   </div>
-  <button class="nav-burger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">&#9776;</button>
 </div>
 </nav>
+<!-- /ADORA NAV -->
 
 <!-- ═══ HERO ═══ -->
 <section class="hero">
@@ -791,6 +847,41 @@ img { max-width: 100%; height: auto; }
 </div>
 </section>
 
+<!-- ADORA AUDIENCES -->
+<section class="aud" aria-labelledby="aud-title">
+<div class="container">
+  <div class="aud-head"><p>Par où commencer</p><h2 id="aud-title">Vous êtes…</h2></div>
+  <div class="aud-grid">
+    <div class="aud-card">
+      <div class="aud-top">
+        <span class="aud-ico"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0E7490" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg></span>
+        <div><h3>Particulier</h3><p class="aud-sub">Vous rénovez ou vous achetez un bien</p></div>
+      </div>
+      <ul class="aud-links">
+        <li><a href="estimateur.html">Estimer mes travaux</a></li>
+        <li><a href="simulateur.html">Calculer mes aides 2026</a></li>
+        <li><a href="audit-avant-achat.html">Faire auditer un bien avant achat</a></li>
+        <li><a href="sur-mesure.html">Être accompagné jusqu'au chantier</a></li>
+      </ul>
+      <a href="estimateur-outil.html" class="btn btn-accent" style="font-size:14px;padding:14px 26px">Estimer mes travaux</a>
+    </div>
+    <div class="aud-card pro">
+      <div class="aud-top">
+        <span class="aud-ico"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#22D3EE" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 13h18"/></svg></span>
+        <div><h3>Professionnel</h3><p class="aud-sub">Architecte, BET, maître d'ouvrage, entreprise</p></div>
+      </div>
+      <ul class="aud-links">
+        <li><a href="professionnels.html">Un économiste en renfort de votre équipe</a></li>
+        <li><a href="benchmark-honoraires.html">Benchmark des honoraires en marché public<span class="aud-new">Nouveau</span></a></li>
+        <li><a href="partenaires.html#devenir-partenaire">Devenir partenaire</a></li>
+        <li><a href="blog.html#professionnels">Articles pour les professionnels</a></li>
+      </ul>
+      <a href="professionnels.html" class="btn btn-accent" style="font-size:14px;padding:14px 26px">Voir l'offre professionnels</a>
+    </div>
+  </div>
+</div>
+</section>
+<!-- /ADORA AUDIENCES -->
 <!-- ═══ PROBLÈME / SOLUTION ═══ -->
 <section class="section">
 <div class="container">
@@ -879,21 +970,23 @@ img { max-width: 100%; height: auto; }
 </section>
 
 <!-- ═══ TEASER B2B ═══ -->
+<!-- ADORA TEASER -->
 <section style="padding:40px 0">
 <div class="container">
   <div class="teaser-b2b reveal">
     <div style="position:absolute;top:-40%;right:-10%;width:500px;height:500px;background:radial-gradient(circle,rgba(34,211,238,.1) 0%,transparent 65%);pointer-events:none"></div>
     <div style="position:relative">
-      <div style="font-size:12px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:2px;margin-bottom:10px">Professionnels</div>
-      <h3 style="font-size:22px;font-weight:800;margin-bottom:8px;color:var(--white)">Architectes, BET, maîtres d'ouvrage</h3>
-      <p style="font-size:14px;color:rgba(214,228,240,.75);max-width:440px;line-height:1.6">Économiste freelance en renfort de votre équipe. Métrés, CCTP, DPGF, OPC, AMO — tarifs transparents.</p>
+      <div style="font-size:12px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:2px;margin-bottom:10px">Nouveau · Professionnels</div>
+      <h3 style="font-size:22px;font-weight:800;margin-bottom:8px;color:var(--white)">Benchmark des honoraires en marché public</h3>
+      <p style="font-size:14px;color:rgba(214,228,240,.8);max-width:480px;line-height:1.6">4 398 marchés de maîtrise d'œuvre et d'ingénierie analysés en Île-de-France et en Normandie. Le juste prix de vos honoraires, typologie par typologie.</p>
     </div>
     <div style="position:relative">
-      <a href="professionnels.html" class="btn btn-accent" style="font-size:14px;padding:14px 28px;white-space:nowrap">Voir l'offre pro →</a>
+      <a href="benchmark-honoraires.html" class="btn btn-accent" style="font-size:14px;padding:14px 28px;white-space:nowrap;color:var(--navy)">Découvrir le benchmark</a>
     </div>
   </div>
 </div>
 </section>
+<!-- /ADORA TEASER -->
 
 <!-- ═══ QUI SUIS-JE ═══ -->
 <section class="section section-alt" id="apropos">
@@ -963,7 +1056,7 @@ img { max-width: 100%; height: auto; }
   <div class="faq-list reveal" style="max-width:720px;margin:0 auto">
     <div class="faq-item">
       <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Est-ce que l'estimation en ligne est fiable ?</div>
-      <div class="faq-a">L'estimation utilise les mêmes bases de données de prix que les professionnels (Batichiffrage, actualisée T1 2026) avec des coefficients régionaux par département. La fourchette gratuite donne un ordre de grandeur réaliste. Le rapport détaillé à 49 € affine avec un allotissement complet en 15 lots TCE — le même travail qu'un cabinet, livré sous 48h.</div>
+      <div class="faq-a">L'estimation utilise les mêmes bases de données de prix que les professionnels (Batichiffrage, actualisée T1 2026) avec des coefficients régionaux par département. La fourchette gratuite donne un ordre de grandeur réaliste. Le rapport détaillé à 49 € affine avec un allotissement complet en 15 lots TCE — le même travail qu'un cabinet, livré sous 15 minutes.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Quelle différence avec un devis d'artisan ?</div>
@@ -998,37 +1091,43 @@ img { max-width: 100%; height: auto; }
 </section>
 
 <!-- ═══ FOOTER ═══ -->
-<footer class="footer">
-<div class="footer-inner">
-  <div class="footer-brand">
-    <strong>ADORA</strong>
+<!-- ADORA FOOTER -->
+<footer class="afoot">
+<div class="afoot-inner">
+  <div class="afoot-brand">
+    <img src="assets/img/adora-logo-blanc.svg" alt="ADORA" width="113" height="24" loading="lazy">
     <p>Économiste de la construction<br>Normandie &amp; Île-de-France</p>
   </div>
-  <div class="footer-col">
-    <div class="footer-col-title">Outils</div>
-    <a href="simulateur.html">Simulateur aides</a>
-    <a href="estimateur.html">Estimateur travaux</a>
+  <div class="afoot-col">
+    <p class="afoot-title">Particuliers</p>
+    <a href="estimateur.html">Estimer mes travaux</a>
+    <a href="simulateur.html">Simulateur d'aides</a>
     <a href="audit-avant-achat.html">Audit avant achat</a>
-    <a href="sur-mesure.html">Sur mesure</a>
+    <a href="sur-mesure.html">Accompagnement sur mesure</a>
   </div>
-  <div class="footer-col">
-    <div class="footer-col-title">ADORA</div>
+  <div class="afoot-col">
+    <p class="afoot-title">Professionnels</p>
+    <a href="professionnels.html">Offre professionnels</a>
+    <a href="benchmark-honoraires.html">Benchmark des honoraires</a>
+    <a href="partenaires.html#devenir-partenaire">Devenir partenaire</a>
+  </div>
+  <div class="afoot-col">
+    <p class="afoot-title">ADORA</p>
     <a href="a-propos.html">À propos</a>
-    <a href="professionnels.html">Professionnels</a>
     <a href="partenaires.html">Partenaires</a>
-    <a href="blog.html">Blog</a>
+    <a href="blog.html">Publications</a>
     <a href="contact.html">Contact</a>
   </div>
-  <div class="footer-col footer-contact">
-    <div class="footer-col-title">Contact</div>
+  <div class="afoot-col">
+    <p class="afoot-title">Contact</p>
     <a href="tel:+33672010767">06 72 01 07 67</a>
     <a href="mailto:contact@adora-economie.fr">contact@adora-economie.fr</a>
-    <a href="https://adora-economie.fr">adora-economie.fr</a>
+    <a href="https://cal.com/aymeric-adora/decouverte" target="_blank" rel="noopener">Réserver un appel</a>
   </div>
 </div>
-<div class="footer-legal">© 2026 ADORA · EI · SIRET 532 886 918 00020 · TVA non applicable, art. 293B du CGI<br><a href="mentions-legales.html">Mentions légales</a> · <a href="politique-confidentialite.html">Confidentialité</a> · <a href="cgv.html">CGV</a></div>
-<div style="margin-top:12px;font-size:13px;opacity:0.8"><button type="button" class="adora-cmp-footer-link" onclick="if(window.adoraConsent)window.adoraConsent.show()">🍪 Gérer mes cookies</button></div>
+<div class="afoot-legal">© 2026 ADORA · EI · SIRET 532 886 918 00020 · TVA non applicable, art. 293 B du CGI<br><a href="mentions-legales.html">Mentions légales</a> · <a href="politique-confidentialite.html">Confidentialité</a> · <a href="cgv.html">CGV</a> · <button type="button" class="adora-cmp-footer-link" onclick="if(window.adoraConsent)window.adoraConsent.show()">Gérer mes cookies</button></div>
 </footer>
+<!-- /ADORA FOOTER -->
 
 <script>
 /* ═══ Scroll progress bar ═══ */
