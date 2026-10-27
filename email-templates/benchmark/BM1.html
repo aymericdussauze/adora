@@ -12,7 +12,7 @@
 <!--
   BENCHMARK : email BM1, confirmation de précommande (envoi immédiat)
   Template : ADORA Base v2. Envoyé par le Worker adora-stripe-qonto v5.
-  Variables : {{firstName}}, {{deliveryDate}}, {{invoiceLink}}
+  Variables : {{firstName}}, {{deliveryText}}, {{invoiceLink}}
   Bloc facture entre INVOICE et /INVOICE : retiré si aucun lien de facture.
   Objet : Votre précommande est confirmée · Benchmark ADORA
 -->
@@ -69,7 +69,7 @@ a { color: #0E7490; text-decoration: underline; }
 
 <!-- Preheader -->
 <div style="display:none;font-size:1px;color:#FAFAFC;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;mso-hide:all;font-family:sans-serif;">
-  Livraison le {{deliveryDate}} : ce qui vous attend
+  Livraison {{deliveryText}} : ce qui vous attend
 </div>
 <div style="display:none;font-size:1px;color:#FAFAFC;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;mso-hide:all;">
   &#847; &zwnj; &nbsp; &#8199; &shy; &#8199; &#847; &zwnj; &nbsp; &#8199; &shy; &#8199; &#847; &zwnj; &nbsp; &#8199; &shy;
@@ -114,7 +114,7 @@ a { color: #0E7490; text-decoration: underline; }
 
         <p style="margin:0 0 16px 0;">Bonjour {{firstName}},</p>
         <p style="margin:0 0 16px 0;">Merci pour votre précommande du <strong style="color:#0D1025;">Benchmark des honoraires en marché public</strong>, édition 2026, Île-de-France et Normandie.</p>
-        <p style="margin:0 0 8px 0;font-weight:700;color:#0D1025;">Ce que vous recevrez le {{deliveryDate}}, à cette adresse :</p>
+        <p style="margin:0 0 8px 0;font-weight:700;color:#0D1025;">Ce que vous recevrez {{deliveryText}}, à cette adresse :</p>
         <p style="margin:0 0 6px 0;">&bull;&nbsp; le <strong style="color:#0D1025;">rapport PDF de synthèse</strong> : fourchettes d'honoraires p10 à p90 par typologie d'opération, lecture par département, méthode ;</p>
         <p style="margin:0 0 18px 0;">&bull;&nbsp; le <strong style="color:#0D1025;">classeur Excel détaillé</strong> : typologies, départements, acheteurs et titulaires.</p>
 <!--INVOICE-->

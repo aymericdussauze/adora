@@ -50,7 +50,7 @@ Les templates contiennent des variables `{{xxx}}` qui doivent être substituées
 | `plaquettePDFLink` | E1 | URL plaquette ADORA |
 | `blogArticleLink` | E2 | URL article blog |
 | `calLink` | E4 | URL Cal.com café prescripteur |
-| `deliveryDate` | BM1 | Date de livraison du benchmark, en toutes lettres (ex. lundi 9 novembre 2026) |
+| `deliveryText` | BM1 | Délai de livraison du benchmark : « sous 30 jours », ou « le » + date si metadata.delivery_date est renseignée |
 | `invoiceLink` | BM1 | URL publique de la facture Qonto (bloc retiré par le Worker si absente) |
 
 ### Variable native Resend
