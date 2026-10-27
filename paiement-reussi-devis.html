@@ -447,7 +447,7 @@ img{max-width:100%;height:auto}
   'use strict';
   /* tallyFormId : identifiant du formulaire Tally de dépôt (ex. « wA1bC2 »), vide tant qu'il n'existe pas.
      Redirection Stripe attendue : paiement-reussi-devis.html?session_id={CHECKOUT_SESSION_ID} */
-  var CONFIG = { tallyFormId: '', price: 39 };
+  var CONFIG = { tallyFormId: 'kbbWgr', price: 39 };
   var params = new URLSearchParams(window.location.search);
   var sid = params.get('session_id') || '';
   if (!/^cs_[A-Za-z0-9_]+$/.test(sid)) { sid = ''; }
@@ -462,6 +462,8 @@ img{max-width:100%;height:auto}
     f.width = '100%';
     f.height = '620';
     document.getElementById('dv-tally').appendChild(f);
+    var intro = document.querySelector('.dv-form > p');
+    if (intro) { intro.hidden = true; }
     var s = document.createElement('script');
     s.src = 'https://tally.so/widgets/embed.js';
     s.async = true;
