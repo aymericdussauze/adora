@@ -22,7 +22,7 @@ MENU = [
     ]),
     ("pro", "Professionnels", [
         ("professionnels.html", "Offre professionnels", "Estimations, métrés, CCTP, DPGF, analyse des offres", False),
-        ("benchmark-honoraires.html", "Benchmark des honoraires", "4 398 marchés publics analysés", True),
+        ("benchmark-honoraires.html", "Benchmark des honoraires", "4 553 marchés publics analysés", True),
         ("partenaires.html#devenir-partenaire", "Devenir partenaire", "Architectes et professionnels du bâtiment", False),
     ]),
     ("adora", "ADORA", [
