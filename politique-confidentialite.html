@@ -328,6 +328,7 @@ img{max-width:100%;height:auto}
         <button type="button" class="anav-trigger" aria-expanded="false" aria-controls="anav-part">Particuliers<svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
         <div class="anav-drop" id="anav-part"><div class="anav-drop-card">
           <a href="estimateur.html" class="anav-link"><span class="t">Estimer mes travaux</span><span class="d">Estimation tous corps d&#x27;état en 3 minutes, gratuite</span></a>
+          <a href="analyse-devis.html" class="anav-link"><span class="t">Analyser un devis <span class="anav-new">Nouveau</span></span><span class="d">L&#x27;avis d&#x27;un économiste avant de signer, 39 €</span></a>
           <a href="simulateur.html" class="anav-link"><span class="t">Simulateur d&#x27;aides 2026</span><span class="d">Les aides à la rénovation en quelques clics</span></a>
           <a href="audit-avant-achat.html" class="anav-link"><span class="t">Audit avant achat</span><span class="d">Le coût réel des travaux avant de signer</span></a>
           <a href="sur-mesure.html" class="anav-link"><span class="t">Accompagnement sur mesure</span><span class="d">Assistance à maîtrise d&#x27;ouvrage, du projet à la réception</span></a>
@@ -389,6 +390,13 @@ img{max-width:100%;height:auto}
   <li>Données de paiement : traitées exclusivement par <strong>Stripe</strong> (je n'ai pas accès à vos numéros de carte)</li>
 </ul>
 
+<h3>Analyse de devis (39 €)</h3>
+<ul>
+  <li>Nom, prénom, adresse email, adresse de facturation</li>
+  <li>Devis transmis et informations sur le projet : commune des travaux, description, questions</li>
+  <li>Données de paiement : traitées exclusivement par <strong>Stripe</strong> (je n'ai pas accès à vos numéros de carte)</li>
+</ul>
+
 <h3>Audit avant achat (499 €)</h3>
 <ul>
   <li>Nom, prénom, email, téléphone</li>
@@ -412,17 +420,19 @@ img{max-width:100%;height:auto}
   <li><strong>Exécution d'un service :</strong> générer votre rapport, traiter votre demande, vous recontacter</li>
   <li><strong>Consentement :</strong> vous envoyer des informations sur les aides ou les services ADORA (uniquement si vous avez coché la case de consentement)</li>
   <li><strong>Intérêt légitime :</strong> améliorer les outils et les services proposés sur le site</li>
+  <li><strong>Consentement (analyse de devis) :</strong> réutiliser, de façon anonymisée, les prix de votre devis pour enrichir mes références de prix, uniquement si vous l'avez accepté dans le formulaire de dépôt</li>
 </ul>
 
 <h2>Base légale</h2>
 <ul>
   <li><strong>Article 6.1.a du RGPD</strong> — Consentement : pour l'envoi de communications et la collecte via formulaires</li>
-  <li><strong>Article 6.1.b du RGPD</strong> — Exécution contractuelle : pour les prestations payantes (estimateur 49 €, audit 499 €, benchmark des honoraires, AMO)</li>
+  <li><strong>Article 6.1.b du RGPD</strong> — Exécution contractuelle : pour les prestations payantes (estimateur 49 €, analyse de devis 39 €, audit 499 €, benchmark des honoraires, AMO)</li>
 </ul>
 
 <h2>Destinataires des données</h2>
 <ul>
   <li><strong>Formspree</strong> (formspree.io) : hébergement et transmission des formulaires</li>
+  <li><strong>Tally</strong> (tally.so) : formulaire de dépôt des devis pour l'analyse de devis</li>
   <li><strong>Stripe</strong> (stripe.com) : traitement des paiements en ligne</li>
   <li><strong>Qonto</strong> (qonto.com) : émission et envoi des factures</li>
   <li><strong>Google</strong> (Google Drive) : mise à disposition des rapports livrés par lien de téléchargement</li>
@@ -437,6 +447,7 @@ img{max-width:100%;height:auto}
 <ul>
   <li><strong>Données de simulation :</strong> 12 mois à compter de la soumission</li>
   <li><strong>Données clients (prestations payantes) :</strong> durée de la relation contractuelle + 3 ans (obligations légales)</li>
+  <li><strong>Devis transmis pour analyse :</strong> 12 mois après la livraison de l'avis, sauf demande de suppression anticipée ; seuls les prix anonymisés peuvent être conservés au-delà, avec votre accord</li>
   <li><strong>Données de facturation :</strong> 10 ans (obligations comptables)</li>
 </ul>
 
@@ -477,6 +488,7 @@ img{max-width:100%;height:auto}
   <div class="afoot-col">
     <p class="afoot-title">Particuliers</p>
     <a href="estimateur.html">Estimer mes travaux</a>
+    <a href="analyse-devis.html">Analyse de devis</a>
     <a href="simulateur.html">Simulateur d'aides</a>
     <a href="audit-avant-achat.html">Audit avant achat</a>
     <a href="sur-mesure.html">Accompagnement sur mesure</a>

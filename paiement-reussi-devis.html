@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paiement confirmé | Analyse de devis | ADORA</title>
+<meta name="description" content="Paiement confirmé : déposez votre devis pour lancer l'analyse.">
+<link rel="canonical" href="https://adora-economie.fr/paiement-reussi-devis.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://adora-economie.fr/paiement-reussi-devis.html">
+<meta property="og:title" content="Paiement confirmé | Analyse de devis | ADORA">
+<meta property="og:description" content="Paiement confirmé : déposez votre devis pour lancer l'analyse.">
+<meta property="og:image" content="https://adora-economie.fr/og-default.jpg">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="ADORA">
+<meta name="twitter:card" content="summary_large_image">
+    <link rel="preconnect" href="https://browser.sentry-cdn.com" crossorigin>
+<link rel="stylesheet" href="assets/fonts/adora-fonts.css">
+<!-- ADORA HOME CSS -->
+<style>
+/* ═══ ACCUEIL (refonte 2026-10) ═══ */
+:root{--navy:#0D1025;--blue:#0E7490;--accent:#22D3EE;--accent-hover:#06B6D4;--txt:#1E1B4B;--muted:#64748B;--border:#E5E7F2;--pale:#FAFAFC}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;color:var(--txt);background:#fff;line-height:1.7;font-size:16px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,h4{font-family:'Montserrat',sans-serif;line-height:1.2}
+a{color:var(--blue);text-decoration:none}
+img{max-width:100%;height:auto}
+.container{max-width:1120px;margin:0 auto;padding:0 28px}
+
+.hm{--ink:#0D1025;--cyan:#22D3EE;--iris:#A78BFA;--teal:#0E7490;--paper:#FAFAFC;--rule:#E5E7F2;--text:#1E1B4B;--mut:#64748B}
+.hm a:focus-visible,.hm summary:focus-visible{outline:3px solid var(--cyan);outline-offset:3px;border-radius:6px}
+.hm-sr{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+/* Boutons */
+.hm-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 22px;border-radius:10px;font-family:'Montserrat',sans-serif;font-weight:800;font-size:15px;line-height:1.2;text-decoration:none;white-space:nowrap;transition:background .2s,border-color .2s,color .2s}
+.hm-btn small{font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:13px;opacity:.75}
+.hm-btn-main{background:var(--cyan);color:var(--ink)!important}
+.hm-btn-main:hover{background:#06B6D4}
+.hm-btn-line{border:1.5px solid rgba(255,255,255,.32);color:#fff!important}
+.hm-btn-line:hover{border-color:var(--cyan);background:rgba(34,211,238,.08)}
+.hm-btn-dark{border:1.5px solid var(--rule);color:var(--ink)!important;background:#fff}
+.hm-btn-dark:hover{border-color:var(--ink)}
+
+/* Cote (ligne de dimension) */
+.hm-measure{display:inline-flex;flex-direction:column;align-self:flex-start;max-width:100%}
+.hm-fig{font-family:'Montserrat',sans-serif;font-weight:900;line-height:1;letter-spacing:-.02em;font-variant-numeric:tabular-nums;white-space:nowrap;color:currentColor}
+.hm-dim{position:relative;display:block;height:11px;margin:10px 0 9px;border-left:1.5px solid currentColor;border-right:1.5px solid currentColor;opacity:.75}
+.hm-dim::before{content:'';position:absolute;left:0;right:0;top:5px;border-top:1px solid currentColor}
+
+/* Hero */
+.hm-hero{background-color:var(--ink);background-image:radial-gradient(circle at 88% 0%,rgba(14,116,144,.28) 0%,rgba(13,16,37,0) 55%),radial-gradient(circle at 0% 100%,rgba(34,211,238,.08) 0%,rgba(13,16,37,0) 50%);color:#fff;padding:72px 0 0}
+.hm-hero-grid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:48px;align-items:center;padding-bottom:64px}
+.hm-eyebrow{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.02em;color:var(--cyan);margin-bottom:18px}
+.hm-hero h1{font-weight:900;font-size:clamp(36px,5vw,60px);line-height:1.04;letter-spacing:-.03em;color:#fff;margin:0 0 22px;max-width:14ch}
+.hm-hero h1 em{font-style:normal;color:var(--cyan)}
+.hm-lead{font-size:18px;line-height:1.65;color:rgba(214,228,240,.86);max-width:48ch;margin:0 0 32px}
+.hm-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:22px}
+.hm-trust{display:flex;flex-wrap:wrap;gap:8px 20px;list-style:none;font-size:14px;color:rgba(214,228,240,.78)}
+.hm-trust li{position:relative;padding-left:16px}
+.hm-trust li::before{content:'';position:absolute;left:0;top:11px;width:8px;height:1.5px;background:var(--cyan)}
+
+.hm-proof{position:relative;padding:30px 30px 26px;border-radius:18px;background:#151A38;border:1px solid rgba(255,255,255,.1);box-shadow:0 24px 60px rgba(0,0,0,.35)}
+.hm-proof-tag{font-size:12.5px;font-weight:700;color:rgba(214,228,240,.7);margin-bottom:16px}
+.hm-proof .hm-measure{color:var(--cyan)}
+.hm-proof .hm-fig{font-size:clamp(56px,6vw,76px)}
+.hm-proof-cap{font-size:15px;line-height:1.55;color:rgba(237,233,254,.86);max-width:30ch;margin:0}
+.hm-who{display:flex;align-items:center;gap:14px;margin-top:24px;padding-top:20px;border-top:1px solid rgba(255,255,255,.12)}
+.hm-who img{width:52px;height:52px;border-radius:50%;object-fit:cover;flex-shrink:0;filter:grayscale(1)}
+.hm-who strong{display:block;font-family:'Montserrat',sans-serif;font-size:15px;font-weight:800;color:#fff;line-height:1.3}
+.hm-who span{display:block;font-size:13px;line-height:1.45;color:rgba(214,228,240,.72)}
+
+.hm-prolink{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 0;border-top:1px solid rgba(255,255,255,.1);color:rgba(214,228,240,.86)!important;font-size:15px;text-decoration:none}
+.hm-prolink strong{color:#fff;font-weight:700}
+.hm-prolink b{font-family:'Montserrat',sans-serif;font-weight:800;color:var(--iris);white-space:nowrap}
+.hm-prolink:hover b{text-decoration:underline;text-underline-offset:4px}
+
+/* Sections */
+.hm-sec{padding:96px 0 88px}
+.hm-sec.is-paper{background:var(--paper);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.hm-head{max-width:660px;margin-bottom:44px}
+.hm-kicker{display:block;font-size:13px;font-weight:700;color:var(--teal);margin-bottom:10px}
+.hm-head h2,.hm-about h2,.hm-cta h2{font-weight:900;font-size:clamp(28px,3.4vw,40px);letter-spacing:-.02em;color:var(--ink);margin:0 0 12px}
+.hm-head p{font-size:17px;line-height:1.7;color:var(--mut);margin:0}
+
+/* Parcours particuliers */
+.hm-steps{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;list-style:none}
+.hm-steps::before{content:'';position:absolute;left:16px;right:16px;top:16px;border-top:1.5px dashed #C9CEE3;z-index:0}
+.hm-step{position:relative;display:flex;flex-direction:column;z-index:1}
+.hm-num{display:flex;align-items:center;justify-content:center;width:33px;height:33px;border-radius:50%;background:#fff;border:1.5px solid var(--ink);font-family:'Montserrat',sans-serif;font-weight:900;font-size:14px;color:var(--ink);margin-bottom:16px}
+.hm-step.is-new .hm-num{background:var(--cyan);border-color:var(--cyan)}
+.hm-card{display:flex;flex-direction:column;flex:1;padding:24px 22px 22px;background:#fff;border:1px solid var(--rule);border-radius:16px;color:var(--text);text-decoration:none;transition:border-color .2s,box-shadow .2s}
+.hm-card:hover{border-color:var(--ink);box-shadow:0 10px 30px rgba(13,16,37,.07);color:var(--text)}
+.hm-step.is-new .hm-card{border:1.5px solid var(--cyan);box-shadow:0 10px 30px rgba(34,211,238,.14)}
+.hm-stage{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:13px;font-weight:700;color:var(--teal);margin-bottom:8px}
+.hm-new{font-size:11.5px;font-weight:700;line-height:1;padding:6px 9px;border-radius:999px;background:var(--ink);color:var(--cyan)}
+.hm-card h3{font-size:19px;font-weight:900;letter-spacing:-.01em;color:var(--ink);margin:0 0 10px}
+.hm-card p{font-size:14.5px;line-height:1.6;color:var(--mut);margin:0 0 20px}
+.hm-price{margin-top:auto;padding-top:16px;border-top:1px solid var(--rule)}
+.hm-price strong{display:block;font-family:'Montserrat',sans-serif;font-size:26px;font-weight:900;line-height:1.1;color:var(--ink);white-space:nowrap}
+.hm-price span{display:block;font-size:13px;line-height:1.45;color:var(--mut);margin-top:4px;min-height:38px}
+.hm-go{display:inline-block;margin-top:16px;font-family:'Montserrat',sans-serif;font-weight:800;font-size:14.5px;color:var(--teal)}
+.hm-card:hover .hm-go{text-decoration:underline;text-underline-offset:4px}
+.hm-aides{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-top:28px;padding:18px 24px;border-radius:14px;background:var(--paper);border:1px solid var(--rule);color:var(--text)!important;text-decoration:none;font-size:15px}
+.hm-aides strong{color:var(--ink)}
+.hm-aides b{font-family:'Montserrat',sans-serif;font-weight:800;color:var(--teal);white-space:nowrap}
+.hm-aides:hover b{text-decoration:underline;text-underline-offset:4px}
+
+/* Qui vous répond */
+.hm-about{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:64px;align-items:center}
+.hm-id{padding:34px 30px 30px;border-radius:18px;background-color:var(--ink);background-image:radial-gradient(circle at 100% 0%,rgba(14,116,144,.4) 0%,rgba(13,16,37,0) 60%);color:#fff;text-align:center}
+.hm-id img{width:132px;height:132px;border-radius:50%;object-fit:cover;filter:grayscale(1);border:3px solid rgba(255,255,255,.14);margin:0 auto 18px;display:block}
+.hm-id strong{display:block;font-family:'Montserrat',sans-serif;font-size:21px;font-weight:900;margin-bottom:4px}
+.hm-id > span{display:block;font-size:14px;line-height:1.5;color:rgba(214,228,240,.78)}
+.hm-id dl{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px;padding-top:20px;border-top:1px solid rgba(255,255,255,.12);text-align:left}
+.hm-id dt{font-family:'Montserrat',sans-serif;font-size:24px;font-weight:900;color:var(--cyan);line-height:1.1;white-space:nowrap}
+.hm-id dd{margin:4px 0 0;font-size:13px;line-height:1.4;color:rgba(214,228,240,.75)}
+.hm-about p{font-size:16.5px;line-height:1.75;color:var(--text);margin:0 0 22px;max-width:58ch}
+.hm-checks{list-style:none;display:grid;gap:12px;margin:0 0 26px}
+.hm-checks li{position:relative;padding-left:30px;font-size:15.5px;line-height:1.55;color:var(--text)}
+.hm-checks li::before{content:'';position:absolute;left:0;top:4px;width:18px;height:18px;border-radius:50%;background:rgba(34,211,238,.18)}
+.hm-checks li::after{content:'';position:absolute;left:6px;top:8px;width:5px;height:9px;border:solid var(--teal);border-width:0 2px 2px 0;transform:rotate(45deg)}
+.hm-checks strong{color:var(--ink)}
+.hm-more{font-family:'Montserrat',sans-serif;font-weight:800;font-size:15px;color:var(--teal)}
+.hm-more:hover{text-decoration:underline;text-underline-offset:4px}
+
+/* Professionnels */
+.hm-pro{padding:88px 0;background-color:var(--ink);background-image:radial-gradient(circle at 88% 0%,rgba(14,116,144,.28) 0%,rgba(13,16,37,0) 55%),radial-gradient(circle at 0% 100%,rgba(34,211,238,.08) 0%,rgba(13,16,37,0) 50%);color:#fff}
+.hm-pro .hm-kicker{color:var(--iris)}
+.hm-pro .hm-head h2{color:#fff}
+.hm-pro .hm-head p{color:rgba(214,228,240,.8)}
+.hm-pro-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px}
+.hm-tile{display:flex;flex-direction:column;padding:30px 30px 26px;border-radius:16px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);color:#fff;text-decoration:none;transition:border-color .2s,background .2s}
+.hm-tile:hover{border-color:var(--iris);background:rgba(167,139,250,.06);color:#fff}
+.hm-tile h3{font-size:22px;font-weight:900;color:#fff;margin:0 0 10px}
+.hm-tile p{font-size:15px;line-height:1.65;color:rgba(214,228,240,.82);margin:0 0 22px;max-width:46ch}
+.hm-tile .hm-measure{color:var(--iris);margin-bottom:0}
+.hm-tile .hm-fig{font-size:44px}
+.hm-tile .hm-cap{display:block;font-size:13px;font-weight:600;color:rgba(237,233,254,.75);margin-bottom:16px}
+.hm-tile-go{margin-top:auto;font-family:'Montserrat',sans-serif;font-weight:800;font-size:15px;color:var(--iris)}
+.hm-tile:hover .hm-tile-go{text-decoration:underline;text-underline-offset:4px}
+.hm-tags{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0 0 22px}
+.hm-tags li{font-size:13px;font-weight:700;padding:6px 11px;border-radius:999px;background:rgba(167,139,250,.14);color:#DDD3FF}
+.hm-partner{margin-top:22px;font-size:15px;color:rgba(214,228,240,.78)}
+.hm-partner a{color:#fff;font-weight:700;text-decoration:underline;text-underline-offset:3px}
+
+/* FAQ */
+.hm-faq{max-width:780px}
+.hm-faq details{border-bottom:1px solid var(--rule)}
+.hm-faq details:first-of-type{border-top:1px solid var(--rule)}
+.hm-faq summary{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:20px 2px;cursor:pointer;list-style:none;font-family:'Montserrat',sans-serif;font-weight:800;font-size:17px;color:var(--ink)}
+.hm-faq summary::-webkit-details-marker{display:none}
+.hm-faq summary::after{content:'+';flex-shrink:0;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--paper);border:1px solid var(--rule);font-size:18px;font-weight:600;color:var(--teal);transition:transform .2s}
+.hm-faq details[open] summary::after{content:'\2212'}
+.hm-faq p{padding:0 2px 22px;font-size:15.5px;line-height:1.75;color:var(--mut);max-width:68ch}
+.hm-faq p a{font-weight:600}
+
+/* Appel final */
+.hm-final{padding:0 0 96px}
+.hm-cta{display:grid;grid-template-columns:minmax(0,1.2fr) auto;gap:40px;align-items:center;padding:44px 48px;border-radius:20px;background:linear-gradient(0deg,rgba(34,211,238,.08),rgba(34,211,238,.08)),#fff;border:1px solid rgba(34,211,238,.5)}
+.hm-cta p{font-size:16.5px;line-height:1.65;color:var(--text);margin:0}
+.hm-cta p a{font-weight:700}
+.hm-cta-btns{display:flex;flex-direction:column;gap:10px}
+
+@media (max-width:1020px){
+  .hm-hero-grid{grid-template-columns:1fr;gap:44px}
+  .hm-proof{max-width:520px}
+  .hm-steps{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:28px}
+  .hm-steps::before{display:none}
+  .hm-about{grid-template-columns:1fr;gap:40px}
+  .hm-id{max-width:440px}
+  .hm-cta{grid-template-columns:1fr;gap:26px}
+  .hm-cta-btns{flex-direction:row;flex-wrap:wrap}
+}
+@media (max-width:640px){
+  .container{padding:0 20px}
+  .hm-hero{padding-top:48px}
+  .hm-hero-grid{padding-bottom:44px}
+  .hm-lead{font-size:16.5px}
+  .hm-ctas{flex-direction:column}
+  .hm-ctas .hm-btn{width:100%}
+  .hm-proof{padding:24px 22px 22px}
+  .hm-prolink{flex-direction:column;align-items:flex-start;gap:6px}
+  .hm-sec{padding:64px 0 60px}
+  .hm-head{margin-bottom:32px}
+  .hm-steps{grid-template-columns:1fr;row-gap:22px}
+  .hm-step{display:grid;grid-template-columns:33px minmax(0,1fr);column-gap:14px;align-items:start}
+  .hm-num{margin:4px 0 0}
+  .hm-price span{min-height:0}
+  .hm-aides{flex-direction:column;align-items:flex-start;gap:6px}
+  .hm-pro{padding:64px 0}
+  .hm-pro-grid{grid-template-columns:1fr}
+  .hm-tile{padding:24px 22px 22px}
+  .hm-faq summary{font-size:16px}
+  .hm-final{padding-bottom:64px}
+  .hm-cta{padding:30px 22px}
+  .hm-cta-btns{flex-direction:column}
+  .hm-cta-btns .hm-btn{width:100%}
+}
+@media (prefers-reduced-motion:reduce){.hm *{transition:none!important}html{scroll-behavior:auto}}
+/* ═══ ANALYSE DE DEVIS (2026-10) ═══ */
+[id]{scroll-margin-top:84px}
+
+/* Extrait d'analyse (hero) */
+.dv-sample{padding:26px 24px 20px;border-radius:18px;background:#fff;color:var(--text);box-shadow:0 24px 60px rgba(0,0,0,.35)}
+.dv-sample-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding-bottom:14px;margin-bottom:6px;border-bottom:1px solid var(--rule)}
+.dv-sample-head strong{font-family:'Montserrat',sans-serif;font-size:16px;font-weight:900;color:var(--ink)}
+.dv-sample-head span{font-size:12.5px;font-weight:600;color:var(--mut);white-space:nowrap}
+.dv-rows{list-style:none}
+.dv-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 12px;padding:12px 0;border-bottom:1px solid var(--rule)}
+.dv-row:last-child{border-bottom:0}
+.dv-row b{font-size:14px;font-weight:700;color:var(--ink);line-height:1.4}
+.dv-row small{grid-column:1;font-size:12.5px;line-height:1.45;color:var(--mut)}
+.dv-flag{grid-column:2;grid-row:1/span 2;align-self:center;font-size:12px;font-weight:800;line-height:1;padding:7px 10px;border-radius:999px;white-space:nowrap}
+.dv-flag.ok{background:rgba(5,150,105,.12);color:#047857}
+.dv-flag.up{background:rgba(245,158,11,.18);color:#92400E}
+.dv-flag.ask{background:rgba(167,139,250,.2);color:#5B3FC4}
+.dv-sample-foot{margin-top:12px;padding:12px 14px;border-radius:10px;background:var(--paper);font-size:13px;line-height:1.5;color:var(--text)}
+.dv-sample-foot strong{color:var(--ink)}
+.dv-note{margin-top:10px;font-size:12px;color:rgba(214,228,240,.7);text-align:right}
+
+/* Ce que je vérifie / ce que vous recevez */
+.dv-split{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:48px;align-items:start}
+.dv-checks{display:grid;grid-template-columns:1fr 1fr;gap:16px;list-style:none}
+.dv-checks li{padding:20px 20px 18px;border:1px solid var(--rule);border-radius:14px;background:#fff}
+.dv-checks h3{font-size:16.5px;font-weight:900;color:var(--ink);margin:0 0 6px}
+.dv-checks p{font-size:14.5px;line-height:1.6;color:var(--mut);margin:0}
+.dv-get{padding:30px 28px 28px;border-radius:18px;background-color:var(--ink);background-image:radial-gradient(circle at 100% 0%,rgba(14,116,144,.4) 0%,rgba(13,16,37,0) 60%);color:#fff;position:sticky;top:96px}
+.dv-get .hm-kicker{color:var(--cyan)}
+.dv-get h3{font-size:22px;font-weight:900;color:#fff;margin:0 0 18px}
+.dv-get ol{list-style:none;display:grid;gap:14px;margin:0 0 22px;counter-reset:dv}
+.dv-get li{position:relative;padding-left:40px;font-size:15px;line-height:1.55;color:rgba(237,233,254,.88);counter-increment:dv}
+.dv-get li::before{content:counter(dv);position:absolute;left:0;top:0;width:27px;height:27px;border-radius:50%;border:1.5px solid var(--cyan);display:flex;align-items:center;justify-content:center;font-family:'Montserrat',sans-serif;font-weight:900;font-size:13px;color:var(--cyan)}
+.dv-get li strong{color:#fff}
+.dv-get-foot{padding-top:18px;border-top:1px solid rgba(255,255,255,.12);font-size:13.5px;line-height:1.55;color:rgba(214,228,240,.78)}
+
+/* Offre */
+.dv-offer{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;align-items:stretch}
+.dv-price{display:flex;flex-direction:column;padding:34px 32px 30px;border-radius:20px;background:#fff;border:1.5px solid var(--cyan);box-shadow:0 18px 50px rgba(34,211,238,.16)}
+.dv-price-tag{align-self:flex-start;font-size:12.5px;font-weight:800;padding:6px 11px;border-radius:999px;background:var(--ink);color:var(--cyan);margin-bottom:16px}
+.dv-price h3{font-size:22px;font-weight:900;color:var(--ink);margin:0 0 14px}
+.dv-amount{display:flex;align-items:baseline;gap:12px;margin-bottom:6px}
+.dv-amount strong{font-family:'Montserrat',sans-serif;font-size:54px;font-weight:900;line-height:1;color:var(--ink)}
+.dv-amount span{font-size:14px;color:var(--mut)}
+.dv-vat{font-size:12.5px;color:var(--mut);margin:0 0 20px}
+.dv-incl{list-style:none;display:grid;gap:10px;margin:0 0 26px}
+.dv-incl li{position:relative;padding-left:28px;font-size:15px;line-height:1.5;color:var(--text)}
+.dv-incl li::before{content:'';position:absolute;left:0;top:3px;width:18px;height:18px;border-radius:50%;background:rgba(34,211,238,.18)}
+.dv-incl li::after{content:'';position:absolute;left:6px;top:7px;width:5px;height:9px;border:solid var(--teal);border-width:0 2px 2px 0;transform:rotate(45deg)}
+.dv-buy{width:100%;margin-top:auto}
+.dv-buy-note{margin:12px 0 0;font-size:13px;line-height:1.5;color:var(--mut);text-align:center}
+.dv-status{margin:10px 0 0;font-size:14px;line-height:1.55;color:var(--text)}
+.dv-status:empty{display:none}
+.dv-fit{display:grid;gap:16px}
+.dv-fit > div{padding:26px 26px 22px;border-radius:16px;border:1px solid var(--rule);background:#fff}
+.dv-fit h3{font-size:17px;font-weight:900;color:var(--ink);margin:0 0 12px}
+.dv-fit ul{list-style:none;display:grid;gap:8px}
+.dv-fit li{position:relative;padding-left:20px;font-size:14.5px;line-height:1.55;color:var(--text)}
+.dv-fit li::before{content:'';position:absolute;left:0;top:11px;width:9px;height:1.5px;background:var(--teal)}
+.dv-fit .is-no li::before{background:#B42318}
+.dv-fit .is-no{background:var(--paper)}
+.dv-fit p{margin:12px 0 0;font-size:14px;line-height:1.55;color:var(--mut)}
+.dv-fit p a{font-weight:700}
+.dv-guarantee{margin-top:24px;padding:18px 22px;border-radius:14px;background:rgba(5,150,105,.07);border:1px solid rgba(5,150,105,.22);font-size:15px;line-height:1.6;color:var(--text)}
+.dv-guarantee strong{color:#047857}
+
+/* Page de confirmation */
+.dv-ok-hero{padding-bottom:56px}
+.dv-ok-badge{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(34,211,238,.14);border:1.5px solid var(--cyan);margin-bottom:22px}
+.dv-ok-hero h1{max-width:20ch}
+.dv-ok-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,.65fr);gap:32px;align-items:start}
+.dv-form{padding:30px 30px 18px;border-radius:18px;border:1.5px solid var(--cyan);background:#fff;box-shadow:0 18px 50px rgba(34,211,238,.12)}
+.dv-form h2{font-size:24px;font-weight:900;color:var(--ink);margin:0 0 8px}
+.dv-form > p{font-size:15px;line-height:1.6;color:var(--mut);margin:0 0 18px}
+.dv-form iframe{display:block;width:100%;min-height:520px;border:0}
+.dv-mail{padding:22px 22px 20px;border-radius:14px;background:var(--paper);border:1px solid var(--rule);font-size:15px;line-height:1.65;color:var(--text)}
+.dv-mail p{margin:0 0 10px}
+.dv-mail ul{margin:0 0 12px 18px}
+.dv-mail .hm-btn{margin-top:4px}
+.dv-side{display:grid;gap:16px}
+.dv-side .dv-get{position:static}
+.dv-side-box{padding:22px 22px 20px;border-radius:14px;border:1px solid var(--rule);font-size:14.5px;line-height:1.6;color:var(--text)}
+.dv-side-box h3{font-size:16px;font-weight:900;color:var(--ink);margin:0 0 6px}
+.dv-side-box p{margin:0}
+
+@media (max-width:1020px){
+  .dv-split,.dv-offer,.dv-ok-grid{grid-template-columns:1fr}
+  .dv-get{position:static}
+}
+@media (max-width:640px){
+  .dv-sample{padding:20px 18px 16px}
+  .dv-checks{grid-template-columns:1fr}
+  .dv-price{padding:26px 22px 24px}
+  .dv-amount strong{font-size:46px}
+  .dv-fit > div{padding:22px 20px 18px}
+  .dv-form{padding:22px 18px 10px}
+  .dv-note{text-align:left}
+}
+</style>
+<!-- /ADORA HOME CSS -->
+    <script defer src="https://browser.sentry-cdn.com/8.0.0/bundle.min.js" crossorigin="anonymous"></script>
+    <script type="text/plain" data-adora-consent="analytics">Sentry.init({dsn:"https://14b68c10a24c3da4127332e14fd20359@o4511253060976640.ingest.de.sentry.io/4511253075132496",tracesSampleRate:0,replaysSessionSampleRate:0});</script>
+<!-- ADORA LAYOUT -->
+<link rel="stylesheet" href="assets/css/adora-layout.css">
+<script src="assets/js/adora-layout.js" defer></script>
+<!-- /ADORA LAYOUT -->
+<!-- ADORA CMP -->
+  <link rel="stylesheet" href="assets/css/adora-cmp.css">
+  <script src="assets/js/adora-cmp.js"></script>
+  <!-- /ADORA CMP -->
+</head>
+<body>
+
+<!-- ADORA NAV -->
+<nav class="anav" aria-label="Navigation principale" data-section="part">
+<div class="anav-inner">
+  <a href="./" class="anav-logo"><img src="assets/img/adora-logo-blanc.svg" alt="ADORA, accueil" width="122" height="26"></a>
+  <button type="button" class="anav-burger" aria-expanded="false" aria-controls="anav-menu" aria-label="Ouvrir le menu"><span></span><span></span><span></span></button>
+  <div class="anav-menu" id="anav-menu">
+    <ul class="anav-list">
+      <li class="anav-item" data-key="part">
+        <button type="button" class="anav-trigger" aria-expanded="false" aria-controls="anav-part">Particuliers<svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="anav-drop" id="anav-part"><div class="anav-drop-card">
+          <a href="estimateur.html" class="anav-link"><span class="t">Estimer mes travaux</span><span class="d">Estimation tous corps d&#x27;état en 3 minutes, gratuite</span></a>
+          <a href="analyse-devis.html" class="anav-link" aria-current="page"><span class="t">Analyser un devis <span class="anav-new">Nouveau</span></span><span class="d">L&#x27;avis d&#x27;un économiste avant de signer, 39 €</span></a>
+          <a href="simulateur.html" class="anav-link"><span class="t">Simulateur d&#x27;aides 2026</span><span class="d">Les aides à la rénovation en quelques clics</span></a>
+          <a href="audit-avant-achat.html" class="anav-link"><span class="t">Audit avant achat</span><span class="d">Le coût réel des travaux avant de signer</span></a>
+          <a href="sur-mesure.html" class="anav-link"><span class="t">Accompagnement sur mesure</span><span class="d">Assistance à maîtrise d&#x27;ouvrage, du projet à la réception</span></a>
+        </div></div>
+      </li>
+      <li class="anav-item" data-key="pro">
+        <button type="button" class="anav-trigger" aria-expanded="false" aria-controls="anav-pro">Professionnels<svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="anav-drop" id="anav-pro"><div class="anav-drop-card">
+          <a href="professionnels.html" class="anav-link"><span class="t">Offre professionnels</span><span class="d">Estimations, métrés, CCTP, DPGF, analyse des offres</span></a>
+          <a href="benchmark-honoraires.html" class="anav-link"><span class="t">Benchmark des honoraires <span class="anav-new">Nouveau</span></span><span class="d">4 398 marchés publics analysés</span></a>
+          <a href="partenaires.html#devenir-partenaire" class="anav-link"><span class="t">Devenir partenaire</span><span class="d">Architectes et professionnels du bâtiment</span></a>
+        </div></div>
+      </li>
+      <li class="anav-item" data-key="adora">
+        <button type="button" class="anav-trigger" aria-expanded="false" aria-controls="anav-adora">ADORA<svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="anav-drop" id="anav-adora"><div class="anav-drop-card">
+          <a href="a-propos.html" class="anav-link"><span class="t">À propos</span><span class="d">Parcours, méthode et références</span></a>
+          <a href="partenaires.html" class="anav-link"><span class="t">Partenaires</span><span class="d">Le réseau de professionnels qui m&#x27;entoure</span></a>
+          <a href="contact.html" class="anav-link"><span class="t">Contact</span><span class="d">Un échange découverte de 15 minutes</span></a>
+        </div></div>
+      </li>
+      <li class="anav-item" data-key="pub"><a href="blog.html" class="anav-trigger">Publications</a></li>
+    </ul>
+    <a href="estimateur-outil.html" class="anav-cta">Estimer mes travaux</a>
+  </div>
+</div>
+</nav>
+<!-- /ADORA NAV -->
+
+<main class="hm" id="contenu">
+
+<section class="hm-hero dv-ok-hero" aria-labelledby="ok-title">
+  <div class="container">
+    <div class="dv-ok-badge"><svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#22D3EE" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+    <h1 id="ok-title">Paiement confirmé. Dernière étape&nbsp;: <em>déposez votre devis</em>.</h1>
+    <p class="hm-lead">Votre avis vous sera envoyé par email sous 3 jours ouvrés après réception de votre devis.</p>
+  </div>
+</section>
+
+<section class="hm-sec" aria-labelledby="dv-depot">
+  <div class="container dv-ok-grid">
+    <div class="dv-form">
+      <h2 id="dv-depot">Déposer mon devis</h2>
+      <p>Indiquez l'adresse email utilisée pour le paiement, joignez votre devis (PDF ou photo lisible) et répondez à quelques questions sur votre projet.</p>
+      <div id="dv-tally"></div>
+      <div class="dv-mail" id="dv-mail" hidden>
+        <p>Envoyez votre devis par email, en indiquant&nbsp;:</p>
+        <ul>
+          <li>l'adresse email utilisée pour le paiement&nbsp;;</li>
+          <li>la commune des travaux et une description en quelques lignes&nbsp;;</li>
+          <li>vos questions ou vos doutes sur ce devis.</li>
+        </ul>
+        <a class="hm-btn hm-btn-main" href="mailto:contact@adora-economie.fr?subject=Analyse%20de%20devis%20%3A%20mon%20devis">Envoyer mon devis par email</a>
+      </div>
+    </div>
+    <div class="dv-side">
+      <aside class="dv-get" aria-labelledby="ok-next">
+        <span class="hm-kicker">La suite</span>
+        <h3 id="ok-next">Ce qui va se passer</h3>
+        <ol>
+          <li><strong>Tout de suite</strong>&nbsp;: le reçu Stripe, puis votre facture, par email.</li>
+          <li><strong>Dès réception du devis</strong>&nbsp;: j'analyse chaque poste.</li>
+          <li><strong>Sous 3 jours ouvrés</strong>&nbsp;: votre rapport PDF et les questions à poser à l'artisan.</li>
+        </ol>
+      </aside>
+      <div class="dv-side-box">
+        <h3>Une question&nbsp;?</h3>
+        <p>Écrivez-moi à <a href="mailto:contact@adora-economie.fr">contact@adora-economie.fr</a> ou appelez le <a href="tel:+33672010767">06 72 01 07 67</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ADORA FOOTER -->
+<footer class="afoot">
+<div class="afoot-inner">
+  <div class="afoot-brand">
+    <img src="assets/img/adora-logo-blanc.svg" alt="ADORA" width="113" height="24" loading="lazy">
+    <p>Économiste de la construction<br>Normandie &amp; Île-de-France</p>
+  </div>
+  <div class="afoot-col">
+    <p class="afoot-title">Particuliers</p>
+    <a href="estimateur.html">Estimer mes travaux</a>
+    <a href="analyse-devis.html">Analyse de devis</a>
+    <a href="simulateur.html">Simulateur d'aides</a>
+    <a href="audit-avant-achat.html">Audit avant achat</a>
+    <a href="sur-mesure.html">Accompagnement sur mesure</a>
+  </div>
+  <div class="afoot-col">
+    <p class="afoot-title">Professionnels</p>
+    <a href="professionnels.html">Offre professionnels</a>
+    <a href="benchmark-honoraires.html">Benchmark des honoraires</a>
+    <a href="partenaires.html#devenir-partenaire">Devenir partenaire</a>
+  </div>
+  <div class="afoot-col">
+    <p class="afoot-title">ADORA</p>
+    <a href="a-propos.html">À propos</a>
+    <a href="partenaires.html">Partenaires</a>
+    <a href="blog.html">Publications</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <div class="afoot-col">
+    <p class="afoot-title">Contact</p>
+    <a href="tel:+33672010767">06 72 01 07 67</a>
+    <a href="mailto:contact@adora-economie.fr">contact@adora-economie.fr</a>
+    <a href="https://cal.com/aymeric-adora/decouverte" target="_blank" rel="noopener">Réserver un appel</a>
+  </div>
+</div>
+<div class="afoot-legal">© 2026 ADORA · EI · SIRET 532 886 918 00020 · TVA non applicable, art. 293 B du CGI<br><a href="mentions-legales.html">Mentions légales</a> · <a href="politique-confidentialite.html">Confidentialité</a> · <a href="cgv.html">CGV</a> · <button type="button" class="adora-cmp-footer-link" onclick="if(window.adoraConsent)window.adoraConsent.show()">Gérer mes cookies</button></div>
+</footer>
+<!-- /ADORA FOOTER -->
+
+<script>
+(function () {
+  'use strict';
+  /* tallyFormId : identifiant du formulaire Tally de dépôt (ex. « wA1bC2 »), vide tant qu'il n'existe pas.
+     Redirection Stripe attendue : paiement-reussi-devis.html?session_id={CHECKOUT_SESSION_ID} */
+  var CONFIG = { tallyFormId: '', price: 39 };
+  var params = new URLSearchParams(window.location.search);
+  var sid = params.get('session_id') || '';
+  if (!/^cs_[A-Za-z0-9_]+$/.test(sid)) { sid = ''; }
+
+  if (CONFIG.tallyFormId) {
+    var q = new URLSearchParams({ alignLeft: '1', hideTitle: '1', transparentBackground: '1', dynamicHeight: '1' });
+    if (sid) { q.set('session_id', sid); }
+    var f = document.createElement('iframe');
+    f.src = 'https://tally.so/embed/' + encodeURIComponent(CONFIG.tallyFormId) + '?' + q.toString();
+    f.title = 'Dépôt de votre devis';
+    f.loading = 'eager';
+    f.width = '100%';
+    f.height = '620';
+    document.getElementById('dv-tally').appendChild(f);
+    var s = document.createElement('script');
+    s.src = 'https://tally.so/widgets/embed.js';
+    s.async = true;
+    document.body.appendChild(s);
+  } else {
+    document.getElementById('dv-mail').hidden = false;
+  }
+
+  var txid = sid || ('analyse_devis_' + Date.now());
+  var key = 'adora_purchase_' + txid;
+  function sendPurchase() {
+    try { if (sid && window.localStorage.getItem(key)) { return; } } catch (e) {}
+    if (typeof window.gtag !== 'function') { return; }
+    window.gtag('event', 'purchase', { transaction_id: txid, value: CONFIG.price, currency: 'EUR',
+      items: [{ item_id: 'analyse-devis', item_name: 'Analyse de devis', price: CONFIG.price, quantity: 1 }] });
+    try { if (sid) { window.localStorage.setItem(key, '1'); } } catch (e) {}
+  }
+  window.addEventListener('adora:consent:granted', sendPurchase, { once: true });
+})();
+</script>
+
+<script type="text/plain" data-adora-consent="analytics" src="https://www.googletagmanager.com/gtag/js?id=G-M0LENY960B"></script>
+<script type="text/plain" data-adora-consent="analytics">window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","G-M0LENY960B");</script>
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"3f8ca9a1113f413a990a17c08ab83442"}'></script>
+</body>
+</html>

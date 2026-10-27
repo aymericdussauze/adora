@@ -12,6 +12,7 @@ email-templates/
 ├── d/  — Séquence D : Ex-clients 12 mois (4 mails, D1-D4)
 └── e/  — Séquence E : Prescripteurs 6 mois (5 mails, E1-E5)
 benchmark/  Benchmark des honoraires : confirmation de précommande (BM1, transactionnel)
+analyse-devis/  Analyse de devis 39 € : confirmation de commande et lien de dépôt du devis (DV1, transactionnel)
 ```
 
 ## Pattern URL
@@ -51,7 +52,8 @@ Les templates contiennent des variables `{{xxx}}` qui doivent être substituées
 | `blogArticleLink` | E2 | URL article blog |
 | `calLink` | E4 | URL Cal.com café prescripteur |
 | `deliveryText` | BM1 | Délai de livraison du benchmark : « sous 30 jours », ou « le » + date si metadata.delivery_date est renseignée |
-| `invoiceLink` | BM1 | URL publique de la facture Qonto (bloc retiré par le Worker si absente) |
+| `invoiceLink` | BM1, DV1 | URL publique de la facture Qonto (bloc retiré par le Worker si absente) |
+| `uploadLink` | DV1 | Page de dépôt du devis : paiement-reussi-devis.html?session_id=… (formulaire Tally, ou envoi par email tant que le formulaire n'est pas configuré) |
 
 ### Variable native Resend
 
