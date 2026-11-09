@@ -70,7 +70,7 @@ CURRENT = {
 CTA_DEFAULT = ("Estimer mes travaux", "estimateur-outil.html", False)
 CTA_CALL = ("Réserver un appel", CAL, True)
 CTA = {f: CTA_CALL for f in ["professionnels.html", "paiement-reussi-benchmark.html", "estimateur-outil.html", *ARTICLES_PRO]}
-CTA["benchmark-honoraires.html"] = ("Précommander", "#offre", False)
+CTA["benchmark-honoraires.html"] = ("Commander", "#offre", False)
 
 BREADCRUMB = {}
 for f, name in ARTICLES_PART.items():
